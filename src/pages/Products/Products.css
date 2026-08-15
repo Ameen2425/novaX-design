@@ -59,6 +59,9 @@
 }
 
 .products-filter input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   flex: 1;
   max-width: 440px;
   height: 48px;
@@ -73,7 +76,16 @@
   background-repeat: no-repeat;
   background-position: left 16px center;
   transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
+}
+
+.products-filter input[type="search"]::-webkit-search-decoration,
+.products-filter input[type="search"]::-webkit-search-cancel-button,
+.products-filter input[type="search"]::-webkit-search-results-button,
+.products-filter input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
 
 .products-filter input[type="search"]::placeholder {
@@ -88,6 +100,9 @@
 }
 
 .products-filter select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   height: 48px;
   min-width: 240px;
   padding: 0 40px 0 18px;
@@ -98,12 +113,11 @@
   font-family: var(--font-main);
   font-size: 14px;
   cursor: pointer;
-  appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%233A3028' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .products-filter select:focus {

@@ -1,5 +1,6 @@
 /* =========================================================
-   NOVAX — HOME PAGE (REFERENCE EDITORIAL MATCH)
+   NOVAX — HOME PAGE (CREAM + BROWN EDITORIAL LUXURY)
+   FULLY RESPONSIVE FOR ALL SCREENS (320px to 2560px)
 ========================================================= */
 
 .home-page {
@@ -10,7 +11,7 @@
 }
 
 /* =========================================================
-   1. HERO SECTION (EXACT MATCH TO REFERENCE)
+   1. HERO SECTION
 ========================================================= */
 
 .cream-hero-section {
@@ -49,7 +50,7 @@
 .cream-hero-content h1,
 .serif-title {
   font-family: var(--font-serif);
-  font-size: clamp(42px, 5.2vw, 68px);
+  font-size: clamp(38px, 5vw, 68px);
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.06;
@@ -90,6 +91,7 @@
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 
 .cream-hero-visual {
@@ -148,6 +150,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .home-section-heading.centered {
@@ -169,7 +172,7 @@
 
 .home-section-heading h2 {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 3.8vw, 44px);
+  font-size: clamp(30px, 3.8vw, 44px);
   font-weight: 500;
   color: var(--dark-brown);
   margin: 0;
@@ -182,6 +185,7 @@
   text-transform: uppercase;
   color: var(--terracotta-primary);
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .home-category-list {
@@ -380,7 +384,7 @@
 
 .home-offer-content h2 {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 4.2vw, 52px);
+  font-size: clamp(34px, 4.2vw, 52px);
   color: #FFFFFF;
   line-height: 1.08;
   margin-bottom: 16px;
@@ -424,7 +428,7 @@
 }
 
 /* =========================================================
-   5. BENEFITS SECTION (HORIZONTAL STRIP)
+   5. BENEFITS SECTION
 ========================================================= */
 
 .home-benefits-section {
@@ -599,7 +603,7 @@
 .home-stat strong {
   display: block;
   font-family: var(--font-serif);
-  font-size: 48px;
+  font-size: clamp(36px, 4vw, 48px);
   font-weight: 600;
   color: var(--dark-brown);
   margin-bottom: 4px;
@@ -682,7 +686,7 @@
 
 .home-final h2 {
   font-family: var(--font-serif);
-  font-size: clamp(34px, 4.5vw, 50px);
+  font-size: clamp(32px, 4.5vw, 50px);
   color: var(--dark-brown);
   margin: 14px 0 16px;
   line-height: 1.1;
@@ -699,14 +703,23 @@
   margin-bottom: 32px;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (320px to 1440px+)
+========================================================= */
+
+@media (max-width: 1200px) {
+  .home-category-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 1024px) {
   .cream-hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .home-category-list {
-    grid-template-columns: repeat(3, 1fr);
+  .cream-hero-image-frame {
+    height: 420px;
   }
   .home-product-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -724,25 +737,64 @@
 }
 
 @media (max-width: 768px) {
+  .home-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .home-category-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
   .home-product-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .home-offer {
+    padding: 50px 30px;
   }
   .home-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
   .location-container {
     grid-template-columns: 1fr;
   }
+  .home-experience-steps {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
+  .cream-hero-section {
+    padding: 40px 16px 60px;
+  }
+  .cream-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-terracotta,
+  .btn-outline-dark {
+    width: 100%;
+  }
+  .cream-hero-image-frame {
+    height: 320px;
+  }
   .home-category-list {
     grid-template-columns: 1fr;
   }
   .home-product-grid {
     grid-template-columns: 1fr;
+  }
+  .home-benefits {
+    grid-template-columns: 1fr;
+  }
+  .benefit-card {
+    border-bottom: 1px solid var(--border);
+  }
+  .home-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .location-info {
+    padding: 24px 18px;
   }
 }
