@@ -1,0 +1,218 @@
+/* =========================================================
+   NOVAX — USERS DIRECTORY (CREAM + BROWN EDITORIAL LUXURY)
+========================================================= */
+
+.users-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 4% 120px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* SEARCH BAR INPUT */
+.users-page > input[type="text"] {
+  width: 100%;
+  max-width: 440px;
+  height: 48px;
+  padding: 0 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--dark-brown);
+  font-family: var(--font-main);
+  font-size: 14px;
+  margin-bottom: 30px;
+  transition: all var(--transition-fast);
+  display: block;
+}
+
+.users-page > input[type="text"]:focus {
+  border-color: var(--terracotta-primary);
+  box-shadow: 0 0 0 3px var(--terracotta-glow);
+  outline: none;
+}
+
+/* TABLE CONTAINER & CARD */
+.users-page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-main);
+  font-size: 14px;
+  text-align: left;
+}
+
+.users-page th {
+  background-color: #F1ECE3;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.users-page td {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.users-page tr:last-child td {
+  border-bottom: none;
+}
+
+.users-page tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.users-page tbody tr:hover {
+  background-color: var(--bg-primary);
+}
+
+/* EDIT & DELETE BUTTON OVERRIDES */
+.users-page .btn-warning {
+  background-color: transparent !important;
+  color: var(--terracotta-primary) !important;
+  border: 1px solid var(--terracotta-primary) !important;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 2px !important;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.users-page .btn-warning:hover {
+  background-color: var(--terracotta-primary) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+.users-page .btn-danger {
+  background-color: transparent !important;
+  color: #C0392B !important;
+  border: 1px solid #C0392B !important;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 2px !important;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.users-page .btn-danger:hover {
+  background-color: #C0392B !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+/* EDIT USER OFFCANVAS DRAWER */
+.offcanvas.offcanvas-start {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-right: 1px solid var(--border) !important;
+  width: 440px !important;
+  max-width: 90vw;
+  padding: 30px 24px;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.offcanvas-title {
+  font-family: var(--font-serif) !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  color: var(--dark-brown) !important;
+}
+
+.offcanvas-body label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.offcanvas-body input.form-control {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--dark-brown);
+  font-family: var(--font-main);
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: all var(--transition-fast);
+}
+
+.offcanvas-body input.form-control:focus {
+  border-color: var(--terracotta-primary);
+  box-shadow: 0 0 0 3px var(--terracotta-glow);
+  outline: none;
+}
+
+.offcanvas-body .btn-primary {
+  width: 100%;
+  height: 50px;
+  background-color: var(--terracotta-primary) !important;
+  border: 1px solid var(--terracotta-primary) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px !important;
+  margin-top: 10px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.offcanvas-body .btn-primary:hover {
+  background-color: var(--terracotta-dark) !important;
+  border-color: var(--terracotta-dark) !important;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .users-page {
+    padding: 40px 16px 80px;
+  }
+  .users-page table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .users-page th,
+  .users-page td {
+    padding: 14px 16px;
+  }
+}

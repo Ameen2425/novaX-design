@@ -1,0 +1,39 @@
+/* =========================================================
+   NOVAX — SKELETON LOADER (CREAM + BROWN EDITORIAL)
+========================================================= */
+
+.loader-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.skeleton-card {
+  height: 380px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(154, 90, 58, 0.08),
+    transparent
+  );
+  animation: skeletonShimmer 1.6s infinite;
+}
+
+@keyframes skeletonShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

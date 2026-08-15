@@ -1,0 +1,223 @@
+/* =========================================================
+   NOVAX — COMPACT EDITORIAL PRODUCT CARDS
+========================================================= */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.3s var(--ease-smooth), border-color 0.3s var(--ease-smooth);
+  overflow: hidden;
+}
+
+.product-card:hover {
+  border-color: var(--terracotta-primary);
+  transform: translateY(-4px);
+}
+
+/* IMAGE AREA */
+.product-image-container {
+  width: 100%;
+  height: 200px;
+  background-color: #F4F0E8;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 24px;
+  transition: transform 0.5s var(--ease-smooth);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.04);
+}
+
+/* BADGES */
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: var(--terracotta-primary);
+  padding: 4px 8px;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+.product-quick-label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background-color: #F1ECE3;
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+/* CARD BODY */
+.product-card-body {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.product-category {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta-primary);
+}
+
+.product-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.product-description {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+/* RATING */
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.product-rating span {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.product-rating small {
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.product-rating em {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* PRICE SECTION */
+.product-price-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.price-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+}
+
+.product-price {
+  font-family: var(--font-main);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.price-offer {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta-primary);
+}
+
+.product-services {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ADD TO CART BUTTON */
+.product-bottom {
+  margin-top: 14px;
+}
+
+.product-card .add-cart-btn {
+  width: 100%;
+  height: 42px;
+  background-color: var(--terracotta-primary);
+  color: #FFFFFF;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--terracotta-primary);
+  border-radius: 2px;
+  transition: background-color 0.25s var(--ease-smooth), transform 0.25s var(--ease-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.product-card .add-cart-btn:hover {
+  background-color: var(--terracotta-dark);
+  border-color: var(--terracotta-dark);
+  transform: translateY(-2px);
+}

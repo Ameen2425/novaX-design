@@ -1,0 +1,182 @@
+/* =========================================================
+   NOVAX — PRODUCTS CATALOG (CREAM + BROWN EDITORIAL LUXURY)
+========================================================= */
+
+.products-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 4% 120px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* 1. PRODUCTS PAGE HEADER */
+.products-header {
+  max-width: 1280px;
+  margin: 0 auto 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.products-header span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta-primary);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.products-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 500;
+  color: var(--dark-brown);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.products-header p {
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+/* 2. EDITORIAL SEARCH & CATEGORY FILTER ROW */
+.products-filter {
+  max-width: 1280px;
+  margin: 0 auto 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.products-filter input[type="search"] {
+  flex: 1;
+  max-width: 440px;
+  height: 46px;
+  padding: 0 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--dark-brown);
+  font-family: var(--font-main);
+  font-size: 13px;
+  transition: all var(--transition-fast);
+}
+
+.products-filter input[type="search"]:focus {
+  border-color: var(--terracotta-primary);
+  box-shadow: 0 0 0 3px var(--terracotta-glow);
+  outline: none;
+}
+
+.products-filter select {
+  height: 46px;
+  min-width: 220px;
+  padding: 0 38px 0 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--dark-brown);
+  font-family: var(--font-main);
+  font-size: 13px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233A3028' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  transition: all var(--transition-fast);
+}
+
+.products-filter select:focus {
+  border-color: var(--terracotta-primary);
+  outline: none;
+}
+
+/* 3. PRODUCT GRID CONTAINER */
+.products-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* 4. PAGINATION */
+.pagination {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--dark-brown);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pagination button.active,
+.pagination button:hover {
+  background-color: var(--terracotta-primary);
+  border-color: var(--terracotta-primary);
+  color: #FFFFFF;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .products-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .products-filter input[type="search"] {
+    max-width: 100%;
+  }
+  .products-filter select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .products-page {
+    padding: 40px 16px 80px;
+  }
+}
