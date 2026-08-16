@@ -1,21 +1,39 @@
 /* =========================================================
-   NOVAX — HIGH-CONTRAST EARTHY LUXURY FOOTER
+   NOVAX — EXTRA-STRONG EARTHY LUXURY FOOTER
 ========================================================= */
 
 .footer {
   width: 100%;
-  background-color: #34261E;
-  color: #FFF8EC;
+  background-color: #241711;
+  color: #FFF3DD;
   padding: 80px 4% 50px;
-  border-top: 1px solid rgba(255, 248, 236, 0.20);
+  border-top: 1px solid rgba(255, 243, 221, 0.22);
   margin-top: auto;
   position: relative;
   overflow: hidden;
 }
 
+/* WATERMARK BACKGROUND TEXT */
+.footer::before {
+  content: "NOVAX";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-family: var(--font-serif);
+  font-size: clamp(120px, 20vw, 280px);
+  font-weight: 700;
+  color: rgba(255, 243, 221, 0.03);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
 .footer-container {
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* 1. FOOTER MAIN GRID CONTENT */
@@ -24,7 +42,7 @@
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 48px;
   padding-bottom: 50px;
-  border-bottom: 1px solid rgba(255, 248, 236, 0.20);
+  border-bottom: 1px solid rgba(255, 243, 221, 0.22);
   align-items: start;
 }
 
@@ -42,7 +60,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #FFF8EC;
+  color: #FFF3DD;
   text-decoration: none;
   margin-bottom: 16px;
   display: inline-block;
@@ -57,7 +75,7 @@
   font-family: var(--font-main);
   font-size: 14px;
   line-height: 1.7;
-  color: #E6D7C4;
+  color: #E7D0B1;
   max-width: 340px;
 }
 
@@ -75,7 +93,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #D97955;
+  color: #E28B68;
   margin-bottom: 20px;
 }
 
@@ -91,13 +109,13 @@
 .footer-links a {
   font-family: var(--font-main);
   font-size: 14px;
-  color: #E6D7C4;
+  color: #FFF3DD;
   text-decoration: none;
   transition: all 0.25s var(--ease-smooth);
 }
 
 .footer-links a:hover {
-  color: #FFF8EC;
+  color: #E28B68;
   transform: translateX(4px);
 }
 
@@ -115,14 +133,14 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #D97955;
+  color: #E28B68;
   margin-bottom: 20px;
 }
 
 .footer-contact p {
   font-family: var(--font-main);
   font-size: 14px;
-  color: #E6D7C4;
+  color: #E7D0B1;
   margin-bottom: 10px;
 }
 
@@ -137,9 +155,9 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 248, 236, 0.10);
-  border: 1px solid rgba(255, 248, 236, 0.20);
-  color: #FFF8EC;
+  background: rgba(255, 243, 221, 0.10);
+  border: 1px solid rgba(255, 243, 221, 0.22);
+  color: #FFF3DD;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,11 +167,11 @@
 }
 
 .footer-socials a:hover {
-  background: #B84F2C;
-  border-color: #B84F2C;
+  background: #C6532F;
+  border-color: #C6532F;
   color: #FFFFFF;
   transform: translateY(-3px);
-  box-shadow: 0 4px 14px rgba(184, 79, 44, 0.35);
+  box-shadow: 0 4px 14px rgba(198, 83, 47, 0.35);
 }
 
 /* 2. FOOTER BOTTOM COPYRIGHT & LEGAL */
@@ -164,7 +182,7 @@
   padding-top: 32px;
   font-family: var(--font-main);
   font-size: 13px;
-  color: #E6D7C4;
+  color: #E7D0B1;
 }
 
 .footer-bottom p {

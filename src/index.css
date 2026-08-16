@@ -1,38 +1,38 @@
 /* =========================================================
-   NOVAX — HIGH-CONTRAST EARTHY LUXURY DESIGN SYSTEM
-   LCD DISPLAY VISIBILITY OPTIMIZED
+   NOVAX — EXTRA-STRONG EARTHY COLOR SYSTEM
+   RICH WARM COLORS + HIGH LCD VISIBILITY
 ========================================================= */
 
 :root {
-  /* PALETTE TOKENS (NEW EARTHY HIGH-CONTRAST PALETTE) */
-  --bg-primary: #D8C5AE;      /* Primary Page Background */
-  --bg-secondary: #E6D7C4;    /* Secondary Sections */
-  --bg-section: #EBD9C1;      /* Image Containers & Secondary UI */
-  --bg-card: #FFF8EC;         /* Elevated Cards & Surface */
-  --bg-card-hover: #F4E5D0;   /* Card Hover State */
-  --bg-dark: #34261E;         /* Dark Footer & Promotional Sections */
-  --bg-dark-card: #49362B;    /* Dark Card Surface */
+  /* PALETTE TOKENS (EXTRA-STRONG EARTHY PALETTE) */
+  --bg-primary: #C8AD8F;      /* Main Page Background (Visibly warm brown/beige) */
+  --bg-secondary: #B99A78;    /* Secondary Page Background */
+  --bg-card: #FFF3DD;         /* Main Card Surface (Bright warm ivory) */
+  --bg-card-secondary: #E7D0B1;/* Secondary Cards & Panels */
+  --bg-card-hover: #F0D9BA;   /* Card Hover State */
+  --bg-image: #D5B58F;        /* Image Container Background */
+  --bg-dark: #3B281F;         /* Dark Brown Section */
+  --bg-darker: #241711;       /* Darker Brown Footer & Promo */
+  --bg-input: #F8EBD7;        /* Form Input Background */
 
   /* TYPOGRAPHY COLORS */
-  --text-primary: #211914;    /* Headings & Primary Text */
-  --text-secondary: #40342C;  /* Secondary Text */
-  --text-muted: #5F5147;      /* Muted Text */
+  --text-primary: #241711;    /* Very dark warm brown */
+  --text-secondary: #49372C;  /* Secondary Text */
+  --text-muted: #6D5748;      /* Muted Text */
 
-  /* BROWNS & BORDERS */
-  --dark-brown: #34261E;
-  --deep-brown: #211914;
-  --border: #B49A80;          /* Visible Warm Border */
-  --border-strong: #92765E;   /* Strong Visible Border */
+  /* BORDERS */
+  --border: #9F8063;          /* Visible Warm Border */
+  --border-strong: #765A43;   /* Strong Visible Border */
 
   /* TERRACOTTA ACCENTS */
-  --terracotta-primary: #B84F2C;
-  --terracotta-dark: #83351E;
-  --terracotta-light: #D97955;
-  --terracotta-glow: rgba(184, 79, 44, 0.15);
+  --terracotta-primary: #C6532F;
+  --terracotta-hover: #91371F;
+  --terracotta-light: #E28B68;
+  --terracotta-deep: #74301D;
+  --terracotta-glow: rgba(198, 83, 47, 0.16);
 
   /* AUXILIARY */
-  --gold: #A87520;
-  --sage: #5A7E52;
+  --gold: #B07A21;
   --danger: #B52F2F;
 
   /* FONTS */
@@ -40,18 +40,18 @@
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* CORNER RADII */
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 28px;
+  /* RADII */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 26px;
+  --radius-xl: 30px;
   --radius-pill: 999px;
 
   /* SHADOW SYSTEM (HIGH CONTRAST LCD OPTIMIZED) */
-  --shadow-sm: 0 4px 12px rgba(33, 25, 20, 0.10);
-  --shadow-soft: 0 8px 24px rgba(33, 25, 20, 0.15);
-  --shadow-hover: 0 14px 40px rgba(33, 25, 20, 0.20);
-  --shadow-terracotta: 0 8px 22px rgba(184, 79, 44, 0.28);
+  --shadow-sm: 0 5px 14px rgba(36, 23, 17, 0.10);
+  --shadow-soft: 0 10px 28px rgba(36, 23, 17, 0.15);
+  --shadow-hover: 0 16px 42px rgba(36, 23, 17, 0.20);
+  --shadow-terracotta: 0 8px 24px rgba(198, 83, 47, 0.30);
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 0.25s var(--ease-smooth);
   --transition-normal: 0.4s var(--ease-smooth);
@@ -185,10 +185,10 @@ input, select, textarea {
 }
 
 .btn-terracotta:hover {
-  background-color: var(--terracotta-dark);
-  border-color: var(--terracotta-dark);
+  background-color: var(--terracotta-hover);
+  border-color: var(--terracotta-hover);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(184, 79, 44, 0.38);
+  box-shadow: 0 12px 28px rgba(198, 83, 47, 0.40);
 }
 
 .btn-outline-dark {
@@ -199,7 +199,7 @@ input, select, textarea {
   height: 52px;
   padding: 0 36px;
   background: transparent;
-  color: var(--dark-brown);
+  color: var(--text-primary);
   font-family: var(--font-main);
   font-size: 12px;
   font-weight: 600;
@@ -214,7 +214,7 @@ input, select, textarea {
   border-color: var(--terracotta-primary);
   color: var(--terracotta-primary);
   transform: translateY(-2px);
-  background-color: var(--bg-section);
+  background-color: var(--bg-card-secondary);
 }
 
 /* KEYFRAME ANIMATIONS */
@@ -250,7 +250,7 @@ input, select, textarea {
 input:focus, select:focus, button:focus-visible {
   outline: none;
   border-color: var(--terracotta-primary) !important;
-  box-shadow: 0 0 0 3px var(--terracotta-glow) !important;
+  box-shadow: 0 0 0 4px var(--terracotta-glow) !important;
 }
 
 /* SCROLLBAR */
