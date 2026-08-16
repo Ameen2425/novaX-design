@@ -226,7 +226,13 @@ const cardVariants = {
                   <button
                     key={btn}
                     className={page === btn ? "active" : ""}
-                    onClick={() => setPage(btn)}>
+                    onClick={() => {
+                      setPage(btn)
+                      window.scrollTo({
+                        top: 150,
+                        behavior: "smooth",
+                      })
+                    }}>
                     {btn}
                   </button>
 

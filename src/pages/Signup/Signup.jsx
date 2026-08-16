@@ -280,7 +280,7 @@ const Signup = () => {
 
                 <button
                   type="submit"
-                  className="signup-btn"
+                  className="signup-submit-btn"
                 >
                   Create Account
                   <span>→</span>

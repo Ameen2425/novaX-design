@@ -5,7 +5,7 @@
 .users-page {
   width: 100%;
   min-height: 100vh;
-  padding: 60px 4% 120px;
+  padding: 100px 4% 120px;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   max-width: 1280px;
@@ -131,13 +131,30 @@
   border-right: 1px solid var(--border) !important;
   width: 440px !important;
   max-width: 90vw;
-  padding: 30px 24px;
+  padding: 100px 24px 30px !important;
+  z-index: 9990 !important;
 }
 
 .offcanvas-header {
   border-bottom: 1px solid var(--border);
   padding-bottom: 20px;
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.offcanvas-header .btn-close {
+  opacity: 0.8;
+  padding: 8px;
+  margin: 0;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.offcanvas-header .btn-close:hover {
+  opacity: 1;
+  transform: scale(1.15);
 }
 
 .offcanvas-title {

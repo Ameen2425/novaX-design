@@ -683,7 +683,7 @@ const Home = () => {
 
       <section className="location-section">
 
-        <div className="section-heading">
+        <div className="home-section-heading centered">
 
           <p className="home-label">
             VISIT NOVAX

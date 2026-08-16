@@ -37,6 +37,13 @@
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-mono: "JetBrains Mono", monospace;
 
+  /* CORNER RADII */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
   /* SHADOWS & ANIMATIONS */
   --shadow-sm: 0 4px 12px rgba(58, 48, 40, 0.03);
   --shadow-soft: 0 12px 32px rgba(58, 48, 40, 0.06);

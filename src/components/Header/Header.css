@@ -1,179 +1,290 @@
 /* =========================================================
-   NOVAX HEADER — ULTRA-LUXURY EDITORIAL (FULLY RESPONSIVE)
+   NOVAX — REFERENCE-MATCHED FLOATING GLASSMORPHISM NAVBAR
+   Ultra-Luxury Pill / Capsule Translucent Header Redesign
 ========================================================= */
 
+/* Entrance Animation */
+@keyframes headerEntrance {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -18px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Floating Capsule Container */
 .header {
-  width: 100%;
-  height: 76px;
-  padding: 0 4%;
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 80px);
+  max-width: 1280px;
+  height: 64px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(248, 245, 239, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  color: var(--text-primary);
-  transition: all var(--transition-fast);
+  
+  /* Glassmorphism Surface */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  box-shadow: 0 12px 35px rgba(43, 39, 34, 0.10), 0 2px 8px rgba(43, 39, 34, 0.05);
+  
+  z-index: 9999;
+  margin: 0 auto;
+  color: #2B2722;
+  animation: headerEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ---------------------------------------------------------
+   LEFT LOGO SECTION
+--------------------------------------------------------- */
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: var(--dark-brown);
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  z-index: 2;
+  transition: opacity 0.25s ease;
 }
 
-.logo-emblem {
-  width: 26px;
-  height: 26px;
-  color: var(--terracotta-primary);
-  transition: transform var(--transition-fast);
+.logo:hover {
+  opacity: 0.88;
 }
 
-.logo:hover .logo-emblem {
-  transform: rotate(45deg);
+.logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.06) rotate(4deg);
 }
 
 .logo-text {
-  font-family: var(--font-serif);
-  font-size: 26px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--dark-brown);
+  color: #2B2722;
+  line-height: 1;
 }
 
+/* ---------------------------------------------------------
+   CENTER NAVIGATION
+--------------------------------------------------------- */
 .navbar {
   display: flex;
   align-items: center;
-  gap: 36px;
+  justify-content: center;
+  gap: 24px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .nav-link {
-  color: var(--text-secondary);
-  font-family: var(--font-main);
-  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 8px 0;
-  position: relative;
-  transition: color var(--transition-fast);
+  color: #6F675D;
   text-decoration: none;
+  padding: 8px 4px;
+  position: relative;
+  transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: #9A5A3A;
+  transform: translateY(-1px);
+}
+
+/* Active Nav Underline Pill Indicator */
 .nav-link.active {
-  color: var(--terracotta-primary);
+  color: #9A5A3A;
 }
 
 .nav-link.active::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
   height: 2px;
-  background-color: var(--terracotta-primary);
+  background-color: #9A5A3A;
+  border-radius: 999px;
+  transition: width 0.25s ease;
 }
 
+/* ---------------------------------------------------------
+   RIGHT ACTION AREA
+--------------------------------------------------------- */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 6px;
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .header-icon-group {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
 }
 
+/* Action Buttons (Circular 34px Capsule Buttons) */
 .header-action-icon {
-  color: var(--dark-brown);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(222, 214, 202, 0.45);
+  color: #6F675D;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: transparent;
-  transition: all var(--transition-fast);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
+  position: relative;
+  outline: none;
 }
 
 .header-action-icon:hover {
-  color: var(--terracotta-primary);
-  background-color: var(--bg-section);
-  transform: translateY(-2px);
+  background: rgba(154, 90, 58, 0.10);
+  border-color: rgba(154, 90, 58, 0.25);
+  color: #9A5A3A;
+  transform: translateY(-2px) scale(1.05);
 }
 
-.signup-btn {
-  color: var(--dark-brown);
+/* Profile / Signup Button Styling */
+.header .signup-btn {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  max-height: 34px !important;
+  border-radius: 50% !important;
+  background: #F1ECE3;
+  border: 1px solid #DED6CA;
+  color: #2B2722;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: var(--bg-section);
-  border: 1px solid var(--border);
-  transition: all var(--transition-fast);
+  font-size: 14px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.signup-btn:hover,
-.signup-btn.active {
+.header .signup-btn:hover,
+.header .signup-btn.active {
+  background: #9A5A3A !important;
+  color: #FFFFFF !important;
+  border-color: #9A5A3A !important;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(154, 90, 58, 0.25);
+}
+
+/* ---------------------------------------------------------
+   CART & WISHLIST BADGES
+--------------------------------------------------------- */
+.relative-badge {
+  position: relative;
+}
+
+.header-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: 999px;
+  background: #9A5A3A;
   color: #FFFFFF;
-  border-color: var(--terracotta-primary);
-  background-color: var(--terracotta-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(154, 90, 58, 0.25);
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-/* RESPONSIVE BREAKPOINTS */
-@media (max-width: 900px) {
-  .header {
-    height: 64px;
-    padding: 0 16px;
-  }
+.cart-badge-accent {
+  background: #9A5A3A;
+  color: #FFFFFF;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+--------------------------------------------------------- */
+@media (max-width: 990px) {
   .navbar {
     gap: 16px;
   }
   .nav-link {
-    font-size: 11px;
+    font-size: 9.5px;
     letter-spacing: 0.08em;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .header {
-    height: auto;
-    min-height: 60px;
-    padding: 10px 14px;
-    flex-wrap: wrap;
-    gap: 10px;
+    width: calc(100% - 24px);
+    height: 56px;
+    top: 10px;
+    padding: 0 14px;
+    border-radius: 999px;
   }
-  .navbar {
-    order: 3;
-    width: 100%;
-    justify-content: space-around;
-    border-top: 1px solid var(--border);
-    padding-top: 8px;
-    margin-top: 2px;
-    gap: 8px;
-    overflow-x: auto;
-  }
+
   .logo-text {
-    font-size: 22px;
+    font-size: 19px;
+  }
+
+  .logo-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar {
+    position: static;
+    transform: none;
+    gap: 10px;
+    overflow-x: auto;
+    max-width: 50%;
+  }
+
+  .nav-link {
+    font-size: 9px;
+    padding: 4px 2px;
+  }
+
+  .header-action-icon,
+  .signup-btn {
+    width: 30px;
+    height: 30px;
   }
 }

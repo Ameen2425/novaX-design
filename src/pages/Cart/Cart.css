@@ -1,5 +1,5 @@
 /* =========================================================
-   NOVAX — CART PAGE (CREAM + BROWN EDITORIAL REFERENCE MATCH)
+   NOVAX — CART PAGE (EDITORIAL LUXURY 24PX CORNERS)
 ========================================================= */
 
 .cart-page {
@@ -7,11 +7,11 @@
   min-height: 100vh;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  padding: 60px 4% 100px;
+  padding: 100px 4% 120px;
 }
 
 /* =========================================================
-   1. EMPTY CART CARD CONTAINER
+   1. EMPTY CART CARD CONTAINER (24PX RADIUS)
 ========================================================= */
 
 .empty-cart {
@@ -19,13 +19,13 @@
   margin: 0 auto 50px;
   background-color: #FFFFFF;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 24px;
   padding: 70px 50px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 12px 35px rgba(43, 39, 34, 0.05);
 }
 
 .empty-cart-content {
@@ -56,24 +56,24 @@
 }
 
 .cart-circle {
-  width: 84px;
-  height: 84px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  background-color: #F4F0E8;
+  background-color: #F1ECE3;
   border: 1px dashed var(--border-strong);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--transition-fast);
+  transition: transform 0.3s var(--ease-smooth);
 }
 
 .empty-cart:hover .cart-circle {
-  transform: scale(1.05);
+  transform: scale(1.06);
   border-color: var(--terracotta-primary);
 }
 
 .cart-bag {
-  font-size: 32px;
+  font-size: 34px;
 }
 
 .cart-dot {
@@ -138,7 +138,7 @@
   max-width: 480px;
 }
 
-/* ACTIONS ROW */
+/* ACTIONS ROW (PILL BUTTONS) */
 .cart-actions {
   display: flex;
   align-items: center;
@@ -152,47 +152,51 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 48px;
-  padding: 0 32px;
+  height: 50px;
+  padding: 0 36px;
   background-color: var(--terracotta-primary);
   color: #FFFFFF;
   font-family: var(--font-main);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   border: 1px solid var(--terracotta-primary);
-  border-radius: 2px;
-  transition: all var(--transition-fast);
+  border-radius: 999px;
+  transition: all 0.3s var(--ease-smooth);
+  box-shadow: 0 6px 20px rgba(154, 90, 58, 0.2);
 }
 
 .cart-primary-btn:hover {
   background-color: var(--terracotta-dark);
   border-color: var(--terracotta-dark);
   transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(154, 90, 58, 0.3);
 }
 
 .cart-secondary-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 0 30px;
+  height: 50px;
+  padding: 0 32px;
   background: transparent;
   color: var(--dark-brown);
   font-family: var(--font-main);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 1px solid var(--dark-brown);
-  border-radius: 2px;
-  transition: all var(--transition-fast);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  transition: all 0.3s var(--ease-smooth);
 }
 
 .cart-secondary-btn:hover {
   border-color: var(--terracotta-primary);
   color: var(--terracotta-primary);
+  transform: translateY(-2px);
+  background-color: var(--terracotta-glow);
 }
 
 /* =========================================================
@@ -223,14 +227,14 @@
 }
 
 .cart-benefit span {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background-color: #F4F0E8;
+  background-color: #F1ECE3;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 19px;
   flex-shrink: 0;
 }
 
@@ -248,7 +252,7 @@
 }
 
 /* =========================================================
-   3. DISCOVER SECTION (DARK BROWN BANNER)
+   3. DISCOVER SECTION (DARK BROWN #3A3028 BANNER)
 ========================================================= */
 
 .cart-discover {
@@ -256,8 +260,7 @@
   margin: 0 auto;
   background-color: var(--dark-brown);
   color: #FFFFFF;
-  border: 1px solid var(--border-strong);
-  border-radius: 4px;
+  border-radius: 24px;
   padding: 60px 50px;
   text-align: left;
   display: flex;
@@ -265,6 +268,7 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 16px 40px rgba(43, 39, 34, 0.12);
 }
 
 .cart-discover > div {
@@ -292,8 +296,8 @@
 }
 
 .cart-discover p {
-  font-size: 14px;
-  color: rgba(248, 245, 239, 0.75);
+  font-size: 14.5px;
+  color: rgba(248, 245, 239, 0.8);
   line-height: 1.6;
   margin-bottom: 28px;
 }
@@ -302,17 +306,18 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  height: 46px;
-  padding: 0 30px;
+  height: 48px;
+  padding: 0 32px;
   background-color: var(--terracotta-primary);
   color: #FFFFFF;
   font-family: var(--font-main);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  border-radius: 2px;
-  transition: all var(--transition-fast);
+  border-radius: 999px;
+  transition: all 0.3s var(--ease-smooth);
+  box-shadow: 0 6px 20px rgba(154, 90, 58, 0.3);
 }
 
 .cart-discover-btn:hover {
