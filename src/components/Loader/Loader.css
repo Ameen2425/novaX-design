@@ -1,39 +1,68 @@
-/* =========================================================
-   NOVAX — SKELETON LOADER (CREAM + BROWN EDITORIAL)
+﻿/* =========================================================
+   NOVAX — PREMIUM SKELETON LOADER
 ========================================================= */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
 
 .loader-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  padding: 20px 0;
   width: 100%;
-  padding: 40px 0;
 }
 
-.skeleton-card {
-  height: 380px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  position: relative;
+.loader-container .card {
+  background: #FFF3DD;
+  border: 1px solid #E7D0B1;
+  border-radius: 20px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(36,23,17,0.07);
 }
 
-.skeleton-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  transform: translateX(-100%);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(154, 90, 58, 0.08),
-    transparent
-  );
-  animation: skeletonShimmer 1.6s infinite;
+.loader-container .image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #E7D0B1 25%, #D5B58F 50%, #E7D0B1 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.6s infinite linear;
 }
 
-@keyframes skeletonShimmer {
-  100% {
-    transform: translateX(100%);
-  }
+.loader-container .title {
+  height: 18px;
+  border-radius: 8px;
+  margin: 4px 6px 0;
+  background: linear-gradient(90deg, #E7D0B1 25%, #D5B58F 50%, #E7D0B1 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.6s infinite linear;
 }
+
+.loader-container .text {
+  height: 12px;
+  border-radius: 8px;
+  margin: 0 6px;
+  width: 70%;
+  background: linear-gradient(90deg, #E7D0B1 25%, #D5B58F 50%, #E7D0B1 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.6s 0.1s infinite linear;
+}
+
+.loader-container .button {
+  height: 38px;
+  border-radius: 999px;
+  margin: 4px 6px 6px;
+  background: linear-gradient(90deg, #E7D0B1 25%, #D5B58F 50%, #E7D0B1 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.6s 0.2s infinite linear;
+}
+
+@media (max-width: 1024px) { .loader-container { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 768px)  { .loader-container { grid-template-columns: repeat(2,1fr); gap: 14px; } }
+@media (max-width: 480px)  { .loader-container { grid-template-columns: 1fr; } }

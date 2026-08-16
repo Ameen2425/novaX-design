@@ -81,51 +81,42 @@ const gridVariants = {
   hidden: {
     opacity: 1,
   },
-
   show: {
     opacity: 1,
-
     transition: {
-      staggerChildren: 0.28,
-      delayChildren: 0.15,
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
     },
   },
-
   exit: {
     opacity: 0,
-
     transition: {
-      duration: 0.35,
+      duration: 0.25,
     },
   },
 };
 
-
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 70,
-    scale: 0.92,
+    y: 30,
+    scale: 0.97,
   },
-
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-
     transition: {
-      duration: 0.9,
+      duration: 0.5,
       ease: [0.16, 1, 0.3, 1],
     },
   },
-
   exit: {
     opacity: 0,
-    y: 40,
-    scale: 0.95,
-
+    y: 20,
+    scale: 0.98,
     transition: {
-      duration: 0.4,
+      duration: 0.2,
       ease: "easeIn",
     },
   },
@@ -136,14 +127,14 @@ const cardVariants = {
     <div className="products-page">
 
       <div className="products-header">
-        <span>OUR COLLECTION</span>
+        <span>THE NOVAX COLLECTION</span>
 
         <h1>
-          Explore Products
+          Explore All Products
         </h1>
 
         <p>
-          Discover our collection of quality products.
+          Discover our curated collection of premium products, apparel, and essentials.
         </p>
       </div>
 
@@ -151,7 +142,7 @@ const cardVariants = {
 
         <input
           type="search"
-          placeholder="Search For Products..."
+          placeholder="SEARCH NOVAX COLLECTION..."
           value={search}
           onChange={(e) => {
             setCategory("");
@@ -169,7 +160,7 @@ const cardVariants = {
           }}
         >
           <option value="">
-            All Categories..
+            ALL CATEGORIES
           </option>
 
           {
@@ -177,7 +168,7 @@ const cardVariants = {
             <option
               key={category}
               value={category}>
-              {category}
+              {category.toUpperCase()}
             </option>
           ))
           }
@@ -189,6 +180,20 @@ const cardVariants = {
 
         {loading ? (
           <Loader />
+        ) : products.length === 0 ? (
+          <div className="products-empty">
+            <h2>No Products Found</h2>
+            <p>We couldn't find any products matching your current search or category filter.</p>
+            <button
+              onClick={() => {
+                setSearch("");
+                setCategory("");
+                setPage(1);
+              }}
+            >
+              Clear All Filters
+            </button>
+          </div>
         ) : (
           <>    
             <AnimatePresence mode="wait">
@@ -211,6 +216,8 @@ const cardVariants = {
                       description={product.description}
                       price={product.price}
                       image={product.thumbnail}
+                      category={product.category}
+                      rating={product.rating}
                     />
                   </motion.div>
                 ))

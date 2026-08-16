@@ -6,17 +6,16 @@ import novaxLogo from "../../assets/novax-logo.png";
 const Header = () => {
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/About" },
-    { name: "Products", path: "/Products" },
-    { name: "Cart", path: "/cart" },
-    { name: "User", path: "/User" },
+    { name: "About", path: "/about" },
+    { name: "Products", path: "/products" },
+    { name: "User", path: "/user" },
   ];
 
   const authLinks = [
     {
       name: "👤",
       path: "/signup",
-      className: "signup-btn"
+      className: "signup-btn",
     },
   ];
 
@@ -28,9 +27,14 @@ const Header = () => {
           <img src={novaxLogo} alt="NovaX Design Logo" className="logo-img" />
           <span className="logo-text">NovaX</span>
         </NavLink>
-        <NavLink to="/signup" className="mobile-profile-btn" title="Profile">
-          👤
-        </NavLink>
+        <div className="mobile-top-actions">
+          <NavLink to="/cart" className="mobile-cart-btn" title="Cart">
+            🛒
+          </NavLink>
+          <NavLink to="/signup" className="mobile-profile-btn" title="Profile">
+            👤
+          </NavLink>
+        </div>
       </div>
 
       {/* DESKTOP & TABLET FLOATING GLASS HEADER */}
@@ -93,7 +97,13 @@ const Header = () => {
 
       {/* MOBILE BOTTOM FLOATING CAPSULE NAVIGATION */}
       <nav className="mobile-bottom-nav">
-        {navLinks.map((item) => (
+        {[
+          { name: "Home", path: "/" },
+          { name: "Products", path: "/Products" },
+          { name: "Cart", path: "/cart" },
+          { name: "About", path: "/About" },
+          { name: "User", path: "/User" },
+        ].map((item) => (
           <NavLink
             key={item.path}
             to={item.path}

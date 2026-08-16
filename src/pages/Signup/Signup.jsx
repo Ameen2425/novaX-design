@@ -1,9 +1,25 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Signup.css";
 
-const Signup = () => {
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
 
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const Signup = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -16,61 +32,40 @@ const Signup = () => {
   const [error, setError] = useState("");
 
   const handleData = (e) => {
-
     const { name, value } = e.target;
-
     setForm((prev) => ({
       ...prev,
       [name]: value,
     }));
-
   };
 
-
   const showError = (message) => {
-
     setError(message);
-
     setTimeout(() => {
       setError("");
     }, 2000);
-
   };
 
-
   const validation = (e) => {
-
     e.preventDefault();
 
-    const {
-      name,
-      email,
-      mobile,
-      password,
-    } = form;
-
+    const { name, email, mobile, password } = form;
 
     if (!name || !email || !mobile || !password) {
       return showError("All Fields are Required");
     }
 
-
     if (!/^\S+@\S+\.\S+$/.test(email)) {
       return showError("Enter a Valid Email");
     }
-
 
     if (!/^[0-9]{10}$/.test(mobile)) {
       return showError("Enter a Valid Mobile Number");
     }
 
-
     if (password.length < 6) {
-      return showError(
-        "Password must contain at least 6 characters"
-      );
+      return showError("Password must contain at least 6 characters");
     }
-
 
     const user = {
       name,
@@ -79,47 +74,54 @@ const Signup = () => {
       password,
     };
 
-
-    localStorage.setItem(
-      "user",
-      JSON.stringify(user)
-    );
-
+    localStorage.setItem("user", JSON.stringify(user));
 
     setTimeout(() => {
       navigate("/login");
     }, 800);
-
   };
-
 
   return (
     <>
+      <AnimatePresence>
+        {error && (
+          <motion.div
+            className="signup-error-box"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {error}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {error && (
-        <div className="signup-error-box">
-          {error}
-        </div>
-      )}
-
-
-      <main className="signup-page">
-
+      <motion.main
+        className="signup-page"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <div className="signup-container">
-
-
           {/* =================================================
               LEFT PRODUCT IMAGE
           ================================================= */}
-
-          <div className="signup-image">
-
+          <motion.div
+            className="signup-image"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1200&q=85"
+              alt="Join NovaX"
+              className="auth-bg-img"
+            />
+            <div className="auth-image-overlay"></div>
             <div className="signup-image-content">
-
-              <span className="signup-image-label">
-                JOIN NOVAX
-              </span>
-
+              <span className="signup-image-label">JOIN NOVAX</span>
 
               <h2>
                 Start
@@ -127,71 +129,58 @@ const Signup = () => {
                 <span>Something New.</span>
               </h2>
 
-
               <p>
-                Create your NovaX account and discover
-                products, styles, and everyday essentials
-                curated for your shopping journey.
+                Create your NovaX account and discover products, styles, and
+                everyday essentials curated for your shopping journey.
               </p>
 
-
               <div className="signup-image-features">
-
-                <span>
+                <motion.span whileHover={{ scale: 1.05 }}>
                   New Collections
-                </span>
-
-                <span>
+                </motion.span>
+                <motion.span whileHover={{ scale: 1.05 }}>
                   Exclusive Deals
-                </span>
-
-                <span>
+                </motion.span>
+                <motion.span whileHover={{ scale: 1.05 }}>
                   Easy Shopping
-                </span>
-
+                </motion.span>
               </div>
-
             </div>
-
-          </div>
-
+          </motion.div>
 
           {/* =================================================
               RIGHT SIGNUP FORM
           ================================================= */}
-
-          <div className="signup-form-section">
-
+          <motion.div
+            className="signup-form-section"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          >
             <div className="signup-form-wrapper">
-
-              <form
+              <Link to="/" className="signup-back-link">
+                ← Back to Home
+              </Link>
+              <motion.form
                 className="signup-form"
                 onSubmit={validation}
+                initial="hidden"
+                animate="show"
+                variants={staggerContainer}
               >
-
-                <p className="signup-form-label">
+                <motion.p className="signup-form-label" variants={fadeInUp}>
                   CREATE YOUR ACCOUNT
-                </p>
+                </motion.p>
 
+                <motion.h1 variants={fadeInUp}>Sign Up</motion.h1>
 
-                <h1>
-                  Sign Up
-                </h1>
-
-
-                <p className="signup-subtitle">
-                  Create your NovaX account and start shopping.
-                </p>
-
+                <motion.p className="signup-subtitle" variants={fadeInUp}>
+                  Join NovaX to discover and order curated products.
+                </motion.p>
 
                 {/* NAME */}
-
-                <div className="signup-form-group">
-
-                  <label>
-                    Full Name
-                  </label>
-
+                <motion.div className="signup-form-group" variants={fadeInUp}>
+                  <label>Full Name</label>
                   <input
                     type="text"
                     name="name"
@@ -199,18 +188,11 @@ const Signup = () => {
                     value={form.name}
                     onChange={handleData}
                   />
-
-                </div>
-
+                </motion.div>
 
                 {/* EMAIL */}
-
-                <div className="signup-form-group">
-
-                  <label>
-                    Email
-                  </label>
-
+                <motion.div className="signup-form-group" variants={fadeInUp}>
+                  <label>Email</label>
                   <input
                     type="email"
                     name="email"
@@ -218,18 +200,11 @@ const Signup = () => {
                     value={form.email}
                     onChange={handleData}
                   />
-
-                </div>
-
+                </motion.div>
 
                 {/* MOBILE */}
-
-                <div className="signup-form-group">
-
-                  <label>
-                    Mobile Number
-                  </label>
-
+                <motion.div className="signup-form-group" variants={fadeInUp}>
+                  <label>Mobile Number</label>
                   <input
                     type="tel"
                     name="mobile"
@@ -237,18 +212,11 @@ const Signup = () => {
                     value={form.mobile}
                     onChange={handleData}
                   />
-
-                </div>
-
+                </motion.div>
 
                 {/* PASSWORD */}
-
-                <div className="signup-form-group">
-
-                  <label>
-                    Password
-                  </label>
-
+                <motion.div className="signup-form-group" variants={fadeInUp}>
+                  <label>Password</label>
                   <input
                     type="password"
                     name="password"
@@ -256,61 +224,38 @@ const Signup = () => {
                     value={form.password}
                     onChange={handleData}
                   />
-
-                </div>
-
+                </motion.div>
 
                 {/* TERMS */}
-
-                <div className="signup-terms">
-
-                  <input
-                    type="checkbox"
-                    required
-                  />
-
-                  <label>
-                    I agree to the Terms and Conditions
-                  </label>
-
-                </div>
-
+                <motion.div className="signup-terms" variants={fadeInUp}>
+                  <input type="checkbox" required />
+                  <label>I agree to the Terms and Conditions</label>
+                </motion.div>
 
                 {/* BUTTON */}
-
-                <button
+                <motion.button
                   type="submit"
                   className="signup-submit-btn"
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Create Account
                   <span>→</span>
-                </button>
-
+                </motion.button>
 
                 {/* LOGIN */}
-
-                <p className="signup-login-text">
-
+                <motion.p className="signup-login-text" variants={fadeInUp}>
                   Already have an account?
-
-                  <Link to="/login">
-                    Login
-                  </Link>
-
-                </p>
-
-              </form>
-
+                  <Link to="/login"> Login</Link>
+                </motion.p>
+              </motion.form>
             </div>
-
-          </div>
-
+          </motion.div>
         </div>
-
-      </main>
-
+      </motion.main>
     </>
   );
 };
 
-export default Signup;
+export default Signup;

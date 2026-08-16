@@ -1,99 +1,75 @@
-/* =========================================================
-   NOVAX — EXTRA-STRONG EARTHY LUXURY FOOTER
+﻿/* =========================================================
+   NOVAX — PREMIUM DARK FOOTER
 ========================================================= */
-
 .footer {
-  width: 100%;
-  background-color: #241711;
-  color: #FFF3DD;
-  padding: 80px 4% 50px;
-  border-top: 1px solid rgba(255, 243, 221, 0.22);
-  margin-top: auto;
+  background: #241711;
+  color: #E7D0B1;
+  padding: 72px 0 0;
   position: relative;
   overflow: hidden;
 }
 
-/* WATERMARK BACKGROUND TEXT */
 .footer::before {
   content: "NOVAX";
   position: absolute;
   bottom: -20px;
-  right: -20px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-serif);
-  font-size: clamp(120px, 20vw, 280px);
+  font-size: clamp(80px, 14vw, 200px);
   font-weight: 700;
-  color: rgba(255, 243, 221, 0.03);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
+  color: rgba(255,243,221,0.04);
+  white-space: nowrap;
   pointer-events: none;
   user-select: none;
-  z-index: 0;
+  line-height: 1;
 }
 
 .footer-container {
   max-width: 1280px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  padding: 0 5%;
 }
 
-/* 1. FOOTER MAIN GRID CONTENT */
 .footer-content {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
   gap: 48px;
-  padding-bottom: 50px;
-  border-bottom: 1px solid rgba(255, 243, 221, 0.22);
-  align-items: start;
-}
-
-/* BRAND COLUMN */
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(159,128,99,0.25);
 }
 
 .footer-logo {
   font-family: var(--font-serif);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: #FFF3DD;
   text-decoration: none;
+  display: block;
   margin-bottom: 16px;
-  display: inline-block;
-  transition: opacity 0.25s ease;
+  transition: color 0.25s ease;
 }
 
-.footer-logo:hover {
-  opacity: 0.88;
-}
+.footer-logo:hover { color: #E28B68; }
 
 .footer-brand p {
   font-family: var(--font-main);
   font-size: 14px;
   line-height: 1.7;
-  color: #E7D0B1;
-  max-width: 340px;
+  color: #9F8063;
+  max-width: 260px;
 }
 
-/* LINKS COLUMNS */
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.footer-links h3 {
+.footer-links h3,
+.footer-contact h3 {
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #E28B68;
+  color: #C6532F;
   margin-bottom: 20px;
 }
 
@@ -106,108 +82,77 @@
   gap: 12px;
 }
 
-.footer-links a {
+.footer-links ul li a {
   font-family: var(--font-main);
   font-size: 14px;
-  color: #FFF3DD;
+  color: #9F8063;
   text-decoration: none;
-  transition: all 0.25s var(--ease-smooth);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
 }
 
-.footer-links a:hover {
-  color: #E28B68;
-  transform: translateX(4px);
-}
-
-/* CONTACT COLUMN */
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.footer-contact h3 {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #E28B68;
-  margin-bottom: 20px;
+.footer-links ul li a:hover {
+  color: #FFF3DD;
+  padding-left: 4px;
 }
 
 .footer-contact p {
   font-family: var(--font-main);
-  font-size: 14px;
-  color: #E7D0B1;
-  margin-bottom: 10px;
+  font-size: 13.5px;
+  color: #9F8063;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
 .footer-socials {
   display: flex;
-  align-items: center;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .footer-socials a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 243, 221, 0.10);
-  border: 1px solid rgba(255, 243, 221, 0.22);
-  color: #FFF3DD;
+  border: 1px solid rgba(159,128,99,0.40);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  color: #9F8063;
+  font-size: 13px;
   text-decoration: none;
-  transition: all 0.25s var(--ease-smooth);
+  transition: all 0.25s ease;
 }
 
 .footer-socials a:hover {
   background: #C6532F;
   border-color: #C6532F;
-  color: #FFFFFF;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 14px rgba(198, 83, 47, 0.35);
+  color: #FFF3DD;
+  transform: translateY(-2px);
 }
 
-/* 2. FOOTER BOTTOM COPYRIGHT & LEGAL */
 .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 32px;
-  font-family: var(--font-main);
-  font-size: 13px;
-  color: #E7D0B1;
+  padding: 24px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-bottom p {
-  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(159,128,99,0.7);
+  letter-spacing: 0.08em;
 }
 
-/* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 36px; }
 }
 
-@media (max-width: 767px) {
-  .footer {
-    padding: 50px 20px 120px; /* Clearance for mobile bottom capsule navbar */
-  }
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
+@media (max-width: 640px) {
+  .footer-content { grid-template-columns: 1fr; gap: 32px; padding-bottom: 48px; }
+  .footer-bottom  { flex-direction: column; gap: 8px; text-align: center; }
+  .footer         { padding-bottom: 90px; }
 }

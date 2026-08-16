@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Loader from "../components/Loader/Loader";
 
 export const Home = React.lazy(() => import("../pages/Home/Home"));
@@ -12,6 +13,7 @@ export const Users = React.lazy(() => import("../pages/Users/Users"));
 export const SingleProduct = React.lazy(() => import("../pages/SinglePage/SingleProduct"));
 
 export const AppRouter = () => {
+  const location = useLocation();
 
   const routes = [
     {
@@ -50,17 +52,17 @@ export const AppRouter = () => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <Routes>
-
-        {routes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={route.element}
-          />
-        ))}
-
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={route.element}
+            />
+          ))}
+        </Routes>
+      </AnimatePresence>
     </Suspense>
   );
-};
+};

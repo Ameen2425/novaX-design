@@ -1,271 +1,316 @@
-/* =========================================================
-   NOVAX — USERS DIRECTORY (EXTRA-STRONG EARTHY LUXURY)
+﻿/* =========================================================
+   NOVAX — PREMIUM USERS ADMIN PAGE CSS
 ========================================================= */
 
 .users-page {
-  width: 100%;
   min-height: 100vh;
-  padding: 120px 4% 100px;
-  background-color: #C8AD8F;
-  color: #241711;
+  background: #C8AD8F;
+  padding: 110px 5% 100px;
   max-width: 1280px;
   margin: 0 auto;
-  overflow-x: hidden;
-}
-
-/* SEARCH BAR INPUT (#FFF3DD BACKGROUND, #765A43 BORDER) */
-.users-page > input[type="text"] {
-  width: 100%;
-  max-width: 440px;
-  height: 48px;
-  padding: 0 18px;
-  background-color: #FFF3DD;
-  border: 1px solid #765A43;
-  border-radius: 999px;
   color: #241711;
-  font-family: var(--font-main);
-  font-size: 14px;
-  margin-bottom: 30px;
-  transition: all var(--transition-fast);
-  display: block;
 }
 
-.users-page > input[type="text"]::placeholder {
-  color: #6D5748;
+/* ── 1. HEADER ───────────────────────────────────── */
+.users-header {
+  text-align: center;
+  padding-bottom: 36px;
 }
 
-.users-page > input[type="text"]:focus {
-  border-color: #C6532F;
-  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.15);
-  outline: none;
-}
-
-/* TABLE CONTAINER & CARD (#FFF3DD SURFACE, #9F8063 BORDER) */
-.users-page-table-wrap {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 20px;
-  border: 1px solid #9F8063;
-  background-color: #FFF3DD;
-  box-shadow: 0 10px 28px rgba(36, 23, 17, 0.15);
-  margin-bottom: 40px;
-}
-
-/* Scrollbar styling */
-.users-page-table-wrap::-webkit-scrollbar {
-  height: 8px;
-}
-
-.users-page-table-wrap::-webkit-scrollbar-track {
-  background: #E7D0B1;
-  border-radius: 999px;
-}
-
-.users-page-table-wrap::-webkit-scrollbar-thumb {
-  background: #9F8063;
-  border-radius: 999px;
-}
-
-.users-page-table-wrap::-webkit-scrollbar-thumb:hover {
-  background: #C6532F;
-}
-
-.users-page table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: separate;
-  border-spacing: 0;
-  background-color: #FFF3DD;
-  font-family: var(--font-main);
-  font-size: 14px;
-  text-align: left;
-}
-
-.users-page th {
-  background-color: #E7D0B1;
+.users-header span {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
+  color: #C6532F;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.users-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
   color: #241711;
-  padding: 18px 24px;
-  border-bottom: 1px solid #9F8063;
-  white-space: nowrap;
+  line-height: 1.1;
+  margin-bottom: 12px;
 }
 
-.users-page td {
-  padding: 18px 24px;
-  border-bottom: 1px solid #9F8063;
-  color: #241711;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-
-.users-page tr:last-child td {
-  border-bottom: none;
-}
-
-.users-page tbody tr {
-  transition: background-color var(--transition-fast);
-}
-
-.users-page tbody tr:hover {
-  background-color: #F0D9BA;
-}
-
-/* EDIT & DELETE BUTTON OVERRIDES */
-.users-page .btn-warning {
-  background-color: transparent !important;
-  color: #C6532F !important;
-  border: 1px solid #C6532F !important;
+.users-header p {
   font-family: var(--font-main);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 8px 20px;
-  border-radius: 999px !important;
-  transition: all var(--transition-fast);
-  cursor: pointer;
+  font-size: 15px;
+  color: #6D5748;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-.users-page .btn-warning:hover {
-  background-color: #C6532F !important;
-  color: #FFFFFF !important;
-  transform: translateY(-2px);
-}
-
-.users-page .btn-danger {
-  background-color: transparent !important;
-  color: #B52F2F !important;
-  border: 1px solid #B52F2F !important;
-  font-family: var(--font-main);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 8px 20px;
-  border-radius: 999px !important;
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-.users-page .btn-danger:hover {
-  background-color: #B52F2F !important;
-  color: #FFFFFF !important;
-  transform: translateY(-2px);
-}
-
-/* EDIT USER OFFCANVAS DRAWER (#FFF3DD DRAWER SURFACE) */
-.offcanvas.offcanvas-start {
-  background-color: #FFF3DD !important;
-  color: #241711 !important;
-  border-right: 1px solid #9F8063 !important;
-  width: 440px !important;
-  max-width: 100vw;
-  padding: 100px 24px 30px !important;
-  z-index: 9990 !important;
-  box-shadow: 0 16px 42px rgba(36, 23, 17, 0.20) !important;
-}
-
-.offcanvas-header {
-  border-bottom: 1px solid #9F8063;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
+/* ── 2. CONTROLS ROW ─────────────────────────────── */
+.users-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
-.offcanvas-header .btn-close {
-  opacity: 0.8;
-  padding: 8px;
-  margin: 0;
-  transition: all var(--transition-fast);
+.users-controls input {
+  flex: 1;
+  max-width: 480px;
+  min-width: 260px;
+  height: 52px;
+  padding: 0 20px 0 52px;
+  background: #FFF3DD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236D5748' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.868-3.833zm-5.242 1.856a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 20px center;
+  border: 1.5px solid #9F8063;
+  border-radius: 999px;
+  font-family: var(--font-main);
+  font-size: 13.5px;
+  color: #241711;
+  outline: none;
+  box-shadow: 0 4px 14px rgba(36, 23, 17, 0.06);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.users-controls input::placeholder {
+  color: #9F8063;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.users-controls input:focus {
+  border-color: #C6532F;
+  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.12);
+}
+
+.users-count-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C6532F;
+  background: #FFF3DD;
+  border: 1px solid #9F8063;
+  padding: 10px 20px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(36, 23, 17, 0.06);
+}
+
+/* ── 3. TABLE WRAPPER ────────────────────────────── */
+.users-page-table-wrap {
+  background: #FFF3DD;
+  border: 1px solid #9F8063;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(36, 23, 17, 0.12);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+thead tr {
+  background: #241711;
+}
+
+thead th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: #FFF3DD;
+  padding: 18px 24px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid #E7D0B1;
+  transition: background 0.2s ease;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(198, 83, 47, 0.05);
+}
+
+tbody td {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: #49372C;
+  padding: 16px 24px;
+  vertical-align: middle;
+}
+
+tbody td strong {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: #C6532F;
+}
+
+/* BUTTONS */
+.btn {
   cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  height: 36px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.22s ease;
 }
 
-.offcanvas-header .btn-close:hover {
-  opacity: 1;
-  transform: scale(1.15);
+.btn-warning {
+  background: rgba(176, 122, 33, 0.14);
+  color: #8C5D0E;
+  border: 1px solid rgba(176, 122, 33, 0.40);
+}
+
+.btn-warning:hover {
+  background: #B07A21;
+  color: #FFF3DD;
+  border-color: #B07A21;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(176, 122, 33, 0.30);
+}
+
+.btn-danger {
+  background: rgba(181, 47, 47, 0.12);
+  color: #B52F2F;
+  border: 1px solid rgba(181, 47, 47, 0.35);
+}
+
+.btn-danger:hover {
+  background: #B52F2F;
+  color: #FFF3DD;
+  border-color: #B52F2F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(181, 47, 47, 0.30);
+}
+
+/* ── 4. OFFCANVAS EDIT DRAWER ────────────────────── */
+.offcanvas {
+  background: #FFF3DD !important;
+  border-right: 1px solid #9F8063 !important;
+  width: 380px !important;
+  box-shadow: 12px 0 36px rgba(36, 23, 17, 0.20) !important;
+}
+
+.offcanvas-header {
+  background: #241711 !important;
+  border-bottom: 1px solid #3B281F !important;
+  padding: 24px !important;
 }
 
 .offcanvas-title {
   font-family: var(--font-serif) !important;
-  font-size: 32px !important;
-  font-weight: 500 !important;
-  color: #241711 !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  color: #FFF3DD !important;
+}
+
+.btn-close {
+  filter: invert(1) !important;
+  opacity: 0.8 !important;
+}
+
+.offcanvas-body {
+  padding: 32px 24px !important;
+}
+
+.offcanvas-body .mb-3 {
+  margin-bottom: 22px !important;
 }
 
 .offcanvas-body label {
+  display: block;
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #49372C;
-  display: block;
   margin-bottom: 8px;
 }
 
-.offcanvas-body input.form-control {
+.offcanvas-body .form-control {
   width: 100%;
   height: 48px;
-  padding: 0 16px;
-  background-color: #F8EBD7;
-  border: 1px solid #765A43;
-  border-radius: 12px;
-  color: #241711;
+  padding: 0 18px;
+  background: #F8EBD7;
+  border: 1.5px solid #9F8063 !important;
+  border-radius: 14px !important;
   font-family: var(--font-main);
   font-size: 14px;
-  margin-bottom: 20px;
-  transition: all var(--transition-fast);
-}
-
-.offcanvas-body input.form-control:focus {
-  border-color: #C6532F;
-  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.15);
+  color: #241711;
   outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+  box-shadow: none !important;
 }
 
-.offcanvas-body .btn-primary {
-  width: 100%;
-  height: 50px;
-  background-color: #C6532F !important;
-  border: 1px solid #C6532F !important;
-  color: #FFFFFF !important;
-  font-family: var(--font-main);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.offcanvas-body .form-control:focus {
+  border-color: #C6532F !important;
+  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.12) !important;
+}
+
+.btn-primary {
+  height: 52px;
+  padding: 0 28px;
+  background: #C6532F !important;
+  color: #FFF3DD !important;
+  border: none !important;
   border-radius: 999px !important;
-  margin-top: 10px;
-  transition: all var(--transition-fast);
+  font-family: var(--font-main);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(198, 83, 47, 0.30);
+  transition: background 0.25s ease, transform 0.2s ease !important;
+  box-shadow: 0 8px 24px rgba(198, 83, 47, 0.30) !important;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.offcanvas-body .btn-primary:hover {
-  background-color: #91371F !important;
-  border-color: #91371F !important;
-  transform: translateY(-2px);
+.btn-primary:hover {
+  background: #91371F !important;
+  transform: translateY(-2px) !important;
 }
 
-/* RESPONSIVE BREAKPOINTS */
-@media (max-width: 767px) {
+/* ── 5. RESPONSIVE ───────────────────────────────── */
+@media (max-width: 768px) {
   .users-page {
-    padding: 72px 16px 100px;
+    padding: 90px 4% 100px;
   }
-  .users-page th,
-  .users-page td {
-    padding: 14px 16px;
+  .users-controls {
+    flex-direction: column;
+    align-items: stretch;
   }
-  .offcanvas.offcanvas-start {
-    width: 100vw !important;
-    padding: 80px 18px 100px !important;
+  .users-controls input {
+    max-width: 100%;
+  }
+  .users-count-badge {
+    text-align: center;
+  }
+  .offcanvas {
+    width: 100% !important;
   }
 }

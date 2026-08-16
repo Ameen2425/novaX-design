@@ -1,6 +1,5 @@
-/* =========================================================
-   NOVAX — FLOATING GLASS NAVBAR & MOBILE BOTTOM CAPSULE NAV
-   (EXTRA-STRONG EARTHY LUXURY PALETTE)
+﻿/* =========================================================
+   NOVAX — FROSTED GLASS LUXURY NAVBAR & MOBILE NAV
 ========================================================= */
 
 @keyframes headerEntrance {
@@ -14,35 +13,36 @@
   }
 }
 
-/* ---------------------------------------------------------
-   1. DESKTOP & TABLET FLOATING HEADER (>= 768PX)
---------------------------------------------------------- */
+/* ── 1. DESKTOP & TABLET FLOATING FROSTED GLASS HEADER ── */
 .desktop-header {
   position: fixed;
   top: 18px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 80px);
-  max-width: 1280px;
+  width: calc(100% - 64px);
+  max-width: 1200px;
   height: 64px;
   padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   
-  /* High-Contrast Glassmorphism Surface */
-  background: rgba(255, 243, 221, 0.96);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid #9F8063;
+  /* Frosted Glassmorphism with Ivory Hue & Top Light Reflex */
+  background: rgba(255, 243, 221, 0.72);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1.5px solid rgba(159, 128, 99, 0.40);
   border-radius: 999px;
-  box-shadow: 0 12px 32px rgba(36, 23, 17, 0.20);
+  box-shadow: 
+    0 16px 40px rgba(36, 23, 17, 0.15),
+    0 2px 8px rgba(36, 23, 17, 0.06),
+    inset 0 1px 2px rgba(255, 255, 255, 0.85);
   
   z-index: 9999;
   margin: 0 auto;
   color: #241711;
   animation: headerEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  transition: all 0.3s var(--ease-smooth);
+  transition: all 0.3s ease;
 }
 
 .mobile-top-brand {
@@ -53,7 +53,7 @@
   display: none;
 }
 
-/* LOGO SECTION */
+/* LOGO */
 .logo {
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@
   text-decoration: none;
   flex-shrink: 0;
   z-index: 2;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.2s ease;
 }
 
 .logo:hover {
@@ -69,15 +69,16 @@
 }
 
 .logo-img {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
   border-radius: 50%;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(36, 23, 17, 0.12);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .logo:hover .logo-img {
-  transform: scale(1.06) rotate(4deg);
+  transform: scale(1.08) rotate(4deg);
 }
 
 .logo-text {
@@ -90,12 +91,12 @@
   line-height: 1;
 }
 
-/* CENTER NAVIGATION */
+/* CENTER NAVIGATION LINKS */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 8px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -104,42 +105,34 @@
 
 .nav-link {
   font-family: var(--font-main);
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #49372C;
   text-decoration: none;
-  padding: 8px 4px;
+  padding: 8px 18px;
+  border-radius: 999px;
   position: relative;
-  transition: all 0.25s var(--ease-smooth);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
 .nav-link:hover {
-  color: #91371F;
+  color: #C6532F;
+  background: rgba(198, 83, 47, 0.10);
   transform: translateY(-1px);
 }
 
 .nav-link.active {
-  color: #C6532F;
-  font-weight: 700;
+  color: #FFF3DD;
+  background: #C6532F;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(198, 83, 47, 0.35);
+  transform: translateY(-1px);
 }
 
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 2px;
-  background-color: #C6532F;
-  border-radius: 999px;
-  transition: width 0.25s ease;
-}
-
-/* RIGHT ACTION AREA */
+/* RIGHT ACTION ICONS */
 .header-actions {
   display: flex;
   align-items: center;
@@ -155,42 +148,46 @@
 }
 
 .header-action-icon {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: #E7D0B1;
-  border: 1px solid #9F8063;
+  background: rgba(231, 208, 177, 0.65);
+  border: 1px solid rgba(159, 128, 99, 0.40);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #49372C;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.25s var(--ease-smooth);
+  transition: all 0.22s ease;
   text-decoration: none;
   outline: none;
 }
 
 .header-action-icon:hover {
-  background: rgba(198, 83, 47, 0.16);
+  background: rgba(198, 83, 47, 0.20);
   border-color: #C6532F;
   color: #C6532F;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.06);
 }
 
 .header .signup-btn {
-  width: 34px !important;
-  height: 34px !important;
-  min-width: 34px !important;
-  max-height: 34px !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  max-height: 36px !important;
   border-radius: 50% !important;
-  background: #E7D0B1 !important;
-  border: 1px solid #9F8063 !important;
+  background: rgba(231, 208, 177, 0.65) !important;
+  border: 1px solid rgba(159, 128, 99, 0.40) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #241711 !important;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  transition: all 0.25s var(--ease-smooth);
+  transition: all 0.22s ease;
   text-decoration: none;
   margin: 0;
   padding: 0;
@@ -201,39 +198,37 @@
   background: #C6532F !important;
   color: #FFFFFF !important;
   border-color: #C6532F !important;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 14px rgba(198, 83, 47, 0.30);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 14px rgba(198, 83, 47, 0.35);
 }
 
-/* TABLET COMPACT HEADER (768PX - 1024PX) */
+/* ── TABLET BREAKPOINT (768px - 1024px) ─────────── */
 @media (min-width: 768px) and (max-width: 1024px) {
   .desktop-header {
-    width: calc(100% - 40px);
+    width: calc(100% - 32px);
     height: 60px;
     padding: 0 16px;
   }
   .navbar {
-    gap: 14px;
+    gap: 6px;
   }
   .nav-link {
-    font-size: 9.5px;
+    font-size: 10px;
     letter-spacing: 0.08em;
-    padding: 6px 2px;
+    padding: 6px 12px;
   }
   .logo-text {
     font-size: 19px;
   }
 }
 
-/* ---------------------------------------------------------
-   2. MOBILE BREAKPOINT (< 768PX) — BOTTOM FLOATING NAVIGATION
---------------------------------------------------------- */
+/* ── 2. MOBILE BREAKPOINT (< 768px) ─────────────── */
 @media (max-width: 767px) {
   .desktop-header {
     display: none !important;
   }
 
-  /* MOBILE TOP BRAND BAR */
+  /* TOP BRAND BAR */
   .mobile-top-brand {
     display: flex;
     align-items: center;
@@ -242,20 +237,22 @@
     top: 12px;
     left: 12px;
     right: 12px;
-    height: 50px;
+    height: 52px;
     padding: 0 18px;
-    background: rgba(255, 243, 221, 0.97);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid #9F8063;
+    background: rgba(255, 243, 221, 0.78);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1.5px solid rgba(159, 128, 99, 0.40);
     border-radius: 999px;
-    box-shadow: 0 6px 20px rgba(36, 23, 17, 0.16);
+    box-shadow: 
+      0 8px 24px rgba(36, 23, 17, 0.14),
+      inset 0 1px 2px rgba(255, 255, 255, 0.75);
     z-index: 9998;
   }
 
   .mobile-top-brand .logo-img {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
 
   .mobile-top-brand .logo-text {
@@ -263,25 +260,40 @@
     color: #241711;
   }
 
+  .mobile-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mobile-cart-btn,
   .mobile-profile-btn {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
-    background: #E7D0B1;
-    border: 1px solid #9F8063;
+    background: rgba(231, 208, 177, 0.65);
+    border: 1px solid rgba(159, 128, 99, 0.40);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     color: #241711;
     text-decoration: none;
+    transition: all 0.22s ease;
   }
 
-  /* MOBILE BOTTOM CAPSULE NAVIGATION */
+  .mobile-cart-btn:hover,
+  .mobile-profile-btn:hover {
+    background: #C6532F;
+    color: #FFFFFF;
+    border-color: #C6532F;
+  }
+
+  /* BOTTOM FLOATING CAPSULE NAVIGATION */
   .mobile-bottom-nav {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
     align-items: center;
+    justify-content: space-around;
     position: fixed;
     bottom: 12px;
     left: 12px;
@@ -289,11 +301,13 @@
     height: 64px;
     z-index: 9999;
     border-radius: 24px;
-    background: rgba(255, 243, 221, 0.97);
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid #9F8063;
-    box-shadow: 0 12px 32px rgba(36, 23, 17, 0.22);
+    background: rgba(255, 243, 221, 0.78);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1.5px solid rgba(159, 128, 99, 0.40);
+    box-shadow: 
+      0 14px 36px rgba(36, 23, 17, 0.20),
+      inset 0 1px 2px rgba(255, 255, 255, 0.75);
     padding: 0 6px;
   }
 
@@ -304,20 +318,20 @@
     justify-content: center;
     text-decoration: none;
     color: #49372C;
-    gap: 3px;
+    gap: 2px;
     height: 100%;
-    width: 100%;
-    transition: all 0.25s ease;
+    flex: 1;
+    transition: all 0.22s ease;
   }
 
   .mobile-nav-icon-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    width: 38px;
     height: 28px;
     border-radius: 999px;
-    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+    transition: transform 0.22s ease, background-color 0.22s ease, color 0.22s ease;
   }
 
   .mobile-nav-label {
@@ -326,7 +340,7 @@
     font-weight: 600;
     letter-spacing: 0.06em;
     opacity: 0.85;
-    transition: opacity 0.25s ease, color 0.25s ease;
+    transition: opacity 0.22s ease, color 0.22s ease;
   }
 
   .mobile-nav-item.active {
@@ -334,7 +348,7 @@
   }
 
   .mobile-nav-item.active .mobile-nav-icon-wrap {
-    background-color: rgba(198, 83, 47, 0.18);
+    background-color: rgba(198, 83, 47, 0.20);
     color: #C6532F;
     transform: scale(1.08);
   }

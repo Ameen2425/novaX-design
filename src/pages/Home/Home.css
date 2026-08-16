@@ -1,24 +1,22 @@
-/* =========================================================
-   NOVAX — EXTRA-STRONG EARTHY LUXURY HOMEPAGE (LCD OPTIMIZED)
+﻿/* =========================================================
+   NOVAX — COMPLETE PREMIUM HOMEPAGE CSS
 ========================================================= */
 
 .home-page {
   width: 100%;
-  padding-top: 100px;
+  padding-top: 110px;
   padding-bottom: 60px;
-  background-color: #C8AD8F;
+  background: #C8AD8F;
   color: #241711;
   overflow-x: hidden;
 }
 
-/* ---------------------------------------------------------
-   HERO SECTION (#C8AD8F BACKGROUND)
---------------------------------------------------------- */
+/* ── 1. HERO SECTION ────────────────────────────── */
 .cream-hero-section {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 40px 4% 80px;
+  padding: 30px 5% 70px;
 }
 
 .cream-hero-container {
@@ -32,13 +30,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: left;
 }
 
 .cream-hero-label {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #C6532F;
@@ -47,9 +44,9 @@
 
 .serif-title {
   font-family: var(--font-serif);
-  font-size: clamp(42px, 5.2vw, 68px);
+  font-size: clamp(38px, 4.8vw, 64px);
   font-weight: 500;
-  line-height: 1.06;
+  line-height: 1.08;
   color: #241711;
   margin-bottom: 20px;
   letter-spacing: -0.01em;
@@ -79,20 +76,56 @@
 }
 
 .btn-terracotta {
-  border-radius: 999px !important;
-  background-color: #C6532F !important;
-  border-color: #C6532F !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 34px;
+  background: #C6532F;
+  color: #FFF3DD;
+  font-family: var(--font-main);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid #C6532F;
+  box-shadow: 0 8px 24px rgba(198, 83, 47, 0.30);
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .btn-terracotta:hover {
-  background-color: #91371F !important;
-  border-color: #91371F !important;
+  background: #91371F;
+  border-color: #91371F;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(198, 83, 47, 0.40);
+  color: #FFF3DD;
 }
 
 .btn-outline-dark {
-  border-radius: 999px !important;
-  border-color: #765A43 !important;
-  color: #241711 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 30px;
+  background: transparent;
+  color: #241711;
+  font-family: var(--font-main);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  border: 1px solid #765A43;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-dark:hover {
+  border-color: #C6532F;
+  color: #C6532F;
+  background: rgba(198, 83, 47, 0.06);
 }
 
 .cream-hero-trust {
@@ -108,11 +141,6 @@
   flex-wrap: wrap;
 }
 
-.cream-hero-trust span {
-  color: #6D5748;
-}
-
-/* HERO VISUAL FRAME (#D5B58F BACKGROUND, 30PX CORNERS, VISIBLE BORDER) */
 .cream-hero-visual {
   position: relative;
   width: 100%;
@@ -125,15 +153,15 @@
   border-radius: 30px;
   border: 1px solid #9F8063;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(36, 23, 17, 0.16);
-  background-color: #D5B58F;
+  box-shadow: 0 16px 48px rgba(36, 23, 17, 0.18);
+  background: #D5B58F;
 }
 
 .cream-hero-image-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s var(--ease-smooth);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cream-hero-image-frame:hover img {
@@ -144,38 +172,42 @@
   position: absolute;
   bottom: 24px;
   left: 24px;
-  background: rgba(255, 243, 221, 0.96);
+  background: rgba(255, 243, 221, 0.97);
   backdrop-filter: blur(12px);
-  padding: 10px 20px;
+  padding: 12px 22px;
   border-radius: 999px;
   border: 1px solid #9F8063;
-  box-shadow: 0 8px 24px rgba(36, 23, 17, 0.15);
+  box-shadow: 0 6px 22px rgba(36, 23, 17, 0.14);
 }
 
 .cream-hero-badge span {
   font-family: var(--font-mono);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #241711;
+  color: #C6532F;
 }
 
-/* ---------------------------------------------------------
-   CATEGORY SECTION (#FFF3DD & #E7D0B1 CARDS)
---------------------------------------------------------- */
-.home-categories {
-  width: 100%;
+/* ── 2. SHARED SECTION HEADINGS ─────────────────── */
+.home-categories,
+.home-products,
+.home-benefits-section,
+.home-experience,
+.home-stats-section,
+.location-section {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 4%;
+  padding: 0 5% 80px;
 }
 
 .home-section-heading {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .home-section-heading.centered {
@@ -186,104 +218,192 @@
 
 .home-label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: #C6532F;
-  margin-bottom: 10px;
   display: block;
+  margin-bottom: 8px;
 }
 
 .home-section-heading h2 {
   font-family: var(--font-serif);
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 500;
   color: #241711;
+  line-height: 1.15;
+}
+
+.home-section-heading > div > p,
+.home-section-heading.centered > p {
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: #6D5748;
+  max-width: 460px;
+  line-height: 1.65;
+  margin-top: 10px;
 }
 
 .home-section-heading a {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #C6532F;
-  transition: transform var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 .home-section-heading a:hover {
-  transform: translateX(4px);
+  color: #91371F;
 }
 
-.home-category-list {
+/* ── 3. INTERACTIVE CATEGORY CARDS (5-COL GRID) ─── */
+.home-category-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  align-items: stretch;
 }
 
-/* ALTERNATING CATEGORY CARDS (#FFF3DD & #E7D0B1) */
-.home-category-item {
-  background-color: #FFF3DD;
+.home-category-card-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home-category-card {
+  background: #FFF3DD;
   border: 1px solid #9F8063;
   border-radius: 20px;
-  padding: 30px 22px;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: #241711;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 180px;
-  text-decoration: none;
-  transition: all 0.3s var(--ease-smooth);
+  height: 100%;
+  min-height: 200px;
+  box-shadow: 0 4px 18px rgba(36, 23, 17, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.home-category-item:nth-child(even) {
-  background-color: #E7D0B1;
+.home-category-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #C6532F;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.home-category-item:hover {
+.home-category-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 40px rgba(36, 23, 17, 0.16);
   border-color: #C6532F;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(36, 23, 17, 0.15);
-  background-color: #F0D9BA;
+}
+
+.home-category-card:hover::after {
+  transform: scaleX(1);
+}
+
+.home-cat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .home-cat-num {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #C6532F;
+  background: rgba(198, 83, 47, 0.10);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.home-cat-icon {
+  font-size: 20px;
+}
+
+.home-cat-card-body {
+  margin-bottom: 24px;
+}
+
+.home-cat-card-body h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
   font-weight: 600;
+  color: #241711;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.home-cat-card-body p {
+  font-family: var(--font-main);
+  font-size: 12.5px;
+  color: #6D5748;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-cat-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #E7D0B1;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: #C6532F;
 }
 
-.home-category-item h3 {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 600;
-  color: #241711;
-  margin-bottom: 4px;
+.home-cat-arrow {
+  font-size: 14px;
+  transition: transform 0.25s ease;
 }
 
-.home-category-item p {
-  font-size: 12px;
-  color: #49372C;
+.home-category-card:hover .home-cat-arrow {
+  transform: translateX(4px);
 }
 
-/* ---------------------------------------------------------
-   TRENDING PRODUCTS GRID (4-COLUMNS DESKTOP -> 1-COLUMN MOBILE)
---------------------------------------------------------- */
-.home-products {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 4% 80px;
+/* ── 4. TRENDING PRODUCTS GRID ──────────────────── */
+.home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.home-grid-card-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .home-products-loading {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 60px 20px;
+  align-items: center;
   gap: 16px;
+  padding: 60px 0;
 }
 
 .home-loader {
@@ -295,10 +415,6 @@
   animation: spin 0.8s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
 .home-products-loading span {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -307,605 +423,481 @@
   color: #6D5748;
 }
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .home-products-empty {
   text-align: center;
   padding: 60px 20px;
-  background: #FFF3DD;
-  border: 1px solid #9F8063;
-  border-radius: 20px;
 }
 
 .home-products-empty p {
   font-size: 15px;
-  color: #49372C;
+  color: #6D5748;
   margin-bottom: 16px;
 }
 
 .home-products-empty a {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: #C6532F;
-}
-
-.home-product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.home-product-card {
-  background: #FFF3DD;
-  border: 1px solid #9F8063;
-  border-radius: 20px;
-  overflow: hidden;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s var(--ease-smooth);
-  box-shadow: 0 8px 24px rgba(36, 23, 17, 0.12);
 }
 
-.home-product-card:hover {
-  border-color: #C6532F;
-  transform: translateY(-4px);
-  box-shadow: 0 16px 42px rgba(36, 23, 17, 0.20);
-}
-
-.home-product-image {
-  width: calc(100% - 16px);
-  aspect-ratio: 1 / 1;
-  margin: 8px;
-  background-color: #D5B58F;
-  border-radius: 16px;
-  position: relative;
-  overflow: hidden;
-}
-
-.home-product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 18px;
-  transition: transform 0.5s var(--ease-smooth);
-}
-
-.home-product-card:hover .home-product-image img {
-  transform: scale(1.05);
-}
-
-.home-product-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #FFF3DD;
-  background-color: #3B281F;
-  padding: 3px 8px;
-  border-radius: 999px;
-}
-
-.home-product-info {
-  padding: 14px 16px 18px;
-  text-align: left;
-}
-
-.home-product-category {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #6D5748;
-  margin-bottom: 4px;
-}
-
-.home-product-info h3 {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 600;
-  color: #241711;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
-}
-
-.home-product-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  border-top: 1px solid #9F8063;
-}
-
-.home-product-bottom strong {
-  font-family: var(--font-main);
-  font-size: 18px;
-  font-weight: 700;
-  color: #C6532F;
-}
-
-.home-product-bottom span {
-  font-size: 12px;
-  color: #B07A21;
-  font-weight: 600;
-}
-
-/* ---------------------------------------------------------
-   SPECIAL OFFER BANNER (DARK SECTION #3B281F, 26PX RADIUS)
---------------------------------------------------------- */
+/* ── 5. SPECIAL OFFER SECTION ───────────────────── */
 .home-offer {
-  width: calc(100% - 8%);
   max-width: 1280px;
-  margin: 40px auto 80px;
-  background-color: #3B281F;
-  color: #FFF3DD;
-  border-radius: 26px;
-  padding: 60px 8%;
-  display: flex;
-  justify-content: space-between;
+  margin: 0 auto 80px;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 16px 42px rgba(36, 23, 17, 0.20);
+  gap: 40px;
+  background: #3B281F;
+  border-radius: 26px;
+  padding: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: calc(100% - 10%);
+  box-sizing: border-box;
 }
 
 .home-offer-content {
-  max-width: 520px;
-  text-align: left;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .home-offer-content p {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: #E28B68;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .home-offer-content h2 {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(30px, 4vw, 50px);
   font-weight: 500;
   color: #FFF3DD;
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 16px;
 }
 
 .home-offer-content span {
+  font-family: var(--font-main);
   font-size: 15px;
-  color: #E7D0B1;
+  color: rgba(231, 208, 177, 0.72);
+  line-height: 1.65;
+  margin-bottom: 32px;
   display: block;
-  margin-bottom: 30px;
-  line-height: 1.6;
 }
 
 .home-shop-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
   height: 50px;
   padding: 0 32px;
-  background-color: #C6532F;
-  color: #FFFFFF;
+  background: #C6532F;
+  color: #FFF3DD;
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   border-radius: 999px;
-  transition: all 0.3s var(--ease-smooth);
-  box-shadow: 0 8px 24px rgba(198, 83, 47, 0.30);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(198, 83, 47, 0.35);
+  transition: background 0.25s ease, transform 0.2s ease;
 }
 
 .home-shop-btn:hover {
-  background-color: #E28B68;
-  color: #241711;
+  background: #91371F;
   transform: translateY(-2px);
+  color: #FFF3DD;
 }
 
 .home-offer-symbol {
   font-family: var(--font-serif);
-  font-size: 180px;
-  color: rgba(255, 243, 221, 0.05);
+  font-size: 120px;
   font-weight: 700;
+  color: rgba(255, 243, 221, 0.12);
   line-height: 1;
   user-select: none;
+  flex-shrink: 0;
 }
 
-/* ---------------------------------------------------------
-   BENEFITS SECTION (#FFF3DD CARDS)
---------------------------------------------------------- */
-.home-benefits-section {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 4% 80px;
-}
-
+/* ── 6. WHY NOVAX BENEFITS ──────────────────────── */
 .home-benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 40px;
+  gap: 20px;
+  margin-top: 0;
 }
 
 .benefit-card {
   background: #FFF3DD;
   border: 1px solid #9F8063;
-  border-radius: 24px;
-  padding: 36px 28px;
-  text-align: left;
-  transition: all 0.3s var(--ease-smooth);
+  border-radius: 20px;
+  padding: 28px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
 }
 
 .benefit-card:hover {
-  border-color: #C6532F;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(36, 23, 17, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(36, 23, 17, 0.12);
 }
 
 .benefit-num {
   font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  color: #C6532F;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.benefit-card h3 {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 600;
-  color: #241711;
-  margin-bottom: 10px;
-}
-
-.benefit-card p {
-  font-size: 13.5px;
-  color: #49372C;
-  line-height: 1.55;
-}
-
-/* ---------------------------------------------------------
-   SHOPPING EXPERIENCE SECTION
---------------------------------------------------------- */
-.home-experience {
-  width: calc(100% - 8%);
-  max-width: 1280px;
-  margin: 40px auto 80px;
-  background-color: #FFF3DD;
-  border: 1px solid #9F8063;
-  border-radius: 26px;
-  padding: 60px 6%;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 50px;
-  align-items: center;
-  box-shadow: 0 10px 28px rgba(36, 23, 17, 0.15);
-}
-
-.home-experience-content {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.home-experience-content h2 {
-  font-family: var(--font-serif);
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 500;
-  color: #241711;
-  line-height: 1.1;
-  margin-bottom: 16px;
-}
-
-.home-experience-content p {
-  font-size: 15px;
-  line-height: 1.65;
-  color: #49372C;
-  margin-bottom: 32px;
-  max-width: 440px;
-}
-
-.home-experience-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.home-experience-steps > div {
-  background-color: #E7D0B1;
-  border: 1px solid #9F8063;
-  border-radius: 18px;
-  padding: 28px 20px;
-  text-align: left;
-  transition: all 0.3s var(--ease-smooth);
-}
-
-.home-experience-steps > div:hover {
-  border-color: #C6532F;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(36, 23, 17, 0.15);
-}
-
-.home-experience-steps span {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.18em;
   color: #C6532F;
   display: block;
   margin-bottom: 12px;
 }
 
-.home-experience-steps h3 {
+.benefit-card h3 {
   font-family: var(--font-serif);
   font-size: 20px;
   font-weight: 600;
   color: #241711;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.home-experience-steps p {
-  font-size: 12.5px;
-  color: #49372C;
-  line-height: 1.5;
+.benefit-card p {
+  font-family: var(--font-main);
+  font-size: 13.5px;
+  color: #6D5748;
+  line-height: 1.6;
 }
 
-/* ---------------------------------------------------------
-   STATS & STORE LOCATION
---------------------------------------------------------- */
-.home-stats-section {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 4% 80px;
-}
-
-.home-stats {
+/* ── 7. NOVAX DIFFERENCE & STEPS ────────────────── */
+.home-experience {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.home-stat {
-  background-color: #FFF3DD;
-  border: 1px solid #9F8063;
-  border-radius: 20px;
-  padding: 32px 20px;
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
   align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-fast);
 }
 
-.home-stat:hover {
-  transform: translateY(-3px);
-  border-color: #C6532F;
-}
-
-.home-stat strong {
-  font-family: var(--font-serif);
-  font-size: 42px;
-  font-weight: 500;
-  color: #C6532F;
-  margin-bottom: 6px;
-}
-
-.home-stat span {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #49372C;
-}
-
-.location-section {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 4% 80px;
-}
-
-.location-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  background-color: #FFF3DD;
-  border: 1px solid #9F8063;
-  border-radius: 26px;
-  padding: 40px;
-  margin-top: 40px;
-  text-align: left;
-}
-
-.location-info {
+.home-experience-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 12px;
+  gap: 0;
 }
 
-.location-number {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #C6532F;
-}
-
-.location-info h3 {
+.home-experience-content h2 {
   font-family: var(--font-serif);
-  font-size: 32px;
+  font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 500;
   color: #241711;
-}
-
-.location-info p {
-  font-size: 14px;
-  color: #49372C;
-}
-
-.location-map {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid #9F8063;
-}
-
-/* ---------------------------------------------------------
-   FINAL CTA SECTION
---------------------------------------------------------- */
-.home-final {
-  width: 100%;
-  max-width: 800px;
-  margin: 40px auto 100px;
-  padding: 0 4%;
-  text-align: center;
-}
-
-.home-final h2 {
-  font-family: var(--font-serif);
-  font-size: clamp(36px, 4.5vw, 54px);
-  font-weight: 500;
-  color: #241711;
-  line-height: 1.1;
+  line-height: 1.18;
   margin-bottom: 16px;
 }
 
-.home-final h2 span {
-  color: #C6532F;
-  font-style: italic;
-}
-
-.home-final p {
-  font-size: 16px;
+.home-experience-content p {
+  font-family: var(--font-main);
+  font-size: 15px;
   color: #49372C;
+  line-height: 1.7;
   margin-bottom: 32px;
 }
 
 .home-primary-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 8px;
   height: 52px;
-  padding: 0 40px;
-  background-color: #C6532F;
-  color: #FFFFFF;
+  padding: 0 32px;
+  background: #241711;
+  color: #FFF3DD;
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   border-radius: 999px;
-  transition: all 0.3s var(--ease-smooth);
-  box-shadow: 0 8px 24px rgba(198, 83, 47, 0.30);
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
 }
 
 .home-primary-btn:hover {
-  background-color: #91371F;
-  transform: translateY(-3px);
+  background: #C6532F;
+  transform: translateY(-2px);
+  color: #FFF3DD;
 }
 
-/* RESPONSIVE BREAKPOINTS */
-@media (max-width: 1024px) {
+.home-experience-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.home-experience-steps > div {
+  background: #FFF3DD;
+  border: 1px solid #9F8063;
+  border-radius: 18px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-experience-steps > div span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: #C6532F;
+  background: rgba(198, 83, 47, 0.12);
+  border: 1px solid rgba(198, 83, 47, 0.28);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-experience-steps > div h3 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: #241711;
+  margin-bottom: 2px;
+}
+
+.home-experience-steps > div p {
+  font-family: var(--font-main);
+  font-size: 13px;
+  color: #6D5748;
+  margin: 0;
+}
+
+/* ── 8. STATS SECTION ───────────────────────────── */
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.home-stat {
+  background: #FFF3DD;
+  border: 1px solid #9F8063;
+  border-radius: 20px;
+  padding: 32px 20px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(36, 23, 17, 0.12);
+}
+
+.home-stat strong {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 600;
+  color: #C6532F;
+  display: block;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.home-stat span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6D5748;
+}
+
+/* ── 9. STORE LOCATION SECTION ──────────────────── */
+.location-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  background: #FFF3DD;
+  border: 1px solid #9F8063;
+  border-radius: 26px;
+  padding: 40px;
+  align-items: center;
+  box-shadow: 0 12px 36px rgba(36, 23, 17, 0.12);
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C6532F;
+}
+
+.location-info h3 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: #241711;
+  margin-bottom: 8px;
+}
+
+.location-info p {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: #49372C;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.location-map {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #9F8063;
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+}
+
+/* ── 10. FINAL CTA ──────────────────────────────── */
+.home-final {
+  background: #3B281F;
+  border-radius: 26px;
+  padding: 72px 5%;
+  text-align: center;
+  color: #FFF3DD;
+  max-width: 1280px;
+  margin: 0 5% 80px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: calc(100% - 10%);
+  box-sizing: border-box;
+}
+
+.home-final .home-label {
+  color: #E28B68;
+  margin-bottom: 20px;
+}
+
+.home-final h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 500;
+  color: #FFF3DD;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.home-final h2 span {
+  color: #E28B68;
+  font-style: italic;
+}
+
+.home-final p {
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: rgba(231, 208, 177, 0.75);
+  margin-bottom: 36px;
+}
+
+/* ── 11. RESPONSIVE BREAKPOINTS ─────────────────── */
+@media (max-width: 1200px) {
+  .home-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .home-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .home-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .home-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
   .cream-hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   .cream-hero-image-frame {
-    height: 400px;
+    height: 360px;
   }
-  .home-category-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .home-product-grid {
+  .home-category-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
-  .home-benefits,
-  .home-stats {
-    grid-template-columns: repeat(2, 1fr);
+  .home-offer {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 92%;
+  }
+  .home-offer-symbol {
+    font-size: 80px;
+    align-self: center;
   }
   .home-experience {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 40px 24px;
+    gap: 36px;
   }
-  .home-experience-steps {
-    grid-template-columns: repeat(3, 1fr);
+  .home-benefits {
+    grid-template-columns: 1fr 1fr;
   }
   .location-container {
-    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .home-final {
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 92%;
+    padding: 48px 20px;
   }
 }
 
-@media (max-width: 767px) {
-  .home-page {
-    padding-top: 72px;
-    padding-bottom: 100px;
-  }
-  .cream-hero-section {
-    padding: 20px 4% 50px;
-  }
-  .cream-hero-container {
+@media (max-width: 480px) {
+  .home-category-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .cream-hero-image-frame {
-    height: 320px;
-    border-radius: 24px;
-  }
-  .serif-title {
-    font-size: 34px;
-  }
-  .cream-hero-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-  }
-  .btn-terracotta,
-  .btn-outline-dark {
-    width: 100%;
-  }
-  .home-category-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
   }
   .home-product-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
-  .home-benefits,
-  .home-stats,
-  .home-experience-steps {
+  .home-benefits {
     grid-template-columns: 1fr;
-    gap: 16px;
   }
-  .home-offer {
-    width: 100%;
-    padding: 36px 20px;
-    border-radius: 20px;
+  .home-stats {
+    grid-template-columns: 1fr 1fr;
   }
-  .home-offer-symbol {
-    display: none;
-  }
-  .location-container {
-    grid-template-columns: 1fr;
-    padding: 24px 18px;
-    border-radius: 20px;
+  .home-page {
+    padding-bottom: 100px;
   }
 }
