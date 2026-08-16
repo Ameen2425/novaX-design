@@ -1,10 +1,11 @@
 /* =========================================================
-   NOVAX — LUXURY EDITORIAL HOMEPAGE (ROUNDED SYSTEM)
+   NOVAX — LUXURY EDITORIAL HOMEPAGE (FULLY RESPONSIVE)
 ========================================================= */
 
 .home-page {
   width: 100%;
   padding-top: 100px;
+  padding-bottom: 60px;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
@@ -95,6 +96,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-muted);
+  flex-wrap: wrap;
 }
 
 .cream-hero-trust span {
@@ -803,7 +805,9 @@
   transform: translateY(-3px);
 }
 
-/* RESPONSIVE */
+/* ---------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+--------------------------------------------------------- */
 @media (max-width: 1024px) {
   .cream-hero-container {
     grid-template-columns: 1fr;
@@ -835,23 +839,71 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
+  .home-page {
+    padding-top: 72px;
+    padding-bottom: 100px; /* Mobile bottom nav safe clearance */
+  }
+
+  .cream-hero-section {
+    padding: 20px 4% 50px;
+  }
+
+  .cream-hero-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cream-hero-image-frame {
+    height: 320px;
+    border-radius: 24px;
+  }
+
+  .serif-title {
+    font-size: 34px;
+  }
+
+  .cream-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .btn-terracotta,
+  .btn-outline-dark {
+    width: 100%;
+  }
+
   .home-category-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
+
   .home-product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
+
   .home-benefits,
   .home-stats,
   .home-experience-steps {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+
   .home-offer {
-    width: calc(100% - 32px);
-    padding: 40px 24px;
+    width: 100%;
+    padding: 36px 20px;
+    border-radius: 20px;
   }
+
   .home-offer-symbol {
     display: none;
+  }
+
+  .location-container {
+    grid-template-columns: 1fr;
+    padding: 24px 18px;
+    border-radius: 20px;
   }
 }

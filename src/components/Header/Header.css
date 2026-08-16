@@ -1,6 +1,5 @@
 /* =========================================================
-   NOVAX — REFERENCE-MATCHED FLOATING GLASSMORPHISM NAVBAR
-   Ultra-Luxury Pill / Capsule Translucent Header Redesign
+   NOVAX — FLOATING DESKTOP HEADER & MOBILE BOTTOM CAPSULE NAV
 ========================================================= */
 
 /* Entrance Animation */
@@ -15,8 +14,10 @@
   }
 }
 
-/* Floating Capsule Container */
-.header {
+/* ---------------------------------------------------------
+   1. DESKTOP & TABLET FLOATING HEADER (>= 768PX)
+--------------------------------------------------------- */
+.desktop-header {
   position: fixed;
   top: 18px;
   left: 50%;
@@ -33,20 +34,26 @@
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(222, 214, 202, 0.8);
   border-radius: 999px;
-  box-shadow: 0 12px 35px rgba(43, 39, 34, 0.10), 0 2px 8px rgba(43, 39, 34, 0.05);
+  box-shadow: 0 12px 35px rgba(43, 39, 34, 0.08);
   
   z-index: 9999;
   margin: 0 auto;
   color: #2B2722;
   animation: headerEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s var(--ease-smooth);
 }
 
-/* ---------------------------------------------------------
-   LEFT LOGO SECTION
---------------------------------------------------------- */
+.mobile-top-brand {
+  display: none;
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* LOGO SECTION */
 .logo {
   display: flex;
   align-items: center;
@@ -74,18 +81,16 @@
 }
 
 .logo-text {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #2B2722;
+  color: var(--dark-brown);
   line-height: 1;
 }
 
-/* ---------------------------------------------------------
-   CENTER NAVIGATION
---------------------------------------------------------- */
+/* CENTER NAVIGATION */
 .navbar {
   display: flex;
   align-items: center;
@@ -98,27 +103,26 @@
 }
 
 .nav-link {
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: var(--font-main);
+  font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6F675D;
+  color: var(--text-secondary);
   text-decoration: none;
   padding: 8px 4px;
   position: relative;
-  transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-smooth);
   white-space: nowrap;
 }
 
 .nav-link:hover {
-  color: #9A5A3A;
+  color: var(--terracotta-primary);
   transform: translateY(-1px);
 }
 
-/* Active Nav Underline Pill Indicator */
 .nav-link.active {
-  color: #9A5A3A;
+  color: var(--terracotta-primary);
 }
 
 .nav-link.active::after {
@@ -129,18 +133,16 @@
   transform: translateX(-50%);
   width: 18px;
   height: 2px;
-  background-color: #9A5A3A;
+  background-color: var(--terracotta-primary);
   border-radius: 999px;
   transition: width 0.25s ease;
 }
 
-/* ---------------------------------------------------------
-   RIGHT ACTION AREA
---------------------------------------------------------- */
+/* RIGHT ACTION AREA */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-shrink: 0;
   z-index: 2;
 }
@@ -151,140 +153,193 @@
   gap: 6px;
 }
 
-/* Action Buttons (Circular 34px Capsule Buttons) */
 .header-action-icon {
   width: 34px;
   height: 34px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.35);
   border: 1px solid rgba(222, 214, 202, 0.45);
-  color: #6F675D;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-smooth);
   text-decoration: none;
-  position: relative;
   outline: none;
 }
 
 .header-action-icon:hover {
   background: rgba(154, 90, 58, 0.10);
   border-color: rgba(154, 90, 58, 0.25);
-  color: #9A5A3A;
+  color: var(--terracotta-primary);
   transform: translateY(-2px) scale(1.05);
 }
 
-/* Profile / Signup Button Styling */
 .header .signup-btn {
   width: 34px !important;
   height: 34px !important;
   min-width: 34px !important;
   max-height: 34px !important;
   border-radius: 50% !important;
-  background: #F1ECE3;
-  border: 1px solid #DED6CA;
-  color: #2B2722;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--dark-brown);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-smooth);
   text-decoration: none;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 .header .signup-btn:hover,
 .header .signup-btn.active {
-  background: #9A5A3A !important;
+  background: var(--terracotta-primary) !important;
   color: #FFFFFF !important;
-  border-color: #9A5A3A !important;
+  border-color: var(--terracotta-primary) !important;
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 4px 12px rgba(154, 90, 58, 0.25);
 }
 
-/* ---------------------------------------------------------
-   CART & WISHLIST BADGES
---------------------------------------------------------- */
-.relative-badge {
-  position: relative;
-}
-
-.header-badge {
-  position: absolute;
-  top: -3px;
-  right: -3px;
-  min-width: 15px;
-  height: 15px;
-  padding: 0 3px;
-  border-radius: 999px;
-  background: #9A5A3A;
-  color: #FFFFFF;
-  font-family: "Inter", sans-serif;
-  font-size: 8px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-}
-
-.cart-badge-accent {
-  background: #9A5A3A;
-  color: #FFFFFF;
-}
-
-/* ---------------------------------------------------------
-   RESPONSIVE BREAKPOINTS
---------------------------------------------------------- */
-@media (max-width: 990px) {
+/* TABLET COMPACT HEADER (768PX - 1024PX) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .desktop-header {
+    width: calc(100% - 40px);
+    height: 60px;
+    padding: 0 16px;
+  }
   .navbar {
-    gap: 16px;
+    gap: 14px;
   }
   .nav-link {
     font-size: 9.5px;
     letter-spacing: 0.08em;
+    padding: 6px 2px;
   }
-}
-
-@media (max-width: 768px) {
-  .header {
-    width: calc(100% - 24px);
-    height: 56px;
-    top: 10px;
-    padding: 0 14px;
-    border-radius: 999px;
-  }
-
   .logo-text {
     font-size: 19px;
   }
+}
 
-  .logo-img {
-    width: 28px;
+/* ---------------------------------------------------------
+   2. MOBILE BREAKPOINT (< 768PX) — BOTTOM FLOATING NAVIGATION
+--------------------------------------------------------- */
+@media (max-width: 767px) {
+  .desktop-header {
+    display: none !important;
+  }
+
+  /* MOBILE TOP BRAND BAR */
+  .mobile-top-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    height: 50px;
+    padding: 0 18px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(222, 214, 202, 0.7);
+    border-radius: 999px;
+    box-shadow: 0 4px 20px rgba(43, 39, 34, 0.06);
+    z-index: 9998;
+  }
+
+  .mobile-top-brand .logo-img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .mobile-top-brand .logo-text {
+    font-size: 18px;
+  }
+
+  .mobile-profile-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--dark-brown);
+    text-decoration: none;
+  }
+
+  /* MOBILE BOTTOM CAPSULE NAVIGATION */
+  .mobile-bottom-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 64px;
+    z-index: 9999;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(222, 214, 202, 0.85);
+    box-shadow: 0 12px 35px rgba(43, 39, 34, 0.14);
+    padding: 0 6px;
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+    gap: 3px;
+    height: 100%;
+    width: 100%;
+    transition: all 0.25s ease;
+  }
+
+  .mobile-nav-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
     height: 28px;
+    border-radius: 999px;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
   }
 
-  .navbar {
-    position: static;
-    transform: none;
-    gap: 10px;
-    overflow-x: auto;
-    max-width: 50%;
+  .mobile-nav-label {
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+    transition: opacity 0.25s ease, color 0.25s ease;
   }
 
-  .nav-link {
-    font-size: 9px;
-    padding: 4px 2px;
+  .mobile-nav-item.active {
+    color: #9A5A3A;
   }
 
-  .header-action-icon,
-  .signup-btn {
-    width: 30px;
-    height: 30px;
+  .mobile-nav-item.active .mobile-nav-icon-wrap {
+    background-color: rgba(154, 90, 58, 0.14);
+    color: #9A5A3A;
+    transform: scale(1.08);
+  }
+
+  .mobile-nav-item.active .mobile-nav-label {
+    opacity: 1;
+    color: #9A5A3A;
+    font-weight: 700;
   }
 }

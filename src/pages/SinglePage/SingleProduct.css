@@ -1,13 +1,14 @@
 /* =========================================================
-   NOVAX — SINGLE PRODUCT PAGE (EDITORIAL LUXURY 28PX CORNERS)
+   NOVAX — SINGLE PRODUCT PAGE (FULLY RESPONSIVE)
 ========================================================= */
 
 .single-page {
   width: 100%;
   min-height: 100vh;
-  padding: 100px 4% 120px;
+  padding: 120px 4% 100px;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 /* LOADING & NOT FOUND STATES */
@@ -84,6 +85,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
+  flex-wrap: wrap;
 }
 
 .single-breadcrumb span {
@@ -605,20 +607,45 @@
   }
 }
 
-@media (max-width: 600px) {
-  .single-main-image {
-    height: 360px;
+@media (max-width: 767px) {
+  .single-page {
+    padding-top: 72px;
+    padding-bottom: 100px; /* Safe clearance for mobile bottom nav */
   }
+
+  .single-main-image {
+    height: 320px;
+    border-radius: 20px;
+  }
+
+  .single-specifications {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
   .single-actions {
     flex-direction: column;
+    width: 100%;
+    gap: 12px;
   }
-  .single-actions button {
+
+  .single-cart-button,
+  .single-buy-button {
     width: 100%;
   }
+
   .single-services {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+
+  .single-details {
+    padding: 40px 5%;
+    border-radius: 20px;
+  }
+
   .single-details-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

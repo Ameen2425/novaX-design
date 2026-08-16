@@ -1,13 +1,14 @@
 /* =========================================================
-   NOVAX — PRODUCTS CATALOG (FLOATING PILL FILTERS & 4-COL GRID)
+   NOVAX — PRODUCTS CATALOG (FULLY RESPONSIVE)
 ========================================================= */
 
 .products-page {
   width: 100%;
   min-height: 100vh;
-  padding: 120px 4% 120px;
+  padding: 120px 4% 80px;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 /* 1. PRODUCTS PAGE HEADER */
@@ -33,7 +34,7 @@
 
 .products-header h1 {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 4.5vw, 56px);
+  font-size: clamp(34px, 4.5vw, 56px);
   font-weight: 500;
   color: var(--dark-brown);
   margin-bottom: 10px;
@@ -190,7 +191,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .products-page {
+    padding-top: 72px;
+    padding-bottom: 100px;
+  }
   .products-filter {
     flex-direction: column;
     align-items: stretch;
@@ -206,16 +211,16 @@
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 420px) {
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   .products-page {
-    padding: 100px 16px 80px;
+    padding: 72px 12px 100px;
   }
 }

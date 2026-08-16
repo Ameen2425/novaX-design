@@ -1,5 +1,5 @@
 /* =========================================================
-   NOVAX — SIGNUP PAGE (EDITORIAL LUXURY SPLIT-SCREEN)
+   NOVAX — SIGNUP PAGE (FULLY RESPONSIVE)
 ========================================================= */
 
 .signup-page {
@@ -279,18 +279,19 @@
   text-decoration: underline;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE BREAKPOINTS */
 @media (max-width: 900px) {
   .signup-container {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
   .signup-image {
-    height: 40vh;
+    height: 36vh;
     padding: 30px 24px;
   }
   .signup-form-section {
     height: auto;
-    padding: 40px 24px;
+    padding: 40px 24px 100px; /* Safe clearance for mobile bottom nav */
   }
   .signup-image-features {
     display: none;

@@ -178,7 +178,10 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
+  .footer {
+    padding: 60px 4% 96px; /* Clearance for mobile bottom nav */
+  }
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -187,5 +190,8 @@
     flex-direction: column;
     gap: 12px;
     text-align: center;
+  }
+  .footer::before {
+    font-size: 140px;
   }
 }
