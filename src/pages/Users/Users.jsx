@@ -89,53 +89,55 @@ const Users = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}/>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>First Name</th>
-              <th>Email</th>
-              <th>Age</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
+        <div className="users-page-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            {
-              filterUsers.map((user) => {
-                return (
-                  <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.firstName}</td>
-                    <td>{user.email}</td>
-                    <td>{user.age}</td>
+            <tbody>
+              {
+                filterUsers.map((user) => {
+                  return (
+                    <tr key={user.id}>
+                      <td>{user.id}</td>
+                      <td>{user.firstName}</td>
+                      <td>{user.email}</td>
+                      <td>{user.age}</td>
 
-                    <td>
-                      <button
-                        className="btn btn-warning"
-                        onClick={() => editUser(user)}
-                        type="button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#editUser"
-                        aria-controls="editUser">
-                        Edit
-                      </button>
-                    </td>
+                      <td>
+                        <button
+                          className="btn btn-warning"
+                          onClick={() => editUser(user)}
+                          type="button"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#editUser"
+                          aria-controls="editUser">
+                          Edit
+                        </button>
+                      </td>
 
-                    <td>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => deleteUser(user.id)}>
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </table>
+                      <td>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => deleteUser(user.id)}>
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
+        </div>
 
         <div
           className="offcanvas offcanvas-start"

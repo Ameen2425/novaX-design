@@ -1,28 +1,28 @@
 /* =========================================================
-   NOVAX — USERS DIRECTORY (FULLY RESPONSIVE)
+   NOVAX — USERS DIRECTORY (HIGH-CONTRAST EARTHY LUXURY)
 ========================================================= */
 
 .users-page {
   width: 100%;
   min-height: 100vh;
   padding: 120px 4% 100px;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: #D8C5AE;
+  color: #211914;
   max-width: 1280px;
   margin: 0 auto;
   overflow-x: hidden;
 }
 
-/* SEARCH BAR INPUT */
+/* SEARCH BAR INPUT (#FFF8EC BACKGROUND, #B49A80 BORDER) */
 .users-page > input[type="text"] {
   width: 100%;
   max-width: 440px;
   height: 48px;
   padding: 0 18px;
-  background-color: #FFFFFF;
-  border: 1px solid var(--border);
+  background-color: #FFF8EC;
+  border: 1px solid #B49A80;
   border-radius: 999px;
-  color: var(--dark-brown);
+  color: #211914;
   font-family: var(--font-main);
   font-size: 14px;
   margin-bottom: 30px;
@@ -30,49 +30,76 @@
   display: block;
 }
 
+.users-page > input[type="text"]::placeholder {
+  color: #5F5147;
+}
+
 .users-page > input[type="text"]:focus {
-  border-color: var(--terracotta-primary);
-  box-shadow: 0 0 0 3px var(--terracotta-glow);
+  border-color: #B84F2C;
+  box-shadow: 0 0 0 3px rgba(184, 79, 44, 0.15);
   outline: none;
 }
 
-/* TABLE CONTAINER & CARD */
+/* TABLE CONTAINER & CARD (#FFF8EC SURFACE, #B49A80 BORDER) */
 .users-page-table-wrap {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-radius: 20px;
-  border: 1px solid var(--border);
-  background-color: #FFFFFF;
-  box-shadow: 0 10px 30px rgba(43, 39, 34, 0.04);
+  border: 1px solid #B49A80;
+  background-color: #FFF8EC;
+  box-shadow: 0 10px 30px rgba(33, 25, 20, 0.12);
+  margin-bottom: 40px;
+}
+
+/* Scrollbar styling */
+.users-page-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.users-page-table-wrap::-webkit-scrollbar-track {
+  background: #EBD9C1;
+  border-radius: 999px;
+}
+
+.users-page-table-wrap::-webkit-scrollbar-thumb {
+  background: #B49A80;
+  border-radius: 999px;
+}
+
+.users-page-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: #B84F2C;
 }
 
 .users-page table {
   width: 100%;
+  min-width: 600px;
   border-collapse: separate;
   border-spacing: 0;
-  background-color: #FFFFFF;
+  background-color: #FFF8EC;
   font-family: var(--font-main);
   font-size: 14px;
   text-align: left;
 }
 
 .users-page th {
-  background-color: #F1ECE3;
+  background-color: #EBD9C1;
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--dark-brown);
+  color: #211914;
   padding: 18px 24px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #B49A80;
   white-space: nowrap;
 }
 
 .users-page td {
   padding: 18px 24px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-primary);
+  border-bottom: 1px solid #B49A80;
+  color: #211914;
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -86,14 +113,14 @@
 }
 
 .users-page tbody tr:hover {
-  background-color: var(--bg-primary);
+  background-color: #F4E5D0;
 }
 
 /* EDIT & DELETE BUTTON OVERRIDES */
 .users-page .btn-warning {
   background-color: transparent !important;
-  color: var(--terracotta-primary) !important;
-  border: 1px solid var(--terracotta-primary) !important;
+  color: #B84F2C !important;
+  border: 1px solid #B84F2C !important;
   font-family: var(--font-main);
   font-size: 11px;
   font-weight: 600;
@@ -106,15 +133,15 @@
 }
 
 .users-page .btn-warning:hover {
-  background-color: var(--terracotta-primary) !important;
+  background-color: #B84F2C !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
 }
 
 .users-page .btn-danger {
   background-color: transparent !important;
-  color: #C0392B !important;
-  border: 1px solid #C0392B !important;
+  color: #B52F2F !important;
+  border: 1px solid #B52F2F !important;
   font-family: var(--font-main);
   font-size: 11px;
   font-weight: 600;
@@ -127,24 +154,25 @@
 }
 
 .users-page .btn-danger:hover {
-  background-color: #C0392B !important;
+  background-color: #B52F2F !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
 }
 
-/* EDIT USER OFFCANVAS DRAWER */
+/* EDIT USER OFFCANVAS DRAWER (#FFF8EC DRAWER SURFACE) */
 .offcanvas.offcanvas-start {
-  background-color: var(--bg-primary) !important;
-  color: var(--text-primary) !important;
-  border-right: 1px solid var(--border) !important;
+  background-color: #FFF8EC !important;
+  color: #211914 !important;
+  border-right: 1px solid #B49A80 !important;
   width: 440px !important;
   max-width: 100vw;
   padding: 100px 24px 30px !important;
   z-index: 9990 !important;
+  box-shadow: 0 14px 40px rgba(33, 25, 20, 0.20) !important;
 }
 
 .offcanvas-header {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #B49A80;
   padding-bottom: 20px;
   margin-bottom: 30px;
   display: flex;
@@ -169,7 +197,7 @@
   font-family: var(--font-serif) !important;
   font-size: 32px !important;
   font-weight: 500 !important;
-  color: var(--dark-brown) !important;
+  color: #211914 !important;
 }
 
 .offcanvas-body label {
@@ -178,7 +206,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: #40342C;
   display: block;
   margin-bottom: 8px;
 }
@@ -187,10 +215,10 @@
   width: 100%;
   height: 48px;
   padding: 0 16px;
-  background-color: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: var(--dark-brown);
+  background-color: #FFF8EC;
+  border: 1px solid #92765E;
+  border-radius: 10px;
+  color: #211914;
   font-family: var(--font-main);
   font-size: 14px;
   margin-bottom: 20px;
@@ -198,16 +226,16 @@
 }
 
 .offcanvas-body input.form-control:focus {
-  border-color: var(--terracotta-primary);
-  box-shadow: 0 0 0 3px var(--terracotta-glow);
+  border-color: #B84F2C;
+  box-shadow: 0 0 0 3px rgba(184, 79, 44, 0.15);
   outline: none;
 }
 
 .offcanvas-body .btn-primary {
   width: 100%;
   height: 50px;
-  background-color: var(--terracotta-primary) !important;
-  border: 1px solid var(--terracotta-primary) !important;
+  background-color: #B84F2C !important;
+  border: 1px solid #B84F2C !important;
   color: #FFFFFF !important;
   font-family: var(--font-main);
   font-size: 12px;
@@ -218,11 +246,12 @@
   margin-top: 10px;
   transition: all var(--transition-fast);
   cursor: pointer;
+  box-shadow: 0 8px 22px rgba(184, 79, 44, 0.28);
 }
 
 .offcanvas-body .btn-primary:hover {
-  background-color: var(--terracotta-dark) !important;
-  border-color: var(--terracotta-dark) !important;
+  background-color: #83351E !important;
+  border-color: #83351E !important;
   transform: translateY(-2px);
 }
 
