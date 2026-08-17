@@ -1,0 +1,105 @@
+/* ── PRODUCT GALLERY (DARK LUXURY) ────────────────────────── */
+.single-gallery {
+  background: #24160F;
+  border: 1px solid rgba(231, 151, 101, 0.18);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+}
+
+.single-main-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #2D1B13;
+  border-radius: 16px;
+  border: 1px solid rgba(231, 151, 101, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+
+.single-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.single-main-image:hover img {
+  transform: scale(1.05);
+}
+
+.single-discount {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--nova-copper, #E35D32);
+  color: #FFF2DF;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.4);
+  z-index: 2;
+}
+
+.single-thumbnails {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.single-thumbnail {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: #2D1B13;
+  border: 1.5px solid rgba(231, 151, 101, 0.15);
+  padding: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.single-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.single-thumbnail:hover,
+.single-thumbnail.active {
+  border-color: var(--nova-copper, #E35D32);
+  background: #3B2418;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.25);
+}
+
+/* ── MOBILE RESPONSIVENESS ───────────────────────── */
+@media (max-width: 768px) {
+  .single-gallery {
+    padding: 16px 14px;
+    border-radius: 20px;
+  }
+  .single-main-image {
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .single-thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+}

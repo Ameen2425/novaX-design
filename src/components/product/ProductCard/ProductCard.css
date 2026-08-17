@@ -1,0 +1,327 @@
+/* =========================================================
+   NOVAX — PRODUCT CARDS (DARK LUXURY DESIGN SYSTEM)
+   Dark Card (#24160F) + Warm Border + Copper Add to Cart
+========================================================= */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #24160F;
+  border: 1px solid rgba(231, 151, 101, 0.18);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  color: var(--nova-cream, #F1DEC3);
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  background: #2B1A12;
+  border-color: rgba(227, 93, 50, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.50);
+}
+
+/* ── 1. IMAGE CONTAINER ─────────────────────────── */
+.product-image-container {
+  position: relative;
+  width: calc(100% - 16px);
+  margin: 8px auto 0;
+  aspect-ratio: 1 / 1;
+  background: #2D1B13;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(231, 151, 101, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.06);
+}
+
+.product-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--nova-copper, #E35D32);
+  color: #FFF2DF;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.4);
+}
+
+.product-quick-label {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(33, 21, 15, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--nova-cream, #F1DEC3);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  z-index: 2;
+  border: 1px solid rgba(231, 151, 101, 0.2);
+}
+
+/* ── 2. PRODUCT BODY CONTENT ────────────────────── */
+.product-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 14px 14px 12px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.product-category {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nova-copper, #E35D32);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.product-title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--nova-cream, #F1DEC3);
+  line-height: 1.3;
+  margin: 0 0 4px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--transition-fast);
+}
+
+.product-card:hover .product-title {
+  color: var(--nova-copper-light, #F06B3B);
+}
+
+.product-description {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--nova-muted, #D4B797);
+  margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  opacity: 0.88;
+}
+
+/* ── 3. RATING ROW ──────────────────────────────── */
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+}
+
+.product-rating span {
+  color: #F2A93B;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.product-rating small {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--nova-cream, #F1DEC3);
+}
+
+.product-rating em {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--nova-muted, #D4B797);
+  font-style: normal;
+  opacity: 0.75;
+}
+
+/* ── 4. PRICE ROW ───────────────────────────────── */
+.product-price-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(231, 151, 101, 0.12);
+}
+
+.price-label {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nova-muted, #D4B797);
+  display: block;
+  margin-bottom: 2px;
+  opacity: 0.7;
+}
+
+.product-price {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--nova-copper, #E35D32);
+  line-height: 1;
+  margin: 0;
+}
+
+.price-offer {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #55B56E;
+  background: rgba(85, 181, 110, 0.12);
+  border: 1px solid rgba(85, 181, 110, 0.25);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* ── 5. SERVICES ROW ────────────────────────────── */
+.product-services {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.product-services span {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: var(--nova-muted, #D4B797);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.85;
+}
+
+/* ── 6. ADD TO CART BUTTON ───────────────────────── */
+.product-bottom {
+  margin-top: auto;
+}
+
+.add-cart-btn {
+  width: 100%;
+  height: 44px;
+  min-height: 44px;
+  background: var(--nova-copper, #E35D32);
+  color: var(--nova-cream, #F1DEC3);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.add-cart-btn:hover {
+  background: var(--nova-copper-light, #F06B3B);
+  color: #FFF2DF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(240, 107, 59, 0.45);
+}
+
+.add-cart-btn:active {
+  background: var(--nova-copper-dark, #B94C2B);
+  transform: translateY(0);
+}
+
+/* ── 7. RESPONSIVE SINGLE-COLUMN CARD STYLES FOR MOBILE ── */
+@media (max-width: 768px) {
+  .product-card {
+    padding: 8px;
+    border-radius: 18px;
+    width: 100%;
+  }
+  .product-image-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 14px;
+    aspect-ratio: 1 / 0.88;
+    border-radius: 14px;
+  }
+  .product-card-body {
+    padding: 12px 6px 6px;
+  }
+  .product-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+    -webkit-line-clamp: 2;
+  }
+  .product-description {
+    display: -webkit-box;
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    -webkit-line-clamp: 2;
+  }
+  .product-rating {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  .product-price-row {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+  }
+  .product-price {
+    font-size: 17px;
+  }
+  .product-services {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .add-cart-btn {
+    height: 48px;
+    font-size: 13px;
+    border-radius: 999px;
+  }
+}

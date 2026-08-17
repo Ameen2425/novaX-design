@@ -1,0 +1,162 @@
+/* ── USERS HEADER (DARK LUXURY) ───────────────────── */
+.users-header {
+  text-align: center;
+  padding-bottom: 36px;
+}
+
+.users-header span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--nova-copper, #E35D32);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.users-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.8vw, 48px);
+  font-weight: 500;
+  color: var(--nova-cream, #F1DEC3);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.users-header p {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  color: var(--nova-muted, #D4B797);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── CONTROLS ROW ─────────────────────────────── */
+.users-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.users-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 520px;
+  min-width: 260px;
+  background: var(--nova-input-bg, #1B110C);
+  border: 1px solid rgba(241, 222, 195, 0.22);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.users-search-wrapper:hover {
+  border-color: var(--nova-copper, #E35D32);
+}
+
+.users-search-wrapper:focus-within {
+  border-color: var(--nova-copper, #E35D32);
+  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2), 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.users-search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--nova-muted, #D4B797);
+  pointer-events: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.users-search-wrapper:focus-within .users-search-icon {
+  color: var(--nova-copper, #E35D32);
+  transform: scale(1.08);
+}
+
+.users-search-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px 0 48px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--nova-cream, #F1DEC3);
+  box-sizing: border-box;
+}
+
+.users-search-input::placeholder {
+  color: #8D6C58;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+}
+
+.users-search-clear {
+  position: absolute;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(227, 93, 50, 0.2);
+  border: 1px solid var(--nova-copper, #E35D32);
+  color: var(--nova-copper, #E35D32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.users-search-clear:hover {
+  background: var(--nova-copper, #E35D32);
+  color: #FFF2DF;
+  transform: scale(1.1);
+}
+
+.users-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--nova-cream, #F1DEC3);
+  background: var(--nova-card, #24160F);
+  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
+  padding: 0 18px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.users-count-badge .count-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--nova-copper, #E35D32);
+  box-shadow: 0 0 8px rgba(227, 93, 50, 0.6);
+}
+
+.users-count-badge strong {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nova-copper, #E35D32);
+  line-height: 1;
+}

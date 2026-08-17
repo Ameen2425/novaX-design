@@ -1,0 +1,97 @@
+/* ── PRODUCT DETAILS GRID (DARK LUXURY) ───────────────────── */
+.single-details {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.single-details-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.single-details-heading span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--nova-copper, #E35D32);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.single-details-heading h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--nova-cream, #F1DEC3);
+  margin-bottom: 8px;
+}
+
+.single-details-heading p {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  color: var(--nova-muted, #D4B797);
+}
+
+.single-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.single-details-grid > div {
+  background: #24160F;
+  border: 1px solid rgba(231, 151, 101, 0.18);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-sizing: border-box;
+}
+
+.single-details-grid > div:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227, 93, 50, 0.4);
+  background: #2B1A12;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.single-details-grid span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nova-copper, #E35D32);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.single-details-grid h3 {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--nova-cream, #F1DEC3);
+  margin-bottom: 8px;
+}
+
+.single-details-grid p {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--nova-muted, #D4B797);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .single-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .single-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

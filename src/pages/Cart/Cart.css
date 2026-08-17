@@ -1,13 +1,16 @@
 /* =========================================================
-   NOVAX — CART PAGE (CLAUDE CODE / DEVELOPER TYPOGRAPHY)
-   JetBrains Mono + Warm Sand (#D9BC94) + Light Cream (#E2C9A5) + Terracotta (#C45632)
+   NOVAX — CART PAGE (DARK LUXURY DESIGN SYSTEM)
+   Espresso (#17100C) Canvas + Warm Cream + Copper Accents
 ========================================================= */
 
 .cart-page {
   min-height: 100vh;
-  background: var(--bg-primary); /* #C9A678 */
+  background: var(--nova-bg, #17100C);
+  background-image: 
+    radial-gradient(circle at 50% 100px, rgba(43, 26, 18, 0.6) 0%, transparent 60%),
+    radial-gradient(circle at 80% 800px, rgba(227, 93, 50, 0.05) 0%, transparent 50%);
   padding: calc(62px + 40px) 5% 100px;
-  color: var(--text-primary);     /* #2A1912 */
+  color: var(--nova-cream, #F1DEC3);
   box-sizing: border-box;
 }
 
@@ -16,316 +19,13 @@
   margin: 0 auto;
 }
 
-/* ── 1. EMPTY CART HERO ──────────────────────────── */
 .empty-cart {
   max-width: 900px;
   margin: 0 auto 60px;
   box-sizing: border-box;
 }
 
-.empty-cart-content {
-  background: var(--bg-section); /* #D9BC94 */
-  border: 1px solid var(--border);
-  border-radius: var(--radius-hero); /* 24px */
-  padding: clamp(40px, 6vw, 70px) clamp(24px, 4vw, 48px);
-  text-align: center;
-  box-shadow: var(--shadow-hero);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 40px;
-  box-sizing: border-box;
-}
-
-.cart-label {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent-primary); /* #C45632 */
-  margin-bottom: 20px;
-  display: block;
-}
-
-/* ── 2. CART VISUAL CIRCLE ───────────────────────── */
-.cart-visual {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cart-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--bg-card); /* #E2C9A5 */
-  border: 1.5px solid var(--border-input);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(74, 45, 33, 0.14);
-}
-
-.cart-bag {
-  font-size: 34px;
-  line-height: 1;
-}
-
-.cart-dot {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--accent-primary);
-}
-
-.cart-dot-one {
-  width: 8px;
-  height: 8px;
-  top: 6px;
-  right: 8px;
-}
-
-.cart-dot-two {
-  width: 6px;
-  height: 6px;
-  bottom: 12px;
-  left: 4px;
-}
-
-.cart-dot-three {
-  width: 5px;
-  height: 5px;
-  top: 18px;
-  left: 8px;
-}
-
-/* ── 3. EMPTY CART TYPOGRAPHY ────────────────────── */
-.empty-cart-content h1 {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: clamp(28px, 3.8vw, 44px);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-  line-height: 1.15;
-}
-
-.empty-cart-content h1 span {
-  color: var(--accent-primary);
-}
-
-.cart-message {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: clamp(13px, 1.1vw, 15px);
-  font-weight: 500;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.cart-subtext {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 520px;
-  margin: 0 auto 32px;
-}
-
-/* ── 4. ACTIONS ──────────────────────────────────── */
-.cart-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.cart-primary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  padding: 0 32px;
-  background: var(--accent-primary); /* #C45632 */
-  color: var(--text-light) !important; /* #F3DCC0 */
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  text-decoration: none !important;
-  border: none;
-  box-shadow: var(--shadow-terracotta);
-  transition: all var(--transition-fast);
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.cart-primary-btn:hover {
-  background: var(--accent-hover);
-  color: var(--text-light) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(196, 86, 50, 0.4);
-}
-
-.cart-secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  padding: 0 28px;
-  background: transparent;
-  color: var(--text-primary) !important;
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--border-input);
-  text-decoration: none !important;
-  transition: all var(--transition-fast);
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.cart-secondary-btn:hover {
-  background: var(--bg-card);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary) !important;
-  transform: translateY(-2px);
-}
-
-/* ── 5. SHOPPING BENEFITS ROW ────────────────────── */
-.cart-benefits {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.cart-benefit {
-  background: var(--bg-card); /* #E2C9A5 */
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-card);
-  padding: 22px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-card);
-  box-sizing: border-box;
-}
-
-.cart-benefit:hover {
-  transform: translateY(-4px);
-  background: var(--bg-card-hover);
-  border-color: var(--accent-primary);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.cart-benefit span {
-  font-size: 24px;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.cart-benefit h3 {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-
-.cart-benefit p {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11px;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ── 6. DISCOVER SECTION ─────────────────────────── */
-.cart-discover {
-  background: var(--bg-dark-coffee); /* #4A2D21 */
-  border: 1px solid var(--border-promo);
-  border-radius: var(--radius-card-lg);
-  padding: clamp(40px, 5vw, 64px) clamp(24px, 4vw, 48px);
-  text-align: center;
-  box-shadow: var(--shadow-promo);
-  color: var(--text-light);
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.cart-discover .cart-label {
-  color: var(--accent-hover);
-  margin-bottom: 12px;
-}
-
-.cart-discover h2 {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: clamp(26px, 3.4vw, 40px);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: var(--text-light);
-  margin-bottom: 12px;
-  line-height: 1.15;
-}
-
-.cart-discover h2 span {
-  color: var(--accent-hover);
-}
-
-.cart-discover p {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 13px;
-  color: #D6B18B;
-  max-width: 480px;
-  margin: 0 auto 28px;
-  line-height: 1.7;
-}
-
-.cart-discover-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  padding: 0 32px;
-  background: var(--accent-primary);
-  color: var(--text-light) !important;
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  text-decoration: none !important;
-  border: none;
-  box-shadow: var(--shadow-terracotta);
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-.cart-discover-btn:hover {
-  background: var(--accent-hover);
-  color: var(--text-light) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(196, 86, 50, 0.4);
-}
-
-/* ── 7. RESPONSIVE BREAKPOINTS ───────────────────── */
+/* ── RESPONSIVE BREAKPOINTS ───────────────────── */
 @media (max-width: 900px) {
   .cart-benefits {
     grid-template-columns: 1fr;
@@ -359,6 +59,6 @@
 
 @media (max-width: 768px) {
   .cart-page {
-    padding: 96px 5% 120px;
+    padding: 86px 4% 120px;
   }
 }

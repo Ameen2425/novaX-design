@@ -1,0 +1,71 @@
+/* ── FILTER & SEARCH TOOLBAR (DARK LUXURY GLASS) ── */
+.products-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(33, 21, 15, 0.92);
+  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  max-width: 860px;
+  margin: 0 auto 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+  box-sizing: border-box;
+}
+
+.products-filter input[type="search"] {
+  flex: 1.6;
+  height: 44px;
+  padding: 0 18px;
+  background: var(--nova-input-bg, #1B110C);
+  border: 1px solid rgba(241, 222, 195, 0.22);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--nova-cream, #F1DEC3);
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.products-filter input[type="search"]::placeholder {
+  color: #8D6C58;
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+.products-filter input[type="search"]:focus {
+  border-color: var(--nova-copper, #E35D32);
+  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2);
+}
+
+.products-filter select {
+  flex: 1;
+  height: 44px;
+  padding: 0 18px;
+  background: var(--nova-input-bg, #1B110C);
+  border: 1px solid rgba(241, 222, 195, 0.22);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--nova-cream, #F1DEC3);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.products-filter select:focus {
+  border-color: var(--nova-copper, #E35D32);
+  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2);
+}
+
+.products-filter select option {
+  background: #1B110C;
+  color: var(--nova-cream, #F1DEC3);
+  padding: 10px;
+}

@@ -1,0 +1,164 @@
+/* ── TABLE WRAPPER (DARK LUXURY) ──────────────────── */
+.users-page-table-wrap {
+  background: #24160F;
+  border: 1px solid rgba(231, 151, 101, 0.18);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #24160F;
+}
+
+thead tr {
+  background: #2D1B13;
+}
+
+thead th {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--nova-cream, #F1DEC3);
+  padding: 16px 20px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(231, 151, 101, 0.15);
+}
+
+tbody tr {
+  background: #24160F;
+  border-bottom: 1px solid rgba(231, 151, 101, 0.10);
+  transition: background 0.2s ease;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #2B1A12;
+}
+
+tbody td {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--nova-cream, #F1DEC3);
+  padding: 14px 20px;
+  vertical-align: middle;
+}
+
+tbody td strong {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--nova-cream, #F1DEC3);
+}
+
+/* User ID tag in table */
+tbody td:first-child {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--nova-copper, #E35D32);
+}
+
+/* ACTION BUTTONS IN TABLE */
+.btn-warning {
+  background: var(--nova-copper, #E35D32) !important;
+  color: #FFF2DF !important;
+  border: 1px solid var(--nova-copper, #E35D32) !important;
+  border-radius: var(--radius-pill);
+  height: 38px;
+  min-height: 38px;
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.btn-warning:hover {
+  background: var(--nova-copper-light, #F06B3B) !important;
+  color: #FFF2DF !important;
+  border-color: var(--nova-copper-light, #F06B3B) !important;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: #DC2626 !important;
+  color: #FFF2DF !important;
+  border: 1px solid #DC2626 !important;
+  border-radius: var(--radius-pill);
+  height: 38px;
+  min-height: 38px;
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-danger:hover {
+  background: #B91C1C !important;
+  border-color: #B91C1C !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+}
+
+/* ── MOBILE TOUCH CARDS (NO X-AXIS SCROLLING) ─────── */
+@media (max-width: 768px) {
+  .users-page-table-wrap {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  table {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    background: transparent !important;
+  }
+
+  thead {
+    display: none !important;
+  }
+
+  tbody {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .btn-warning,
+  .btn-danger {
+    height: 44px;
+    min-height: 44px;
+    font-size: 13px;
+    border-radius: 999px;
+  }
+}

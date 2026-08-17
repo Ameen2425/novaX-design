@@ -1,0 +1,359 @@
+/* =========================================================
+   NOVAX — STRUCTURED DARK LUXURY FOOTER
+   Deepest Espresso (#130A06) + Warm Cream + High-Contrast Copper
+========================================================= */
+
+.footer {
+  background: var(--bg-footer, #130A06);
+  color: var(--nova-cream, #F1DEC3);
+  padding: 60px 5% 36px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Subtle oversized NOVAX watermark */
+.footer::before {
+  content: "NOVAX";
+  position: absolute;
+  bottom: -20px;
+  right: 5%;
+  font-family: var(--font-sans);
+  font-size: clamp(80px, 14vw, 180px);
+  font-weight: 700;
+  color: rgba(241, 222, 195, 0.018);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.10em;
+}
+
+.footer-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 5-COLUMN CONTENT GRID ──────────────────────── */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+  gap: clamp(20px, 3vw, 44px);
+  margin-bottom: 40px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand {
+  align-items: flex-start;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.footer-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.footer-logo span {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--nova-cream, #F1DEC3);
+  text-transform: uppercase;
+}
+
+.footer-desc {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--nova-muted, #D4B797);
+  max-width: 300px;
+  margin: 0 0 18px 0;
+  opacity: 0.9;
+}
+
+/* ── SOCIAL ICONS (PERFECT CENTERING & COPPER ACCENT) ─ */
+.footer-socials {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: 4px;
+}
+
+.footer-socials a {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  border-radius: 50% !important;
+  background: rgba(227, 93, 50, 0.16) !important;
+  border: 1.5px solid rgba(227, 93, 50, 0.45) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--nova-copper, #E35D32) !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  position: relative !important;
+}
+
+.footer-socials a svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: auto !important;
+  flex-shrink: 0 !important;
+  color: inherit !important;
+  transition: transform 0.25s ease !important;
+}
+
+.footer-socials a:hover,
+.footer-socials a:active {
+  background: var(--nova-copper, #E35D32) !important;
+  border-color: var(--nova-copper, #E35D32) !important;
+  color: #FFF2DF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(227, 93, 50, 0.55);
+}
+
+.footer-socials a:hover svg {
+  transform: scale(1.1);
+}
+
+/* ── COLUMN HEADINGS & LINKS ─────────────────────── */
+.footer-col h3 {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nova-cream, #F1DEC3);
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-col li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.footer-col a {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--nova-muted, #D4B797);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.footer-col a:hover {
+  color: var(--nova-copper-light, #F06B3B);
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+/* ── NEWSLETTER FORM ─────────────────────────────── */
+.footer-newsletter p {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--nova-muted, #D4B797);
+  margin: 0 0 12px 0;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  align-items: center;
+  background: var(--nova-input-bg, #1B110C);
+  border: 1px solid rgba(241, 222, 195, 0.22);
+  border-radius: var(--radius-pill, 999px);
+  padding: 4px 4px 4px 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.footer-newsletter-form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--nova-cream, #F1DEC3);
+  width: 100%;
+}
+
+.footer-newsletter-form input::placeholder {
+  color: #8D6C58;
+}
+
+.footer-newsletter-form button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--nova-copper, #E35D32);
+  border: none;
+  color: #FFF2DF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-newsletter-form button:hover {
+  background: var(--nova-copper-light, #F06B3B);
+  transform: scale(1.05);
+}
+
+.newsletter-success {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: #55B56E;
+  margin-top: 8px;
+  display: block;
+}
+
+/* ── BOTTOM COPYRIGHT & LEGAL ROW ────────────────── */
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(241, 222, 195, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--nova-muted, #D4B797);
+  flex-wrap: wrap;
+  gap: 12px;
+  opacity: 0.85;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-legal a {
+  color: var(--nova-muted, #D4B797);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--nova-copper, #E35D32);
+}
+
+.footer-legal span {
+  opacity: 0.4;
+}
+
+.footer-made-with .heart-icon {
+  color: var(--nova-copper, #E35D32);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  .footer-newsletter {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 36px 18px calc(96px + env(safe-area-inset-bottom, 16px));
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 12px;
+    margin-bottom: 28px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-socials {
+    gap: 14px !important;
+    margin-top: 6px;
+    justify-content: flex-start;
+  }
+
+  .footer-socials a {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .footer-newsletter {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 8px;
+  }
+  
+  .footer-col h3 {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-col a {
+    font-size: 12.5px;
+  }
+}

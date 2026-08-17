@@ -1,0 +1,134 @@
+/* =========================================================
+   NOVAX — FLASH DEALS CSS
+   Exact Visual Replica: Horizontal Compact Deal Cards
+========================================================= */
+
+.flash-deals-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 28px auto 0;
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+.flash-icon {
+  color: var(--nova-copper, #E35D32);
+}
+
+/* ── 4 or 5 COMPACT CARDS IN A ROW ───────────────── */
+.flash-deals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.flash-deal-card {
+  background: #24160F;
+  border: 1px solid rgba(231, 151, 101, 0.18);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.flash-deal-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--nova-copper, #E35D32);
+  background: #2B1A12;
+}
+
+.flash-deal-img-box {
+  width: 72px;
+  height: 72px;
+  background: #2D1B13;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.flash-deal-discount {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: var(--nova-copper, #E35D32);
+  color: var(--nova-cream, #F1DEC3);
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.flash-deal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.flash-deal-card:hover .flash-deal-img {
+  transform: scale(1.08);
+}
+
+.flash-deal-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.flash-deal-name {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--nova-cream, #F1DEC3);
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flash-deal-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.flash-old-price {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--nova-cream-muted, #D9C1A2);
+  opacity: 0.6;
+}
+
+.flash-new-price {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--nova-copper, #E35D32);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .flash-deals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .flash-deals-grid {
+    grid-template-columns: 1fr;
+  }
+}

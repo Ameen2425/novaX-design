@@ -1,24 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Signup.css";
 import novaxSignupHero from "../../assets/novax-signup-hero.jpg";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1
-    }
-  }
-};
+import AuthHero from "../../components/auth/AuthHero/AuthHero";
+import SignupForm from "../../components/auth/SignupForm/SignupForm";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -106,152 +93,31 @@ const Signup = () => {
         transition={{ duration: 0.4 }}
       >
         <div className="signup-container">
-          {/* =================================================
-              LEFT PRODUCT IMAGE
-          ================================================= */}
-          <motion.div
-            className="signup-image"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <img
-              src={novaxSignupHero}
-              alt="Join NovaX Curated Shopping Journey"
-              className="auth-bg-img"
-            />
-            <div className="auth-image-overlay"></div>
-            <div className="signup-image-content">
-              <span className="signup-image-label">JOIN NOVAX</span>
-
-              <h2>
+          <AuthHero
+            image={novaxSignupHero}
+            label="JOIN NOVAX"
+            title={
+              <>
                 Start
                 <br />
                 <span>Something New.</span>
-              </h2>
+              </>
+            }
+            subtitle="Create your NovaX account and discover products, styles, and everyday essentials curated for your shopping journey."
+            features={["New Collections", "Exclusive Deals", "Easy Shopping"]}
+          />
 
-              <p>
-                Create your NovaX account and discover products, styles, and
-                everyday essentials curated for your shopping journey.
-              </p>
-
-              <div className="signup-image-features">
-                <motion.span whileHover={{ scale: 1.05 }}>
-                  New Collections
-                </motion.span>
-                <motion.span whileHover={{ scale: 1.05 }}>
-                  Exclusive Deals
-                </motion.span>
-                <motion.span whileHover={{ scale: 1.05 }}>
-                  Easy Shopping
-                </motion.span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* =================================================
-              RIGHT SIGNUP FORM
-          ================================================= */}
           <motion.div
             className="signup-form-section"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="signup-form-wrapper">
-              <Link to="/" className="signup-back-link">
-                ← Back to Home
-              </Link>
-              <motion.form
-                className="signup-form"
-                onSubmit={validation}
-                initial="hidden"
-                animate="show"
-                variants={staggerContainer}
-              >
-                <motion.p className="signup-form-label" variants={fadeInUp}>
-                  CREATE YOUR ACCOUNT
-                </motion.p>
-
-                <motion.h1 variants={fadeInUp}>Sign Up</motion.h1>
-
-                <motion.p className="signup-subtitle" variants={fadeInUp}>
-                  Join NovaX to discover and order curated products.
-                </motion.p>
-
-                {/* NAME */}
-                <motion.div className="signup-form-group" variants={fadeInUp}>
-                  <label>Full Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your full name"
-                    value={form.name}
-                    onChange={handleData}
-                  />
-                </motion.div>
-
-                {/* EMAIL */}
-                <motion.div className="signup-form-group" variants={fadeInUp}>
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    value={form.email}
-                    onChange={handleData}
-                  />
-                </motion.div>
-
-                {/* MOBILE */}
-                <motion.div className="signup-form-group" variants={fadeInUp}>
-                  <label>Mobile Number</label>
-                  <input
-                    type="tel"
-                    name="mobile"
-                    placeholder="Enter your mobile number"
-                    value={form.mobile}
-                    onChange={handleData}
-                  />
-                </motion.div>
-
-                {/* PASSWORD */}
-                <motion.div className="signup-form-group" variants={fadeInUp}>
-                  <label>Password</label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Create your password"
-                    value={form.password}
-                    onChange={handleData}
-                  />
-                </motion.div>
-
-                {/* TERMS */}
-                <motion.div className="signup-terms" variants={fadeInUp}>
-                  <input type="checkbox" required />
-                  <label>I agree to the Terms and Conditions</label>
-                </motion.div>
-
-                {/* BUTTON */}
-                <motion.button
-                  type="submit"
-                  className="signup-submit-btn"
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  Create Account
-                  <span>→</span>
-                </motion.button>
-
-                {/* LOGIN */}
-                <motion.p className="signup-login-text" variants={fadeInUp}>
-                  Already have an account?
-                  <Link to="/login"> Login</Link>
-                </motion.p>
-              </motion.form>
-            </div>
+            <SignupForm
+              form={form}
+              handleData={handleData}
+              validation={validation}
+            />
           </motion.div>
         </div>
       </motion.main>
@@ -259,4 +125,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signup;

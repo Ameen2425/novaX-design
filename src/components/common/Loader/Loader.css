@@ -1,0 +1,69 @@
+/* =========================================================
+   NOVAX — SKELETON LOADER (DARK LUXURY ESPRESSO SHIMMER)
+========================================================= */
+@keyframes shimmerDark {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+.loader-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.loader-container .card {
+  background: var(--nova-card, #24160F);
+  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.loader-container .image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #24160F 25%, #2F1B12 50%, #24160F 75%);
+  background-size: 600px 100%;
+  animation: shimmerDark 1.6s infinite linear;
+  border: 1px solid rgba(241, 222, 195, 0.1);
+}
+
+.loader-container .title {
+  height: 18px;
+  border-radius: 8px;
+  margin: 4px 4px 0;
+  background: linear-gradient(90deg, #24160F 25%, #2F1B12 50%, #24160F 75%);
+  background-size: 600px 100%;
+  animation: shimmerDark 1.6s infinite linear;
+}
+
+.loader-container .text {
+  height: 12px;
+  border-radius: 8px;
+  margin: 0 4px;
+  width: 70%;
+  background: linear-gradient(90deg, #24160F 25%, #2F1B12 50%, #24160F 75%);
+  background-size: 600px 100%;
+  animation: shimmerDark 1.6s 0.1s infinite linear;
+}
+
+.loader-container .button {
+  height: 40px;
+  border-radius: var(--radius-pill);
+  margin: 4px 4px 4px;
+  background: linear-gradient(90deg, #2D1B13 25%, #3B2418 50%, #2D1B13 75%);
+  background-size: 600px 100%;
+  animation: shimmerDark 1.6s 0.2s infinite linear;
+}
+
+@media (max-width: 1200px) { .loader-container { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px)  { .loader-container { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+@media (max-width: 340px)  { .loader-container { grid-template-columns: 1fr; } }

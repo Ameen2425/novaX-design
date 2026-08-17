@@ -1,0 +1,118 @@
+/* ── 3. OUR STORY SECTION (DARK LUXURY) ───────────── */
+.about-story-section {
+  max-width: 1280px;
+  margin: 0 auto 48px;
+  padding: 0 clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
+  scroll-margin-top: 100px;
+}
+
+.about-story-container {
+  background: var(--nova-card, #24160F);
+  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
+  border-radius: 28px;
+  padding: clamp(36px, 5vw, 64px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+}
+
+.about-section-label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.about-section-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--nova-copper, #E35D32);
+  color: #FFF2DF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.35);
+}
+
+.about-section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nova-copper, #E35D32);
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-story-heading h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--nova-cream, #F1DEC3);
+  line-height: 1.15;
+}
+
+.about-story-heading h2 span {
+  color: var(--nova-copper, #E35D32);
+}
+
+.about-story-content p {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--nova-muted, #D4B797);
+  margin-bottom: 18px;
+}
+
+.about-story-content .about-lead {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--nova-cream, #F1DEC3);
+  line-height: 1.6;
+}
+
+/* ── MOBILE-FIRST OUR STORY ──────────────────────── */
+@media (max-width: 768px) {
+  .about-story-section {
+    padding: 0 12px;
+    margin-bottom: 28px;
+  }
+
+  .about-story-container {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .about-section-label-wrap {
+    margin-bottom: 14px;
+  }
+
+  .about-story-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .about-story-heading h2 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .about-story-content p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+}

@@ -1,86 +1,117 @@
 /* =========================================================
-   NOVAX — GLOBAL CLAUDE-CODE / DEVELOPER TYPOGRAPHY SYSTEM
-   JetBrains Mono + Layered Luxury (Biscuit, Caramel, Terracotta)
+   NOVAX — GLOBAL DARK LUXURY DESIGN SYSTEM
+   Espresso (#17100C) + Warm Cream (#F1DEC3) + Copper (#E35D32)
+   Anthropic Sans (UI) + Anthropic Serif (Display) + JetBrains Mono (Tech)
 ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  /* ── 1. GLOBAL UNIFIED TYPOGRAPHY (JETBRAINS MONO) ── */
-  --font-main:  "JetBrains Mono", monospace;
-  --font-serif: "JetBrains Mono", monospace;
-  --font-mono:  "JetBrains Mono", monospace;
+  /* ── 1. TYPOGRAPHY SYSTEM ─────────────────────────── */
+  --font-sans: "Anthropic Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-main: var(--font-sans);
+  --font-serif: "Anthropic Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* ── 2. COLOR PALETTE (LAYERED LUXURY SYSTEM) ────── */
-  --bg-primary:      #C9A678; /* Biscuit / Warm Sand Main Canvas */
-  --bg-section:      #D9BC94; /* Light Section / Container */
-  --bg-card:         #E2C9A5; /* Light Cream Card */
-  --bg-card-hover:   #EBD6B7; /* Card Hover Lift */
-  --bg-image-frame:  #D3B184; /* Image Inset Background */
-  --bg-input:        #E8D2AE; /* Form & Search Input Background */
-  --bg-dark-coffee:  #4A2D21; /* Dark Coffee Hero Banner & Header */
-  --bg-footer:       #321C15; /* Deep Editorial Footer */
+  /* Font Weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
 
-  /* ── 3. ACCENTS & METRIC TOKENS ──────────────────── */
-  --accent-primary:  #C45632; /* Primary Terracotta */
-  --accent-hover:    #E16F46; /* Terracotta Hover Highlight */
-  --accent-active:   #9F3F25; /* Active Pressed */
-  --gold:            #C59A52; /* Rating Star Gold */
-  --danger:          #B84235; /* Distinguishable Delete Danger */
-  --success:         #4A6B3D; /* Success Green Badge */
+  /* ── 2. GLOBAL COLOR SYSTEM (HIGH-CONTRAST DARK LUXURY) ─ */
+  --nova-bg:             #17100C; /* Primary Deep Espresso Page Background */
+  --nova-surface:        #21150F; /* Dark Surface Panels */
+  --nova-surface-2:      #2B1A12; /* Secondary Surface / Framing */
+  --nova-coffee:         #3B2418; /* Coffee Tone */
+  --nova-deep-coffee:    #432719; /* Deep Coffee */
+  --nova-card:           #24160F; /* Card Background (High LCD Separation) */
+  --nova-card-hover:     #301D14; /* Card Hover Elevation */
+  --nova-input-bg:       #1B110C; /* Input Field Background (Distinct from Card) */
 
-  /* ── 4. TYPOGRAPHY TEXT COLORS ───────────────────── */
-  --text-primary:    #2A1912; /* Deep Crisp Espresso Heading/Title */
-  --text-secondary:  #654635; /* Warm Coffee Body Description */
-  --text-muted:      #8D6C58; /* Muted Meta / Subtext */
-  --text-light:      #F3DCC0; /* Sand Cream Text on Dark Surfaces */
+  --nova-cream:          #F1DEC3; /* Warm Cream Heading & High-Contrast Text */
+  --nova-light:          #F7E9D4; /* Bright Cream Text */
+  --nova-muted:          #D4B797; /* Muted Sand Body Text */
+  --nova-cream-muted:    #D4B797; /* Backward compatibility */
 
-  /* ── 5. BORDERS & SHADOWS ────────────────────────── */
-  --border:          #A9825F;
-  --border-input:    #8F674D;
-  --border-card:     rgba(74, 45, 33, 0.20);
-  --border-card-hover: #C45632;
-  --border-promo:    #704535;
+  --nova-copper:         #E35D32; /* Primary High-Vibrancy Copper */
+  --nova-copper-light:   #F06B3B; /* Bright Copper Hover */
+  --nova-copper-bright:  #F06B3B; /* Backward compatibility */
+  --nova-copper-dark:    #B94C2B; /* Active / Muted Copper */
+  --nova-copper-muted:   #B94C2B; /* Backward compatibility */
 
-  --shadow-card:       0 8px 22px rgba(74, 45, 33, 0.10);
-  --shadow-card-hover: 0 14px 30px rgba(74, 45, 33, 0.16);
-  --shadow-hero:       0 18px 45px rgba(60, 30, 20, 0.14);
-  --shadow-promo:      0 20px 50px rgba(45, 20, 10, 0.35);
-  --shadow-terracotta: 0 4px 14px rgba(196, 86, 50, 0.35);
+  --nova-border:         rgba(241, 222, 195, 0.18); /* Visible Border for LCD screens */
+  --nova-border-strong:  rgba(241, 222, 195, 0.28); /* Strong Border */
+  --nova-border-subtle:  rgba(241, 222, 195, 0.10); /* Subtle Divider */
+  --nova-shadow:         0 12px 30px rgba(0, 0, 0, 0.35); /* Global Shadow */
 
-  /* ── 6. RADII & TRANSITIONS ──────────────────────── */
-  --radius-pill:       9999px;
-  --radius-card:       16px;
-  --radius-card-prod:  18px;
-  --radius-card-lg:    22px;
-  --radius-hero:       24px;
-  --radius-input:      12px;
+  /* Legacy variable mappings for 100% backward compatibility */
+  --bg-primary:          var(--nova-bg);
+  --bg-section:          var(--nova-surface);
+  --bg-card:             var(--nova-card);
+  --bg-card-hover:       var(--nova-card-hover);
+  --bg-image-frame:      #2D1B13;
+  --bg-input:            var(--nova-input-bg);
+  --bg-dark-coffee:      #21150F;
+  --bg-footer:           #130A06;
 
-  --transition-fast:   0.2s ease;
-  --transition-card:   transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease;
-  --ease-smooth:       cubic-bezier(0.16, 1, 0.3, 1);
+  --accent-primary:      var(--nova-copper);
+  --accent-hover:        var(--nova-copper-light);
+  --accent-active:       var(--nova-copper-dark);
+  --gold:                #F2A93B;
+  --danger:              #DC2626;
+  --success:             #10B981;
+
+  --text-primary:        var(--nova-cream);
+  --text-secondary:      var(--nova-muted);
+  --text-muted:          #A88A70;
+  --text-light:          #FFF2DF;
+
+  --border:              var(--nova-border);
+  --border-input:        rgba(241, 222, 195, 0.22);
+  --border-card:         var(--nova-border);
+  --border-card-hover:   var(--nova-copper);
+  --border-promo:        rgba(241, 222, 195, 0.24);
+
+  --shadow-card:         0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover:   0 14px 34px rgba(0, 0, 0, 0.50);
+  --shadow-hero:         0 18px 45px rgba(0, 0, 0, 0.45);
+  --shadow-promo:        0 20px 50px rgba(0, 0, 0, 0.55);
+  --shadow-terracotta:   0 6px 20px rgba(227, 93, 50, 0.40);
+
+  /* Radii */
+  --radius-pill:         9999px;
+  --radius-card:         16px;
+  --radius-card-prod:    18px;
+  --radius-card-lg:      22px;
+  --radius-hero:         20px;
+  --radius-input:        12px;
+
+  --transition-fast:     0.2s ease;
+  --transition-card:     transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease;
+  --ease-smooth:         cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── 7. GLOBAL CSS RESET & UNIFIED JETBRAINS MONO ─── */
+/* ── 3. GLOBAL CSS RESET & DARK LUXURY BASE ──────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "JetBrains Mono", monospace !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-  font-size: 14.5px;
+  font-size: 15px;
   scroll-behavior: smooth;
+  background-color: var(--nova-bg, #17100C);
 }
 
 body {
-  font-family: "JetBrains Mono", monospace !important;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.65;
+  font-family: var(--font-sans);
+  background-color: var(--nova-bg, #17100C);
+  color: var(--nova-cream, #F1DEC3);
+  line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.01em;
   overflow-x: hidden;
@@ -88,7 +119,7 @@ body {
   min-height: 100vh;
 }
 
-/* Tactile matte biscuit grain texture overlay */
+/* Subtle dark luxury micro-grain overlay (calibrated for high LCD readability) */
 body::before {
   content: "";
   position: fixed;
@@ -97,70 +128,83 @@ body::before {
   width: 100vw;
   height: 100vh;
   background-image:
-    radial-gradient(rgba(74, 45, 33, 0.04) 1px, transparent 1px),
-    radial-gradient(rgba(243, 220, 192, 0.08) 1px, transparent 1px);
-  background-size: 16px 16px, 32px 32px;
-  background-position: 0 0, 8px 8px;
+    radial-gradient(rgba(241, 222, 195, 0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 1px);
+  background-size: 20px 20px, 40px 40px;
+  background-position: 0 0, 10px 10px;
   pointer-events: none;
   z-index: 99990;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
-/* ── 8. HEADINGS & TYPOGRAPHY STANDARDS ───────────── */
+/* ── 4. HEADINGS & EDITORIAL TYPOGRAPHY ──────────── */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "JetBrains Mono", monospace !important;
-  color: var(--text-primary);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-family: var(--font-serif);
+  color: var(--nova-cream, #F1DEC3);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   line-height: 1.15;
 }
 
 h1 {
-  font-size: clamp(28px, 3.6vw, 48px);
-  letter-spacing: -0.04em;
-  line-height: 1.08;
+  font-size: clamp(34px, 4.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(22px, 2.8vw, 34px);
-  letter-spacing: -0.03em;
+  font-size: clamp(26px, 3.2vw, 44px);
+  line-height: 1.15;
 }
 
 h3 {
-  font-size: clamp(15px, 1.8vw, 20px);
-  font-weight: 600;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 500;
 }
 
 p {
-  font-family: "JetBrains Mono", monospace !important;
+  font-family: var(--font-sans);
   font-weight: 400;
-  line-height: 1.65;
-  letter-spacing: -0.01em;
-  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 15px;
+  color: var(--nova-muted, #D4B797);
 }
 
-/* ── 9. BUTTONS, INPUTS & CONTROLS ───────────────── */
+/* ── 5. BUTTONS, INPUTS & CONTROLS ───────────────── */
 button, input, select, textarea, a {
-  font-family: "JetBrains Mono", monospace !important;
+  font-family: var(--font-sans);
 }
 
 button {
-  font-size: 10.5px;
+  font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 input, select, textarea {
-  font-size: 12.5px;
+  font-family: var(--font-sans);
+  font-size: 14px;
   font-weight: 400;
 }
 
 input::placeholder, textarea::placeholder {
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  color: #8D6C58;
+}
+
+/* Technical / Monospace Utility Classes */
+.mono-label,
+.tech-label,
+.tech-badge,
+.sku-code {
+  font-family: var(--font-mono) !important;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Global Terracotta & Dark Outline Buttons */
@@ -170,19 +214,20 @@ input::placeholder, textarea::placeholder {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 46px;
-  padding: 0 30px;
-  background: var(--accent-primary); /* #C45632 */
-  color: var(--text-light) !important; /* #F3DCC0 */
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11px;
+  height: 48px;
+  min-height: 44px;
+  padding: 0 28px;
+  background: var(--nova-copper, #E35D32);
+  color: #FFF2DF !important;
+  font-family: var(--font-sans);
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   text-decoration: none !important;
   border: none;
-  box-shadow: var(--shadow-terracotta);
+  box-shadow: 0 6px 20px rgba(227, 93, 50, 0.40);
   transition: all var(--transition-fast);
   cursor: pointer;
   box-sizing: border-box;
@@ -190,10 +235,10 @@ input::placeholder, textarea::placeholder {
 
 .btn-terracotta:hover,
 .home-primary-btn:hover {
-  background: var(--accent-hover);
-  color: var(--text-light) !important;
+  background: var(--nova-copper-light, #F06B3B);
+  color: #FFF2DF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(196, 86, 50, 0.38);
+  box-shadow: 0 10px 26px rgba(240, 107, 59, 0.50);
 }
 
 .btn-outline-dark {
@@ -201,17 +246,18 @@ input::placeholder, textarea::placeholder {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 46px;
-  padding: 0 28px;
+  height: 48px;
+  min-height: 44px;
+  padding: 0 26px;
   background: transparent;
-  color: var(--text-primary) !important;
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11px;
+  color: var(--nova-cream, #F1DEC3) !important;
+  font-family: var(--font-sans);
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  border: 1.5px solid var(--border-input);
+  border: 1.5px solid rgba(241, 222, 195, 0.3);
   text-decoration: none !important;
   transition: all var(--transition-fast);
   cursor: pointer;
@@ -219,41 +265,42 @@ input::placeholder, textarea::placeholder {
 }
 
 .btn-outline-dark:hover {
-  background: var(--bg-card);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary) !important;
+  background: rgba(59, 36, 24, 0.65);
+  border-color: var(--nova-copper, #E35D32);
+  color: var(--nova-copper, #E35D32) !important;
   transform: translateY(-2px);
 }
 
-/* ── 10. SCROLLBAR & SELECTION ───────────────────── */
+/* ── 6. SCROLLBAR & SELECTION ─────────────────────── */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--nova-bg, #17100C);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-input);
+  background: #3B2418;
   border-radius: 4px;
+  border: 1px solid rgba(241, 222, 195, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
+  background: var(--nova-copper, #E35D32);
 }
 
 ::selection {
-  background: var(--accent-primary);
-  color: var(--text-light);
+  background: var(--nova-copper, #E35D32);
+  color: #FFF2DF;
 }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-/* ── 11. GLOBAL RESPONSIVE CONTAINERS & SYSTEM ────── */
+/* ── 7. GLOBAL RESPONSIVE CONTAINERS & SYSTEM ─────── */
 .main-container,
 .responsive-container {
   width: 100%;
@@ -282,18 +329,4 @@ input::placeholder, textarea::placeholder {
 img, svg, video, canvas, picture {
   max-width: 100%;
   height: auto;
-}
-
-/* Responsive bottom clearance for mobile floating bottom navigation */
-@media (max-width: 768px) {
-  main,
-  .home-page,
-  .about-page,
-  .cart-page,
-  .single-page,
-  .users-page,
-  .auth-page,
-  .signup-page {
-    padding-bottom: calc(84px + env(safe-area-inset-bottom, 16px)) !important;
-  }
 }
