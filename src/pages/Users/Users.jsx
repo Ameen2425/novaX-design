@@ -98,16 +98,36 @@ const Users = () => {
       </div>
 
       <div className="users-controls">
-        <motion.input
-          type="text"
-          placeholder="SEARCH USERS BY NAME..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          whileFocus={{ scale: 1.01 }}
-          transition={{ duration: 0.2 }}
-        />
+        <div className="users-search-wrapper">
+          <svg className="users-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+
+          <input
+            type="text"
+            className="users-search-input"
+            placeholder="Search users by name..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+
+          {search && (
+            <button
+              type="button"
+              className="users-search-clear"
+              onClick={() => setSearch("")}
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+
         <div className="users-count-badge">
-          {filterUsers.length} Users Listed
+          <span className="count-dot"></span>
+          <strong>{filterUsers.length}</strong>
+          <span>Users Listed</span>
         </div>
       </div>
 
@@ -183,44 +203,51 @@ const Users = () => {
       <div
         className="offcanvas offcanvas-start"
         data-bs-scroll="true"
-        data-bs-backdrop="false"
+        data-bs-backdrop="true"
         tabIndex="-1"
         id="editUser"
         aria-labelledby="editUserLabel"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="editUserLabel">
-            Edit User
-          </h5>
+          <div className="offcanvas-title-wrap">
+            <span className="offcanvas-badge">MANAGEMENT CONSOLE</span>
+            <h5 className="offcanvas-title" id="editUserLabel">
+              Edit User Profile
+            </h5>
+          </div>
 
           <button
             type="button"
-            className="btn-close"
+            className="offcanvas-close-btn"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
-          ></button>
+          >
+            ✕
+          </button>
         </div>
 
         <div className="offcanvas-body">
           <div className="mb-3">
-            <label>Name</label>
+            <label>Full Name</label>
             <input
               type="text"
               className="form-control"
               name="name"
               value={editData.name}
               onChange={handleEditData}
+              placeholder="Enter name"
             />
           </div>
 
           <div className="mb-3">
-            <label>Email</label>
+            <label>Email Address</label>
             <input
               type="email"
               className="form-control"
               name="email"
               value={editData.email}
               onChange={handleEditData}
+              placeholder="Enter email"
             />
           </div>
 
@@ -232,19 +259,30 @@ const Users = () => {
               name="age"
               value={editData.age}
               onChange={handleEditData}
+              placeholder="Enter age"
             />
           </div>
 
-          <motion.button
-            className="btn btn-primary"
-            type="button"
-            data-bs-dismiss="offcanvas"
-            onClick={updateEditedUser}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-          >
-            Update User
-          </motion.button>
+          <div className="offcanvas-actions">
+            <motion.button
+              className="btn btn-primary"
+              type="button"
+              data-bs-dismiss="offcanvas"
+              onClick={updateEditedUser}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Update User Profile
+            </motion.button>
+
+            <button
+              type="button"
+              className="btn btn-cancel"
+              data-bs-dismiss="offcanvas"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     </motion.div>

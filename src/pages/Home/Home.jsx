@@ -7,11 +7,11 @@ import "./Home.css";
 
 // Animation Variants
 const fadeInUp = {
-  hidden: { opacity: 0, y: 35 },
+  hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
   }
 };
 
@@ -20,8 +20,8 @@ const staggerContainer = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1
+      staggerChildren: 0.1,
+      delayChildren: 0.08
     }
   }
 };
@@ -53,12 +53,12 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.35 }}
     >
       {/* =====================================================
-          2-COLUMN EDITORIAL HERO — CREAM + BROWN LUXURY
+          1. HERO SECTION — EDITORIAL LUXURY BANNER
       ===================================================== */}
-      <section className="cream-hero-section">
+      <section className="home-hero">
         <div className="cream-hero-container">
           <motion.div
             className="cream-hero-content"
@@ -66,54 +66,50 @@ const Home = () => {
             animate="show"
             variants={staggerContainer}
           >
-            <motion.p className="cream-hero-label" variants={fadeInUp}>
+            <motion.span className="cream-hero-label" variants={fadeInUp}>
               NOVAX / THE EVERYDAY EDIT
-            </motion.p>
+            </motion.span>
 
-            <motion.h1 className="serif-title" variants={fadeInUp}>
+            <motion.h1 className="cream-hero-title" variants={fadeInUp}>
               EVERYTHING YOU NEED.
               <br />
-              <span className="accent-text">ONE PLACE.</span>
+              <span>ONE PLACE.</span>
             </motion.h1>
 
             <motion.p className="cream-hero-description" variants={fadeInUp}>
               Discover premium products selected for modern everyday living.
             </motion.p>
 
-            <motion.div className="cream-hero-buttons" variants={fadeInUp}>
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+            <motion.div className="cream-hero-actions" variants={fadeInUp}>
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Link to="/products" className="btn-terracotta">
                   SHOP PRODUCTS →
                 </Link>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Link to="/about" className="btn-outline-dark">
-                  EXPLORE COLLECTION
+                  EXPLORE STORY
                 </Link>
               </motion.div>
             </motion.div>
 
             <motion.div className="cream-hero-trust" variants={fadeInUp}>
               <span>PREMIUM QUALITY</span>
-              <span>•</span>
+              <span className="bullet">•</span>
               <span>FAST DELIVERY</span>
-              <span>•</span>
+              <span className="bullet">•</span>
               <span>SECURE PAYMENT</span>
             </motion.div>
           </motion.div>
 
           <motion.div
             className="cream-hero-visual"
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
           >
-            <motion.div
-              className="cream-hero-image-frame"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4 }}
-            >
+            <div className="cream-hero-image-frame">
               <img
                 src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85"
                 alt="NovaX Editorial Luxury Collection"
@@ -121,18 +117,18 @@ const Home = () => {
 
               <motion.div
                 className="cream-hero-badge"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span>NEW ARRIVALS 2026</span>
+                <span>✦ NEW ARRIVALS 2026</span>
               </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* =====================================================
-          CATEGORY SECTION
+          2. CATEGORY SECTION
       ===================================================== */}
       <section className="home-categories">
         <motion.div
@@ -143,14 +139,14 @@ const Home = () => {
           variants={fadeInUp}
         >
           <div>
-            <p className="home-label">THE NOVAX EDIT</p>
+            <span className="home-section-label">THE NOVAX EDIT</span>
             <h2>Shop by Category</h2>
             <p>Curated collections designed for effortless everyday discovery.</p>
           </div>
 
-          <motion.div whileHover={{ x: 5 }}>
-            <Link to="/products">View All Categories →</Link>
-          </motion.div>
+          <Link to="/products" className="home-view-all-link">
+            View All Categories →
+          </Link>
         </motion.div>
 
         <motion.div
@@ -170,8 +166,8 @@ const Home = () => {
             <motion.div
               key={cat.num}
               variants={fadeInUp}
-              whileHover={{ y: -8 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.98 }}
               className="home-category-card-wrap"
             >
               <Link to="/products" className="home-category-card">
@@ -193,9 +189,8 @@ const Home = () => {
         </motion.div>
       </section>
 
-
       {/* =====================================================
-          TRENDING PRODUCTS
+          3. TRENDING PRODUCTS
       ===================================================== */}
       <section className="home-products">
         <motion.div
@@ -206,19 +201,19 @@ const Home = () => {
           variants={fadeInUp}
         >
           <div>
-            <p className="home-label">TRENDING NOW</p>
-            <h2>Popular products</h2>
+            <span className="home-section-label">TRENDING NOW</span>
+            <h2>Popular Products</h2>
           </div>
 
-          <motion.div whileHover={{ x: 5 }}>
-            <Link to="/products">View All Products →</Link>
-          </motion.div>
+          <Link to="/products" className="home-view-all-link">
+            View All Products →
+          </Link>
         </motion.div>
 
         {loading ? (
           <div className="home-products-loading">
             <div className="home-loader"></div>
-            <span>Loading products...</span>
+            <span>Loading popular products...</span>
           </div>
         ) : products.length > 0 ? (
           <motion.div
@@ -232,8 +227,6 @@ const Home = () => {
               <motion.div
                 key={product.id}
                 variants={fadeInUp}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3 }}
                 className="home-grid-card-wrap"
               >
                 <Cards
@@ -250,52 +243,53 @@ const Home = () => {
           </motion.div>
         ) : (
           <div className="home-products-empty">
-            <p>Unable to load products.</p>
-            <Link to="/products">Browse Products →</Link>
+            <p>Unable to load products at this moment.</p>
+            <Link to="/products" className="btn-terracotta">Browse Products →</Link>
           </div>
         )}
       </section>
 
-
       {/* =====================================================
-          SPECIAL OFFER
+          4. SPECIAL OFFER BANNER
       ===================================================== */}
-      <motion.section
-        className="home-offer"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
-        <motion.div className="home-offer-content" variants={staggerContainer}>
-          <p>NOVAX SPECIAL</p>
-          <h2>
-            Better products.
-            <br />
-            Better prices.
-          </h2>
-          <span>
-            Discover great products at prices you'll love.
-            Start exploring our latest collection today.
-          </span>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link to="/products" className="home-shop-btn">
-              Explore Deals →
-            </Link>
+      <section className="home-offer-section">
+        <motion.div
+          className="home-offer"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+        >
+          <div className="home-offer-content">
+            <span className="home-offer-badge">NOVAX SPECIAL</span>
+            <h2>
+              Better products.
+              <br />
+              <span>Better prices.</span>
+            </h2>
+            <p>
+              Discover curated luxury products at everyday prices.
+              Explore our latest seasonal deals and limited collections.
+            </p>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <Link to="/products" className="home-shop-btn">
+                Explore Deals →
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="home-offer-symbol"
+            animate={{ rotate: [0, 6, -6, 0], scale: [1, 1.04, 1] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            %
           </motion.div>
         </motion.div>
-
-        <motion.div
-          className="home-offer-symbol"
-          animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.06, 1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          %
-        </motion.div>
-      </motion.section>
+      </section>
 
       {/* =====================================================
-          WHY NOVAX
+          5. WHY NOVAX (BENEFITS)
       ===================================================== */}
       <section className="home-benefits-section">
         <motion.div
@@ -305,7 +299,7 @@ const Home = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
-          <p className="home-label">WHY SHOP WITH US</p>
+          <span className="home-section-label">WHY SHOP WITH US</span>
           <h2>Shopping without the hassle.</h2>
           <p>Everything is designed to make your shopping experience easier.</p>
         </motion.div>
@@ -318,16 +312,16 @@ const Home = () => {
           variants={staggerContainer}
         >
           {[
-            { num: "01", title: "Fast Delivery", text: "Get your orders delivered quickly and reliably." },
-            { num: "02", title: "Secure Checkout", text: "Your shopping experience is designed with security in mind." },
-            { num: "03", title: "Easy Returns", text: "Simple return options when something isn't right." },
-            { num: "04", title: "Customer Support", text: "Get assistance whenever you need it." },
+            { num: "01", title: "Fast Delivery", text: "Get your orders delivered quickly and reliably straight to your doorstep." },
+            { num: "02", title: "Secure Checkout", text: "Your transactions are encrypted with bank-level security protections." },
+            { num: "03", title: "Easy Returns", text: "Enjoy effortless 30-day return options when something isn't perfect." },
+            { num: "04", title: "Customer Support", text: "Our concierge support team is ready to assist you round the clock." },
           ].map((benefit) => (
             <motion.div
               key={benefit.num}
               className="benefit-card"
               variants={fadeInUp}
-              whileHover={{ y: -8, boxShadow: "0 12px 25px rgba(0,0,0,0.08)" }}
+              whileHover={{ y: -6 }}
             >
               <span className="benefit-num">{benefit.num}</span>
               <h3>{benefit.title}</h3>
@@ -338,7 +332,7 @@ const Home = () => {
       </section>
 
       {/* =====================================================
-          SHOPPING EXPERIENCE
+          6. SHOPPING EXPERIENCE
       ===================================================== */}
       <section className="home-experience">
         <motion.div
@@ -348,7 +342,7 @@ const Home = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="home-label">THE NOVAX DIFFERENCE</p>
+          <span className="home-section-label">THE NOVAX DIFFERENCE</span>
           <h2>
             From discovery
             <br />
@@ -356,10 +350,10 @@ const Home = () => {
           </h2>
           <p>
             Browse products you love, add them to your cart,
-            and enjoy a simple shopping journey from start to finish.
+            and enjoy a seamless luxury shopping journey from start to finish.
           </p>
 
-          <motion.div whileHover={{ x: 5 }} style={{ display: "inline-block" }}>
+          <motion.div whileHover={{ x: 4 }} style={{ display: "inline-block" }}>
             <Link to="/products" className="home-primary-btn">
               Start Shopping
               <span>→</span>
@@ -375,25 +369,28 @@ const Home = () => {
           variants={staggerContainer}
         >
           {[
-            { step: "01", title: "Discover", desc: "Explore products and categories." },
-            { step: "02", title: "Choose", desc: "Find products that fit your needs." },
-            { step: "03", title: "Enjoy", desc: "Get your order delivered to you." },
+            { step: "01", title: "Discover", desc: "Explore curated collections and rare brand exclusives." },
+            { step: "02", title: "Choose", desc: "Find thoughtful products that elevate your everyday lifestyle." },
+            { step: "03", title: "Enjoy", desc: "Receive fast, beautifully packaged deliveries to your door." },
           ].map((item) => (
             <motion.div
               key={item.step}
+              className="experience-step-card"
               variants={fadeInUp}
-              whileHover={{ scale: 1.03, y: -4 }}
+              whileHover={{ y: -4 }}
             >
-              <span>{item.step}</span>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <span className="step-num">{item.step}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </section>
 
       {/* =====================================================
-          STATISTICS
+          7. STATISTICS
       ===================================================== */}
       <section className="home-stats-section">
         <motion.div
@@ -403,7 +400,7 @@ const Home = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
-          <p className="home-label">NOVAX BY THE NUMBERS</p>
+          <span className="home-section-label">NOVAX BY THE NUMBERS</span>
           <h2>Growing every day.</h2>
         </motion.div>
 
@@ -416,15 +413,15 @@ const Home = () => {
         >
           {[
             { val: "10K+", label: "Happy Customers" },
-            { val: "500+", label: "Products" },
-            { val: "50+", label: "Brands" },
+            { val: "500+", label: "Curated Items" },
+            { val: "50+", label: "Global Brands" },
             { val: "4.9★", label: "Customer Rating" },
           ].map((stat, i) => (
             <motion.div
               key={i}
               className="home-stat"
               variants={fadeInUp}
-              whileHover={{ scale: 1.06 }}
+              whileHover={{ y: -5 }}
             >
               <strong>{stat.val}</strong>
               <span>{stat.label}</span>
@@ -434,7 +431,7 @@ const Home = () => {
       </section>
 
       {/* =====================================================
-          STORE
+          8. STORE LOCATION
       ===================================================== */}
       <section className="location-section">
         <motion.div
@@ -444,39 +441,41 @@ const Home = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
-          <p className="home-label">VISIT NOVAX</p>
+          <span className="home-section-label">VISIT NOVAX</span>
           <h2>We'd love to meet you.</h2>
-          <p>Find our store in Hyderabad.</p>
+          <p>Experience our physical flagship studio in Hyderabad.</p>
         </motion.div>
 
         <div className="location-container">
           <motion.div
             className="location-info"
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="location-number">NOVAX STORE</span>
-            <h3>Your local shopping destination.</h3>
-            <p>📍 Kukatpally, Hyderabad, Telangana</p>
-            <p>📞 +91 98765 43210</p>
-            <p>✉️ support@novax.com</p>
-            <p>🕒 Monday - Saturday : 9:00 AM - 9:00 PM</p>
+            <span className="location-number">FLAGSHIP BOUTIQUE</span>
+            <h3>Your local luxury shopping destination.</h3>
+            <div className="location-details">
+              <p><span className="loc-icon">📍</span> Kukatpally, Hyderabad, Telangana</p>
+              <p><span className="loc-icon">📞</span> +91 98765 43210</p>
+              <p><span className="loc-icon">✉️</span> support@novax.com</p>
+              <p><span className="loc-icon">🕒</span> Monday – Saturday : 9:00 AM – 9:00 PM</p>
+            </div>
           </motion.div>
 
           <motion.div
             className="location-map"
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
             <iframe
-              title="NovaX Store"
+              title="NovaX Store Location"
               src="https://www.google.com/maps?q=Kukatpally,Hyderabad&output=embed"
               width="100%"
-              height="350"
+              height="320"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
@@ -486,32 +485,34 @@ const Home = () => {
       </section>
 
       {/* =====================================================
-          FINAL CTA
+          9. FINAL CTA
       ===================================================== */}
-      <motion.section
-        className="home-final"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
-      >
-        <p className="home-label">READY TO EXPLORE?</p>
-        <h2>
-          Your next favorite
-          <br />
-          <span>product is waiting.</span>
-        </h2>
-        <p>Explore the NovaX collection and find something made for you.</p>
+      <section className="home-final-section">
+        <motion.div
+          className="home-final"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="home-final-label">READY TO EXPLORE?</span>
+          <h2>
+            Your next favorite
+            <br />
+            <span>product is waiting.</span>
+          </h2>
+          <p>Explore the NovaX collection and discover something thoughtfully crafted for you.</p>
 
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link to="/products" className="home-primary-btn">
-            Shop NovaX
-            <span>→</span>
-          </Link>
+          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+            <Link to="/products" className="home-primary-btn">
+              Shop NovaX
+              <span>→</span>
+            </Link>
+          </motion.div>
         </motion.div>
-      </motion.section>
+      </section>
     </motion.main>
   );
 };
 
-export default Home;
+export default Home;

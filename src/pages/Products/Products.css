@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    NOVAX — PREMIUM PRODUCT LIST PAGE CSS
 ========================================================= */
 
@@ -63,27 +63,36 @@
   min-width: 260px;
   height: 52px;
   padding: 0 20px 0 52px;
-  background: #FFF3DD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236D5748' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.868-3.833zm-5.242 1.856a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 20px center;
-  border: 1px solid #9F8063;
+  background: #FFF3DD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23765A43' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.868-3.833zm-5.242 1.856a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 20px center;
+  border: 1.5px solid #9F8063;
   border-radius: 999px;
   font-family: var(--font-main);
-  font-size: 13.5px;
+  font-size: 14px;
+  font-weight: 500;
   color: #241711;
   outline: none;
-  box-shadow: 0 4px 14px rgba(36, 23, 17, 0.06);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 18px rgba(36, 23, 17, 0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 .products-filter input[type="search"]::placeholder {
   color: #9F8063;
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.products-filter input[type="search"]:hover {
+  border-color: #C6532F;
+  box-shadow: 0 6px 22px rgba(198, 83, 47, 0.14);
 }
 
 .products-filter input[type="search"]:focus {
   border-color: #C6532F;
-  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.12);
+  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.16), 0 8px 24px rgba(36, 23, 17, 0.12);
+  transform: translateY(-1px);
 }
 
 .products-filter select {

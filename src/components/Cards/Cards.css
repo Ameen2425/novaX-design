@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    NOVAX — PREMIUM PRODUCT CARDS (EARTHY LUXURY PALETTE)
 ========================================================= */
 
@@ -249,3 +249,12 @@
   .product-price { font-size: 18px; }
   .add-cart-btn  { height: 40px; font-size: 11px; }
 }
+
+@media (max-width: 480px) {
+  .product-card-body { padding: 12px 12px 14px; }
+  .product-title { font-size: 14.5px; }
+  .product-price { font-size: 18px; }
+  .product-rating span { font-size: 11px; }
+  .product-rating small { font-size: 11px; }
+}
+
