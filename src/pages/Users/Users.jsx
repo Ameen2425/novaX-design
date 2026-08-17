@@ -149,8 +149,8 @@ const Users = () => {
               {filterUsers.length === 0 ? (
                 <tr>
                   <td colSpan="6" style={{ textAlign: "center", padding: "48px 20px" }}>
-                    <p style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "#241711", marginBottom: "6px" }}>No Users Found</p>
-                    <p style={{ fontFamily: "var(--font-main)", fontSize: "14px", color: "#6D5748", margin: 0 }}>Try adjusting your search query</p>
+                    <p style={{ fontFamily: "var(--font-serif)", fontSize: "22px", color: "var(--text-primary)", marginBottom: "6px" }}>No Users Found</p>
+                    <p style={{ fontFamily: "var(--font-main)", fontSize: "14px", color: "var(--text-secondary)", margin: 0 }}>Try adjusting your search query</p>
                   </td>
                 </tr>
               ) : (

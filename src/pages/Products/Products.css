@@ -1,131 +1,131 @@
 /* =========================================================
-   NOVAX — PREMIUM PRODUCT LIST PAGE CSS
+   NOVAX — PRODUCTS PAGE (CLAUDE CODE / DEVELOPER TYPOGRAPHY SYSTEM)
+   JetBrains Mono + Warm Sand Toolbar + Light Cream Cards
 ========================================================= */
 
 .products-page {
   min-height: 100vh;
-  padding: 110px 5% 100px;
-  background: #C8AD8F;
-  max-width: 1440px;
-  margin: 0 auto;
-  color: #241711;
+  padding: calc(62px + 54px) 5% 100px;
+  background: var(--bg-primary); /* #C9A678 */
+  color: var(--text-primary);     /* #2A1912 */
+  box-sizing: border-box;
 }
 
-/* ── HEADER ─────────────────────────────────────── */
+/* ── 1. HEADER ───────────────────────────────────── */
 .products-header {
   text-align: center;
-  padding-bottom: 44px;
+  max-width: 700px;
+  margin: 0 auto 40px;
 }
 
 .products-header span {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.26em;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #C6532F;
+  color: var(--accent-primary); /* #C45632 */
   display: block;
   margin-bottom: 12px;
 }
 
 .products-header h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(36px, 4.5vw, 58px);
-  font-weight: 500;
-  color: #241711;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: clamp(30px, 3.8vw, 48px);
+  font-weight: 600;
+  color: var(--text-primary); /* #2A1912 */
   line-height: 1.1;
-  margin-bottom: 12px;
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
 }
 
 .products-header p {
-  font-family: var(--font-main);
-  font-size: 15.5px;
-  color: #6D5748;
-  max-width: 520px;
-  margin: 0 auto;
-  line-height: 1.65;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary); /* #654635 */
 }
 
-/* ── FILTER BAR ─────────────────────────────────── */
+/* ── 2. FILTER & SEARCH TOOLBAR ──────────────────── */
 .products-filter {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+  background: var(--bg-section); /* #D9BC94 */
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 12px 20px;
+  max-width: 860px;
+  margin: 0 auto 50px;
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
 }
 
 .products-filter input[type="search"] {
-  flex: 1;
-  min-width: 260px;
-  height: 52px;
-  padding: 0 20px 0 52px;
-  background: #FFF3DD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23765A43' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.868-3.833zm-5.242 1.856a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 20px center;
-  border: 1.5px solid #9F8063;
-  border-radius: 999px;
-  font-family: var(--font-main);
-  font-size: 14px;
-  font-weight: 500;
-  color: #241711;
+  flex: 1.6;
+  height: 46px;
+  padding: 0 20px;
+  background: var(--bg-input); /* #E8D2AE */
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-pill);
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
   outline: none;
-  box-shadow: 0 4px 18px rgba(36, 23, 17, 0.08);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
   box-sizing: border-box;
 }
 
 .products-filter input[type="search"]::placeholder {
-  color: #9F8063;
-  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace !important;
   font-size: 11px;
-  letter-spacing: 0.10em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.products-filter input[type="search"]:hover {
-  border-color: #C6532F;
-  box-shadow: 0 6px 22px rgba(198, 83, 47, 0.14);
 }
 
 .products-filter input[type="search"]:focus {
-  border-color: #C6532F;
-  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.16), 0 8px 24px rgba(36, 23, 17, 0.12);
-  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(196, 86, 50, 0.18);
 }
 
 .products-filter select {
-  height: 52px;
-  padding: 0 44px 0 22px;
-  background: #FFF3DD;
-  border: 1px solid #9F8063;
-  border-radius: 999px;
-  font-family: var(--font-mono);
+  flex: 1;
+  height: 46px;
+  padding: 0 20px;
+  background: var(--bg-input); /* #E8D2AE */
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-pill);
+  font-family: "JetBrains Mono", monospace !important;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #49372C;
+  color: var(--text-primary);
   outline: none;
   cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23C6532F' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  box-shadow: 0 4px 14px rgba(36, 23, 17, 0.06);
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
 }
 
 .products-filter select:focus {
-  border-color: #C6532F;
-  box-shadow: 0 0 0 4px rgba(198, 83, 47, 0.12);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(196, 86, 50, 0.18);
 }
 
-/* ── PRODUCT GRID ───────────────────────────────── */
+.products-filter select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 10px;
+}
+
+/* ── 3. PRODUCTS GRID CONTAINER ─────────────────── */
 .products-container {
-  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -133,103 +133,95 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  align-items: stretch;
+  gap: 22px;
 }
 
-.products-grid > div {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* ── PAGINATION ─────────────────────────────────── */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 56px;
-  flex-wrap: wrap;
-}
-
-.pagination button {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid #9F8063;
-  background: #FFF3DD;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 600;
-  color: #49372C;
-  cursor: pointer;
-  transition: all 0.22s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(36, 23, 17, 0.06);
-}
-
-.pagination button:hover {
-  background: rgba(198, 83, 47, 0.12);
-  border-color: #C6532F;
-  color: #C6532F;
-  transform: translateY(-2px);
-}
-
-.pagination button.active {
-  background: #C6532F;
-  border-color: #C6532F;
-  color: #FFF3DD;
-  box-shadow: 0 6px 18px rgba(198, 83, 47, 0.35);
-  transform: translateY(-2px);
-}
-
-/* ── EMPTY STATE ────────────────────────────────── */
+/* ── 4. EMPTY STATE ─────────────────────────────── */
 .products-empty {
   text-align: center;
-  padding: 80px 20px;
-  background: #FFF3DD;
-  border: 1px solid #9F8063;
-  border-radius: 24px;
-  box-shadow: 0 8px 28px rgba(36, 23, 17, 0.08);
+  padding: 70px 24px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-hero);
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-hero);
 }
 
 .products-empty h2 {
-  font-family: var(--font-serif);
-  font-size: 32px;
-  color: #241711;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
 .products-empty p {
-  font-family: var(--font-main);
-  font-size: 15px;
-  color: #6D5748;
-  margin-bottom: 28px;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
 }
 
 .products-empty button {
-  height: 50px;
-  padding: 0 34px;
-  background: #C6532F;
-  color: #FFF3DD;
-  border: none;
-  border-radius: 999px;
-  font-family: var(--font-main);
-  font-size: 13px;
+  height: 46px;
+  padding: 0 28px;
+  background: var(--accent-primary);
+  color: var(--text-light);
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: none;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(198, 83, 47, 0.30);
-  transition: background 0.25s ease, transform 0.2s ease;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-terracotta);
 }
 
 .products-empty button:hover {
-  background: #91371F;
+  background: var(--accent-hover);
   transform: translateY(-2px);
+}
+
+/* ── 5. PAGINATION ──────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 50%;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pagination button:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.pagination button.active {
+  background: var(--accent-primary);
+  color: var(--text-light);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-terracotta);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
@@ -239,10 +231,20 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+  .products-filter {
+    flex-direction: column;
+    border-radius: var(--radius-card);
+    padding: 16px;
+  }
+  .products-filter input[type="search"],
+  .products-filter select {
+    width: 100%;
+    flex: auto;
   }
 }
 
@@ -250,7 +252,10 @@
   .products-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 768px) {
   .products-page {
-    padding: 90px 4% 100px;
+    padding: 96px 5% 120px;
   }
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import novaxAboutHero from "../../assets/novax-about-hero.jpg";
+import novaxAboutCta from "../../assets/novax-about-cta.jpg";
 import "./About.css";
 
 // Animation Variants
@@ -62,7 +63,7 @@ const About = () => {
             <motion.div className="about-hero-actions" variants={fadeInUp}>
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Link to="/products" className="btn-terracotta">
-                  Explore Products →
+                  Explore Products <span>→</span>
                 </Link>
               </motion.div>
 
@@ -300,7 +301,7 @@ const About = () => {
       </section>
 
       {/* =====================================================
-          6. FINAL CTA
+          6. FINAL CTA (2-COLUMN 3D PRODUCT UPGRADE)
       ===================================================== */}
       <section className="about-final-section">
         <motion.div
@@ -310,20 +311,36 @@ const About = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="about-final-label">WELCOME TO NOVAX</span>
-          <h2>
-            Your next favorite
-            <br />
-            <span>find is waiting.</span>
-          </h2>
-          <p>Explore our carefully selected catalog and discover everyday luxury made just for you.</p>
+          <div className="about-final-content">
+            <span className="about-final-label">WELCOME TO NOVAX</span>
+            <h2>
+              Your next favorite
+              <br />
+              <span>find is waiting.</span>
+            </h2>
+            <p>
+              Explore our carefully selected catalog and discover everyday luxury
+              made just for you.
+            </p>
 
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
-            <Link to="/products" className="home-primary-btn" style={{ background: "#C6532F", margin: "0 auto" }}>
-              Shop NovaX
-              <span>→</span>
-            </Link>
-          </motion.div>
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+              <Link to="/products" className="btn-terracotta">
+                Shop NovaX
+                <span>→</span>
+              </Link>
+            </motion.div>
+          </div>
+
+          <div className="about-final-visual">
+            <div className="about-final-3d-wrap">
+              <div className="about-final-3d-glow"></div>
+              <img
+                src={novaxAboutCta}
+                alt="NovaX Luxury Curated Lifestyle Collection"
+                className="about-final-3d-img"
+              />
+            </div>
+          </div>
         </motion.div>
       </section>
     </motion.main>

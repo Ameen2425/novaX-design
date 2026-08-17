@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Loader from "../components/Loader/Loader";
+import PageLoader from "../components/PageLoader/PageLoader";
 
 export const Home = React.lazy(() => import("../pages/Home/Home"));
 export const About = React.lazy(() => import("../pages/About/About"));
@@ -51,7 +51,7 @@ export const AppRouter = () => {
   ];
 
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<PageLoader />}>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           {routes.map((route) => (

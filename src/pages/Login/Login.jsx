@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Login.css";
+import novaxLoginHero from "../../assets/novax-login-hero.jpg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -102,8 +103,8 @@ const Login = () => {
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <img
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85"
-              alt="NovaX Editorial Luxury"
+              src={novaxLoginHero}
+              alt="NovaX Editorial Boutique Shopping Experience"
               className="auth-bg-img"
             />
             <div className="auth-image-overlay"></div>

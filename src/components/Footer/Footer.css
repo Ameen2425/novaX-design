@@ -1,163 +1,183 @@
-﻿/* =========================================================
-   NOVAX — PREMIUM DARK FOOTER (FULL RESPONSIVE)
+/* =========================================================
+   NOVAX — DARK FOOTER (CLAUDE CODE / DEVELOPER TYPOGRAPHY)
+   JetBrains Mono + Deep Dark Footer (#321C15)
 ========================================================= */
+
 .footer {
-  background: #241711;
-  color: #E7D0B1;
-  padding: 72px 0 0;
+  background: var(--bg-footer); /* #321C15 */
+  color: var(--text-light);     /* #F3DCC0 */
+  padding: 80px 5% 40px;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  border-top: 1px solid rgba(243, 220, 192, 0.15);
+  box-sizing: border-box;
 }
 
+/* Subtle oversized NOVAX monospace watermark */
 .footer::before {
   content: "NOVAX";
   position: absolute;
   bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-serif);
-  font-size: clamp(60px, 14vw, 200px);
+  right: 5%;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: clamp(80px, 14vw, 180px);
   font-weight: 700;
-  letter-spacing: 0.04em;
-  color: rgba(255,243,221,0.035);
-  white-space: nowrap;
+  color: rgba(243, 220, 192, 0.025);
+  line-height: 1;
   pointer-events: none;
   user-select: none;
-  line-height: 1;
+  letter-spacing: 0.16em;
 }
 
 .footer-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 5%;
+  position: relative;
+  z-index: 1;
 }
 
+/* ── 4-COLUMN CONTENT GRID ──────────────────────── */
 .footer-content {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
-  gap: 48px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid rgba(159,128,99,0.22);
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: clamp(28px, 4vw, 56px);
+  margin-bottom: 60px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-logo {
-  font-family: var(--font-serif);
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #FFF3DD;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-light); /* #F3DCC0 */
   text-decoration: none;
-  display: block;
-  margin-bottom: 16px;
-  transition: color 0.25s ease;
+  display: inline-block;
+  margin-bottom: 14px;
+  transition: color var(--transition-fast);
+  text-transform: uppercase;
 }
 
-.footer-logo:hover { color: #E28B68; }
+.footer-logo:hover {
+  color: var(--accent-hover);
+}
 
 .footer-brand p {
-  font-family: var(--font-main);
-  font-size: 14px;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 11.5px;
   line-height: 1.7;
-  color: #9F8063;
-  max-width: 280px;
+  color: #D6B18B;
+  max-width: 340px;
 }
 
+/* ── LINKS COLUMNS (JETBRAINS MONO 10PX / 600) ──── */
 .footer-links h3,
 .footer-contact h3 {
-  font-family: var(--font-mono);
+  font-family: "JetBrains Mono", monospace !important;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-weight: 600;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #C6532F;
-  margin-bottom: 20px;
+  color: var(--accent-hover); /* #E16F46 */
+  margin-bottom: 18px;
 }
 
 .footer-links ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
-.footer-links ul li a {
-  font-family: var(--font-main);
-  font-size: 14px;
-  color: #9F8063;
+.footer-links a {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 11px;
+  color: #D9BC94;
   text-decoration: none;
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition: all var(--transition-fast);
   display: inline-block;
 }
 
-.footer-links ul li a:hover {
-  color: #FFF3DD;
-  padding-left: 4px;
+.footer-links a:hover {
+  color: var(--accent-hover);
+  transform: translateX(4px);
 }
 
+/* ── CONTACT COLUMN ─────────────────────────────── */
 .footer-contact p {
-  font-family: var(--font-main);
-  font-size: 13.5px;
-  color: #9F8063;
-  margin-bottom: 8px;
-  line-height: 1.5;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 11.5px;
+  line-height: 1.8;
+  color: #D9BC94;
+  margin-bottom: 6px;
 }
 
 .footer-socials {
   display: flex;
+  align-items: center;
   gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 .footer-socials a {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  border: 1px solid rgba(159,128,99,0.40);
+  background: rgba(243, 220, 192, 0.08);
+  border: 1px solid rgba(243, 220, 192, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9F8063;
+  color: var(--text-light);
   font-size: 13px;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all var(--transition-fast);
 }
 
 .footer-socials a:hover {
-  background: #C6532F;
-  border-color: #C6532F;
-  color: #FFF3DD;
-  transform: translateY(-2px);
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(196, 86, 50, 0.4);
 }
 
+/* ── BOTTOM COPYRIGHT ROW (JETBRAINS MONO 9PX) ──── */
 .footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(243, 220, 192, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 0;
-  position: relative;
-  z-index: 1;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.footer-bottom p {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(159,128,99,0.7);
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 9px;
   letter-spacing: 0.08em;
+  color: #D6B18B;
+  flex-wrap: wrap;
+  gap: 14px;
+  text-transform: uppercase;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .footer-content { grid-template-columns: 1fr 1fr; gap: 36px; }
+@media (max-width: 900px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-@media (max-width: 767px) {
-  .footer { padding-bottom: 96px; }
-  .footer-content { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
-  .footer-bottom  { flex-direction: column; text-align: center; justify-content: center; }
+@media (max-width: 600px) {
+  .footer {
+    padding: 60px 5% 120px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
 }
