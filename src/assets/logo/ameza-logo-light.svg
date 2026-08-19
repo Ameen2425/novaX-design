@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Symbol Icon -->
+  <g transform="translate(10, 8)">
+    <rect width="64" height="64" rx="16" fill="#17100C"/>
+    <path d="M32 12 L49 50 H39.5 L32 32 L24.5 50 H15 L32 12Z" fill="#F1DEC3"/>
+    <path d="M32 24 L38.5 40 H25.5 L32 24Z" fill="#17100C"/>
+    <path d="M22 42 L32 31 L42 42 L37.5 42 L32 36.5 L26.5 42 H22Z" fill="#E35D32"/>
+  </g>
+  <!-- Wordmark AMEZA for light surface -->
+  <text x="90" y="49" fill="#17100C" font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif" font-size="30" font-weight="700" letter-spacing="0.22em">AMEZA</text>
+  <!-- Accent Copper Dot -->
+  <circle cx="282" cy="46" r="3.5" fill="#E35D32" />
+</svg>

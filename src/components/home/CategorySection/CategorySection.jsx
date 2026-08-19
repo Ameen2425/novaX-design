@@ -33,7 +33,7 @@ const CategorySection = () => {
         variants={fadeInUp}
       >
         <div>
-          <span className="home-section-label">THE NOVAX EDIT</span>
+          <span className="home-section-label">THE AMEZA EDIT</span>
           <h2>Shop by Category</h2>
           <p>Curated collections designed for effortless everyday discovery.</p>
         </div>

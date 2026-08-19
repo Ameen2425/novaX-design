@@ -31,7 +31,7 @@ const AboutFeatures = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
-        <span className="about-section-label">WHY NOVAX</span>
+        <span className="about-section-label">WHY AMEZA</span>
         <h2>Everything you need.</h2>
         <p>Engineered for speed, security, and utmost shopping peace of mind.</p>
       </motion.div>

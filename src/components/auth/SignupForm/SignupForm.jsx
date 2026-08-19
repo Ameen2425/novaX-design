@@ -38,7 +38,7 @@ const SignupForm = ({ form, handleData, validation }) => {
         <motion.h1 variants={fadeInUp}>Sign Up</motion.h1>
 
         <motion.p className="signup-subtitle" variants={fadeInUp}>
-          Join NovaX to discover and order curated products.
+          Join AMEZA to discover and order curated products.
         </motion.p>
 
         {/* NAME */}

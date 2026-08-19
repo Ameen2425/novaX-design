@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import novaxAboutCta from "../../../assets/novax-about-cta.jpg";
+import amezaAboutCta from "../../../assets/novax-about-cta.jpg";
 import "./AboutCTA.css";
 
 const AboutCTA = () => {
@@ -14,7 +14,7 @@ const AboutCTA = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="about-final-content">
-          <span className="about-final-label">WELCOME TO NOVAX</span>
+          <span className="about-final-label">WELCOME TO AMEZA</span>
           <h2>
             Your next favorite
             <br />
@@ -27,7 +27,7 @@ const AboutCTA = () => {
 
           <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
             <Link to="/products" className="btn-terracotta">
-              Shop NovaX
+              Shop AMEZA
               <span>→</span>
             </Link>
           </motion.div>
@@ -37,8 +37,8 @@ const AboutCTA = () => {
           <div className="about-final-3d-wrap">
             <div className="about-final-3d-glow"></div>
             <img
-              src={novaxAboutCta}
-              alt="NovaX Luxury Curated Lifestyle Collection"
+              src={amezaAboutCta}
+              alt="AMEZA Luxury Curated Lifestyle Collection"
               className="about-final-3d-img"
             />
           </div>

@@ -31,7 +31,7 @@ const StatsSection = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
-        <span className="home-section-label">NOVAX BY THE NUMBERS</span>
+        <span className="home-section-label">AMEZA BY THE NUMBERS</span>
         <h2>Growing every day.</h2>
       </motion.div>
 

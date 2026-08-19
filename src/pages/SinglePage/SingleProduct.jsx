@@ -20,17 +20,12 @@ const SingleProduct = () => {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      try {
-        const { data } = await axios.get(
-          `https://dummyjson.com/products/${id}`
-        );
-        setProduct(data);
-        setSelectedImage(data.thumbnail);
-      } catch (error) {
-        console.error("Failed to load product details:", error);
-      } finally {
-        setLoading(false);
-      }
+      const { data } = await axios.get(
+        `https://dummyjson.com/products/${id}`
+      );
+      setProduct(data);
+      setSelectedImage(data.thumbnail);
+      setLoading(false);
     };
 
     getProduct();

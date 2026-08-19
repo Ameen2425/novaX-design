@@ -22,7 +22,7 @@ const PromoBanner = () => {
         variants={fadeInUp}
       >
         <div className="home-offer-content">
-          <span className="home-offer-badge">NOVAX SPECIAL</span>
+          <span className="home-offer-badge">AMEZA SPECIAL</span>
           <h2>
             Better products.
             <br />

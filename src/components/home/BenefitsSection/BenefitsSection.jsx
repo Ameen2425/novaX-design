@@ -73,7 +73,7 @@ const BenefitsSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="home-section-label">THE NOVAX DIFFERENCE</span>
+          <span className="home-section-label">THE AMEZA DIFFERENCE</span>
           <h2>
             From discovery
             <br />

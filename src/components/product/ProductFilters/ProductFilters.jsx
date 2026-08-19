@@ -5,7 +5,7 @@ const ProductFilters = ({ search, setSearch, category, setCategory, setPage, cat
     <div className="products-filter">
       <input
         type="search"
-        placeholder="SEARCH NOVAX COLLECTION..."
+        placeholder="SEARCH AMEZA COLLECTION..."
         value={search}
         onChange={(e) => {
           setCategory("");

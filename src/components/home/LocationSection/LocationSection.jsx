@@ -20,7 +20,7 @@ const LocationSection = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
-        <span className="home-section-label">VISIT NOVAX</span>
+        <span className="home-section-label">VISIT AMEZA</span>
         <h2>We'd love to meet you.</h2>
         <p>Experience our physical flagship studio in Hyderabad.</p>
       </motion.div>
@@ -38,7 +38,7 @@ const LocationSection = () => {
           <div className="location-details">
             <p><span className="loc-icon">📍</span> Kukatpally, Hyderabad, Telangana</p>
             <p><span className="loc-icon">📞</span> +91 98765 43210</p>
-            <p><span className="loc-icon">✉️</span> support@novax.com</p>
+            <p><span className="loc-icon">✉️</span> support@ameza.com</p>
             <p><span className="loc-icon">🕒</span> Monday – Saturday : 9:00 AM – 9:00 PM</p>
           </div>
         </motion.div>
@@ -51,7 +51,7 @@ const LocationSection = () => {
           transition={{ duration: 0.6 }}
         >
           <iframe
-            title="NovaX Store Location"
+            title="AMEZA Store Location"
             src="https://www.google.com/maps?q=Kukatpally,Hyderabad&output=embed"
             width="100%"
             height="320"

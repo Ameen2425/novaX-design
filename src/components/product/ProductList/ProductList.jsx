@@ -19,15 +19,11 @@ const ProductList = () => {
   // =========================
   useEffect(() => {
     async function apiData() {
-      try {
-        const { data } = await axios.get(
-          "https://dummyjson.com/products/category-list"
-        );
+      const { data } = await axios.get(
+        "https://dummyjson.com/products/category-list"
+      );
 
-        setCategoryList(data);
-      } catch (error) {
-        console.log("Category Error:", error);
-      }
+      setCategoryList(data);
     }
 
     apiData();
@@ -38,31 +34,25 @@ const ProductList = () => {
   // =========================
   useEffect(() => {
     async function productsApi() {
-      try {
-        setLoading(true);
+      setLoading(true);
 
-        let api;
+      let api;
 
-        if (category) {
-          api = `https://dummyjson.com/products/category/${category}`;
-        } else if (search) {
-          api = `https://dummyjson.com/products/search?q=${search}`;
-        } else {
-          api = "https://dummyjson.com/products?limit=100";
-        }
-
-        const { data } = await axios.get(api);
-
-        const allProducts = data.products || [];
-
-        setProducts(allProducts);
-        setPage(1);
-      } catch (error) {
-        console.log("Products Error:", error);
-        setProducts([]);
-      } finally {
-        setLoading(false);
+      if (category) {
+        api = `https://dummyjson.com/products/category/${category}`;
+      } else if (search) {
+        api = `https://dummyjson.com/products/search?q=${search}`;
+      } else {
+        api = "https://dummyjson.com/products?limit=100";
       }
+
+      const { data } = await axios.get(api);
+
+      const allProducts = data.products || [];
+
+      setProducts(allProducts);
+      setPage(1);
+      setLoading(false);
     }
 
     productsApi();
@@ -81,7 +71,7 @@ const ProductList = () => {
   return (
     <div className="products-page">
       <div className="products-header">
-        <span>THE NOVAX COLLECTION</span>
+        <span>THE AMEZA COLLECTION</span>
 
         <h1>Explore All Products</h1>
 

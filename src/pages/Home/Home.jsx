@@ -19,16 +19,11 @@ const Home = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      try {
-        const { data } = await axios.get(
-          "https://dummyjson.com/products?limit=12"
-        );
-        setProducts(data.products || []);
-      } catch (error) {
-        console.error("Failed to load products:", error);
-      } finally {
-        setLoading(false);
-      }
+      const { data } = await axios.get(
+        "https://dummyjson.com/products?limit=12"
+      );
+      setProducts(data.products || []);
+      setLoading(false);
     };
 
     fetchProducts();

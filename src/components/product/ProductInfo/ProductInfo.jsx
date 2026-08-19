@@ -80,7 +80,7 @@ const ProductInfo = ({
       <motion.div className="single-specifications" variants={fadeInUp}>
         <div>
           <span>Brand</span>
-          <strong>{product.brand || "NovaX"}</strong>
+          <strong>{product.brand || "AMEZA"}</strong>
         </div>
 
         <div>

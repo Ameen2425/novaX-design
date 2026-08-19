@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import novaxLogo from "../../../assets/novax-logo.png";
+import BrandLogo from "../../common/BrandLogo/BrandLogo";
 
 export const Footer = () => {
   const [email, setEmail] = useState("");
@@ -22,12 +22,11 @@ export const Footer = () => {
         <div className="footer-content">
           {/* 1. BRAND */}
           <div className="footer-col footer-brand">
-            <Link className="footer-logo" to="/">
-              <img src={novaxLogo} alt="NovaX Logo" className="footer-logo-img" />
-              <span>NovaX</span>
+            <Link className="footer-logo" to="/" aria-label="AMEZA Home">
+              <BrandLogo variant="full" />
             </Link>
             <p className="footer-desc">
-              Premium products for a better everyday. Exclusive. Thoughtful. Made for you.
+              Everything worth discovering. Premium products, thoughtful design, made for you.
             </p>
             <div className="footer-socials">
               <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" title="Facebook">
@@ -116,7 +115,7 @@ export const Footer = () => {
 
         {/* BOTTOM COPYRIGHT & LEGAL BAR */}
         <div className="footer-bottom">
-          <p>© 2026 NovaX Inc. All rights reserved.</p>
+          <p>© 2026 AMEZA Inc. All rights reserved.</p>
           <div className="footer-legal">
             <a href="#">Privacy Policy</a>
             <span>|</span>

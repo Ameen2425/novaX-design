@@ -31,7 +31,7 @@ const ProductCareSection = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
-        <span>NOVAX PRODUCT CARE</span>
+        <span>AMEZA PRODUCT CARE</span>
         <h2>Shop with confidence.</h2>
         <p>
           We focus on making every part of your shopping experience simple and
@@ -60,7 +60,7 @@ const ProductCareSection = () => {
           {
             num: "03",
             title: "Secure Shopping",
-            desc: "Enjoy a simple and secure shopping experience with NovaX."
+            desc: "Enjoy a simple and secure shopping experience with AMEZA."
           },
           {
             num: "04",

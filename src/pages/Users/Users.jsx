@@ -19,12 +19,8 @@ const Users = () => {
 
   useEffect(() => {
     async function usersApi() {
-      try {
-        let { data } = await axios.get("https://dummyjson.com/users");
-        setUsers(data.users);
-      } catch (error) {
-        console.error("Users load error:", error);
-      }
+      let { data } = await axios.get("https://dummyjson.com/users");
+      setUsers(data.users);
     }
 
     usersApi();
@@ -55,37 +51,29 @@ const Users = () => {
   }, []);
 
   const updateEditedUser = useCallback(async () => {
-    try {
-      await axios.put(`https://dummyjson.com/users/${editData.id}`, {
-        firstName: editData.name,
-        email: editData.email,
-        age: Number(editData.age),
-      });
+    await axios.put(`https://dummyjson.com/users/${editData.id}`, {
+      firstName: editData.name,
+      email: editData.email,
+      age: Number(editData.age),
+    });
 
-      setUsers((prev) =>
-        prev.map((i) =>
-          i.id === editData.id
-            ? {
-                ...i,
-                firstName: editData.name,
-                email: editData.email,
-                age: Number(editData.age),
-              }
-            : i
-        )
-      );
-    } catch (error) {
-      console.error("Failed to update user:", error);
-    }
+    setUsers((prev) =>
+      prev.map((i) =>
+        i.id === editData.id
+          ? {
+              ...i,
+              firstName: editData.name,
+              email: editData.email,
+              age: Number(editData.age),
+            }
+          : i
+      )
+    );
   }, [editData]);
 
   const deleteUser = useCallback(async (e) => {
-    try {
-      await axios.delete(`https://dummyjson.com/users/${e}`);
-      setUsers((prev) => prev.filter((i) => i.id !== e));
-    } catch (error) {
-      console.error("Failed to delete user:", error);
-    }
+    await axios.delete(`https://dummyjson.com/users/${e}`);
+    setUsers((prev) => prev.filter((i) => i.id !== e));
   }, []);
 
   return (

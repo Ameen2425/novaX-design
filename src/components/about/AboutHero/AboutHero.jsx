@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import novaxAboutHero from "../../../assets/novax-about-hero.jpg";
+import amezaAboutHero from "../../../assets/novax-about-hero.jpg";
 import "./AboutHero.css";
 
 const fadeInUp = {
@@ -34,7 +34,7 @@ const AboutHero = () => {
           variants={staggerContainer}
         >
           <motion.span className="about-hero-label" variants={fadeInUp}>
-            THE NOVAX STORY
+            THE AMEZA STORY
           </motion.span>
 
           <motion.h1 className="about-hero-title" variants={fadeInUp}>
@@ -44,7 +44,7 @@ const AboutHero = () => {
           </motion.h1>
 
           <motion.p className="about-hero-description" variants={fadeInUp}>
-            NovaX brings quality products, thoughtful design, and a smoother
+            AMEZA brings quality products, thoughtful design, and a smoother
             online shopping experience together in one refined destination.
           </motion.p>
 
@@ -71,8 +71,8 @@ const AboutHero = () => {
         >
           <div className="about-hero-image-frame">
             <img
-              src={novaxAboutHero}
-              alt="NovaX Editorial Luxury Collection"
+              src={amezaAboutHero}
+              alt="AMEZA Editorial Luxury Collection"
             />
 
             <motion.div
@@ -82,7 +82,7 @@ const AboutHero = () => {
             >
               <span className="about-badge-icon">✦</span>
               <div className="about-badge-text">
-                <strong>NovaX Studio</strong>
+                <strong>AMEZA Studio</strong>
                 <p>Made for modern living</p>
               </div>
             </motion.div>

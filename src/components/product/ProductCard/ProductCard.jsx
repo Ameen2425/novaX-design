@@ -44,7 +44,7 @@ const ProductCard = ({ id, title, description, price, image, category, rating}) 
         </span>
 
         <span className="product-quick-label">
-          NovaX Pick
+          AMEZA Pick
         </span>
       </div>
 
@@ -53,7 +53,7 @@ const ProductCard = ({ id, title, description, price, image, category, rating}) 
       ================================================= */}
       <div className="product-card-body">
         <span className="product-category">
-          {category ? category.toUpperCase() : "NOVAX COLLECTION"}
+          {category ? category.toUpperCase() : "AMEZA COLLECTION"}
         </span>
 
         <h3 className="product-title">

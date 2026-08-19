@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./DealsHero.css";
-import novaxHero3d from "../../../assets/novax-hero-3d.jpg";
+import amezaHero3d from "../../../assets/novax-hero-3d.jpg";
 
 const DealsHero = () => {
   return (
@@ -16,7 +16,7 @@ const DealsHero = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="deals-hero-eyebrow">
-            NOVAX / SPECIAL OFFERS
+            AMEZA / SPECIAL OFFERS
           </span>
 
           <h1 className="deals-hero-heading">
@@ -26,7 +26,7 @@ const DealsHero = () => {
           </h1>
 
           <p className="deals-hero-description">
-            Discover limited-time offers and curated products at exclusive NovaX prices.
+            Discover limited-time offers and curated products at exclusive AMEZA prices.
           </p>
 
           <div className="deals-hero-actions">
@@ -55,8 +55,8 @@ const DealsHero = () => {
 
           <div className="deals-hero-image-wrap">
             <img
-              src={novaxHero3d}
-              alt="NovaX Exclusive 3D Deals Composition"
+              src={amezaHero3d}
+              alt="AMEZA Exclusive 3D Deals Composition"
               className="deals-hero-img"
             />
           </div>

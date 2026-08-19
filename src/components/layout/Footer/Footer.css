@@ -1,5 +1,5 @@
 /* =========================================================
-   NOVAX — STRUCTURED DARK LUXURY FOOTER
+   AMEZA — STRUCTURED DARK LUXURY FOOTER
    Deepest Espresso (#130A06) + Warm Cream + High-Contrast Copper
 ========================================================= */
 
@@ -14,9 +14,9 @@
   width: 100%;
 }
 
-/* Subtle oversized NOVAX watermark */
+/* Subtle oversized AMEZA watermark */
 .footer::before {
-  content: "NOVAX";
+  content: "AMEZA";
   position: absolute;
   bottom: -20px;
   right: 5%;

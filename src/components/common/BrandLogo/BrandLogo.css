@@ -1,0 +1,102 @@
+.ameza-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  user-select: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  line-height: 1;
+}
+
+.ameza-brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.ameza-logo-symbol-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ameza-brand-logo:hover .ameza-logo-symbol-wrap {
+  box-shadow: 0 6px 16px rgba(227, 93, 50, 0.25);
+  transform: scale(1.04);
+}
+
+.ameza-logo-symbol {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ameza-wordmark-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.ameza-wordmark {
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--ameza-cream, #F1DEC3);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.ameza-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--ameza-copper, #E35D32);
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(227, 93, 50, 0.6);
+}
+
+/* Compact Variant */
+.ameza-brand-logo.is-compact {
+  gap: 8px;
+}
+
+.ameza-brand-logo.is-compact .ameza-logo-symbol-wrap {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+
+.ameza-brand-logo.is-compact .ameza-wordmark {
+  font-size: 1.05rem;
+  letter-spacing: 0.15em;
+}
+
+.ameza-brand-logo.is-compact .ameza-dot {
+  width: 4px;
+  height: 4px;
+}
+
+/* Light Variant */
+.ameza-brand-logo.is-light .ameza-wordmark {
+  color: #17100C;
+}
+
+@media (max-width: 480px) {
+  .ameza-brand-logo {
+    gap: 8px;
+  }
+  .ameza-logo-symbol-wrap {
+    width: 28px;
+    height: 28px;
+  }
+  .ameza-wordmark {
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
+  }
+}

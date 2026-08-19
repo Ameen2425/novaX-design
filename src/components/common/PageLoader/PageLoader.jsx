@@ -8,10 +8,10 @@ const PageLoader = () => {
         <div className="page-loader-spinner-wrap">
           <div className="page-loader-ring"></div>
           <div className="page-loader-pulse-core">
-            <span className="page-loader-emblem">N</span>
+            <span className="page-loader-emblem">A</span>
           </div>
         </div>
-        <span className="page-loader-label">NOVAX</span>
+        <span className="page-loader-label">AMEZA</span>
         <p className="page-loader-text">Loading experience...</p>
       </div>
     </div>

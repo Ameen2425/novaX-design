@@ -59,7 +59,7 @@ const OurStory = () => {
             variants={staggerContainer}
           >
             <motion.p className="about-lead" variants={fadeInUp}>
-              NovaX started with a simple idea: online shopping shouldn't feel crowded, noisy, or complicated.
+              AMEZA started with a simple idea: online shopping shouldn't feel crowded, noisy, or complicated.
             </motion.p>
 
             <motion.p variants={fadeInUp}>
@@ -67,7 +67,7 @@ const OurStory = () => {
             </motion.p>
 
             <motion.p variants={fadeInUp}>
-              From everyday lifestyle goods to handpicked design essentials, NovaX bridges timeless craftsmanship with modern e-commerce convenience.
+              From everyday lifestyle goods to handpicked design essentials, AMEZA bridges timeless craftsmanship with modern e-commerce convenience.
             </motion.p>
           </motion.div>
         </div>

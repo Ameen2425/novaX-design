@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Signup.css";
-import novaxSignupHero from "../../assets/novax-signup-hero.jpg";
+import amezaSignupHero from "../../assets/novax-signup-hero.jpg";
 
 import AuthHero from "../../components/auth/AuthHero/AuthHero";
 import SignupForm from "../../components/auth/SignupForm/SignupForm";
@@ -94,8 +94,8 @@ const Signup = () => {
       >
         <div className="signup-container">
           <AuthHero
-            image={novaxSignupHero}
-            label="JOIN NOVAX"
+            image={amezaSignupHero}
+            label="JOIN AMEZA"
             title={
               <>
                 Start
@@ -103,7 +103,7 @@ const Signup = () => {
                 <span>Something New.</span>
               </>
             }
-            subtitle="Create your NovaX account and discover products, styles, and everyday essentials curated for your shopping journey."
+            subtitle="Create your AMEZA account and discover products, styles, and everyday essentials curated for your shopping journey."
             features={["New Collections", "Exclusive Deals", "Easy Shopping"]}
           />
 

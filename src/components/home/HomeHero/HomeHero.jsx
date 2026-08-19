@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import novaxHero3d from "../../../assets/novax-hero-3d.jpg";
+import amezaHero3d from "../../../assets/novax-hero-3d.jpg";
 import "./HomeHero.css";
 
 const fadeInUp = {
@@ -34,7 +34,7 @@ const HomeHero = () => {
           variants={staggerContainer}
         >
           <motion.span className="espresso-hero-label" variants={fadeInUp}>
-            WELCOME TO NOVAX
+            WELCOME TO AMEZA
           </motion.span>
 
           <motion.h1 className="espresso-hero-title" variants={fadeInUp}>
@@ -51,7 +51,7 @@ const HomeHero = () => {
           <motion.div className="espresso-hero-actions" variants={fadeInUp}>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <Link to="/products" className="btn-hero-copper">
-                SHOP NOVAX <span>→</span>
+                SHOP AMEZA <span>→</span>
               </Link>
             </motion.div>
 
@@ -96,8 +96,8 @@ const HomeHero = () => {
           <div className="espresso-3d-glow"></div>
           <div className="espresso-3d-render-wrap">
             <img
-              src={novaxHero3d}
-              alt="NovaX Cinematic 3D Luxury Product Scene"
+              src={amezaHero3d}
+              alt="AMEZA Cinematic 3D Luxury Product Scene"
               className="espresso-3d-img"
             />
           </div>

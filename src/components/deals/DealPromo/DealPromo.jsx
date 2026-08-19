@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./DealPromo.css";
-import novax3dCta from "../../../assets/novax-3d-cta.jpg";
+import ameza3dCta from "../../../assets/novax-3d-cta.jpg";
 
 const DealPromo = () => {
   return (
@@ -16,7 +16,7 @@ const DealPromo = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="deal-promo-eyebrow">THE NOVAX DEAL EDIT</span>
+          <span className="deal-promo-eyebrow">THE AMEZA DEAL EDIT</span>
 
           <h2 className="deal-promo-heading">
             Good products shouldn't
@@ -43,8 +43,8 @@ const DealPromo = () => {
         >
           <div className="deal-promo-img-wrap">
             <img
-              src={novax3dCta}
-              alt="NovaX 3D Headphones and Luxury Shopping Bag"
+              src={ameza3dCta}
+              alt="AMEZA 3D Headphones and Luxury Shopping Bag"
               className="deal-promo-img"
             />
           </div>

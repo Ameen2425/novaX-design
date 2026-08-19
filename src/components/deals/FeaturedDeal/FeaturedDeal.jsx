@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./FeaturedDeal.css";
-import novaxAboutCta from "../../../assets/novax-about-cta.jpg";
+import amezaAboutCta from "../../../assets/novax-about-cta.jpg";
 
 const FeaturedDeal = () => {
   const [toastMessage, setToastMessage] = useState("");
@@ -14,7 +14,7 @@ const FeaturedDeal = () => {
       id: 999,
       title: "Oud Noir Eau de Parfum",
       price: 3599,
-      thumbnail: novaxAboutCta,
+      thumbnail: amezaAboutCta,
       quantity: 1,
     };
 
@@ -49,7 +49,7 @@ const FeaturedDeal = () => {
         >
           <div className="featured-deal-img-frame">
             <img
-              src={novaxAboutCta}
+              src={amezaAboutCta}
               alt="Oud Noir Eau de Parfum 3D Composition"
               className="featured-deal-img"
             />

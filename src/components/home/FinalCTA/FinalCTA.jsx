@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import novax3dCta from "../../../assets/novax-3d-cta.jpg";
+import ameza3dCta from "../../../assets/novax-3d-cta.jpg";
 import "./FinalCTA.css";
 
 const FinalCTA = () => {
@@ -21,13 +21,13 @@ const FinalCTA = () => {
             <span>product is waiting.</span>
           </h2>
           <p>
-            Explore the NovaX collection and discover something thoughtfully
+            Explore the AMEZA collection and discover something thoughtfully
             crafted for you.
           </p>
 
           <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
             <Link to="/products" className="home-primary-btn">
-              Shop NovaX
+              Shop AMEZA
               <span>→</span>
             </Link>
           </motion.div>
@@ -37,8 +37,8 @@ const FinalCTA = () => {
           <div className="home-final-3d-wrap">
             <div className="home-final-3d-glow"></div>
             <img
-              src={novax3dCta}
-              alt="NovaX Premium 3D Luxury Product Composition"
+              src={ameza3dCta}
+              alt="AMEZA Premium 3D Luxury Product Composition"
               className="home-final-3d-img"
             />
           </div>

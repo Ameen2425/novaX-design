@@ -11,7 +11,7 @@ const AuthHero = ({ image, label, title, subtitle, features = [] }) => {
     >
       <img
         src={image}
-        alt="NovaX Shopping Experience"
+        alt="AMEZA Shopping Experience"
         className="auth-bg-img"
       />
       <div className="auth-image-overlay"></div>

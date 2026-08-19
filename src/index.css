@@ -1,14 +1,14 @@
 /* =========================================================
-   NOVAX — GLOBAL DARK LUXURY DESIGN SYSTEM
+   AMEZA — GLOBAL DARK LUXURY DESIGN SYSTEM
    Espresso (#17100C) + Warm Cream (#F1DEC3) + Copper (#E35D32)
-   Anthropic Sans (UI) + Anthropic Serif (Display) + JetBrains Mono (Tech)
+   Anthropic Sans / Plus Jakarta Sans (UI) + Anthropic Serif (Display) + JetBrains Mono (Tech)
 ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* ── 1. TYPOGRAPHY SYSTEM ─────────────────────────── */
-  --font-sans: "Anthropic Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Anthropic Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-main: var(--font-sans);
   --font-serif: "Anthropic Serif", Georgia, "Times New Roman", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -20,30 +20,50 @@
   --weight-bold:     700;
 
   /* ── 2. GLOBAL COLOR SYSTEM (HIGH-CONTRAST DARK LUXURY) ─ */
-  --nova-bg:             #17100C; /* Primary Deep Espresso Page Background */
-  --nova-surface:        #21150F; /* Dark Surface Panels */
-  --nova-surface-2:      #2B1A12; /* Secondary Surface / Framing */
-  --nova-coffee:         #3B2418; /* Coffee Tone */
-  --nova-deep-coffee:    #432719; /* Deep Coffee */
-  --nova-card:           #24160F; /* Card Background (High LCD Separation) */
-  --nova-card-hover:     #301D14; /* Card Hover Elevation */
-  --nova-input-bg:       #1B110C; /* Input Field Background (Distinct from Card) */
+  --ameza-bg:            #17100C; /* Primary Deep Espresso Page Background */
+  --ameza-surface:       #21150F; /* Dark Surface Panels */
+  --ameza-surface-2:     #2B1A12; /* Secondary Surface / Framing */
+  --ameza-coffee:        #3B2418; /* Coffee Tone */
+  --ameza-deep-coffee:   #432719; /* Deep Coffee */
+  --ameza-card:          #24160F; /* Card Background (High LCD Separation) */
+  --ameza-card-hover:    #301D14; /* Card Hover Elevation */
+  --ameza-input-bg:      #1B110C; /* Input Field Background */
 
-  --nova-cream:          #F1DEC3; /* Warm Cream Heading & High-Contrast Text */
-  --nova-light:          #F7E9D4; /* Bright Cream Text */
-  --nova-muted:          #D4B797; /* Muted Sand Body Text */
-  --nova-cream-muted:    #D4B797; /* Backward compatibility */
+  --ameza-cream:         #F1DEC3; /* Warm Cream Heading & High-Contrast Text */
+  --ameza-light:         #F7E9D4; /* Bright Cream Text */
+  --ameza-muted:         #D4B797; /* Muted Sand Body Text */
 
-  --nova-copper:         #E35D32; /* Primary High-Vibrancy Copper */
-  --nova-copper-light:   #F06B3B; /* Bright Copper Hover */
-  --nova-copper-bright:  #F06B3B; /* Backward compatibility */
-  --nova-copper-dark:    #B94C2B; /* Active / Muted Copper */
-  --nova-copper-muted:   #B94C2B; /* Backward compatibility */
+  --ameza-copper:        #E35D32; /* Primary High-Vibrancy Copper Accent */
+  --ameza-copper-light:  #F06B3B; /* Bright Copper Hover */
+  --ameza-copper-dark:   #B94C2B; /* Active / Muted Copper */
 
-  --nova-border:         rgba(241, 222, 195, 0.18); /* Visible Border for LCD screens */
-  --nova-border-strong:  rgba(241, 222, 195, 0.28); /* Strong Border */
-  --nova-border-subtle:  rgba(241, 222, 195, 0.10); /* Subtle Divider */
-  --nova-shadow:         0 12px 30px rgba(0, 0, 0, 0.35); /* Global Shadow */
+  --ameza-border:        rgba(241, 222, 195, 0.18); /* Visible Border for LCD screens */
+  --ameza-border-strong: rgba(241, 222, 195, 0.28); /* Strong Border */
+  --ameza-border-subtle: rgba(241, 222, 195, 0.10); /* Subtle Divider */
+  --ameza-shadow:        0 12px 30px rgba(0, 0, 0, 0.35); /* Global Shadow */
+
+  /* Legacy & compatibility aliases */
+  --nova-bg:             var(--ameza-bg);
+  --nova-surface:        var(--ameza-surface);
+  --nova-surface-2:      var(--ameza-surface-2);
+  --nova-coffee:         var(--ameza-coffee);
+  --nova-deep-coffee:    var(--ameza-deep-coffee);
+  --nova-card:           var(--ameza-card);
+  --nova-card-hover:     var(--ameza-card-hover);
+  --nova-input-bg:       var(--ameza-input-bg);
+  --nova-cream:          var(--ameza-cream);
+  --nova-light:          var(--ameza-light);
+  --nova-muted:          var(--ameza-muted);
+  --nova-cream-muted:    var(--ameza-muted);
+  --nova-copper:         var(--ameza-copper);
+  --nova-copper-light:   var(--ameza-copper-light);
+  --nova-copper-bright:  var(--ameza-copper-light);
+  --nova-copper-dark:    var(--ameza-copper-dark);
+  --nova-copper-muted:   var(--ameza-copper-dark);
+  --nova-border:         var(--ameza-border);
+  --nova-border-strong:  var(--ameza-border-strong);
+  --nova-border-subtle:  var(--ameza-border-subtle);
+  --nova-shadow:         var(--ameza-shadow);
 
   /* Legacy variable mappings for 100% backward compatibility */
   --bg-primary:          var(--nova-bg);

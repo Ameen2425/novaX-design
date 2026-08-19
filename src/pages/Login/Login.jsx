@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Login.css";
-import novaxLoginHero from "../../assets/novax-login-hero.jpg";
+import amezaLoginHero from "../../assets/novax-login-hero.jpg";
 
 import AuthHero from "../../components/auth/AuthHero/AuthHero";
 import LoginForm from "../../components/auth/LoginForm/LoginForm";
@@ -81,8 +81,8 @@ const Login = () => {
       >
         <div className="auth-container">
           <AuthHero
-            image={novaxLoginHero}
-            label="NOVAX EDIT"
+            image={amezaLoginHero}
+            label="AMEZA EDIT"
             title={
               <>
                 Welcome
@@ -90,7 +90,7 @@ const Login = () => {
                 Back.
               </>
             }
-            subtitle="Continue your shopping journey with NovaX and discover something you will love."
+            subtitle="Continue your shopping journey with AMEZA and discover something you will love."
           />
 
           <motion.div

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Header.css";
-import novaxLogo from "../../../assets/novax-logo.png";
+import BrandLogo from "../../common/BrandLogo/BrandLogo";
 
 const Header = () => {
   const navLinks = [
@@ -16,9 +16,8 @@ const Header = () => {
     <>
       {/* MOBILE COMPACT FLOATING TOP HEADER */}
       <header className="mobile-top-brand">
-        <NavLink to="/" className="logo">
-          <img src={novaxLogo} alt="NovaX Logo" className="logo-img" />
-          <span className="logo-text">NovaX</span>
+        <NavLink to="/" className="logo" aria-label="AMEZA Home">
+          <BrandLogo variant="compact" />
         </NavLink>
         <div className="mobile-top-actions">
           <NavLink to="/cart" className="mobile-action-btn" title="Shopping Cart">
@@ -42,9 +41,8 @@ const Header = () => {
 
       {/* DESKTOP & TABLET FLOATING GLASS HEADER */}
       <header className="header desktop-header">
-        <NavLink to="/" className="logo">
-          <img src={novaxLogo} alt="NovaX Logo" className="logo-img" />
-          <span className="logo-text">NovaX</span>
+        <NavLink to="/" className="logo" aria-label="AMEZA Home">
+          <BrandLogo variant="full" />
         </NavLink>
 
         <nav className="navbar">

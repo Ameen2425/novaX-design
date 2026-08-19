@@ -36,7 +36,7 @@ const LoginForm = ({ form, handleData, validation }) => {
         <motion.h1 variants={fadeInUp}>Welcome Back</motion.h1>
 
         <motion.p className="auth-subtitle" variants={fadeInUp}>
-          Enter your details to access your NovaX account.
+          Enter your details to access your AMEZA account.
         </motion.p>
 
         <motion.div className="form-group" variants={fadeInUp}>
