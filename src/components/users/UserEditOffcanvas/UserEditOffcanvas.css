@@ -1,9 +1,12 @@
-/* ── OFFCANVAS EDIT DRAWER (DARK LUXURY) ─────────── */
+/* =========================================================
+   AMEZA — OFFCANVAS EDIT DRAWER (BURGUNDY + GOLD)
+   ========================================================= */
+
 .offcanvas {
-  background: var(--nova-surface, #21150F) !important;
-  color: var(--nova-cream, #F1DEC3) !important;
-  border-right: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18)) !important;
-  box-shadow: 12px 0 35px rgba(0, 0, 0, 0.6);
+  background: var(--ameza-card) !important;
+  color: var(--ameza-text) !important;
+  border-right: 1px solid var(--ameza-border) !important;
+  box-shadow: 12px 0 35px rgba(20, 8, 12, 0.6);
   width: 100% !important;
   max-width: 420px !important;
   z-index: 10000 !important;
@@ -13,36 +16,36 @@
 
 .offcanvas-backdrop {
   z-index: 9999 !important;
-  background-color: rgba(15, 9, 6, 0.8) !important;
+  background-color: rgba(20, 8, 12, 0.8) !important;
   backdrop-filter: blur(4px);
 }
 
 .offcanvas-header {
   padding: 24px 20px 16px;
-  border-bottom: 1px solid rgba(241, 222, 195, 0.15);
+  border-bottom: 1px solid var(--ameza-border);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background: #261811;
+  background: var(--ameza-section);
 }
 
 .offcanvas-badge {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   display: block;
   margin-bottom: 4px;
 }
 
 .offcanvas-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   margin: 0;
 }
 
@@ -50,9 +53,9 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #2D1B13;
-  border: 1px solid rgba(241, 222, 195, 0.2);
-  color: var(--nova-cream, #F1DEC3);
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,9 +65,9 @@
 }
 
 .offcanvas-close-btn:hover {
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  border-color: var(--nova-copper, #E35D32);
+  background: var(--ameza-gold);
+  color: #1C1114;
+  border-color: var(--ameza-gold);
 }
 
 .offcanvas-body {
@@ -76,10 +79,10 @@
 
 .offcanvas-body label {
   display: block;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
+  font-weight: 600;
+  color: var(--ameza-text);
   margin-bottom: 6px;
 }
 
@@ -87,21 +90,21 @@
   width: 100%;
   height: 46px;
   padding: 0 16px;
-  background: var(--nova-input-bg, #1B110C) !important;
-  border: 1px solid rgba(241, 222, 195, 0.22) !important;
-  border-radius: 12px;
-  font-family: var(--font-sans);
+  background: var(--ameza-section) !important;
+  border: 1px solid var(--ameza-border) !important;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--nova-cream, #F1DEC3) !important;
+  color: var(--ameza-text) !important;
   outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   margin-bottom: 18px;
   box-sizing: border-box;
 }
 
 .offcanvas-body .form-control:focus {
-  border-color: var(--nova-copper, #E35D32) !important;
-  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2) !important;
+  border-color: var(--ameza-primary) !important;
+  box-shadow: 0 0 0 3px rgba(163, 71, 85, 0.25) !important;
 }
 
 .offcanvas-actions {
@@ -115,16 +118,17 @@
 .btn-primary,
 .offcanvas-actions .btn-primary {
   height: 48px;
-  background: var(--nova-copper, #E35D32) !important;
-  color: #FFF2DF !important;
-  border: none !important;
+  background: var(--ameza-primary) !important;
+  color: #FFFFFF !important;
+  border: 1px solid var(--ameza-primary) !important;
   border-radius: var(--radius-pill) !important;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13.5px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.35);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
@@ -134,21 +138,23 @@
 
 .btn-primary:hover,
 .offcanvas-actions .btn-primary:hover {
-  background: var(--nova-copper-light, #F06B3B) !important;
-  color: #FFF2DF !important;
+  background: var(--ameza-primary-hover) !important;
+  border-color: var(--ameza-primary-hover) !important;
+  color: #FFFFFF !important;
 }
 
 .btn-cancel,
 .offcanvas-actions .btn-cancel {
   height: 46px;
   background: transparent;
-  color: var(--nova-cream, #F1DEC3);
-  border: 1.5px solid rgba(241, 222, 195, 0.25);
+  color: var(--ameza-text);
+  border: 1px solid var(--ameza-border);
   border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   cursor: pointer;
   transition: all var(--transition-fast);
   display: inline-flex;
@@ -159,7 +165,7 @@
 
 .btn-cancel:hover,
 .offcanvas-actions .btn-cancel:hover {
-  border-color: var(--nova-copper, #E35D32);
-  color: var(--nova-copper, #E35D32);
-  background: rgba(227, 93, 50, 0.08);
+  border-color: var(--ameza-gold);
+  color: var(--ameza-gold);
+  background: rgba(184, 154, 98, 0.1);
 }

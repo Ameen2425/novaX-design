@@ -1,4 +1,7 @@
-/* ── SIGNUP FORM STYLES (DARK LUXURY) ────────────── */
+/* =========================================================
+   AMEZA — SIGNUP FORM (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
+
 .signup-form-wrapper {
   max-width: 440px;
   width: 100%;
@@ -11,11 +14,11 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   text-decoration: none;
   margin-bottom: 12px;
   transition: color var(--transition-fast);
@@ -23,43 +26,43 @@
 }
 
 .signup-back-link:hover {
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
 }
 
 .signup-form {
-  background: var(--nova-card, #24160F);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: 24px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-xl);
   padding: 28px 24px;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-lg);
   box-sizing: border-box;
 }
 
 .signup-form-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   display: block;
   margin-bottom: 4px;
 }
 
 .signup-form h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 26px;
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
+  font-weight: 600;
+  color: var(--ameza-text);
   letter-spacing: -0.02em;
   margin: 0 0 4px 0;
   line-height: 1.15;
 }
 
 .signup-subtitle {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   line-height: 1.45;
   margin: 0 0 16px 0;
 }
@@ -69,10 +72,10 @@
 }
 
 .signup-form-group label {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12.5px;
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
+  font-weight: 600;
+  color: var(--ameza-text);
   display: block;
   margin-bottom: 4px;
 }
@@ -81,26 +84,26 @@
   width: 100%;
   height: 44px;
   padding: 0 14px;
-  background: var(--nova-input-bg, #1B110C);
-  border: 1px solid rgba(241, 222, 195, 0.22);
-  border-radius: 12px;
-  font-family: var(--font-sans);
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   box-sizing: border-box;
 }
 
 .signup-form-group input::placeholder {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
-  color: #8D6C58;
+  color: var(--ameza-text-muted);
 }
 
 .signup-form-group input:focus {
-  border-color: var(--nova-copper, #E35D32);
-  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2);
+  border-color: var(--ameza-primary);
+  box-shadow: 0 0 0 3px rgba(163, 71, 85, 0.25);
 }
 
 .signup-terms {
@@ -108,12 +111,12 @@
   align-items: center;
   gap: 10px;
   margin: 14px 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
 }
 
 .signup-terms input[type="checkbox"] {
-  accent-color: var(--nova-copper, #E35D32);
+  accent-color: var(--ameza-primary);
   cursor: pointer;
   width: 17px;
   height: 17px;
@@ -122,44 +125,15 @@
 }
 
 .signup-terms label {
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   cursor: pointer;
   line-height: 1.35;
 }
 
-.signup-submit-btn {
-  width: 100%;
-  height: 48px;
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.35);
-  transition: all var(--transition-fast);
-  margin-top: 4px;
-  margin-bottom: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.signup-submit-btn:hover {
-  background: var(--nova-copper-light, #F06B3B);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(227, 93, 50, 0.45);
-}
-
 .signup-login-text {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   text-align: center;
   margin: 0;
   display: flex;
@@ -169,7 +143,7 @@
 }
 
 .signup-login-text a {
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   font-weight: 600;
   text-decoration: none;
 }
@@ -186,7 +160,7 @@
   }
   .signup-form {
     padding: 22px 18px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
   }
   .signup-form h1 {
     font-size: 24px;

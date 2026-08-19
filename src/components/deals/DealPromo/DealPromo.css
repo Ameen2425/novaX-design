@@ -1,32 +1,31 @@
 /* =========================================================
-   AMEZA — EDITORIAL PROMOTIONAL BANNER CSS
-   Dark Luxury Banner (#21150F) + 3D Product Visual + Copper Accents
-========================================================= */
+   AMEZA — PROMOTIONAL BANNER (BURGUNDY + GOLD)
+   ========================================================= */
 
 .deal-promo-section {
   width: 100%;
   max-width: 1400px;
-  margin: 28px auto 60px;
+  margin: 28px auto 40px;
   padding: 0 18px;
   box-sizing: border-box;
 }
 
 .deal-promo-container {
-  background: radial-gradient(circle at 75% 50%, #2D1A12 0%, #1D110B 75%, #150C07 100%);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: 24px;
+  background: radial-gradient(circle at 75% 50%, #42252C 0%, #321D23 75%, #24161A 100%);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-xl);
   padding: clamp(36px, 4.5vw, 56px) clamp(24px, 4vw, 56px);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 32px;
   align-items: center;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-lg);
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
 }
 
-/* ── LEFT CONTENT ────────────────────────────────── */
+/* ── Left Content ────────────────────────────────── */
 .deal-promo-content {
   display: flex;
   flex-direction: column;
@@ -35,30 +34,30 @@
 }
 
 .deal-promo-eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   margin-bottom: 14px;
   display: block;
 }
 
 .deal-promo-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(28px, 3.4vw, 44px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   margin: 0 0 12px 0;
 }
 
 .deal-promo-sub {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: clamp(14px, 1.1vw, 15.5px);
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   margin: 0 0 28px 0;
   line-height: 1.6;
 }
@@ -71,28 +70,29 @@
   height: 48px;
   min-height: 44px;
   padding: 0 32px;
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF !important;
-  font-family: var(--font-sans);
+  background: var(--ameza-primary);
+  color: #FFFFFF !important;
+  font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  border-radius: var(--radius-pill, 999px);
+  border-radius: var(--radius-pill);
   text-decoration: none;
-  border: none;
-  box-shadow: 0 6px 20px rgba(227, 93, 50, 0.4);
-  transition: all 0.25s ease;
+  border: 1px solid var(--ameza-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
 }
 
 .btn-promo-explore:hover {
-  background: var(--nova-copper-light, #F06B3B);
+  background: var(--ameza-primary-hover);
+  border-color: var(--ameza-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(240, 107, 59, 0.5);
-  color: #FFF2DF !important;
+  box-shadow: var(--shadow-md);
+  color: #FFFFFF !important;
 }
 
-/* ── RIGHT 3D VISUAL ─────────────────────────────── */
+/* ── Right 3D Visual ─────────────────────────────── */
 .deal-promo-visual {
   display: flex;
   align-items: center;
@@ -104,14 +104,14 @@
 .deal-promo-img-wrap {
   width: 100%;
   max-width: 440px;
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(241, 222, 195, 0.15);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--ameza-border);
+  box-shadow: var(--shadow-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2D1B13;
+  background: var(--ameza-card);
 }
 
 .deal-promo-img {
@@ -130,17 +130,24 @@
 
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 900px) {
+  .deal-promo-section {
+    margin: 20px auto 20px;
+    padding: 0 12px;
+  }
   .deal-promo-container {
     grid-template-columns: 1fr;
-    padding: 32px 20px;
-    gap: 24px;
+    padding: 28px 18px;
+    gap: 20px;
   }
   .deal-promo-content {
     align-items: center;
     text-align: center;
   }
+  .deal-promo-sub {
+    margin-bottom: 20px;
+  }
   .deal-promo-visual {
-    max-width: 340px;
+    max-width: 320px;
     margin: 0 auto;
   }
   .btn-promo-explore {

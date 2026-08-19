@@ -1,7 +1,6 @@
 /* =========================================================
-   AMEZA — FLASH DEALS CSS
-   Exact Visual Replica: Horizontal Compact Deal Cards
-========================================================= */
+   AMEZA — FLASH DEALS (DEEP BURGUNDY + RADIANT GOLD)
+   ========================================================= */
 
 .flash-deals-section {
   width: 100%;
@@ -12,10 +11,11 @@
 }
 
 .flash-icon {
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold-bright);
+  text-shadow: 0 0 8px rgba(184, 154, 98, 0.5);
 }
 
-/* ── 4 or 5 COMPACT CARDS IN A ROW ───────────────── */
+/* ── 4 Compact Cards in a Row ────────────────────── */
 .flash-deals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -23,30 +23,32 @@
 }
 
 .flash-deal-card {
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 14px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-md);
   padding: 12px;
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .flash-deal-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--nova-copper, #E35D32);
-  background: #2B1A12;
+  transform: translateY(-4px);
+  border-color: var(--ameza-gold);
+  background: var(--ameza-card-hover);
+  box-shadow: 0 8px 20px rgba(184, 154, 98, 0.2);
 }
 
 .flash-deal-img-box {
   width: 72px;
   height: 72px;
-  background: #2D1B13;
-  border-radius: 10px;
+  background: var(--ameza-section);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(184, 154, 98, 0.2);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -59,16 +61,17 @@
 
 .flash-deal-discount {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  background: var(--nova-copper, #E35D32);
-  color: var(--nova-cream, #F1DEC3);
-  font-family: var(--font-sans);
+  top: 3px;
+  left: 3px;
+  background: var(--ameza-gold-gradient);
+  color: #1C1114;
+  font-family: var(--font-body);
   font-size: 8.5px;
-  font-weight: 700;
-  padding: 2px 5px;
-  border-radius: 999px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
   z-index: 2;
+  box-shadow: 0 1px 4px rgba(184, 154, 98, 0.4);
 }
 
 .flash-deal-img {
@@ -90,10 +93,10 @@
 }
 
 .flash-deal-name {
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ameza-text);
   margin: 0 0 6px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -107,17 +110,18 @@
 }
 
 .flash-old-price {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11px;
-  color: var(--nova-cream-muted, #D9C1A2);
-  opacity: 0.6;
+  color: var(--ameza-text-muted);
+  text-decoration: line-through;
 }
 
 .flash-new-price {
-  font-family: var(--font-sans);
-  font-size: 14px;
+  font-family: var(--font-display);
+  font-size: 16px;
   font-weight: 700;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold-bright);
+  text-shadow: 0 0 8px rgba(184, 154, 98, 0.35);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */

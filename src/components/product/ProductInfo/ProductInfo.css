@@ -1,340 +1,347 @@
-/* ── PRODUCT INFO (DARK LUXURY) ─────────────────────────── */
+/* =========================================================
+   AMEZA — PRODUCT INFO (DEEP BURGUNDY + RADIANT GOLD)
+   ========================================================= */
+
 .single-info {
   display: flex;
   flex-direction: column;
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 24px;
-  padding: clamp(28px, 3.5vw, 44px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-  box-sizing: border-box;
+  gap: 18px;
+  width: 100%;
 }
 
 .single-category {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
-  margin-bottom: 10px;
+  color: var(--ameza-gold-bright);
+  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
   display: block;
 }
 
 .single-info h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(26px, 3.2vw, 40px);
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 600;
   letter-spacing: -0.02em;
-  margin: 0 0 14px 0;
+  color: var(--ameza-text);
+  line-height: 1.15;
+  margin: 0;
 }
 
+/* ── RATING ───────────────────────────────────────── */
 .single-rating {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 20px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
+  font-size: 13.5px;
 }
 
 .single-rating span {
-  color: #F59E0B;
-  font-size: 14px;
+  color: var(--ameza-gold-bright);
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(184, 154, 98, 0.4);
 }
 
 .single-rating strong {
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
+  font-weight: 700;
 }
 
 .single-rating p {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  color: var(--nova-muted, #D4B797);
-  letter-spacing: 0.02em;
+  color: var(--ameza-text-muted);
   margin: 0;
-  opacity: 0.8;
+  font-size: 12.5px;
 }
 
 .single-divider {
+  width: 100%;
   height: 1px;
-  background: rgba(231, 151, 101, 0.15);
-  margin: 18px 0;
+  background: var(--ameza-border);
+  margin: 4px 0;
 }
 
 .single-description {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--nova-muted, #D4B797);
-  margin: 0 0 24px 0;
+  line-height: 1.7;
+  color: var(--ameza-text-secondary);
+  margin: 0;
 }
 
+/* ── PRICE ROW ────────────────────────────────────── */
 .single-price {
   display: flex;
   align-items: baseline;
   gap: 14px;
-  margin-bottom: 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--ameza-border);
+  border-bottom: 1px solid var(--ameza-border);
 }
 
 .single-price strong {
-  font-family: var(--font-sans);
-  font-size: clamp(28px, 3.2vw, 38px);
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  color: var(--ameza-gold-bright);
   letter-spacing: -0.02em;
-  color: var(--nova-copper, #E35D32);
-  line-height: 1;
+  text-shadow: 0 0 16px rgba(184, 154, 98, 0.4);
 }
 
 .single-price del {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 16px;
-  color: #8D6C58;
+  color: var(--ameza-text-muted);
 }
 
 .single-price span {
-  font-family: var(--font-sans);
+  background: var(--ameza-gold-gradient);
+  color: #1C1114;
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #34D399;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-weight: 800;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(184, 154, 98, 0.35);
 }
 
+/* ── STOCK ────────────────────────────────────────── */
 .single-stock {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 24px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
+  font-size: 13px;
 }
 
 .single-stock span {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  background: var(--ameza-success);
+  box-shadow: 0 0 8px rgba(100, 131, 109, 0.6);
 }
 
 .single-stock strong {
-  font-size: 13px;
+  color: var(--ameza-text);
   font-weight: 600;
-  color: var(--nova-cream, #F1DEC3);
 }
 
 .single-stock p {
-  font-size: 12.5px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-muted);
   margin: 0;
 }
 
+/* ── SPECIFICATIONS GRID ──────────────────────────── */
 .single-specifications {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  background: #2D1B13;
-  border: 1px solid rgba(231, 151, 101, 0.15);
-  border-radius: 14px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
   padding: 16px;
-  margin-bottom: 26px;
+}
+
+.single-specifications div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .single-specifications span {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--ameza-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #8D6C58;
-  display: block;
-  margin-bottom: 4px;
+  letter-spacing: 0.06em;
 }
 
 .single-specifications strong {
-  font-family: var(--font-sans);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ameza-text);
   font-weight: 600;
-  color: var(--nova-cream, #F1DEC3);
-  display: block;
 }
 
-/* ── QUANTITY & ACTIONS ───────────────────────────── */
+/* ── QUANTITY SELECTOR ────────────────────────────── */
 .single-quantity-row {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-top: 4px;
 }
 
-.single-quantity-row span {
-  font-family: var(--font-sans);
-  font-size: 13px;
+.single-quantity-row > span {
+  font-family: var(--font-body);
+  font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text);
 }
 
 .single-quantity {
   display: inline-flex;
   align-items: center;
-  background: #2D1B13;
-  border: 1px solid rgba(231, 151, 101, 0.2);
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
   border-radius: var(--radius-pill);
-  padding: 4px;
+  height: 44px;
+  padding: 0 6px;
+  box-sizing: border-box;
 }
 
 .single-quantity button {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #24160F;
-  color: var(--nova-cream, #F1DEC3);
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-text);
+  font-size: 16px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
-  border: none;
 }
 
 .single-quantity button:hover {
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
+  background: var(--ameza-gold);
+  border-color: var(--ameza-gold-bright);
+  color: #1C1114;
 }
 
 .single-quantity strong {
-  width: 44px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ameza-text);
+  min-width: 36px;
   text-align: center;
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--nova-cream, #F1DEC3);
 }
 
+/* ── ACTION BUTTONS ───────────────────────────────── */
 .single-actions {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  display: flex;
+  align-items: center;
   gap: 14px;
-  margin-bottom: 30px;
+  padding-top: 10px;
+  flex-wrap: wrap;
 }
 
-.single-cart-button,
-.single-buy-button {
-  height: 50px;
-  min-height: 48px;
+.single-cart-button {
+  flex: 1;
+  min-width: 180px;
+  height: 48px;
+  background: var(--ameza-gold-gradient);
+  color: #1C1114 !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  border: 1px solid var(--ameza-gold-bright);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(184, 154, 98, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.single-cart-button:hover {
+  background: linear-gradient(135deg, #E8D7B8 0%, #D4BA85 50%, #B89A62 100%);
+  border-color: #FFFFFF;
+  color: #140A0D !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 154, 98, 0.6);
+}
+
+.single-buy-button {
+  flex: 1;
+  min-width: 180px;
+  height: 48px;
+  background: rgba(184, 154, 98, 0.08);
+  color: var(--ameza-gold-bright) !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--ameza-gold);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
   transition: all var(--transition-fast);
-  border: none;
-}
-
-.single-cart-button {
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.35);
-}
-
-.single-cart-button:hover {
-  background: var(--nova-copper-light, #F06B3B);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(227, 93, 50, 0.45);
-}
-
-.single-buy-button {
-  background: #3B2418;
-  color: var(--nova-cream, #F1DEC3);
-  border: 1px solid rgba(231, 151, 101, 0.25);
+  box-shadow: 0 2px 10px rgba(184, 154, 98, 0.15);
 }
 
 .single-buy-button:hover {
-  background: #4B2D20;
-  border-color: var(--nova-copper, #E35D32);
+  background: var(--ameza-gold);
+  border-color: var(--ameza-gold-bright);
+  color: #1C1114 !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 154, 98, 0.4);
 }
 
+/* ── SERVICES ROW ─────────────────────────────────── */
 .single-services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(231, 151, 101, 0.15);
+  padding-top: 14px;
+  border-top: 1px solid var(--ameza-border);
 }
 
 .single-service {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
 }
 
 .single-service span {
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 1;
 }
 
 .single-service strong {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ameza-text);
   display: block;
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--nova-cream, #F1DEC3);
   margin-bottom: 2px;
 }
 
 .single-service p {
-  font-family: var(--font-sans);
-  font-size: 11.5px;
-  color: var(--nova-muted, #D4B797);
-  line-height: 1.4;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--ameza-text-muted);
   margin: 0;
-  opacity: 0.8;
+  line-height: 1.3;
 }
 
-/* ── MOBILE RESPONSIVENESS ───────────────────────── */
-@media (max-width: 768px) {
-  .single-info {
-    padding: 20px 16px;
-    border-radius: 20px;
-  }
-  .single-info h1 {
-    font-size: 24px;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-  .single-price strong {
-    font-size: 26px;
-  }
-  .single-specifications {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 12px;
-  }
-  .single-actions {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 600px) {
+  .single-specifications,
   .single-services {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+  .single-actions {
+    flex-direction: column;
+  }
+  .single-cart-button,
+  .single-buy-button {
+    width: 100%;
   }
 }

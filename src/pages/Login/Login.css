@@ -1,18 +1,14 @@
 /* =========================================================
-   AMEZA — LOGIN PAGE (DARK LUXURY DESIGN SYSTEM)
-   Espresso (#17100C) Canvas + Smooth Natural Scrolling
-========================================================= */
+   AMEZA — LOGIN PAGE (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
 .auth-page {
   min-height: 100vh;
-  background: var(--nova-bg, #17100C);
-  background-image: 
-    radial-gradient(circle at 50% 100px, rgba(43, 26, 18, 0.6) 0%, transparent 60%),
-    radial-gradient(circle at 80% 800px, rgba(227, 93, 50, 0.05) 0%, transparent 50%);
+  background: var(--ameza-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -26,7 +22,7 @@
 }
 
 .auth-form-section {
-  background: var(--nova-bg, #17100C);
+  background: var(--ameza-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,15 +35,15 @@
   position: fixed;
   top: 24px;
   right: 24px;
-  background: #24160F;
-  border: 1px solid var(--nova-copper, #E35D32);
-  color: #FFF2DF;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-error);
+  color: #FFFFFF;
   padding: 14px 24px;
   border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 500;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
   z-index: 9999;
 }
 

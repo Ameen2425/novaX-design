@@ -1,9 +1,12 @@
-/* ── AUTH HERO PANEL (DARK LUXURY) ───────────────── */
+/* =========================================================
+   AMEZA — AUTH HERO PANEL (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
+
 .auth-hero-section,
 .login-image,
 .signup-image,
 .auth-image-panel {
-  background: #24160F;
+  background: var(--ameza-section);
   display: flex;
   align-items: flex-end;
   padding: clamp(32px, 4vw, 50px);
@@ -22,7 +25,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.8s var(--ease-smooth);
 }
 
 .auth-hero-section:hover .auth-bg-img,
@@ -38,7 +41,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(23, 16, 12, 0.4) 0%, rgba(23, 16, 12, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(36, 22, 26, 0.4) 0%, rgba(36, 22, 26, 0.95) 100%);
   z-index: 1;
 }
 
@@ -50,11 +53,11 @@
 
 .auth-image-label,
 .signup-image-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--nova-copper, #E35D32);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ameza-gold);
   display: block;
   margin-bottom: 14px;
   text-transform: uppercase;
@@ -62,25 +65,26 @@
 
 .auth-image-content h2,
 .signup-image-content h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(30px, 3.5vw, 46px);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   line-height: 1.12;
   margin-bottom: 14px;
 }
 
 .auth-image-content h2 span,
 .signup-image-content h2 span {
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
+  font-style: italic;
 }
 
 .auth-image-content p,
 .signup-image-content p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14.5px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   line-height: 1.6;
   max-width: 380px;
   margin-bottom: 20px;
@@ -93,13 +97,13 @@
 }
 
 .signup-image-features span {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--nova-cream, #F1DEC3);
-  background: rgba(36, 22, 15, 0.75);
-  border: 1px solid rgba(231, 151, 101, 0.25);
+  color: var(--ameza-text);
+  background: rgba(50, 29, 35, 0.85);
+  border: 1px solid var(--ameza-border);
   padding: 6px 14px;
   border-radius: var(--radius-pill);
   backdrop-filter: blur(8px);

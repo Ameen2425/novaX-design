@@ -1,12 +1,73 @@
-/* ── 2. CATEGORY SECTION (DARK LUXURY CARDS & MOBILE SCROLL RAIL) ── */
+/* =========================================================
+   AMEZA — CATEGORIES SECTION (DEEP BURGUNDY + RADIANT GOLD)
+   ========================================================= */
+
 .home-categories {
+  width: 100%;
   max-width: 1320px;
-  margin: 0 auto 52px;
-  padding: 0;
+  margin: 0 auto 56px;
+  padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
-  scroll-margin-top: 100px;
 }
 
+.home-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.home-section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ameza-gold-bright);
+  display: block;
+  margin-bottom: 8px;
+  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
+}
+
+.home-section-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ameza-text);
+  line-height: 1.15;
+  margin: 0 0 6px 0;
+}
+
+.home-section-heading p {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ameza-text-secondary);
+  max-width: 540px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.home-view-all-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ameza-gold-bright);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.home-view-all-link:hover {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+/* ── 5 Column Grid ───────────────────────────────── */
 .home-category-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -18,26 +79,26 @@
 }
 
 .home-category-card {
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 145px;
-  background: var(--nova-card, #24160F);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: 16px;
-  padding: 22px 20px;
+  justify-content: space-between;
   text-decoration: none;
-  color: var(--nova-cream, #F1DEC3);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
   box-sizing: border-box;
+  height: 100%;
+  min-height: 170px;
 }
 
 .home-category-card:hover {
-  transform: translateY(-4px);
-  background-color: var(--nova-card-hover, #301D14);
-  border-color: var(--nova-copper, #E35D32);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.50);
+  transform: translateY(-5px);
+  background: var(--ameza-card-hover);
+  border-color: var(--ameza-gold);
+  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 20px rgba(184, 154, 98, 0.25);
 }
 
 .home-cat-card-header {
@@ -48,145 +109,93 @@
 }
 
 .home-cat-num {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--nova-muted, #D4B797);
-  background: rgba(231, 151, 101, 0.10);
-  padding: 3px 8px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  color: var(--ameza-gold-bright);
+  background: rgba(184, 154, 98, 0.15);
+  border: 1px solid rgba(184, 154, 98, 0.35);
+  padding: 2px 8px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(231, 151, 101, 0.18);
 }
 
 .home-cat-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.35);
-  transition: transform 0.35s var(--ease-smooth), background-color 0.3s ease;
-}
-
-.home-category-card:hover .home-cat-icon {
-  transform: scale(1.08);
-  background: var(--nova-copper-light, #F06B3B);
-}
-
-.home-cat-card-body {
-  flex: 1;
-  margin-bottom: 14px;
+  font-size: 22px;
+  line-height: 1;
 }
 
 .home-cat-card-body h3 {
-  font-family: var(--font-sans);
-  font-size: 14.5px;
+  font-family: var(--font-display);
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--nova-cream, #F1DEC3);
-  margin-bottom: 4px;
-  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ameza-text);
+  margin: 0 0 4px 0;
 }
 
 .home-cat-card-body p {
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: var(--nova-muted, #D4B797);
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ameza-text-secondary);
+  line-height: 1.4;
   margin: 0;
-  opacity: 0.85;
 }
 
 .home-cat-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid rgba(241, 222, 195, 0.12);
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(184, 154, 98, 0.25);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ameza-gold-bright);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
-  transition: color var(--transition-fast);
 }
 
 .home-cat-arrow {
-  color: var(--nova-copper, #E35D32);
-  font-size: 13px;
+  font-size: 14px;
   transition: transform var(--transition-fast);
 }
 
-.home-category-card:hover .home-cat-card-footer {
-  color: var(--nova-copper-light, #F06B3B);
-}
-
 .home-category-card:hover .home-cat-arrow {
-  transform: translateX(3px);
+  transform: translateX(5px);
 }
 
-/* ── MOBILE HORIZONTAL SCROLL CATEGORY RAIL ──────── */
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .home-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .home-categories {
-    padding: 0;
-    margin-bottom: 30px;
+    padding: 0 12px;
+    margin-bottom: 36px;
   }
-
-  .home-category-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+  .home-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
-    padding-bottom: 6px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    margin-bottom: 20px;
   }
-
-  .home-category-grid::-webkit-scrollbar {
-    display: none;
+  .home-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-
-  .home-category-card-wrap {
-    flex-shrink: 0;
-    width: 125px;
-    scroll-snap-align: start;
-  }
-
   .home-category-card {
-    min-height: 130px;
-    padding: 14px 12px;
-    border-radius: 16px;
+    padding: 16px 14px;
+    min-height: 140px;
   }
+}
 
-  .home-cat-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 15px;
-  }
-
-  .home-cat-card-body h3 {
-    font-size: 13px;
-    margin-bottom: 2px;
-  }
-
-  .home-cat-card-body p {
-    font-size: 11px;
-    line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .home-cat-card-footer {
-    display: none;
+@media (max-width: 480px) {
+  .home-category-grid {
+    grid-template-columns: 1fr;
   }
 }

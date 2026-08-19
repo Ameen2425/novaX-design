@@ -1,7 +1,6 @@
 /* =========================================================
-   AMEZA — DEAL CATEGORIES CSS
-   Dark Luxury Espresso (#24160F) Cards + Copper Accents
-========================================================= */
+   AMEZA — DEAL CATEGORIES (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
 .deal-categories-section {
   width: 100%;
@@ -19,11 +18,11 @@
 }
 
 .deal-section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   margin: 0;
   display: flex;
   align-items: center;
@@ -31,23 +30,23 @@
 }
 
 .deal-section-link {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .deal-section-link:hover {
-  color: var(--nova-copper-light, #F06B3B);
+  color: var(--ameza-primary-hover);
   transform: translateX(3px);
 }
 
-/* ── 5 COLUMN GRID ───────────────────────────────── */
+/* ── 5 Column Grid ───────────────────────────────── */
 .deal-categories-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -55,15 +54,15 @@
 }
 
 .deal-category-card {
-  background: var(--nova-card, #24160F);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: 16px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
   padding: 12px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
   box-sizing: border-box;
   overflow: hidden;
   height: 100%;
@@ -71,18 +70,18 @@
 
 .deal-category-card:hover {
   transform: translateY(-4px);
-  background: var(--nova-card-hover, #301D14);
-  border-color: var(--nova-copper, #E35D32);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+  background: var(--ameza-card-hover);
+  border-color: var(--ameza-gold);
+  box-shadow: var(--shadow-md);
 }
 
 .deal-category-img-box {
   width: 100%;
   aspect-ratio: 1 / 0.85;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  background: #2D1B13;
-  border: 1px solid rgba(241, 222, 195, 0.12);
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
   margin-bottom: 12px;
   display: flex;
   align-items: center;
@@ -110,20 +109,20 @@
 }
 
 .deal-category-name {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--nova-cream, #F1DEC3);
+  letter-spacing: 0.01em;
+  color: var(--ameza-text);
   margin: 0 0 2px 0;
   line-height: 1.2;
 }
 
 .deal-category-discount {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11.5px;
-  font-weight: 600;
-  color: var(--nova-copper, #E35D32);
+  font-weight: 700;
+  color: var(--ameza-gold);
   display: block;
 }
 
@@ -131,21 +130,21 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(227, 93, 50, 0.15);
-  border: 1px solid rgba(227, 93, 50, 0.3);
-  color: var(--nova-copper, #E35D32);
+  background: rgba(184, 154, 98, 0.15);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
   font-weight: bold;
   flex-shrink: 0;
-  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .deal-category-card:hover .deal-category-arrow {
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
+  background: var(--ameza-gold);
+  color: #1C1114;
   transform: translateX(2px);
 }
 

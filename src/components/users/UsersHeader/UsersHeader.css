@@ -1,40 +1,43 @@
-/* ── USERS HEADER (DARK LUXURY) ───────────────────── */
+/* =========================================================
+   AMEZA — USERS HEADER (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
+
 .users-header {
   text-align: center;
   padding-bottom: 36px;
 }
 
 .users-header span {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   display: block;
   margin-bottom: 12px;
 }
 
 .users-header h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(30px, 3.8vw, 48px);
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
+  font-weight: 600;
+  color: var(--ameza-text);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 12px;
 }
 
 .users-header p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14.5px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   max-width: 500px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* ── CONTROLS ROW ─────────────────────────────── */
+/* ── Controls Row ─────────────────────────────── */
 .users-controls {
   display: flex;
   align-items: center;
@@ -51,35 +54,35 @@
   flex: 1;
   max-width: 520px;
   min-width: 260px;
-  background: var(--nova-input-bg, #1B110C);
-  border: 1px solid rgba(241, 222, 195, 0.22);
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
   box-sizing: border-box;
 }
 
 .users-search-wrapper:hover {
-  border-color: var(--nova-copper, #E35D32);
+  border-color: var(--ameza-gold);
 }
 
 .users-search-wrapper:focus-within {
-  border-color: var(--nova-copper, #E35D32);
-  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2), 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--ameza-gold);
+  box-shadow: 0 0 0 3px rgba(184, 154, 98, 0.2);
   transform: translateY(-1px);
 }
 
 .users-search-icon {
   position: absolute;
   left: 18px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-muted);
   pointer-events: none;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition: color var(--transition-fast), transform var(--transition-fast);
   flex-shrink: 0;
 }
 
 .users-search-wrapper:focus-within .users-search-icon {
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   transform: scale(1.08);
 }
 
@@ -90,16 +93,16 @@
   background: transparent;
   border: none;
   outline: none;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 400;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   box-sizing: border-box;
 }
 
 .users-search-input::placeholder {
-  color: #8D6C58;
-  font-family: var(--font-sans);
+  color: var(--ameza-text-muted);
+  font-family: var(--font-body);
   font-size: 13.5px;
 }
 
@@ -109,21 +112,21 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(227, 93, 50, 0.2);
-  border: 1px solid var(--nova-copper, #E35D32);
-  color: var(--nova-copper, #E35D32);
+  background: rgba(184, 154, 98, 0.15);
+  border: 1px solid var(--ameza-gold);
+  color: var(--ameza-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
   cursor: pointer;
   padding: 0;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .users-search-clear:hover {
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
+  background: var(--ameza-gold);
+  color: #1C1114;
   transform: scale(1.1);
 }
 
@@ -131,16 +134,16 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
-  background: var(--nova-card, #24160F);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
+  font-weight: 600;
+  color: var(--ameza-text);
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
   padding: 0 18px;
   height: 48px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-sm);
   box-sizing: border-box;
   white-space: nowrap;
 }
@@ -149,14 +152,14 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--nova-copper, #E35D32);
-  box-shadow: 0 0 8px rgba(227, 93, 50, 0.6);
+  background: var(--ameza-gold);
+  box-shadow: 0 0 8px rgba(184, 154, 98, 0.6);
 }
 
 .users-count-badge strong {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 600;
-  color: var(--nova-copper, #E35D32);
+  font-weight: 700;
+  color: var(--ameza-gold);
   line-height: 1;
 }

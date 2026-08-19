@@ -1,10 +1,13 @@
-/* ── TABLE WRAPPER (DARK LUXURY) ──────────────────── */
+/* =========================================================
+   AMEZA — USERS TABLE (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
+
 .users-page-table-wrap {
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 20px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-lg);
   width: 100%;
   box-sizing: border-box;
 }
@@ -12,30 +15,30 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  background: #24160F;
+  background: var(--ameza-card);
 }
 
 thead tr {
-  background: #2D1B13;
+  background: var(--ameza-section);
 }
 
 thead th {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   padding: 16px 20px;
   text-align: left;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(231, 151, 101, 0.15);
+  border-bottom: 1px solid var(--ameza-border);
 }
 
 tbody tr {
-  background: #24160F;
-  border-bottom: 1px solid rgba(231, 151, 101, 0.10);
-  transition: background 0.2s ease;
+  background: var(--ameza-card);
+  border-bottom: 1px solid var(--ameza-border);
+  transition: background var(--transition-fast);
 }
 
 tbody tr:last-child {
@@ -43,23 +46,23 @@ tbody tr:last-child {
 }
 
 tbody tr:hover {
-  background: #2B1A12;
+  background: var(--ameza-card-hover);
 }
 
 tbody td {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 400;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   padding: 14px 20px;
   vertical-align: middle;
 }
 
 tbody td strong {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
 }
 
 /* User ID tag in table */
@@ -67,50 +70,51 @@ tbody td:first-child {
   font-family: var(--font-mono);
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
 }
 
-/* ACTION BUTTONS IN TABLE */
+/* Action Buttons in Table */
 .btn-warning {
-  background: var(--nova-copper, #E35D32) !important;
-  color: #FFF2DF !important;
-  border: 1px solid var(--nova-copper, #E35D32) !important;
+  background: var(--ameza-gold) !important;
+  color: #1C1114 !important;
+  border: 1px solid var(--ameza-gold) !important;
   border-radius: var(--radius-pill);
   height: 38px;
   min-height: 38px;
   padding: 0 16px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.3);
+  box-shadow: 0 3px 10px rgba(184, 154, 98, 0.35);
   transition: all var(--transition-fast);
 }
 
 .btn-warning:hover {
-  background: var(--nova-copper-light, #F06B3B) !important;
-  color: #FFF2DF !important;
-  border-color: var(--nova-copper-light, #F06B3B) !important;
+  background: #CDB37F !important;
+  border-color: #CDB37F !important;
+  color: #1C1114 !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(184, 154, 98, 0.45);
 }
 
 .btn-danger {
-  background: #DC2626 !important;
-  color: #FFF2DF !important;
-  border: 1px solid #DC2626 !important;
+  background: var(--ameza-error) !important;
+  color: #FFFFFF !important;
+  border: 1px solid var(--ameza-error) !important;
   border-radius: var(--radius-pill);
   height: 38px;
   min-height: 38px;
   padding: 0 16px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -120,10 +124,10 @@ tbody td:first-child {
 }
 
 .btn-danger:hover {
-  background: #B91C1C !important;
-  border-color: #B91C1C !important;
+  background: #BD5F5F !important;
+  border-color: #BD5F5F !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 4px 14px rgba(168, 85, 85, 0.4);
 }
 
 /* ── MOBILE TOUCH CARDS (NO X-AXIS SCROLLING) ─────── */
@@ -159,6 +163,6 @@ tbody td:first-child {
     height: 44px;
     min-height: 44px;
     font-size: 13px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
   }
 }

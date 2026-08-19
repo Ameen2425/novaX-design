@@ -1,105 +1,94 @@
-/* ── PRODUCT GALLERY (DARK LUXURY) ────────────────────────── */
+/* =========================================================
+   AMEZA — PRODUCT GALLERY (BURGUNDY + RADIANT GOLD)
+   ========================================================= */
+
 .single-gallery {
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .single-main-image {
-  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #2D1B13;
-  border-radius: 16px;
-  border: 1px solid rgba(231, 151, 101, 0.15);
+  background: var(--ameza-card);
+  border: 1.5px solid var(--ameza-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  overflow: hidden;
-  margin-bottom: 18px;
+  padding: clamp(18px, 4vw, 40px);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(184, 154, 98, 0.15);
   box-sizing: border-box;
+  position: relative;
+}
+
+.single-discount {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: var(--ameza-gold-gradient);
+  color: #1C1114;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(184, 154, 98, 0.4);
+  z-index: 3;
 }
 
 .single-main-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.4s var(--ease-smooth);
 }
 
 .single-main-image:hover img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-.single-discount {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.4);
-  z-index: 2;
-}
-
+/* ── THUMBNAILS ───────────────────────────────────── */
 .single-thumbnails {
   display: flex;
   gap: 12px;
   overflow-x: auto;
   padding-bottom: 6px;
+  scrollbar-width: thin;
 }
 
 .single-thumbnail {
-  width: 72px;
-  height: 72px;
-  border-radius: 12px;
-  background: #2D1B13;
-  border: 1.5px solid rgba(231, 151, 101, 0.15);
-  padding: 6px;
-  cursor: pointer;
-  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-md);
+  background: var(--ameza-section);
+  border: 1.5px solid var(--ameza-border);
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.single-thumbnail:hover {
+  border-color: var(--ameza-gold-bright);
+}
+
+.single-thumbnail.active {
+  border-color: var(--ameza-gold-bright);
+  box-shadow: 0 0 16px rgba(184, 154, 98, 0.5);
+  background: var(--ameza-card);
 }
 
 .single-thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.single-thumbnail:hover,
-.single-thumbnail.active {
-  border-color: var(--nova-copper, #E35D32);
-  background: #3B2418;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.25);
-}
-
-/* ── MOBILE RESPONSIVENESS ───────────────────────── */
-@media (max-width: 768px) {
-  .single-gallery {
-    padding: 16px 14px;
-    border-radius: 20px;
-  }
-  .single-main-image {
-    padding: 16px;
-    margin-bottom: 12px;
-  }
-  .single-thumbnail {
-    width: 60px;
-    height: 60px;
-  }
 }

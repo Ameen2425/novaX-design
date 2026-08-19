@@ -1,0 +1,116 @@
+/* =========================================================
+   AMEZA — GLOBAL CSS RESET & FOUNDATION
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  width: 100%;
+  min-width: 320px;
+  scroll-behavior: smooth;
+  font-size: 15px;
+  background-color: var(--ameza-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  width: 100%;
+  background: var(--ameza-bg);
+  color: var(--ameza-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+img,
+svg,
+video,
+canvas,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  max-width: 100%;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Centralized Container Utility */
+.container,
+.main-container,
+.responsive-container {
+  width: min(calc(100% - 32px), 1400px);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1536px) {
+  .container,
+  .main-container,
+  .responsive-container {
+    width: min(calc(100% - 48px), 1500px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .container,
+  .main-container,
+  .responsive-container {
+    width: min(calc(100% - 64px), 1600px);
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ameza-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ameza-section);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--ameza-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ameza-primary);
+}
+
+::selection {
+  background: var(--ameza-primary);
+  color: #FFFFFF;
+}

@@ -1,41 +1,20 @@
 /* =========================================================
-   AMEZA — DEALS PAGE (DARK LUXURY RECREATION)
-   Color system: #17100C (Espresso) + #E35D32 (Copper) + #F1DEC3 (Warm Cream)
-========================================================= */
-
-:root {
-  --nova-bg: #17100C;
-  --nova-surface: #21150F;
-  --nova-surface-2: #2B1A12;
-  --nova-surface-3: #3B2418;
-  --nova-card: #24160F;
-  --nova-card-hover: #2D1B13;
-  --nova-cream: #F1DEC3;
-  --nova-cream-muted: #D9C1A2;
-  --nova-copper: #E35D32;
-  --nova-copper-bright: #F06B3B;
-  --nova-copper-muted: #B94C2B;
-  --nova-border: rgba(231, 151, 101, 0.20);
-}
+   AMEZA — DEALS PAGE (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
 .deals-page {
   min-height: 100vh;
-  background-color: var(--nova-bg, #17100C);
-  background-image: 
-    radial-gradient(circle at 50% 150px, rgba(43, 26, 18, 0.6) 0%, transparent 60%),
-    radial-gradient(circle at 80% 800px, rgba(227, 93, 50, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 20% 1600px, rgba(227, 93, 50, 0.04) 0%, transparent 50%);
-  color: var(--nova-cream, #F1DEC3);
+  background-color: var(--ameza-bg);
+  color: var(--ameza-text);
   padding-top: calc(62px + 16px);
-  padding-bottom: 60px;
+  padding-bottom: 32px;
   overflow-x: hidden;
   box-sizing: border-box;
 }
 
-/* ── RESPONSIVE PADDING FOR MOBILE BOTTOM NAV ──── */
 @media (max-width: 768px) {
   .deals-page {
-    padding-top: 86px;
-    padding-bottom: 120px;
+    padding-top: 76px;
+    padding-bottom: 16px;
   }
 }

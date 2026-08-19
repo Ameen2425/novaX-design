@@ -1,12 +1,15 @@
-/* ── DISCOVER SECTION (DARK LUXURY) ───────────────── */
+/* =========================================================
+   AMEZA — DISCOVER SECTION (BURGUNDY + GOLD)
+   ========================================================= */
+
 .cart-discover {
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 28px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-xl);
   padding: clamp(40px, 5vw, 64px) clamp(24px, 4vw, 48px);
   text-align: center;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
-  color: var(--nova-cream, #F1DEC3);
+  box-shadow: var(--shadow-lg);
+  color: var(--ameza-text);
   max-width: 900px;
   margin: 0 auto;
   position: relative;
@@ -15,57 +18,35 @@
 }
 
 .cart-discover .cart-label {
-  color: var(--nova-copper, #E35D32);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ameza-gold);
   margin-bottom: 12px;
 }
 
 .cart-discover h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   margin-bottom: 12px;
   line-height: 1.15;
 }
 
 .cart-discover h2 span {
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
+  font-style: italic;
 }
 
 .cart-discover p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14.5px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   max-width: 480px;
   margin: 0 auto 28px;
   line-height: 1.65;
-}
-
-.cart-discover-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  padding: 0 32px;
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF !important;
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  border-radius: var(--radius-pill);
-  text-decoration: none !important;
-  border: none;
-  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.35);
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-.cart-discover-btn:hover {
-  background: var(--nova-copper-light, #F06B3B);
-  color: #FFF2DF !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(227, 93, 50, 0.45);
 }

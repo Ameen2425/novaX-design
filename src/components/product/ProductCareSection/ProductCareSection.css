@@ -1,38 +1,44 @@
-/* ── PRODUCT DETAILS GRID (DARK LUXURY) ───────────────────── */
+/* =========================================================
+   AMEZA — PRODUCT CARE & CONFIDENCE (BURGUNDY + GOLD)
+   ========================================================= */
+
 .single-details {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+  margin-top: 48px;
 }
 
 .single-details-heading {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .single-details-heading span {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold-bright);
   display: block;
   margin-bottom: 8px;
+  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
 }
 
 .single-details-heading h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(26px, 3.2vw, 38px);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--nova-cream, #F1DEC3);
-  margin-bottom: 8px;
+  color: var(--ameza-text);
+  margin: 0 0 8px 0;
 }
 
 .single-details-heading p {
-  font-family: var(--font-sans);
-  font-size: 14.5px;
-  color: var(--nova-muted, #D4B797);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ameza-text-secondary);
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .single-details-grid {
@@ -42,55 +48,65 @@
 }
 
 .single-details-grid > div {
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
   box-sizing: border-box;
 }
 
 .single-details-grid > div:hover {
-  transform: translateY(-4px);
-  border-color: rgba(227, 93, 50, 0.4);
-  background: #2B1A12;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  transform: translateY(-5px);
+  border-color: var(--ameza-gold);
+  background: var(--ameza-card-hover);
+  box-shadow: 0 10px 25px rgba(20, 8, 12, 0.4), 0 0 18px rgba(184, 154, 98, 0.2);
 }
 
-.single-details-grid span {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--nova-copper, #E35D32);
-  display: inline-block;
-  margin-bottom: 12px;
+.single-details-grid > div span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ameza-gold-gradient);
+  color: #1C1114;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 10px rgba(184, 154, 98, 0.35);
 }
 
-.single-details-grid h3 {
-  font-family: var(--font-sans);
+.single-details-grid > div h3 {
+  font-family: var(--font-display);
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--nova-cream, #F1DEC3);
-  margin-bottom: 8px;
+  color: var(--ameza-text);
+  margin-bottom: 6px;
 }
 
-.single-details-grid p {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--nova-muted, #D4B797);
+.single-details-grid > div p {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ameza-text-secondary);
   margin: 0;
 }
 
 @media (max-width: 900px) {
   .single-details-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .single-details-grid {
     grid-template-columns: 1fr;
   }

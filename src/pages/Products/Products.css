@@ -1,191 +1,111 @@
 /* =========================================================
-   AMEZA — PRODUCTS PAGE (DARK LUXURY DESIGN SYSTEM)
-   Espresso (#17100C) Canvas + Glass Filters + 1-Col Mobile Grid
-========================================================= */
+   AMEZA — PRODUCTS PAGE (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
 .products-page {
   min-height: 100vh;
-  padding: calc(62px + 24px) 18px 80px;
-  background-color: var(--nova-bg, #17100C);
-  background-image: 
-    radial-gradient(circle at 50% 100px, rgba(43, 26, 18, 0.6) 0%, transparent 60%),
-    radial-gradient(circle at 80% 800px, rgba(227, 93, 50, 0.05) 0%, transparent 50%);
-  color: var(--nova-cream, #F1DEC3);
+  background-color: var(--ameza-bg);
+  padding: calc(62px + 36px) clamp(16px, 4vw, 48px) 100px;
+  max-width: 1400px;
+  margin: 0 auto;
   box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* ── 1. HEADER ───────────────────────────────────── */
 .products-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 32px;
+  margin-bottom: 36px;
 }
 
 .products-header span {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
+  margin-bottom: 8px;
   display: block;
-  margin-bottom: 10px;
 }
 
 .products-header h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 600;
+  color: var(--ameza-text);
+  margin: 0 0 12px 0;
   letter-spacing: -0.02em;
-  margin-bottom: 10px;
 }
 
 .products-header p {
-  font-family: var(--font-sans);
-  font-size: 14.5px;
-  line-height: 1.6;
-  font-weight: 400;
-  color: var(--nova-muted, #D4B797);
-  opacity: 0.9;
-}
-
-/* ── 2. FILTER & SEARCH TOOLBAR ──────────────────── */
-.products-filter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  background: rgba(33, 21, 15, 0.92);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: var(--radius-pill);
-  padding: 10px 18px;
-  max-width: 860px;
-  margin: 0 auto 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(14px);
-  box-sizing: border-box;
-}
-
-.products-filter input[type="search"] {
-  flex: 1.6;
-  height: 44px;
-  padding: 0 18px;
-  background: var(--nova-input-bg, #1B110C);
-  border: 1px solid rgba(241, 222, 195, 0.22);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 400;
-  color: var(--nova-cream, #F1DEC3);
-  outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  box-sizing: border-box;
-}
-
-.products-filter input[type="search"]::placeholder {
-  color: #8D6C58;
-  font-family: var(--font-sans);
-  font-size: 13px;
-}
-
-.products-filter input[type="search"]:focus {
-  border-color: var(--nova-copper, #E35D32);
-  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2);
-}
-
-.products-filter select {
-  flex: 1;
-  height: 44px;
-  padding: 0 18px;
-  background: var(--nova-input-bg, #1B110C);
-  border: 1px solid rgba(241, 222, 195, 0.22);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
-  outline: none;
-  cursor: pointer;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  box-sizing: border-box;
-}
-
-.products-filter select:focus {
-  border-color: var(--nova-copper, #E35D32);
-  box-shadow: 0 0 0 3px rgba(227, 93, 50, 0.2);
-}
-
-.products-filter select option {
-  background: #1B110C;
-  color: var(--nova-cream, #F1DEC3);
-  padding: 10px;
-}
-
-/* ── 3. PRODUCTS GRID CONTAINER ─────────────────── */
-.products-container {
-  max-width: 1400px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ameza-text-secondary);
+  max-width: 540px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
+.products-container {
+  width: 100%;
+}
+
+/* ── 4-COLUMN RESPONSIVE PRODUCT GRID ────────────── */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 18px;
+  width: 100%;
 }
 
-/* ── 4. EMPTY STATE ─────────────────────────────── */
+/* ── EMPTY STATE ─────────────────────────────────── */
 .products-empty {
   text-align: center;
-  padding: 60px 24px;
-  background: #24160F;
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: 20px;
-  max-width: 540px;
+  padding: 60px 20px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-xl);
+  max-width: 600px;
   margin: 0 auto;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
 }
 
 .products-empty h2 {
-  font-family: var(--font-serif);
-  font-size: 26px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--nova-cream, #F1DEC3);
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--ameza-text);
   margin-bottom: 10px;
 }
 
 .products-empty p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--nova-muted, #D4B797);
-  margin-bottom: 22px;
+  color: var(--ameza-text-secondary);
+  margin-bottom: 20px;
 }
 
 .products-empty button {
   height: 44px;
-  padding: 0 28px;
-  background: var(--nova-copper, #E35D32);
-  color: var(--nova-cream, #F1DEC3);
-  font-family: var(--font-sans);
+  padding: 0 24px;
+  background: var(--ameza-primary);
+  color: #FFFFFF;
+  font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
-  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.35);
 }
 
 .products-empty button:hover {
-  background: var(--nova-copper-light, #F06B3B);
+  background: var(--ameza-primary-hover);
   transform: translateY(-2px);
 }
 
-/* ── 5. PAGINATION ──────────────────────────────── */
+/* ── PAGINATION CONTROLS ─────────────────────────── */
 .pagination {
   display: flex;
   align-items: center;
@@ -196,74 +116,58 @@
 }
 
 .pagination button {
-  min-width: 44px;
   height: 44px;
-  padding: 0 12px;
-  border-radius: 50%;
-  background: #24160F;
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  color: var(--nova-cream, #F1DEC3);
-  font-family: var(--font-sans);
-  font-size: 13px;
+  min-width: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
 .pagination button:hover {
-  background: #2B1A12;
-  border-color: var(--nova-copper, #E35D32);
-  transform: translateY(-2px);
+  background: var(--ameza-card-hover);
+  border-color: var(--ameza-gold);
+  color: var(--ameza-gold);
 }
 
 .pagination button.active {
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  border-color: var(--nova-copper, #E35D32);
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.4);
+  background: var(--ameza-primary);
+  border-color: var(--ameza-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(163, 71, 85, 0.4);
 }
 
-/* ── RESPONSIVE ─────────────────────────────────── */
+/* ── RESPONSIVE BREAKPOINTS ───────────────────────── */
 @media (max-width: 1200px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 860px) {
-  .products-page {
-    padding: 82px 14px 110px;
-  }
-  .products-header {
-    margin-bottom: 20px;
-  }
-  .products-header h1 {
-    font-size: 28px;
-  }
-  .products-header p {
-    font-size: 13px;
-  }
-  
-  /* SINGLE PRODUCT PER LINE ON MOBILE VIEW */
+@media (max-width: 900px) {
   .products-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
-  
-  .products-filter {
-    flex-direction: column;
-    border-radius: 18px;
-    padding: 14px;
-    gap: 10px;
-    margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+  .products-page {
+    padding-top: 80px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
-  .products-filter input[type="search"],
-  .products-filter select {
-    width: 100%;
-    flex: auto;
-    height: 46px;
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }

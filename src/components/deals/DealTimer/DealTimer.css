@@ -1,7 +1,6 @@
 /* =========================================================
-   AMEZA — DEAL TIMER & TRUST FEATURE STRIP
-   Exact Visual Replica: Countdown + 4 Value Pillars with Copper Icons
-========================================================= */
+   AMEZA — DEAL TIMER & TRUST FEATURE STRIP (BURGUNDY + GOLD)
+   ========================================================= */
 
 .deal-timer-strip-wrapper {
   width: 100%;
@@ -12,15 +11,15 @@
 }
 
 .deal-timer-strip {
-  background: rgba(33, 21, 15, 0.92);
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 16px;
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
   padding: 16px 28px;
   display: grid;
   grid-template-columns: auto 1px 1fr;
   align-items: center;
   gap: 28px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(12px);
   box-sizing: border-box;
 }
@@ -39,7 +38,7 @@
   font-weight: 600;
   letter-spacing: 1.6px;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   margin-bottom: 6px;
   display: block;
 }
@@ -58,11 +57,11 @@
 }
 
 .countdown-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 26px;
   font-weight: 600;
   line-height: 1;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   letter-spacing: -0.02em;
 }
 
@@ -71,27 +70,26 @@
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: var(--nova-cream-muted, #D9C1A2);
+  color: var(--ameza-text-muted);
   margin-top: 3px;
-  opacity: 0.8;
 }
 
 .countdown-colon {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 20px;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   margin-bottom: 12px;
   font-weight: 600;
 }
 
-/* ── DIVIDER ─────────────────────────────────────── */
+/* ── Divider ─────────────────────────────────────── */
 .deal-strip-divider {
   width: 1px;
   height: 48px;
-  background: rgba(231, 151, 101, 0.2);
+  background: var(--ameza-border);
 }
 
-/* ── 4 PILLARS ───────────────────────────────────── */
+/* ── 4 Pillars ───────────────────────────────────── */
 .deal-pillars-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -109,40 +107,40 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(227, 93, 50, 0.12);
-  border: 1px solid rgba(227, 93, 50, 0.25);
+  background: rgba(184, 154, 98, 0.15);
+  border: 1px solid var(--ameza-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
   flex-shrink: 0;
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition: transform var(--transition-fast), background var(--transition-fast);
 }
 
 .deal-pillar-item:hover .deal-pillar-icon {
   transform: scale(1.08);
-  background: rgba(227, 93, 50, 0.22);
+  background: var(--ameza-gold);
+  color: #1C1114;
 }
 
 .deal-pillar-text strong {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   display: block;
   margin-bottom: 2px;
   line-height: 1.2;
 }
 
 .deal-pillar-text p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11px;
-  color: var(--nova-cream-muted, #D9C1A2);
+  color: var(--ameza-text-secondary);
   margin: 0;
   line-height: 1.3;
-  opacity: 0.85;
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
@@ -175,6 +173,6 @@
   }
   .deal-timer-strip {
     padding: 16px;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
   }
 }

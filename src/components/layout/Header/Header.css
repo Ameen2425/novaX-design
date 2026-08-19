@@ -1,163 +1,86 @@
 /* =========================================================
-   AMEZA — FLOATING DARK LUXURY GLASS HEADER & MOBILE NAV
-   Espresso (#1E110B) Glass + Copper (#E35D32) Active Pill
-========================================================= */
+   AMEZA — HEADER NAVIGATION (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
-/* ── 1. MOBILE TOP COMPACT FLOATING HEADER ───────── */
-.mobile-top-brand {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobile-top-brand {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    height: 58px;
-    background: rgba(30, 17, 11, 0.94);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    position: fixed;
-    top: 12px;
-    left: 12px;
-    right: 12px;
-    z-index: 9998;
-    border: 1px solid rgba(231, 151, 101, 0.22);
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-    box-sizing: border-box;
-  }
-
-  .mobile-top-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .mobile-action-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(43, 26, 18, 0.75);
-    border: 1px solid rgba(231, 151, 101, 0.2);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--nova-cream, #F1DEC3);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    box-sizing: border-box;
-  }
-
-  .mobile-action-btn:hover,
-  .mobile-action-btn:active,
-  .mobile-action-btn.active {
-    background: var(--nova-copper, #E35D32);
-    border-color: var(--nova-copper, #E35D32);
-    color: #FFF2DF;
-    box-shadow: 0 4px 12px rgba(227, 93, 50, 0.4);
-  }
-
-  .mobile-deals-pulse {
-    border-color: rgba(227, 93, 50, 0.4);
-  }
-}
-
-/* ── 2. DESKTOP FLOATING GLASS HEADER ────────────── */
-.desktop-header {
+/* ── 1. DESKTOP & TABLET FLOATING HEADER ──────────────── */
+.header.desktop-header {
   position: fixed;
   top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 36px);
-  max-width: 1360px;
-  height: 58px;
-  background: rgba(30, 17, 11, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 30px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  width: min(calc(100% - 32px), 1280px);
+  height: 62px;
+  background: rgba(36, 22, 26, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid var(--ameza-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(184, 154, 98, 0.15);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  z-index: 9999;
-  transition: all var(--ease-smooth);
   box-sizing: border-box;
+  z-index: 1000;
+  transition: all var(--transition);
 }
 
-.desktop-header:hover {
-  border-color: rgba(231, 151, 101, 0.3);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+.header.desktop-header.scrolled {
+  background: rgba(30, 17, 21, 0.96);
+  border-color: var(--ameza-gold);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(184, 154, 98, 0.25);
 }
 
-/* ── 3. LOGO ─────────────────────────────────────── */
-.logo {
+/* Brand Logo */
+.header.desktop-header .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
-  transition: transform 0.2s ease;
-  min-height: 44px;
+  flex-shrink: 0;
 }
 
-.logo:hover {
-  transform: scale(1.03);
-}
-
-.logo-img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.logo-text {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--nova-cream, #F1DEC3);
-  text-transform: uppercase;
-}
-
-/* ── 4. NAVBAR LINKS ─────────────────────────────── */
+/* Desktop Navbar */
 .navbar {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .nav-link {
-  font-family: var(--font-sans);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: 0.90rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--nova-muted, #D4B797);
-  padding: 8px 18px;
-  border-radius: var(--radius-pill, 999px);
+  letter-spacing: 0.02em;
+  color: var(--ameza-text-secondary);
   text-decoration: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
   transition: all var(--transition-fast);
-  min-height: 40px;
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
 
 .nav-link:hover {
-  color: #FFF2DF;
-  background: rgba(241, 222, 195, 0.08);
+  color: var(--ameza-text);
+  background: rgba(184, 154, 98, 0.15);
 }
 
+/* ACTIVE PAGE WITH GOLD COLOR BACKGROUND */
 .nav-link.active {
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF !important;
-  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.45);
+  background: var(--ameza-gold-gradient) !important;
+  color: #1C1114 !important;
+  font-weight: 800 !important;
+  border: 1px solid #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(184, 154, 98, 0.45);
+  transform: translateY(-1px);
 }
 
-/* ── 5. HEADER ACTION ICONS ──────────────────────── */
+.nav-link.active::after {
+  display: none;
+}
+
+/* Desktop Header Actions */
 .header-actions {
   display: flex;
   align-items: center;
@@ -171,65 +94,137 @@
 }
 
 .header-action-btn {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(43, 26, 18, 0.8);
-  border: 1px solid rgba(231, 151, 101, 0.2);
-  display: inline-flex;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-text);
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--nova-cream, #F1DEC3);
+  position: relative;
+  transition: all var(--transition-fast);
   text-decoration: none;
   cursor: pointer;
-  transition: all var(--transition-fast);
-  box-sizing: border-box;
 }
 
 .header-action-btn:hover {
-  background: var(--nova-copper, #E35D32);
-  border-color: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.4);
+  background: var(--ameza-card-hover);
+  border-color: var(--ameza-gold);
+  color: var(--ameza-gold);
+  transform: translateY(-1px);
 }
 
 .header-action-btn.active {
-  background: var(--nova-copper, #E35D32);
-  border-color: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.4);
+  background: var(--ameza-gold-gradient);
+  border-color: #FFFFFF;
+  color: #1C1114;
+  box-shadow: 0 2px 10px rgba(184, 154, 98, 0.4);
 }
 
-/* ── 6. MOBILE BOTTOM CAPSULE NAVIGATION ─────────── */
+.header-action-btn.signup-btn {
+  border-color: var(--ameza-gold);
+  color: var(--ameza-gold);
+}
+
+.header-action-btn.signup-btn:hover {
+  background: var(--ameza-gold-gradient);
+  border-color: #FFFFFF;
+  color: #1C1114;
+}
+
+/* ── 2. MOBILE HEADER & NAVIGATION (HIDDEN ON DESKTOP) ── */
+.mobile-top-brand {
+  display: none;
+}
+
 .mobile-bottom-nav {
   display: none;
 }
 
+/* ── 3. MOBILE RESPONSIVE RULES (<= 768px) ────────────── */
 @media (max-width: 768px) {
-  .desktop-header {
-    display: none;
+  /* Hide Desktop Header */
+  .header.desktop-header {
+    display: none !important;
   }
 
-  .mobile-bottom-nav {
-    display: flex;
+  /* Fixed Mobile Top Brand Bar */
+  .mobile-top-brand {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-    left: 12px;
-    right: 12px;
-    max-width: 500px;
-    margin: 0 auto;
-    height: 66px;
-    background: rgba(30, 17, 11, 0.94);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(231, 151, 101, 0.24);
-    border-radius: 22px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: rgba(36, 22, 26, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--ameza-border);
+    padding: 0 16px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  .mobile-top-brand .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .mobile-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mobile-action-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--ameza-card);
+    border: 1px solid var(--ameza-border);
+    color: var(--ameza-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-action-btn:hover {
+    background: var(--ameza-card-hover);
+    border-color: var(--ameza-gold);
+    color: var(--ameza-gold);
+  }
+
+  .mobile-action-btn.active {
+    background: var(--ameza-gold-gradient);
+    border-color: #FFFFFF;
+    color: #1C1114;
+  }
+
+  /* Fixed Floating Mobile Bottom Capsule Navigation */
+  .mobile-bottom-nav {
+    display: flex !important;
     align-items: center;
     justify-content: space-around;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 64px;
+    background: rgba(36, 22, 26, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid var(--ameza-border);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 10px 30px rgba(20, 8, 12, 0.6), 0 0 20px rgba(184, 154, 98, 0.2);
+    z-index: 1000;
     padding: 4px 6px;
-    z-index: 9999;
     box-sizing: border-box;
   }
 
@@ -240,36 +235,53 @@
     justify-content: center;
     gap: 3px;
     text-decoration: none;
-    padding: 6px 10px;
-    min-height: 48px;
     min-width: 48px;
-    border-radius: 14px;
-    color: var(--nova-muted, #D4B797);
-    transition: all var(--transition-fast);
+    padding: 2px 4px;
     box-sizing: border-box;
+    transition: all var(--transition-fast);
+    background: transparent;
   }
 
   .mobile-nav-icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: inherit;
-    width: 22px;
-    height: 22px;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-nav-icon-wrap svg {
+    stroke: var(--ameza-text-secondary);
+    transition: stroke var(--transition-fast);
   }
 
   .mobile-nav-label {
-    font-family: var(--font-sans);
-    font-size: 10.5px;
+    font-family: var(--font-body);
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: inherit;
+    color: var(--ameza-text-secondary);
     line-height: 1;
+    transition: color var(--transition-fast);
   }
 
-  .mobile-nav-item.active {
-    background: var(--nova-copper, #E35D32);
-    color: #FFF2DF !important;
-    box-shadow: 0 4px 14px rgba(227, 93, 50, 0.45);
+  /* ACTIVE STATE: Radiant Gold circle on icon + Crisp Gold label below */
+  .mobile-nav-item.active .mobile-nav-icon-wrap {
+    background: var(--ameza-gold-gradient);
+    box-shadow: 0 3px 12px rgba(184, 154, 98, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .mobile-nav-item.active .mobile-nav-icon-wrap svg {
+    stroke: #1C1114 !important;
+    stroke-width: 2.4;
+  }
+
+  .mobile-nav-item.active .mobile-nav-label {
+    color: var(--ameza-gold-bright) !important;
+    font-weight: 800 !important;
+    transform: translateY(-1px);
   }
 }

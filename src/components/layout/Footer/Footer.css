@@ -1,48 +1,32 @@
 /* =========================================================
-   AMEZA — STRUCTURED DARK LUXURY FOOTER
-   Deepest Espresso (#130A06) + Warm Cream + High-Contrast Copper
-========================================================= */
+   AMEZA — FOOTER (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
 .footer {
-  background: var(--bg-footer, #130A06);
-  color: var(--nova-cream, #F1DEC3);
-  padding: 60px 5% 36px;
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
+  background: #1C1114;
+  border-top: 1px solid var(--ameza-border);
+  padding: 64px 0 32px;
+  color: var(--ameza-text);
   box-sizing: border-box;
   width: 100%;
-}
-
-/* Subtle oversized AMEZA watermark */
-.footer::before {
-  content: "AMEZA";
-  position: absolute;
-  bottom: -20px;
-  right: 5%;
-  font-family: var(--font-sans);
-  font-size: clamp(80px, 14vw, 180px);
-  font-weight: 700;
-  color: rgba(241, 222, 195, 0.018);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: 0.10em;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-container {
-  max-width: 1360px;
+  width: min(calc(100% - 32px), 1320px);
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  padding: 0 clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
 }
 
-/* ── 5-COLUMN CONTENT GRID ──────────────────────── */
+/* ── Top 5-Column Grid ────────────────────────────── */
 .footer-content {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
-  gap: clamp(20px, 3vw, 44px);
-  margin-bottom: 40px;
+  gap: clamp(24px, 3.5vw, 48px);
+  margin-bottom: 48px;
+  box-sizing: border-box;
 }
 
 .footer-col {
@@ -55,305 +39,254 @@
 }
 
 .footer-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   margin-bottom: 12px;
 }
 
-.footer-logo-img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.footer-logo span {
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--nova-cream, #F1DEC3);
-  text-transform: uppercase;
-}
-
 .footer-desc {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--nova-muted, #D4B797);
-  max-width: 300px;
-  margin: 0 0 18px 0;
-  opacity: 0.9;
+  line-height: 1.65;
+  color: var(--ameza-text-secondary);
+  margin: 0 0 20px 0;
+  max-width: 320px;
 }
 
-/* ── SOCIAL ICONS (PERFECT CENTERING & COPPER ACCENT) ─ */
+/* Socials Row */
 .footer-socials {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-socials a {
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  min-height: 42px !important;
-  border-radius: 50% !important;
-  background: rgba(227, 93, 50, 0.16) !important;
-  border: 1.5px solid rgba(227, 93, 50, 0.45) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: var(--nova-copper, #E35D32) !important;
-  text-decoration: none !important;
-  transition: all 0.25s ease !important;
-  box-sizing: border-box !important;
-  flex-shrink: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 0 !important;
-  position: relative !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
 }
 
-.footer-socials a svg {
-  display: block !important;
-  width: 18px !important;
-  height: 18px !important;
-  margin: auto !important;
-  flex-shrink: 0 !important;
-  color: inherit !important;
-  transition: transform 0.25s ease !important;
-}
-
-.footer-socials a:hover,
-.footer-socials a:active {
-  background: var(--nova-copper, #E35D32) !important;
-  border-color: var(--nova-copper, #E35D32) !important;
-  color: #FFF2DF !important;
+.footer-socials a:hover {
+  background: var(--ameza-card-hover);
+  border-color: var(--ameza-gold);
+  color: var(--ameza-gold);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(227, 93, 50, 0.55);
+  box-shadow: 0 4px 12px rgba(184, 154, 98, 0.25);
 }
 
-.footer-socials a:hover svg {
-  transform: scale(1.1);
-}
-
-/* ── COLUMN HEADINGS & LINKS ─────────────────────── */
+/* ── Columns Typography & Links ──────────────────── */
 .footer-col h3 {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--nova-cream, #F1DEC3);
-  margin: 0 0 16px 0;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ameza-text);
+  letter-spacing: -0.01em;
+  margin: 0 0 18px 0;
+}
+
+.footer-col p {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ameza-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 14px 0;
 }
 
 .footer-col ul {
   list-style: none;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-.footer-col li {
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-.footer-col a {
-  font-family: var(--font-sans);
+.footer-col ul li a {
+  font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   text-decoration: none;
-  transition: all 0.2s ease;
-  display: inline-block;
-  opacity: 0.9;
-  line-height: 1.4;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
 }
 
-.footer-col a:hover {
-  color: var(--nova-copper-light, #F06B3B);
-  transform: translateX(3px);
-  opacity: 1;
+.footer-col ul li a:hover {
+  color: var(--ameza-gold);
+  transform: translateX(4px);
 }
 
-/* ── NEWSLETTER FORM ─────────────────────────────── */
-.footer-newsletter p {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  color: var(--nova-muted, #D4B797);
-  margin: 0 0 12px 0;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-
+/* ── Newsletter Form ──────────────────────────────── */
 .footer-newsletter-form {
   display: flex;
   align-items: center;
-  background: var(--nova-input-bg, #1B110C);
-  border: 1px solid rgba(241, 222, 195, 0.22);
-  border-radius: var(--radius-pill, 999px);
-  padding: 4px 4px 4px 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  background: var(--ameza-section);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-pill);
+  padding: 4px 6px 4px 16px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   box-sizing: border-box;
-}
-
-.footer-newsletter-form input {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  color: var(--nova-cream, #F1DEC3);
   width: 100%;
 }
 
+.footer-newsletter-form:focus-within {
+  border-color: var(--ameza-gold);
+  box-shadow: 0 0 0 3px rgba(184, 154, 98, 0.2);
+}
+
+.footer-newsletter-form input {
+  flex: 1;
+  height: 38px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ameza-text);
+  min-width: 0;
+}
+
 .footer-newsletter-form input::placeholder {
-  color: #8D6C58;
+  color: var(--ameza-text-muted);
+  font-size: 12.5px;
 }
 
 .footer-newsletter-form button {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--nova-copper, #E35D32);
+  background: var(--ameza-primary);
+  color: #FFFFFF;
   border: none;
-  color: #FFF2DF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .footer-newsletter-form button:hover {
-  background: var(--nova-copper-light, #F06B3B);
+  background: var(--ameza-primary-hover);
   transform: scale(1.05);
 }
 
 .newsletter-success {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
-  color: #55B56E;
+  font-weight: 600;
+  color: var(--ameza-gold);
   margin-top: 8px;
   display: block;
 }
 
-/* ── BOTTOM COPYRIGHT & LEGAL ROW ────────────────── */
+/* ── Bottom Bar ───────────────────────────────────── */
 .footer-bottom {
-  padding-top: 20px;
-  border-top: 1px solid rgba(241, 222, 195, 0.12);
+  border-top: 1px solid rgba(90, 57, 65, 0.45);
+  padding-top: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  color: var(--nova-muted, #D4B797);
+  gap: 16px;
   flex-wrap: wrap;
-  gap: 12px;
-  opacity: 0.85;
+  box-sizing: border-box;
+}
+
+.footer-bottom p {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--ameza-text-muted);
+  margin: 0;
 }
 
 .footer-legal {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-legal a {
-  color: var(--nova-muted, #D4B797);
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ameza-text-muted);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .footer-legal a:hover {
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold);
 }
 
 .footer-legal span {
-  opacity: 0.4;
+  color: var(--ameza-border);
+  font-size: 11px;
 }
 
-.footer-made-with .heart-icon {
-  color: var(--nova-copper, #E35D32);
+.footer-made-with {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ameza-text-muted);
 }
 
-/* ── RESPONSIVE ─────────────────────────────────── */
+.heart-icon {
+  color: var(--ameza-gold);
+  display: inline-block;
+  margin: 0 2px;
+}
+
+/* ── RESPONSIVE BREAKPOINTS ───────────────────────── */
 @media (max-width: 1024px) {
   .footer-content {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px 24px;
+    gap: 32px;
   }
   .footer-brand {
-    grid-column: 1 / -1;
-  }
-  .footer-newsletter {
-    grid-column: 1 / -1;
+    grid-column: span 3;
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 36px 18px calc(96px + env(safe-area-inset-bottom, 16px));
+    padding: 44px 0 100px;
   }
 
   .footer-content {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px 12px;
-    margin-bottom: 28px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
   }
 
   .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-socials {
-    gap: 14px !important;
-    margin-top: 6px;
-    justify-content: flex-start;
-  }
-
-  .footer-socials a {
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
+    grid-column: span 2;
   }
 
   .footer-newsletter {
-    grid-column: 1 / -1;
+    grid-column: span 2;
   }
 
   .footer-bottom {
     flex-direction: column;
-    text-align: center;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .footer-content {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px 8px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
-  
-  .footer-col h3 {
-    font-size: 11px;
-    margin-bottom: 12px;
-  }
-  
-  .footer-col a {
-    font-size: 12.5px;
+
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: span 1;
   }
 }

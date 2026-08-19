@@ -1,125 +1,35 @@
 /* =========================================================
-   AMEZA — FULL PAGE LAZY LOADER
-   Dark Luxury Espresso Theme (#17100C)
-========================================================= */
+   AMEZA — FULL PAGE LOADER (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
-.page-loader-screen {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--nova-bg, #17100C);
+.page-loader-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99999;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.page-loader-box {
+  inset: 0;
+  background: var(--ameza-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.2);
-  border-radius: 28px;
-  padding: 48px 56px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.page-loader-box::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, rgba(227, 93, 50, 0.25) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.page-loader-spinner-wrap {
-  position: relative;
-  width: 76px;
-  height: 76px;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  gap: 20px;
+  z-index: 99999;
 }
 
-.page-loader-ring {
-  position: absolute;
-  inset: 0;
+.page-loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--ameza-border);
+  border-top-color: var(--ameza-gold);
+  border-right-color: var(--ameza-primary);
   border-radius: 50%;
-  border: 2.5px solid rgba(231, 151, 101, 0.2);
-  border-top-color: var(--nova-copper-light, #F06B3B);
-  border-right-color: var(--nova-copper, #E35D32);
-  animation: pageLoaderSpin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-}
-
-.page-loader-pulse-core {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #2D1B13;
-  border: 1px solid rgba(231, 151, 101, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-  animation: corePulse 1.8s ease-in-out infinite alternate;
-}
-
-.page-loader-emblem {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--nova-cream, #F1DEC3);
-  line-height: 1;
-}
-
-.page-loader-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
-  margin-bottom: 6px;
+  animation: spin 0.8s linear infinite;
+  box-shadow: 0 0 20px rgba(184, 154, 98, 0.2);
 }
 
 .page-loader-text {
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  color: var(--nova-muted, #D4B797);
-  letter-spacing: 0.01em;
-  margin: 0;
-}
-
-@keyframes pageLoaderSpin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes corePulse {
-  0%   { transform: scale(0.92); opacity: 0.85; }
-  100% { transform: scale(1.06); opacity: 1; }
-}
-
-@media (max-width: 480px) {
-  .page-loader-box {
-    padding: 36px 28px;
-    width: 90%;
-  }
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--ameza-text);
+  text-transform: uppercase;
 }

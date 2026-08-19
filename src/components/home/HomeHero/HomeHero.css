@@ -1,36 +1,39 @@
-/* ── 1. HERO SECTION (DARK LUXURY EDITORIAL HERO) ── */
+/* =========================================================
+   AMEZA — HOME HERO (DEEP BURGUNDY + RADIANT GOLD)
+   ========================================================= */
+
 .home-hero {
-  max-width: 1400px;
-  margin: 0 auto 52px;
-  padding: 0 18px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 12px auto 48px;
+  padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
 .espresso-hero-container {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(24px, 4vw, 56px);
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
-  background: radial-gradient(circle at 65% 50%, #2A170F 0%, #1D110B 70%, #150C07 100%);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: 24px;
-  padding: clamp(32px, 4vw, 52px);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+  background: var(--ameza-section);
+  border: 1.5px solid var(--ameza-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(36px, 5vw, 64px);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(184, 154, 98, 0.12);
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
 }
 
-/* Subtle background warm glow */
+/* Background warm ambient gold flare */
 .espresso-hero-container::before {
   content: "";
   position: absolute;
-  top: 50%;
-  right: 15%;
-  transform: translate(50%, -50%);
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(227, 93, 50, 0.16) 0%, transparent 65%);
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184, 154, 98, 0.22) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -39,45 +42,45 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: relative;
   z-index: 2;
+  position: relative;
 }
 
 .espresso-hero-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2.2px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--nova-copper, #E35D32);
-  margin-bottom: 14px;
+  color: var(--ameza-gold-bright);
+  margin-bottom: 16px;
   display: block;
+  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
 }
 
 .espresso-hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(36px, 4.2vw, 58px);
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 600;
+  color: var(--ameza-text);
   line-height: 1.05;
-  margin: 0 0 16px 0;
+  margin: 0 0 18px 0;
   letter-spacing: -0.02em;
 }
 
 .espresso-hero-title span {
-  color: var(--nova-copper, #E35D32);
-  font-style: normal;
+  color: var(--ameza-gold-bright);
+  font-style: italic;
+  text-shadow: 0 0 20px rgba(184, 154, 98, 0.35);
 }
 
 .espresso-hero-description {
-  font-family: var(--font-sans);
-  font-size: clamp(14px, 1.1vw, 16px);
-  line-height: 1.6;
-  font-weight: 400;
-  color: var(--nova-muted, #D4B797);
+  font-family: var(--font-body);
+  font-size: clamp(14.5px, 1.1vw, 16px);
+  line-height: 1.65;
+  color: var(--ameza-text-secondary);
   max-width: 480px;
-  margin: 0 0 24px 0;
-  opacity: 0.92;
+  margin: 0 0 32px 0;
 }
 
 .espresso-hero-actions {
@@ -85,7 +88,7 @@
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .btn-hero-copper {
@@ -94,29 +97,29 @@
   justify-content: center;
   gap: 8px;
   height: 48px;
+  min-height: 44px;
   padding: 0 32px;
-  background: var(--nova-copper, #E35D32);
-  color: var(--nova-cream, #F1DEC3) !important;
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  background: var(--ameza-gold-gradient);
+  color: #1C1114 !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   text-decoration: none !important;
-  border: none;
-  box-shadow: 0 6px 20px rgba(227, 93, 50, 0.40);
-  transition: all var(--transition-fast);
+  border: 1px solid var(--ameza-gold-bright);
+  box-shadow: 0 4px 18px rgba(184, 154, 98, 0.4);
+  transition: all var(--transition);
   cursor: pointer;
-  box-sizing: border-box;
-  min-height: 44px;
 }
 
 .btn-hero-copper:hover {
-  background: var(--nova-copper-light, #F06B3B);
-  color: var(--nova-cream, #F1DEC3) !important;
+  background: linear-gradient(135deg, #E8D7B8 0%, #D4BA85 50%, #B89A62 100%);
+  border-color: #FFFFFF;
+  color: #140A0D !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(240, 107, 59, 0.50);
+  box-shadow: 0 8px 25px rgba(184, 154, 98, 0.6);
 }
 
 .btn-hero-outline {
@@ -125,77 +128,79 @@
   justify-content: center;
   gap: 8px;
   height: 48px;
-  padding: 0 28px;
-  background: transparent;
-  color: var(--nova-cream, #F1DEC3) !important;
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 600;
+  min-height: 44px;
+  padding: 0 26px;
+  background: rgba(184, 154, 98, 0.08);
+  color: var(--ameza-gold-bright) !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  border: 1.5px solid rgba(241, 222, 195, 0.3);
+  border: 1.5px solid var(--ameza-gold);
   text-decoration: none !important;
-  transition: all var(--transition-fast);
+  transition: all var(--transition);
   cursor: pointer;
-  box-sizing: border-box;
-  min-height: 44px;
+  box-shadow: 0 2px 10px rgba(184, 154, 98, 0.15);
 }
 
 .btn-hero-outline:hover {
-  background: rgba(59, 36, 24, 0.65);
-  border-color: var(--nova-copper, #E35D32);
-  color: var(--nova-copper, #E35D32) !important;
+  background: var(--ameza-gold);
+  border-color: var(--ameza-gold-bright);
+  color: #1C1114 !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 154, 98, 0.4);
 }
 
-/* ── BENEFIT ROW ─────────────────────────────────── */
+/* ── Benefits Strip ───────────────────────────────── */
 .espresso-hero-benefits {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(241, 222, 195, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(184, 154, 98, 0.28);
   width: 100%;
-  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .hero-benefit-item {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
 }
 
 .benefit-icon {
-  color: var(--nova-copper, #E35D32);
-  font-size: 12px;
-  line-height: 1.4;
-  flex-shrink: 0;
+  color: var(--ameza-gold-bright);
+  font-size: 16px;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(184, 154, 98, 0.5);
 }
 
 .benefit-text strong {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ameza-text);
   display: block;
-  font-family: var(--font-sans);
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--nova-cream, #F1DEC3);
-  margin-bottom: 2px;
   line-height: 1.2;
 }
 
 .benefit-text p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   margin: 0;
-  line-height: 1.35;
-  opacity: 0.85;
+  line-height: 1.3;
 }
 
-/* ── RIGHT 3D CINEMATIC SCENE ────────────────────── */
+/* ── 3D Scene Visual ──────────────────────────────── */
 .espresso-hero-3d-scene {
   position: relative;
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,31 +212,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(227, 93, 50, 0.18) 0%, transparent 70%);
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(184, 154, 98, 0.28) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
 
 .espresso-3d-render-wrap {
-  position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
   aspect-ratio: 1 / 0.95;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  background: #2B1A12;
-  border: 1px solid rgba(241, 222, 195, 0.20);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
-  animation: floatHero3d 6s ease-in-out infinite;
-  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+  border: 1.5px solid var(--ameza-gold);
+  background: var(--ameza-card);
+  box-shadow: 0 16px 45px rgba(20, 8, 12, 0.5), 0 0 25px rgba(184, 154, 98, 0.2);
+  position: relative;
   z-index: 2;
-}
-
-.espresso-3d-render-wrap:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
 }
 
 .espresso-3d-img {
@@ -240,99 +238,70 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  position: relative;
-  z-index: 2;
   transition: transform 0.6s var(--ease-smooth);
 }
 
-@keyframes floatHero3d {
-  0%, 100% {
-    transform: translateY(0);
+.espresso-3d-render-wrap:hover .espresso-3d-img {
+  transform: scale(1.04);
+}
+
+/* ── RESPONSIVE HERO ──────────────────────────────── */
+@media (max-width: 1024px) {
+  .espresso-hero-container {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 32px;
   }
-  50% {
-    transform: translateY(-6px);
+  .espresso-hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .espresso-hero-description {
+    margin-inline: auto;
+  }
+  .espresso-hero-actions {
+    justify-content: center;
+  }
+  .espresso-hero-benefits {
+    justify-content: center;
+  }
+  .espresso-hero-3d-scene {
+    max-width: 480px;
+    margin: 0 auto;
   }
 }
 
-/* ── MOBILE-FIRST RESPONSIVE HERO ────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .home-hero {
     padding: 0 12px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
-
   .espresso-hero-container {
-    display: flex;
-    flex-direction: column;
-    padding: 24px 18px;
-    border-radius: 22px;
-    gap: 20px;
-    text-align: center;
-    align-items: center;
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
   }
-
-  .espresso-hero-content {
-    align-items: center;
-    width: 100%;
-  }
-
-  .espresso-hero-label {
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-  }
-
   .espresso-hero-title {
-    font-size: clamp(32px, 9vw, 46px);
-    line-height: 1.05;
-    margin-bottom: 12px;
+    font-size: 30px;
   }
-
-  .espresso-hero-description {
-    font-size: 13.5px;
-    line-height: 1.55;
-    margin-bottom: 20px;
-    max-width: 100%;
-  }
-
   .espresso-hero-actions {
     flex-direction: column;
     width: 100%;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 12px;
   }
-
-  .espresso-hero-actions > div {
-    width: 100%;
-    max-width: 320px;
-    display: flex;
-    justify-content: center;
-  }
-
   .btn-hero-copper,
   .btn-hero-outline {
     width: 100%;
     max-width: 320px;
-    height: 50px;
-    font-size: 13.5px;
-    border-radius: 999px;
+    justify-content: center;
   }
-
   .espresso-hero-benefits {
-    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
-
-  .espresso-hero-3d-scene {
+  .hero-benefit-item {
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .espresso-3d-render-wrap {
-    width: min(100%, 320px);
-    height: clamp(240px, 65vw, 300px);
-    aspect-ratio: auto;
-    border-radius: 18px;
+    max-width: 240px;
+    justify-content: flex-start;
   }
 }

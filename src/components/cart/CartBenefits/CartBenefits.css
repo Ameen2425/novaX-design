@@ -1,4 +1,7 @@
-/* ── SHOPPING BENEFITS ROW (DARK LUXURY) ──────────── */
+/* =========================================================
+   AMEZA — CART BENEFITS ROW (BURGUNDY + GOLD)
+   ========================================================= */
+
 .cart-benefits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6,23 +9,23 @@
 }
 
 .cart-benefit {
-  background: #24160F;
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 20px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
   padding: 24px;
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
   box-sizing: border-box;
 }
 
 .cart-benefit:hover {
   transform: translateY(-4px);
-  background: #2B1A12;
-  border-color: rgba(227, 93, 50, 0.45);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  background: var(--ameza-card-hover);
+  border-color: var(--ameza-gold);
+  box-shadow: var(--shadow-md);
 }
 
 .cart-benefit span {
@@ -32,18 +35,18 @@
 }
 
 .cart-benefit h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   margin-bottom: 4px;
 }
 
 .cart-benefit p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   line-height: 1.5;
   margin: 0;
 }
@@ -56,7 +59,7 @@
   }
   .cart-benefit {
     padding: 16px 14px;
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     gap: 12px;
   }
 }

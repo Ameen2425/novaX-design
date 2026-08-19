@@ -1,16 +1,12 @@
 /* =========================================================
-   AMEZA — CART PAGE (DARK LUXURY DESIGN SYSTEM)
-   Espresso (#17100C) Canvas + Warm Cream + Copper Accents
-========================================================= */
+   AMEZA — CART PAGE (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
 
 .cart-page {
   min-height: 100vh;
-  background: var(--nova-bg, #17100C);
-  background-image: 
-    radial-gradient(circle at 50% 100px, rgba(43, 26, 18, 0.6) 0%, transparent 60%),
-    radial-gradient(circle at 80% 800px, rgba(227, 93, 50, 0.05) 0%, transparent 50%);
+  background: var(--ameza-bg);
   padding: calc(62px + 40px) 5% 100px;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   box-sizing: border-box;
 }
 
@@ -59,6 +55,6 @@
 
 @media (max-width: 768px) {
   .cart-page {
-    padding: 86px 4% 120px;
+    padding: 80px 4% 120px;
   }
 }

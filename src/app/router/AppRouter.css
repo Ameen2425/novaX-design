@@ -1,79 +1,42 @@
+/* =========================================================
+   AMEZA — LAZY ROUTER FALLBACK LOADER
+   ========================================================= */
+
 .lazy-loader {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background: #ffffff;
-
+  background: var(--ameza-bg);
   z-index: 9999;
-
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn var(--transition-fast) ease-in-out;
 }
 
 .loader-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 14px;
 }
 
 .loader-ring {
   width: 46px;
   height: 46px;
-
   border-radius: 50%;
-
-  border: 4px solid #e5e7eb;
-  border-top-color: #2563eb;
-  border-right-color: #2563eb;
-
+  border: 3.5px solid var(--ameza-border);
+  border-top-color: var(--ameza-gold);
+  border-right-color: var(--ameza-primary);
   animation: spin 0.75s linear infinite;
 }
 
 .loader-text {
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
-
-  color: #64748b;
-
-  letter-spacing: 0.3px;
-
-  animation: pulse 1.4s ease-in-out infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.45;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  color: var(--ameza-text-secondary);
+  letter-spacing: 0.5px;
+  animation: pulseSubtle 1.4s ease-in-out infinite;
 }

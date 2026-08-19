@@ -1,7 +1,6 @@
 /* =========================================================
-   AMEZA — TODAY'S BEST DEALS CSS
-   Exact Visual Replica: 5-Column Grid + Dark Brown Cards + Copper Add-to-Cart
-========================================================= */
+   AMEZA — TODAY'S BEST DEALS (BURGUNDY + RADIANT GOLD)
+   ========================================================= */
 
 .deal-products-section {
   width: 100%;
@@ -16,31 +15,20 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: #2B1A12;
-  border: 1px solid var(--nova-copper, #E35D32);
-  color: var(--nova-cream, #F1DEC3);
-  padding: 12px 22px;
-  border-radius: var(--radius-pill, 999px);
-  font-family: var(--font-sans);
+  background: var(--ameza-card);
+  border: 1.5px solid var(--ameza-gold);
+  color: var(--ameza-text);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
   font-size: 13.5px;
-  font-weight: 500;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(20, 8, 12, 0.6), 0 0 15px rgba(184, 154, 98, 0.35);
   z-index: 99999;
-  animation: slideToastIn 0.3s ease-out;
+  animation: fadeIn 0.3s ease-out;
 }
 
-@keyframes slideToastIn {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ── 5 COLUMN GRID ───────────────────────────────── */
+/* ── 5 Column Grid ───────────────────────────────── */
 .deal-products-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -48,27 +36,27 @@
 }
 
 .deal-product-card {
-  background: #24160F; /* Dark card brown matching reference */
-  border: 1px solid rgba(231, 151, 101, 0.18);
-  border-radius: 16px;
-  padding: 12px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
   box-sizing: border-box;
   position: relative;
   height: 100%;
 }
 
 .deal-product-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(227, 93, 50, 0.5);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
-  background: #2B1A12;
+  transform: translateY(-5px);
+  border-color: var(--ameza-gold);
+  box-shadow: 0 12px 35px rgba(20, 8, 12, 0.4), 0 0 20px rgba(184, 154, 98, 0.25);
+  background: var(--ameza-card-hover);
 }
 
-/* ── TOP BADGES & ACTIONS ────────────────────────── */
+/* ── Top Badges & Actions ────────────────────────── */
 .deal-card-top {
   display: flex;
   align-items: center;
@@ -78,41 +66,41 @@
 }
 
 .deal-card-discount-badge {
-  background: var(--nova-copper, #E35D32);
-  color: var(--nova-cream, #F1DEC3);
-  font-family: var(--font-sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 3px 8px;
-  border-radius: var(--radius-pill, 999px);
-  box-shadow: 0 3px 8px rgba(227, 93, 50, 0.4);
+  background: var(--ameza-gold-gradient);
+  color: #1C1114;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(184, 154, 98, 0.4);
 }
 
 .deal-card-wishlist-btn {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: rgba(43, 26, 18, 0.85);
-  border: 1px solid rgba(231, 151, 101, 0.2);
-  color: var(--nova-cream-muted, #D9C1A2);
+  background: rgba(36, 22, 26, 0.90);
+  border: 1px solid var(--ameza-gold);
+  color: var(--ameza-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   padding: 0;
 }
 
 .deal-card-wishlist-btn:hover,
 .deal-card-wishlist-btn.active {
-  background: rgba(227, 93, 50, 0.2);
-  border-color: var(--nova-copper, #E35D32);
-  color: var(--nova-copper, #E35D32);
+  background: var(--ameza-gold);
+  border-color: var(--ameza-gold-bright);
+  color: #1C1114;
   transform: scale(1.1);
 }
 
-/* ── IMAGE ───────────────────────────────────────── */
+/* ── Image ───────────────────────────────────────── */
 .deal-card-img-link {
   text-decoration: none;
   display: block;
@@ -121,8 +109,9 @@
 .deal-card-img-box {
   width: 100%;
   aspect-ratio: 1 / 0.95;
-  background: #2D1B13; /* Slightly lighter brown frame */
-  border-radius: 12px;
+  background: var(--ameza-section);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(184, 154, 98, 0.18);
   overflow: hidden;
   padding: 10px;
   display: flex;
@@ -143,7 +132,7 @@
   transform: scale(1.06);
 }
 
-/* ── DETAILS BODY ────────────────────────────────── */
+/* ── Details Body ────────────────────────────────── */
 .deal-card-body {
   display: flex;
   flex-direction: column;
@@ -155,51 +144,51 @@
 }
 
 .deal-card-title {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--nova-cream, #F1DEC3);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ameza-text);
   margin: 0 0 6px 0;
   line-height: 1.35;
-  height: 35px;
+  height: 36px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .deal-card-title-link:hover .deal-card-title {
-  color: var(--nova-copper-bright, #F06B3B);
+  color: var(--ameza-gold-bright);
 }
 
-/* ── RATING ──────────────────────────────────────── */
+/* ── Rating ──────────────────────────────────────── */
 .deal-card-rating {
   display: flex;
   align-items: center;
   gap: 4px;
   margin-bottom: 8px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11px;
 }
 
 .deal-card-rating .star-icon {
-  color: #F2A93B;
+  color: var(--ameza-gold-bright);
   font-size: 12px;
+  text-shadow: 0 0 6px rgba(184, 154, 98, 0.4);
 }
 
 .deal-card-rating strong {
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   font-weight: 600;
 }
 
 .deal-card-rating .review-count {
-  color: var(--nova-cream-muted, #D9C1A2);
-  opacity: 0.75;
+  color: var(--ameza-text-muted);
   font-size: 10.5px;
 }
 
-/* ── PRICE ROW ───────────────────────────────────── */
+/* ── Price Row ───────────────────────────────────── */
 .deal-card-price-row {
   display: flex;
   align-items: baseline;
@@ -209,44 +198,48 @@
 }
 
 .deal-card-old-price {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11.5px;
-  color: var(--nova-cream-muted, #D9C1A2);
-  opacity: 0.6;
+  color: var(--ameza-text-muted);
+  text-decoration: line-through;
 }
 
 .deal-card-new-price {
-  font-family: var(--font-sans);
-  font-size: 15px;
+  font-family: var(--font-display);
+  font-size: 18px;
   font-weight: 700;
-  color: var(--nova-copper, #E35D32);
+  color: var(--ameza-gold-bright);
+  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
 }
 
-/* ── ADD TO CART CTA ─────────────────────────────── */
+/* ── Add to Cart CTA (Radiant Gold) ──────────────── */
 .deal-card-cart-btn {
   width: 100%;
-  height: 38px;
-  border-radius: var(--radius-pill, 999px);
-  background: var(--nova-copper, #E35D32);
-  color: var(--nova-cream, #F1DEC3);
-  font-family: var(--font-sans);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--ameza-gold-gradient);
+  color: #1C1114 !important;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  border: none;
+  border: 1px solid var(--ameza-gold-bright);
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(227, 93, 50, 0.35);
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(184, 154, 98, 0.35);
+  transition: all var(--transition-fast);
 }
 
 .deal-card-cart-btn:hover {
-  background: var(--nova-copper-bright, #F06B3B);
+  background: linear-gradient(135deg, #E8D7B8 0%, #D4BA85 50%, #B89A62 100%);
+  border-color: #FFFFFF;
+  color: #140A0D !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(240, 107, 59, 0.45);
+  box-shadow: 0 6px 20px rgba(184, 154, 98, 0.55);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */

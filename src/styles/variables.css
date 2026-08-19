@@ -1,0 +1,108 @@
+/* =========================================================
+   AMEZA — DEEP BURGUNDY + ANTIQUE GOLD DESIGN SYSTEM VARIABLES
+   ========================================================= */
+
+:root {
+  /* ── 1. MASTER COLOR SYSTEM (PROMINENT ANTIQUE GOLD) ─── */
+  --ameza-bg:             #24161A;
+  --ameza-section:        #321D23;
+  --ameza-card:           #42252C;
+  --ameza-card-hover:     #4D2B33;
+  --ameza-primary:        #B89A62;               /* Upgraded to radiant Antique Gold */
+  --ameza-primary-hover:  #CDB37F;               /* Lighter shimmering Gold */
+  --ameza-primary-crimson:#A34755;               /* Secondary Crimson accent */
+  --ameza-gold:           #B89A62;
+  --ameza-gold-bright:    #D9C190;
+  --ameza-gold-light:     #E8D7B8;
+  --ameza-gold-dark:      #8C703D;
+  --ameza-gold-gradient:  linear-gradient(135deg, #D9C190 0%, #B89A62 50%, #9A7D46 100%);
+  --ameza-gold-glow:      rgba(184, 154, 98, 0.35);
+  
+  --ameza-text:           #F5EDE8;               /* Crisp warm ivory */
+  --ameza-text-secondary: #C8B8B5;               /* Warm rose taupe */
+  --ameza-text-muted:     #9E8B8E;               /* Soft muted tone */
+  --ameza-border:         rgba(184, 154, 98, 0.32); /* Subtle Gold-infused borders */
+  --ameza-border-burgundy:#5A3941;
+  --ameza-success:        #64836D;
+  --ameza-error:          #A85555;
+
+  /* ── 2. BORDER RADIUS TOKENS ────────────────────────── */
+  --radius-sm:            8px;
+  --radius-md:            12px;
+  --radius-lg:            18px;
+  --radius-xl:            24px;
+  --radius-pill:          999px;
+
+  /* ── 3. SHADOW SYSTEM (BURGUNDY + GOLD GLOW) ────────── */
+  --shadow-sm:            0 5px 15px rgba(20, 8, 12, 0.25);
+  --shadow-md:            0 12px 30px rgba(20, 8, 12, 0.35), 0 0 15px rgba(184, 154, 98, 0.12);
+  --shadow-lg:            0 20px 55px rgba(20, 8, 12, 0.50), 0 0 25px rgba(184, 154, 98, 0.18);
+  --shadow-gold:          0 8px 24px rgba(184, 154, 98, 0.35);
+  --shadow-card:          var(--shadow-sm);
+  --shadow-card-hover:    var(--shadow-md);
+
+  /* ── 4. TRANSITIONS & TIMING ────────────────────────── */
+  --transition-fast:      180ms ease;
+  --transition:           280ms ease;
+  --ease-smooth:          cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── 5. TYPOGRAPHY FONT FAMILIES ────────────────────── */
+  --font-display:         "Playfair Display", Georgia, serif;
+  --font-body:            "Manrope", Arial, sans-serif;
+  --font-mono:            "JetBrains Mono", monospace;
+  --font-serif:           var(--font-display);
+  --font-sans:            var(--font-body);
+
+  /* ── 6. COMPATIBILITY ALIASES ───────────────────────── */
+  --ameza-accent:         var(--ameza-gold);
+  --ameza-accent-hover:   var(--ameza-primary-hover);
+  --ameza-accent-dark:    var(--ameza-gold-dark);
+
+  --nova-bg:              var(--ameza-bg);
+  --nova-surface:         var(--ameza-section);
+  --nova-surface-2:       var(--ameza-card);
+  --nova-surface-3:       var(--ameza-card-hover);
+  --nova-card:            var(--ameza-card);
+  --nova-card-hover:      var(--ameza-card-hover);
+  --nova-input-bg:        var(--ameza-section);
+  --nova-cream:           var(--ameza-text);
+  --nova-light:           #FAF6F0;
+  --nova-muted:           var(--ameza-text-secondary);
+  --nova-cream-muted:     var(--ameza-text-muted);
+  --nova-copper:          var(--ameza-gold);
+  --nova-copper-light:    var(--ameza-gold-bright);
+  --nova-copper-bright:   var(--ameza-gold-bright);
+  --nova-copper-dark:     var(--ameza-gold-dark);
+  --nova-copper-muted:    var(--ameza-gold-dark);
+  --nova-border:          var(--ameza-border);
+  --nova-border-strong:   rgba(184, 154, 98, 0.55);
+  --nova-border-subtle:   var(--ameza-border);
+  --nova-shadow:          var(--shadow-md);
+
+  --bg-primary:           var(--ameza-bg);
+  --bg-section:           var(--ameza-section);
+  --bg-card:              var(--ameza-card);
+  --bg-card-hover:        var(--ameza-card-hover);
+  --bg-input:             var(--ameza-section);
+  --bg-footer:            #1C1114;
+
+  --accent-primary:       var(--ameza-gold);
+  --accent-hover:         var(--ameza-primary-hover);
+  --accent-active:        var(--ameza-gold-dark);
+
+  --text-primary:         var(--ameza-text);
+  --text-secondary:       var(--ameza-text-secondary);
+  --text-muted:           var(--ameza-text-muted);
+  --text-light:           #FAF6F0;
+
+  --border:               var(--ameza-border);
+  --border-input:         var(--ameza-border);
+  --border-card:          var(--ameza-border);
+  --border-card-hover:    var(--ameza-gold);
+
+  --radius-card:          var(--radius-lg);
+  --radius-card-prod:     var(--radius-lg);
+  --radius-card-lg:       var(--radius-xl);
+  --radius-hero:          var(--radius-xl);
+  --radius-input:         var(--radius-md);
+}

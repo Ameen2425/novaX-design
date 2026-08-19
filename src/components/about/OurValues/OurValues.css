@@ -1,7 +1,10 @@
-/* ── 4. VALUES SECTION (DARK LUXURY) ─────────────── */
+/* =========================================================
+   AMEZA — OUR VALUES (DEEP BURGUNDY + ANTIQUE GOLD)
+   ========================================================= */
+
 .about-values-section {
   max-width: 1280px;
-  margin: 0 auto 48px;
+  margin: 0 auto 56px;
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
   scroll-margin-top: 100px;
@@ -17,54 +20,54 @@
 .about-value-card {
   display: flex;
   flex-direction: column;
-  background: var(--nova-card, #24160F);
-  border: 1px solid var(--nova-border, rgba(241, 222, 195, 0.18));
-  border-radius: 20px;
+  background: var(--ameza-card);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-lg);
   padding: 28px 22px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
   box-sizing: border-box;
   height: 100%;
 }
 
 .about-value-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(227, 93, 50, 0.45);
-  background: var(--nova-card-hover, #301D14);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  border-color: var(--ameza-gold);
+  background: var(--ameza-card-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .about-value-num {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--nova-copper, #E35D32);
-  color: #FFF2DF;
+  background: var(--ameza-gold);
+  color: #1C1114;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
   margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(227, 93, 50, 0.35);
+  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
 }
 
 .about-value-card h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--nova-cream, #F1DEC3);
+  color: var(--ameza-text);
   margin-bottom: 8px;
 }
 
 .about-value-card p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 13px;
   line-height: 1.6;
-  color: var(--nova-muted, #D4B797);
+  color: var(--ameza-text-secondary);
   margin: 0;
 }
 
@@ -72,7 +75,7 @@
 @media (max-width: 768px) {
   .about-values-section {
     padding: 0 12px;
-    margin-bottom: 28px;
+    margin-bottom: 36px;
   }
 
   .about-values-grid {
@@ -82,7 +85,7 @@
 
   .about-value-card {
     padding: 16px 12px;
-    border-radius: 16px;
+    border-radius: var(--radius-md);
   }
 
   .about-value-num {
