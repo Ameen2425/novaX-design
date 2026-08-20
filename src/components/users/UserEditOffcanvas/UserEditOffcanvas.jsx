@@ -4,7 +4,7 @@ import "./UserEditOffcanvas.css";
 const UserEditOffcanvas = ({ editData, handleEditData, updateEditedUser }) => {
   return (
     <div
-      className="offcanvas offcanvas-start"
+      className="offcanvas offcanvas-end"
       data-bs-scroll="true"
       data-bs-backdrop="true"
       tabIndex="-1"

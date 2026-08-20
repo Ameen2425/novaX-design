@@ -1,11 +1,11 @@
 /* =========================================================
-   AMEZA — USERS / ADMIN DASHBOARD (DEEP BURGUNDY + GOLD)
+   AMEZA — USERS / ADMIN DASHBOARD
    ========================================================= */
 
 .users-page {
   min-height: 100vh;
-  background: var(--ameza-bg);
-  padding: calc(62px + 40px) 5% 100px;
+  background: var(--ameza-bg, #1C0E13);
+  padding: calc(64px + 44px) 5% 100px;
   max-width: 1280px;
   margin: 0 auto;
   color: var(--ameza-text);
@@ -53,8 +53,8 @@
     padding: 0 !important;
   }
   tbody tr {
-    background: var(--ameza-card);
-    border: 1px solid var(--ameza-border);
+    background: var(--ameza-card, #391D27);
+    border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
     border-radius: var(--radius-lg);
     margin-bottom: 16px;
     padding: 18px 16px;
@@ -85,24 +85,27 @@
   tbody td::before {
     font-family: var(--font-body);
     font-size: 10.5px;
-    color: var(--ameza-gold);
+    color: var(--ameza-gold-bright);
     text-transform: uppercase;
     letter-spacing: 0.10em;
-    font-weight: 700;
+    font-weight: 800;
   }
-  
+
   tbody td:nth-child(1) { width: 100%; font-size: 15px; border-bottom: 1px dashed var(--ameza-border) !important; padding-bottom: 10px; margin-bottom: 2px; font-family: var(--font-mono); }
   tbody td:nth-child(1)::before { content: "User ID"; }
-  
+
   tbody td:nth-child(2) { width: 100%; font-weight: 600; }
   tbody td:nth-child(2)::before { content: "Name"; }
-  
+
   tbody td:nth-child(3) { width: 100%; word-break: break-all; }
   tbody td:nth-child(3)::before { content: "Email"; }
-  
+
   tbody td:nth-child(4) { width: 100%; margin-bottom: 6px; }
   tbody td:nth-child(4)::before { content: "Age"; }
-  
+
   tbody td:nth-child(5) { width: 100% !important; margin-top: 4px; }
   tbody td:nth-child(5) button { width: 100% !important; }
+
+  tbody td:nth-child(6) { width: 100% !important; margin-top: 2px; }
+  tbody td:nth-child(6) button { width: 100% !important; }
 }

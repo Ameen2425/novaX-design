@@ -1,49 +1,66 @@
 /* =========================================================
-   AMEZA — DEEP BURGUNDY + ANTIQUE GOLD DESIGN SYSTEM VARIABLES
+   AMEZA — MASTER ULTRA-LUXURY DESIGN SYSTEM VARIABLES
+   Deep Velvet Burgundy + Multi-Stop Liquid Champagne Gold + Jewel Accents
    ========================================================= */
 
 :root {
-  /* ── 1. MASTER COLOR SYSTEM (PROMINENT ANTIQUE GOLD) ─── */
-  --ameza-bg:             #24161A;
-  --ameza-section:        #321D23;
-  --ameza-card:           #42252C;
-  --ameza-card-hover:     #4D2B33;
-  --ameza-primary:        #B89A62;               /* Upgraded to radiant Antique Gold */
-  --ameza-primary-hover:  #CDB37F;               /* Lighter shimmering Gold */
-  --ameza-primary-crimson:#A34755;               /* Secondary Crimson accent */
-  --ameza-gold:           #B89A62;
-  --ameza-gold-bright:    #D9C190;
-  --ameza-gold-light:     #E8D7B8;
-  --ameza-gold-dark:      #8C703D;
-  --ameza-gold-gradient:  linear-gradient(135deg, #D9C190 0%, #B89A62 50%, #9A7D46 100%);
-  --ameza-gold-glow:      rgba(184, 154, 98, 0.35);
+  /* ── 1. MASTER ULTRA-LUXURY PALETTE ───────────────────── */
+  --ameza-bg:             #1C1015;               /* Deep Velvet Midnight Burgundy Base */
+  --ameza-bg-secondary:   #25151C;               /* Rich Velvet Secondary */
+  --ameza-section:        #2E1A23;               /* Luxurious Section Canvas */
+  --ameza-card:           #38202B;               /* Elevated Velvet Card Surface */
+  --ameza-card-hover:     #442735;               /* Card Hover Surface */
+  --ameza-glass-bg:       rgba(46, 26, 35, 0.85); /* Frosted Glass Backdrop */
+
+  /* Multi-Tier Liquid Champagne Gold System */
+  --ameza-gold:           #C5A059;               /* Classic Satin Gold */
+  --ameza-gold-bright:    #F5E6C8;               /* Radiant Champagne Highlight */
+  --ameza-gold-light:     #E5D3B0;               /* Warm Soft Gold */
+  --ameza-gold-dark:      #8C6F37;               /* Rich Antique Gold */
+  --ameza-gold-glow:      rgba(213, 174, 95, 0.28);/* Luminous Radiance Aura */
+
+  /* Multi-Stop Liquid Metallic Gold Gradients */
+  --ameza-gold-gradient:  linear-gradient(135deg, #F5E6C8 0%, #D5AE5F 45%, #9E7D3C 80%, #E5D3B0 100%);
+  --ameza-gold-gradient-hover: linear-gradient(135deg, #FFFFFF 0%, #F5E6C8 35%, #D5AE5F 70%, #B58F4C 100%);
+  --ameza-dark-gradient:  linear-gradient(180deg, #1C1015 0%, #291720 100%);
+
+  /* Rich Jewel Tones & Secondary Accents */
+  --ameza-primary:        #C5A059;
+  --ameza-primary-hover:  #F5E6C8;
+  --ameza-crimson:        #A83246;               /* Royal Velvet Ruby */
+  --ameza-emerald:        #1B5B49;               /* Deep Royal Emerald */
+  --ameza-sapphire:       #2B4C7E;               /* Midnight Sapphire */
+  --ameza-success:        #25725A;
+  --ameza-error:          #A83D3D;
+
+  /* Typography Colors (Pearl Silk & Rose Champagne) */
+  --ameza-text:           #FAF6F0;               /* Crisp Pearl Silk */
+  --ameza-text-secondary: #D2C0BB;               /* Warm Rose Champagne */
+  --ameza-text-muted:     #9E8A88;               /* Muted Editorial Taupe */
   
-  --ameza-text:           #F5EDE8;               /* Crisp warm ivory */
-  --ameza-text-secondary: #C8B8B5;               /* Warm rose taupe */
-  --ameza-text-muted:     #9E8B8E;               /* Soft muted tone */
-  --ameza-border:         rgba(184, 154, 98, 0.32); /* Subtle Gold-infused borders */
-  --ameza-border-burgundy:#5A3941;
-  --ameza-success:        #64836D;
-  --ameza-error:          #A85555;
+  /* Gold Foil Borders & Strokes */
+  --ameza-border:         rgba(213, 174, 95, 0.24); /* Subtle Gold Foil Stroke */
+  --ameza-border-strong:  rgba(213, 174, 95, 0.48);
+  --ameza-border-burgundy:rgba(168, 50, 70, 0.32);
 
   /* ── 2. BORDER RADIUS TOKENS ────────────────────────── */
   --radius-sm:            8px;
-  --radius-md:            12px;
-  --radius-lg:            18px;
-  --radius-xl:            24px;
+  --radius-md:            14px;
+  --radius-lg:            20px;
+  --radius-xl:            28px;
   --radius-pill:          999px;
 
-  /* ── 3. SHADOW SYSTEM (BURGUNDY + GOLD GLOW) ────────── */
-  --shadow-sm:            0 5px 15px rgba(20, 8, 12, 0.25);
-  --shadow-md:            0 12px 30px rgba(20, 8, 12, 0.35), 0 0 15px rgba(184, 154, 98, 0.12);
-  --shadow-lg:            0 20px 55px rgba(20, 8, 12, 0.50), 0 0 25px rgba(184, 154, 98, 0.18);
-  --shadow-gold:          0 8px 24px rgba(184, 154, 98, 0.35);
+  /* ── 3. SHADOW & GLOW SYSTEM ────────────────────────── */
+  --shadow-sm:            0 6px 20px rgba(12, 5, 8, 0.35);
+  --shadow-md:            0 12px 30px rgba(12, 5, 8, 0.48), 0 0 18px rgba(213, 174, 95, 0.12);
+  --shadow-lg:            0 20px 50px rgba(12, 5, 8, 0.60), 0 0 30px rgba(213, 174, 95, 0.20);
+  --shadow-gold:          0 8px 25px rgba(213, 174, 95, 0.35);
   --shadow-card:          var(--shadow-sm);
   --shadow-card-hover:    var(--shadow-md);
 
   /* ── 4. TRANSITIONS & TIMING ────────────────────────── */
-  --transition-fast:      180ms ease;
-  --transition:           280ms ease;
+  --transition-fast:      180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition:           300ms cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth:          cubic-bezier(0.16, 1, 0.3, 1);
 
   /* ── 5. TYPOGRAPHY FONT FAMILIES ────────────────────── */
@@ -75,7 +92,7 @@
   --nova-copper-dark:     var(--ameza-gold-dark);
   --nova-copper-muted:    var(--ameza-gold-dark);
   --nova-border:          var(--ameza-border);
-  --nova-border-strong:   rgba(184, 154, 98, 0.55);
+  --nova-border-strong:   var(--ameza-border-strong);
   --nova-border-subtle:   var(--ameza-border);
   --nova-shadow:          var(--shadow-md);
 
@@ -84,7 +101,7 @@
   --bg-card:              var(--ameza-card);
   --bg-card-hover:        var(--ameza-card-hover);
   --bg-input:             var(--ameza-section);
-  --bg-footer:            #1C1114;
+  --bg-footer:            #150B0F;
 
   --accent-primary:       var(--ameza-gold);
   --accent-hover:         var(--ameza-primary-hover);

@@ -1,35 +1,155 @@
 /* =========================================================
-   AMEZA — FULL PAGE LOADER (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — DISTINCT FULL PAGE SPLASH LOADER (DEEP BURGUNDY + ANTIQUE GOLD)
    ========================================================= */
 
-.page-loader-wrapper {
+.page-loader-screen {
   position: fixed;
   inset: 0;
-  background: var(--ameza-bg);
+  background: var(--ameza-bg, #24161A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.page-loader-backdrop-glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(
+    circle,
+    rgba(184, 154, 98, 0.2) 0%,
+    rgba(163, 71, 85, 0.12) 45%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pagePulseGlow 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.page-loader-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  z-index: 99999;
+  position: relative;
+  z-index: 2;
+  gap: 18px;
+  text-align: center;
+  padding: 32px;
 }
 
-.page-loader-spinner {
-  width: 48px;
-  height: 48px;
-  border: 3px solid var(--ameza-border);
-  border-top-color: var(--ameza-gold);
-  border-right-color: var(--ameza-primary);
+.page-loader-ring-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loader-ring {
+  position: absolute;
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  box-shadow: 0 0 20px rgba(184, 154, 98, 0.2);
+  border: 2.5px solid transparent;
+}
+
+.page-loader-ring.ring-outer {
+  inset: 0;
+  border-top-color: var(--ameza-gold, #B89A62);
+  border-bottom-color: rgba(184, 154, 98, 0.2);
+  border-right-color: var(--ameza-primary-crimson, #A34755);
+  animation: pageSpinClockwise 2s linear infinite;
+  box-shadow: 0 0 18px rgba(184, 154, 98, 0.2);
+}
+
+.page-loader-ring.ring-inner {
+  inset: 12px;
+  border-left-color: var(--ameza-gold-bright, #D9C190);
+  border-right-color: rgba(184, 154, 98, 0.15);
+  animation: pageSpinCounterClockwise 1.5s linear infinite;
+}
+
+.page-loader-logo-center {
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pageLogoPulse 2s ease-in-out infinite alternate;
+}
+
+.page-loader-symbol .ameza-logo-symbol-wrap {
+  width: 68px;
+  height: 68px;
+}
+
+.page-loader-brand-title {
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--ameza-gold-bright, #D9C190);
+  text-shadow: 0 0 15px rgba(184, 154, 98, 0.4);
+  margin-top: 4px;
+}
+
+/* Progress shimmer bar */
+.page-loader-progress-track {
+  width: 210px;
+  height: 3px;
+  background: rgba(184, 154, 98, 0.15);
+  border-radius: var(--radius-pill, 999px);
+  overflow: hidden;
+  position: relative;
+  margin-top: 6px;
+}
+
+.page-loader-progress-bar {
+  width: 40%;
+  height: 100%;
+  background: var(--ameza-gold-gradient, linear-gradient(90deg, #B89A62, #D9C190, #B89A62));
+  border-radius: var(--radius-pill, 999px);
+  position: absolute;
+  animation: pageProgressIndeterminate 1.8s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(184, 154, 98, 0.6);
 }
 
 .page-loader-text {
-  font-family: var(--font-display);
-  font-size: 15px;
+  font-family: var(--font-body, "Manrope", Arial, sans-serif);
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--ameza-text);
+  letter-spacing: 0.14em;
+  color: var(--ameza-text-secondary, #C8B8B5);
   text-transform: uppercase;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Keyframes */
+@keyframes pageSpinClockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pageSpinCounterClockwise {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pageLogoPulse {
+  0% { transform: scale(0.94); filter: drop-shadow(0 0 6px rgba(184, 154, 98, 0.3)); }
+  100% { transform: scale(1.06); filter: drop-shadow(0 0 18px rgba(184, 154, 98, 0.7)); }
+}
+
+@keyframes pagePulseGlow {
+  0% { transform: scale(0.88); opacity: 0.6; }
+  100% { transform: scale(1.12); opacity: 1; }
+}
+
+@keyframes pageProgressIndeterminate {
+  0% { left: -40%; width: 30%; }
+  50% { left: 30%; width: 50%; }
+  100% { left: 100%; width: 30%; }
 }

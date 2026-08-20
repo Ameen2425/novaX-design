@@ -1,11 +1,11 @@
 /* =========================================================
-   AMEZA — FOOTER (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — ULTRA-LUXURY FOOTER
    ========================================================= */
 
 .footer {
-  background: #1C1114;
-  border-top: 1px solid var(--ameza-border);
-  padding: 64px 0 32px;
+  background: var(--ameza-dark-gradient, linear-gradient(180deg, #1C0E13 0%, #14090C 100%));
+  border-top: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  padding: 68px 0 36px;
   color: var(--ameza-text);
   box-sizing: border-box;
   width: 100%;
@@ -25,7 +25,7 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
   gap: clamp(24px, 3.5vw, 48px);
-  margin-bottom: 48px;
+  margin-bottom: 52px;
   box-sizing: border-box;
 }
 
@@ -42,7 +42,7 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .footer-desc {
@@ -50,7 +50,7 @@
   font-size: 13.5px;
   line-height: 1.65;
   color: var(--ameza-text-secondary);
-  margin: 0 0 20px 0;
+  margin: 0 0 22px 0;
   max-width: 320px;
 }
 
@@ -62,11 +62,11 @@
 }
 
 .footer-socials a {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--ameza-section);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-section, #2E1720);
+  border: 1px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
   color: var(--ameza-text-secondary);
   display: flex;
   align-items: center;
@@ -76,29 +76,29 @@
 }
 
 .footer-socials a:hover {
-  background: var(--ameza-card-hover);
-  border-color: var(--ameza-gold);
-  color: var(--ameza-gold);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(184, 154, 98, 0.25);
+  background: var(--ameza-gold-gradient);
+  border-color: var(--ameza-gold-bright);
+  color: #14090C;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
 }
 
 /* ── Columns Typography & Links ──────────────────── */
 .footer-col h3 {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--ameza-text);
   letter-spacing: -0.01em;
-  margin: 0 0 18px 0;
+  margin: 0 0 20px 0;
 }
 
 .footer-col p {
   font-family: var(--font-body);
   font-size: 13px;
   color: var(--ameza-text-secondary);
-  line-height: 1.5;
-  margin: 0 0 14px 0;
+  line-height: 1.55;
+  margin: 0 0 16px 0;
 }
 
 .footer-col ul {
@@ -107,7 +107,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-col ul li a {
@@ -121,18 +121,19 @@
 }
 
 .footer-col ul li a:hover {
-  color: var(--ameza-gold);
-  transform: translateX(4px);
+  color: var(--ameza-gold-bright);
+  transform: translateX(5px);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* ── Newsletter Form ──────────────────────────────── */
 .footer-newsletter-form {
   display: flex;
   align-items: center;
-  background: var(--ameza-section);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-section, #2E1720);
+  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
   border-radius: var(--radius-pill);
-  padding: 4px 6px 4px 16px;
+  padding: 4px 6px 4px 18px;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   box-sizing: border-box;
   width: 100%;
@@ -140,32 +141,32 @@
 
 .footer-newsletter-form:focus-within {
   border-color: var(--ameza-gold);
-  box-shadow: 0 0 0 3px rgba(184, 154, 98, 0.2);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .footer-newsletter-form input {
   flex: 1;
-  height: 38px;
+  height: 40px;
   background: transparent;
   border: none;
   outline: none;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--ameza-text);
   min-width: 0;
 }
 
 .footer-newsletter-form input::placeholder {
   color: var(--ameza-text-muted);
-  font-size: 12.5px;
+  font-size: 13px;
 }
 
 .footer-newsletter-form button {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--ameza-primary);
-  color: #FFFFFF;
+  background: var(--ameza-gold-gradient);
+  color: #14090C;
   border: none;
   display: flex;
   align-items: center;
@@ -173,26 +174,28 @@
   cursor: pointer;
   flex-shrink: 0;
   transition: all var(--transition-fast);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
 }
 
 .footer-newsletter-form button:hover {
-  background: var(--ameza-primary-hover);
-  transform: scale(1.05);
+  background: var(--ameza-gold-gradient-hover);
+  transform: scale(1.08);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
 }
 
 .newsletter-success {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  color: var(--ameza-gold);
+  color: var(--ameza-gold-bright);
   margin-top: 8px;
   display: block;
 }
 
 /* ── Bottom Bar ───────────────────────────────────── */
 .footer-bottom {
-  border-top: 1px solid rgba(90, 57, 65, 0.45);
-  padding-top: 24px;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding-top: 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -211,7 +214,7 @@
 .footer-legal {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .footer-legal a {
@@ -223,7 +226,7 @@
 }
 
 .footer-legal a:hover {
-  color: var(--ameza-gold);
+  color: var(--ameza-gold-bright);
 }
 
 .footer-legal span {
@@ -256,7 +259,7 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 44px 0 100px;
+    padding: 48px 0 100px;
   }
 
   .footer-content {

@@ -1,18 +1,34 @@
 import React from "react";
+import BrandLogo from "../BrandLogo/BrandLogo";
 import "./PageLoader.css";
 
-const PageLoader = () => {
+const PageLoader = ({ text = "Loading experience..." }) => {
   return (
-    <div className="page-loader-screen">
+    <div className="page-loader-screen" role="status" aria-live="polite">
+      <div className="page-loader-backdrop-glow"></div>
+
       <div className="page-loader-box">
-        <div className="page-loader-spinner-wrap">
-          <div className="page-loader-ring"></div>
-          <div className="page-loader-pulse-core">
-            <span className="page-loader-emblem">A</span>
+        {/* Orbital rings surrounding the central brand symbol */}
+        <div className="page-loader-ring-wrapper">
+          <div className="page-loader-ring ring-outer"></div>
+          <div className="page-loader-ring ring-inner"></div>
+
+          <div className="page-loader-logo-center">
+            <BrandLogo variant="icon" className="page-loader-symbol" />
           </div>
         </div>
-        <span className="page-loader-label">AMEZA</span>
-        <p className="page-loader-text">Loading experience...</p>
+
+        {/* Brand name */}
+        <div className="page-loader-brand-title">
+          <span>AMEZA</span>
+        </div>
+
+        {/* Shimmer progress bar */}
+        <div className="page-loader-progress-track">
+          <div className="page-loader-progress-bar"></div>
+        </div>
+
+        <p className="page-loader-text">{text}</p>
       </div>
     </div>
   );

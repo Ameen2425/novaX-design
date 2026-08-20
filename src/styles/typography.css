@@ -1,11 +1,16 @@
 /* =========================================================
-   AMEZA — TYPOGRAPHY & INTERACTIVE SYSTEM (GOLD DOMINANT)
+   AMEZA — ULTRA-LUXURY TYPOGRAPHY & INTERACTIVE SYSTEM
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
 /* ── Headings & Editorial Typography ────────────────── */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   color: var(--ameza-text);
   font-weight: 600;
@@ -37,9 +42,17 @@ h4 {
 p {
   font-family: var(--font-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.65;
   font-size: 15px;
   color: var(--ameza-text-secondary);
+}
+
+/* ── Gold Text Gradient Utility ─────────────────────── */
+.gold-text-gradient {
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 /* ── Editorial Labels & Badges ──────────────────────── */
@@ -61,11 +74,11 @@ p {
 .users-header span {
   font-family: var(--font-body) !important;
   font-size: 0.75rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.14em !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
   color: var(--ameza-gold-bright) !important;
-  text-shadow: 0 0 12px rgba(184, 154, 98, 0.3);
+  text-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
 }
 
 /* ── Mono / Tech Codes & Metadata ───────────────────── */
@@ -76,14 +89,14 @@ p {
 .countdown-tag,
 .deal-timer-label {
   font-family: var(--font-mono) !important;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ameza-gold) !important;
 }
 
-/* ── Global Primary Buttons (Luminous Antique Gold) ─── */
+/* ── Global Primary Buttons (Luminous Liquid Gold) ──── */
 .btn-terracotta,
 .home-primary-btn,
 .btn-hero-copper,
@@ -106,16 +119,16 @@ p {
   min-height: 44px;
   padding: 0 28px;
   background: var(--ameza-gold-gradient);
-  color: #1C1114 !important;
+  color: #14090C !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   text-decoration: none !important;
   border: 1px solid var(--ameza-gold-bright);
-  box-shadow: 0 4px 18px rgba(184, 154, 98, 0.4);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
   transition: all var(--transition);
   cursor: pointer;
   box-sizing: border-box;
@@ -135,11 +148,11 @@ p {
 .add-cart-btn:hover,
 .home-shop-btn:hover,
 .deal-card-cart-btn:hover {
-  background: linear-gradient(135deg, #E8D7B8 0%, #D4BA85 50%, #B89A62 100%);
+  background: var(--ameza-gold-gradient-hover);
   border-color: #FFFFFF;
-  color: #140A0D !important;
+  color: #0E0507 !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(184, 154, 98, 0.6);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
 }
 
 /* ── Global Secondary Buttons (Gold Bordered) ──────── */
@@ -156,12 +169,12 @@ p {
   height: 48px;
   min-height: 44px;
   padding: 0 26px;
-  background: rgba(184, 154, 98, 0.08);
+  background: rgba(212, 175, 55, 0.08);
   color: var(--ameza-gold-bright) !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   border: 1.5px solid var(--ameza-gold);
@@ -169,7 +182,7 @@ p {
   transition: all var(--transition);
   cursor: pointer;
   box-sizing: border-box;
-  box-shadow: 0 2px 10px rgba(184, 154, 98, 0.15);
+  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
 }
 
 .btn-outline-dark:hover,
@@ -178,9 +191,35 @@ p {
 .btn-hero-outline:hover,
 .cart-secondary-btn:hover,
 .btn-cancel:hover {
-  background: var(--ameza-gold);
+  background: var(--ameza-gold-gradient);
   border-color: var(--ameza-gold-bright);
-  color: #1C1114 !important;
+  color: #14090C !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 154, 98, 0.4);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+}
+
+/* ── Custom Scrollbars ────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C0E13;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+  border: 2px solid #1C0E13;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ameza-gold);
+}
+
+/* Selection Highlight */
+::selection {
+  background: var(--ameza-gold);
+  color: #14090C;
 }

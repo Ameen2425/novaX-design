@@ -1,40 +1,41 @@
 /* =========================================================
-   AMEZA — USERS HEADER (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — ULTRA-LUXURY USERS HEADER
    ========================================================= */
 
 .users-header {
   text-align: center;
-  padding-bottom: 36px;
+  padding-bottom: 38px;
 }
 
 .users-header span {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-gold-bright, #F3E5C8);
   display: block;
   margin-bottom: 12px;
+  text-shadow: 0 0 14px rgba(212, 175, 55, 0.45);
 }
 
 .users-header h1 {
   font-family: var(--font-display);
-  font-size: clamp(30px, 3.8vw, 48px);
+  font-size: clamp(32px, 4vw, 52px);
   font-weight: 600;
   color: var(--ameza-text);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .users-header p {
   font-family: var(--font-body);
-  font-size: 14.5px;
+  font-size: 15px;
   color: var(--ameza-text-secondary);
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* ── Controls Row ─────────────────────────────── */
@@ -42,8 +43,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 32px;
+  gap: 20px;
+  margin-bottom: 34px;
   flex-wrap: wrap;
 }
 
@@ -52,10 +53,11 @@
   display: flex;
   align-items: center;
   flex: 1;
-  max-width: 520px;
+  max-width: 540px;
   min-width: 260px;
-  background: var(--ameza-section);
-  border: 1px solid var(--ameza-border);
+  height: 50px;
+  background: var(--ameza-section, #2E1720);
+  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-sm);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
@@ -63,39 +65,40 @@
 }
 
 .users-search-wrapper:hover {
-  border-color: var(--ameza-gold);
+  border-color: var(--ameza-gold, #D4AF37);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .users-search-wrapper:focus-within {
-  border-color: var(--ameza-gold);
-  box-shadow: 0 0 0 3px rgba(184, 154, 98, 0.2);
+  border-color: var(--ameza-gold-bright, #F3E5C8);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 20px rgba(212, 175, 55, 0.2);
   transform: translateY(-1px);
 }
 
 .users-search-icon {
   position: absolute;
-  left: 18px;
-  color: var(--ameza-text-muted);
+  left: 20px;
+  color: var(--ameza-gold, #D4AF37);
   pointer-events: none;
   transition: color var(--transition-fast), transform var(--transition-fast);
   flex-shrink: 0;
 }
 
 .users-search-wrapper:focus-within .users-search-icon {
-  color: var(--ameza-gold);
-  transform: scale(1.08);
+  color: var(--ameza-gold-bright, #F3E5C8);
+  transform: scale(1.1);
 }
 
 .users-search-input {
   width: 100%;
-  height: 48px;
-  padding: 0 44px 0 48px;
+  height: 100%;
+  padding: 0 44px 0 50px;
   background: transparent;
   border: none;
   outline: none;
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--ameza-text);
   box-sizing: border-box;
 }
@@ -108,13 +111,13 @@
 
 .users-search-clear {
   position: absolute;
-  right: 14px;
+  right: 16px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(184, 154, 98, 0.15);
+  background: rgba(212, 175, 55, 0.15);
   border: 1px solid var(--ameza-gold);
-  color: var(--ameza-gold);
+  color: var(--ameza-gold-bright);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,23 +128,23 @@
 }
 
 .users-search-clear:hover {
-  background: var(--ameza-gold);
-  color: #1C1114;
+  background: var(--ameza-gold-gradient);
+  color: #14090C;
   transform: scale(1.1);
 }
 
 .users-count-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--ameza-text);
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
-  padding: 0 18px;
-  height: 48px;
+  background: var(--ameza-card, #391D27);
+  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  padding: 0 22px;
+  height: 50px;
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-sm);
   box-sizing: border-box;
@@ -149,17 +152,17 @@
 }
 
 .users-count-badge .count-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: var(--ameza-gold);
-  box-shadow: 0 0 8px rgba(184, 154, 98, 0.6);
+  background: var(--ameza-gold-bright, #F3E5C8);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
 }
 
 .users-count-badge strong {
-  font-family: var(--font-body);
-  font-size: 15px;
+  font-family: var(--font-display);
+  font-size: 18px;
   font-weight: 700;
-  color: var(--ameza-gold);
+  color: var(--ameza-gold-bright);
   line-height: 1;
 }

@@ -1,14 +1,15 @@
 /* =========================================================
-   AMEZA — OFFCANVAS EDIT DRAWER (BURGUNDY + GOLD)
+   AMEZA — ULTRA-LUXURY OFFCANVAS EDIT DRAWER
    ========================================================= */
 
 .offcanvas {
-  background: var(--ameza-card) !important;
+  background: var(--ameza-card, #391D27) !important;
   color: var(--ameza-text) !important;
-  border-right: 1px solid var(--ameza-border) !important;
-  box-shadow: 12px 0 35px rgba(20, 8, 12, 0.6);
+  border-left: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28)) !important;
+  border-right: none !important;
+  box-shadow: -16px 0 45px rgba(10, 3, 6, 0.7);
   width: 100% !important;
-  max-width: 420px !important;
+  max-width: 440px !important;
   z-index: 10000 !important;
   height: 100vh !important;
   height: 100dvh !important;
@@ -16,33 +17,34 @@
 
 .offcanvas-backdrop {
   z-index: 9999 !important;
-  background-color: rgba(20, 8, 12, 0.8) !important;
-  backdrop-filter: blur(4px);
+  background-color: rgba(10, 3, 6, 0.82) !important;
+  backdrop-filter: blur(6px);
 }
 
 .offcanvas-header {
-  padding: 24px 20px 16px;
-  border-bottom: 1px solid var(--ameza-border);
+  padding: 26px 24px 18px;
+  border-bottom: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background: var(--ameza-section);
+  background: var(--ameza-section, #2E1720);
 }
 
 .offcanvas-badge {
   font-family: var(--font-body);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-gold-bright, #F3E5C8);
   display: block;
   margin-bottom: 4px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
 .offcanvas-title {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--ameza-text);
@@ -50,12 +52,12 @@
 }
 
 .offcanvas-close-btn {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--ameza-section);
-  border: 1px solid var(--ameza-border);
-  color: var(--ameza-text);
+  background: var(--ameza-card, #391D27);
+  border: 1px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  color: var(--ameza-gold-bright);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,13 +67,14 @@
 }
 
 .offcanvas-close-btn:hover {
-  background: var(--ameza-gold);
-  color: #1C1114;
-  border-color: var(--ameza-gold);
+  background: var(--ameza-gold-gradient);
+  color: #14090C;
+  border-color: #FFFFFF;
+  transform: scale(1.08);
 }
 
 .offcanvas-body {
-  padding: 24px 20px 90px !important;
+  padding: 26px 24px 90px !important;
   overflow-y: auto !important;
   display: flex;
   flex-direction: column;
@@ -81,54 +84,55 @@
   display: block;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 600;
-  color: var(--ameza-text);
-  margin-bottom: 6px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--ameza-gold-bright, #F3E5C8);
+  margin-bottom: 8px;
 }
 
 .offcanvas-body .form-control {
   width: 100%;
-  height: 46px;
-  padding: 0 16px;
-  background: var(--ameza-section) !important;
-  border: 1px solid var(--ameza-border) !important;
-  border-radius: var(--radius-md);
+  height: 48px;
+  padding: 0 18px;
+  background: var(--ameza-section, #2E1720) !important;
+  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28)) !important;
+  border-radius: var(--radius-md, 14px);
   font-family: var(--font-body);
   font-size: 14px;
   color: var(--ameza-text) !important;
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   box-sizing: border-box;
 }
 
 .offcanvas-body .form-control:focus {
-  border-color: var(--ameza-primary) !important;
-  box-shadow: 0 0 0 3px rgba(163, 71, 85, 0.25) !important;
+  border-color: var(--ameza-gold-bright, #F3E5C8) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 15px rgba(212, 175, 55, 0.2) !important;
 }
 
 .offcanvas-actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 18px;
   padding-bottom: 30px;
 }
 
 .btn-primary,
 .offcanvas-actions .btn-primary {
-  height: 48px;
-  background: var(--ameza-primary) !important;
-  color: #FFFFFF !important;
-  border: 1px solid var(--ameza-primary) !important;
+  height: 50px;
+  background: var(--ameza-gold-gradient) !important;
+  color: #14090C !important;
+  border: 1px solid var(--ameza-gold-bright) !important;
   border-radius: var(--radius-pill) !important;
   font-family: var(--font-body);
   font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
@@ -138,22 +142,23 @@
 
 .btn-primary:hover,
 .offcanvas-actions .btn-primary:hover {
-  background: var(--ameza-primary-hover) !important;
-  border-color: var(--ameza-primary-hover) !important;
-  color: #FFFFFF !important;
+  background: var(--ameza-gold-gradient-hover) !important;
+  border-color: #FFFFFF !important;
+  color: #0E0507 !important;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
 }
 
 .btn-cancel,
 .offcanvas-actions .btn-cancel {
-  height: 46px;
+  height: 48px;
   background: transparent;
-  color: var(--ameza-text);
-  border: 1px solid var(--ameza-border);
+  color: var(--ameza-gold-bright);
+  border: 1.5px solid var(--ameza-gold);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-size: 13.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -165,7 +170,7 @@
 
 .btn-cancel:hover,
 .offcanvas-actions .btn-cancel:hover {
-  border-color: var(--ameza-gold);
-  color: var(--ameza-gold);
-  background: rgba(184, 154, 98, 0.1);
+  border-color: var(--ameza-gold-bright);
+  color: #14090C !important;
+  background: var(--ameza-gold-gradient);
 }

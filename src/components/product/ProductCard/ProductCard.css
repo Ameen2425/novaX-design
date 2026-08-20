@@ -1,46 +1,65 @@
 /* =========================================================
-   AMEZA — PRODUCT CARD (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — ULTRA-LUXURY PRODUCT CARD WITH 3D PERSPECTIVE TILT
    ========================================================= */
 
+.product-card-wrapper {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+}
+
 .product-card {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
-  border-radius: var(--radius-lg);
+  background: var(--ameza-card, #38202B);
+  border: 1.5px solid var(--ameza-border, rgba(213, 174, 95, 0.24));
+  border-radius: var(--radius-lg, 20px);
   padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
+  box-shadow: var(--shadow-sm, 0 6px 20px rgba(12, 5, 8, 0.35));
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
   box-sizing: border-box;
   position: relative;
   height: 100%;
   text-decoration: none;
   color: var(--ameza-text);
   overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--ameza-gold);
-  background: var(--ameza-card-hover);
-  box-shadow: 0 12px 35px rgba(20, 8, 12, 0.4), 0 0 20px rgba(184, 154, 98, 0.25);
+  border-color: var(--ameza-gold, #C5A059);
+  background: var(--ameza-card-hover, #442735);
+  box-shadow: 0 20px 45px rgba(12, 5, 8, 0.6), 0 0 30px rgba(213, 174, 95, 0.28);
 }
 
-/* ── Image Container ──────────────────────────────── */
+/* ── Dynamic Liquid Gold Sheen Overlay ───────────────── */
+.product-card-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-lg, 20px);
+}
+
+/* ── Image Container (Elevated 3D Depth) ─────────────── */
 .product-image-container {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: var(--ameza-section);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(184, 154, 98, 0.18);
+  background: var(--ameza-section, #2E1A23);
+  border-radius: var(--radius-md, 14px);
+  border: 1px solid rgba(213, 174, 95, 0.2);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 14px;
   margin-bottom: 14px;
   box-sizing: border-box;
   position: relative;
+  transform: translateZ(12px);
+  transition: transform 0.3s ease;
 }
 
 .product-image {
@@ -51,7 +70,7 @@
 }
 
 .product-card:hover .product-image {
-  transform: scale(1.06);
+  transform: scale(1.08) translateZ(8px);
 }
 
 .product-badge {
@@ -59,21 +78,23 @@
   top: 10px;
   left: 10px;
   background: var(--ameza-gold-gradient);
-  color: #1C1114;
+  color: #150B0F;
   font-family: var(--font-body);
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.04em;
-  padding: 3px 9px;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 2px 8px rgba(184, 154, 98, 0.4);
+  box-shadow: 0 3px 10px rgba(213, 174, 95, 0.45);
+  z-index: 5;
+  transform: translateZ(15px);
 }
 
 .product-quick-label {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(36, 22, 26, 0.90);
+  background: rgba(28, 16, 21, 0.92);
   backdrop-filter: blur(8px);
   border: 1px solid var(--ameza-gold);
   color: var(--ameza-gold-bright);
@@ -81,8 +102,10 @@
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  padding: 3px 8px;
+  padding: 3px 9px;
   border-radius: var(--radius-pill);
+  z-index: 5;
+  transform: translateZ(15px);
 }
 
 /* ── Body Content ─────────────────────────────────── */
@@ -90,13 +113,14 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  transform: translateZ(8px);
 }
 
 .product-category {
   font-family: var(--font-body);
   font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.10em;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ameza-gold-bright);
   margin-bottom: 4px;
@@ -148,7 +172,7 @@
 .product-rating span {
   color: var(--ameza-gold-bright);
   letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(184, 154, 98, 0.4);
+  text-shadow: 0 0 10px rgba(213, 174, 95, 0.45);
 }
 
 .product-rating small {
@@ -163,15 +187,16 @@
   font-size: 11px;
 }
 
-/* ── Price Row ────────────────────────────────────── */
+/* ── Price Row (Elevated 3D Depth) ────────────────── */
 .product-price-row {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   margin-top: auto;
-  padding-top: 8px;
-  border-top: 1px solid rgba(184, 154, 98, 0.25);
+  padding-top: 10px;
+  border-top: 1px solid rgba(213, 174, 95, 0.22);
+  transform: translateZ(14px);
 }
 
 .price-label {
@@ -183,23 +208,23 @@
 
 .product-price {
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--ameza-gold-bright);
   margin: 0;
   line-height: 1;
-  text-shadow: 0 0 10px rgba(184, 154, 98, 0.3);
+  text-shadow: 0 0 12px rgba(213, 174, 95, 0.4);
 }
 
 .price-offer {
   font-family: var(--font-body);
   font-size: 10.5px;
-  font-weight: 700;
-  color: #1C1114;
+  font-weight: 800;
+  color: #150B0F;
   background: var(--ameza-gold-gradient);
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 2px 6px rgba(184, 154, 98, 0.3);
+  box-shadow: 0 2px 8px rgba(213, 174, 95, 0.35);
 }
 
 /* ── Services Strip ───────────────────────────────── */
@@ -213,17 +238,18 @@
   margin-bottom: 12px;
 }
 
-/* ── Add to Cart Button (Radiant Antique Gold) ────── */
+/* ── Add to Cart Button (3D Pop-out) ─────────────── */
 .product-bottom {
   width: 100%;
+  transform: translateZ(16px);
 }
 
 .add-cart-btn {
   width: 100%;
-  height: 42px;
+  height: 44px;
   border-radius: var(--radius-pill);
   background: var(--ameza-gold-gradient);
-  color: #1C1114 !important;
+  color: #150B0F !important;
   font-family: var(--font-body);
   font-size: 12.5px;
   font-weight: 800;
@@ -235,19 +261,19 @@
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(184, 154, 98, 0.35);
+  box-shadow: 0 4px 16px rgba(213, 174, 95, 0.4);
   transition: all var(--transition-fast);
 }
 
 .add-cart-btn:hover {
-  background: linear-gradient(135deg, #E8D7B8 0%, #D4BA85 50%, #B89A62 100%);
+  background: var(--ameza-gold-gradient-hover);
   border-color: #FFFFFF;
-  color: #140A0D !important;
+  color: #0E0507 !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 154, 98, 0.55);
+  box-shadow: 0 8px 25px rgba(213, 174, 95, 0.6);
 }
 
-/* ── RESPONSIVE COMPACT CARD STYLES (MOBILE & TABLET) ── */
+/* ── RESPONSIVE COMPACT CARD STYLES ────────────────── */
 @media (max-width: 768px) {
   .product-card {
     padding: 12px;
@@ -271,7 +297,7 @@
   }
 
   .product-price {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .add-cart-btn {
@@ -319,7 +345,6 @@
     margin-bottom: 4px;
   }
 
-  /* Hide long description on small mobile cards to keep cards compact & uniform */
   .product-description {
     display: none;
   }
@@ -339,7 +364,6 @@
     font-size: 10.5px;
   }
 
-  /* Hide redundant "Customer Rating" label on mobile */
   .product-rating em {
     display: none;
   }
@@ -349,13 +373,12 @@
     padding-top: 6px;
   }
 
-  /* Hide "Starting from" label on mobile */
   .price-label {
     display: none;
   }
 
   .product-price {
-    font-size: 15.5px;
+    font-size: 16px;
   }
 
   .price-offer {
@@ -363,7 +386,6 @@
     padding: 2px 5px;
   }
 
-  /* Hide services tags on mobile card to maintain compact aspect */
   .product-services {
     display: none;
   }
@@ -372,32 +394,6 @@
     height: 34px;
     font-size: 11px;
     gap: 4px;
-    letter-spacing: 0.02em;
-    box-shadow: 0 2px 8px rgba(184, 154, 98, 0.25);
-  }
-}
-
-@media (max-width: 360px) {
-  .product-card {
-    padding: 8px;
-  }
-
-  .product-image-container {
-    padding: 6px;
-    margin-bottom: 6px;
-  }
-
-  .product-title {
-    font-size: 12px;
-    height: 30px;
-  }
-
-  .product-price {
-    font-size: 14px;
-  }
-
-  .add-cart-btn {
-    height: 30px;
-    font-size: 10px;
+    box-shadow: 0 2px 10px rgba(213, 174, 95, 0.3);
   }
 }
