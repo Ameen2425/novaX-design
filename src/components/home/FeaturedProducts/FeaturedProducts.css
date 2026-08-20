@@ -70,8 +70,23 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .home-products {
+    padding: 0 10px;
+    margin-bottom: 28px;
+  }
   .home-product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-products {
+    padding: 0 6px;
+  }
+  .home-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
   }
 }

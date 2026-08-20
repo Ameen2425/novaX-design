@@ -246,3 +246,158 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(184, 154, 98, 0.55);
 }
+
+/* ── RESPONSIVE COMPACT CARD STYLES (MOBILE & TABLET) ── */
+@media (max-width: 768px) {
+  .product-card {
+    padding: 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .product-image-container {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .product-title {
+    font-size: 15px;
+    height: 38px;
+  }
+
+  .product-description {
+    font-size: 11.5px;
+    height: 32px;
+    margin-bottom: 8px;
+  }
+
+  .product-price {
+    font-size: 18px;
+  }
+
+  .add-cart-btn {
+    height: 38px;
+    font-size: 11.5px;
+  }
+}
+
+@media (max-width: 580px) {
+  .product-card {
+    padding: 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .product-image-container {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: var(--radius-sm);
+  }
+
+  .product-badge {
+    top: 6px;
+    left: 6px;
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+
+  .product-quick-label {
+    top: 6px;
+    right: 6px;
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+
+  .product-category {
+    font-size: 9px;
+    margin-bottom: 2px;
+    letter-spacing: 0.06em;
+  }
+
+  .product-title {
+    font-size: 13px;
+    line-height: 1.25;
+    height: 32px;
+    margin-bottom: 4px;
+  }
+
+  /* Hide long description on small mobile cards to keep cards compact & uniform */
+  .product-description {
+    display: none;
+  }
+
+  .product-rating {
+    margin-bottom: 6px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .product-rating span {
+    letter-spacing: 0.5px;
+    font-size: 10px;
+  }
+
+  .product-rating small {
+    font-size: 10.5px;
+  }
+
+  /* Hide redundant "Customer Rating" label on mobile */
+  .product-rating em {
+    display: none;
+  }
+
+  .product-price-row {
+    margin-bottom: 8px;
+    padding-top: 6px;
+  }
+
+  /* Hide "Starting from" label on mobile */
+  .price-label {
+    display: none;
+  }
+
+  .product-price {
+    font-size: 15.5px;
+  }
+
+  .price-offer {
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+
+  /* Hide services tags on mobile card to maintain compact aspect */
+  .product-services {
+    display: none;
+  }
+
+  .add-cart-btn {
+    height: 34px;
+    font-size: 11px;
+    gap: 4px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(184, 154, 98, 0.25);
+  }
+}
+
+@media (max-width: 360px) {
+  .product-card {
+    padding: 8px;
+  }
+
+  .product-image-container {
+    padding: 6px;
+    margin-bottom: 6px;
+  }
+
+  .product-title {
+    font-size: 12px;
+    height: 30px;
+  }
+
+  .product-price {
+    font-size: 14px;
+  }
+
+  .add-cart-btn {
+    height: 30px;
+    font-size: 10px;
+  }
+}
