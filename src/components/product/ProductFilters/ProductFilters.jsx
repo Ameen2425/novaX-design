@@ -1,3 +1,4 @@
+
 import "./ProductFilters.css";
 
 const ProductFilters = ({ search, setSearch, category, setCategory, setPage, categoryList }) => {
