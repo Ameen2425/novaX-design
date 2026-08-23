@@ -1,143 +1,144 @@
 /* =========================================================
-   AMEZA — WARM CASHMERE, ALABASTER & ROYAL COGNAC BRONZE
-   Modern Light Luxury Digital Flagship (Chanel, Jo Malone, Celine Aesthetic)
+   AMEZA — PREMIUM MODERN LUXURY EDITORIAL TOKENS
+   Warm Cashmere (#F3EFE7) + Warm Travertine (#E7E0D5) + Soft Porcelain (#FCFAF6) + Deep Espresso (#241E1A) + Muted Cognac (#A96F45)
    ========================================================= */
 
 :root {
-  /* ── 1. MASTER CASHMERE & ALABASTER PALETTE ──────────── */
-  --ameza-bg:             #F6F3ED;               /* Warm Luminous Cashmere Linen Base Canvas */
-  --ameza-bg-secondary:   #EFEBE2;               /* Muted Sand Cashmere */
-  --ameza-section:        #EDE8DF;               /* Refined Travertine Hearth */
-  --ameza-card:           #FFFFFF;               /* Pure Alabaster Silk Showcase Card */
-  --ameza-card-hover:     #FAF8F5;               /* Luminous Warm Alabaster Hover */
-  --ameza-deep:           #211C1A;               /* Deep Velvet Espresso for Dark Accents & Footer */
-  --ameza-glass-bg:       rgba(246, 243, 237, 0.90);/* Frosted Cashmere Glass Backdrop */
+  /* ── 1. MASTER NEUTRAL LUXURY PALETTE ────────────────── */
+  --ameza-bg:             #F3EFE7;               /* Warm Cashmere (Primary Canvas) */
+  --ameza-bg-secondary:   #EDE6DC;               /* Muted Cashmere Secondary */
+  --ameza-section:        #E7E0D5;               /* Warm Travertine */
+  --ameza-card:           #FCFAF6;               /* Soft Porcelain Showcase Card */
+  --ameza-card-hover:     #F4EFE7;               /* Soft Luminous Hover */
+  --ameza-deep:           #241E1A;               /* Deep Espresso (Strategic Contrast Pause) */
+  --ameza-glass-bg:       rgba(252, 250, 246, 0.94);/* Frosted Soft Porcelain Glass Backdrop */
+  --ameza-image-bg:       #F0EBE3;               /* Product Image Area */
 
-  /* Master Royal Cognac Bronze Actions */
-  --ameza-primary:        #B87F4E;               /* Rich Royal Cognac Bronze Primary CTA */
-  --ameza-primary-hover:  #C99260;               /* Luminous Warm Cognac Hover */
-  --ameza-burgundy:       #FFFFFF;               /* Elevated Card Base */
-  --ameza-crimson:        #B87F4E;               /* Primary Action */
-  --ameza-crimson-hover:  #C99260;
-  --ameza-crimson-glow:   rgba(184, 127, 78, 0.25);
+  /* ── 2. MUTED COGNAC (STRICT 3–5% ACCENT DISTRIBUTION) ─ */
+  --ameza-primary:        #A96F45;               /* Muted Cognac Primary CTA */
+  --ameza-primary-hover:  #BE8459;               /* Warm Cognac Hover */
+  --ameza-burgundy:       #FCFAF6;               /* Elevated Card Base */
+  --ameza-crimson:        #A96F45;               /* Primary Action */
+  --ameza-crimson-hover:  #BE8459;
+  --ameza-crimson-glow:   rgba(169, 111, 69, 0.20);
 
-  /* Master Amber Suede & Champagne Accents */
-  --ameza-accent:         #D4A373;               /* Soft Amber Suede Accent */
+  /* Master Sandstone & Warm Neutral Accents */
+  --ameza-accent:         #C7A98E;               /* Soft Sandstone Accent */
   --ameza-accent-dark:    #6E4421;               /* Deep Espresso Bronze */
-  --ameza-accent-hover:   #C99260;
-  --ameza-terracotta:     #B87F4E;
-  --ameza-terracotta-hover: #C99260;
-  --ameza-blush:          #F2DFCE;
+  --ameza-accent-hover:   #BE8459;
+  --ameza-terracotta:     #A96F45;
+  --ameza-terracotta-hover: #BE8459;
+  --ameza-blush:          #EDE1D4;
 
   /* Aliases for System Compatibility */
-  --ameza-bronze:         #B87F4E;               /* Cognac Bronze */
-  --ameza-bronze-light:   #F2DFCE;               /* Champagne Silk Highlight */
-  --ameza-bronze-hover:   #C99260;               /* Luminous Cognac */
-  --ameza-bronze-glow:    rgba(184, 127, 78, 0.25);
-  --ameza-bronze-gradient:linear-gradient(135deg, #C99260 0%, #B87F4E 50%, #8F5E33 100%);
-  --ameza-gold:           #B87F4E;               /* Cognac Bronze */
-  --ameza-gold-bright:    #F2DFCE;               /* Champagne Silk */
-  --ameza-gold-light:     #F2DFCE;
-  --ameza-gold-dark:      #6E4421;               /* Deep Bronze */
-  --ameza-gold-glow:      rgba(184, 127, 78, 0.25);
-  --ameza-gold-gradient:  linear-gradient(135deg, #C99260 0%, #B87F4E 50%, #8F5E33 100%);
-  --ameza-gold-gradient-hover: linear-gradient(135deg, #FFFFFF 0%, #C99260 50%, #B87F4E 100%);
-  --ameza-dark-gradient:  linear-gradient(180deg, #F6F3ED 0%, #EDE8DF 100%);
+  --ameza-bronze:         #A96F45;               /* Muted Cognac */
+  --ameza-bronze-light:   #EDE1D4;               /* Sandstone Highlight */
+  --ameza-bronze-hover:   #BE8459;               /* Warm Cognac */
+  --ameza-bronze-glow:    rgba(169, 111, 69, 0.20);
+  --ameza-bronze-gradient:linear-gradient(135deg, #BE8459 0%, #A96F45 100%);
+  --ameza-gold:           #A96F45;               /* Muted Cognac */
+  --ameza-gold-bright:    #EDE1D4;
+  --ameza-gold-light:     #EDE1D4;
+  --ameza-gold-dark:      #6E4421;
+  --ameza-gold-glow:      rgba(169, 111, 69, 0.20);
+  --ameza-gold-gradient:  linear-gradient(135deg, #BE8459 0%, #A96F45 100%);
+  --ameza-gold-gradient-hover: linear-gradient(135deg, #C7A98E 0%, #BE8459 100%);
+  --ameza-dark-gradient:  linear-gradient(180deg, #F3EFE7 0%, #E7E0D5 100%);
 
   /* Semantic Color System: SUCCESS / IN-STOCK / TRUST */
-  --ameza-emerald:        #40916C;
-  --ameza-emerald-dark:   #2D6A4F;
-  --ameza-emerald-light:  #52B788;
-  --ameza-emerald-glow:   rgba(64, 145, 108, 0.25);
-  --ameza-emerald-bg:     rgba(64, 145, 108, 0.10);
-  --ameza-emerald-border: rgba(64, 145, 108, 0.30);
-  --ameza-success:        #40916C;
+  --ameza-emerald:        #3D7C5D;
+  --ameza-emerald-dark:   #2A5640;
+  --ameza-emerald-light:  #4E9B75;
+  --ameza-emerald-glow:   rgba(61, 124, 93, 0.20);
+  --ameza-emerald-bg:     rgba(61, 124, 93, 0.08);
+  --ameza-emerald-border: rgba(61, 124, 93, 0.25);
+  --ameza-success:        #3D7C5D;
 
   /* Semantic Color System: SAPPHIRE / TECH */
-  --ameza-sapphire:       #457B9D;
-  --ameza-sapphire-dark:  #1D3557;
-  --ameza-sapphire-light: #6A9AB0;
-  --ameza-sapphire-glow:  rgba(69, 123, 157, 0.25);
-  --ameza-sapphire-bg:    rgba(69, 123, 157, 0.10);
-  --ameza-sapphire-border:rgba(69, 123, 157, 0.30);
+  --ameza-sapphire:       #4A6B82;
+  --ameza-sapphire-dark:  #2C4456;
+  --ameza-sapphire-light: #6A8CA5;
+  --ameza-sapphire-glow:  rgba(74, 107, 130, 0.20);
+  --ameza-sapphire-bg:    rgba(74, 107, 130, 0.08);
+  --ameza-sapphire-border:rgba(74, 107, 130, 0.25);
 
   /* Semantic Color System: WARMTH / PROMOTIONS */
-  --ameza-copper:         #B87F4E;
+  --ameza-copper:         #A96F45;
   --ameza-copper-dark:    #6E4421;
-  --ameza-copper-light:   #F2DFCE;
-  --ameza-copper-glow:    rgba(184, 127, 78, 0.25);
-  --ameza-copper-bg:      rgba(184, 127, 78, 0.10);
-  --ameza-copper-border:  rgba(184, 127, 78, 0.30);
-  --ameza-copper-gradient:linear-gradient(135deg, #C99260 0%, #B87F4E 50%, #8F5E33 100%);
-  --ameza-copper-gradient-hover: linear-gradient(135deg, #FFFFFF 0%, #C99260 50%, #B87F4E 100%);
+  --ameza-copper-light:   #EDE1D4;
+  --ameza-copper-glow:    rgba(169, 111, 69, 0.20);
+  --ameza-copper-bg:      rgba(169, 111, 69, 0.08);
+  --ameza-copper-border:  rgba(169, 111, 69, 0.25);
+  --ameza-copper-gradient:linear-gradient(135deg, #BE8459 0%, #A96F45 100%);
+  --ameza-copper-gradient-hover: linear-gradient(135deg, #C7A98E 0%, #BE8459 100%);
 
-  --ameza-error:          #C94A29;
+  --ameza-error:          #B84A39;
 
-  /* Typography Colors (Crisp Deep Espresso & Warm Charcoal) */
-  --ameza-text:           #1F1A17;               /* Deep Espresso Noir (Ultra-Crisp Contrast) */
-  --ameza-text-secondary: #5C524B;               /* Refined Warm Charcoal Supporting */
-  --ameza-text-muted:     #8C8178;               /* Muted Cashmere Slate Metadata */
+  /* ── 3. DEEP ESPRESSO & NEUTRAL TYPOGRAPHY ──────────── */
+  --ameza-text:           #241E1A;               /* Deep Espresso Main Text */
+  --ameza-text-secondary: #625850;               /* Refined Warm Secondary */
+  --ameza-text-muted:     #958A80;               /* Muted Sandstone Metadata */
   --ameza-white:          #FFFFFF;               /* Pure White */
   
   /* Section Background Variations */
-  --ameza-bg-section-featured: #F6F3ED;
-  --ameza-bg-section-product:  #EDE8DF;
-  --ameza-bg-section-promo:    #EFEBE2;
-  --ameza-bg-section-tech:     #EDE8DF;
-  --ameza-bg-section-trust:    #F6F3ED;
+  --ameza-bg-section-featured: #F3EFE7;
+  --ameza-bg-section-product:  #E7E0D5;
+  --ameza-bg-section-promo:    #241E1A;          /* Strategic Dark Pause Section */
+  --ameza-bg-section-tech:     #E7E0D5;
+  --ameza-bg-section-trust:    #F3EFE7;
 
   /* Subtle Semantic Borders & Strokes */
-  --ameza-border:         #E0D9CE;               /* Soft Cashmere Contour Border */
-  --ameza-border-default: #E0D9CE;
-  --ameza-border-strong:  rgba(184, 127, 78, 0.50);
-  --ameza-border-luxury:  rgba(184, 127, 78, 0.30);
-  --ameza-border-burgundy:rgba(224, 217, 206, 0.85);
-  --ameza-border-gold:    rgba(184, 127, 78, 0.30);
-  --ameza-border-copper:  rgba(184, 127, 78, 0.30);
-  --ameza-border-emerald: rgba(64, 145, 108, 0.30);
-  --ameza-border-sapphire:rgba(69, 123, 157, 0.30);
+  --ameza-border:         #D8CFC3;               /* Clean Hairline Border */
+  --ameza-border-default: #D8CFC3;
+  --ameza-border-strong:  rgba(169, 111, 69, 0.40);
+  --ameza-border-luxury:  rgba(169, 111, 69, 0.25);
+  --ameza-border-burgundy:rgba(216, 207, 195, 0.85);
+  --ameza-border-gold:    rgba(169, 111, 69, 0.25);
+  --ameza-border-copper:  rgba(169, 111, 69, 0.25);
+  --ameza-border-emerald: rgba(61, 124, 93, 0.25);
+  --ameza-border-sapphire:rgba(74, 107, 130, 0.25);
 
-  /* ── 2. EDITORIAL SPACING & DEPTH TOKENS ──────── */
-  --space-section-desktop: clamp(80px, 8vw, 120px);
-  --space-section-tablet:  clamp(60px, 6vw, 80px);
+  /* ── 4. EDITORIAL SPACING & DEPTH TOKENS ──────── */
+  --space-section-desktop: clamp(80px, 7vw, 120px);
+  --space-section-tablet:  clamp(60px, 5.5vw, 80px);
   --space-section-mobile:  clamp(44px, 5vw, 64px);
-  --container-max-width:   1400px;
-  --container-editorial:   1280px;
+  --container-max-width:   1500px;
+  --container-editorial:   1320px;
 
   /* Atmospheric Radial Lighting Glows */
-  --glow-burgundy:   radial-gradient(circle, rgba(184, 127, 78, 0.12) 0%, transparent 70%);
-  --glow-copper:     radial-gradient(circle, rgba(184, 127, 78, 0.12) 0%, transparent 70%);
-  --glow-champagne:  radial-gradient(circle, rgba(242, 223, 206, 0.20) 0%, transparent 70%);
+  --glow-burgundy:   radial-gradient(circle, rgba(169, 111, 69, 0.08) 0%, transparent 70%);
+  --glow-copper:     radial-gradient(circle, rgba(169, 111, 69, 0.08) 0%, transparent 70%);
+  --glow-champagne:  radial-gradient(circle, rgba(199, 169, 142, 0.12) 0%, transparent 70%);
 
-  /* ── 3. BORDER RADIUS TOKENS ────────────────────────── */
+  /* ── 5. BORDER RADIUS TOKENS (RESTRAINED LUXURY) ───── */
   --radius-sm:            8px;
   --radius-md:            12px;
-  --radius-card:          18px;
-  --radius-lg:            20px;
-  --radius-xl:            26px;
+  --radius-card:          14px;
+  --radius-lg:            16px;
+  --radius-xl:            20px;
   --radius-pill:          999px;
 
-  /* ── 4. SHADOW & GLOW SYSTEM ────────────────────────── */
-  --shadow-sm:            0 4px 14px rgba(33, 28, 26, 0.05);
-  --shadow-md:            0 10px 28px rgba(33, 28, 26, 0.07);
-  --shadow-lg:            0 20px 48px rgba(33, 28, 26, 0.09);
-  --shadow-gold:          0 8px 24px rgba(184, 127, 78, 0.25);
-  --shadow-card:          0 12px 32px rgba(33, 28, 26, 0.06), 0 2px 6px rgba(33, 28, 26, 0.03);
-  --shadow-card-hover:    0 20px 45px rgba(33, 28, 26, 0.11), 0 0 20px rgba(184, 127, 78, 0.15);
+  /* ── 6. SHADOW & GLOW SYSTEM ────────────────────────── */
+  --shadow-sm:            0 4px 12px rgba(36, 30, 26, 0.04);
+  --shadow-md:            0 8px 20px rgba(36, 30, 26, 0.06);
+  --shadow-lg:            0 16px 36px rgba(36, 30, 26, 0.08);
+  --shadow-gold:          0 8px 20px rgba(169, 111, 69, 0.20);
+  --shadow-card:          0 8px 25px rgba(36, 30, 26, 0.06);
+  --shadow-card-hover:    0 15px 35px rgba(36, 30, 26, 0.10);
 
-  /* ── 5. TRANSITIONS & TIMING ────────────────────────── */
+  /* ── 7. TRANSITIONS & TIMING ────────────────────────── */
   --transition-fast:      180ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition:           280ms cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth:          cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ── 5. TYPOGRAPHY FONT FAMILIES ────────────────────── */
+  /* ── 8. TYPOGRAPHY FONT FAMILIES ────────────────────── */
   --font-display:         "Playfair Display", Georgia, serif;
   --font-body:            "Manrope", Arial, sans-serif;
   --font-mono:            "JetBrains Mono", monospace;
   --font-serif:           var(--font-display);
   --font-sans:            var(--font-body);
 
-  /* ── 6. COMPATIBILITY ALIASES ───────────────────────── */
+  /* ── 9. COMPATIBILITY ALIASES ───────────────────────── */
   --ameza-accent:         var(--ameza-terracotta);
   --ameza-accent-hover:   var(--ameza-primary-hover);
   --ameza-accent-dark:    var(--ameza-accent-dark);
@@ -148,9 +149,9 @@
   --nova-surface-3:       var(--ameza-card-hover);
   --nova-card:            var(--ameza-card);
   --nova-card-hover:      var(--ameza-card-hover);
-  --nova-input-bg:        #FFFFFF;
+  --nova-input-bg:        #F6F3ED;
   --nova-cream:           var(--ameza-text);
-  --nova-light:           #1F1A17;
+  --nova-light:           #241E1A;
   --nova-muted:           var(--ameza-text-secondary);
   --nova-cream-muted:     var(--ameza-text-muted);
   --nova-copper:          var(--ameza-terracotta);
@@ -161,7 +162,7 @@
   --nova-border:          var(--ameza-border);
   --nova-border-strong:   var(--ameza-border-strong);
   --nova-border-subtle:   var(--ameza-border);
-  --nova-shadow:          var(--shadow-md);
+  --nova-shadow:          0 6px 18px rgba(36, 30, 26, 0.05);
 
   --bg-primary:           var(--ameza-bg);
   --bg-section:           var(--ameza-section);

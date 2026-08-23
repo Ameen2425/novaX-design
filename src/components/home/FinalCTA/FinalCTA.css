@@ -1,20 +1,20 @@
 /* =========================================================
-   AMEZA — FINAL CTA (SAGE + TERRACOTTA)
+   AMEZA — FINAL EDITORIAL CTA
    ========================================================= */
 
 .home-final-section {
-  max-width: var(--container-max-width, 1400px);
+  max-width: var(--container-max-width, 1500px);
   margin: 0 auto var(--space-section-desktop, 80px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
 .home-final {
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
-  border-radius: var(--radius-xl);
-  padding: clamp(36px, 4.5vw, 56px);
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(169, 104, 85, 0.10);
+  background: var(--ameza-section, #E7E0D5);
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  border-radius: var(--radius-xl, 20px);
+  padding: clamp(40px, 5vw, 68px);
+  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.06);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: clamp(24px, 4vw, 56px);
@@ -34,10 +34,10 @@
 .home-final-label {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   margin-bottom: 16px;
   display: block;
 }
@@ -45,23 +45,24 @@
 .home-final h2 {
   font-family: var(--font-display);
   font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ameza-text, #F2EEE7);
-  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--ameza-text, #241E1A);
+  line-height: 1.08;
   margin: 0 0 16px;
 }
 
 .home-final h2 span {
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   font-style: italic;
+  font-weight: 400;
 }
 
 .home-final p {
   font-family: var(--font-body);
   font-size: 14.5px;
   line-height: 1.65;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   max-width: 460px;
   margin: 0 0 30px;
 }
@@ -71,28 +72,30 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 50px;
+  height: 48px;
+  min-height: 44px;
   padding: 0 32px;
-  background: var(--ameza-primary, #A96855);
-  color: var(--ameza-white, #F2EEE7) !important;
+  background: var(--ameza-primary, #A96F45);
+  color: #FFFFFF !important;
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   text-decoration: none !important;
-  border: none;
-  box-shadow: 0 6px 20px rgba(169, 104, 85, 0.25);
+  border: 1px solid var(--ameza-primary, #A96F45);
+  box-shadow: 0 4px 14px rgba(169, 111, 69, 0.20);
   transition: all var(--transition);
   cursor: pointer;
 }
 
 .home-primary-btn:hover {
-  background: var(--ameza-primary-hover, #BD7863);
+  background: var(--ameza-primary-hover, #BE8459);
+  border-color: var(--ameza-primary-hover, #BE8459);
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(169, 104, 85, 0.35);
+  box-shadow: 0 8px 22px rgba(169, 111, 69, 0.30);
 }
 
 /* ── 3D Visual Composition ────────────────────────── */
@@ -112,16 +115,16 @@
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--ameza-section, #34423B);
-  border: 1px solid rgba(98, 113, 105, 0.45);
-  box-shadow: var(--shadow-md);
+  background: var(--ameza-section, #E7E0D5);
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
   animation: floatBadge 5.5s ease-in-out infinite;
   transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
 }
 
 .home-final-3d-wrap:hover {
   transform: scale(1.02);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.06);
 }
 
 .home-final-3d-glow {
@@ -131,7 +134,7 @@
   transform: translate(-50%, -50%);
   width: 280px;
   height: 280px;
-  background: radial-gradient(circle, rgba(169, 104, 85, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(169, 111, 69, 0.12) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }

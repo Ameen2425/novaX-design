@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY HEADER NAVIGATION (WARM CASHMERE & BRONZE)
+   AMEZA — MINIMAL FLOATING CAPSULE NAVIGATION
    With Framer Motion LayoutId Active Pill Transitions
    ========================================================= */
 
@@ -10,13 +10,13 @@
   left: 50%;
   transform: translateX(-50%);
   width: min(calc(100% - 36px), 1280px);
-  height: 64px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(184, 127, 78, 0.22);
+  height: 62px;
+  background: rgba(252, 250, 246, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(36, 30, 26, 0.10);
   border-radius: var(--radius-pill);
-  box-shadow: 0 12px 35px rgba(33, 28, 26, 0.08);
+  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,9 +27,9 @@
 }
 
 .header.desktop-header.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(184, 127, 78, 0.40);
-  box-shadow: 0 16px 42px rgba(33, 28, 26, 0.12);
+  background: rgba(252, 250, 246, 0.98);
+  border-color: rgba(36, 30, 26, 0.16);
+  box-shadow: 0 14px 40px rgba(36, 30, 26, 0.10);
 }
 
 /* Brand Logo */
@@ -44,18 +44,18 @@
 .navbar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   position: relative;
 }
 
 .nav-link {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: var(--ameza-text-secondary, #5C524B);
+  color: var(--ameza-text-secondary, #625850);
   text-decoration: none;
-  padding: 8px 22px;
+  padding: 8px 20px;
   border-radius: var(--radius-pill);
   transition: color var(--transition-fast);
   display: inline-flex;
@@ -70,16 +70,16 @@
 }
 
 .nav-link:hover {
-  color: var(--ameza-primary, #B87F4E);
+  color: var(--ameza-primary, #A96F45);
 }
 
 /* FRAMER MOTION ACTIVE PILL BACKGROUND */
 .nav-active-pill {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #C99260 0%, #B87F4E 50%, #8F5E33 100%);
+  background: var(--ameza-primary, #A96F45);
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 18px rgba(184, 127, 78, 0.35);
+  box-shadow: 0 2px 10px rgba(169, 111, 69, 0.25);
   z-index: 1;
 }
 
@@ -97,7 +97,7 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .header-icon-group {
@@ -107,12 +107,12 @@
 }
 
 .header-action-btn {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #FFFFFF;
-  border: 1px solid var(--ameza-border, #E0D9CE);
-  color: var(--ameza-text, #1F1A17);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid rgba(36, 30, 26, 0.10);
+  color: var(--ameza-text, #241E1A);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,35 +123,35 @@
 }
 
 .header-action-btn:hover {
-  background: #FAF8F5;
-  border-color: var(--ameza-primary, #B87F4E);
-  color: var(--ameza-primary, #B87F4E);
+  background: #FFFFFF;
+  border-color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-primary, #A96F45);
   transform: translateY(-2px);
 }
 
 .header-action-btn.active {
-  background: linear-gradient(135deg, #C99260 0%, #B87F4E 100%);
-  border-color: var(--ameza-primary-hover, #C99260);
+  background: var(--ameza-primary, #A96F45);
+  border-color: var(--ameza-primary, #A96F45);
   color: #FFFFFF;
 }
 
 .header-badge {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  min-width: 19px;
-  height: 19px;
-  padding: 0 5px;
+  top: -3px;
+  right: -3px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
   border-radius: var(--radius-pill);
-  background: var(--ameza-primary, #B87F4E);
+  background: var(--ameza-primary, #A96F45);
   color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 9.5px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(184, 127, 78, 0.35);
+  box-shadow: 0 2px 6px rgba(169, 111, 69, 0.30);
 }
 
 /* ── 2. MOBILE TOP BAR & BOTTOM CAPSULE ───────────────── */

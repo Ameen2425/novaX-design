@@ -4,9 +4,9 @@
 
 .deal-products-section {
   width: 100%;
-  max-width: 1400px;
-  margin: 28px auto 0;
-  padding: 0 18px;
+  max-width: var(--container-max-width, 1500px);
+  margin: 0 auto 64px;
+  padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
   position: relative;
 }
@@ -15,15 +15,15 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid var(--ameza-primary, #A96855);
-  color: var(--ameza-text, #F2EEE7);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-primary, #A96F45);
+  color: var(--ameza-text, #241E1A);
   padding: 12px 24px;
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 700;
-  box-shadow: 0 8px 25px rgba(10, 18, 15, 0.6);
+  box-shadow: 0 8px 25px rgba(36, 30, 26, 0.6);
   z-index: 99999;
   animation: fadeIn 0.3s ease-out;
 }
@@ -36,13 +36,13 @@
 }
 
 .deal-product-card {
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   border-radius: var(--radius-lg);
   padding: 14px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
   box-sizing: border-box;
   position: relative;
@@ -51,9 +51,9 @@
 
 .deal-product-card:hover {
   transform: translateY(-5px);
-  border-color: var(--ameza-primary, #A96855);
-  box-shadow: var(--shadow-md);
-  background: var(--ameza-card-hover, #4B6056);
+  border-color: var(--ameza-primary, #A96F45);
+  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
+  background: var(--ameza-card-hover, #F4EFE7);
 }
 
 /* ── Top Badges & Actions ────────────────────────── */
@@ -66,8 +66,8 @@
 }
 
 .deal-card-discount-badge {
-  background: var(--ameza-primary, #A96855);
-  color: var(--ameza-white, #F2EEE7);
+  background: var(--ameza-primary, #A96F45);
+  color: var(--ameza-white, #FFFFFF);
   font-family: var(--font-body);
   font-size: 10px;
   font-weight: 800;
@@ -80,9 +80,9 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgba(30, 40, 36, 0.90);
+  background: rgba(36, 30, 26, 0.90);
   border: 1px solid rgba(98, 113, 105, 0.6);
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,8 +93,8 @@
 
 .deal-card-wishlist-btn:hover,
 .deal-card-wishlist-btn.active {
-  background: var(--ameza-primary, #A96855);
-  border-color: var(--ameza-primary-hover, #BD7863);
+  background: var(--ameza-primary, #A96F45);
+  border-color: var(--ameza-primary-hover, #BE8459);
   color: #FFFFFF;
   transform: scale(1.1);
 }
@@ -108,9 +108,9 @@
 .deal-card-img-box {
   width: 100%;
   aspect-ratio: 1 / 0.95;
-  background: var(--ameza-section, #34423B);
+  background: var(--ameza-section, #E7E0D5);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(98, 113, 105, 0.45);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   overflow: hidden;
   padding: 10px;
   display: flex;
@@ -146,7 +146,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   margin: 0 0 6px 0;
   line-height: 1.35;
   height: 36px;
@@ -158,7 +158,7 @@
 }
 
 .deal-card-title-link:hover .deal-card-title {
-  color: var(--ameza-primary-hover, #BD7863);
+  color: var(--ameza-primary-hover, #BE8459);
 }
 
 /* ── Rating ──────────────────────────────────────── */
@@ -177,12 +177,12 @@
 }
 
 .deal-card-rating strong {
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   font-weight: 600;
 }
 
 .deal-card-rating .review-count {
-  color: var(--ameza-text-muted, #A7ADA5);
+  color: var(--ameza-text-muted, #958A80);
   font-size: 10.5px;
 }
 
@@ -198,7 +198,7 @@
 .deal-card-old-price {
   font-family: var(--font-body);
   font-size: 11.5px;
-  color: var(--ameza-text-muted, #A7ADA5);
+  color: var(--ameza-text-muted, #958A80);
   text-decoration: line-through;
 }
 
@@ -206,7 +206,7 @@
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
 }
 
 /* ── Add to Cart CTA ─────────────────────────────── */
@@ -214,8 +214,8 @@
   width: 100%;
   height: 40px;
   border-radius: var(--radius-pill);
-  background: var(--ameza-primary, #A96855);
-  color: var(--ameza-white, #F2EEE7) !important;
+  background: var(--ameza-primary, #A96F45);
+  color: var(--ameza-white, #FFFFFF) !important;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 700;
@@ -227,15 +227,15 @@
   gap: 6px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(169, 104, 85, 0.25);
+  box-shadow: 0 4px 14px rgba(169, 111, 69, 0.25);
   transition: all var(--transition-fast);
 }
 
 .deal-card-cart-btn:hover {
-  background: var(--ameza-primary-hover, #BD7863);
+  background: var(--ameza-primary-hover, #BE8459);
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(169, 104, 85, 0.35);
+  box-shadow: 0 6px 20px rgba(169, 111, 69, 0.35);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */

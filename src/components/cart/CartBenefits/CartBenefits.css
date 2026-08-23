@@ -9,23 +9,23 @@
 }
 
 .cart-benefit {
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   border-radius: var(--radius-lg);
   padding: 24px;
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
   transition: all var(--transition);
   box-sizing: border-box;
 }
 
 .cart-benefit:hover {
   transform: translateY(-4px);
-  background: var(--ameza-card-hover, #4B6056);
-  border-color: var(--ameza-primary, #A96855);
-  box-shadow: var(--shadow-md);
+  background: var(--ameza-card-hover, #F4EFE7);
+  border-color: var(--ameza-primary, #A96F45);
+  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
 }
 
 .cart-benefit span {
@@ -39,14 +39,14 @@
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   margin-bottom: 4px;
 }
 
 .cart-benefit p {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   line-height: 1.5;
   margin: 0;
 }

@@ -5,7 +5,7 @@
 .page-loader-screen {
   position: fixed;
   inset: 0;
-  background: var(--ameza-bg, #26332E);
+  background: var(--ameza-bg, #F3EFE7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,8 +19,8 @@
   height: 480px;
   background: radial-gradient(
     circle,
-    rgba(169, 104, 85, 0.2) 0%,
-    rgba(52, 66, 59, 0.3) 45%,
+    rgba(169, 111, 69, 0.15) 0%,
+    rgba(231, 224, 213, 0.5) 45%,
     transparent 70%
   );
   border-radius: 50%;
@@ -58,16 +58,16 @@
 
 .page-loader-ring.ring-outer {
   inset: 0;
-  border-top-color: var(--ameza-primary, #A96855);
-  border-bottom-color: rgba(169, 104, 85, 0.2);
+  border-top-color: var(--ameza-primary, #A96F45);
+  border-bottom-color: rgba(169, 111, 69, 0.2);
   border-right-color: var(--ameza-accent, #D7B8A8);
   animation: pageSpinClockwise 2s linear infinite;
 }
 
 .page-loader-ring.ring-inner {
   inset: 12px;
-  border-left-color: var(--ameza-primary-hover, #BD7863);
-  border-right-color: rgba(169, 104, 85, 0.15);
+  border-left-color: var(--ameza-primary-hover, #BE8459);
+  border-right-color: rgba(169, 111, 69, 0.15);
   animation: pageSpinCounterClockwise 1.5s linear infinite;
 }
 
@@ -89,7 +89,7 @@
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   margin-top: 4px;
 }
 
@@ -97,7 +97,7 @@
 .page-loader-progress-track {
   width: 210px;
   height: 3px;
-  background: rgba(169, 104, 85, 0.15);
+  background: rgba(169, 111, 69, 0.15);
   border-radius: var(--radius-pill, 999px);
   overflow: hidden;
   position: relative;
@@ -107,7 +107,7 @@
 .page-loader-progress-bar {
   width: 40%;
   height: 100%;
-  background: var(--ameza-primary, #A96855);
+  background: var(--ameza-primary, #A96F45);
   border-radius: var(--radius-pill, 999px);
   position: absolute;
   animation: pageProgressIndeterminate 1.8s ease-in-out infinite;
@@ -118,7 +118,7 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.14em;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   text-transform: uppercase;
   margin: 0;
   opacity: 0.85;

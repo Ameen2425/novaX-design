@@ -1,18 +1,22 @@
 /* =========================================================
-   AMEZA — CART PAGE (SAGE + TERRACOTTA)
+   AMEZA — CART PAGE (EDITORIAL LUXURY)
    ========================================================= */
 
 .cart-page {
   min-height: 100vh;
-  background: var(--ameza-bg);
-  padding: calc(62px + 40px) 5% 100px;
-  color: var(--ameza-text);
+  background-color: var(--ameza-bg, #F3EFE7);
+  padding-top: calc(62px + 24px);
+  padding-bottom: 48px;
+  padding-left: clamp(16px, 4vw, 40px);
+  padding-right: clamp(16px, 4vw, 40px);
+  color: var(--ameza-text, #241E1A);
   box-sizing: border-box;
+  width: 100%;
 }
 
 .cart-container {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: var(--container-max-width, 1500px);
+  margin: 0 auto 64px;
 }
 
 .empty-cart {

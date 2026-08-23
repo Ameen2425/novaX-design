@@ -26,8 +26,8 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 3.5px solid var(--ameza-border, #627169);
-  border-top-color: var(--ameza-primary, #A96855);
+  border: 3.5px solid var(--ameza-border, #D8CFC3);
+  border-top-color: var(--ameza-primary, #A96F45);
   border-right-color: var(--ameza-accent, #D7B8A8);
   animation: spin 0.75s linear infinite;
 }

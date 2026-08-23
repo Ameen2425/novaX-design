@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ameza-section, #34423B);
+  background: var(--ameza-section, #E7E0D5);
 }
 
 .lazy-image-skeleton {
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background: var(--ameza-section, #34423B);
+  background: var(--ameza-section, #E7E0D5);
   overflow: hidden;
 }
 
@@ -29,9 +29,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(52, 66, 59, 0.8) 0%,
-    rgba(75, 96, 86, 0.6) 50%,
-    rgba(52, 66, 59, 0.8) 100%
+    rgba(216, 207, 195, 0.5) 0%,
+    rgba(243, 239, 231, 0.8) 50%,
+    rgba(216, 207, 195, 0.5) 100%
   );
   background-size: 600px 100%;
   animation: lazyImageShimmer 1.8s infinite linear;
@@ -70,8 +70,8 @@
   gap: 8px;
   width: 100%;
   height: 100%;
-  background: var(--ameza-card, #3F5148);
-  color: var(--ameza-primary, #A96855);
+  background: var(--ameza-card, #FCFAF6);
+  color: var(--ameza-primary, #A96F45);
   padding: 16px;
 }
 

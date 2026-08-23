@@ -22,35 +22,35 @@
   min-width: 250px;
   height: 54px;
   min-height: 52px;
-  background: var(--ameza-section, #34423B);
-  border: 1px solid var(--ameza-border, #627169);
+  background: var(--ameza-section, #E7E0D5);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
   box-sizing: border-box;
 }
 
 .products-search-wrapper:hover {
-  border-color: var(--ameza-primary, #A96855);
+  border-color: var(--ameza-primary, #A96F45);
 }
 
 .products-search-wrapper:focus-within {
-  border-color: var(--ameza-primary, #A96855);
-  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20);
+  border-color: var(--ameza-primary, #A96F45);
+  box-shadow: 0 0 0 3px rgba(169, 111, 69, 0.20);
   transform: translateY(-1px);
 }
 
 .products-search-icon {
   position: absolute;
   left: 20px;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   pointer-events: none;
   transition: color var(--transition-fast), transform var(--transition-fast);
   flex-shrink: 0;
 }
 
 .products-search-wrapper:focus-within .products-search-icon {
-  color: var(--ameza-primary-hover, #BD7863);
+  color: var(--ameza-primary-hover, #BE8459);
   transform: scale(1.1);
 }
 
@@ -66,12 +66,12 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 500;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   box-sizing: border-box;
 }
 
 .products-search-input::placeholder {
-  color: var(--ameza-text-muted, #A7ADA5);
+  color: var(--ameza-text-muted, #958A80);
   font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: 0.05em;
@@ -83,9 +83,9 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(169, 104, 85, 0.15);
-  border: 1px solid rgba(169, 104, 85, 0.3);
-  color: var(--ameza-primary, #A96855);
+  background: rgba(169, 111, 69, 0.15);
+  border: 1px solid rgba(169, 111, 69, 0.3);
+  color: var(--ameza-primary, #A96F45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,7 +96,7 @@
 }
 
 .products-search-clear:hover {
-  background: var(--ameza-primary, #A96855);
+  background: var(--ameza-primary, #A96F45);
   color: #FFFFFF;
   transform: scale(1.1);
 }
@@ -106,16 +106,16 @@
 .products-category-select {
   height: 50px;
   padding: 0 42px 0 22px;
-  background: var(--ameza-section, #34423B);
-  border: 1px solid var(--ameza-border, #627169);
+  background: var(--ameza-section, #E7E0D5);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   outline: none;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
   cursor: pointer;
   transition: all var(--transition-fast);
   box-sizing: border-box;
@@ -130,14 +130,14 @@
 .products-filter select:hover,
 .products-category-select:focus,
 .products-category-select:hover {
-  border-color: var(--ameza-primary, #A96855);
-  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20);
+  border-color: var(--ameza-primary, #A96F45);
+  box-shadow: 0 0 0 3px rgba(169, 111, 69, 0.20);
 }
 
 .products-filter select option,
 .products-category-select option {
-  background: var(--ameza-card, #3F5148);
-  color: var(--ameza-text, #F2EEE7);
+  background: var(--ameza-card, #FCFAF6);
+  color: var(--ameza-text, #241E1A);
   padding: 12px;
 }
 

@@ -1,20 +1,21 @@
 /* =========================================================
-   AMEZA — DEALS PAGE (SAGE + TERRACOTTA)
+   AMEZA — DEALS PAGE (THE PRIVATE EDIT)
    ========================================================= */
 
 .deals-page {
   min-height: 100vh;
-  background-color: var(--ameza-bg);
-  color: var(--ameza-text);
-  padding-top: calc(62px + 16px);
-  padding-bottom: 32px;
+  background-color: var(--ameza-bg, #F3EFE7);
+  color: var(--ameza-text, #241E1A);
+  padding-top: calc(62px + 24px);
+  padding-bottom: 48px;
   overflow-x: hidden;
   box-sizing: border-box;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .deals-page {
-    padding-top: 76px;
-    padding-bottom: 16px;
+    padding-top: 80px;
+    padding-bottom: 24px;
   }
 }

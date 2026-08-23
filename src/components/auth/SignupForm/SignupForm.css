@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — SIGNUP FORM (SAGE + TERRACOTTA)
+   AMEZA — SIGNUP FORM (EDITORIAL LUXURY ON WHITE & CASHMERE)
    ========================================================= */
 
 .signup-form-wrapper {
@@ -16,7 +16,7 @@
   font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   text-decoration: none;
   margin-bottom: 16px;
   transition: color var(--transition-fast), transform var(--transition-fast);
@@ -24,36 +24,36 @@
 }
 
 .signup-back-link:hover {
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   transform: translateX(-3px);
 }
 
 .signup-form-card {
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
-  border-radius: 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  border-radius: var(--radius-xl, 20px);
   padding: clamp(28px, 3.5vw, 36px) clamp(24px, 3vw, 36px);
-  box-shadow: 0 25px 60px rgba(10, 18, 15, 0.28);
+  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.07);
   box-sizing: border-box;
 }
 
 .signup-form-label {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   display: block;
   margin-bottom: 8px;
 }
 
 .signup-form-title {
   font-family: var(--font-display);
-  font-size: clamp(26px, 2.5vw, 30px);
-  font-weight: 600;
-  color: var(--ameza-text, #F2EEE7);
-  letter-spacing: -0.02em;
+  font-size: clamp(24px, 2.5vw, 28px);
+  font-weight: 500;
+  color: var(--ameza-text, #241E1A);
+  letter-spacing: -0.025em;
   margin: 0 0 8px 0;
   line-height: 1.15;
 }
@@ -61,7 +61,7 @@
 .signup-subtitle {
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   line-height: 1.5;
   margin: 0 0 20px 0;
 }
@@ -76,8 +76,8 @@
 .signup-form-group label {
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 700;
-  color: var(--ameza-text, #F2EEE7);
+  font-weight: 600;
+  color: var(--ameza-text, #241E1A);
   letter-spacing: 0.01em;
 }
 
@@ -90,12 +90,12 @@
   width: 100%;
   height: 48px;
   padding: 0 16px;
-  background: var(--ameza-section, #34423B);
-  border: 1px solid var(--ameza-border, #627169);
-  border-radius: 12px;
+  background: #F6F3ED;
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  border-radius: 10px;
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
   box-sizing: border-box;
@@ -104,13 +104,13 @@
 .signup-form-group input::placeholder {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-muted, #A7ADA5);
+  color: var(--ameza-text-muted, #958A80);
 }
 
 .signup-form-group input:focus {
-  border-color: var(--ameza-primary, #A96855);
-  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20);
-  background: #303E37;
+  border-color: var(--ameza-primary, #A96F45);
+  box-shadow: 0 0 0 3px rgba(169, 111, 69, 0.15);
+  background: #FFFFFF;
 }
 
 /* Password Toggle */
@@ -129,15 +129,15 @@
   justify-content: center;
   background: transparent;
   border: none;
-  color: var(--ameza-text-muted, #A7ADA5);
+  color: var(--ameza-text-muted, #958A80);
   cursor: pointer;
   padding: 0;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 10px 10px 0;
   transition: color var(--transition-fast);
 }
 
 .signup-form-group .pwd-toggle-btn:hover {
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
 }
 
 /* Terms Checkbox */
@@ -161,13 +161,13 @@
 .signup-terms input[type="checkbox"] {
   width: 17px;
   height: 17px;
-  accent-color: var(--ameza-primary, #A96855);
+  accent-color: var(--ameza-primary, #A96F45);
   cursor: pointer;
   border-radius: 4px;
 }
 
 .signup-terms .checkbox-label {
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   line-height: 1.4;
 }
 
@@ -175,8 +175,8 @@
 .signup-primary-btn {
   width: 100%;
   height: 50px;
-  background: var(--ameza-primary, #A96855);
-  color: var(--ameza-white, #F2EEE7) !important;
+  background: var(--ameza-primary, #A96F45);
+  color: var(--ameza-white, #FFFFFF) !important;
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 700;
@@ -185,7 +185,7 @@
   border-radius: var(--radius-pill, 999px);
   border: none;
   cursor: pointer;
-  box-shadow: 0 8px 22px rgba(169, 104, 85, 0.25);
+  box-shadow: 0 8px 22px rgba(169, 111, 69, 0.25);
   transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
   margin-bottom: 18px;
   display: flex;
@@ -195,9 +195,9 @@
 }
 
 .signup-primary-btn:hover {
-  background: var(--ameza-primary-hover, #BD7863);
+  background: var(--ameza-primary-hover, #BE8459);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(169, 104, 85, 0.35);
+  box-shadow: 0 10px 24px rgba(169, 111, 69, 0.35);
 }
 
 .signup-primary-btn:hover .btn-arrow {
@@ -208,7 +208,7 @@
 .signup-login-text {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   text-align: center;
   margin: 0;
   display: flex;
@@ -218,14 +218,14 @@
 }
 
 .signup-login-link {
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   font-weight: 700;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .signup-login-link:hover {
-  color: var(--ameza-primary-hover, #BD7863);
+  color: var(--ameza-primary-hover, #BE8459);
   text-decoration: underline;
 }
 

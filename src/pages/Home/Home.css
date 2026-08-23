@@ -1,22 +1,22 @@
 /* =========================================================
-   AMEZA — HOME PAGE (SAGE + TERRACOTTA)
+   AMEZA — HOME PAGE (EDITORIAL LUXURY)
    ========================================================= */
 
 .home-page {
   min-height: 100vh;
-  background-color: var(--ameza-bg, #26332E);
-  padding-top: calc(64px + 24px);
-  padding-bottom: 60px;
+  background-color: var(--ameza-bg, #F3EFE7);
+  padding-top: calc(62px + 24px);
+  padding-bottom: 48px;
   overflow-x: hidden;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   box-sizing: border-box;
   width: 100%;
 }
 
 /* ── Common Home Section Wrappers ─────────────────── */
 .home-section-container {
-  max-width: var(--container-max-width, 1400px);
-  margin: 0 auto var(--space-section-desktop, 80px);
+  max-width: var(--container-max-width, 1500px);
+  margin: 0 auto 64px;
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
   scroll-margin-top: 100px;
@@ -41,10 +41,10 @@
 .home-section-tag {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   display: block;
   margin-bottom: 8px;
 }
@@ -54,7 +54,7 @@
   font-size: clamp(28px, 3.8vw, 44px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   line-height: 1.15;
   margin: 0 0 6px 0;
 }
@@ -62,7 +62,7 @@
 .home-section-header p {
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   max-width: 560px;
   margin: 0;
   line-height: 1.65;
@@ -72,7 +72,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -82,7 +82,7 @@
 }
 
 .home-see-all-link:hover {
-  color: var(--ameza-primary-hover, #BD7863);
+  color: var(--ameza-primary-hover, #BE8459);
   transform: translateX(4px);
 }
 

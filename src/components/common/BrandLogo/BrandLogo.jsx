@@ -18,23 +18,22 @@ const BrandLogo = ({ variant = "full", light = false, className = "", height, st
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect width="100" height="100" rx="24" fill={light ? "#FFFFFF" : "#1F1A17"} />
+          <rect width="100" height="100" rx="22" fill={light ? "#FCFAF6" : "#241E1A"} />
           <rect
             x="2"
             y="2"
             width="96"
             height="96"
-            rx="22"
-            stroke={light ? "#E0D9CE" : "#B87F4E"}
-            strokeOpacity="0.4"
-            strokeWidth="3"
+            rx="20"
+            stroke={light ? "#D8CFC3" : "rgba(255,255,255,0.15)"}
+            strokeWidth="2"
           />
           {/* Main Apex A Structure */}
-          <path d="M50 16 L77 78 H62 L50 49 L38 78 H23 L50 16Z" fill={light ? "#1F1A17" : "#FFFFFF"} />
+          <path d="M50 18 L76 76 H62 L50 49 L38 76 H24 L50 18Z" fill={light ? "#241E1A" : "#FCFAF6"} />
           {/* Negative Space */}
-          <path d="M50 35 L61 61 H39 L50 35Z" fill={light ? "#FFFFFF" : "#1F1A17"} />
-          {/* Dynamic Royal Cognac Bronze Accent */}
-          <path d="M33 64 L50 47 L67 64 L59 64 L50 55 L41 64 H33Z" fill="#B87F4E" />
+          <path d="M50 36 L60 60 H40 L50 36Z" fill={light ? "#FCFAF6" : "#241E1A"} />
+          {/* Dynamic Muted Cognac Accent */}
+          <path d="M33 63 L50 47 L67 63 L59 63 L50 55 L41 63 H33Z" fill="#A96F45" />
         </svg>
       </div>
 

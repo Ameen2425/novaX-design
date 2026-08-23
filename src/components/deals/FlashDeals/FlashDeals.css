@@ -4,14 +4,14 @@
 
 .flash-deals-section {
   width: 100%;
-  max-width: 1400px;
-  margin: 28px auto 0;
-  padding: 0 18px;
+  max-width: var(--container-max-width, 1500px);
+  margin: 0 auto 64px;
+  padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
 .flash-icon {
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
 }
 
 /* ── 4 Compact Cards in a Row ────────────────────── */
@@ -22,14 +22,14 @@
 }
 
 .flash-deal-card {
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   border-radius: var(--radius-md);
   padding: 12px;
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
   transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
   box-sizing: border-box;
   cursor: pointer;
@@ -37,17 +37,17 @@
 
 .flash-deal-card:hover {
   transform: translateY(-4px);
-  border-color: var(--ameza-primary, #A96855);
-  background: var(--ameza-card-hover, #4B6056);
-  box-shadow: var(--shadow-md);
+  border-color: var(--ameza-primary, #A96F45);
+  background: var(--ameza-card-hover, #F4EFE7);
+  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
 }
 
 .flash-deal-img-box {
   width: 72px;
   height: 72px;
-  background: var(--ameza-section, #34423B);
+  background: var(--ameza-section, #E7E0D5);
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(98, 113, 105, 0.45);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -62,9 +62,9 @@
   position: absolute;
   top: 3px;
   left: 3px;
-  background: rgba(169, 104, 85, 0.15);
-  color: var(--ameza-primary, #A96855);
-  border: 1px solid var(--ameza-primary, #A96855);
+  background: rgba(169, 111, 69, 0.15);
+  color: var(--ameza-primary, #A96F45);
+  border: 1px solid var(--ameza-primary, #A96F45);
   font-family: var(--font-body);
   font-size: 8.5px;
   font-weight: 800;
@@ -95,7 +95,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   margin: 0 0 6px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -111,7 +111,7 @@
 .flash-old-price {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-muted, #A7ADA5);
+  color: var(--ameza-text-muted, #958A80);
   text-decoration: line-through;
 }
 
@@ -119,7 +119,7 @@
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 700;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */

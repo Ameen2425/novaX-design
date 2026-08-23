@@ -15,10 +15,10 @@
 .single-details-heading span {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   display: block;
   margin-bottom: 8px;
 }
@@ -28,14 +28,14 @@
   font-size: clamp(26px, 3.2vw, 38px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   margin: 0 0 8px 0;
 }
 
 .single-details-heading p {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   max-width: 520px;
   margin: 0 auto;
 }
@@ -47,36 +47,36 @@
 }
 
 .single-details-grid > div {
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
   border-radius: var(--radius-lg);
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
   transition: transform var(--transition), border-color var(--transition), background var(--transition);
   box-sizing: border-box;
 }
 
 .single-details-grid > div:hover {
   transform: translateY(-5px);
-  border-color: var(--ameza-primary, #A96855);
-  background: var(--ameza-card-hover, #4B6056);
-  box-shadow: var(--shadow-md);
+  border-color: var(--ameza-primary, #A96F45);
+  background: var(--ameza-card-hover, #F4EFE7);
+  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
 }
 
 .single-details-grid > div span {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ameza-primary, #A96855);
-  color: var(--ameza-white, #F2EEE7);
+  background: var(--ameza-primary, #A96F45);
+  color: var(--ameza-white, #FFFFFF);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 14px;
 }
 
@@ -85,7 +85,7 @@
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   margin-bottom: 6px;
 }
 
@@ -93,7 +93,7 @@
   font-family: var(--font-body);
   font-size: 12.5px;
   line-height: 1.5;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   margin: 0;
 }
 

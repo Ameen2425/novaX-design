@@ -34,30 +34,29 @@ const HomeHero = () => {
           variants={staggerContainer}
         >
           <motion.span className="espresso-hero-label" variants={fadeInUp}>
-            WELCOME TO AMEZA
+            CURATED FOR THE MODERN LIFESTYLE
           </motion.span>
 
           <motion.h1 className="espresso-hero-title" variants={fadeInUp}>
-            Your next favorite
+            Everything Worth
             <br />
-            <span>product is waiting.</span>
+            <span>Discovering.</span>
           </motion.h1>
 
           <motion.p className="espresso-hero-description" variants={fadeInUp}>
-            Explore our carefully selected catalog and discover everyday luxury
-            made just for you.
+            A curated collection of products designed around modern everyday living.
           </motion.p>
 
           <motion.div className="espresso-hero-actions" variants={fadeInUp}>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link to="/products" className="btn-hero-copper">
-                SHOP AMEZA <span>→</span>
+                SHOP COLLECTION <span>→</span>
               </Link>
             </motion.div>
 
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Link to="/about" className="btn-hero-outline">
-                EXPLORE STORY
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link to="/products" className="btn-hero-editorial-link">
+                Explore the edit →
               </Link>
             </motion.div>
           </motion.div>

@@ -1,9 +1,9 @@
 /* =========================================================
-   AMEZA — BENEFITS & EXPERIENCE (SAGE + TERRACOTTA)
+   AMEZA — BENEFITS & EXPERIENCE (EDITORIAL RESTRAINED LUXURY)
    ========================================================= */
 
 .home-benefits-section {
-  max-width: var(--container-max-width, 1400px);
+  max-width: var(--container-max-width, 1500px);
   margin: 0 auto var(--space-section-desktop, 80px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
@@ -13,41 +13,42 @@
 .home-benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
 .benefit-card {
   display: flex;
   flex-direction: column;
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
-  border-radius: var(--radius-lg);
-  padding: 26px 22px;
-  box-shadow: var(--shadow-sm);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  border-radius: var(--radius-card, 14px);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-card, 0 8px 25px rgba(36, 30, 26, 0.06));
   transition: transform var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
   box-sizing: border-box;
   height: 100%;
 }
 
 .benefit-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--ameza-primary, #A96855);
-  background: var(--ameza-card-hover, #4B6056);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: rgba(169, 111, 69, 0.30);
+  background: var(--ameza-card-hover, #F4EFE7);
+  box-shadow: var(--shadow-card-hover, 0 15px 35px rgba(36, 30, 26, 0.10));
 }
 
 .benefit-num {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--ameza-primary, #A96855);
-  color: var(--ameza-white, #F2EEE7);
+  background: rgba(169, 111, 69, 0.10);
+  color: var(--ameza-primary, #A96F45);
+  border: 1px solid rgba(169, 111, 69, 0.25);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 16px;
   flex-shrink: 0;
 }
@@ -55,24 +56,24 @@
 .benefit-card h3 {
   font-family: var(--font-display);
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   margin-bottom: 6px;
 }
 
 .benefit-card p {
   font-family: var(--font-body);
   font-size: 13px;
-  line-height: 1.55;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  line-height: 1.6;
+  color: var(--ameza-text-secondary, #625850);
   margin: 0;
 }
 
 /* ── EXPERIENCE SECTION ──────────────────────────── */
 .home-experience {
-  max-width: 1320px;
-  margin: 0 auto 56px;
+  max-width: var(--container-max-width, 1500px);
+  margin: 0 auto 64px;
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
   display: grid;
@@ -83,19 +84,19 @@
 
 .home-experience-content h2 {
   font-family: var(--font-display);
-  font-size: clamp(30px, 3.5vw, 44px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ameza-text, #F2EEE7);
-  line-height: 1.15;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--ameza-text, #241E1A);
+  line-height: 1.1;
   margin: 0 0 16px;
 }
 
 .home-experience-content p {
   font-family: var(--font-body);
   font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  line-height: 1.65;
+  color: var(--ameza-text-secondary, #625850);
   margin: 0 0 28px;
 }
 
@@ -106,37 +107,37 @@
 }
 
 .experience-step-card {
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid rgba(98, 113, 105, 0.45);
-  border-radius: var(--radius-lg);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  border-radius: var(--radius-card, 14px);
   padding: 22px 24px;
   display: flex;
   align-items: flex-start;
   gap: 18px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card, 0 8px 25px rgba(36, 30, 26, 0.06));
   transition: transform var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
   box-sizing: border-box;
 }
 
 .experience-step-card:hover {
   transform: translateY(-4px);
-  border-color: var(--ameza-primary, #A96855);
-  background: var(--ameza-card-hover, #4B6056);
-  box-shadow: var(--shadow-md);
+  border-color: rgba(169, 111, 69, 0.30);
+  background: var(--ameza-card-hover, #F4EFE7);
+  box-shadow: var(--shadow-card-hover, 0 15px 35px rgba(36, 30, 26, 0.10));
 }
 
 .step-num {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: var(--ameza-primary, #A96855);
+  background: var(--ameza-primary, #A96F45);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--ameza-white, #F2EEE7);
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
   flex-shrink: 0;
 }
 
@@ -145,14 +146,14 @@
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text, #F2EEE7);
+  color: var(--ameza-text, #241E1A);
   margin-bottom: 4px;
 }
 
 .experience-step-card p {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   line-height: 1.5;
   margin: 0;
 }

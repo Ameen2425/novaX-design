@@ -1,12 +1,15 @@
 /* =========================================================
-   AMEZA — PRODUCTS PAGE (SAGE + TERRACOTTA)
+   AMEZA — PRODUCTS PAGE (EDITORIAL CATALOG)
    ========================================================= */
 
 .products-page {
   min-height: 100vh;
-  background-color: var(--ameza-bg, #26332E);
-  padding: calc(62px + 36px) clamp(16px, 4vw, 48px) 100px;
-  max-width: 1400px;
+  background-color: var(--ameza-bg, #F3EFE7);
+  padding-top: calc(62px + 24px);
+  padding-bottom: 48px;
+  padding-left: clamp(16px, 4vw, 40px);
+  padding-right: clamp(16px, 4vw, 40px);
+  max-width: var(--container-max-width, 1500px);
   margin: 0 auto;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -22,29 +25,30 @@
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary, #A96F45);
   margin-bottom: 8px;
   display: block;
 }
 
 .products-header h1 {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 54px);
-  font-weight: 600;
-  color: var(--ameza-text, #F2EEE7);
+  font-size: clamp(30px, 4.2vw, 50px);
+  font-weight: 500;
+  color: var(--ameza-text, #241E1A);
   margin: 0 0 12px 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 .products-header p {
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   max-width: 540px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .products-container {
@@ -63,9 +67,9 @@
 .products-empty {
   text-align: center;
   padding: 60px 20px;
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid var(--ameza-border, #627169);
-  border-radius: var(--radius-xl);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  border-radius: var(--radius-xl, 20px);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -73,38 +77,40 @@
 .products-empty h2 {
   font-family: var(--font-display);
   font-size: 24px;
-  color: var(--ameza-text, #F2EEE7);
+  font-weight: 500;
+  color: var(--ameza-text, #241E1A);
   margin-bottom: 10px;
 }
 
 .products-empty p {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-text-secondary, #D4D3CC);
+  color: var(--ameza-text-secondary, #625850);
   margin-bottom: 20px;
 }
 
 .products-empty button {
   height: 44px;
-  padding: 0 24px;
-  background: var(--ameza-primary, #A96855);
-  color: var(--ameza-white, #F2EEE7);
+  padding: 0 26px;
+  background: var(--ameza-primary, #A96F45);
+  color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  border: none;
+  border: 1px solid var(--ameza-primary, #A96F45);
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(169, 104, 85, 0.25);
+  box-shadow: 0 4px 14px rgba(169, 111, 69, 0.20);
   transition: all var(--transition-fast);
 }
 
 .products-empty button:hover {
-  background: var(--ameza-primary-hover, #BD7863);
+  background: var(--ameza-primary-hover, #BE8459);
+  border-color: var(--ameza-primary-hover, #BE8459);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(169, 104, 85, 0.35);
+  box-shadow: 0 6px 18px rgba(169, 111, 69, 0.30);
 }
 
 /* ── PAGINATION CONTROLS ─────────────────────────── */
@@ -118,15 +124,15 @@
 }
 
 .pagination button {
-  height: 44px;
-  min-width: 44px;
+  height: 42px;
+  min-width: 42px;
   padding: 0 16px;
   border-radius: var(--radius-pill);
-  background: var(--ameza-card, #3F5148);
-  border: 1px solid var(--ameza-border, #627169);
-  color: var(--ameza-text, #F2EEE7);
+  background: var(--ameza-card, #FCFAF6);
+  border: 1px solid var(--ameza-border, #D8CFC3);
+  color: var(--ameza-text, #241E1A);
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -136,17 +142,15 @@
 }
 
 .pagination button:hover {
-  background: var(--ameza-card-hover, #4B6056);
-  border-color: var(--ameza-primary, #A96855);
-  color: var(--ameza-primary-hover, #BD7863);
+  background: var(--ameza-card-hover, #F4EFE7);
+  border-color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-primary, #A96F45);
 }
 
 .pagination button.active {
-  background: var(--ameza-primary, #A96855);
-  border-color: var(--ameza-primary-hover, #BD7863);
-  color: var(--ameza-white, #F2EEE7);
-  font-weight: 800;
-  box-shadow: 0 4px 14px rgba(169, 104, 85, 0.35);
+  background: var(--ameza-primary, #A96F45);
+  border-color: var(--ameza-primary, #A96F45);
+  color: #FFFFFF;
 }
 
 /* ── RESPONSIVE BREAKPOINTS ───────────────────────── */
@@ -165,10 +169,10 @@
 
 @media (max-width: 640px) {
   .products-page {
-    padding-top: 76px;
+    padding-top: 80px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 90px;
+    padding-bottom: 24px;
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);

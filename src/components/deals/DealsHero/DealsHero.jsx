@@ -16,25 +16,25 @@ const DealsHero = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="deals-hero-eyebrow">
-            AMEZA / SPECIAL OFFERS
+            THE PRIVATE EDIT
           </span>
 
           <h1 className="deals-hero-heading">
-            Exclusive deals.
+            Curated Privileges.
             <br />
-            <span className="copper-accent">Exceptional</span> value.
+            <span className="copper-accent">Seasonal</span> Collection.
           </h1>
 
           <p className="deals-hero-description">
-            Discover limited-time offers and curated products at exclusive AMEZA prices.
+            An exclusive edit of exceptional pieces at privileged seasonal pricing.
           </p>
 
           <div className="deals-hero-actions">
             <a href="#todays-deals" className="btn-deals-primary">
-              SHOP DEALS <span>→</span>
+              EXPLORE THE EDIT <span>→</span>
             </a>
             <Link to="/products" className="btn-deals-secondary">
-              VIEW ALL PRODUCTS
+              ALL COLLECTIONS
             </Link>
           </div>
         </motion.div>
