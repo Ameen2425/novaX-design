@@ -3,10 +3,24 @@ import { Link } from "react-router-dom";
 import LazyImage from "../../common/LazyImage/LazyImage";
 import "./ProductCard.css";
 
+const getCategoryFamily = (cat) => {
+  const c = (cat || "").toLowerCase();
+  if (c.includes("smart") || c.includes("laptop") || c.includes("mobile") || c.includes("tech") || c.includes("watch") || c.includes("tablet") || c.includes("electronic")) return "electronics";
+  if (c.includes("beauty") || c.includes("skin") || c.includes("fragrance") || c.includes("cosmetic")) return "beauty";
+  if (c.includes("dress") || c.includes("shirt") || c.includes("women") || c.includes("men") || c.includes("cloth") || c.includes("fashion") || c.includes("bag") || c.includes("sunglass") || c.includes("jewel")) return "fashion";
+  if (c.includes("shoe") || c.includes("footwear") || c.includes("sport") || c.includes("sneaker")) return "footwear";
+  return "home";
+};
+
 const ProductCard = ({ id, title, description, price, image, category, rating }) => {
   const cardRef = useRef(null);
+  const catFamily = getCategoryFamily(category);
   const [transformStyle, setTransformStyle] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   const [sheenPos, setSheenPos] = useState({ x: 50, y: 50, opacity: 0 });
+  const [isWishlisted, setIsWishlisted] = useState(() => {
+    const list = JSON.parse(localStorage.getItem("ameza_wishlist")) || [];
+    return list.includes(id);
+  });
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -16,21 +30,37 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    // Calculate rotation angles (max tilt ~12deg)
-    const rotateY = ((mouseX / width) - 0.5) * 16;
-    const rotateX = ((0.5 - (mouseY / height))) * 16;
+    // Calculate rotation angles (max tilt ~10deg for subtle luxury)
+    const rotateY = ((mouseX / width) - 0.5) * 12;
+    const rotateX = ((0.5 - (mouseY / height))) * 12;
 
-    setTransformStyle(`perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.025, 1.025, 1.025)`);
+    setTransformStyle(`perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`);
     setSheenPos({
       x: (mouseX / width) * 100,
       y: (mouseY / height) * 100,
-      opacity: 0.45,
+      opacity: 0.4,
     });
   };
 
   const handleMouseLeave = () => {
     setTransformStyle("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
     setSheenPos({ x: 50, y: 50, opacity: 0 });
+  };
+
+  const handleWishlistToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const list = JSON.parse(localStorage.getItem("ameza_wishlist")) || [];
+    let updated;
+    if (list.includes(id)) {
+      updated = list.filter((item) => item !== id);
+      setIsWishlisted(false);
+    } else {
+      updated = [...list, id];
+      setIsWishlisted(true);
+    }
+    localStorage.setItem("ameza_wishlist", JSON.stringify(updated));
   };
 
   const handleAddToCart = (e) => {
@@ -54,14 +84,14 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${title} added to cart!`);
   };
 
   return (
     <div className="product-card-wrapper">
       <Link
         to={`/products/${id}`}
-        className="product-card"
+        className={`product-card card-${catFamily}`}
+        data-category={catFamily}
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -71,7 +101,7 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
         <div
           className="product-card-sheen"
           style={{
-            background: `radial-gradient(circle at ${sheenPos.x}% ${sheenPos.y}%, rgba(245, 230, 200, 0.35) 0%, rgba(213, 174, 95, 0.12) 35%, transparent 70%)`,
+            background: `radial-gradient(circle at ${sheenPos.x}% ${sheenPos.y}%, rgba(245, 230, 200, 0.3) 0%, rgba(213, 174, 95, 0.1) 40%, transparent 70%)`,
             opacity: sheenPos.opacity,
           }}
         />
@@ -84,19 +114,25 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
             alt={title}
           />
 
-          <span className="product-badge">
-            Popular
+          <span className={`product-badge badge-${catFamily}`}>
+            {category ? category.toUpperCase() : "AMEZA"}
           </span>
 
-          <span className="product-quick-label">
-            AMEZA Pick
-          </span>
+          <button
+            type="button"
+            className={`product-wishlist-btn ${isWishlisted ? "active" : ""}`}
+            onClick={handleWishlistToggle}
+            title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
+            aria-label="Wishlist"
+          >
+            {isWishlisted ? "♥" : "♡"}
+          </button>
         </div>
 
         {/* BODY CONTENT WITH 3D DEPTH */}
         <div className="product-card-body">
           <span className="product-category">
-            {category ? category.toUpperCase() : "AMEZA COLLECTION"}
+            {catFamily.toUpperCase()}
           </span>
 
           <h3 className="product-title">

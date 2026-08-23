@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  border: 1px solid var(--ameza-border-emerald);
   border-radius: var(--radius-lg);
   padding: 28px 22px;
   box-shadow: var(--shadow-sm);
@@ -32,25 +32,25 @@
 
 .about-value-card:hover {
   transform: translateY(-4px);
-  border-color: var(--ameza-gold);
+  border-color: var(--ameza-emerald);
   background: var(--ameza-card-hover);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 12px 30px rgba(12, 5, 8, 0.5), 0 0 20px var(--ameza-emerald-glow);
 }
 
 .about-value-num {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ameza-gold);
-  color: #1C1114;
+  background: linear-gradient(135deg, #5FA58D 0%, #2F8068 50%, #1B5B49 100%);
+  color: #FAF6F0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 16px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px var(--ameza-emerald-glow);
   flex-shrink: 0;
 }
 

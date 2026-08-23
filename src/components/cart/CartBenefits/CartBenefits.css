@@ -10,7 +10,7 @@
 
 .cart-benefit {
   background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  border: 1px solid var(--ameza-border-emerald);
   border-radius: var(--radius-lg);
   padding: 24px;
   display: flex;
@@ -24,8 +24,8 @@
 .cart-benefit:hover {
   transform: translateY(-4px);
   background: var(--ameza-card-hover);
-  border-color: var(--ameza-gold);
-  box-shadow: var(--shadow-md);
+  border-color: var(--ameza-emerald);
+  box-shadow: 0 10px 25px rgba(12, 5, 8, 0.5), 0 0 20px var(--ameza-emerald-glow);
 }
 
 .cart-benefit span {

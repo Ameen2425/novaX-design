@@ -19,31 +19,33 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2.2rem, 6vw, 5.5rem);
+  font-size: clamp(2.8rem, 6vw, 6rem);
   line-height: 1.02;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 h2 {
-  font-size: clamp(1.9rem, 4vw, 3.5rem);
-  line-height: 1.15;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  font-size: clamp(1.35rem, 2.4vw, 2.1rem);
   font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 h4 {
-  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
   font-weight: 600;
 }
 
 p {
   font-family: var(--font-body);
   font-weight: 400;
-  line-height: 1.65;
-  font-size: 15px;
+  line-height: 1.68;
+  font-size: clamp(15px, 1.1vw, 18px);
   color: var(--ameza-text-secondary);
 }
 
@@ -81,6 +83,65 @@ p {
   text-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
 }
 
+/* ── Semantic Category & Trust Badges ───────────────── */
+.badge-emerald,
+.tag-emerald {
+  background: var(--ameza-emerald-bg) !important;
+  color: var(--ameza-emerald-light) !important;
+  border: 1px solid var(--ameza-emerald-border) !important;
+  box-shadow: 0 2px 10px var(--ameza-emerald-glow);
+}
+
+.badge-sapphire,
+.tag-sapphire {
+  background: var(--ameza-sapphire-bg) !important;
+  color: var(--ameza-sapphire-light) !important;
+  border: 1px solid var(--ameza-sapphire-border) !important;
+  box-shadow: 0 2px 10px var(--ameza-sapphire-glow);
+}
+
+.badge-copper,
+.tag-copper {
+  background: var(--ameza-copper-bg) !important;
+  color: var(--ameza-copper-light) !important;
+  border: 1px solid var(--ameza-copper-border) !important;
+  box-shadow: 0 2px 10px var(--ameza-copper-glow);
+}
+
+.badge-gold,
+.tag-gold {
+  background: rgba(197, 160, 89, 0.12) !important;
+  color: var(--ameza-gold-bright) !important;
+  border: 1px solid var(--ameza-border-gold) !important;
+  box-shadow: 0 2px 10px var(--ameza-gold-glow);
+}
+
+/* ── Price Semantic Typography ──────────────────────── */
+.price-regular {
+  font-family: var(--font-display);
+  color: var(--ameza-text);
+  font-weight: 700;
+}
+
+.price-premium {
+  font-family: var(--font-display);
+  color: var(--ameza-gold);
+  font-weight: 700;
+  text-shadow: 0 0 12px var(--ameza-gold-glow);
+}
+
+.price-discount {
+  font-family: var(--font-body);
+  color: var(--ameza-copper);
+  font-weight: 800;
+}
+
+.price-original {
+  font-family: var(--font-body);
+  color: var(--ameza-text-muted);
+  text-decoration: line-through;
+}
+
 /* ── Mono / Tech Codes & Metadata ───────────────────── */
 .mono-label,
 .tech-label,
@@ -96,7 +157,7 @@ p {
   color: var(--ameza-gold) !important;
 }
 
-/* ── Global Primary Buttons (Luminous Liquid Gold) ──── */
+/* ── Global Primary Buttons (Luminous Liquid Gold & Velvet Crimson) ──── */
 .btn-terracotta,
 .home-primary-btn,
 .btn-hero-copper,
@@ -153,6 +214,103 @@ p {
   color: #0E0507 !important;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+}
+
+/* ── Contextual Primary CTA (Velvet Crimson / Ruby) ─── */
+.btn-crimson,
+.btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  min-height: 44px;
+  padding: 0 28px;
+  background: linear-gradient(135deg, #A83246 0%, #872436 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px var(--ameza-crimson-glow);
+  transition: all var(--transition);
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.btn-crimson:hover,
+.btn-primary-cta:hover {
+  background: linear-gradient(135deg, #BE5D6A 0%, #9E2D40 100%);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(168, 50, 70, 0.55);
+}
+
+/* ── Contextual Special Promotion Button (Copper) ──── */
+.btn-copper,
+.btn-promo-copper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  min-height: 44px;
+  padding: 0 28px;
+  background: var(--ameza-copper-gradient);
+  color: #FFFFFF !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ameza-copper-light);
+  box-shadow: 0 4px 20px var(--ameza-copper-glow);
+  transition: all var(--transition);
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.btn-copper:hover,
+.btn-promo-copper:hover {
+  background: var(--ameza-copper-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(184, 107, 92, 0.5);
+}
+
+/* ── Contextual Success Button (Emerald) ───────────── */
+.btn-emerald,
+.btn-success-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  min-height: 44px;
+  padding: 0 28px;
+  background: linear-gradient(135deg, #2F8068 0%, #1B5B49 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ameza-emerald-light);
+  box-shadow: 0 4px 20px var(--ameza-emerald-glow);
+  transition: all var(--transition);
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.btn-emerald:hover,
+.btn-success-action:hover {
+  background: linear-gradient(135deg, #3A997D 0%, #24755E 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(47, 128, 104, 0.5);
 }
 
 /* ── Global Secondary Buttons (Gold Bordered) ──────── */

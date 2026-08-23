@@ -4,8 +4,8 @@
 
 .home-categories {
   width: 100%;
-  max-width: 1320px;
-  margin: 0 auto 56px;
+  max-width: var(--container-max-width, 1400px);
+  margin: 0 auto var(--space-section-desktop, 80px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
@@ -101,6 +101,89 @@
   box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 20px rgba(184, 154, 98, 0.25);
 }
 
+/* ── Semantic Category Accents ───────────────────── */
+/* Electronics — Sapphire Accent */
+.home-category-card.cat-electronics {
+  border-color: var(--ameza-border-sapphire);
+}
+.home-category-card.cat-electronics .home-cat-num {
+  color: var(--ameza-sapphire-light);
+  background: var(--ameza-sapphire-bg);
+  border-color: var(--ameza-sapphire-border);
+}
+.home-category-card.cat-electronics:hover {
+  border-color: var(--ameza-sapphire);
+  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-sapphire-glow);
+}
+.home-category-card.cat-electronics:hover .home-cat-card-footer {
+  color: var(--ameza-sapphire-light);
+}
+
+/* Fashion — Copper Accent */
+.home-category-card.cat-fashion {
+  border-color: var(--ameza-border-copper);
+}
+.home-category-card.cat-fashion .home-cat-num {
+  color: var(--ameza-copper-light);
+  background: var(--ameza-copper-bg);
+  border-color: var(--ameza-copper-border);
+}
+.home-category-card.cat-fashion:hover {
+  border-color: var(--ameza-copper);
+  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-copper-glow);
+}
+.home-category-card.cat-fashion:hover .home-cat-card-footer {
+  color: var(--ameza-copper-light);
+}
+
+/* Beauty — Warm Rose / Copper Accent */
+.home-category-card.cat-beauty {
+  border-color: var(--ameza-border-copper);
+}
+.home-category-card.cat-beauty .home-cat-num {
+  color: var(--ameza-copper-light);
+  background: var(--ameza-copper-bg);
+  border-color: var(--ameza-copper-border);
+}
+.home-category-card.cat-beauty:hover {
+  border-color: var(--ameza-copper-light);
+  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-copper-glow);
+}
+.home-category-card.cat-beauty:hover .home-cat-card-footer {
+  color: var(--ameza-copper-light);
+}
+
+/* Home & Living — Gold Luxury Accent */
+.home-category-card.cat-home {
+  border-color: var(--ameza-border-gold);
+}
+.home-category-card.cat-home .home-cat-num {
+  color: var(--ameza-gold-bright);
+  background: rgba(197, 160, 89, 0.15);
+  border-color: var(--ameza-border-gold);
+}
+.home-category-card.cat-home:hover {
+  border-color: var(--ameza-gold);
+  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-gold-glow);
+}
+
+/* Footwear — Emerald / Gold Accent */
+.home-category-card.cat-footwear {
+  border-color: var(--ameza-border-emerald);
+}
+.home-category-card.cat-footwear .home-cat-num {
+  color: var(--ameza-emerald-light);
+  background: var(--ameza-emerald-bg);
+  border-color: var(--ameza-emerald-border);
+}
+.home-category-card.cat-footwear:hover {
+  border-color: var(--ameza-emerald);
+  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-emerald-glow);
+}
+.home-category-card.cat-footwear:hover .home-cat-card-footer {
+  color: var(--ameza-emerald-light);
+}
+
 .home-cat-card-header {
   display: flex;
   align-items: center;
@@ -155,6 +238,7 @@
   color: var(--ameza-gold-bright);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  transition: color var(--transition-fast);
 }
 
 .home-cat-arrow {
@@ -196,6 +280,19 @@
 
 @media (max-width: 480px) {
   .home-category-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    gap: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .home-category-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .home-category-card-wrap {
+    flex: 0 0 210px;
+    scroll-snap-align: start;
   }
 }

@@ -10,13 +10,13 @@
 
 .product-card {
   background: var(--ameza-card, #38202B);
-  border: 1.5px solid var(--ameza-border, rgba(213, 174, 95, 0.24));
-  border-radius: var(--radius-lg, 20px);
+  border: 1px solid var(--ameza-border, rgba(197, 160, 89, 0.16));
+  border-radius: var(--radius-card, 18px);
   padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm, 0 6px 20px rgba(12, 5, 8, 0.35));
-  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  box-shadow: var(--shadow-card, 0 8px 24px rgba(10, 4, 7, 0.45));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
   box-sizing: border-box;
   position: relative;
   height: 100%;
@@ -28,9 +28,55 @@
 }
 
 .product-card:hover {
+  transform: translateY(-6px);
   border-color: var(--ameza-gold, #C5A059);
   background: var(--ameza-card-hover, #442735);
-  box-shadow: 0 20px 45px rgba(12, 5, 8, 0.6), 0 0 30px rgba(213, 174, 95, 0.28);
+  box-shadow: var(--shadow-card-hover, 0 16px 40px rgba(10, 4, 7, 0.65));
+}
+
+/* ── Category Specific Card Accents & Glows ─────────── */
+.product-card.card-electronics {
+  border-color: var(--ameza-border-sapphire);
+}
+.product-card.card-electronics:hover {
+  border-color: var(--ameza-sapphire-light);
+  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-sapphire-glow);
+}
+.product-card.card-electronics .product-category {
+  color: var(--ameza-sapphire-light);
+}
+
+.product-card.card-beauty {
+  border-color: var(--ameza-border-copper);
+}
+.product-card.card-beauty:hover {
+  border-color: var(--ameza-copper-light);
+  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-copper-glow);
+}
+.product-card.card-beauty .product-category {
+  color: var(--ameza-copper-light);
+}
+
+.product-card.card-fashion {
+  border-color: var(--ameza-border-copper);
+}
+.product-card.card-fashion:hover {
+  border-color: var(--ameza-copper);
+  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-copper-glow);
+}
+.product-card.card-fashion .product-category {
+  color: var(--ameza-copper-light);
+}
+
+.product-card.card-footwear {
+  border-color: var(--ameza-border-emerald);
+}
+.product-card.card-footwear:hover {
+  border-color: var(--ameza-emerald-light);
+  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-emerald-glow);
+}
+.product-card.card-footwear .product-category {
+  color: var(--ameza-emerald-light);
 }
 
 /* ── Dynamic Liquid Gold Sheen Overlay ───────────────── */
@@ -40,7 +86,7 @@
   pointer-events: none;
   z-index: 8;
   transition: opacity 0.3s ease;
-  border-radius: var(--radius-lg, 20px);
+  border-radius: var(--radius-card, 18px);
 }
 
 /* ── Image Container (Elevated 3D Depth) ─────────────── */
@@ -49,7 +95,7 @@
   aspect-ratio: 1 / 1;
   background: var(--ameza-section, #2E1A23);
   border-radius: var(--radius-md, 14px);
-  border: 1px solid rgba(213, 174, 95, 0.2);
+  border: 1px solid rgba(213, 174, 95, 0.15);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -70,7 +116,7 @@
 }
 
 .product-card:hover .product-image {
-  transform: scale(1.08) translateZ(8px);
+  transform: scale(1.04) translateZ(8px);
 }
 
 .product-badge {
@@ -80,32 +126,65 @@
   background: var(--ameza-gold-gradient);
   color: #150B0F;
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
-  letter-spacing: 0.05em;
-  padding: 4px 10px;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 3px 10px rgba(213, 174, 95, 0.45);
+  box-shadow: 0 2px 8px rgba(213, 174, 95, 0.4);
   z-index: 5;
   transform: translateZ(15px);
 }
 
-.product-quick-label {
+.product-badge.badge-electronics {
+  background: var(--ameza-sapphire-bg);
+  color: var(--ameza-sapphire-light);
+  border: 1px solid var(--ameza-sapphire-border);
+}
+.product-badge.badge-beauty,
+.product-badge.badge-fashion {
+  background: var(--ameza-copper-bg);
+  color: var(--ameza-copper-light);
+  border: 1px solid var(--ameza-copper-border);
+}
+.product-badge.badge-footwear {
+  background: var(--ameza-emerald-bg);
+  color: var(--ameza-emerald-light);
+  border: 1px solid var(--ameza-emerald-border);
+}
+
+.product-wishlist-btn {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(28, 16, 21, 0.92);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(28, 16, 21, 0.88);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--ameza-gold);
+  border: 1px solid var(--ameza-border);
   color: var(--ameza-gold-bright);
-  font-family: var(--font-body);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
-  z-index: 5;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
   transform: translateZ(15px);
+  transition: transform var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.product-wishlist-btn:hover {
+  transform: translateZ(15px) scale(1.15);
+  border-color: var(--ameza-gold);
+  background: var(--ameza-card);
+}
+
+.product-wishlist-btn.active {
+  color: #E64A5E;
+  border-color: rgba(230, 74, 94, 0.4);
+  text-shadow: 0 0 10px rgba(230, 74, 94, 0.6);
 }
 
 /* ── Body Content ─────────────────────────────────── */

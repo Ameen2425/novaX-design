@@ -49,7 +49,7 @@
 
 .single-details-grid > div {
   background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  border: 1px solid var(--ameza-border-emerald);
   border-radius: var(--radius-lg);
   padding: 24px 20px;
   display: flex;
@@ -61,17 +61,17 @@
 
 .single-details-grid > div:hover {
   transform: translateY(-5px);
-  border-color: var(--ameza-gold);
+  border-color: var(--ameza-emerald);
   background: var(--ameza-card-hover);
-  box-shadow: 0 10px 25px rgba(20, 8, 12, 0.4), 0 0 18px rgba(184, 154, 98, 0.2);
+  box-shadow: 0 10px 25px rgba(20, 8, 12, 0.4), 0 0 20px var(--ameza-emerald-glow);
 }
 
 .single-details-grid > div span {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ameza-gold-gradient);
-  color: #1C1114;
+  background: linear-gradient(135deg, #5FA58D 0%, #2F8068 50%, #1B5B49 100%);
+  color: #FAF6F0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +79,7 @@
   font-size: 12px;
   font-weight: 800;
   margin-bottom: 14px;
-  box-shadow: 0 4px 10px rgba(184, 154, 98, 0.35);
+  box-shadow: 0 4px 12px var(--ameza-emerald-glow);
 }
 
 .single-details-grid > div h3 {

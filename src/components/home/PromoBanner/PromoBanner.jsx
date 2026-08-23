@@ -24,9 +24,9 @@ const PromoBanner = () => {
         <div className="home-offer-content">
           <span className="home-offer-badge">AMEZA SPECIAL</span>
           <h2>
-            Better products.
+            Better Products.
             <br />
-            <span>Better prices.</span>
+            <span>Better Choices.</span>
           </h2>
           <p>
             Discover curated luxury products at everyday prices.
@@ -34,7 +34,7 @@ const PromoBanner = () => {
           </p>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
             <Link to="/products" className="home-shop-btn">
-              Explore Deals →
+              EXPLORE THE EDIT →
             </Link>
           </motion.div>
         </div>

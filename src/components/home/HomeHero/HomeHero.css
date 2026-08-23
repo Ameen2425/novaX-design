@@ -4,8 +4,8 @@
 
 .home-hero {
   width: 100%;
-  max-width: 1320px;
-  margin: 16px auto 52px;
+  max-width: var(--container-max-width, 1400px);
+  margin: 16px auto var(--space-section-desktop, 80px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
@@ -25,18 +25,18 @@
   box-sizing: border-box;
 }
 
-/* Background warm ambient gold flare */
+/* Background warm ambient gold & copper flare */
 .espresso-hero-container::before {
   content: "";
   position: absolute;
   top: -25%;
   right: -10%;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(181, 53, 73, 0.12) 45%, transparent 70%);
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle at 70% 40%, rgba(184, 107, 92, 0.16) 0%, rgba(212, 175, 55, 0.18) 35%, rgba(168, 50, 70, 0.10) 60%, transparent 75%);
   pointer-events: none;
   z-index: 1;
-  animation: heroGlowPulse 4s ease-in-out infinite alternate;
+  animation: heroGlowPulse 5s ease-in-out infinite alternate;
 }
 
 .espresso-hero-content {

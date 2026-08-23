@@ -140,10 +140,11 @@
 }
 
 .pagination button.active {
-  background: var(--ameza-primary);
-  border-color: var(--ameza-primary);
-  color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(163, 71, 85, 0.4);
+  background: var(--ameza-gold-gradient);
+  border-color: #FFFFFF;
+  color: #14090C;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.45);
 }
 
 /* ── RESPONSIVE BREAKPOINTS ───────────────────────── */

@@ -107,8 +107,8 @@
 }
 
 .offcanvas-body .form-control:focus {
-  border-color: var(--ameza-gold-bright, #F3E5C8) !important;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 15px rgba(212, 175, 55, 0.2) !important;
+  border-color: var(--ameza-copper-light) !important;
+  box-shadow: 0 0 0 3px var(--ameza-copper-glow), 0 0 15px var(--ameza-copper-glow) !important;
 }
 
 .offcanvas-actions {

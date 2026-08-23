@@ -102,8 +102,8 @@
 }
 
 .signup-form-group input:focus {
-  border-color: var(--ameza-primary);
-  box-shadow: 0 0 0 3px rgba(163, 71, 85, 0.25);
+  border-color: var(--ameza-copper-light);
+  box-shadow: 0 0 0 3px var(--ameza-copper-glow);
 }
 
 .signup-terms {

@@ -25,12 +25,39 @@
   --ameza-dark-gradient:  linear-gradient(180deg, #1C1015 0%, #291720 100%);
 
   /* Rich Jewel Tones & Secondary Accents */
-  --ameza-primary:        #C5A059;
-  --ameza-primary-hover:  #F5E6C8;
+  --ameza-primary:        #A83246;               /* Royal Velvet Ruby / Primary CTA */
+  --ameza-primary-hover:  #BE5D6A;
   --ameza-crimson:        #A83246;               /* Royal Velvet Ruby */
-  --ameza-emerald:        #1B5B49;               /* Deep Royal Emerald */
-  --ameza-sapphire:       #2B4C7E;               /* Midnight Sapphire */
-  --ameza-success:        #25725A;
+  --ameza-crimson-hover:  #BE5D6A;
+  --ameza-crimson-glow:   rgba(168, 50, 70, 0.35);
+
+  /* Secondary Color System: EMERALD (Trust, Success, Stock, Delivery) */
+  --ameza-emerald:        #2F8068;
+  --ameza-emerald-dark:   #1B5B49;
+  --ameza-emerald-light:  #5FA58D;
+  --ameza-emerald-glow:   rgba(47, 128, 104, 0.25);
+  --ameza-emerald-bg:     rgba(47, 128, 104, 0.12);
+  --ameza-emerald-border: rgba(47, 128, 104, 0.30);
+  --ameza-success:        var(--ameza-emerald);
+
+  /* Secondary Color System: SAPPHIRE (Electronics, Tech, Digital Specs) */
+  --ameza-sapphire:       #4169A1;
+  --ameza-sapphire-dark:  #2B4C7E;
+  --ameza-sapphire-light: #6C8FBE;
+  --ameza-sapphire-glow:  rgba(65, 105, 161, 0.25);
+  --ameza-sapphire-bg:    rgba(65, 105, 161, 0.12);
+  --ameza-sapphire-border:rgba(65, 105, 161, 0.30);
+
+  /* Secondary Color System: COPPER / WARM ROSE (Beauty, Fashion, Promotions, Special CTAs) */
+  --ameza-copper:         #B86B5C;
+  --ameza-copper-dark:    #87483E;
+  --ameza-copper-light:   #D18A78;
+  --ameza-copper-glow:    rgba(184, 107, 92, 0.25);
+  --ameza-copper-bg:      rgba(184, 107, 92, 0.12);
+  --ameza-copper-border:  rgba(184, 107, 92, 0.35);
+  --ameza-copper-gradient:linear-gradient(135deg, #D18A78 0%, #B86B5C 50%, #87483E 100%);
+  --ameza-copper-gradient-hover: linear-gradient(135deg, #E0A292 0%, #C97969 50%, #9C5247 100%);
+
   --ameza-error:          #A83D3D;
 
   /* Typography Colors (Pearl Silk & Rose Champagne) */
@@ -38,27 +65,52 @@
   --ameza-text-secondary: #D2C0BB;               /* Warm Rose Champagne */
   --ameza-text-muted:     #9E8A88;               /* Muted Editorial Taupe */
   
-  /* Gold Foil Borders & Strokes */
+  /* Section Background Variations (Subtle Dark Surface Layers) */
+  --ameza-bg-section-featured: #2E1A23;
+  --ameza-bg-section-product:  #321D26;
+  --ameza-bg-section-promo:    #351B21;
+  --ameza-bg-section-tech:     #20202B;
+  --ameza-bg-section-trust:    #202A27;
+
+  /* Subtle Semantic Borders & Strokes */
   --ameza-border:         rgba(213, 174, 95, 0.24); /* Subtle Gold Foil Stroke */
+  --ameza-border-default: #5A3941;
   --ameza-border-strong:  rgba(213, 174, 95, 0.48);
   --ameza-border-burgundy:rgba(168, 50, 70, 0.32);
+  --ameza-border-gold:    rgba(197, 160, 89, 0.35);
+  --ameza-border-copper:  rgba(184, 107, 92, 0.35);
+  --ameza-border-emerald: rgba(47, 128, 104, 0.30);
+  --ameza-border-sapphire:rgba(65, 105, 161, 0.30);
 
-  /* ── 2. BORDER RADIUS TOKENS ────────────────────────── */
+  /* ── 2. EDITORIAL 2.0 SPACING & DEPTH TOKENS ──────── */
+  --space-section-desktop: clamp(80px, 8vw, 120px);
+  --space-section-tablet:  clamp(60px, 6vw, 80px);
+  --space-section-mobile:  clamp(45px, 5vw, 65px);
+  --container-max-width:   1400px;
+  --container-editorial:   1280px;
+
+  /* Atmospheric Radial Lighting Glows */
+  --glow-burgundy:   radial-gradient(circle, rgba(168, 50, 70, 0.18) 0%, transparent 70%);
+  --glow-copper:     radial-gradient(circle, rgba(184, 107, 92, 0.15) 0%, transparent 70%);
+  --glow-champagne:  radial-gradient(circle, rgba(197, 160, 89, 0.14) 0%, transparent 70%);
+
+  /* ── 3. BORDER RADIUS TOKENS ────────────────────────── */
   --radius-sm:            8px;
   --radius-md:            14px;
+  --radius-card:          18px;                  /* Editorial 2.0 Card Radius */
   --radius-lg:            20px;
   --radius-xl:            28px;
   --radius-pill:          999px;
 
-  /* ── 3. SHADOW & GLOW SYSTEM ────────────────────────── */
+  /* ── 4. SHADOW & GLOW SYSTEM ────────────────────────── */
   --shadow-sm:            0 6px 20px rgba(12, 5, 8, 0.35);
   --shadow-md:            0 12px 30px rgba(12, 5, 8, 0.48), 0 0 18px rgba(213, 174, 95, 0.12);
   --shadow-lg:            0 20px 50px rgba(12, 5, 8, 0.60), 0 0 30px rgba(213, 174, 95, 0.20);
   --shadow-gold:          0 8px 25px rgba(213, 174, 95, 0.35);
-  --shadow-card:          var(--shadow-sm);
-  --shadow-card-hover:    var(--shadow-md);
+  --shadow-card:          0 8px 24px rgba(10, 4, 7, 0.45);
+  --shadow-card-hover:    0 16px 40px rgba(10, 4, 7, 0.65), 0 0 24px rgba(197, 160, 89, 0.20);
 
-  /* ── 4. TRANSITIONS & TIMING ────────────────────────── */
+  /* ── 5. TRANSITIONS & TIMING ────────────────────────── */
   --transition-fast:      180ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition:           300ms cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth:          cubic-bezier(0.16, 1, 0.3, 1);

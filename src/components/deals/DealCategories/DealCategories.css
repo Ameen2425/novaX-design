@@ -121,8 +121,8 @@
 .deal-category-discount {
   font-family: var(--font-body);
   font-size: 11.5px;
-  font-weight: 700;
-  color: var(--ameza-gold);
+  font-weight: 800;
+  color: var(--ameza-copper-light);
   display: block;
 }
 
@@ -130,9 +130,9 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(184, 154, 98, 0.15);
-  border: 1px solid var(--ameza-border);
-  color: var(--ameza-gold);
+  background: var(--ameza-copper-bg);
+  border: 1px solid var(--ameza-copper-border);
+  color: var(--ameza-copper-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,9 +143,11 @@
 }
 
 .deal-category-card:hover .deal-category-arrow {
-  background: var(--ameza-gold);
-  color: #1C1114;
+  background: var(--ameza-copper-gradient);
+  border-color: var(--ameza-copper-light);
+  color: #FFFFFF;
   transform: translateX(2px);
+  box-shadow: 0 0 10px var(--ameza-copper-glow);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */

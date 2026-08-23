@@ -51,11 +51,11 @@ const CategorySection = () => {
         variants={staggerContainer}
       >
         {[
-          { num: "01", name: "Electronics", desc: "Devices & accessories", icon: "⚡" },
-          { num: "02", name: "Fashion", desc: "Curated styles & wear", icon: "✨" },
-          { num: "03", name: "Beauty", desc: "Care, skin & cosmetics", icon: "🌿" },
-          { num: "04", name: "Home & Living", desc: "Thoughtful spaces", icon: "🛋️" },
-          { num: "05", name: "Footwear", desc: "Modern daily essentials", icon: "👟" },
+          { num: "01", name: "Electronics", desc: "Devices & accessories", icon: "⚡", type: "electronics" },
+          { num: "02", name: "Fashion", desc: "Curated styles & wear", icon: "✨", type: "fashion" },
+          { num: "03", name: "Beauty", desc: "Care, skin & cosmetics", icon: "🌿", type: "beauty" },
+          { num: "04", name: "Home & Living", desc: "Thoughtful spaces", icon: "🛋️", type: "home" },
+          { num: "05", name: "Footwear", desc: "Modern daily essentials", icon: "👟", type: "footwear" },
         ].map((cat) => (
           <motion.div
             key={cat.num}
@@ -64,7 +64,7 @@ const CategorySection = () => {
             whileTap={{ scale: 0.98 }}
             className="home-category-card-wrap"
           >
-            <Link to="/products" className="home-category-card">
+            <Link to="/products" className={`home-category-card cat-${cat.type}`} data-category={cat.type}>
               <div className="home-cat-card-header">
                 <span className="home-cat-num">{cat.num}</span>
                 <span className="home-cat-icon">{cat.icon}</span>

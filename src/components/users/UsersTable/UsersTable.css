@@ -60,9 +60,14 @@ tbody td {
 
 .user-id-cell {
   font-family: var(--font-mono) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 700 !important;
-  color: var(--ameza-gold-bright) !important;
+  color: var(--ameza-sapphire-light) !important;
+  background: var(--ameza-sapphire-bg);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--ameza-sapphire-border);
+  display: inline-block;
 }
 
 .user-name-cell {
@@ -100,9 +105,9 @@ tbody td {
   display: inline-block;
   padding: 3px 10px;
   border-radius: var(--radius-pill);
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: var(--ameza-gold-bright);
+  background: var(--ameza-emerald-bg);
+  border: 1px solid var(--ameza-emerald-border);
+  color: var(--ameza-emerald-light);
   font-size: 12px;
   font-weight: 700;
 }
@@ -138,7 +143,7 @@ tbody td {
 }
 
 .btn-danger {
-  background: linear-gradient(135deg, #B53549 0%, #8C2434 100%) !important;
+  background: linear-gradient(135deg, #A83246 0%, #872436 100%) !important;
   color: #FFFFFF !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: var(--radius-pill);
@@ -154,14 +159,14 @@ tbody td {
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(181, 53, 73, 0.4);
+  box-shadow: 0 3px 12px var(--ameza-crimson-glow);
   transition: all var(--transition-fast);
 }
 
 .btn-danger:hover {
-  background: linear-gradient(135deg, #D44259 0%, #A32C3E 100%) !important;
+  background: linear-gradient(135deg, #BE5D6A 0%, #9E2D40 100%) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(181, 53, 73, 0.6);
+  box-shadow: 0 6px 18px rgba(168, 50, 70, 0.6);
 }
 
 /* ── MOBILE TOUCH CARDS ────────────────────────────── */

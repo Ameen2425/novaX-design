@@ -11,15 +11,15 @@
 }
 
 .deal-promo-container {
-  background: radial-gradient(circle at 75% 50%, #42252C 0%, #321D23 75%, #24161A 100%);
-  border: 1px solid var(--ameza-border);
+  background: radial-gradient(circle at 75% 50%, #4A222B 0%, var(--ameza-bg-section-promo, #351B21) 75%, #241419 100%);
+  border: 1.5px solid var(--ameza-border-copper);
   border-radius: var(--radius-xl);
   padding: clamp(36px, 4.5vw, 56px) clamp(24px, 4vw, 56px);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 32px;
   align-items: center;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(184, 107, 92, 0.15);
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
@@ -36,12 +36,17 @@
 .deal-promo-eyebrow {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-copper-light);
+  background: var(--ameza-copper-bg);
+  border: 1px solid var(--ameza-copper-border);
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
   margin-bottom: 14px;
-  display: block;
+  display: inline-block;
+  box-shadow: 0 2px 10px var(--ameza-copper-glow);
 }
 
 .deal-promo-heading {

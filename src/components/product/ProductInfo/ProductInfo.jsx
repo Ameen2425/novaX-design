@@ -29,8 +29,11 @@ const ProductInfo = ({
   decreaseQuantity,
   increaseQuantity,
   addToCart,
-  buyNow
+  buyNow,
 }) => {
+  const isLowStock = product.stock > 0 && product.stock <= 10;
+  const isOutOfStock = product.stock <= 0;
+
   return (
     <motion.div
       className="single-info"
@@ -60,20 +63,31 @@ const ProductInfo = ({
 
       {/* PRICE */}
       <motion.div className="single-price" variants={fadeInUp}>
-        <strong>₹{product.price?.toLocaleString("en-IN")}</strong>
+        <strong>${product.price}</strong>
         {discount > 0 && (
           <>
-            <del>₹{originalPrice.toLocaleString("en-IN")}</del>
-            <span>{discount}% OFF</span>
+            <del>${originalPrice}</del>
+            <span className="price-discount-badge">{discount}% OFF</span>
           </>
         )}
       </motion.div>
 
-      {/* STOCK */}
-      <motion.div className="single-stock" variants={fadeInUp}>
-        <span></span>
-        <strong>In Stock</strong>
-        <p>{product.stock} items available</p>
+      {/* SEMANTIC STOCK */}
+      <motion.div
+        className={`single-stock ${isOutOfStock ? "out-of-stock" : isLowStock ? "low-stock" : "in-stock"}`}
+        variants={fadeInUp}
+      >
+        <span className="stock-indicator-dot"></span>
+        <strong>
+          {isOutOfStock ? "Out of Stock" : isLowStock ? "Low Stock" : "In Stock"}
+        </strong>
+        <p>
+          {isOutOfStock
+            ? "Currently unavailable"
+            : isLowStock
+            ? `Only ${product.stock} items remaining`
+            : `${product.stock} items available`}
+        </p>
       </motion.div>
 
       {/* PRODUCT INFORMATION */}
@@ -90,8 +104,8 @@ const ProductInfo = ({
 
         <div>
           <span>Availability</span>
-          <strong>
-            {product.stock > 0 ? "Available" : "Out of Stock"}
+          <strong className={isOutOfStock ? "text-out-stock" : isLowStock ? "text-low-stock" : "text-in-stock"}>
+            {isOutOfStock ? "Out of Stock" : isLowStock ? "Limited" : "Verified In Stock"}
           </strong>
         </div>
       </motion.div>
@@ -129,7 +143,7 @@ const ProductInfo = ({
         </motion.button>
 
         <motion.button
-          className="single-buy-button"
+          className="single-buy-button btn-crimson"
           onClick={buyNow}
           disabled={product.stock <= 0}
           whileHover={{ scale: 1.03 }}
@@ -140,29 +154,29 @@ const ProductInfo = ({
         </motion.button>
       </motion.div>
 
-      {/* DELIVERY */}
+      {/* DELIVERY / TRUST SERVICES */}
       <motion.div className="single-services" variants={fadeInUp}>
-        <div className="single-service">
-          <span>🚚</span>
+        <div className="single-service trust-service">
+          <span className="service-icon">🚚</span>
           <div>
             <strong>Fast Delivery</strong>
-            <p>Quick delivery to your doorstep</p>
+            <p>Direct to your doorstep</p>
           </div>
         </div>
 
-        <div className="single-service">
-          <span>🔒</span>
+        <div className="single-service trust-service">
+          <span className="service-icon">🔒</span>
           <div>
             <strong>Secure Payment</strong>
-            <p>Safe and secure checkout</p>
+            <p>100% encrypted & protected</p>
           </div>
         </div>
 
-        <div className="single-service">
-          <span>↩️</span>
+        <div className="single-service trust-service">
+          <span className="service-icon">↩️</span>
           <div>
             <strong>Easy Returns</strong>
-            <p>Simple and hassle-free returns</p>
+            <p>Simple 30-day return policy</p>
           </div>
         </div>
       </motion.div>
