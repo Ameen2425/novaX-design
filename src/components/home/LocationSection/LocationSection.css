@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — LOCATION SECTION (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — LOCATION SECTION (SAGE + TERRACOTTA)
    ========================================================= */
 
 .location-section {
@@ -14,8 +14,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-xl);
   padding: clamp(32px, 4vw, 48px);
   box-shadow: var(--shadow-lg);
@@ -29,7 +29,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   margin-bottom: 12px;
   display: block;
 }
@@ -39,7 +39,7 @@
   font-size: clamp(24px, 2.8vw, 34px);
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.2;
   margin-bottom: 24px;
 }
@@ -54,7 +54,7 @@
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.6;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin: 0;
   display: flex;
   align-items: center;
@@ -65,8 +65,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ameza-gold);
-  color: #1C1114;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -78,8 +78,8 @@
 .location-map {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--ameza-border);
-  background: var(--ameza-section);
+  border: 1px solid rgba(98, 113, 105, 0.45);
+  background: var(--ameza-section, #34423B);
   box-shadow: var(--shadow-md);
   height: 100%;
   min-height: 320px;

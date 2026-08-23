@@ -1,12 +1,10 @@
 /* =========================================================
-   AMEZA — SIGNUP FORM (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — SIGNUP FORM (SAGE + TERRACOTTA)
    ========================================================= */
 
 .signup-form-wrapper {
-  max-width: 440px;
+  max-width: 460px;
   width: 100%;
-  padding: 0 16px;
-  margin: auto;
   box-sizing: border-box;
 }
 
@@ -17,152 +15,236 @@
   font-family: var(--font-body);
   font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--ameza-text-secondary);
+  letter-spacing: 0.02em;
+  color: var(--ameza-text-secondary, #D4D3CC);
   text-decoration: none;
-  margin-bottom: 12px;
-  transition: color var(--transition-fast);
-  min-height: 40px;
+  margin-bottom: 16px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  min-height: 36px;
 }
 
 .signup-back-link:hover {
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
+  transform: translateX(-3px);
 }
 
-.signup-form {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
-  border-radius: var(--radius-xl);
-  padding: 28px 24px;
-  box-shadow: var(--shadow-lg);
+.signup-form-card {
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
+  border-radius: 24px;
+  padding: clamp(28px, 3.5vw, 36px) clamp(24px, 3vw, 36px);
+  box-shadow: 0 25px 60px rgba(10, 18, 15, 0.28);
   box-sizing: border-box;
 }
 
 .signup-form-label {
   font-family: var(--font-body);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.signup-form h1 {
+.signup-form-title {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: clamp(26px, 2.5vw, 30px);
   font-weight: 600;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   letter-spacing: -0.02em;
-  margin: 0 0 4px 0;
+  margin: 0 0 8px 0;
   line-height: 1.15;
 }
 
 .signup-subtitle {
   font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--ameza-text-secondary);
-  line-height: 1.45;
-  margin: 0 0 16px 0;
+  font-size: 13.5px;
+  color: var(--ameza-text-secondary, #D4D3CC);
+  line-height: 1.5;
+  margin: 0 0 20px 0;
 }
 
 .signup-form-group {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .signup-form-group label {
   font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ameza-text);
-  display: block;
-  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ameza-text, #F2EEE7);
+  letter-spacing: 0.01em;
+}
+
+.signup-form-group .input-wrap {
+  position: relative;
+  width: 100%;
 }
 
 .signup-form-group input {
   width: 100%;
-  height: 44px;
-  padding: 0 14px;
-  background: var(--ameza-section);
-  border: 1px solid var(--ameza-border);
-  border-radius: var(--radius-md);
+  height: 48px;
+  padding: 0 16px;
+  background: var(--ameza-section, #34423B);
+  border: 1px solid var(--ameza-border, #627169);
+  border-radius: 12px;
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   outline: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
   box-sizing: border-box;
 }
 
 .signup-form-group input::placeholder {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
 }
 
 .signup-form-group input:focus {
-  border-color: var(--ameza-copper-light);
-  box-shadow: 0 0 0 3px var(--ameza-copper-glow);
+  border-color: var(--ameza-primary, #A96855);
+  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20);
+  background: #303E37;
 }
 
+/* Password Toggle */
+.signup-form-group .password-wrap input {
+  padding-right: 48px;
+}
+
+.signup-form-group .pwd-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 48px;
+  width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--ameza-text-muted, #A7ADA5);
+  cursor: pointer;
+  padding: 0;
+  border-radius: 0 12px 12px 0;
+  transition: color var(--transition-fast);
+}
+
+.signup-form-group .pwd-toggle-btn:hover {
+  color: var(--ameza-primary, #A96855);
+}
+
+/* Terms Checkbox */
 .signup-terms {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 14px 0;
+  margin: 16px 0 20px;
   font-family: var(--font-body);
   font-size: 12px;
 }
 
-.signup-terms input[type="checkbox"] {
-  accent-color: var(--ameza-primary);
+.signup-terms .checkbox-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
+  user-select: none;
+}
+
+.signup-terms input[type="checkbox"] {
   width: 17px;
   height: 17px;
-  border-radius: 4px;
-  flex-shrink: 0;
-}
-
-.signup-terms label {
-  color: var(--ameza-text-secondary);
+  accent-color: var(--ameza-primary, #A96855);
   cursor: pointer;
-  line-height: 1.35;
+  border-radius: 4px;
 }
 
+.signup-terms .checkbox-label {
+  color: var(--ameza-text-secondary, #D4D3CC);
+  line-height: 1.4;
+}
+
+/* Primary Signup Button */
+.signup-primary-btn {
+  width: 100%;
+  height: 50px;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7) !important;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill, 999px);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(169, 104, 85, 0.25);
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.signup-primary-btn:hover {
+  background: var(--ameza-primary-hover, #BD7863);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(169, 104, 85, 0.35);
+}
+
+.signup-primary-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Bottom Login Switch */
 .signup-login-text {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   text-align: center;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
 }
 
-.signup-login-text a {
-  color: var(--ameza-gold);
-  font-weight: 600;
+.signup-login-link {
+  color: var(--ameza-primary, #A96855);
+  font-weight: 700;
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
-.signup-login-text a:hover {
+.signup-login-link:hover {
+  color: var(--ameza-primary-hover, #BD7863);
   text-decoration: underline;
 }
 
-/* ── MOBILE RESPONSIVENESS ───────────────────────── */
+/* ── RESPONSIVE MOBILE STYLES ────────────────────── */
 @media (max-width: 768px) {
   .signup-form-wrapper {
-    padding: 0;
     max-width: 100%;
   }
-  .signup-form {
-    padding: 22px 18px;
-    border-radius: var(--radius-lg);
+  .signup-form-card {
+    padding: 24px 20px;
+    border-radius: 20px;
   }
-  .signup-form h1 {
+  .signup-form-title {
     font-size: 24px;
+  }
+  .signup-form-group input {
+    height: 48px;
+  }
+  .signup-primary-btn {
+    height: 48px;
   }
 }

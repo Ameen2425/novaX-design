@@ -1,13 +1,13 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY USERS TABLE
+   AMEZA — USERS TABLE (SAGE + TERRACOTTA)
    ========================================================= */
 
 .users-page-table-wrap {
-  background: var(--ameza-card, #391D27);
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-xl, 24px);
   overflow: hidden;
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.15);
+  box-shadow: var(--shadow-lg);
   width: 100%;
   box-sizing: border-box;
 }
@@ -15,11 +15,11 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--ameza-card, #391D27);
+  background: var(--ameza-card, #3F5148);
 }
 
 thead tr {
-  background: var(--ameza-section, #2E1720);
+  background: var(--ameza-section, #34423B);
 }
 
 thead th {
@@ -28,16 +28,16 @@ thead th {
   font-weight: 800;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--ameza-gold-bright, #F3E5C8);
+  color: var(--ameza-primary, #A96855);
   padding: 18px 22px;
   text-align: left;
   white-space: nowrap;
-  border-bottom: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  border-bottom: 1px solid var(--ameza-border, #627169);
 }
 
 tbody tr {
-  background: var(--ameza-card, #391D27);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  background: var(--ameza-card, #3F5148);
+  border-bottom: 1px solid rgba(98, 113, 105, 0.45);
   transition: background var(--transition-fast);
 }
 
@@ -46,14 +46,14 @@ tbody tr:last-child {
 }
 
 tbody tr:hover {
-  background: var(--ameza-card-hover, #462430);
+  background: var(--ameza-card-hover, #4B6056);
 }
 
 tbody td {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 400;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   padding: 16px 22px;
   vertical-align: middle;
 }
@@ -62,11 +62,11 @@ tbody td {
   font-family: var(--font-mono) !important;
   font-size: 11.5px !important;
   font-weight: 700 !important;
-  color: var(--ameza-sapphire-light) !important;
-  background: var(--ameza-sapphire-bg);
+  color: var(--ameza-primary, #A96855) !important;
+  background: rgba(169, 104, 85, 0.12);
   padding: 3px 8px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--ameza-sapphire-border);
+  border: 1px solid rgba(169, 104, 85, 0.3);
   display: inline-block;
 }
 
@@ -80,25 +80,25 @@ tbody td {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ameza-gold-gradient);
-  color: #14090C;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 2px 10px rgba(169, 104, 85, 0.25);
   flex-shrink: 0;
 }
 
 .user-name-text {
   font-weight: 700;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
 }
 
 .user-email-cell {
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
 }
 
 .age-pill {
@@ -107,66 +107,63 @@ tbody td {
   border-radius: var(--radius-pill);
   background: var(--ameza-emerald-bg);
   border: 1px solid var(--ameza-emerald-border);
-  color: var(--ameza-emerald-light);
+  color: var(--ameza-emerald, #759C82);
   font-size: 12px;
   font-weight: 700;
 }
 
 /* Action Buttons in Table */
 .btn-warning {
-  background: var(--ameza-gold-gradient) !important;
-  color: #14090C !important;
-  border: 1px solid var(--ameza-gold-bright) !important;
+  background: var(--ameza-primary, #A96855) !important;
+  color: var(--ameza-white, #F2EEE7) !important;
+  border: none !important;
   border-radius: var(--radius-pill);
   height: 38px;
   min-height: 38px;
   padding: 0 18px;
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.03em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 3px 12px rgba(169, 104, 85, 0.25);
   transition: all var(--transition-fast);
 }
 
 .btn-warning:hover {
-  background: var(--ameza-gold-gradient-hover) !important;
-  border-color: #FFFFFF !important;
-  color: #0E0507 !important;
+  background: var(--ameza-primary-hover, #BD7863) !important;
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 6px 18px rgba(169, 104, 85, 0.35);
 }
 
 .btn-danger {
-  background: linear-gradient(135deg, #A83246 0%, #872436 100%) !important;
+  background: var(--ameza-error, #C26B68) !important;
   color: #FFFFFF !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
   border-radius: var(--radius-pill);
   height: 38px;
   min-height: 38px;
   padding: 0 18px;
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.03em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  box-shadow: 0 3px 12px var(--ameza-crimson-glow);
   transition: all var(--transition-fast);
 }
 
 .btn-danger:hover {
-  background: linear-gradient(135deg, #BE5D6A 0%, #9E2D40 100%) !important;
+  background: #D17C79 !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(168, 50, 70, 0.6);
 }
 
 /* ── MOBILE TOUCH CARDS ────────────────────────────── */

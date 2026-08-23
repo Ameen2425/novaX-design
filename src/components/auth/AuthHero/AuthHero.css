@@ -1,110 +1,148 @@
 /* =========================================================
-   AMEZA — AUTH HERO PANEL (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — AUTH HERO EDITORIAL PANEL (SAGE + TERRACOTTA)
    ========================================================= */
 
-.auth-hero-section,
-.login-image,
-.signup-image,
-.auth-image-panel {
-  background: var(--ameza-section);
+.auth-hero-panel {
   display: flex;
-  align-items: flex-end;
-  padding: clamp(32px, 4vw, 50px);
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  max-height: 100vh;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
 }
 
-.auth-bg-img {
+.auth-hero-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(98, 113, 105, 0.45);
+  box-shadow: 0 25px 60px rgba(10, 18, 15, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(24px, 3.5vw, 40px);
+  box-sizing: border-box;
+  background: var(--ameza-section, #34423B);
+}
+
+.auth-hero-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: 0;
   transition: transform 0.8s var(--ease-smooth);
 }
 
-.auth-hero-section:hover .auth-bg-img,
-.login-image:hover .auth-bg-img,
-.signup-image:hover .auth-bg-img,
-.auth-image-panel:hover .auth-bg-img {
-  transform: scale(1.04);
+.auth-hero-card:hover .auth-hero-img {
+  transform: scale(1.03);
 }
 
-.auth-image-overlay {
+/* Gradient Overlay to ensure crisp contrast and readability */
+.auth-hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(36, 22, 26, 0.4) 0%, rgba(36, 22, 26, 0.95) 100%);
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(38, 51, 46, 0.15) 0%,
+    rgba(38, 51, 46, 0.55) 35%,
+    rgba(30, 40, 36, 0.95) 100%
+  );
   z-index: 1;
+  pointer-events: none;
 }
 
-.auth-image-content,
-.signup-image-content {
+/* Floating Content on the image */
+.auth-hero-content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.auth-image-label,
-.signup-image-label {
+.auth-editorial-label {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--ameza-gold);
-  display: block;
-  margin-bottom: 14px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--ameza-primary, #A96855);
+  margin-bottom: 12px;
+  display: inline-block;
+  background: rgba(30, 40, 36, 0.85);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid rgba(169, 104, 85, 0.35);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.auth-image-content h2,
-.signup-image-content h2 {
+.auth-editorial-title {
   font-family: var(--font-display);
-  font-size: clamp(30px, 3.5vw, 46px);
+  font-size: clamp(32px, 3.8vw, 48px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
-  line-height: 1.12;
-  margin-bottom: 14px;
+  color: var(--ameza-text, #F2EEE7);
+  line-height: 1.1;
+  margin: 0 0 14px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
-.auth-image-content h2 span,
-.signup-image-content h2 span {
-  color: var(--ameza-gold);
+.auth-editorial-title span {
+  color: var(--ameza-primary, #A96855);
   font-style: italic;
+  font-weight: 400;
 }
 
-.auth-image-content p,
-.signup-image-content p {
+.auth-editorial-desc {
   font-family: var(--font-body);
   font-size: 14.5px;
-  color: var(--ameza-text-secondary);
   line-height: 1.6;
-  max-width: 380px;
-  margin-bottom: 20px;
+  color: var(--ameza-text-secondary, #D4D3CC);
+  max-width: 440px;
+  margin: 0 0 22px 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
-.signup-image-features {
+/* Luxury Benefits Strip */
+.auth-benefits-strip {
   display: flex;
+  align-items: center;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.signup-image-features span {
+.auth-benefit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(63, 81, 72, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(98, 113, 105, 0.45);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill, 999px);
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--ameza-text);
-  background: rgba(50, 29, 35, 0.85);
-  border: 1px solid var(--ameza-border);
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  backdrop-filter: blur(8px);
+  color: var(--ameza-text, #F2EEE7);
+  box-shadow: 0 4px 14px rgba(10, 18, 15, 0.30);
+}
+
+.auth-benefit-dot {
+  color: var(--ameza-primary, #A96855);
+  font-size: 11px;
+}
+
+/* ── RESPONSIVE MOBILE STYLES ────────────────────── */
+@media (max-width: 900px) {
+  .auth-hero-card {
+    min-height: 380px;
+    padding: 24px 20px;
+  }
 }

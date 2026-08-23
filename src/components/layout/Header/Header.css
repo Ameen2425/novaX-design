@@ -1,35 +1,35 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY HEADER NAVIGATION
+   AMEZA — ULTRA-LUXURY HEADER NAVIGATION (WARM CASHMERE & BRONZE)
    With Framer Motion LayoutId Active Pill Transitions
    ========================================================= */
 
 /* ── 1. DESKTOP & TABLET FLOATING GLASS HEADER ──────── */
 .header.desktop-header {
   position: fixed;
-  top: 16px;
+  top: 18px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(calc(100% - 32px), 1280px);
+  width: min(calc(100% - 36px), 1280px);
   height: 64px;
-  background: var(--ameza-glass-bg, rgba(46, 23, 32, 0.82));
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(184, 127, 78, 0.22);
   border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-md), 0 0 25px rgba(212, 175, 55, 0.18);
+  box-shadow: 0 12px 35px rgba(33, 28, 26, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 26px;
+  padding: 0 28px;
   box-sizing: border-box;
   z-index: 1000;
   transition: all var(--transition);
 }
 
 .header.desktop-header.scrolled {
-  background: rgba(28, 14, 19, 0.94);
-  border-color: var(--ameza-gold);
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.3);
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(184, 127, 78, 0.40);
+  box-shadow: 0 16px 42px rgba(33, 28, 26, 0.12);
 }
 
 /* Brand Logo */
@@ -52,8 +52,8 @@
   font-family: var(--font-body);
   font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  color: var(--ameza-text-secondary);
+  letter-spacing: 0.04em;
+  color: var(--ameza-text-secondary, #5C524B);
   text-decoration: none;
   padding: 8px 22px;
   border-radius: var(--radius-pill);
@@ -70,28 +70,27 @@
 }
 
 .nav-link:hover {
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #B87F4E);
 }
 
 /* FRAMER MOTION ACTIVE PILL BACKGROUND */
 .nav-active-pill {
   position: absolute;
   inset: 0;
-  background: var(--ameza-gold-gradient);
+  background: linear-gradient(135deg, #C99260 0%, #B87F4E 50%, #8F5E33 100%);
   border-radius: var(--radius-pill);
-  border: 1px solid #FFFFFF;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.55);
+  box-shadow: 0 4px 18px rgba(184, 127, 78, 0.35);
   z-index: 1;
 }
 
 .nav-link.active {
-  color: #14090C !important;
-  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
 }
 
 .nav-link.active .nav-link-text {
-  color: #14090C !important;
-  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
 }
 
 /* Desktop Header Actions */
@@ -111,51 +110,58 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
-  color: var(--ameza-text);
+  background: #FFFFFF;
+  border: 1px solid var(--ameza-border, #E0D9CE);
+  color: var(--ameza-text, #1F1A17);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: all var(--transition-fast);
   text-decoration: none;
+  transition: all var(--transition-fast);
   cursor: pointer;
 }
 
 .header-action-btn:hover {
-  background: var(--ameza-card-hover);
-  border-color: var(--ameza-gold);
-  color: var(--ameza-gold-bright);
+  background: #FAF8F5;
+  border-color: var(--ameza-primary, #B87F4E);
+  color: var(--ameza-primary, #B87F4E);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .header-action-btn.active {
-  background: var(--ameza-gold-gradient);
-  border-color: #FFFFFF;
-  color: #14090C;
-  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #C99260 0%, #B87F4E 100%);
+  border-color: var(--ameza-primary-hover, #C99260);
+  color: #FFFFFF;
 }
 
-.header-action-btn.signup-btn {
-  border-color: var(--ameza-gold);
-  color: var(--ameza-gold-bright);
+.header-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: var(--radius-pill);
+  background: var(--ameza-primary, #B87F4E);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(184, 127, 78, 0.35);
 }
 
-.header-action-btn.signup-btn:hover {
-  background: var(--ameza-gold-gradient);
-  border-color: #FFFFFF;
-  color: #14090C;
-}
-
-/* ── 2. MOBILE HEADER & NAVIGATION ───────────────────── */
+/* ── 2. MOBILE TOP BAR & BOTTOM CAPSULE ───────────────── */
+.mobile-top-bar,
 .mobile-top-brand {
-  display: none;
+  display: none !important;
 }
 
 .mobile-bottom-nav {
-  display: none;
+  display: none !important;
 }
 
 /* ── 3. MOBILE RESPONSIVE RULES (<= 768px) ────────────── */
@@ -165,9 +171,8 @@
     display: none !important;
   }
 
-  /* Fixed Mobile Top Brand Bar */
-  .mobile-top-brand {
-    display: flex !important;
+  .mobile-top-bar {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
@@ -175,34 +180,32 @@
     left: 0;
     right: 0;
     height: 58px;
-    background: rgba(28, 14, 19, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--ameza-border);
     padding: 0 16px;
-    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(184, 127, 78, 0.20);
     z-index: 1000;
+    box-sizing: border-box;
   }
 
-  .mobile-top-brand .logo {
+  .mobile-top-left {
     display: flex;
     align-items: center;
-    text-decoration: none;
   }
 
-  .mobile-top-actions {
+  .mobile-top-right {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
   }
 
   .mobile-action-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--ameza-card);
-    border: 1px solid var(--ameza-border);
-    color: var(--ameza-text);
+    background: #FFFFFF;
+    border: 1px solid var(--ameza-border, #E0D9CE);
+    color: var(--ameza-text, #1F1A17);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,15 +214,15 @@
   }
 
   .mobile-action-btn:hover {
-    background: var(--ameza-card-hover);
-    border-color: var(--ameza-gold);
-    color: var(--ameza-gold-bright);
+    background: #FAF8F5;
+    border-color: var(--ameza-primary, #B87F4E);
+    color: var(--ameza-primary, #B87F4E);
   }
 
   .mobile-action-btn.active {
-    background: var(--ameza-gold-gradient);
-    border-color: #FFFFFF;
-    color: #14090C;
+    background: var(--ameza-primary, #B87F4E);
+    border-color: var(--ameza-primary-hover, #C99260);
+    color: #FFFFFF;
   }
 
   /* Fixed Floating Mobile Bottom Capsule Navigation */
@@ -232,12 +235,12 @@
     left: 12px;
     right: 12px;
     height: 64px;
-    background: rgba(28, 14, 19, 0.96);
+    background: rgba(33, 28, 26, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1.5px solid var(--ameza-border);
+    border: 1px solid rgba(184, 127, 78, 0.30);
     border-radius: var(--radius-pill);
-    box-shadow: 0 12px 35px rgba(10, 3, 6, 0.7), 0 0 25px rgba(212, 175, 55, 0.25);
+    box-shadow: 0 12px 35px rgba(33, 28, 26, 0.35);
     z-index: 1000;
     padding: 4px 6px;
     box-sizing: border-box;
@@ -272,7 +275,7 @@
   .mobile-nav-icon-wrap svg {
     position: relative;
     z-index: 3;
-    stroke: var(--ameza-text-secondary);
+    stroke: #D2CFC9;
     transition: stroke var(--transition-fast);
   }
 
@@ -280,8 +283,8 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--ameza-gold-gradient);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.6);
+    background: var(--ameza-primary, #B87F4E);
+    box-shadow: 0 4px 15px rgba(184, 127, 78, 0.40);
     z-index: 1;
   }
 
@@ -290,18 +293,18 @@
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: var(--ameza-text-secondary);
+    color: #D2CFC9;
     line-height: 1;
     transition: color var(--transition-fast);
   }
 
   .mobile-nav-item.active .mobile-nav-icon-wrap svg {
-    stroke: #14090C !important;
+    stroke: #FFFFFF !important;
     stroke-width: 2.4;
   }
 
   .mobile-nav-item.active .mobile-nav-label {
-    color: var(--ameza-gold-bright) !important;
+    color: #FFFFFF !important;
     font-weight: 800 !important;
   }
 }

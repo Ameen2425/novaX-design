@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — ABOUT HERO (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — ABOUT HERO (SAGE + TERRACOTTA)
    ========================================================= */
 
 .about-hero {
@@ -14,8 +14,8 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: clamp(24px, 4vw, 56px);
   align-items: center;
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-xl);
   padding: clamp(36px, 5vw, 64px);
   box-shadow: var(--shadow-lg);
@@ -37,7 +37,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   margin-bottom: 16px;
   display: block;
 }
@@ -46,14 +46,14 @@
   font-family: var(--font-display);
   font-size: clamp(36px, 4.5vw, 60px);
   font-weight: 600;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.08;
   margin: 0 0 18px 0;
   letter-spacing: -0.02em;
 }
 
 .about-hero-title span {
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   font-style: italic;
 }
 
@@ -61,7 +61,7 @@
   font-family: var(--font-body);
   font-size: clamp(14.5px, 1.1vw, 16px);
   line-height: 1.65;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   max-width: 480px;
   margin: 0 0 32px 0;
 }
@@ -83,8 +83,8 @@
   height: clamp(280px, 32vw, 460px);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--ameza-border);
-  background: var(--ameza-section);
+  border: 1px solid rgba(98, 113, 105, 0.45);
+  background: var(--ameza-section, #34423B);
   box-shadow: var(--shadow-md);
   position: relative;
 }
@@ -106,10 +106,10 @@
   position: absolute;
   bottom: 18px;
   left: 18px;
-  background: rgba(36, 22, 26, 0.94);
+  background: rgba(30, 40, 36, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--ameza-border);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-lg);
   padding: 10px 18px;
   display: flex;
@@ -121,14 +121,14 @@
 
 .about-badge-icon {
   font-size: 18px;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
 }
 
 .about-badge-text strong {
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 700;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   display: block;
 }
 
@@ -136,7 +136,7 @@
   font-family: var(--font-body);
   font-size: 10.5px;
   letter-spacing: 0.08em;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   margin: 0;
   text-transform: uppercase;
 }

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — ABOUT FEATURES (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — ABOUT FEATURES (SAGE + TERRACOTTA)
    ========================================================= */
 
 .about-features-section {
@@ -20,8 +20,8 @@
 .about-feature-card {
   display: flex;
   flex-direction: column;
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-lg);
   padding: 28px 22px;
   box-shadow: var(--shadow-sm);
@@ -32,8 +32,8 @@
 
 .about-feature-card:hover {
   transform: translateY(-4px);
-  border-color: var(--ameza-gold);
-  background: var(--ameza-card-hover);
+  border-color: var(--ameza-primary, #A96855);
+  background: var(--ameza-card-hover, #4B6056);
   box-shadow: var(--shadow-md);
 }
 
@@ -48,8 +48,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ameza-gold);
-  color: #1C1114;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -64,9 +64,9 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: rgba(184, 154, 98, 0.15);
-  border: 1px solid rgba(184, 154, 98, 0.3);
-  color: var(--ameza-gold);
+  background: rgba(169, 104, 85, 0.15);
+  border: 1px solid rgba(169, 104, 85, 0.3);
+  color: var(--ameza-primary, #A96855);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,8 +76,8 @@
 
 .about-feature-card:hover .about-feat-icon {
   transform: scale(1.08);
-  background: var(--ameza-gold);
-  color: #1C1114;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
 }
 
 .about-feat-body h3 {
@@ -85,7 +85,7 @@
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin-bottom: 8px;
 }
 
@@ -93,7 +93,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   line-height: 1.6;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin: 0;
 }
 

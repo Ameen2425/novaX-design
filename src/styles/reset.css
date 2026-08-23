@@ -24,8 +24,29 @@ body {
   margin: 0;
   min-width: 320px;
   width: 100%;
-  background: var(--ameza-bg);
-  color: var(--ameza-text);
+  background:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(184, 127, 78, 0.08) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(212, 163, 115, 0.06) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(184, 127, 78, 0.06) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 90%,
+      rgba(242, 223, 206, 0.12) 0%,
+      transparent 40%
+    ),
+    var(--ameza-bg, #F6F3ED);
+  color: var(--ameza-text, #1F1A17);
   font-family: var(--font-body);
   line-height: 1.6;
   font-weight: 400;
@@ -104,24 +125,18 @@ a {
   }
 }
 
-/* Custom Scrollbars */
+/* Globally Hide Scrollbars (Zero Scrollbar Visibility) */
+html,
+body,
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--ameza-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--ameza-section);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--ameza-border);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--ameza-primary);
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 ::selection {

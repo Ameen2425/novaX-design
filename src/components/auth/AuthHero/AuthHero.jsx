@@ -1,36 +1,43 @@
+import React from "react";
 import { motion } from "framer-motion";
 import "./AuthHero.css";
 
-const AuthHero = ({ image, label, title, subtitle, features = [] }) => {
+const AuthHero = ({ image, label, title, subtitle, benefits = [] }) => {
   return (
     <motion.div
-      className="auth-hero-section"
-      initial={{ opacity: 0, x: -40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      className="auth-hero-panel"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <img
-        src={image}
-        alt="AMEZA Shopping Experience"
-        className="auth-bg-img"
-      />
-      <div className="auth-image-overlay"></div>
-      <div className="auth-image-content">
-        <span className="auth-image-label">{label}</span>
+      <div className="auth-hero-card">
+        {/* Background Image */}
+        <img
+          src={image}
+          alt="AMEZA Luxury Lifestyle Experience"
+          className="auth-hero-img"
+        />
 
-        <h2>{title}</h2>
+        {/* Gradient Overlay for high contrast text readability */}
+        <div className="auth-hero-overlay"></div>
 
-        <p>{subtitle}</p>
+        {/* Floating Content ON TOP of the image */}
+        <div className="auth-hero-content">
+          <span className="auth-editorial-label">{label}</span>
+          <h2 className="auth-editorial-title">{title}</h2>
+          <p className="auth-editorial-desc">{subtitle}</p>
 
-        {features.length > 0 && (
-          <div className="signup-image-features">
-            {features.map((feat, i) => (
-              <motion.span key={i} whileHover={{ scale: 1.05 }}>
-                {feat}
-              </motion.span>
-            ))}
-          </div>
-        )}
+          {benefits.length > 0 && (
+            <div className="auth-benefits-strip">
+              {benefits.map((benefit, i) => (
+                <div key={i} className="auth-benefit-pill">
+                  <span className="auth-benefit-dot">✦</span>
+                  <span className="auth-benefit-text">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );

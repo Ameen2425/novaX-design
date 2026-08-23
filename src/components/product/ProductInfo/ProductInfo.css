@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — PRODUCT INFO (DEEP BURGUNDY + RADIANT GOLD)
+   AMEZA — PRODUCT INFO (SAGE + TERRACOTTA)
    ========================================================= */
 
 .single-info {
@@ -15,8 +15,7 @@
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold-bright);
-  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
+  color: var(--ameza-primary, #A96855);
   display: block;
 }
 
@@ -25,7 +24,7 @@
   font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.15;
   margin: 0;
 }
@@ -40,19 +39,18 @@
 }
 
 .single-rating span {
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-accent, #D7B8A8);
   font-size: 15px;
   letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(184, 154, 98, 0.4);
 }
 
 .single-rating strong {
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   font-weight: 700;
 }
 
 .single-rating p {
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   margin: 0;
   font-size: 12.5px;
 }
@@ -60,7 +58,7 @@
 .single-divider {
   width: 100%;
   height: 1px;
-  background: var(--ameza-border);
+  background: var(--ameza-border, #627169);
   margin: 4px 0;
 }
 
@@ -68,7 +66,7 @@
   font-family: var(--font-body);
   font-size: 14.5px;
   line-height: 1.7;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin: 0;
 }
 
@@ -78,34 +76,33 @@
   align-items: baseline;
   gap: 14px;
   padding: 16px 0;
-  border-top: 1px solid var(--ameza-border);
-  border-bottom: 1px solid var(--ameza-border);
+  border-top: 1px solid var(--ameza-border, #627169);
+  border-bottom: 1px solid var(--ameza-border, #627169);
 }
 
 .single-price strong {
   font-family: var(--font-display);
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 700;
-  color: var(--ameza-text);
+  color: var(--ameza-primary, #A96855);
   letter-spacing: -0.02em;
 }
 
 .single-price del {
   font-family: var(--font-body);
   font-size: 16px;
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
 }
 
 .single-price .price-discount-badge {
-  background: var(--ameza-copper-bg);
-  color: var(--ameza-copper-light);
-  border: 1px solid var(--ameza-copper-border);
+  background: rgba(169, 104, 85, 0.15);
+  color: var(--ameza-primary, #A96855);
+  border: 1px solid var(--ameza-primary, #A96855);
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 800;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 2px 10px var(--ameza-copper-glow);
 }
 
 /* ── SEMANTIC STOCK ───────────────────────────────── */
@@ -126,46 +123,44 @@
 
 /* In Stock — Emerald */
 .single-stock.in-stock .stock-indicator-dot {
-  background: var(--ameza-emerald);
-  box-shadow: 0 0 10px var(--ameza-emerald-glow);
+  background: var(--ameza-emerald, #759C82);
 }
 .single-stock.in-stock strong {
-  color: var(--ameza-emerald-light);
+  color: var(--ameza-emerald, #759C82);
   font-weight: 700;
 }
 
 /* Low Stock — Copper */
 .single-stock.low-stock .stock-indicator-dot {
-  background: var(--ameza-copper);
-  box-shadow: 0 0 10px var(--ameza-copper-glow);
+  background: var(--ameza-primary, #A96855);
 }
 .single-stock.low-stock strong {
-  color: var(--ameza-copper-light);
+  color: var(--ameza-primary, #A96855);
   font-weight: 700;
 }
 
-/* Out of Stock — Muted Burgundy */
+/* Out of Stock */
 .single-stock.out-of-stock .stock-indicator-dot {
-  background: var(--ameza-text-muted);
+  background: var(--ameza-text-muted, #A7ADA5);
 }
 .single-stock.out-of-stock strong {
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   font-weight: 600;
 }
 
 .single-stock p {
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   margin: 0;
 }
 
 .text-in-stock {
-  color: var(--ameza-emerald-light) !important;
+  color: var(--ameza-emerald, #759C82) !important;
 }
 .text-low-stock {
-  color: var(--ameza-copper-light) !important;
+  color: var(--ameza-primary, #A96855) !important;
 }
 .text-out-stock {
-  color: var(--ameza-text-muted) !important;
+  color: var(--ameza-text-muted, #A7ADA5) !important;
 }
 
 /* ── SPECIFICATIONS GRID ──────────────────────────── */
@@ -173,8 +168,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-lg);
   padding: 16px;
 }
@@ -188,7 +183,7 @@
 .single-specifications span {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -196,7 +191,7 @@
 .single-specifications strong {
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   font-weight: 600;
 }
 
@@ -212,14 +207,14 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
 }
 
 .single-quantity {
   display: inline-flex;
   align-items: center;
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-pill);
   height: 44px;
   padding: 0 6px;
@@ -230,9 +225,9 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--ameza-section);
-  border: 1px solid var(--ameza-border);
-  color: var(--ameza-text);
+  background: var(--ameza-section, #34423B);
+  border: 1px solid var(--ameza-border, #627169);
+  color: var(--ameza-text, #F2EEE7);
   font-size: 16px;
   font-weight: 700;
   display: flex;
@@ -243,16 +238,16 @@
 }
 
 .single-quantity button:hover {
-  background: var(--ameza-gold);
-  border-color: var(--ameza-gold-bright);
-  color: #1C1114;
+  background: var(--ameza-primary, #A96855);
+  border-color: var(--ameza-primary-hover, #BD7863);
+  color: var(--ameza-white, #F2EEE7);
 }
 
 .single-quantity strong {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 700;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   min-width: 36px;
   text-align: center;
 }
@@ -270,36 +265,56 @@
   flex: 1;
   min-width: 180px;
   height: 48px;
-  background: rgba(212, 175, 55, 0.08);
-  color: var(--ameza-gold-bright) !important;
+  background: transparent;
+  color: var(--ameza-text, #F2EEE7) !important;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  border: 1.5px solid var(--ameza-gold);
+  border: 1px solid var(--ameza-border, #627169);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
-  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
   transition: all var(--transition-fast);
 }
 
 .single-cart-button:hover {
-  background: var(--ameza-gold-gradient);
-  border-color: var(--ameza-gold-bright);
-  color: #14090C !important;
+  border-color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary-hover, #BD7863) !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.5);
 }
 
 .single-buy-button {
   flex: 1;
   min-width: 180px;
   height: 48px;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7) !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(169, 104, 85, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.single-buy-button:hover {
+  background: var(--ameza-primary-hover, #BD7863);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(169, 104, 85, 0.35);
 }
 
 /* ── SERVICES ROW WITH EMERALD TRUST ACCENTS ─────── */

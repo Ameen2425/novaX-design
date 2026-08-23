@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — FLASH DEALS (DEEP BURGUNDY + RADIANT GOLD)
+   AMEZA — FLASH DEALS (SAGE + TERRACOTTA)
    ========================================================= */
 
 .flash-deals-section {
@@ -11,8 +11,7 @@
 }
 
 .flash-icon {
-  color: var(--ameza-gold-bright);
-  text-shadow: 0 0 8px rgba(184, 154, 98, 0.5);
+  color: var(--ameza-primary, #A96855);
 }
 
 /* ── 4 Compact Cards in a Row ────────────────────── */
@@ -23,8 +22,8 @@
 }
 
 .flash-deal-card {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-md);
   padding: 12px;
   display: flex;
@@ -38,17 +37,17 @@
 
 .flash-deal-card:hover {
   transform: translateY(-4px);
-  border-color: var(--ameza-gold);
-  background: var(--ameza-card-hover);
-  box-shadow: 0 8px 20px rgba(184, 154, 98, 0.2);
+  border-color: var(--ameza-primary, #A96855);
+  background: var(--ameza-card-hover, #4B6056);
+  box-shadow: var(--shadow-md);
 }
 
 .flash-deal-img-box {
   width: 72px;
   height: 72px;
-  background: var(--ameza-section);
+  background: var(--ameza-section, #34423B);
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(184, 154, 98, 0.2);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -63,16 +62,15 @@
   position: absolute;
   top: 3px;
   left: 3px;
-  background: var(--ameza-copper-bg);
-  color: var(--ameza-copper-light);
-  border: 1px solid var(--ameza-copper-border);
+  background: rgba(169, 104, 85, 0.15);
+  color: var(--ameza-primary, #A96855);
+  border: 1px solid var(--ameza-primary, #A96855);
   font-family: var(--font-body);
   font-size: 8.5px;
   font-weight: 800;
   padding: 2px 7px;
   border-radius: var(--radius-pill);
   z-index: 2;
-  box-shadow: 0 2px 6px var(--ameza-copper-glow);
 }
 
 .flash-deal-img {
@@ -97,7 +95,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0 0 6px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -113,7 +111,7 @@
 .flash-old-price {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   text-decoration: line-through;
 }
 
@@ -121,8 +119,7 @@
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 700;
-  color: var(--ameza-gold-bright);
-  text-shadow: 0 0 8px rgba(184, 154, 98, 0.35);
+  color: var(--ameza-primary, #A96855);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */

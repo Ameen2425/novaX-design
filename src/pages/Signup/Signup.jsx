@@ -92,7 +92,11 @@ const Signup = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
       >
+        {/* Subtle ambient luxury glow */}
+        <div className="auth-ambient-glow"></div>
+
         <div className="signup-container">
+          {/* Left Editorial Section */}
           <AuthHero
             image={amezaSignupHero}
             label="JOIN AMEZA"
@@ -103,15 +107,16 @@ const Signup = () => {
                 <span>Something New.</span>
               </>
             }
-            subtitle="Create your AMEZA account and discover products, styles, and everyday essentials curated for your shopping journey."
-            features={["New Collections", "Exclusive Deals", "Easy Shopping"]}
+            subtitle="Create your AMEZA account and discover products curated for your luxury lifestyle."
+            benefits={["10K+ Happy Customers", "Premium Quality Assured", "Global Shopping"]}
           />
 
+          {/* Right Form Section */}
           <motion.div
             className="signup-form-section"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             <SignupForm
               form={form}

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — CATEGORIES SECTION (DEEP BURGUNDY + RADIANT GOLD)
+   AMEZA — CATEGORIES SECTION (SAGE + TERRACOTTA)
    ========================================================= */
 
 .home-categories {
@@ -24,10 +24,9 @@
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #A96855);
   display: block;
   margin-bottom: 8px;
-  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
 }
 
 .home-section-heading h2 {
@@ -35,7 +34,7 @@
   font-size: clamp(28px, 3.8vw, 44px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.15;
   margin: 0 0 6px 0;
 }
@@ -43,7 +42,7 @@
 .home-section-heading p {
   font-family: var(--font-body);
   font-size: 14.5px;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   max-width: 540px;
   margin: 0;
   line-height: 1.6;
@@ -53,7 +52,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #A96855);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -63,7 +62,7 @@
 }
 
 .home-view-all-link:hover {
-  color: #FFFFFF;
+  color: var(--ameza-primary-hover, #BD7863);
   transform: translateX(4px);
 }
 
@@ -79,8 +78,8 @@
 }
 
 .home-category-card {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-lg);
   padding: 22px 18px;
   display: flex;
@@ -96,92 +95,35 @@
 
 .home-category-card:hover {
   transform: translateY(-5px);
-  background: var(--ameza-card-hover);
-  border-color: var(--ameza-gold);
-  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 20px rgba(184, 154, 98, 0.25);
+  background: var(--ameza-card-hover, #4B6056);
+  border-color: rgba(169, 104, 85, 0.55);
+  box-shadow: 0 12px 30px rgba(10, 18, 15, 0.3);
 }
 
 /* ── Semantic Category Accents ───────────────────── */
-/* Electronics — Sapphire Accent */
 .home-category-card.cat-electronics {
   border-color: var(--ameza-border-sapphire);
 }
-.home-category-card.cat-electronics .home-cat-num {
-  color: var(--ameza-sapphire-light);
-  background: var(--ameza-sapphire-bg);
-  border-color: var(--ameza-sapphire-border);
-}
 .home-category-card.cat-electronics:hover {
-  border-color: var(--ameza-sapphire);
-  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-sapphire-glow);
-}
-.home-category-card.cat-electronics:hover .home-cat-card-footer {
-  color: var(--ameza-sapphire-light);
+  border-color: var(--ameza-sapphire-light);
 }
 
-/* Fashion — Copper Accent */
-.home-category-card.cat-fashion {
-  border-color: var(--ameza-border-copper);
-}
-.home-category-card.cat-fashion .home-cat-num {
-  color: var(--ameza-copper-light);
-  background: var(--ameza-copper-bg);
-  border-color: var(--ameza-copper-border);
-}
-.home-category-card.cat-fashion:hover {
-  border-color: var(--ameza-copper);
-  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-copper-glow);
-}
-.home-category-card.cat-fashion:hover .home-cat-card-footer {
-  color: var(--ameza-copper-light);
-}
-
-/* Beauty — Warm Rose / Copper Accent */
-.home-category-card.cat-beauty {
-  border-color: var(--ameza-border-copper);
-}
-.home-category-card.cat-beauty .home-cat-num {
-  color: var(--ameza-copper-light);
-  background: var(--ameza-copper-bg);
-  border-color: var(--ameza-copper-border);
-}
-.home-category-card.cat-beauty:hover {
-  border-color: var(--ameza-copper-light);
-  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-copper-glow);
-}
-.home-category-card.cat-beauty:hover .home-cat-card-footer {
-  color: var(--ameza-copper-light);
-}
-
-/* Home & Living — Gold Luxury Accent */
+.home-category-card.cat-fashion,
+.home-category-card.cat-beauty,
 .home-category-card.cat-home {
-  border-color: var(--ameza-border-gold);
+  border-color: var(--ameza-border-copper);
 }
-.home-category-card.cat-home .home-cat-num {
-  color: var(--ameza-gold-bright);
-  background: rgba(197, 160, 89, 0.15);
-  border-color: var(--ameza-border-gold);
-}
+.home-category-card.cat-fashion:hover,
+.home-category-card.cat-beauty:hover,
 .home-category-card.cat-home:hover {
-  border-color: var(--ameza-gold);
-  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-gold-glow);
+  border-color: var(--ameza-primary-hover);
 }
 
-/* Footwear — Emerald / Gold Accent */
 .home-category-card.cat-footwear {
   border-color: var(--ameza-border-emerald);
 }
-.home-category-card.cat-footwear .home-cat-num {
-  color: var(--ameza-emerald-light);
-  background: var(--ameza-emerald-bg);
-  border-color: var(--ameza-emerald-border);
-}
 .home-category-card.cat-footwear:hover {
-  border-color: var(--ameza-emerald);
-  box-shadow: 0 12px 30px rgba(20, 8, 12, 0.4), 0 0 22px var(--ameza-emerald-glow);
-}
-.home-category-card.cat-footwear:hover .home-cat-card-footer {
-  color: var(--ameza-emerald-light);
+  border-color: var(--ameza-emerald-light);
 }
 
 .home-cat-card-header {
@@ -196,9 +138,9 @@
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.10em;
-  color: var(--ameza-gold-bright);
-  background: rgba(184, 154, 98, 0.15);
-  border: 1px solid rgba(184, 154, 98, 0.35);
+  color: var(--ameza-primary, #A96855);
+  background: rgba(169, 104, 85, 0.14);
+  border: 1px solid rgba(169, 104, 85, 0.35);
   padding: 2px 8px;
   border-radius: var(--radius-pill);
 }
@@ -213,14 +155,14 @@
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0 0 4px 0;
 }
 
 .home-cat-card-body p {
   font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   line-height: 1.4;
   margin: 0;
 }
@@ -231,11 +173,11 @@
   justify-content: space-between;
   margin-top: 14px;
   padding-top: 10px;
-  border-top: 1px solid rgba(184, 154, 98, 0.25);
+  border-top: 1px solid rgba(98, 113, 105, 0.35);
   font-family: var(--font-body);
   font-size: 11.5px;
   font-weight: 700;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #A96855);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: color var(--transition-fast);

@@ -21,7 +21,7 @@ const UsersTable = ({ filterUsers, editUser, deleteUser }) => {
             {filterUsers.length === 0 ? (
               <tr>
                 <td colSpan="6" style={{ textAlign: "center", padding: "54px 20px" }}>
-                  <p style={{ fontFamily: "var(--font-display)", fontSize: "22px", color: "var(--ameza-gold-bright)", marginBottom: "8px" }}>No Users Found</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: "22px", color: "var(--ameza-primary, #A96855)", marginBottom: "8px" }}>No Users Found</p>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: "14px", color: "var(--ameza-text-secondary)", margin: 0 }}>Try adjusting your search query</p>
                 </td>
               </tr>

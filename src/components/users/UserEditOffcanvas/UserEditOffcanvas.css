@@ -1,13 +1,13 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY OFFCANVAS EDIT DRAWER
+   AMEZA — OFFCANVAS EDIT DRAWER (SAGE + TERRACOTTA)
    ========================================================= */
 
 .offcanvas {
-  background: var(--ameza-card, #391D27) !important;
-  color: var(--ameza-text) !important;
-  border-left: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28)) !important;
+  background: var(--ameza-card, #3F5148) !important;
+  color: var(--ameza-text, #F2EEE7) !important;
+  border-left: 1px solid var(--ameza-border, #627169) !important;
   border-right: none !important;
-  box-shadow: -16px 0 45px rgba(10, 3, 6, 0.7);
+  box-shadow: -16px 0 45px rgba(10, 18, 15, 0.7);
   width: 100% !important;
   max-width: 440px !important;
   z-index: 10000 !important;
@@ -17,17 +17,17 @@
 
 .offcanvas-backdrop {
   z-index: 9999 !important;
-  background-color: rgba(10, 3, 6, 0.82) !important;
+  background-color: rgba(10, 18, 15, 0.82) !important;
   backdrop-filter: blur(6px);
 }
 
 .offcanvas-header {
   padding: 26px 24px 18px;
-  border-bottom: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  border-bottom: 1px solid var(--ameza-border, #627169);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background: var(--ameza-section, #2E1720);
+  background: var(--ameza-section, #34423B);
 }
 
 .offcanvas-badge {
@@ -36,10 +36,9 @@
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-gold-bright, #F3E5C8);
+  color: var(--ameza-primary, #A96855);
   display: block;
   margin-bottom: 4px;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
 .offcanvas-title {
@@ -47,7 +46,7 @@
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0;
 }
 
@@ -55,9 +54,9 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ameza-card, #391D27);
-  border: 1px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
-  color: var(--ameza-gold-bright);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid var(--ameza-border, #627169);
+  color: var(--ameza-primary, #A96855);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,9 +66,8 @@
 }
 
 .offcanvas-close-btn:hover {
-  background: var(--ameza-gold-gradient);
-  color: #14090C;
-  border-color: #FFFFFF;
+  background: var(--ameza-primary, #A96855);
+  color: #FFFFFF;
   transform: scale(1.08);
 }
 
@@ -86,7 +84,7 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.03em;
-  color: var(--ameza-gold-bright, #F3E5C8);
+  color: var(--ameza-primary, #A96855);
   margin-bottom: 8px;
 }
 
@@ -94,12 +92,12 @@
   width: 100%;
   height: 48px;
   padding: 0 18px;
-  background: var(--ameza-section, #2E1720) !important;
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28)) !important;
+  background: var(--ameza-section, #34423B) !important;
+  border: 1px solid var(--ameza-border, #627169) !important;
   border-radius: var(--radius-md, 14px);
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-text) !important;
+  color: var(--ameza-text, #F2EEE7) !important;
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   margin-bottom: 20px;
@@ -107,8 +105,8 @@
 }
 
 .offcanvas-body .form-control:focus {
-  border-color: var(--ameza-copper-light) !important;
-  box-shadow: 0 0 0 3px var(--ameza-copper-glow), 0 0 15px var(--ameza-copper-glow) !important;
+  border-color: var(--ameza-primary, #A96855) !important;
+  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20) !important;
 }
 
 .offcanvas-actions {
@@ -122,17 +120,17 @@
 .btn-primary,
 .offcanvas-actions .btn-primary {
   height: 50px;
-  background: var(--ameza-gold-gradient) !important;
-  color: #14090C !important;
-  border: 1px solid var(--ameza-gold-bright) !important;
+  background: var(--ameza-primary, #A96855) !important;
+  color: var(--ameza-white, #F2EEE7) !important;
+  border: none !important;
   border-radius: var(--radius-pill) !important;
   font-family: var(--font-body);
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 18px rgba(169, 104, 85, 0.25);
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
@@ -142,22 +140,21 @@
 
 .btn-primary:hover,
 .offcanvas-actions .btn-primary:hover {
-  background: var(--ameza-gold-gradient-hover) !important;
-  border-color: #FFFFFF !important;
-  color: #0E0507 !important;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+  background: var(--ameza-primary-hover, #BD7863) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 25px rgba(169, 104, 85, 0.35);
 }
 
 .btn-cancel,
 .offcanvas-actions .btn-cancel {
   height: 48px;
   background: transparent;
-  color: var(--ameza-gold-bright);
-  border: 1.5px solid var(--ameza-gold);
+  color: var(--ameza-text, #F2EEE7);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
@@ -170,7 +167,6 @@
 
 .btn-cancel:hover,
 .offcanvas-actions .btn-cancel:hover {
-  border-color: var(--ameza-gold-bright);
-  color: #14090C !important;
-  background: var(--ameza-gold-gradient);
+  border-color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary-hover, #BD7863) !important;
 }

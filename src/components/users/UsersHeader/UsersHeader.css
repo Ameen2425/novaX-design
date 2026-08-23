@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY USERS HEADER
+   AMEZA — USERS HEADER (SAGE + TERRACOTTA)
    ========================================================= */
 
 .users-header {
@@ -13,17 +13,16 @@
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold-bright, #F3E5C8);
+  color: var(--ameza-primary, #A96855);
   display: block;
   margin-bottom: 12px;
-  text-shadow: 0 0 14px rgba(212, 175, 55, 0.45);
 }
 
 .users-header h1 {
   font-family: var(--font-display);
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 600;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 14px;
@@ -32,7 +31,7 @@
 .users-header p {
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   max-width: 520px;
   margin: 0 auto;
   line-height: 1.65;
@@ -57,8 +56,8 @@
   min-width: 260px;
   height: 54px;
   min-height: 52px;
-  background: var(--ameza-section, #2E1720);
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  background: var(--ameza-section, #34423B);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-sm);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
@@ -66,27 +65,26 @@
 }
 
 .users-search-wrapper:hover {
-  border-color: var(--ameza-gold, #D4AF37);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  border-color: var(--ameza-primary, #A96855);
 }
 
 .users-search-wrapper:focus-within {
-  border-color: var(--ameza-gold-bright, #F3E5C8);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 20px rgba(212, 175, 55, 0.2);
+  border-color: var(--ameza-primary, #A96855);
+  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20);
   transform: translateY(-1px);
 }
 
 .users-search-icon {
   position: absolute;
   left: 20px;
-  color: var(--ameza-gold, #D4AF37);
+  color: var(--ameza-primary, #A96855);
   pointer-events: none;
   transition: color var(--transition-fast), transform var(--transition-fast);
   flex-shrink: 0;
 }
 
 .users-search-wrapper:focus-within .users-search-icon {
-  color: var(--ameza-gold-bright, #F3E5C8);
+  color: var(--ameza-primary-hover, #BD7863);
   transform: scale(1.1);
 }
 
@@ -100,12 +98,12 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 500;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   box-sizing: border-box;
 }
 
 .users-search-input::placeholder {
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   font-family: var(--font-body);
   font-size: 14.5px;
 }
@@ -116,9 +114,9 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid var(--ameza-gold);
-  color: var(--ameza-gold-bright);
+  background: rgba(169, 104, 85, 0.15);
+  border: 1px solid rgba(169, 104, 85, 0.3);
+  color: var(--ameza-primary, #A96855);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,8 +127,8 @@
 }
 
 .users-search-clear:hover {
-  background: var(--ameza-gold-gradient);
-  color: #14090C;
+  background: var(--ameza-primary, #A96855);
+  color: #FFFFFF;
   transform: scale(1.1);
 }
 
@@ -141,9 +139,9 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
-  color: var(--ameza-text);
-  background: var(--ameza-card, #391D27);
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  color: var(--ameza-text, #F2EEE7);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid var(--ameza-border, #627169);
   padding: 0 22px;
   height: 50px;
   border-radius: var(--radius-pill);
@@ -156,14 +154,14 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--ameza-gold-bright, #F3E5C8);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  background: var(--ameza-primary, #A96855);
+  box-shadow: 0 0 8px rgba(169, 104, 85, 0.5);
 }
 
 .users-count-badge strong {
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #A96855);
   line-height: 1;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./DealPromo.css";
-import ameza3dCta from "../../../assets/novax-3d-cta.jpg";
+import amezaDealPromo from "../../../assets/novax-deal-promo.jpg";
 
 const DealPromo = () => {
   return (
@@ -43,8 +43,8 @@ const DealPromo = () => {
         >
           <div className="deal-promo-img-wrap">
             <img
-              src={ameza3dCta}
-              alt="AMEZA 3D Headphones and Luxury Shopping Bag"
+              src={amezaDealPromo}
+              alt="AMEZA Luxury Seasonal Gift & Special Curation"
               className="deal-promo-img"
             />
           </div>

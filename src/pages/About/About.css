@@ -1,14 +1,14 @@
 /* =========================================================
-   AMEZA — ABOUT PAGE (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — ABOUT PAGE (SAGE + TERRACOTTA)
    ========================================================= */
 
 .about-page {
   min-height: 100vh;
-  background-color: var(--ameza-bg);
+  background-color: var(--ameza-bg, #26332E);
   padding-top: calc(62px + 20px);
   padding-bottom: 36px;
   overflow-x: hidden;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   width: 100%;
   box-sizing: border-box;
 }
@@ -49,7 +49,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   display: block;
   margin-bottom: 8px;
 }
@@ -59,7 +59,7 @@
   font-size: clamp(28px, 3.8vw, 44px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.15;
   margin: 0 0 8px 0;
 }

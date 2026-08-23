@@ -1,12 +1,12 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY FOOTER
+   AMEZA — ULTRA-LUXURY FOOTER (VELVET ESPRESSO #211C1A)
    ========================================================= */
 
 .footer {
-  background: var(--ameza-dark-gradient, linear-gradient(180deg, #1C0E13 0%, #14090C 100%));
-  border-top: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  background: var(--ameza-deep, #211C1A);
+  border-top: 1px solid rgba(184, 127, 78, 0.25);
   padding: 68px 0 36px;
-  color: var(--ameza-text);
+  color: #F6F3ED;
   box-sizing: border-box;
   width: 100%;
   position: relative;
@@ -49,9 +49,19 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   line-height: 1.65;
-  color: var(--ameza-text-secondary);
+  color: #D2CFC9;
   margin: 0 0 22px 0;
   max-width: 320px;
+}
+
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ameza-primary, #B87F4E);
+  margin-bottom: 16px;
 }
 
 /* Socials Row */
@@ -65,9 +75,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--ameza-section, #2E1720);
-  border: 1px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
-  color: var(--ameza-text-secondary);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(184, 127, 78, 0.25);
+  color: #D2CFC9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,11 +86,11 @@
 }
 
 .footer-socials a:hover {
-  background: var(--ameza-gold-gradient);
-  border-color: var(--ameza-gold-bright);
-  color: #14090C;
+  background: var(--ameza-primary, #B87F4E);
+  border-color: var(--ameza-primary-hover, #C99260);
+  color: #FFFFFF;
   transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 18px rgba(184, 127, 78, 0.35);
 }
 
 /* ── Columns Typography & Links ──────────────────── */
@@ -88,7 +98,7 @@
   font-family: var(--font-display);
   font-size: 17px;
   font-weight: 600;
-  color: var(--ameza-gold-bright);
+  color: #FFFFFF;
   letter-spacing: -0.01em;
   margin: 0 0 20px 0;
 }
@@ -96,7 +106,7 @@
 .footer-col p {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-secondary);
+  color: #D2CFC9;
   line-height: 1.55;
   margin: 0 0 16px 0;
 }
@@ -113,7 +123,7 @@
 .footer-col ul li a {
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text-secondary);
+  color: #D2CFC9;
   text-decoration: none;
   transition: all var(--transition-fast);
   display: inline-flex;
@@ -121,17 +131,16 @@
 }
 
 .footer-col ul li a:hover {
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary-hover, #C99260);
   transform: translateX(5px);
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* ── Newsletter Form ──────────────────────────────── */
 .footer-newsletter-form {
   display: flex;
   align-items: center;
-  background: var(--ameza-section, #2E1720);
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(184, 127, 78, 0.30);
   border-radius: var(--radius-pill);
   padding: 4px 6px 4px 18px;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -140,8 +149,8 @@
 }
 
 .footer-newsletter-form:focus-within {
-  border-color: var(--ameza-copper-light);
-  box-shadow: 0 0 0 3px var(--ameza-copper-glow), 0 0 15px var(--ameza-copper-glow);
+  border-color: var(--ameza-primary, #A96855);
+  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.2);
 }
 
 .footer-newsletter-form input {
@@ -152,12 +161,12 @@
   outline: none;
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   min-width: 0;
 }
 
 .footer-newsletter-form input::placeholder {
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   font-size: 13px;
 }
 
@@ -165,8 +174,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--ameza-gold-gradient);
-  color: #14090C;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
   border: none;
   display: flex;
   align-items: center;
@@ -174,13 +183,13 @@
   cursor: pointer;
   flex-shrink: 0;
   transition: all var(--transition-fast);
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 2px 10px rgba(169, 104, 85, 0.3);
 }
 
 .footer-newsletter-form button:hover {
-  background: var(--ameza-gold-gradient-hover);
+  background: var(--ameza-primary-hover, #BD7863);
   transform: scale(1.08);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 4px 15px rgba(169, 104, 85, 0.4);
 }
 
 .newsletter-success {
@@ -227,22 +236,22 @@
 }
 
 .footer-legal a:hover {
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary-hover, #BD7863);
 }
 
 .footer-legal span {
-  color: var(--ameza-border);
+  color: var(--ameza-border, #627169);
   font-size: 11px;
 }
 
 .footer-made-with {
   font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
 }
 
 .heart-icon {
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   display: inline-block;
   margin: 0 2px;
 }

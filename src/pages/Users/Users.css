@@ -1,14 +1,14 @@
 /* =========================================================
-   AMEZA — USERS / ADMIN DASHBOARD
+   AMEZA — USERS / ADMIN DASHBOARD (SAGE + TERRACOTTA)
    ========================================================= */
 
 .users-page {
   min-height: 100vh;
-  background: var(--ameza-bg, #1C0E13);
+  background: var(--ameza-bg, #26332E);
   padding: calc(64px + 44px) 5% 100px;
   max-width: 1280px;
   margin: 0 auto;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   box-sizing: border-box;
   overflow-x: hidden;
   width: 100%;
@@ -53,8 +53,8 @@
     padding: 0 !important;
   }
   tbody tr {
-    background: var(--ameza-card, #391D27);
-    border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+    background: var(--ameza-card, #3F5148);
+    border: 1px solid var(--ameza-border, #627169);
     border-radius: var(--radius-lg);
     margin-bottom: 16px;
     padding: 18px 16px;
@@ -76,7 +76,7 @@
     gap: 4px;
     font-size: 13.5px;
     font-family: var(--font-body);
-    color: var(--ameza-text);
+    color: var(--ameza-text, #F2EEE7);
     width: 100% !important;
     box-sizing: border-box;
     word-break: break-all;
@@ -85,13 +85,13 @@
   tbody td::before {
     font-family: var(--font-body);
     font-size: 10.5px;
-    color: var(--ameza-gold-bright);
+    color: var(--ameza-primary, #A96855);
     text-transform: uppercase;
     letter-spacing: 0.10em;
     font-weight: 800;
   }
 
-  tbody td:nth-child(1) { width: 100%; font-size: 15px; border-bottom: 1px dashed var(--ameza-border) !important; padding-bottom: 10px; margin-bottom: 2px; font-family: var(--font-mono); }
+  tbody td:nth-child(1) { width: 100%; font-size: 15px; border-bottom: 1px dashed var(--ameza-border, #627169) !important; padding-bottom: 10px; margin-bottom: 2px; font-family: var(--font-mono); }
   tbody td:nth-child(1)::before { content: "User ID"; }
 
   tbody td:nth-child(2) { width: 100%; font-weight: 600; }

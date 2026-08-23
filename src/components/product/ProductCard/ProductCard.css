@@ -9,29 +9,29 @@
 }
 
 .product-card {
-  background: var(--ameza-card, #38202B);
-  border: 1px solid var(--ameza-border, rgba(197, 160, 89, 0.16));
-  border-radius: var(--radius-card, 18px);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.55);
+  border-radius: var(--radius-card, 16px);
   padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-card, 0 8px 24px rgba(10, 4, 7, 0.45));
+  box-shadow: var(--shadow-card, 0 14px 35px rgba(15, 25, 21, 0.15));
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
   box-sizing: border-box;
   position: relative;
   height: 100%;
   text-decoration: none;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   overflow: hidden;
   transform-style: preserve-3d;
   will-change: transform;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--ameza-gold, #C5A059);
-  background: var(--ameza-card-hover, #442735);
-  box-shadow: var(--shadow-card-hover, 0 16px 40px rgba(10, 4, 7, 0.65));
+  transform: translateY(-5px);
+  border-color: rgba(169, 104, 85, 0.55);
+  background: var(--ameza-card-hover, #4B6056);
+  box-shadow: var(--shadow-card-hover, 0 20px 45px rgba(15, 25, 21, 0.22));
 }
 
 /* ── Category Specific Card Accents & Glows ─────────── */
@@ -40,32 +40,22 @@
 }
 .product-card.card-electronics:hover {
   border-color: var(--ameza-sapphire-light);
-  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-sapphire-glow);
 }
 .product-card.card-electronics .product-category {
   color: var(--ameza-sapphire-light);
 }
 
-.product-card.card-beauty {
-  border-color: var(--ameza-border-copper);
-}
-.product-card.card-beauty:hover {
-  border-color: var(--ameza-copper-light);
-  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-copper-glow);
-}
-.product-card.card-beauty .product-category {
-  color: var(--ameza-copper-light);
-}
-
+.product-card.card-beauty,
 .product-card.card-fashion {
   border-color: var(--ameza-border-copper);
 }
+.product-card.card-beauty:hover,
 .product-card.card-fashion:hover {
-  border-color: var(--ameza-copper);
-  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-copper-glow);
+  border-color: var(--ameza-primary-hover);
 }
+.product-card.card-beauty .product-category,
 .product-card.card-fashion .product-category {
-  color: var(--ameza-copper-light);
+  color: var(--ameza-accent);
 }
 
 .product-card.card-footwear {
@@ -73,29 +63,28 @@
 }
 .product-card.card-footwear:hover {
   border-color: var(--ameza-emerald-light);
-  box-shadow: 0 18px 40px rgba(10, 4, 7, 0.65), 0 0 25px var(--ameza-emerald-glow);
 }
 .product-card.card-footwear .product-category {
   color: var(--ameza-emerald-light);
 }
 
-/* ── Dynamic Liquid Gold Sheen Overlay ───────────────── */
+/* ── Dynamic Sheen Overlay ───────────────────────────── */
 .product-card-sheen {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 8;
   transition: opacity 0.3s ease;
-  border-radius: var(--radius-card, 18px);
+  border-radius: var(--radius-card, 16px);
 }
 
 /* ── Image Container (Elevated 3D Depth) ─────────────── */
 .product-image-container {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: var(--ameza-section, #2E1A23);
-  border-radius: var(--radius-md, 14px);
-  border: 1px solid rgba(213, 174, 95, 0.15);
+  background: var(--ameza-section, #34423B);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid rgba(98, 113, 105, 0.35);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -123,34 +112,31 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background: var(--ameza-gold-gradient);
-  color: #150B0F;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
   font-family: var(--font-body);
   font-size: 9.5px;
   font-weight: 800;
   letter-spacing: 0.06em;
   padding: 3px 9px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 2px 8px rgba(213, 174, 95, 0.4);
+  box-shadow: 0 2px 8px rgba(169, 104, 85, 0.35);
   z-index: 5;
   transform: translateZ(15px);
 }
 
 .product-badge.badge-electronics {
-  background: var(--ameza-sapphire-bg);
-  color: var(--ameza-sapphire-light);
-  border: 1px solid var(--ameza-sapphire-border);
+  background: var(--ameza-sapphire, #5C788A);
+  color: #FFFFFF;
 }
 .product-badge.badge-beauty,
 .product-badge.badge-fashion {
-  background: var(--ameza-copper-bg);
-  color: var(--ameza-copper-light);
-  border: 1px solid var(--ameza-copper-border);
+  background: var(--ameza-primary, #A96855);
+  color: #FFFFFF;
 }
 .product-badge.badge-footwear {
-  background: var(--ameza-emerald-bg);
-  color: var(--ameza-emerald-light);
-  border: 1px solid var(--ameza-emerald-border);
+  background: var(--ameza-emerald, #759C82);
+  color: #FFFFFF;
 }
 
 .product-wishlist-btn {
@@ -160,10 +146,10 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(28, 16, 21, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--ameza-border);
-  color: var(--ameza-gold-bright);
+  border: 1px solid var(--ameza-border, #E0D9CE);
+  color: var(--ameza-primary, #B87F4E);
   font-size: 16px;
   line-height: 1;
   display: flex;
@@ -173,18 +159,18 @@
   z-index: 6;
   transform: translateZ(15px);
   transition: transform var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(33, 28, 26, 0.08);
 }
 
 .product-wishlist-btn:hover {
   transform: translateZ(15px) scale(1.15);
-  border-color: var(--ameza-gold);
-  background: var(--ameza-card);
+  border-color: var(--ameza-primary, #B87F4E);
+  background: #FFFFFF;
 }
 
 .product-wishlist-btn.active {
-  color: #E64A5E;
-  border-color: rgba(230, 74, 94, 0.4);
-  text-shadow: 0 0 10px rgba(230, 74, 94, 0.6);
+  color: var(--ameza-error, #C94A29);
+  border-color: rgba(201, 74, 41, 0.4);
 }
 
 /* ── Body Content ─────────────────────────────────── */
@@ -201,18 +187,18 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-text-muted, #A7ADA5);
   margin-bottom: 4px;
   display: block;
 }
 
 .product-title {
-  font-family: var(--font-display);
-  font-size: 17px;
+  font-family: var(--font-body);
+  font-size: 15px;
   font-weight: 600;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0 0 6px 0;
-  line-height: 1.25;
+  line-height: 1.35;
   height: 42px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -222,14 +208,14 @@
 }
 
 .product-card:hover .product-title {
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary-hover, #BD7863);
 }
 
 .product-description {
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.45;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin: 0 0 10px 0;
   height: 36px;
   display: -webkit-box;
@@ -249,20 +235,19 @@
 }
 
 .product-rating span {
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-accent, #D7B8A8);
   letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(213, 174, 95, 0.45);
 }
 
 .product-rating small {
   font-weight: 700;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   font-size: 11.5px;
 }
 
 .product-rating em {
   font-style: normal;
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   font-size: 11px;
 }
 
@@ -274,36 +259,35 @@
   margin-bottom: 12px;
   margin-top: auto;
   padding-top: 10px;
-  border-top: 1px solid rgba(213, 174, 95, 0.22);
+  border-top: 1px solid rgba(98, 113, 105, 0.4);
   transform: translateZ(14px);
 }
 
 .price-label {
   font-family: var(--font-body);
   font-size: 10.5px;
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   display: block;
 }
 
 .product-price {
-  font-family: var(--font-display);
-  font-size: 22px;
+  font-family: var(--font-body);
+  font-size: 20px;
   font-weight: 700;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #A96855);
   margin: 0;
   line-height: 1;
-  text-shadow: 0 0 12px rgba(213, 174, 95, 0.4);
 }
 
 .price-offer {
   font-family: var(--font-body);
   font-size: 10.5px;
   font-weight: 800;
-  color: #150B0F;
-  background: var(--ameza-gold-gradient);
-  padding: 4px 10px;
+  color: var(--ameza-white, #F2EEE7);
+  background: var(--ameza-primary, #A96855);
+  padding: 3px 8px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 2px 8px rgba(213, 174, 95, 0.35);
+  box-shadow: 0 2px 8px rgba(169, 104, 85, 0.25);
 }
 
 /* ── Services Strip ───────────────────────────────── */
@@ -313,7 +297,7 @@
   gap: 12px;
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin-bottom: 12px;
 }
 
@@ -327,29 +311,29 @@
   width: 100%;
   height: 44px;
   border-radius: var(--radius-pill);
-  background: var(--ameza-gold-gradient);
-  color: #150B0F !important;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7) !important;
   font-family: var(--font-body);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  border: 1px solid var(--ameza-gold-bright);
+  border: 1px solid var(--ameza-primary-hover, #BD7863);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(213, 174, 95, 0.4);
+  box-shadow: 0 4px 16px rgba(113, 143, 123, 0.35);
   transition: all var(--transition-fast);
 }
 
 .add-cart-btn:hover {
-  background: var(--ameza-gold-gradient-hover);
+  background: var(--ameza-primary-hover, #86A691);
   border-color: #FFFFFF;
-  color: #0E0507 !important;
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(213, 174, 95, 0.6);
+  box-shadow: 0 8px 25px rgba(113, 143, 123, 0.5);
 }
 
 /* ── RESPONSIVE COMPACT CARD STYLES ────────────────── */

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY TYPOGRAPHY & INTERACTIVE SYSTEM
+   AMEZA — MASTER SAGE + TERRACOTTA TYPOGRAPHY & INTERACTIVE SYSTEM
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
@@ -12,7 +12,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -46,15 +46,19 @@ p {
   font-weight: 400;
   line-height: 1.68;
   font-size: clamp(15px, 1.1vw, 18px);
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
 }
 
-/* ── Gold Text Gradient Utility ─────────────────────── */
+/* ── Cognac Bronze Text Accent Utility ──────────────── */
+.ameza-highlight,
+.terracotta-text,
 .gold-text-gradient {
-  background: var(--ameza-gold-gradient);
+  color: var(--ameza-primary, #B87F4E);
+  background: linear-gradient(135deg, #1F1A17 0%, #C99260 45%, #B87F4E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  font-style: italic;
+  display: inline;
 }
 
 /* ── Editorial Labels & Badges ──────────────────────── */
@@ -77,68 +81,57 @@ p {
   font-family: var(--font-body) !important;
   font-size: 0.75rem !important;
   font-weight: 800 !important;
-  letter-spacing: 0.16em !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
-  color: var(--ameza-gold-bright) !important;
-  text-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
+  color: var(--ameza-primary, #B87F4E) !important;
 }
 
 /* ── Semantic Category & Trust Badges ───────────────── */
 .badge-emerald,
 .tag-emerald {
   background: var(--ameza-emerald-bg) !important;
-  color: var(--ameza-emerald-light) !important;
+  color: var(--ameza-emerald-dark) !important;
   border: 1px solid var(--ameza-emerald-border) !important;
-  box-shadow: 0 2px 10px var(--ameza-emerald-glow);
 }
 
 .badge-sapphire,
 .tag-sapphire {
   background: var(--ameza-sapphire-bg) !important;
-  color: var(--ameza-sapphire-light) !important;
+  color: var(--ameza-sapphire-dark) !important;
   border: 1px solid var(--ameza-sapphire-border) !important;
-  box-shadow: 0 2px 10px var(--ameza-sapphire-glow);
 }
 
 .badge-copper,
-.tag-copper {
-  background: var(--ameza-copper-bg) !important;
-  color: var(--ameza-copper-light) !important;
-  border: 1px solid var(--ameza-copper-border) !important;
-  box-shadow: 0 2px 10px var(--ameza-copper-glow);
-}
-
+.tag-copper,
 .badge-gold,
 .tag-gold {
-  background: rgba(197, 160, 89, 0.12) !important;
-  color: var(--ameza-gold-bright) !important;
-  border: 1px solid var(--ameza-border-gold) !important;
-  box-shadow: 0 2px 10px var(--ameza-gold-glow);
+  background: linear-gradient(135deg, rgba(184, 127, 78, 0.14) 0%, rgba(242, 223, 206, 0.20) 100%) !important;
+  color: var(--ameza-primary, #B87F4E) !important;
+  border: 1px solid rgba(184, 127, 78, 0.35) !important;
 }
 
 /* ── Price Semantic Typography ──────────────────────── */
 .price-regular {
   font-family: var(--font-display);
-  color: var(--ameza-text);
+  color: var(--ameza-text, #1F1A17);
   font-weight: 700;
 }
 
 .price-premium {
   font-family: var(--font-display);
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #B87F4E);
   font-weight: 700;
-  text-shadow: 0 0 12px var(--ameza-gold-glow);
 }
 
 .price-discount {
   font-family: var(--font-body);
-  color: var(--ameza-copper);
+  color: var(--ameza-primary, #B87F4E);
   font-weight: 800;
 }
 
 .price-original {
   font-family: var(--font-body);
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #8C8178);
   text-decoration: line-through;
 }
 
@@ -152,12 +145,12 @@ p {
   font-family: var(--font-mono) !important;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ameza-gold) !important;
+  color: var(--ameza-primary, #B87F4E) !important;
 }
 
-/* ── Global Primary Buttons (Luminous Liquid Gold & Velvet Crimson) ──── */
+/* ── Global Primary Buttons (Royal Cognac Bronze) ─────── */
 .btn-terracotta,
 .home-primary-btn,
 .btn-hero-copper,
@@ -171,25 +164,29 @@ p {
 .btn-primary,
 .add-cart-btn,
 .home-shop-btn,
-.deal-card-cart-btn {
+.deal-card-cart-btn,
+.btn-crimson,
+.btn-primary-cta,
+.btn-copper,
+.btn-promo-copper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   height: 48px;
   min-height: 44px;
-  padding: 0 28px;
-  background: var(--ameza-gold-gradient);
-  color: #14090C !important;
+  padding: 0 30px;
+  background: linear-gradient(135deg, #C99260 0%, #B87F4E 50%, #8F5E33 100%);
+  color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   text-decoration: none !important;
-  border: 1px solid var(--ameza-gold-bright);
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 24px rgba(184, 127, 78, 0.30);
   transition: all var(--transition);
   cursor: pointer;
   box-sizing: border-box;
@@ -208,112 +205,19 @@ p {
 .btn-primary:hover,
 .add-cart-btn:hover,
 .home-shop-btn:hover,
-.deal-card-cart-btn:hover {
-  background: var(--ameza-gold-gradient-hover);
-  border-color: #FFFFFF;
-  color: #0E0507 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
-}
-
-/* ── Contextual Primary CTA (Velvet Crimson / Ruby) ─── */
-.btn-crimson,
-.btn-primary-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  min-height: 44px;
-  padding: 0 28px;
-  background: linear-gradient(135deg, #A83246 0%, #872436 100%);
-  color: #FFFFFF !important;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 20px var(--ameza-crimson-glow);
-  transition: all var(--transition);
-  cursor: pointer;
-  text-decoration: none !important;
-}
-
+.deal-card-cart-btn:hover,
 .btn-crimson:hover,
-.btn-primary-cta:hover {
-  background: linear-gradient(135deg, #BE5D6A 0%, #9E2D40 100%);
-  border-color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(168, 50, 70, 0.55);
-}
-
-/* ── Contextual Special Promotion Button (Copper) ──── */
-.btn-copper,
-.btn-promo-copper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  min-height: 44px;
-  padding: 0 28px;
-  background: var(--ameza-copper-gradient);
-  color: #FFFFFF !important;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--ameza-copper-light);
-  box-shadow: 0 4px 20px var(--ameza-copper-glow);
-  transition: all var(--transition);
-  cursor: pointer;
-  text-decoration: none !important;
-}
-
+.btn-primary-cta:hover,
 .btn-copper:hover,
 .btn-promo-copper:hover {
-  background: var(--ameza-copper-gradient-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(184, 107, 92, 0.5);
-}
-
-/* ── Contextual Success Button (Emerald) ───────────── */
-.btn-emerald,
-.btn-success-action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  min-height: 44px;
-  padding: 0 28px;
-  background: linear-gradient(135deg, #2F8068 0%, #1B5B49 100%);
+  background: linear-gradient(135deg, #D4A373 0%, #C99260 45%, #B87F4E 100%);
   color: #FFFFFF !important;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--ameza-emerald-light);
-  box-shadow: 0 4px 20px var(--ameza-emerald-glow);
-  transition: all var(--transition);
-  cursor: pointer;
-  text-decoration: none !important;
-}
-
-.btn-emerald:hover,
-.btn-success-action:hover {
-  background: linear-gradient(135deg, #3A997D 0%, #24755E 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(47, 128, 104, 0.5);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 12px 30px rgba(184, 127, 78, 0.42);
 }
 
-/* ── Global Secondary Buttons (Gold Bordered) ──────── */
+/* ── Global Secondary Buttons (Outline Cashmere) ────────── */
 .btn-outline-dark,
 .btn-secondary-slate,
 .btn-deals-secondary,
@@ -327,20 +231,20 @@ p {
   height: 48px;
   min-height: 44px;
   padding: 0 26px;
-  background: rgba(212, 175, 55, 0.08);
-  color: var(--ameza-gold-bright) !important;
+  background: #FFFFFF;
+  color: var(--ameza-text, #1F1A17) !important;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  border: 1.5px solid var(--ameza-gold);
+  border: 1px solid var(--ameza-border, #E0D9CE);
   text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(33, 28, 26, 0.04);
   transition: all var(--transition);
   cursor: pointer;
   box-sizing: border-box;
-  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
 }
 
 .btn-outline-dark:hover,
@@ -349,11 +253,10 @@ p {
 .btn-hero-outline:hover,
 .cart-secondary-btn:hover,
 .btn-cancel:hover {
-  background: var(--ameza-gold-gradient);
-  border-color: var(--ameza-gold-bright);
-  color: #14090C !important;
+  border-color: var(--ameza-primary, #B87F4E);
+  background: #FAF8F5;
+  color: var(--ameza-primary, #B87F4E) !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
 }
 
 /* ── Custom Scrollbars ────────────────────────────── */
@@ -363,21 +266,21 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1C0E13;
+  background: var(--ameza-deep, #1E2824);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.35);
+  background: rgba(169, 104, 85, 0.35);
   border-radius: 4px;
-  border: 2px solid #1C0E13;
+  border: 2px solid var(--ameza-deep, #1E2824);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ameza-gold);
+  background: var(--ameza-primary, #A96855);
 }
 
 /* Selection Highlight */
 ::selection {
-  background: var(--ameza-gold);
-  color: #14090C;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
 }

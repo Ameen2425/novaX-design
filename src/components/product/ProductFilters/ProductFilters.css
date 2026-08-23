@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — ULTRA-LUXURY PRODUCT FILTERS TOOLBAR
+   AMEZA — PRODUCT FILTERS TOOLBAR (SAGE + TERRACOTTA)
    ========================================================= */
 
 .products-filter {
@@ -22,8 +22,8 @@
   min-width: 250px;
   height: 54px;
   min-height: 52px;
-  background: var(--ameza-section, #2E1720);
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  background: var(--ameza-section, #34423B);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-sm);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
@@ -31,27 +31,26 @@
 }
 
 .products-search-wrapper:hover {
-  border-color: var(--ameza-gold, #D4AF37);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  border-color: var(--ameza-primary, #A96855);
 }
 
 .products-search-wrapper:focus-within {
-  border-color: var(--ameza-gold-bright, #F3E5C8);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 20px rgba(212, 175, 55, 0.2);
+  border-color: var(--ameza-primary, #A96855);
+  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20);
   transform: translateY(-1px);
 }
 
 .products-search-icon {
   position: absolute;
   left: 20px;
-  color: var(--ameza-gold, #D4AF37);
+  color: var(--ameza-primary, #A96855);
   pointer-events: none;
   transition: color var(--transition-fast), transform var(--transition-fast);
   flex-shrink: 0;
 }
 
 .products-search-wrapper:focus-within .products-search-icon {
-  color: var(--ameza-gold-bright, #F3E5C8);
+  color: var(--ameza-primary-hover, #BD7863);
   transform: scale(1.1);
 }
 
@@ -67,12 +66,12 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 500;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   box-sizing: border-box;
 }
 
 .products-search-input::placeholder {
-  color: var(--ameza-text-muted);
+  color: var(--ameza-text-muted, #A7ADA5);
   font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: 0.05em;
@@ -84,9 +83,9 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid var(--ameza-gold);
-  color: var(--ameza-gold-bright);
+  background: rgba(169, 104, 85, 0.15);
+  border: 1px solid rgba(169, 104, 85, 0.3);
+  color: var(--ameza-primary, #A96855);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,8 +96,8 @@
 }
 
 .products-search-clear:hover {
-  background: var(--ameza-gold-gradient);
-  color: #14090C;
+  background: var(--ameza-primary, #A96855);
+  color: #FFFFFF;
   transform: scale(1.1);
 }
 
@@ -107,14 +106,14 @@
 .products-category-select {
   height: 50px;
   padding: 0 42px 0 22px;
-  background: var(--ameza-section, #2E1720);
-  border: 1.5px solid var(--ameza-border, rgba(212, 175, 55, 0.28));
+  background: var(--ameza-section, #34423B);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-text, #F2EEE7);
   outline: none;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
@@ -122,7 +121,7 @@
   box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A96855' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 18px center;
 }
@@ -131,14 +130,14 @@
 .products-filter select:hover,
 .products-category-select:focus,
 .products-category-select:hover {
-  border-color: var(--ameza-gold);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 15px rgba(212, 175, 55, 0.2);
+  border-color: var(--ameza-primary, #A96855);
+  box-shadow: 0 0 0 3px rgba(169, 104, 85, 0.20);
 }
 
 .products-filter select option,
 .products-category-select option {
-  background: var(--ameza-card, #391D27);
-  color: var(--ameza-text);
+  background: var(--ameza-card, #3F5148);
+  color: var(--ameza-text, #F2EEE7);
   padding: 12px;
 }
 

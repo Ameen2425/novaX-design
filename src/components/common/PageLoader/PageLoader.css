@@ -1,11 +1,11 @@
 /* =========================================================
-   AMEZA — DISTINCT FULL PAGE SPLASH LOADER (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — SPLASH LOADER (SAGE + TERRACOTTA)
    ========================================================= */
 
 .page-loader-screen {
   position: fixed;
   inset: 0;
-  background: var(--ameza-bg, #24161A);
+  background: var(--ameza-bg, #26332E);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,8 +19,8 @@
   height: 480px;
   background: radial-gradient(
     circle,
-    rgba(184, 154, 98, 0.2) 0%,
-    rgba(163, 71, 85, 0.12) 45%,
+    rgba(169, 104, 85, 0.2) 0%,
+    rgba(52, 66, 59, 0.3) 45%,
     transparent 70%
   );
   border-radius: 50%;
@@ -58,17 +58,16 @@
 
 .page-loader-ring.ring-outer {
   inset: 0;
-  border-top-color: var(--ameza-gold, #B89A62);
-  border-bottom-color: rgba(184, 154, 98, 0.2);
-  border-right-color: var(--ameza-primary-crimson, #A34755);
+  border-top-color: var(--ameza-primary, #A96855);
+  border-bottom-color: rgba(169, 104, 85, 0.2);
+  border-right-color: var(--ameza-accent, #D7B8A8);
   animation: pageSpinClockwise 2s linear infinite;
-  box-shadow: 0 0 18px rgba(184, 154, 98, 0.2);
 }
 
 .page-loader-ring.ring-inner {
   inset: 12px;
-  border-left-color: var(--ameza-gold-bright, #D9C190);
-  border-right-color: rgba(184, 154, 98, 0.15);
+  border-left-color: var(--ameza-primary-hover, #BD7863);
+  border-right-color: rgba(169, 104, 85, 0.15);
   animation: pageSpinCounterClockwise 1.5s linear infinite;
 }
 
@@ -90,8 +89,7 @@
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: var(--ameza-gold-bright, #D9C190);
-  text-shadow: 0 0 15px rgba(184, 154, 98, 0.4);
+  color: var(--ameza-primary, #A96855);
   margin-top: 4px;
 }
 
@@ -99,7 +97,7 @@
 .page-loader-progress-track {
   width: 210px;
   height: 3px;
-  background: rgba(184, 154, 98, 0.15);
+  background: rgba(169, 104, 85, 0.15);
   border-radius: var(--radius-pill, 999px);
   overflow: hidden;
   position: relative;
@@ -109,11 +107,10 @@
 .page-loader-progress-bar {
   width: 40%;
   height: 100%;
-  background: var(--ameza-gold-gradient, linear-gradient(90deg, #B89A62, #D9C190, #B89A62));
+  background: var(--ameza-primary, #A96855);
   border-radius: var(--radius-pill, 999px);
   position: absolute;
   animation: pageProgressIndeterminate 1.8s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(184, 154, 98, 0.6);
 }
 
 .page-loader-text {
@@ -121,7 +118,7 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.14em;
-  color: var(--ameza-text-secondary, #C8B8B5);
+  color: var(--ameza-text-secondary, #D4D3CC);
   text-transform: uppercase;
   margin: 0;
   opacity: 0.85;

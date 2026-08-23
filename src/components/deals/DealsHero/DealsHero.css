@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — DEALS HERO (DEEP BURGUNDY + RADIANT GOLD)
+   AMEZA — DEALS HERO (SAGE + TERRACOTTA)
    ========================================================= */
 
 .deals-hero-section {
@@ -11,8 +11,8 @@
 }
 
 .deals-hero-container {
-  background: radial-gradient(circle at 65% 50%, #42252C 0%, #321D23 70%, #24161A 100%);
-  border: 1.5px solid var(--ameza-border);
+  background: radial-gradient(circle at 65% 50%, #3F5148 0%, #34423B 70%, #26332E 100%);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-xl);
   padding: clamp(36px, 4.5vw, 56px) clamp(24px, 4vw, 56px);
   min-height: 420px;
@@ -22,7 +22,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(184, 154, 98, 0.15);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(169, 104, 85, 0.10);
   box-sizing: border-box;
 }
 
@@ -35,7 +35,7 @@
   transform: translate(50%, -50%);
   width: 460px;
   height: 460px;
-  background: radial-gradient(circle, rgba(184, 154, 98, 0.25) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(169, 104, 85, 0.12) 0%, transparent 65%);
   pointer-events: none;
   z-index: 1;
 }
@@ -55,10 +55,9 @@
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #A96855);
   margin-bottom: 16px;
   display: block;
-  text-shadow: 0 0 10px rgba(184, 154, 98, 0.35);
 }
 
 .deals-hero-heading {
@@ -67,21 +66,21 @@
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0 0 18px 0;
 }
 
 .deals-hero-heading .copper-accent {
-  color: var(--ameza-gold-bright);
+  color: var(--ameza-primary, #A96855);
   font-style: italic;
-  text-shadow: 0 0 18px rgba(184, 154, 98, 0.4);
+  font-weight: 400;
 }
 
 .deals-hero-description {
   font-family: var(--font-body);
   font-size: clamp(14.5px, 1.1vw, 16px);
   line-height: 1.6;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   max-width: 440px;
   margin: 0 0 32px 0;
 }
@@ -101,27 +100,26 @@
   height: 48px;
   min-height: 44px;
   padding: 0 32px;
-  background: var(--ameza-gold-gradient);
-  color: #1C1114 !important;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7) !important;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   text-decoration: none !important;
-  border: 1px solid var(--ameza-gold-bright);
-  box-shadow: 0 4px 18px rgba(184, 154, 98, 0.4);
+  border: none;
+  box-shadow: 0 6px 20px rgba(169, 104, 85, 0.25);
   transition: all var(--transition);
   cursor: pointer;
 }
 
 .btn-deals-primary:hover {
-  background: linear-gradient(135deg, #E8D7B8 0%, #D4BA85 50%, #B89A62 100%);
-  border-color: #FFFFFF;
-  color: #140A0D !important;
+  background: var(--ameza-primary-hover, #BD7863);
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(184, 154, 98, 0.6);
+  box-shadow: 0 8px 25px rgba(169, 104, 85, 0.35);
 }
 
 .btn-deals-secondary {
@@ -132,27 +130,24 @@
   height: 48px;
   min-height: 44px;
   padding: 0 26px;
-  background: rgba(184, 154, 98, 0.08);
-  color: var(--ameza-gold-bright) !important;
+  background: transparent;
+  color: var(--ameza-text, #F2EEE7) !important;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  border: 1.5px solid var(--ameza-gold);
+  border: 1px solid var(--ameza-border, #627169);
   text-decoration: none !important;
   transition: all var(--transition);
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(184, 154, 98, 0.15);
 }
 
 .btn-deals-secondary:hover {
-  background: var(--ameza-gold);
-  border-color: var(--ameza-gold-bright);
-  color: #1C1114 !important;
+  border-color: var(--ameza-primary, #A96855);
+  color: var(--ameza-primary-hover, #BD7863) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 154, 98, 0.4);
 }
 
 /* ── Right 3D Visual ──────────────────────────────── */
@@ -171,12 +166,13 @@
   max-width: 580px;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1.5px solid var(--ameza-gold);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 35px rgba(20, 8, 12, 0.5), 0 0 25px rgba(184, 154, 98, 0.25);
+  background: var(--ameza-deep, #1E2824);
+  box-shadow: 0 16px 40px rgba(10, 18, 15, 0.35);
 }
 
 .deals-hero-img {
@@ -194,7 +190,7 @@
   transform: scale(1.03);
 }
 
-/* ── Circular Radiant Gold Discount Badge ─────────── */
+/* ── Circular Radiant Terracotta Discount Badge ─────────── */
 .deals-discount-badge {
   position: absolute;
   top: 14px;
@@ -202,14 +198,14 @@
   width: 86px;
   height: 86px;
   border-radius: 50%;
-  background: var(--ameza-gold-gradient);
-  border: 2.5px solid #FFFFFF;
-  box-shadow: 0 10px 30px rgba(20, 8, 12, 0.6), 0 0 20px rgba(184, 154, 98, 0.5);
+  background: var(--ameza-primary, #A96855);
+  border: 2px solid var(--ameza-white, #F2EEE7);
+  box-shadow: 0 10px 30px rgba(10, 18, 15, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #1C1114;
+  color: var(--ameza-white, #F2EEE7);
   text-align: center;
   z-index: 10;
   animation: floatBadge 4s ease-in-out infinite;
@@ -223,6 +219,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   line-height: 1;
+  color: rgba(242, 238, 231, 0.85);
 }
 
 .deals-discount-badge .badge-pct {
@@ -231,7 +228,7 @@
   font-weight: 700;
   line-height: 1.05;
   margin: 1px 0;
-  color: #1C1114;
+  color: var(--ameza-white, #F2EEE7);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */

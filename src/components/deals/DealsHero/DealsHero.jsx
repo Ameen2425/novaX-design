@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./DealsHero.css";
-import amezaHero3d from "../../../assets/novax-hero-3d.jpg";
+import amezaDealsHero from "../../../assets/novax-deals-hero.jpg";
 
 const DealsHero = () => {
   return (
@@ -55,7 +55,7 @@ const DealsHero = () => {
 
           <div className="deals-hero-image-wrap">
             <img
-              src={amezaHero3d}
+              src={amezaDealsHero}
               alt="AMEZA Exclusive 3D Deals Composition"
               className="deals-hero-img"
             />

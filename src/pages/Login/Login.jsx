@@ -79,7 +79,11 @@ const Login = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
       >
+        {/* Subtle ambient luxury glow */}
+        <div className="auth-ambient-glow"></div>
+
         <div className="auth-container">
+          {/* Left Editorial Section */}
           <AuthHero
             image={amezaLoginHero}
             label="AMEZA EDIT"
@@ -87,17 +91,19 @@ const Login = () => {
               <>
                 Welcome
                 <br />
-                Back.
+                <span>Back.</span>
               </>
             }
-            subtitle="Continue your shopping journey with AMEZA and discover something you will love."
+            subtitle="Continue your shopping journey with AMEZA and discover curated luxury essentials."
+            benefits={["Secure & Safe", "Fast Delivery", "Easy Returns"]}
           />
 
+          {/* Right Form Section */}
           <motion.div
             className="auth-form-section"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             <LoginForm
               form={form}

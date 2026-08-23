@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — PRODUCT GALLERY (BURGUNDY + RADIANT GOLD)
+   AMEZA — PRODUCT GALLERY (SAGE + TERRACOTTA)
    ========================================================= */
 
 .single-gallery {
@@ -12,15 +12,15 @@
 .single-main-image {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: var(--ameza-card);
-  border: 1.5px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid var(--ameza-border, #627169);
   border-radius: var(--radius-xl);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: clamp(18px, 4vw, 40px);
-  box-shadow: var(--shadow-lg), 0 0 25px rgba(184, 154, 98, 0.15);
+  box-shadow: var(--shadow-lg);
   box-sizing: border-box;
   position: relative;
 }
@@ -29,16 +29,15 @@
   position: absolute;
   top: 18px;
   left: 18px;
-  background: var(--ameza-copper-bg);
-  color: var(--ameza-copper-light);
-  border: 1px solid var(--ameza-copper-border);
+  background: rgba(169, 104, 85, 0.15);
+  color: var(--ameza-primary, #A96855);
+  border: 1px solid var(--ameza-primary, #A96855);
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.04em;
   padding: 4px 14px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 14px var(--ameza-copper-glow);
   z-index: 3;
 }
 
@@ -66,8 +65,8 @@
   width: 76px;
   height: 76px;
   border-radius: var(--radius-md);
-  background: var(--ameza-section);
-  border: 1.5px solid var(--ameza-border);
+  background: var(--ameza-section, #34423B);
+  border: 1px solid var(--ameza-border, #627169);
   padding: 8px;
   display: flex;
   align-items: center;
@@ -79,13 +78,13 @@
 }
 
 .single-thumbnail:hover {
-  border-color: var(--ameza-gold-bright);
+  border-color: var(--ameza-primary-hover, #BD7863);
 }
 
 .single-thumbnail.active {
-  border-color: var(--ameza-gold);
-  box-shadow: 0 0 16px var(--ameza-gold-glow);
-  background: var(--ameza-card);
+  border-color: var(--ameza-primary, #A96855);
+  box-shadow: 0 0 12px rgba(169, 104, 85, 0.25);
+  background: var(--ameza-card, #3F5148);
 }
 
 .single-thumbnail img {

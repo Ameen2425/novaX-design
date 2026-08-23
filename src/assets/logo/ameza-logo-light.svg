@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
   <!-- Symbol Icon -->
   <g transform="translate(10, 8)">
-    <rect width="64" height="64" rx="16" fill="#321D23"/>
-    <rect x="1" y="1" width="62" height="62" rx="15" stroke="#E2D7D2" stroke-opacity="0.25" stroke-width="2"/>
-    <path d="M32 12 L49 50 H39.5 L32 32 L24.5 50 H15 L32 12Z" fill="#E2D7D2"/>
-    <path d="M32 24 L38.5 40 H25.5 L32 24Z" fill="#321D23"/>
-    <path d="M22 42 L32 31 L42 42 L37.5 42 L32 36.5 L26.5 42 H22Z" fill="#B89A62"/>
+    <rect width="64" height="64" rx="16" fill="#FFFFFF"/>
+    <rect x="1" y="1" width="62" height="62" rx="15" stroke="#E0D9CE" stroke-opacity="0.9" stroke-width="2"/>
+    <path d="M32 12 L49 50 H39.5 L32 32 L24.5 50 H15 L32 12Z" fill="#1F1A17"/>
+    <path d="M32 24 L38.5 40 H25.5 L32 24Z" fill="#FFFFFF"/>
+    <path d="M22 42 L32 31 L42 42 L37.5 42 L32 36.5 L26.5 42 H22Z" fill="#B87F4E"/>
   </g>
   <!-- Wordmark AMEZA -->
-  <text x="90" y="49" fill="#E2D7D2" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="600" letter-spacing="0.14em">AMEZA</text>
-  <!-- Accent Gold Dot -->
-  <circle cx="270" cy="46" r="3.5" fill="#B89A62" />
+  <text x="90" y="49" fill="#1F1A17" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="600" letter-spacing="0.14em">AMEZA</text>
+  <!-- Accent Cognac Bronze Dot -->
+  <circle cx="270" cy="46" r="3.5" fill="#B87F4E" />
 </svg>

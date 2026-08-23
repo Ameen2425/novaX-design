@@ -18,11 +18,13 @@ const Header = () => {
   return (
     <>
       {/* MOBILE COMPACT FLOATING TOP HEADER */}
-      <header className="mobile-top-brand">
-        <NavLink to="/" className="logo" aria-label="AMEZA Home">
-          <BrandLogo variant="compact" />
-        </NavLink>
-        <div className="mobile-top-actions">
+      <header className="mobile-top-bar">
+        <div className="mobile-top-left">
+          <NavLink to="/" className="logo" aria-label="AMEZA Home">
+            <BrandLogo variant="compact" />
+          </NavLink>
+        </div>
+        <div className="mobile-top-right">
           <NavLink to="/cart" className="mobile-action-btn" title="Shopping Cart">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="9" cy="21" r="1"/>

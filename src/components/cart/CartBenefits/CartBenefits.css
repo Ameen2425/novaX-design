@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — CART BENEFITS ROW (BURGUNDY + GOLD)
+   AMEZA — CART BENEFITS ROW (SAGE + TERRACOTTA)
    ========================================================= */
 
 .cart-benefits {
@@ -9,8 +9,8 @@
 }
 
 .cart-benefit {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border-emerald);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-lg);
   padding: 24px;
   display: flex;
@@ -23,9 +23,9 @@
 
 .cart-benefit:hover {
   transform: translateY(-4px);
-  background: var(--ameza-card-hover);
-  border-color: var(--ameza-emerald);
-  box-shadow: 0 10px 25px rgba(12, 5, 8, 0.5), 0 0 20px var(--ameza-emerald-glow);
+  background: var(--ameza-card-hover, #4B6056);
+  border-color: var(--ameza-primary, #A96855);
+  box-shadow: var(--shadow-md);
 }
 
 .cart-benefit span {
@@ -39,14 +39,14 @@
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin-bottom: 4px;
 }
 
 .cart-benefit p {
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   line-height: 1.5;
   margin: 0;
 }

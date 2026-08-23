@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — OUR STORY (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — OUR STORY (SAGE + TERRACOTTA)
    ========================================================= */
 
 .about-story-section {
@@ -11,8 +11,8 @@
 }
 
 .about-story-container {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-xl);
   padding: clamp(36px, 5vw, 64px);
   box-shadow: var(--shadow-lg);
@@ -30,8 +30,8 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--ameza-gold);
-  color: #1C1114;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +48,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
 }
 
 .about-story-grid {
@@ -63,12 +63,12 @@
   font-size: clamp(28px, 3.4vw, 42px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.15;
 }
 
 .about-story-heading h2 span {
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   font-style: italic;
 }
 
@@ -76,14 +76,14 @@
   font-family: var(--font-body);
   font-size: 14.5px;
   line-height: 1.75;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin-bottom: 18px;
 }
 
 .about-story-content .about-lead {
   font-size: 16px;
   font-weight: 500;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   line-height: 1.6;
 }
 

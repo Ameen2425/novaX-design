@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — ABOUT STATS (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — ABOUT STATS (SAGE + TERRACOTTA)
    ========================================================= */
 
 .about-stats-section {
@@ -17,8 +17,8 @@
 }
 
 .about-stat {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-lg);
   padding: 30px 18px;
   text-align: center;
@@ -29,8 +29,8 @@
 
 .about-stat:hover {
   transform: translateY(-4px);
-  border-color: var(--ameza-gold);
-  background: var(--ameza-card-hover);
+  border-color: var(--ameza-primary, #A96855);
+  background: var(--ameza-card-hover, #4B6056);
   box-shadow: var(--shadow-md);
 }
 
@@ -39,7 +39,7 @@
   font-size: clamp(34px, 3.8vw, 46px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   display: block;
   margin-bottom: 6px;
   line-height: 1;
@@ -51,7 +51,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
 }
 
 /* ── MOBILE 2x2 STATS GRID ───────────────────────── */

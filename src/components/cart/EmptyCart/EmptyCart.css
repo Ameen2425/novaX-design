@@ -1,10 +1,10 @@
 /* =========================================================
-   AMEZA — EMPTY CART HERO (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — EMPTY CART HERO (SAGE + TERRACOTTA)
    ========================================================= */
 
 .empty-cart-content {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-xl);
   padding: clamp(40px, 6vw, 70px) clamp(24px, 4vw, 48px);
   text-align: center;
@@ -21,7 +21,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   margin-bottom: 20px;
   display: block;
 }
@@ -41,8 +41,8 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: var(--ameza-section);
-  border: 1.5px solid var(--ameza-border);
+  background: var(--ameza-section, #34423B);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,7 @@
 .cart-dot {
   position: absolute;
   border-radius: 50%;
-  background: var(--ameza-gold);
+  background: var(--ameza-primary, #A96855);
 }
 
 .cart-dot-one {
@@ -87,13 +87,13 @@
   font-size: clamp(30px, 4vw, 48px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin-bottom: 12px;
   line-height: 1.15;
 }
 
 .empty-cart-content h1 span {
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   font-style: italic;
 }
 
@@ -101,7 +101,7 @@
   font-family: var(--font-body);
   font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 600;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin-bottom: 8px;
 }
 
@@ -109,7 +109,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   line-height: 1.65;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   max-width: 520px;
   margin: 0 auto 32px;
 }

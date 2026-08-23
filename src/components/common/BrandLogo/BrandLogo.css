@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — BRAND LOGO CSS (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — BRAND LOGO CSS (SAGE + TERRACOTTA)
    ========================================================= */
 
 .ameza-brand-logo {
@@ -51,16 +51,16 @@
 }
 
 .ameza-brand-logo:hover .ameza-wordmark {
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
 }
 
 .ameza-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--ameza-gold);
+  background: var(--ameza-primary, #A96855);
   margin-bottom: 2px;
-  box-shadow: 0 0 8px rgba(184, 154, 98, 0.6);
+  box-shadow: 0 0 8px rgba(169, 104, 85, 0.5);
 }
 
 /* ── MODIFIERS ────────────────────────────────────── */

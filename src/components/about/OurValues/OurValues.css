@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — OUR VALUES (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — OUR VALUES (SAGE + TERRACOTTA)
    ========================================================= */
 
 .about-values-section {
@@ -20,8 +20,8 @@
 .about-value-card {
   display: flex;
   flex-direction: column;
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border-emerald);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-lg);
   padding: 28px 22px;
   box-shadow: var(--shadow-sm);
@@ -32,17 +32,17 @@
 
 .about-value-card:hover {
   transform: translateY(-4px);
-  border-color: var(--ameza-emerald);
-  background: var(--ameza-card-hover);
-  box-shadow: 0 12px 30px rgba(12, 5, 8, 0.5), 0 0 20px var(--ameza-emerald-glow);
+  border-color: var(--ameza-primary, #A96855);
+  background: var(--ameza-card-hover, #4B6056);
+  box-shadow: var(--shadow-md);
 }
 
 .about-value-num {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #5FA58D 0%, #2F8068 50%, #1B5B49 100%);
-  color: #FAF6F0;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,6 @@
   font-size: 12px;
   font-weight: 800;
   margin-bottom: 16px;
-  box-shadow: 0 4px 12px var(--ameza-emerald-glow);
   flex-shrink: 0;
 }
 
@@ -59,7 +58,7 @@
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin-bottom: 8px;
 }
 
@@ -67,7 +66,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   line-height: 1.6;
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin: 0;
 }
 

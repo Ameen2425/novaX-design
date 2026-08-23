@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — PROMOTIONAL BANNER (BURGUNDY + GOLD)
+   AMEZA — PROMOTIONAL BANNER (SAGE + TERRACOTTA)
    ========================================================= */
 
 .deal-promo-section {
@@ -11,15 +11,15 @@
 }
 
 .deal-promo-container {
-  background: radial-gradient(circle at 75% 50%, #4A222B 0%, var(--ameza-bg-section-promo, #351B21) 75%, #241419 100%);
-  border: 1.5px solid var(--ameza-border-copper);
+  background: radial-gradient(circle at 75% 50%, #3F5148 0%, #34423B 75%, #26332E 100%);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-xl);
   padding: clamp(36px, 4.5vw, 56px) clamp(24px, 4vw, 56px);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 32px;
   align-items: center;
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(184, 107, 92, 0.15);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(169, 104, 85, 0.10);
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
@@ -39,14 +39,14 @@
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-copper-light);
-  background: var(--ameza-copper-bg);
-  border: 1px solid var(--ameza-copper-border);
+  color: var(--ameza-primary, #A96855);
+  background: rgba(30, 40, 36, 0.85);
+  border: 1px solid rgba(169, 104, 85, 0.35);
   padding: 3px 12px;
   border-radius: var(--radius-pill);
   margin-bottom: 14px;
   display: inline-block;
-  box-shadow: 0 2px 10px var(--ameza-copper-glow);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .deal-promo-heading {
@@ -55,14 +55,14 @@
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0 0 12px 0;
 }
 
 .deal-promo-sub {
   font-family: var(--font-body);
   font-size: clamp(14px, 1.1vw, 15.5px);
-  color: var(--ameza-text-secondary);
+  color: var(--ameza-text-secondary, #D4D3CC);
   margin: 0 0 28px 0;
   line-height: 1.6;
 }
@@ -75,8 +75,8 @@
   height: 48px;
   min-height: 44px;
   padding: 0 32px;
-  background: var(--ameza-primary);
-  color: #FFFFFF !important;
+  background: var(--ameza-primary, #A96855);
+  color: var(--ameza-white, #F2EEE7) !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
@@ -84,16 +84,15 @@
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  border: 1px solid var(--ameza-primary);
-  box-shadow: var(--shadow-sm);
+  border: none;
+  box-shadow: 0 6px 20px rgba(169, 104, 85, 0.25);
   transition: all var(--transition-fast);
 }
 
 .btn-promo-explore:hover {
-  background: var(--ameza-primary-hover);
-  border-color: var(--ameza-primary-hover);
+  background: var(--ameza-primary-hover, #BD7863);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 25px rgba(169, 104, 85, 0.35);
   color: #FFFFFF !important;
 }
 

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — DEAL CATEGORIES (DEEP BURGUNDY + ANTIQUE GOLD)
+   AMEZA — DEAL CATEGORIES (SAGE + TERRACOTTA)
    ========================================================= */
 
 .deal-categories-section {
@@ -22,7 +22,7 @@
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
   font-family: var(--font-body);
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--ameza-gold);
+  color: var(--ameza-primary, #A96855);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -42,7 +42,7 @@
 }
 
 .deal-section-link:hover {
-  color: var(--ameza-primary-hover);
+  color: var(--ameza-primary-hover, #BD7863);
   transform: translateX(3px);
 }
 
@@ -54,8 +54,8 @@
 }
 
 .deal-category-card {
-  background: var(--ameza-card);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-card, #3F5148);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   border-radius: var(--radius-lg);
   padding: 12px;
   display: flex;
@@ -70,8 +70,8 @@
 
 .deal-category-card:hover {
   transform: translateY(-4px);
-  background: var(--ameza-card-hover);
-  border-color: var(--ameza-gold);
+  background: var(--ameza-card-hover, #4B6056);
+  border-color: var(--ameza-primary, #A96855);
   box-shadow: var(--shadow-md);
 }
 
@@ -80,8 +80,8 @@
   aspect-ratio: 1 / 0.85;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--ameza-section);
-  border: 1px solid var(--ameza-border);
+  background: var(--ameza-section, #34423B);
+  border: 1px solid rgba(98, 113, 105, 0.45);
   margin-bottom: 12px;
   display: flex;
   align-items: center;
@@ -113,7 +113,7 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--ameza-text);
+  color: var(--ameza-text, #F2EEE7);
   margin: 0 0 2px 0;
   line-height: 1.2;
 }
@@ -122,7 +122,7 @@
   font-family: var(--font-body);
   font-size: 11.5px;
   font-weight: 800;
-  color: var(--ameza-copper-light);
+  color: var(--ameza-primary, #A96855);
   display: block;
 }
 
@@ -130,9 +130,9 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--ameza-copper-bg);
-  border: 1px solid var(--ameza-copper-border);
-  color: var(--ameza-copper-light);
+  background: rgba(169, 104, 85, 0.15);
+  border: 1px solid rgba(169, 104, 85, 0.35);
+  color: var(--ameza-primary, #A96855);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,11 +143,10 @@
 }
 
 .deal-category-card:hover .deal-category-arrow {
-  background: var(--ameza-copper-gradient);
-  border-color: var(--ameza-copper-light);
+  background: var(--ameza-primary, #A96855);
+  border-color: var(--ameza-primary-hover, #BD7863);
   color: #FFFFFF;
   transform: translateX(2px);
-  box-shadow: 0 0 10px var(--ameza-copper-glow);
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
