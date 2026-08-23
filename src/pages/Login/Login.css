@@ -66,15 +66,15 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: var(--ameza-card, #405249);
-  border: 1px solid var(--ameza-error, #B96A67);
-  color: var(--ameza-white, #F7F4EC);
+  background: var(--ameza-deep, #241E1A);
+  border: 1px solid var(--ameza-error, #B84A39);
+  color: #FFFFFF;
   padding: 12px 24px;
   border-radius: var(--radius-pill, 999px);
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
-  box-shadow: 0 10px 30px rgba(36, 30, 26, 0.4);
+  box-shadow: 0 10px 30px rgba(36, 30, 26, 0.3);
   z-index: 9999;
 }
 

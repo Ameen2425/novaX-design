@@ -69,5 +69,18 @@
 }
 
 .ameza-brand-logo.is-light .ameza-wordmark {
-  color: var(--ameza-text);
+  color: #FFFFFF;
+}
+
+.ameza-brand-logo.is-light:hover .ameza-wordmark {
+  color: var(--ameza-primary, #A96F45);
+}
+
+/* Footer context — force white wordmark on deep espresso bg */
+.footer .ameza-wordmark {
+  color: #FFFFFF;
+}
+
+.footer .ameza-brand-logo:hover .ameza-wordmark {
+  color: var(--ameza-accent, #C7A98E);
 }
