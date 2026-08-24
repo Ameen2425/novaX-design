@@ -25,7 +25,8 @@ const MainLayout = () => {
 
   const noFooterPaths = [
     "/login",
-    "/signup"
+    "/signup",
+    "/landing"
   ];
 
   const hideHeader = noHeaderPaths.includes(

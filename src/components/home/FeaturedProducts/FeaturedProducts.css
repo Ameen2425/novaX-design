@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA FEATURED PRODUCTS (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA FEATURED PRODUCTS (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .home-products {
@@ -9,9 +9,6 @@
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
-
-/* home-section-heading is defined in CategorySection.css globally */
-/* Keep product-specific overrides here */
 
 .home-products-link {
   font-family: var(--font-body);
@@ -35,11 +32,7 @@
 .home-product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.home-grid-card-wrap {
-  /* Wrapper for motion */
+  gap: clamp(14px, 1.8vw, 20px);
 }
 
 /* ── Loading State ────────────────────────────────────── */
@@ -50,7 +43,7 @@
   justify-content: center;
   gap: 16px;
   padding: 64px 0;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   font-family: var(--font-body);
   font-size: 14px;
 }
@@ -73,7 +66,7 @@
 .home-products-empty {
   text-align: center;
   padding: 56px 24px;
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 24px);
   max-width: 500px;
@@ -87,7 +80,7 @@
 .home-products-empty p {
   font-family: var(--font-body);
   font-size: 14.5px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
 }
 
@@ -96,7 +89,7 @@
   align-items: center;
   gap: 8px;
   background: var(--ameza-gold-gradient);
-  color: #12090D !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;

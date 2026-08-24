@@ -1,21 +1,21 @@
 /* =========================================================
-   AMEZA ABOUT HERO (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA ABOUT HERO (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .about-hero {
   padding-top: calc(var(--header-height-desktop, 76px) + 24px);
   padding-bottom: var(--section-gap-sm, 24px);
   width: 100%;
-  background: var(--ameza-bg, #12090D);
+  background: var(--ameza-bg, #0D070B);
   box-sizing: border-box;
 }
 
 .about-hero-container {
   max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
-  padding: clamp(32px, 4.5vw, 56px);
+  padding: clamp(28px, 4.5vw, 56px);
   width: min(calc(100% - 32px), 1400px);
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 28px);
   display: grid;
@@ -74,9 +74,9 @@
 
 .about-hero-title {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.4rem, 4.2vw, 4.2rem);
+  font-size: clamp(2.2rem, 4.2vw, 4.2rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1.06;
   letter-spacing: -0.025em;
   margin: 0 0 16px 0;
@@ -91,13 +91,12 @@
   filter: drop-shadow(0 2px 12px rgba(229, 184, 59, 0.3));
 }
 
-/* Description paragraph — JSX uses .about-hero-description class */
 .about-hero-description {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: clamp(14.5px, 1.05vw, 15.5px);
   line-height: 1.75;
-  color: var(--ameza-text-secondary, #DECBC6);
-  margin: 0 0 28px 0;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0 0 24px 0;
   max-width: 500px;
 }
 
@@ -108,19 +107,18 @@
   flex-wrap: wrap;
 }
 
-/* ── Gold CTA Button ──────────────────────────────────── */
 .btn-terracotta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: var(--ameza-gold-gradient);
-  color: #12090D !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 30px;
+  padding: 13px 28px;
   border-radius: var(--radius-pill);
   text-decoration: none;
   box-shadow: var(--shadow-gold);
@@ -133,19 +131,18 @@
   box-shadow: var(--shadow-gold-lg);
 }
 
-/* ── Outline Button ───────────────────────────────────── */
 .btn-outline-dark {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: var(--ameza-text, #FAF6F0) !important;
+  color: var(--ameza-text, #FAF7F2) !important;
   font-family: var(--font-body);
   font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 13px 28px;
+  padding: 12px 26px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--ameza-border-gold);
   text-decoration: none;
@@ -159,7 +156,6 @@
   transform: translateY(-2px);
 }
 
-/* ── Right Side Visual ────────────────────────────────── */
 .about-hero-visual {
   position: relative;
   width: 100%;
@@ -173,7 +169,7 @@
   overflow: hidden;
   position: relative;
   border: 1px solid var(--ameza-border-card);
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   box-shadow: var(--shadow-card);
 }
 
@@ -189,12 +185,11 @@
   transform: scale(1.04);
 }
 
-/* ── Floating Badge ───────────────────────────────────── */
 .about-floating-badge {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: rgba(27, 12, 20, 0.92);
+  background: rgba(26, 13, 21, 0.92);
   backdrop-filter: blur(20px);
   border: 1px solid var(--ameza-border-gold);
   border-radius: var(--radius-card, 16px);
@@ -217,7 +212,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: 14px;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   display: block;
   margin-bottom: 2px;
 }
@@ -225,7 +220,7 @@
 .about-badge-text p {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
 }
 
@@ -233,7 +228,7 @@
   .about-hero-container {
     grid-template-columns: 1fr;
     padding: 28px 20px;
-    gap: 28px;
+    gap: 24px;
   }
   .about-hero {
     padding-top: calc(var(--header-height-mobile, 64px) + 16px);

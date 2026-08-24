@@ -1,4 +1,7 @@
 import React from "react";
+import "../../styles/pine-tokens.css";
+import "./Landing.css";
+
 import LandingHeader from "../../components/Landing/LandingHeader/LandingHeader";
 import LandingHero from "../../components/Landing/LandingHero/LandingHero";
 import BrandStatement from "../../components/Landing/BrandStatement/BrandStatement";
@@ -9,20 +12,38 @@ import EditorialBanner from "../../components/Landing/EditorialBanner/EditorialB
 import WhyAmeza from "../../components/Landing/WhyAmeza/WhyAmeza";
 import BrandStory from "../../components/Landing/BrandStory/BrandStory";
 import LandingCTA from "../../components/Landing/LandingCTA/LandingCTA";
-import "./Landing.css";
 
 const Landing = () => {
   return (
     <div className="ameza-landing-page">
+      {/* Minimal editorial header — no cart, no ecommerce */}
       <LandingHeader />
+
+      {/* 01 — Hero: Everything Worth Discovering */}
       <LandingHero />
+
+      {/* 02 — Brand Statement: Less Noise. Better Choices. */}
       <BrandStatement />
+
+      {/* 03 — Editorial Story: Our Approach (asymmetric image spread) */}
       <CategoryShowcase />
+
+      {/* 04 — Philosophy: We Believe the Ordinary Can Be Extraordinary */}
       <FeaturedCollection />
-      <ProductHighlights />
+
+      {/* 05 — Fullscreen Image Moment: The Beauty Is in the Details */}
       <EditorialBanner />
+
+      {/* 06 — Artisan Story: Objects With a Sense of Place */}
+      <ProductHighlights />
+
+      {/* 07 — AMEZA World: Style / Ritual / Design / Everyday */}
       <WhyAmeza />
+
+      {/* 08 — Typographic Interlude: Find What Stays */}
       <BrandStory />
+
+      {/* 09 — Final Brand CTA: Enter AMEZA */}
       <LandingCTA />
     </div>
   );

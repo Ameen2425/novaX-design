@@ -1,75 +1,125 @@
 /* =========================================================
-   AMEZA BRAND STATEMENT (BURGUNDY & LIQUID GOLD)
+   BRAND STATEMENT — LESS NOISE. BETTER CHOICES.
+   VELVET OBSIDIAN + 24K GOLD THEME
    ========================================================= */
 
 .brand-statement-section {
-  padding: clamp(84px, 10vw, 140px) 0;
-  background: var(--ameza-section, #2E1A23);
-  border-top: 1px solid var(--ameza-border);
-  border-bottom: 1px solid var(--ameza-border);
-  width: 100%;
-  box-sizing: border-box;
+  background: var(--ameza-bg-secondary);
+  padding: clamp(100px, 16vh, 180px) clamp(24px, 6vw, 80px);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.brand-statement-container {
-  width: min(calc(100% - 48px), 920px);
+/* Radial gold aura behind content */
+.brand-statement-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(229, 184, 59, 0.06) 0%,
+    rgba(229, 184, 59, 0.02) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.brand-statement-inner {
+  max-width: 860px;
   margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.brand-statement-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: clamp(24px, 4vh, 40px);
+  position: relative;
+  z-index: 1;
 }
 
-.statement-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 20px;
-}
-
-.statement-heading {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.4rem, 4.4vw, 4.2rem);
+/* Section label */
+.bs-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
   font-weight: 500;
-  color: var(--ameza-text, #FAF6F0);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin: 0 0 24px 0;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ameza-gold);
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.statement-italic {
+.bs-label::before,
+.bs-label::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--ameza-gold);
+  opacity: 0.4;
+}
+
+/* Main heading */
+.bs-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(44px, 7.5vw, 104px);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  color: var(--ameza-text);
+  margin: 0;
+}
+
+.bs-heading em {
+  font-style: italic;
+  font-weight: 300;
   background: var(--ameza-gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-style: italic;
-  font-weight: 400;
+  background-clip: text;
 }
 
-.statement-divider {
-  width: 48px;
-  height: 1.5px;
-  background: var(--ameza-gold, #C5A059);
-  margin-bottom: 28px;
+/* Vertical gold divider line */
+.bs-divider {
+  width: 1px;
+  height: 52px;
+  background: linear-gradient(to bottom, transparent, rgba(229, 184, 59, 0.45), transparent);
 }
 
-.statement-desc {
+/* Body text */
+.bs-body {
   font-family: var(--font-body);
-  font-size: clamp(15px, 1.15vw, 18px);
-  line-height: 1.85;
-  color: var(--ameza-text-secondary, #D2C0BB);
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--ameza-text-secondary);
+  max-width: 520px;
   margin: 0;
-  max-width: 720px;
+}
+
+/* Meta tagline */
+.bs-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ameza-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bs-meta::before,
+.bs-meta::after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--ameza-border);
 }
 
 @media (max-width: 600px) {
-  .brand-statement-section {
-    padding: 64px 0;
-  }
+  .bs-heading { font-size: clamp(38px, 12vw, 60px); }
 }

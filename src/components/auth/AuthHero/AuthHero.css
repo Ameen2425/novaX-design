@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA AUTH HERO PANEL — VIEWPORT FIT (DEEP VELVET + 24K GOLD)
+   AMEZA AUTH HERO PANEL — VIEWPORT FIT (OBSIDIAN + 24K GOLD)
    ========================================================= */
 
 .auth-hero-panel {
@@ -46,10 +46,10 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(18, 9, 13, 0.1) 0%,
-    rgba(18, 9, 13, 0.45) 45%,
-    rgba(18, 9, 13, 0.88) 72%,
-    rgba(18, 9, 13, 0.97) 100%
+    rgba(13, 7, 11, 0.1) 0%,
+    rgba(13, 7, 11, 0.45) 45%,
+    rgba(13, 7, 11, 0.88) 72%,
+    rgba(13, 7, 11, 0.97) 100%
   );
   z-index: 2;
 }
@@ -98,7 +98,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(1.8rem, 3vh, 2.8rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1.08;
   letter-spacing: -0.02em;
   margin: 0 0 clamp(6px, 1vh, 12px) 0;
@@ -116,7 +116,7 @@
   font-family: var(--font-body);
   font-size: clamp(12px, 1.6vh, 14px);
   line-height: 1.6;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0 0 clamp(10px, 1.5vh, 20px) 0;
   max-width: 360px;
 }
@@ -132,7 +132,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: rgba(34, 16, 24, 0.85);
+  background: rgba(26, 13, 21, 0.85);
   border: 1px solid var(--ameza-border);
   padding: 4px 12px;
   border-radius: var(--radius-pill);
@@ -154,7 +154,7 @@
   font-family: var(--font-body);
   font-size: 10.5px;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
 }
 
 @media (max-width: 960px) {

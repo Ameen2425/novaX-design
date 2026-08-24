@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA HOME HERO (BURGUNDY & 24K IMPERIAL GOLD)
+   AMEZA HOME HERO (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .home-hero {
@@ -10,16 +10,16 @@
   padding-top: calc(var(--header-height-desktop, 76px) + 24px);
   padding-bottom: var(--section-gap-sm, 24px);
   position: relative;
-  background: var(--ameza-bg, #12090D);
+  background: var(--ameza-bg, #0D070B);
   box-sizing: border-box;
 }
 
 .espresso-hero-container {
   max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
-  padding: clamp(32px, 4.5vw, 56px);
+  padding: clamp(28px, 4.5vw, 56px);
   width: min(calc(100% - 32px), 1400px);
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 28px);
   display: grid;
@@ -49,17 +49,17 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ameza-gold, #E5B83B);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .espresso-hero-title {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.4rem, 4.2vw, 4.2rem);
+  font-size: clamp(2.2rem, 4.2vw, 4.2rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1.06;
   letter-spacing: -0.025em;
-  margin: 0 0 16px 0;
+  margin: 0 0 14px 0;
 }
 
 .espresso-hero-title span {
@@ -73,10 +73,10 @@
 
 .espresso-hero-description {
   font-family: var(--font-body);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(14px, 1.05vw, 15.5px);
   line-height: 1.7;
-  color: var(--ameza-text-secondary, #DECBC6);
-  margin: 0 0 28px 0;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0 0 24px 0;
   max-width: 520px;
 }
 
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
@@ -93,13 +93,13 @@
   align-items: center;
   gap: 8px;
   background: var(--ameza-gold-gradient);
-  color: #12090D !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 30px;
+  padding: 13px 28px;
   border-radius: var(--radius-pill);
   text-decoration: none;
   box-shadow: var(--shadow-gold);
@@ -116,13 +116,13 @@
   display: inline-flex;
   align-items: center;
   background: transparent;
-  color: var(--ameza-text, #FAF6F0) !important;
+  color: var(--ameza-text, #FAF7F2) !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 13px 26px;
+  padding: 12px 24px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--ameza-border-gold);
   text-decoration: none;
@@ -140,7 +140,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  padding-top: 20px;
+  padding-top: 18px;
   border-top: 1px solid var(--ameza-border);
   flex-wrap: wrap;
 }
@@ -162,14 +162,14 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   display: block;
 }
 
 .benefit-text p {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
 }
 
@@ -182,7 +182,7 @@
 .espresso-3d-glow {
   position: absolute;
   inset: -20px;
-  background: radial-gradient(circle, rgba(229, 184, 59, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(229, 184, 59, 0.22) 0%, transparent 70%);
   filter: blur(28px);
   z-index: 1;
   pointer-events: none;
@@ -197,7 +197,7 @@
   overflow: hidden;
   border: 1px solid var(--ameza-border-card);
   box-shadow: var(--shadow-card);
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
 }
 
 .espresso-3d-img {
@@ -215,7 +215,7 @@
   .espresso-hero-container {
     grid-template-columns: 1fr;
     padding: 28px 20px;
-    gap: 28px;
+    gap: 24px;
   }
   .home-hero {
     padding-top: calc(var(--header-height-mobile, 64px) + 16px);

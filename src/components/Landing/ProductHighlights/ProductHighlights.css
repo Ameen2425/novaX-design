@@ -1,190 +1,168 @@
 /* =========================================================
-   AMEZA WORLD PANELS (BURGUNDY & LIQUID GOLD)
+   ARTISAN STORY (SECTION 06) — MADE WITH INTENTION
    ========================================================= */
 
-.product-highlights-section {
-  padding: clamp(80px, 8vw, 130px) 0;
-  background: var(--ameza-bg, #1C1015);
-  width: 100%;
-  box-sizing: border-box;
+.artisan-story-section {
+  background: var(--pine-bg);
+  padding: clamp(80px, 12vh, 140px) 0;
+  overflow: hidden;
 }
 
-.product-highlights-container {
-  width: min(calc(100% - 48px), 1420px);
+.artisan-story-inner {
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 72px);
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(48px, 7vw, 108px);
+  align-items: center;
   box-sizing: border-box;
 }
 
-.highlights-header {
+/* ── Text Column ───────────────────────────────────────── */
+.artisan-text-col {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 56px;
-  gap: 24px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: clamp(18px, 2.8vh, 32px);
 }
 
-.highlights-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+.artisan-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 14px;
-  display: block;
+  color: var(--apricot);
 }
 
-.highlights-heading {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-  font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  line-height: 1.1;
+.artisan-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(36px, 4.2vw, 68px);
+  font-weight: 700;
+  line-height: 1.0;
   letter-spacing: -0.02em;
+  color: var(--pine-text);
   margin: 0;
 }
 
-.highlights-italic {
-  background: var(--ameza-gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.artisan-heading em {
   font-style: italic;
+  font-weight: 300;
+  display: block;
+  color: var(--pine-text-ivory);
+  opacity: 0.75;
+}
+
+.artisan-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--pine-border);
+}
+
+.artisan-body {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(14px, 1.1vw, 16.5px);
   font-weight: 400;
+  line-height: 1.85;
+  color: var(--pine-text-sec);
+  margin: 0;
 }
 
-.highlights-view-all-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--ameza-gold, #C5A059);
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 12px 24px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--ameza-border-gold);
-  text-decoration: none;
-  transition: all var(--transition);
-}
-
-.highlights-view-all-btn:hover {
-  background: var(--ameza-gold-gradient);
-  color: #1C1015;
-  border-color: transparent;
-  transform: translateY(-2px);
-}
-
-/* ── 4 Panels Grid ────────────────────────────────────── */
-.highlights-worlds-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.world-panel-card {
-  background: var(--ameza-card, #38202B);
-  border: 1px solid var(--ameza-border-card);
-  border-radius: var(--radius-xl, 22px);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: all var(--transition);
+/* Qualities list */
+.artisan-meta-row {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+  padding-top: clamp(16px, 2.5vh, 24px);
+  border-top: 1px solid var(--pine-border-light);
 }
 
-.world-panel-card:hover {
-  transform: translateY(-6px);
-  background: var(--ameza-card-hover, #442735);
-  border-color: var(--ameza-border-gold);
-  box-shadow: var(--shadow-card-hover);
+.artisan-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--pine-text-muted);
+  transition: color var(--transition-fast);
 }
 
-.world-panel-img-box {
-  width: 100%;
-  aspect-ratio: 4 / 3.4;
+.artisan-meta-item:hover {
+  color: var(--pine-text-sec);
+}
+
+.artisan-meta-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--apricot);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* ── Image Column ──────────────────────────────────────── */
+.artisan-image-col {
   position: relative;
   overflow: hidden;
-  background: var(--ameza-image-bg, #2A1720);
+  border-radius: var(--radius-sm);
 }
 
-.world-panel-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s var(--ease-luxury);
-}
-
-.world-panel-card:hover .world-panel-img {
-  transform: scale(1.08);
-}
-
-.world-panel-overlay {
+/* Frame border */
+.artisan-image-col::after {
+  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(28, 16, 21, 0.8) 100%);
+  border: 1px solid rgba(240, 238, 231, 0.06);
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  z-index: 3;
 }
 
-.world-panel-num {
+.artisan-image {
+  width: 100%;
+  height: clamp(360px, 60vh, 720px);
+  object-fit: cover;
+  display: block;
+  transform: scale(1.04);
+  transition: transform 1.6s var(--ease-editorial);
+  filter: saturate(0.85) brightness(0.88);
+}
+
+.artisan-image-col:hover .artisan-image {
+  transform: scale(1.0);
+}
+
+.artisan-image-index {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  background: rgba(28, 16, 21, 0.9);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--ameza-border-gold);
-  color: var(--ameza-gold, #C5A059);
-  font-family: var(--font-mono);
-  font-size: 11px;
+  top: 20px;
+  right: 24px;
+  font-family: "Playfair Display", serif;
+  font-size: 80px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
+  line-height: 1;
+  color: rgba(240, 238, 231, 0.055);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
 }
 
-.world-panel-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.world-panel-sub {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 6px;
-}
-
-.world-panel-title {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  margin: 0 0 10px 0;
-}
-
-.world-panel-desc {
-  font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--ameza-text-secondary, #D2C0BB);
-  margin: 0;
-}
-
-@media (max-width: 1100px) {
-  .highlights-worlds-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 580px) {
-  .highlights-worlds-grid {
+/* ── Mobile ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .artisan-story-inner {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: clamp(32px, 6vw, 52px);
+  }
+  .artisan-image {
+    height: clamp(280px, 60vw, 460px);
+  }
+  .artisan-text-col {
+    order: 2;
+  }
+  .artisan-image-col {
+    order: 1;
   }
 }

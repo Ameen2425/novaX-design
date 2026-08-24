@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA OUR STORY (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA OUR STORY (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .about-story-section {
@@ -11,10 +11,10 @@
 }
 
 .about-story-container {
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 28px);
-  padding: clamp(32px, 4.5vw, 56px);
+  padding: clamp(28px, 4.5vw, 56px);
   box-shadow: var(--shadow-card);
   box-sizing: border-box;
 }
@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .about-section-num {
@@ -52,7 +52,7 @@
 .about-story-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(28px, 4vw, 52px);
+  gap: clamp(24px, 4vw, 52px);
   align-items: start;
 }
 
@@ -65,7 +65,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(2rem, 3.4vw, 3rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0;
@@ -88,7 +88,7 @@
 
 .about-lead {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
   font-weight: 500;
   color: var(--ameza-gold-bright, #FFF5D0);
   line-height: 1.5;
@@ -99,19 +99,19 @@
   font-family: var(--font-body);
   font-size: 14.5px;
   line-height: 1.8;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
 }
 
 @media (max-width: 900px) {
   .about-story-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
   .about-story-heading {
     position: static;
   }
   .about-story-container {
-    padding: 28px 20px;
+    padding: 24px 18px;
   }
 }

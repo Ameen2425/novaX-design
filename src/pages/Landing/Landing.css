@@ -1,13 +1,19 @@
 /* =========================================================
-   AMEZA FLAGSHIP EDITORIAL LANDING PAGE (BURGUNDY & GOLD)
+   AMEZA LANDING PAGE — ROOT STYLES (VELVET OBSIDIAN THEME)
    ========================================================= */
 
 .ameza-landing-page {
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--ameza-bg, #1C1015);
-  color: var(--ameza-text, #FAF6F0);
+  background-color: var(--ameza-bg);
+  color: var(--ameza-text);
+  font-family: var(--font-body);
   overflow-x: hidden;
-  position: relative;
-  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth anchor navigation */
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.ameza-landing-page) {
+    scroll-behavior: smooth;
+  }
 }

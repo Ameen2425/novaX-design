@@ -1,0 +1,389 @@
+/* =========================================================
+   AMEZA BRAND OVERVIEW (WHAT IS AMEZA / WEBSITE SHOWCASE)
+   ========================================================= */
+
+.brand-overview-section {
+  width: 100%;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
+  padding: 0 clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
+}
+
+.brand-overview-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vw, 36px);
+}
+
+/* ── Section Header ───────────────────────────────────── */
+.brand-overview-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-overview-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #E5B83B);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.brand-overview-title {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px 0;
+}
+
+.brand-overview-title span {
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.brand-overview-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.1vw, 15.5px);
+  line-height: 1.75;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0;
+  max-width: 680px;
+}
+
+/* ── 4 Pillars Grid ───────────────────────────────────── */
+.brand-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 1.8vw, 20px);
+}
+
+.brand-pillar-card {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: clamp(20px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.brand-pillar-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(229, 184, 59, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.brand-pillar-card:hover {
+  background: var(--ameza-card-hover, #2E1826);
+  border-color: var(--ameza-border-gold);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.brand-pillar-card:hover::before {
+  opacity: 1;
+}
+
+.pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pillar-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--ameza-section, #1A0D15);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-gold, #E5B83B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.brand-pillar-card:hover .pillar-icon-box {
+  transform: scale(1.1) rotate(4deg);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  border-color: var(--ameza-border-gold);
+}
+
+.pillar-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #E5B83B);
+  background: rgba(229, 184, 59, 0.12);
+  border: 1px solid rgba(229, 184, 59, 0.25);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.pillar-title {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.pillar-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0;
+}
+
+/* ── Interactive Story Banner ─────────────────────────── */
+.brand-story-banner {
+  background: var(--ameza-section, #1A0D15);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-xl, 28px);
+  padding: clamp(28px, 4.5vw, 48px);
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(24px, 4vw, 44px);
+  align-items: center;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.brand-story-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -40px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(229, 184, 59, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.story-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.story-badge {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ameza-copper, #E67E64);
+  background: var(--ameza-copper-bg);
+  border: 1px solid var(--ameza-copper-border);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.story-heading {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
+}
+
+.story-text {
+  font-family: var(--font-body);
+  font-size: clamp(13.5px, 1vw, 15px);
+  line-height: 1.7;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0 0 20px 0;
+}
+
+.story-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.story-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ameza-text, #FAF7F2);
+}
+
+.highlight-icon {
+  color: var(--ameza-emerald, #10B981);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.story-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-explore-catalog {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ameza-gold-gradient);
+  color: #0D070B !important;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition);
+}
+
+.btn-explore-catalog:hover {
+  background: var(--ameza-gold-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-lg);
+}
+
+.btn-learn-heritage {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: var(--ameza-text, #FAF7F2) !important;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ameza-border-gold);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.btn-learn-heritage:hover {
+  background: rgba(229, 184, 59, 0.14);
+  color: var(--ameza-gold-bright) !important;
+  transform: translateY(-2px);
+}
+
+/* Metrics Grid on Right */
+.story-banner-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.metric-box {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 16px);
+  padding: 20px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
+}
+
+.metric-box:hover {
+  background: var(--ameza-card-hover, #2E1826);
+  border-color: var(--ameza-border-gold);
+  transform: translateY(-3px);
+}
+
+.metric-box strong {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--ameza-gold-bright, #FFF5D0);
+  line-height: 1;
+}
+
+.metric-box span {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ameza-text-secondary, #DAC8C3);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .brand-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .brand-story-banner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .brand-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .story-banner-metrics {
+    grid-template-columns: 1fr;
+  }
+  .story-banner-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-explore-catalog,
+  .btn-learn-heritage {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

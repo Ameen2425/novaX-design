@@ -1,62 +1,66 @@
-import React from "react";
 import { motion } from "framer-motion";
 import "./FeaturedCollection.css";
 
-const tenets = [
+const pillars = [
   {
     num: "01",
     title: "Curation",
-    tagline: "Choosing less, but choosing better.",
-    desc: "We filter out the ephemeral noise to present only objects that elevate daily life through timeless form and enduring substance.",
+    body: "Choosing less, but choosing better. Every piece earns its place through material, craft and the feeling it creates in the everyday.",
   },
   {
     num: "02",
     title: "Craft",
-    tagline: "Objects with character, material and intention.",
-    desc: "Every silhouette, stitch, and scent carries the integrity of passionate artisans who prioritize longevity over planned obsolescence.",
+    body: "Objects with character, material and intention. Things made with hands, with patience, with a clear sense of purpose.",
   },
   {
     num: "03",
     title: "Discovery",
-    tagline: "Finding something unexpected in the everyday.",
-    desc: "Luxury is not ostentation — it is the quiet revelation of beauty in the tools, rituals, and environments we inhabit daily.",
+    body: "Finding something unexpected in the ordinary. The quiet pleasure of an object that reveals more the longer you live with it.",
   },
 ];
 
-const FeaturedCollection = () => {
-  return (
-    <section className="featured-collection-section" id="philosophy">
-      <div className="featured-collection-container">
-        {/* Section Header */}
-        <div className="philosophy-header">
-          <span className="featured-eyebrow">OUR PHILOSOPHY</span>
-          <h2 className="philosophy-title">
-            We believe the ordinary <br />
-            <span className="featured-italic">can be extraordinary.</span>
-          </h2>
-        </div>
+const FeaturedCollection = () => (
+  <section
+    className="philosophy-section"
+    id="philosophy"
+    aria-labelledby="philosophy-heading"
+  >
+    <div className="philosophy-inner">
+      <motion.div
+        className="philosophy-header"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <span className="philosophy-label">Our Philosophy</span>
+        <h2 id="philosophy-heading" className="philosophy-heading">
+          WE BELIEVE<br />
+          THE ORDINARY<br />
+          <em>CAN BE</em><br />
+          EXTRAORDINARY.
+        </h2>
+      </motion.div>
 
-        {/* 3 Pillars Grid */}
-        <div className="philosophy-grid">
-          {tenets.map((tenet, idx) => (
-            <motion.div
-              key={tenet.num}
-              className="philosophy-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: idx * 0.12 }}
-            >
-              <span className="philosophy-num">{tenet.num}</span>
-              <h3 className="philosophy-card-title">{tenet.title}</h3>
-              <div className="philosophy-tagline">{tenet.tagline}</div>
-              <p className="philosophy-card-desc">{tenet.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="philosophy-pillars">
+        {pillars.map((pillar, idx) => (
+          <motion.div
+            key={pillar.title}
+            className="philosophy-pillar"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.9, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="pillar-number">{pillar.num}</span>
+            <h3 className="pillar-title">{pillar.title}</h3>
+            <div className="pillar-dash" aria-hidden="true" />
+            <p className="pillar-body">{pillar.body}</p>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default FeaturedCollection;

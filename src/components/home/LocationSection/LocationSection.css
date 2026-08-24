@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA LOCATION SECTION (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA LOCATION SECTION (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .location-section {
@@ -10,11 +10,8 @@
   box-sizing: border-box;
 }
 
-/* Centered heading is handled by BenefitsSection.css globally */
-/* The h2/p inside .home-section-heading.centered are styled by BenefitsSection.css */
-
 .location-container {
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 28px);
   padding: clamp(28px, 4vw, 48px);
@@ -47,7 +44,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(1.3rem, 2vw, 1.8rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 20px 0;
   line-height: 1.2;
 }
@@ -61,7 +58,7 @@
 .location-details p {
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
   line-height: 1.55;
   display: flex;
@@ -81,7 +78,7 @@
   border-radius: var(--radius-xl, 20px);
   overflow: hidden;
   border: 1px solid var(--ameza-border-card);
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   box-shadow: var(--shadow-card);
   min-height: 280px;
 }

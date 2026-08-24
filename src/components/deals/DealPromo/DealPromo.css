@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA DEAL PROMO (BURGUNDY & 24K IMPERIAL GOLD)
+   AMEZA DEAL PROMO (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .deal-promo-section {
@@ -11,10 +11,10 @@
 }
 
 .deal-promo-container {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 28px);
-  padding: clamp(32px, 4.5vw, 56px);
+  padding: clamp(28px, 4.5vw, 56px);
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(24px, 4vw, 48px);
@@ -42,9 +42,9 @@
 
 .deal-promo-heading {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 12px 0;
@@ -52,10 +52,10 @@
 
 .deal-promo-sub {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: clamp(14px, 1.05vw, 15.5px);
   line-height: 1.7;
-  color: var(--ameza-text-secondary, #DECBC6);
-  margin: 0 0 28px 0;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0 0 24px 0;
 }
 
 .btn-promo-explore {
@@ -63,13 +63,13 @@
   align-items: center;
   gap: 8px;
   background: var(--ameza-gold-gradient);
-  color: #12090D !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 30px;
+  padding: 13px 28px;
   border-radius: var(--radius-pill);
   text-decoration: none;
   box-shadow: var(--shadow-gold);
@@ -93,7 +93,7 @@
   border-radius: var(--radius-xl, 20px);
   overflow: hidden;
   border: 1px solid var(--ameza-border);
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   box-shadow: var(--shadow-card);
 }
 
@@ -111,7 +111,7 @@
 @media (max-width: 960px) {
   .deal-promo-container {
     grid-template-columns: 1fr;
-    padding: 32px 24px;
-    gap: 28px;
+    padding: 28px 20px;
+    gap: 24px;
   }
 }

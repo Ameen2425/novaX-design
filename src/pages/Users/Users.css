@@ -1,10 +1,10 @@
 /* =========================================================
-   AMEZA USERS MANAGEMENT PAGE (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA USERS MANAGEMENT PAGE (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .users-page {
   min-height: 100vh;
-  background-color: var(--ameza-bg, #12090D);
+  background-color: var(--ameza-bg, #0D070B);
   padding-top: calc(var(--header-height-desktop, 76px) + 24px);
   padding-bottom: var(--section-gap, 48px);
   padding-left: clamp(16px, 4vw, 40px);
@@ -12,7 +12,8 @@
   max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
   box-sizing: border-box;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
+  width: 100%;
 }
 
 @media (max-width: 900px) {

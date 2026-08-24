@@ -5,7 +5,7 @@
 .page-loader-screen {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 50% 45%, #25121B 0%, #140A0E 70%, #0D0509 100%);
+  background: radial-gradient(circle at 50% 45%, var(--ameza-section, #1A0D15) 0%, var(--ameza-bg, #0D070B) 70%, var(--ameza-deep, #070306) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(224, 122, 95, 0.1) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(229, 184, 59, 0.22) 0%, rgba(230, 126, 100, 0.1) 40%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
   animation: glowPulse24K 3s ease-in-out infinite alternate;
@@ -56,18 +56,18 @@
 
 .ring-outer {
   inset: 0;
-  border: 2px dashed rgba(212, 175, 55, 0.45);
-  border-top-color: #FFF0C2;
-  border-right-color: #D4AF37;
+  border: 2px dashed rgba(229, 184, 59, 0.45);
+  border-top-color: #FFF5D0;
+  border-right-color: #E5B83B;
   animation: spinOuter 3.5s linear infinite;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 20px rgba(229, 184, 59, 0.25);
 }
 
 .ring-inner {
   inset: 12px;
-  border: 1.5px solid rgba(224, 122, 95, 0.25);
-  border-bottom-color: #D4AF37;
-  border-left-color: #FFF0C2;
+  border: 1.5px solid rgba(230, 126, 100, 0.25);
+  border-bottom-color: #E5B83B;
+  border-left-color: #FFF5D0;
   animation: spinInner 2s linear infinite reverse;
 }
 
@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.6));
+  filter: drop-shadow(0 0 16px rgba(229, 184, 59, 0.6));
   animation: logoBreath 2.4s ease-in-out infinite alternate;
 }
 
@@ -94,14 +94,14 @@
   -webkit-text-fill-color: transparent;
   display: inline-block;
   margin-bottom: 16px;
-  filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.3));
+  filter: drop-shadow(0 2px 10px rgba(229, 184, 59, 0.3));
 }
 
 /* ── Shimmer Progress Bar ─────────────────────────────── */
 .page-loader-progress-track {
   width: 180px;
   height: 3px;
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(229, 184, 59, 0.15);
   border-radius: var(--radius-pill);
   overflow: hidden;
   position: relative;
@@ -116,7 +116,7 @@
   width: 50%;
   background: var(--ameza-gold-gradient);
   border-radius: var(--radius-pill);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  box-shadow: 0 0 10px rgba(229, 184, 59, 0.8);
   animation: progressSweep 1.8s ease-in-out infinite;
 }
 
@@ -126,7 +126,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ameza-text-secondary, #D4C1BC);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
   animation: textFade 1.6s ease-in-out infinite alternate;
 }

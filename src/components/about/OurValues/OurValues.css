@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA OUR VALUES (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA OUR VALUES (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .about-values-section {
@@ -40,7 +40,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 4px 0;
   line-height: 1.12;
   letter-spacing: -0.02em;
@@ -49,7 +49,7 @@
 .about-section-heading p {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
   line-height: 1.6;
 }
@@ -62,7 +62,7 @@
 }
 
 .about-value-card {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-card, 18px);
   padding: 24px;
@@ -86,9 +86,10 @@
 }
 
 .about-value-card:hover {
-  background: var(--ameza-card-hover, #381A29);
+  background: var(--ameza-card-hover, #2E1826);
   border-color: var(--ameza-border-gold);
   box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
 
 .about-value-card:hover::before {
@@ -109,7 +110,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 8px 0;
   line-height: 1.2;
   transition: color var(--transition-fast);
@@ -122,7 +123,7 @@
 .about-value-card p {
   font-family: var(--font-body);
   font-size: 12.5px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
   line-height: 1.6;
 }

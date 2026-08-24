@@ -1,18 +1,26 @@
 /* =========================================================
-   AMEZA MAIN LAYOUT CONTAINER (VELVET BURGUNDY)
+   AMEZA MAIN LAYOUT CONTAINER (OBSIDIAN VELVET MIDNIGHT)
    ========================================================= */
 
 .main-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--ameza-bg, #1C1015);
-  color: var(--ameza-text, #FAF6F0);
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
   overflow-x: hidden;
   position: relative;
+  width: 100%;
 }
 
 .main-content {
   flex: 1 0 auto;
   width: 100%;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    padding-bottom: var(--page-padding-bottom-mobile, 96px);
+  }
 }

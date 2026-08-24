@@ -1,14 +1,15 @@
 /* =========================================================
-   AMEZA USERS TABLE (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA USERS TABLE (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .users-page-table-wrap {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 24px);
   overflow: hidden;
   box-shadow: var(--shadow-card);
   margin-bottom: var(--section-gap, 42px);
+  width: 100%;
 }
 
 .users-page-table-wrap table {
@@ -19,7 +20,7 @@
 
 /* ── Table Header ─────────────────────────────────────── */
 .users-page-table-wrap thead th {
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   padding: 16px 24px;
   font-family: var(--font-body);
   font-size: 11px;
@@ -42,14 +43,14 @@
 }
 
 .users-page-table-wrap tbody tr:hover {
-  background: var(--ameza-card-hover, #381A29);
+  background: var(--ameza-card-hover, #2E1826);
 }
 
 .users-page-table-wrap tbody td {
   padding: 16px 24px;
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   vertical-align: middle;
 }
 
@@ -73,7 +74,7 @@
   height: 38px;
   border-radius: 50%;
   background: var(--ameza-gold-gradient);
-  color: #12090D;
+  color: #0D070B;
   font-family: var(--font-heading, var(--font-display));
   font-size: 15px;
   font-weight: 700;
@@ -86,11 +87,11 @@
 
 .user-name-text {
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
 }
 
 .user-email-cell {
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   font-size: 13px;
 }
 
@@ -102,12 +103,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border);
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   font-size: 12px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
 }
 
 /* ── Action Buttons ───────────────────────────────────── */
@@ -124,6 +125,7 @@
   align-items: center;
   gap: 6px;
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .users-page-table-wrap .btn-warning {
@@ -134,37 +136,31 @@
 
 .users-page-table-wrap .btn-warning:hover {
   background: var(--ameza-gold-gradient);
-  color: #12090D;
+  color: #0D070B;
   border-color: transparent;
   box-shadow: var(--shadow-gold);
   transform: translateY(-1px);
 }
 
 .users-page-table-wrap .btn-danger {
-  background: rgba(239, 68, 68, 0.14);
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  color: var(--ameza-error, #EF4444);
+  background: rgba(225, 29, 72, 0.14);
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  color: var(--ameza-crimson, #E11D48);
 }
 
 .users-page-table-wrap .btn-danger:hover {
-  background: var(--ameza-error, #EF4444);
+  background: var(--ameza-crimson, #E11D48);
   color: #FFFFFF;
   border-color: transparent;
-  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.45);
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.45);
   transform: translateY(-1px);
-}
-
-.users-actions-cell {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
 }
 
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 900px) {
   .users-page-table-wrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .users-page-table-wrap thead th,
   .users-page-table-wrap tbody td {

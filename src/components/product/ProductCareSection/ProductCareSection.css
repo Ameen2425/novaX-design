@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA PRODUCT CARE SECTION (BURGUNDY & 24K IMPERIAL GOLD)
+   AMEZA PRODUCT CARE SECTION (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .single-details {
@@ -29,14 +29,14 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(1.8rem, 2.8vw, 2.4rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 8px 0;
 }
 
 .single-details-heading p {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .single-details-grid > div {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-card, 18px);
   padding: 24px 20px;
@@ -59,7 +59,7 @@
 }
 
 .single-details-grid > div:hover {
-  background: var(--ameza-card-hover, #381A29);
+  background: var(--ameza-card-hover, #2E1826);
   border-color: var(--ameza-border-gold);
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
@@ -81,7 +81,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: 1.18rem;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 6px 0;
 }
 
@@ -89,7 +89,7 @@
   font-family: var(--font-body);
   font-size: 12.5px;
   line-height: 1.6;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
 }
 

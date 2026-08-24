@@ -1,24 +1,29 @@
 /* =========================================================
-   AMEZA BENEFITS & EXPERIENCE (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA BENEFITS & EXPERIENCE (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
-/* ── Global Section Heading (shared across home sections) */
-.home-section-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  gap: 14px;
+.home-benefits-section {
+  width: 100%;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
+  padding: 0 clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
 }
 
+.home-benefits-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vw, 36px);
+}
+
+/* ── Section Header ───────────────────────────────────── */
 .home-section-heading.centered {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .home-section-label {
@@ -29,48 +34,48 @@
   text-transform: uppercase;
   color: var(--ameza-gold, #E5B83B);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.home-section-heading h2 {
+.home-section-heading.centered h2 {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  margin: 0 0 4px 0;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 10px 0;
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
 
-.home-section-heading p {
+.home-section-heading.centered h2 span {
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.home-section-heading.centered p {
   font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  font-size: clamp(14px, 1.1vw, 15.5px);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.65;
+  max-width: 600px;
 }
 
-/* ── Benefits Section ─────────────────────────────────── */
-.home-benefits-section {
-  width: 100%;
-  max-width: var(--container-max-width, 1440px);
-  margin: 0 auto var(--section-gap, 42px);
-  padding: 0 clamp(16px, 4vw, 40px);
-  box-sizing: border-box;
-}
-
-.home-benefits {
+/* ── 3 Step Journey Cards Grid ────────────────────────── */
+.home-steps-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-bottom: clamp(24px, 3vw, 36px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 24px);
 }
 
-.benefit-card {
-  background: var(--ameza-card, #2B141F);
+.home-step-card {
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
-  border-radius: var(--radius-card, 18px);
-  padding: 22px;
+  border-radius: var(--radius-xl, 22px);
+  padding: clamp(24px, 3vw, 36px);
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-card);
@@ -80,98 +85,198 @@
   box-sizing: border-box;
 }
 
-.benefit-card:hover {
-  background: var(--ameza-card-hover, #381A29);
+.home-step-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(229, 184, 59, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.home-step-card:hover {
+  background: var(--ameza-card-hover, #2E1826);
   border-color: var(--ameza-border-gold);
   box-shadow: var(--shadow-card-hover);
+  transform: translateY(-5px);
 }
 
-.benefit-num {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 700;
+.home-step-card:hover::before {
+  opacity: 1;
+}
+
+.step-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--ameza-section, #1A0D15);
+  border: 1px solid var(--ameza-border);
   color: var(--ameza-gold, #E5B83B);
-  letter-spacing: 0.12em;
-  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-fast), color var(--transition-fast);
 }
 
-.benefit-card h3 {
+.home-step-card:hover .step-icon-box {
+  transform: scale(1.08) rotate(4deg);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  border-color: var(--ameza-border-gold);
+}
+
+.step-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-num-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ameza-gold-bright, #FFF5D0);
+  background: var(--ameza-gold-gradient);
+  color: #0D070B;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-gold);
+}
+
+.step-tag-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ameza-gold, #E5B83B);
+  background: rgba(229, 184, 59, 0.12);
+  border: 1px solid rgba(229, 184, 59, 0.25);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.step-card-title {
   font-family: var(--font-heading, var(--font-display));
-  font-size: 1.18rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  margin: 0 0 6px 0;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 10px 0;
   line-height: 1.2;
 }
 
-.benefit-card:hover h3 {
-  color: var(--ameza-gold-bright, #FFF5D0);
-}
-
-.benefit-card p {
+.step-card-desc {
   font-family: var(--font-body);
-  font-size: 12.5px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
-  line-height: 1.6;
 }
 
-/* ── Experience Section ───────────────────────────────── */
-.home-experience {
-  width: 100%;
-  max-width: var(--container-max-width, 1440px);
-  margin: 0 auto var(--section-gap, 42px);
-  padding: 0 clamp(16px, 4vw, 40px);
-  box-sizing: border-box;
-}
-
-.home-experience > div,
-.home-experience-inner {
-  background: var(--ameza-section, #221018);
-  border: 1px solid var(--ameza-border-card);
-  border-radius: var(--radius-xl, 28px);
-  padding: clamp(32px, 4.5vw, 52px);
+/* ── 4 Guarantees Strip ───────────────────────────────── */
+.home-guarantees-strip {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: clamp(24px, 4vw, 48px);
-  align-items: start;
-  box-shadow: var(--shadow-card);
-  box-sizing: border-box;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.6vw, 18px);
 }
 
-.home-experience-content {
+.guarantee-box {
+  background: var(--ameza-section, #1A0D15);
+  border: 1px solid var(--ameza-border);
+  border-radius: var(--radius-card, 16px);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.guarantee-box:hover {
+  border-color: var(--ameza-border-gold);
+  background: var(--ameza-card, #23121D);
+  transform: translateY(-2px);
+}
+
+.guarantee-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-gold, #E5B83B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guarantee-text-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 2px;
 }
 
-.home-experience-content h2 {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
-  font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  margin: 0 0 10px 0;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.home-experience-content p {
+.guarantee-text-wrap strong {
   font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--ameza-text-secondary, #DECBC6);
-  margin: 0 0 24px 0;
-  line-height: 1.7;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ameza-text, #FAF7F2);
+  letter-spacing: 0.02em;
 }
 
-/* Primary button inside experience */
-.home-primary-btn {
+.guarantee-text-wrap span {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--ameza-text-muted, #9E8B89);
+}
+
+/* ── Experience CTA Bar ───────────────────────────────── */
+.home-experience-cta-bar {
+  background: var(--ameza-section, #1A0D15);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-xl, 24px);
+  padding: clamp(20px, 3vw, 32px) clamp(24px, 4vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: var(--shadow-card);
+  flex-wrap: wrap;
+}
+
+.cta-bar-text h4 {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 4px 0;
+}
+
+.cta-bar-text p {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0;
+  max-width: 560px;
+}
+
+.btn-benefits-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: var(--ameza-gold-gradient);
-  color: #12090D !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -180,81 +285,37 @@
   text-decoration: none;
   box-shadow: var(--shadow-gold);
   transition: all var(--transition);
-}
-
-.home-primary-btn:hover {
-  background: var(--ameza-gold-gradient-hover);
-  box-shadow: var(--shadow-gold-lg);
-  transform: translateY(-2px);
-}
-
-.home-experience-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.experience-step-card {
-  background: var(--ameza-card, #2B141F);
-  border: 1px solid var(--ameza-border);
-  border-radius: var(--radius-card, 16px);
-  padding: 18px 20px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  transition: all var(--transition);
-}
-
-.experience-step-card:hover {
-  background: var(--ameza-card-hover, #381A29);
-  border-color: var(--ameza-border-gold);
-  box-shadow: var(--shadow-card);
-}
-
-.step-num,
-.step-badge {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
-  background: rgba(229, 184, 59, 0.14);
-  border: 1px solid rgba(229, 184, 59, 0.3);
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-  align-self: flex-start;
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
-.experience-step-card h3 {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  margin: 0 0 4px 0;
-}
-
-.experience-step-card p {
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  color: var(--ameza-text-secondary, #DECBC6);
-  margin: 0;
-  line-height: 1.55;
+.btn-benefits-cta:hover {
+  background: var(--ameza-gold-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-lg);
 }
 
 /* ── Responsive ───────────────────────────────────────── */
-@media (max-width: 1100px) {
-  .home-benefits {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .home-experience > div {
+@media (max-width: 1024px) {
+  .home-steps-grid {
     grid-template-columns: 1fr;
+  }
+  .home-guarantees-strip {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 580px) {
-  .home-benefits {
+@media (max-width: 600px) {
+  .home-guarantees-strip {
     grid-template-columns: 1fr;
+  }
+  .home-experience-cta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-benefits-cta {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }

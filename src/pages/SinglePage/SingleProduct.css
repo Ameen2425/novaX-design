@@ -1,18 +1,19 @@
 /* =========================================================
-   AMEZA SINGLE PRODUCT PAGE (VELVET BURGUNDY & 24K IMPERIAL GOLD)
+   AMEZA SINGLE PRODUCT PAGE (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .single-page {
   min-height: 100vh;
-  background-color: var(--ameza-bg, #12090D);
+  background-color: var(--ameza-bg, #0D070B);
   padding-top: calc(var(--header-height-desktop, 76px) + 24px);
   padding-bottom: var(--section-gap, 48px);
   padding-left: clamp(16px, 4vw, 40px);
   padding-right: clamp(16px, 4vw, 40px);
   max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   box-sizing: border-box;
+  width: 100%;
 }
 
 /* ── Breadcrumb ───────────────────────────────────────── */
@@ -23,7 +24,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-  color: var(--ameza-text-muted, #A89290);
+  color: var(--ameza-text-muted, #9E8B89);
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
@@ -63,7 +64,7 @@
   top: 96px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(18, 9, 13, 0.95);
+  background: rgba(26, 13, 21, 0.95);
   backdrop-filter: blur(20px);
   border: 1px solid var(--ameza-border-gold);
   border-radius: var(--radius-pill);
@@ -71,12 +72,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 24px rgba(229, 184, 59, 0.35);
   z-index: 10000;
+  max-width: 90vw;
+  box-sizing: border-box;
 }
 
 .single-toast-notification .toast-icon {
@@ -85,14 +88,14 @@
 
 /* ── Loading State ────────────────────────────────────── */
 .single-loading {
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: var(--ameza-bg, #12090D);
-  color: var(--ameza-text-secondary, #DECBC6);
+  background: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text-secondary, #DAC8C3);
 }
 
 .single-loading-spinner {
@@ -107,7 +110,7 @@
 
 /* ── Not Found ────────────────────────────────────────── */
 .single-not-found {
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,12 +123,12 @@
 .single-not-found h1 {
   font-family: var(--font-heading, var(--font-display));
   font-size: 2.4rem;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
 }
 
 .single-not-found button {
   background: var(--ameza-gold-gradient);
-  color: #12090D !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;

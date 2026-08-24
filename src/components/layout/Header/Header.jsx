@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
@@ -7,12 +7,23 @@ import BrandLogo from "../../common/BrandLogo/BrandLogo";
 
 const Header = () => {
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  let cartData = useSelector(
-    (state) => state.cart
-  )
+  const cartData = useSelector((state) => state.cart);
+  const cartValue = cartData.length;
 
-  let cartValue = cartData.length;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -25,7 +36,7 @@ const Header = () => {
   return (
     <>
       {/* MOBILE COMPACT FLOATING TOP HEADER */}
-      <header className="mobile-top-bar">
+      <header className={`mobile-top-bar ${isScrolled ? "mobile-top-scrolled" : ""}`}>
         <div className="mobile-top-left">
           <NavLink to="/" className="logo" aria-label="AMEZA Home">
             <BrandLogo variant="compact" />
@@ -52,7 +63,7 @@ const Header = () => {
       </header>
 
       {/* DESKTOP & TABLET FLOATING GLASS HEADER */}
-      <header className="header desktop-header">
+      <header className={`header desktop-header ${isScrolled ? "header-scrolled" : ""}`}>
         <NavLink to="/" className="logo" aria-label="AMEZA Home">
           <BrandLogo variant="full" />
         </NavLink>

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA SIGNUP FORM — VIEWPORT FIT (DEEP VELVET + 24K GOLD)
+   AMEZA SIGNUP FORM — VIEWPORT FIT (OBSIDIAN & 24K GOLD)
    ========================================================= */
 
 .signup-form-wrapper {
@@ -30,7 +30,7 @@
 
 /* ── Form Card ────────────────────────────────────────── */
 .signup-form-card {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 24px);
   padding: clamp(16px, 2vh, 28px) clamp(20px, 2.5vw, 36px);
@@ -59,7 +59,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(1.45rem, 2.2vh, 2rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 3px 0;
   line-height: 1.1;
   flex-shrink: 0;
@@ -68,7 +68,7 @@
 .signup-subtitle {
   font-family: var(--font-body);
   font-size: 12.5px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0 0 clamp(8px, 1.2vh, 16px) 0;
   line-height: 1.5;
   flex-shrink: 0;
@@ -87,7 +87,7 @@
   font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin-bottom: 5px;
 }
 
@@ -99,13 +99,13 @@
 .signup-form-group input {
   width: 100%;
   height: clamp(38px, 5vh, 44px);
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-pill);
   padding: 0 16px;
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   outline: none;
   box-sizing: border-box;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -117,7 +117,7 @@
 }
 
 .signup-form-group input::placeholder {
-  color: var(--ameza-text-muted, #A89290);
+  color: var(--ameza-text-muted, #9E8B89);
 }
 
 .signup-form-group .password-wrap input {
@@ -146,7 +146,7 @@
   height: 16px;
   border: 1px solid var(--ameza-border);
   border-radius: 3px;
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,7 +163,7 @@
 
 .signup-terms .checkbox-wrap input:checked + .checkbox-custom::after {
   content: "✓";
-  color: #12090D;
+  color: #0D070B;
   font-size: 10px;
   font-weight: 800;
 }
@@ -171,7 +171,7 @@
 .signup-terms .checkbox-label {
   font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   line-height: 1.4;
 }
 
@@ -190,7 +190,7 @@
   width: 100%;
   height: clamp(40px, 5.2vh, 46px);
   background: var(--ameza-gold-gradient);
-  color: #12090D !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 12.5px;
   font-weight: 700;
@@ -220,7 +220,7 @@
   text-align: center;
   font-family: var(--font-body);
   font-size: 12.5px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
   flex-shrink: 0;
 }

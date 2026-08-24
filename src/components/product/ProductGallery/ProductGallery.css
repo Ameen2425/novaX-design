@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA PRODUCT GALLERY (BURGUNDY & GOLD)
+   AMEZA PRODUCT GALLERY (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .single-gallery {
@@ -15,13 +15,13 @@
   border-radius: var(--radius-xl, 24px);
   overflow: hidden;
   position: relative;
-  background: var(--ameza-image-bg, #2A1720);
+  background: var(--ameza-image-bg, #180C14);
   border: 1px solid var(--ameza-border-card);
   box-shadow: var(--shadow-card);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: clamp(16px, 3vw, 32px);
   box-sizing: border-box;
 }
 
@@ -29,20 +29,25 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 0.4s var(--ease-luxury);
+}
+
+.single-main-image:hover img {
+  transform: scale(1.05);
 }
 
 .single-discount {
   position: absolute;
   top: 18px;
   left: 18px;
-  background: var(--ameza-copper);
+  background: var(--ameza-copper, #E67E64);
   color: #FFFFFF;
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 10px rgba(184, 107, 92, 0.4);
+  box-shadow: 0 4px 12px rgba(230, 126, 100, 0.5);
   z-index: 5;
 }
 
@@ -55,10 +60,10 @@
 }
 
 .single-thumbnail {
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: var(--radius-md, 12px);
-  background: var(--ameza-card, #38202B);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border);
   padding: 6px;
   cursor: pointer;
@@ -72,13 +77,13 @@
 }
 
 .single-thumbnail:hover {
-  border-color: var(--ameza-gold, #C5A059);
+  border-color: var(--ameza-gold, #E5B83B);
 }
 
 .single-thumbnail.active {
-  border-color: var(--ameza-gold, #C5A059);
-  box-shadow: 0 0 12px rgba(197, 160, 89, 0.4);
-  background: var(--ameza-card-hover, #442735);
+  border-color: var(--ameza-gold, #E5B83B);
+  box-shadow: 0 0 14px rgba(229, 184, 59, 0.4);
+  background: var(--ameza-card-hover, #2E1826);
 }
 
 .single-thumbnail img {

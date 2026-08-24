@@ -1,13 +1,14 @@
 /* =========================================================
-   AMEZA TYPOGRAPHY MATRIX (PEARL SILK & 24K IMPERIAL GOLD)
+   AMEZA MASTER TYPOGRAPHY MATRIX
+   Editorial Serif (Playfair Display) + Sans-Serif (Manrope) + Monospace (JetBrains Mono)
    ========================================================= */
 
 body {
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.65;
-  color: var(--ameza-text, #FAF6F0);
-  background-color: var(--ameza-bg, #140A0E);
+  color: var(--ameza-text, #FAF7F2);
+  background-color: var(--ameza-bg, #0D070B);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,27 +17,27 @@ h1, h2, h3, h4, h5, h6,
 .font-display,
 .font-heading {
   font-family: var(--font-heading, var(--font-display));
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin: 0;
 }
 
-h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); }
-h2 { font-size: clamp(1.8rem, 3.8vw, 3.2rem); }
-h3 { font-size: clamp(1.4rem, 2.6vw, 2.2rem); }
-h4 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
+h1 { font-size: clamp(2.2rem, 4.5vw, 4.2rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 3rem); }
+h3 { font-size: clamp(1.35rem, 2.4vw, 2.1rem); }
+h4 { font-size: clamp(1.1rem, 1.6vw, 1.45rem); }
 h5 { font-size: 1.1rem; }
 h6 { font-size: 0.95rem; }
 
 p {
-  color: var(--ameza-text-secondary, #D4C1BC);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-/* ── Editorial Gold Highlights ────────────────────────── */
+/* ── Editorial Gold & Jewel Gradient Highlights ───────── */
 .text-gold-gradient,
 .editorial-gold {
   background: var(--ameza-gold-gradient);
@@ -46,7 +47,11 @@ p {
 }
 
 .text-gold {
-  color: var(--ameza-gold, #D4AF37) !important;
+  color: var(--ameza-gold, #E5B83B) !important;
+}
+
+.text-gold-bright {
+  color: var(--ameza-gold-bright, #FFF5D0) !important;
 }
 
 .text-emerald {
@@ -58,7 +63,7 @@ p {
 }
 
 .text-copper {
-  color: var(--ameza-copper, #E07A5F) !important;
+  color: var(--ameza-copper, #E67E64) !important;
 }
 
 /* ── Section Eyebrow Labels ───────────────────────────── */
@@ -69,7 +74,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #D4AF37);
+  color: var(--ameza-gold, #E5B83B);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -93,19 +98,20 @@ p {
   justify-content: center;
   gap: 8px;
   background: var(--ameza-gold-gradient);
-  color: #140A0E !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 30px;
+  padding: 13px 28px;
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   box-shadow: var(--shadow-gold);
   transition: all var(--transition);
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .btn-gold:hover,
@@ -113,7 +119,7 @@ p {
   background: var(--ameza-gold-gradient-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-gold-lg);
-  color: #0D0509 !important;
+  color: #000000 !important;
 }
 
 .btn-outline-gold {
@@ -122,23 +128,24 @@ p {
   justify-content: center;
   gap: 8px;
   background: transparent;
-  color: var(--ameza-text, #FAF6F0) !important;
+  color: var(--ameza-text, #FAF7F2) !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 13px 28px;
+  padding: 12px 26px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--ameza-border-gold);
   cursor: pointer;
   transition: all var(--transition);
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .btn-outline-gold:hover {
   border-color: var(--ameza-gold);
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(229, 184, 59, 0.15);
   color: var(--ameza-gold-bright) !important;
   transform: translateY(-2px);
 }
@@ -155,17 +162,18 @@ p {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 30px;
+  padding: 13px 28px;
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(224, 122, 95, 0.4);
+  box-shadow: 0 4px 16px rgba(230, 126, 100, 0.4);
   transition: all var(--transition);
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .btn-copper:hover {
   background: var(--ameza-copper-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(224, 122, 95, 0.55);
+  box-shadow: 0 8px 24px rgba(230, 126, 100, 0.55);
 }

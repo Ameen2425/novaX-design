@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA EMPTY CART (BURGUNDY & LIQUID GOLD)
+   AMEZA EMPTY CART (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .empty-cart {
@@ -11,16 +11,16 @@
 }
 
 .empty-cart-content {
-  background: var(--ameza-card, #38202B);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 28px);
-  padding: clamp(40px, 6vw, 64px);
+  padding: clamp(36px, 6vw, 64px);
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: var(--shadow-card);
   box-sizing: border-box;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .empty-cart-content .cart-label {
@@ -29,8 +29,8 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 24px;
+  color: var(--ameza-gold, #E5B83B);
+  margin-bottom: 20px;
 }
 
 /* ── Animated Visual ──────────────────────────────────── */
@@ -41,14 +41,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .cart-circle {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: var(--ameza-section, #2E1A23);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-gold);
   box-shadow: var(--shadow-gold);
   display: flex;
@@ -64,7 +64,7 @@
 .cart-dot {
   position: absolute;
   border-radius: 50%;
-  background: var(--ameza-gold, #C5A059);
+  background: var(--ameza-gold, #E5B83B);
 }
 
 .cart-dot-one {
@@ -91,10 +91,10 @@
 /* ── Text ─────────────────────────────────────────────── */
 .empty-cart-content h1 {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  margin: 0 0 12px 0;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 10px 0;
   line-height: 1.15;
 }
 
@@ -110,7 +110,7 @@
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 8px 0;
 }
 
@@ -118,16 +118,16 @@
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.65;
-  color: var(--ameza-text-secondary, #D2C0BB);
+  color: var(--ameza-text-secondary, #DAC8C3);
   max-width: 480px;
-  margin: 0 0 32px 0;
+  margin: 0 0 28px 0;
 }
 
 /* ── Actions ──────────────────────────────────────────── */
 .cart-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -137,13 +137,13 @@
   align-items: center;
   gap: 8px;
   background: var(--ameza-gold-gradient);
-  color: #1C1015 !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 32px;
+  padding: 13px 30px;
   border-radius: var(--radius-pill);
   text-decoration: none;
   box-shadow: var(--shadow-gold);
@@ -161,20 +161,20 @@
   align-items: center;
   background: transparent;
   border: 1px solid var(--ameza-border-gold);
-  color: var(--ameza-text, #FAF6F0) !important;
+  color: var(--ameza-text, #FAF7F2) !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 13px 28px;
+  padding: 12px 26px;
   border-radius: var(--radius-pill);
   text-decoration: none;
   transition: all var(--transition);
 }
 
 .cart-secondary-btn:hover {
-  background: rgba(197, 160, 89, 0.12);
+  background: rgba(229, 184, 59, 0.12);
   color: var(--ameza-gold-bright) !important;
   transform: translateY(-2px);
 }

@@ -1,116 +1,112 @@
 /* =========================================================
-   AMEZA EDITORIAL CINEMATIC MOMENT (BURGUNDY & GOLD)
+   FULLSCREEN IMAGE MOMENT (SECTION 05)
    ========================================================= */
 
-.editorial-banner-section {
+.image-moment-section {
   position: relative;
   min-height: 75vh;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
-.editorial-banner-bg-wrap {
+/* Background image with slow parallax scale */
+.image-moment-bg {
   position: absolute;
   inset: 0;
-  z-index: 1;
-}
-
-.editorial-banner-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 25%;
+  transform: scale(1.08);
+  transition: transform 16s var(--ease-editorial);
+  will-change: transform;
+  filter: brightness(0.55) saturate(0.75);
 }
 
-.editorial-banner-overlay {
+.image-moment-section:hover .image-moment-bg {
+  transform: scale(1.0);
+}
+
+/* Multi-layer overlay */
+.image-moment-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(28, 16, 21, 0.7) 0%, rgba(21, 11, 15, 0.92) 100%);
-}
-
-.editorial-banner-container {
-  position: relative;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(13, 20, 18, 0.5) 0%,
+      rgba(13, 20, 18, 0.08) 35%,
+      rgba(13, 20, 18, 0.08) 65%,
+      rgba(13, 20, 18, 0.6) 100%
+    );
   z-index: 2;
-  width: min(calc(100% - 48px), 880px);
-  margin: 0 auto;
+}
+
+/* Vignette corners */
+.image-moment-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(13,20,18,0.45) 100%);
+}
+
+/* ── Text Content ──────────────────────────────────────── */
+.image-moment-text {
+  position: relative;
+  z-index: 3;
   text-align: center;
-  padding: 80px 0;
-  box-sizing: border-box;
+  padding: clamp(60px, 12vh, 120px) clamp(24px, 6vw, 80px);
+  max-width: 800px;
 }
 
-.editorial-banner-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.editorial-banner-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.76rem;
+.image-moment-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(40px, 6.5vw, 96px);
   font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 20px;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--pine-text);
+  margin: 0 0 clamp(20px, 3.5vh, 32px) 0;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.4);
 }
 
-.editorial-banner-quote {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.4rem, 4.8vw, 4.4rem);
-  font-weight: 500;
-  color: var(--ameza-text, #FAF6F0);
-  line-height: 1.06;
-  letter-spacing: -0.02em;
-  margin: 0 0 22px 0;
-}
-
-.quote-highlight {
-  background: var(--ameza-gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.image-moment-heading em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
+  display: block;
+  color: var(--pine-text-ivory);
+  opacity: 0.8;
 }
 
-.editorial-banner-sub {
-  font-family: var(--font-body);
-  font-size: clamp(15px, 1.15vw, 18px);
-  line-height: 1.75;
-  color: var(--ameza-text-secondary, #D2C0BB);
-  max-width: 620px;
-  margin: 0 0 36px 0;
-}
-
-.editorial-banner-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--ameza-gold-gradient);
-  color: #1C1015 !important;
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.image-moment-sub {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  padding: 16px 36px;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  box-shadow: var(--shadow-gold);
-  transition: all var(--transition);
+  color: rgba(240, 238, 231, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
 
-.editorial-banner-btn:hover {
-  background: var(--ameza-gold-gradient-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
+.image-moment-sub::before,
+.image-moment-sub::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: rgba(240, 238, 231, 0.3);
 }
 
+/* ── Mobile ────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .editorial-banner-section {
-    min-height: 60vh;
+  .image-moment-section {
+    min-height: 65vh;
+  }
+  .image-moment-heading {
+    font-size: clamp(36px, 12vw, 60px);
   }
 }

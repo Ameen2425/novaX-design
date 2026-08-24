@@ -1,120 +1,122 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroImg from "../../../assets/novax-hero-3d.jpg";
+import { Link } from "react-router-dom";
+import pineHeroImg from "../../../assets/pine-hero.jpg";
 import "./LandingHero.css";
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.14,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const fadeInUp = {
+const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 28 },
-  show: {
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay },
   },
-};
+});
 
-const imageReveal = {
-  hidden: { opacity: 0, scale: 0.96 },
-  show: {
+const fadeIn = (delay = 0) => ({
+  hidden: { opacity: 0 },
+  visible: {
     opacity: 1,
-    scale: 1,
-    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.25 },
+    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1], delay },
   },
-};
+});
 
 const LandingHero = () => {
   return (
-    <section className="landing-hero" id="about">
-      <div className="landing-hero-container">
+    <section className="landing-hero" aria-label="Hero">
+      {/* ── Left: Editorial Typography ── */}
+      <div className="hero-text-col">
         <motion.div
-          className="landing-hero-grid"
-          variants={staggerContainer}
+          className="hero-eyebrow"
           initial="hidden"
-          animate="show"
+          animate="visible"
+          variants={fadeUp(0.2)}
         >
-          {/* Left Column: Editorial Typography */}
-          <div className="landing-hero-left">
-            <motion.div className="landing-hero-eyebrow" variants={fadeInUp}>
-              <span className="eyebrow-line"></span>
-              <span>AMEZA / EST. 2026</span>
-            </motion.div>
-
-            <motion.h1 className="landing-hero-title" variants={fadeInUp}>
-              Everything Worth <br />
-              <span className="editorial-italic">Discovering.</span>
-            </motion.h1>
-
-            <motion.p className="landing-hero-desc" variants={fadeInUp}>
-              A considered world of objects, design and everyday rituals.
-              Curated for those who appreciate quiet luxury and intentional craftsmanship.
-            </motion.p>
-
-            <motion.div className="landing-hero-actions" variants={fadeInUp}>
-              <Link to="/" className="hero-btn-primary">
-                ENTER AMEZA
-                <span>→</span>
-              </Link>
-
-              <a href="#the-edit" className="hero-btn-secondary">
-                DISCOVER THE EDIT
-              </a>
-            </motion.div>
-
-            {/* Editorial Metadata Strip */}
-            <motion.div className="landing-hero-meta" variants={fadeInUp}>
-              <div className="meta-block">
-                <strong>01</strong>
-                <small>INTRODUCTION</small>
-              </div>
-              <div className="meta-divider"></div>
-              <div className="meta-block">
-                <strong>CURATED</strong>
-                <small>CONSIDERED / COLLECTED</small>
-              </div>
-              <div className="meta-divider"></div>
-              <div className="meta-block">
-                <strong>DIGITAL</strong>
-                <small>FLAGSHIP EDITION</small>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column: Large Lifestyle Imagery */}
-          <motion.div className="landing-hero-right" variants={imageReveal}>
-            <div className="hero-image-frame">
-              <img
-                src={heroImg}
-                alt="AMEZA Editorial Luxury Flagship"
-                className="hero-image"
-              />
-              <div className="hero-image-overlay"></div>
-
-              {/* Floating Luxury Seal */}
-              <div className="hero-floating-seal">
-                <span className="seal-text">AMEZA</span>
-                <span className="seal-sub">EST. 2026</span>
-              </div>
-            </div>
-          </motion.div>
+          <span className="hero-eyebrow-line" aria-hidden="true" />
+          <span className="hero-eyebrow-text">AMEZA / EST. 2026</span>
         </motion.div>
 
-        {/* Minimal Scroll Indicator */}
-        <div className="landing-scroll-indicator">
-          <span>SCROLL TO DISCOVER</span>
-          <div className="scroll-indicator-line"></div>
-        </div>
+        <motion.h1
+          className="hero-heading"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(0.45)}
+        >
+          EVERY-THING
+          <span className="hero-heading-italic"> Worth</span>
+          <br />
+          Discovering.
+        </motion.h1>
+
+        <motion.p
+          className="hero-sub"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(0.7)}
+        >
+          A considered world of objects,
+          design and everyday rituals.
+        </motion.p>
+
+        <motion.div
+          className="hero-cta-group"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(0.9)}
+        >
+          <Link to="/" className="hero-primary-cta">
+            <span>Enter AMEZA</span>
+            <svg
+              className="hero-cta-arrow"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Link>
+          <a href="#brand-statement" className="hero-secondary-cta">
+            Discover more
+          </a>
+        </motion.div>
       </div>
+
+      {/* ── Right: Editorial Image ── */}
+      <motion.div
+        className="hero-image-col"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn(0)}
+      >
+        <img
+          src={pineHeroImg}
+          alt="An atmospheric editorial interior — ceramic vessel, linen and candlelight on dark wood"
+          className="hero-image-main"
+        />
+        <div className="hero-image-overlay" aria-hidden="true" />
+
+        <div className="hero-image-meta" aria-hidden="true">
+          <span className="hero-meta-label">01 / Introduction</span>
+          <span className="hero-meta-index">01</span>
+        </div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="hero-scroll-indicator"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6, duration: 1.2 }}
+        aria-hidden="true"
+      >
+        <span className="hero-scroll-text">Scroll</span>
+        <div className="hero-scroll-line" />
+      </motion.div>
     </section>
   );
 };

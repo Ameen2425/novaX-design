@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA USERS HEADER (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA USERS HEADER (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .users-header {
@@ -15,15 +15,15 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ameza-gold, #E5B83B);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   display: block;
 }
 
 .users-header h1 {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 10px 0;
@@ -31,8 +31,8 @@
 
 .users-header p {
   font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  font-size: clamp(14px, 1.1vw, 15.5px);
+  color: var(--ameza-text-secondary, #DAC8C3);
   line-height: 1.7;
   margin: 0;
 }
@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
@@ -53,7 +53,7 @@
   max-width: 480px;
   min-width: 240px;
   height: 48px;
-  background: var(--ameza-section, #221018);
+  background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-pill);
   display: flex;
@@ -72,7 +72,7 @@
   left: 18px;
   color: var(--ameza-gold, #E5B83B);
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .users-search-input {
@@ -84,12 +84,12 @@
   outline: none;
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   box-sizing: border-box;
 }
 
 .users-search-input::placeholder {
-  color: var(--ameza-text-muted, #A89290);
+  color: var(--ameza-text-muted, #9E8B89);
 }
 
 .users-search-clear {
@@ -118,13 +118,13 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-pill);
   padding: 8px 18px;
   font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   box-shadow: var(--shadow-xs);
 }
 
@@ -146,4 +146,17 @@
   font-family: var(--font-heading, var(--font-display));
   color: var(--ameza-gold-bright, #FFF5D0);
   font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .users-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .users-search-wrapper {
+    max-width: 100%;
+  }
+  .users-count-badge {
+    align-self: flex-start;
+  }
 }

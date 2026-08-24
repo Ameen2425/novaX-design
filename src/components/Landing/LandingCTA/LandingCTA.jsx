@@ -1,41 +1,88 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import pineEditorialImg from "../../../assets/pine-editorial.jpg";
 import "./LandingCTA.css";
 
-const LandingCTA = () => {
-  return (
-    <section className="landing-cta-section">
-      <div className="landing-cta-container">
-        <motion.div
-          className="landing-cta-card"
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <span className="landing-cta-eyebrow">FINAL CHAPTER</span>
+const LandingCTA = () => (
+  <section className="final-cta-section" aria-labelledby="final-cta-heading">
+    <img
+      src={pineEditorialImg}
+      alt=""
+      className="final-cta-image"
+      aria-hidden="true"
+      loading="lazy"
+    />
+    <div className="final-cta-bg" aria-hidden="true" />
 
-          <h2 className="landing-cta-heading">
-            Everything worth <br />
-            <span className="cta-italic">discovering.</span>
-          </h2>
+    <div className="final-cta-inner">
+      <motion.span
+        className="final-cta-label"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+      >
+        Step Inside
+      </motion.span>
 
-          <p className="landing-cta-desc">
-            Step into the AMEZA world. Discover curated objects, timeless design, and
-            elevated everyday rituals.
-          </p>
+      <motion.h2
+        id="final-cta-heading"
+        className="final-cta-heading"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+      >
+        Every-thing<br />
+        <em>Worth</em>
+        Discovering.
+      </motion.h2>
 
-          <div className="landing-cta-actions">
-            <Link to="/" className="landing-cta-primary-btn">
-              ENTER AMEZA
-              <span>→</span>
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+      <motion.p
+        className="final-cta-sub"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      >
+        Step into the AMEZA world. A considered edit of things
+        worth discovering, keeping and living with.
+      </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.0, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <Link to="/" className="final-cta-btn">
+          <span>Enter AMEZA</span>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </Link>
+      </motion.div>
+    </div>
+
+    <div className="final-cta-footer-line" aria-hidden="true">
+      <span className="final-cta-footer-meta">AMEZA</span>
+      <span className="final-cta-footer-dot" />
+      <span className="final-cta-footer-meta">Digital Flagship</span>
+      <span className="final-cta-footer-dot" />
+      <span className="final-cta-footer-meta">EST. 2026</span>
+    </div>
+  </section>
+);
 
 export default LandingCTA;

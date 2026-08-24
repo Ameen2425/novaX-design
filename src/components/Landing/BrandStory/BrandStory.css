@@ -1,74 +1,82 @@
 /* =========================================================
-   AMEZA TYPOGRAPHY INTERLUDE (BURGUNDY & LIQUID GOLD)
+   TYPOGRAPHIC INTERLUDE (SECTION 08) — FIND WHAT STAYS
    ========================================================= */
 
-.brand-story-section {
-  padding: clamp(100px, 12vw, 160px) 0;
-  background: var(--ameza-bg, #1C1015);
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
+.typo-interlude-section {
+  background: var(--pine-bg);
+  padding: clamp(100px, 18vh, 220px) clamp(24px, 6vw, 80px);
+  overflow: hidden;
+  position: relative;
 }
 
-.brand-story-container {
-  width: min(calc(100% - 48px), 880px);
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.typography-interlude-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.brand-story-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.76rem;
+/* Dramatic large ghost text in background */
+.typo-interlude-section::before {
+  content: 'STAY';
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(200px, 28vw, 360px);
   font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 20px;
+  line-height: 1;
+  color: rgba(240, 238, 231, 0.018);
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
 }
 
-.typography-interlude-title {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(3rem, 6vw, 5.4rem);
-  font-weight: 500;
-  color: var(--ameza-text, #FAF6F0);
-  line-height: 0.98;
-  letter-spacing: -0.03em;
-  margin: 0 0 24px 0;
+.typo-interlude-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(32px, 5vw, 80px);
+  position: relative;
+  z-index: 1;
 }
 
-.story-italic {
-  background: var(--ameza-gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.interlude-line {
-  width: 54px;
-  height: 1.5px;
-  background: var(--ameza-gold, #C5A059);
-  margin-bottom: 28px;
-}
-
-.typography-interlude-text {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(16px, 1.4vw, 22px);
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--ameza-text-secondary, #D2C0BB);
+.typo-interlude-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(64px, 13vw, 180px);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  color: var(--pine-text);
   margin: 0;
+  flex: 1;
+}
+
+.typo-interlude-heading em {
   font-style: italic;
+  font-weight: 300;
+  color: rgba(240, 238, 231, 0.2);
+  display: block;
+}
+
+/* Apricot accent dot */
+.typo-accent-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--apricot);
+  flex-shrink: 0;
+  margin-top: 22px;
+  box-shadow:
+    0 0 0 1px rgba(185, 130, 109, 0.3),
+    0 0 24px rgba(185, 130, 109, 0.45),
+    0 0 60px rgba(185, 130, 109, 0.15);
 }
 
 @media (max-width: 600px) {
-  .brand-story-section {
-    padding: 72px 0;
+  .typo-interlude-heading {
+    font-size: clamp(56px, 18vw, 96px);
+  }
+  .typo-interlude-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .typo-interlude-section::before {
+    display: none;
   }
 }

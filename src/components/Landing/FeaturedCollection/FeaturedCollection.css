@@ -1,119 +1,143 @@
 /* =========================================================
-   AMEZA PHILOSOPHY SECTION (BURGUNDY & LIQUID GOLD)
+   PHILOSOPHY SECTION (SECTION 04) — VELVET OBSIDIAN + GOLD
    ========================================================= */
 
-.featured-collection-section {
-  padding: clamp(80px, 8vw, 130px) 0;
-  background: var(--ameza-section, #2E1A23);
-  border-top: 1px solid var(--ameza-border);
-  border-bottom: 1px solid var(--ameza-border);
-  width: 100%;
-  box-sizing: border-box;
+.philosophy-section {
+  background: var(--ameza-bg);
+  padding: clamp(80px, 14vh, 160px) clamp(24px, 6vw, 80px);
+  overflow: hidden;
+  position: relative;
 }
 
-.featured-collection-container {
-  width: min(calc(100% - 48px), 1420px);
+/* Subtle gold aura in bottom-right corner */
+.philosophy-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse at bottom right, rgba(229,184,59,0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.philosophy-inner {
+  max-width: 1200px;
   margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.philosophy-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 56px;
-}
-
-.featured-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 16px;
-  display: block;
-}
-
-.philosophy-title {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-  font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.featured-italic {
-  background: var(--ameza-gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.philosophy-card {
-  background: var(--ameza-card, #38202B);
-  border: 1px solid var(--ameza-border-card);
-  border-radius: var(--radius-xl, 22px);
-  padding: clamp(32px, 3.5vw, 44px) clamp(24px, 2.5vw, 36px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  box-shadow: var(--shadow-card);
-  transition: all var(--transition);
+  gap: clamp(48px, 8vh, 88px);
+  position: relative;
+  z-index: 1;
 }
 
-.philosophy-card:hover {
-  transform: translateY(-5px);
-  background: var(--ameza-card-hover, #442735);
-  border-color: var(--ameza-border-gold);
-  box-shadow: var(--shadow-card-hover);
+/* ── Header ─────────────────────────────────────────────── */
+.philosophy-header {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vh, 28px);
+  max-width: 680px;
 }
 
-.philosophy-num {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: 2rem;
+.philosophy-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ameza-gold);
+}
+
+.philosophy-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 5.5vw, 84px);
   font-weight: 700;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 14px;
-  line-height: 1;
-}
-
-.philosophy-card-title {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
-  margin: 0 0 10px 0;
-}
-
-.philosophy-tagline {
-  font-family: var(--font-body);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--ameza-gold-bright, #F5E6C8);
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
-
-.philosophy-card-desc {
-  font-family: var(--font-body);
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--ameza-text-secondary, #D2C0BB);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--ameza-text);
   margin: 0;
 }
 
-@media (max-width: 960px) {
-  .philosophy-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+.philosophy-heading em {
+  font-style: italic;
+  font-weight: 300;
+  display: block;
+  color: rgba(250, 247, 242, 0.3);
+}
+
+/* ── Three pillars ──────────────────────────────────────── */
+.philosophy-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  border-top: 1px solid var(--ameza-border-light);
+  padding-top: clamp(36px, 5.5vh, 60px);
+}
+
+.philosophy-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.philosophy-pillar:hover {
+  border-color: var(--ameza-border);
+}
+
+.pillar-number {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--ameza-gold);
+  opacity: 0.7;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 2.6vw, 38px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ameza-text);
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.philosophy-pillar:hover .pillar-title {
+  color: var(--ameza-gold-bright);
+}
+
+.pillar-dash {
+  width: 22px;
+  height: 1px;
+  background: var(--ameza-border);
+  transition: width var(--transition), background var(--transition-fast);
+}
+
+.philosophy-pillar:hover .pillar-dash {
+  width: 36px;
+  background: var(--ameza-gold);
+}
+
+.pillar-body {
+  font-family: var(--font-body);
+  font-size: clamp(13.5px, 1vw, 15.5px);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--ameza-text-muted);
+  margin: 0;
+}
+
+/* ── Mobile ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .philosophy-pillars { grid-template-columns: 1fr; gap: 40px; }
+  .philosophy-heading { font-size: clamp(36px, 10vw, 58px); }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .philosophy-pillars { gap: clamp(20px, 3vw, 36px); }
 }

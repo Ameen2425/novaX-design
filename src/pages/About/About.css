@@ -1,12 +1,12 @@
 /* =========================================================
-   AMEZA ABOUT PAGE WRAPPER (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA ABOUT PAGE WRAPPER (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .about-page {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--ameza-bg, #12090D);
-  color: var(--ameza-text, #FAF6F0);
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
   box-sizing: border-box;
   overflow-x: hidden;
 }

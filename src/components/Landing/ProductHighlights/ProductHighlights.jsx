@@ -1,96 +1,69 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import pineHeroImg from "../../../assets/pine-hero.jpg";
 import "./ProductHighlights.css";
 
-const worlds = [
-  {
-    id: "style",
-    title: "Style & Silhouettes",
-    subtitle: "Tailoring & Outerwear",
-    desc: "Structured cashmere, architectural cuts, and tactile organic wools.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80",
-    number: "01",
-  },
-  {
-    id: "ritual",
-    title: "Scent & Ritual",
-    subtitle: "Fragrance & Care",
-    desc: "Rare resinous extraits, cedarwood incense, and botanical extractions.",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
-    number: "02",
-  },
-  {
-    id: "design",
-    title: "Form & Living",
-    subtitle: "Interior Objects",
-    desc: "Handcrafted ceramics, patinated bronze, and tactile sanctuary pieces.",
-    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80",
-    number: "03",
-  },
-  {
-    id: "everyday",
-    title: "Everyday Artefacts",
-    subtitle: "Daily Precision",
-    desc: "Tools for considered living, fine horology, and minimalist leather goods.",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80",
-    number: "04",
-  },
+const qualities = [
+  "Considered material selection",
+  "Objects with a sense of place",
+  "Designed for daily life",
+  "Honest craft and intention",
 ];
 
-const ProductHighlights = () => {
-  return (
-    <section className="product-highlights-section" id="world">
-      <div className="product-highlights-container">
-        {/* Header */}
-        <div className="highlights-header">
-          <div>
-            <span className="highlights-eyebrow">THE AMEZA WORLD</span>
-            <h2 className="highlights-heading">
-              Disciplined universes. <br />
-              <span className="highlights-italic">One cohesive aesthetic.</span>
-            </h2>
-          </div>
+const ProductHighlights = () => (
+  <section className="artisan-story-section" aria-labelledby="artisan-heading">
+    <div className="artisan-story-inner">
+      {/* Text */}
+      <motion.div
+        className="artisan-text-col"
+        initial={{ opacity: 0, x: -24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <span className="artisan-label">Made with Intention</span>
 
-          <Link to="/" className="highlights-view-all-btn">
-            Enter AMEZA
-            <span>→</span>
-          </Link>
-        </div>
+        <h2 id="artisan-heading" className="artisan-heading">
+          OBJECTS<br />
+          WITH A <em>SENSE<br />OF PLACE.</em>
+        </h2>
 
-        {/* 4 Atmospheric Panels (Zero Ecommerce) */}
-        <div className="highlights-worlds-grid">
-          {worlds.map((world, idx) => (
-            <motion.div
-              key={world.id}
-              className="world-panel-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: idx * 0.1 }}
-            >
-              <div className="world-panel-img-box">
-                <img
-                  src={world.image}
-                  alt={world.title}
-                  className="world-panel-img"
-                  loading="lazy"
-                />
-                <div className="world-panel-overlay"></div>
-                <span className="world-panel-num">{world.number}</span>
-              </div>
+        <div className="artisan-divider" aria-hidden="true" />
 
-              <div className="world-panel-content">
-                <span className="world-panel-sub">{world.subtitle}</span>
-                <h3 className="world-panel-title">{world.title}</h3>
-                <p className="world-panel-desc">{world.desc}</p>
-              </div>
-            </motion.div>
+        <p className="artisan-body">
+          What we choose to live with reveals how we choose to live.
+          AMEZA brings together design, craft and material with a
+          quiet confidence — selecting things that hold their value
+          not in price, but in how they feel over time.
+        </p>
+
+        <div className="artisan-meta-row">
+          {qualities.map((q) => (
+            <span key={q} className="artisan-meta-item">
+              <span className="artisan-meta-dot" aria-hidden="true" />
+              {q}
+            </span>
           ))}
         </div>
-      </div>
-    </section>
-  );
-};
+      </motion.div>
+
+      {/* Image */}
+      <motion.div
+        className="artisan-image-col"
+        initial={{ opacity: 0, x: 24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1.0, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <img
+          src={pineHeroImg}
+          alt="A serene studio interior with ceramic vessel and candlelight"
+          className="artisan-image"
+          loading="lazy"
+        />
+        <span className="artisan-image-index" aria-hidden="true">06</span>
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default ProductHighlights;

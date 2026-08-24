@@ -1,111 +1,210 @@
 /* =========================================================
-   AMEZA LANDING FINAL BRAND CTA (BURGUNDY & LIQUID GOLD)
+   FINAL BRAND CTA (SECTION 09) — ENTER AMEZA
    ========================================================= */
 
-.landing-cta-section {
-  padding: clamp(80px, 10vw, 140px) 0;
-  background: var(--ameza-section, #2E1A23);
-  border-top: 1px solid var(--ameza-border);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.landing-cta-container {
-  width: min(calc(100% - 48px), 940px);
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.landing-cta-card {
-  background: var(--ameza-card, #38202B);
-  border: 1px solid var(--ameza-border-card);
-  border-radius: var(--radius-xl, 28px);
-  padding: clamp(48px, 6vw, 84px) clamp(24px, 4vw, 56px);
-  text-align: center;
-  box-shadow: var(--shadow-card);
+.final-cta-section {
+  position: relative;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--pine-deep);
 }
 
-.landing-cta-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #C5A059);
-  margin-bottom: 20px;
+/* ── Atmospheric background image ─────────────────────── */
+.final-cta-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  opacity: 0.28;
+  filter: saturate(0.5) brightness(0.65);
+  z-index: 0;
+  transform: scale(1.04);
+  transition: transform 14s var(--ease-editorial);
+  will-change: transform;
 }
 
-.landing-cta-heading {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.4rem, 4.8vw, 4.4rem);
+.final-cta-section:hover .final-cta-image {
+  transform: scale(1.0);
+}
+
+/* Multi-layer overlay for depth */
+.final-cta-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 75% 65% at 50% 55%,
+      rgba(185, 130, 109, 0.06) 0%,
+      rgba(27, 39, 36, 0.4) 45%,
+      rgba(13, 20, 18, 0.92) 100%
+    ),
+    linear-gradient(to bottom, rgba(13,20,18,0.6) 0%, transparent 30%, rgba(13,20,18,0.7) 100%);
+  z-index: 1;
+}
+
+/* ── Main content ──────────────────────────────────────── */
+.final-cta-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 3.5vh, 36px);
+  padding: clamp(80px, 12vh, 120px) clamp(24px, 6vw, 80px);
+  max-width: 880px;
+}
+
+.final-cta-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
   font-weight: 500;
-  color: var(--ameza-text, #FAF6F0);
-  line-height: 1.06;
-  letter-spacing: -0.02em;
-  margin: 0 0 20px 0;
-}
-
-.cta-italic {
-  background: var(--ameza-gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.landing-cta-desc {
-  font-family: var(--font-body);
-  font-size: clamp(15px, 1.15vw, 18px);
-  line-height: 1.75;
-  color: var(--ameza-text-secondary, #D2C0BB);
-  max-width: 580px;
-  margin: 0 0 40px 0;
-}
-
-.landing-cta-actions {
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--apricot);
   display: flex;
   align-items: center;
   gap: 16px;
-  justify-content: center;
 }
 
-.landing-cta-primary-btn {
+.final-cta-label::before,
+.final-cta-label::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--apricot);
+  opacity: 0.45;
+}
+
+.final-cta-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(52px, 9vw, 130px);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: var(--pine-text);
+  margin: 0;
+}
+
+.final-cta-heading em {
+  font-style: italic;
+  font-weight: 300;
+  display: block;
+  color: rgba(232, 227, 216, 0.55);
+}
+
+.final-cta-sub {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--pine-text-sec);
+  max-width: 420px;
+  margin: 0;
+}
+
+/* ── CTA Button ────────────────────────────────────────── */
+.final-cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: var(--ameza-gold-gradient);
-  color: #1C1015 !important;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
+  gap: 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 16px 40px;
-  border-radius: var(--radius-pill);
+  color: var(--pine-deep);
+  background: var(--pine-text);
   text-decoration: none;
-  box-shadow: var(--shadow-gold);
-  transition: all var(--transition);
+  padding: 18px 48px;
+  border-radius: var(--radius-pill);
+  margin-top: 8px;
+  transition: all 0.5s var(--ease-luxury);
+  border: 1.5px solid var(--pine-text);
+  position: relative;
+  overflow: hidden;
 }
 
-.landing-cta-primary-btn:hover {
-  background: var(--ameza-gold-gradient-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
+.final-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--pine-primary) 0%, var(--apricot) 100%);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.55s var(--ease-luxury);
+  z-index: 0;
 }
 
-.landing-cta-primary-btn span {
-  transition: transform var(--transition-fast);
+.final-cta-btn > * {
+  position: relative;
+  z-index: 1;
 }
 
-.landing-cta-primary-btn:hover span {
-  transform: translateX(4px);
+.final-cta-btn:hover {
+  color: var(--pine-text);
+  border-color: transparent;
+  box-shadow: 0 12px 40px rgba(185, 130, 109, 0.35);
+}
+
+.final-cta-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.final-cta-btn svg {
+  transition: transform 0.4s var(--ease-luxury);
+}
+
+.final-cta-btn:hover svg {
+  transform: translateX(6px);
+}
+
+/* ── Bottom footer line ────────────────────────────────── */
+.final-cta-footer-line {
+  position: absolute;
+  bottom: clamp(24px, 4vh, 44px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.final-cta-footer-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pine-text-muted);
+  opacity: 0.6;
+}
+
+.final-cta-footer-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--pine-border);
+  flex-shrink: 0;
 }
 
 @media (max-width: 600px) {
-  .landing-cta-card {
-    padding: 36px 20px;
+  .final-cta-heading {
+    font-size: clamp(46px, 14vw, 76px);
+  }
+  .final-cta-btn {
+    padding: 16px 36px;
+  }
+  .final-cta-footer-line {
+    flex-direction: column;
+    gap: 6px;
   }
 }

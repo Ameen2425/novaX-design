@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA SINGLE PRODUCT INFO (BURGUNDY & 24K IMPERIAL GOLD)
+   AMEZA SINGLE PRODUCT INFO (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .single-info {
@@ -15,19 +15,19 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #D4AF37);
-  margin-bottom: 12px;
+  color: var(--ameza-gold, #E5B83B);
+  margin-bottom: 10px;
   display: block;
 }
 
 .single-info h1 {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 16px 0;
+  margin: 0 0 14px 0;
 }
 
 /* Rating */
@@ -36,23 +36,23 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .single-rating span {
-  color: var(--ameza-gold, #D4AF37);
+  color: var(--ameza-gold, #E5B83B);
 }
 
 .single-rating strong {
   font-family: var(--font-body);
   font-weight: 700;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
 }
 
 .single-rating p {
   font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ameza-text-muted, #A38E8C);
+  color: var(--ameza-text-muted, #9E8B89);
   margin: 0;
 }
 
@@ -60,15 +60,15 @@
   width: 100%;
   height: 1px;
   background: var(--ameza-border);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .single-description {
   font-family: var(--font-body);
-  font-size: 14.5px;
-  line-height: 1.75;
-  color: var(--ameza-text-secondary, #D4C1BC);
-  margin: 0 0 24px 0;
+  font-size: clamp(13.5px, 1.05vw, 15px);
+  line-height: 1.7;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  margin: 0 0 22px 0;
 }
 
 /* Price */
@@ -76,29 +76,29 @@
   display: flex;
   align-items: baseline;
   gap: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   flex-wrap: wrap;
 }
 
 .single-price strong {
   font-family: var(--font-heading, var(--font-display));
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
   font-weight: 700;
-  color: var(--ameza-gold-bright, #FFF0C2);
+  color: var(--ameza-gold-bright, #FFF5D0);
   line-height: 1;
 }
 
 .single-price del {
   font-family: var(--font-body);
-  font-size: 17px;
-  color: var(--ameza-text-muted, #A38E8C);
+  font-size: 16px;
+  color: var(--ameza-text-muted, #9E8B89);
 }
 
 .price-discount-badge {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
-  background: var(--ameza-copper, #E07A5F);
+  background: var(--ameza-copper, #E67E64);
   color: #FFFFFF;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
@@ -111,7 +111,7 @@
   gap: 8px;
   padding: 6px 14px;
   border-radius: var(--radius-pill);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   font-family: var(--font-body);
   font-size: 12px;
 }
@@ -123,9 +123,9 @@
 }
 
 .single-stock.low-stock {
-  background: rgba(212, 175, 55, 0.16);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: var(--ameza-gold, #D4AF37);
+  background: rgba(229, 184, 59, 0.16);
+  border: 1px solid rgba(229, 184, 59, 0.4);
+  color: var(--ameza-gold, #E5B83B);
 }
 
 .single-stock.out-of-stock {
@@ -143,64 +143,64 @@
 
 .single-stock p {
   margin: 0;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* Specifications */
 .single-specifications {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 14px;
   width: 100%;
-  padding: 18px;
-  background: var(--ameza-card, #2E1622);
+  padding: 16px;
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-card, 16px);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   box-sizing: border-box;
 }
 
 .single-specifications div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .single-specifications span {
   font-family: var(--font-body);
-  font-size: 11px;
-  color: var(--ameza-text-muted, #A38E8C);
+  font-size: 10.5px;
+  color: var(--ameza-text-muted, #9E8B89);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
 .single-specifications strong {
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
 }
 
 .text-in-stock { color: var(--ameza-emerald, #10B981) !important; }
-.text-low-stock { color: var(--ameza-gold, #D4AF37) !important; }
+.text-low-stock { color: var(--ameza-gold, #E5B83B) !important; }
 .text-out-stock { color: var(--ameza-error, #EF4444) !important; }
 
 /* Actions */
 .single-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .single-cart-button {
   flex: 1;
-  height: 52px;
+  height: 50px;
   background: var(--ameza-gold-gradient);
-  color: #140A0E !important;
+  color: #0D070B !important;
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -223,18 +223,18 @@
 
 .single-buy-button {
   flex: 1;
-  height: 52px;
-  background: var(--ameza-copper, #E07A5F);
+  height: 50px;
+  background: var(--ameza-copper);
   color: #FFFFFF !important;
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(224, 122, 95, 0.4);
+  box-shadow: 0 4px 16px rgba(230, 126, 100, 0.4);
   transition: all var(--transition);
   display: inline-flex;
   align-items: center;
@@ -243,9 +243,9 @@
 }
 
 .single-buy-button:hover:not(:disabled) {
-  background: var(--ameza-copper-hover, #EA8D74);
+  background: var(--ameza-copper-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(224, 122, 95, 0.55);
+  box-shadow: 0 8px 24px rgba(230, 126, 100, 0.55);
 }
 
 .single-cart-button:disabled,
@@ -258,30 +258,30 @@
 .single-services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 14px;
   width: 100%;
 }
 
 .single-service {
-  background: var(--ameza-card, #2E1622);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border);
   border-radius: var(--radius-card, 14px);
-  padding: 16px;
+  padding: 14px;
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
   box-sizing: border-box;
 }
 
 .service-icon {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .single-service strong {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 700;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   display: block;
   margin-bottom: 2px;
 }
@@ -289,13 +289,18 @@
 .single-service p {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-secondary, #D4C1BC);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
 }
 
 @media (max-width: 600px) {
+  .single-specifications {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
   .single-actions {
     flex-direction: column;
+    gap: 10px;
   }
   .single-cart-button,
   .single-buy-button {

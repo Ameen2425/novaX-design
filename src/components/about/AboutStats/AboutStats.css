@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA ABOUT STATS (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA ABOUT STATS (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .about-stats-section {
@@ -17,7 +17,7 @@
 }
 
 .about-stat {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-card, 18px);
   padding: 28px 20px;
@@ -44,16 +44,16 @@
 }
 
 .about-stat:hover {
-  background: var(--ameza-card-hover, #381A29);
+  background: var(--ameza-card-hover, #2E1826);
   border-color: var(--ameza-border-gold);
   box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
 
 .about-stat:hover::before {
   opacity: 1;
 }
 
-/* JSX renders <strong> for number, <span> for label */
 .about-stat strong {
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(2rem, 3.2vw, 3rem);
@@ -70,7 +70,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   display: block;
 }
 

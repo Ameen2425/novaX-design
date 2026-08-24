@@ -1,13 +1,14 @@
 /* =========================================================
-   AMEZA NOIR FOOTER (BURGUNDY & LIQUID GOLD)
+   AMEZA NOIR FOOTER (OBSIDIAN VELVET & 24K LIQUID GOLD)
    ========================================================= */
 
 .footer {
-  background: #120A0E;
+  background: var(--ameza-deep, #070306);
   border-top: 1px solid var(--ameza-border-card);
-  padding: 80px 0 40px;
-  color: var(--ameza-text, #FAF6F0);
+  padding: clamp(48px, 6vw, 80px) 0 clamp(32px, 4vw, 48px);
+  color: var(--ameza-text, #FAF7F2);
   box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-container {
@@ -21,7 +22,7 @@
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
   gap: clamp(24px, 3.5vw, 48px);
-  margin-bottom: 64px;
+  margin-bottom: clamp(36px, 5vw, 64px);
 }
 
 /* ── Brand Col ────────────────────────────────────────── */
@@ -41,7 +42,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   line-height: 1.7;
-  color: var(--ameza-text-secondary, #D2C0BB);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0 0 24px 0;
   max-width: 280px;
 }
@@ -53,12 +54,12 @@
 }
 
 .footer-socials a {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: var(--ameza-card, #38202B);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border);
-  color: var(--ameza-text-secondary, #D2C0BB);
+  color: var(--ameza-text-secondary, #DAC8C3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +70,7 @@
 .footer-socials a:hover {
   background: var(--ameza-gold-gradient);
   border-color: transparent;
-  color: #1C1015;
+  color: #0D070B;
   transform: translateY(-3px);
   box-shadow: var(--shadow-gold);
 }
@@ -79,7 +80,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0 0 20px 0;
 }
 
@@ -95,14 +96,14 @@
 .footer-col ul li a {
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text-secondary, #D2C0BB);
+  color: var(--ameza-text-secondary, #DAC8C3);
   text-decoration: none;
   transition: all var(--transition-fast);
   display: inline-block;
 }
 
 .footer-col ul li a:hover {
-  color: var(--ameza-gold-bright, #F5E6C8);
+  color: var(--ameza-gold-bright, #FFF5D0);
   transform: translateX(4px);
 }
 
@@ -110,7 +111,7 @@
 .footer-newsletter p {
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: var(--ameza-text-secondary, #D2C0BB);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0 0 16px 0;
   line-height: 1.6;
 }
@@ -124,30 +125,36 @@
 
 .footer-newsletter-form input {
   width: 100%;
-  height: 46px;
-  padding: 0 46px 0 16px;
-  background: var(--ameza-card, #38202B);
+  height: 48px;
+  padding: 0 50px 0 18px;
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--ameza-text, #FAF6F0);
+  font-size: 13.5px;
+  color: var(--ameza-text, #FAF7F2);
   outline: none;
   box-sizing: border-box;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .footer-newsletter-form input:focus {
-  border-color: var(--ameza-gold, #C5A059);
+  border-color: var(--ameza-gold, #E5B83B);
+  box-shadow: 0 0 0 3px rgba(229, 184, 59, 0.18);
+}
+
+.footer-newsletter-form input::placeholder {
+  color: var(--ameza-text-muted, #9E8B89);
 }
 
 .footer-newsletter-form button {
   position: absolute;
-  right: 4px;
+  right: 5px;
   width: 38px;
   height: 38px;
   border-radius: 50%;
   background: var(--ameza-gold-gradient);
-  color: #1C1015;
+  color: #0D070B;
   border: none;
   cursor: pointer;
   display: flex;
@@ -160,6 +167,7 @@
 .footer-newsletter-form button:hover {
   background: var(--ameza-gold-gradient-hover);
   transform: scale(1.05);
+  box-shadow: var(--shadow-gold-lg);
 }
 
 .newsletter-success {
@@ -168,7 +176,7 @@
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  color: var(--ameza-emerald, #2F8068);
+  color: var(--ameza-emerald, #10B981);
 }
 
 /* ── Footer Bottom ────────────────────────────────────── */
@@ -176,11 +184,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 32px;
+  padding-top: 28px;
   border-top: 1px solid var(--ameza-border);
   font-family: var(--font-body);
   font-size: 12.5px;
-  color: var(--ameza-text-muted, #9E8A88);
+  color: var(--ameza-text-muted, #9E8B89);
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -192,17 +200,17 @@
 }
 
 .footer-legal a {
-  color: var(--ameza-text-muted, #9E8A88);
+  color: var(--ameza-text-muted, #9E8B89);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .footer-legal a:hover {
-  color: var(--ameza-gold, #C5A059);
+  color: var(--ameza-gold, #E5B83B);
 }
 
 .footer-made-with .heart-icon {
-  color: var(--ameza-gold, #C5A059);
+  color: var(--ameza-gold, #E5B83B);
 }
 
 @media (max-width: 1100px) {
@@ -214,7 +222,7 @@
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
   .footer-bottom {
     flex-direction: column;
@@ -222,6 +230,6 @@
     gap: 12px;
   }
   .footer {
-    padding-bottom: 90px; /* Space for mobile nav */
+    padding-bottom: 32px;
   }
 }

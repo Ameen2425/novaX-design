@@ -1,92 +1,99 @@
 /* =========================================================
-   AMEZA MASTER DESIGN SYSTEM (DEEP VELVET BURGUNDY + 24K IMPERIAL GOLD)
+   AMEZA MASTER LUXURY DESIGN SYSTEM
+   Deep Velvet Obsidian Midnight + 24K Imperial Liquid Gold
+   Venetian Rose Copper + Imperial Emerald + Midnight Sapphire
    ========================================================= */
 
 :root {
-  /* ── 1. VELVET BURGUNDY SURFACES & DEPTH ──────────────── */
-  --ameza-bg: #12090D;                /* Ultra-Deep Velvet Midnight Base */
-  --ameza-bg-secondary: #1B0C14;      /* Rich Secondary Velvet Background */
-  --ameza-section: #221018;           /* Section Surface Canvas */
-  --ameza-section-alt: #1E0E15;       /* Alternating Section Canvas */
-  --ameza-card: #2B141F;              /* Elevated Velvet Card Surface */
-  --ameza-card-hover: #381A29;        /* Interactive Card Elevation */
-  --ameza-card-muted: #220F18;        /* Recessed Card Surface */
-  --ameza-deep: #0A0407;              /* Deep Noir Velvet Footer Canvas */
-  --ameza-image-bg: #1F0D16;          /* Product Image Well Backdrop */
-  --ameza-glass-bg: rgba(34, 16, 24, 0.92); /* Frosted Glass Backdrop */
+  /* ── 1. VELVET OBSIDIAN MIDNIGHT SURFACES ──────────────── */
+  --ameza-bg: #0D070B;                /* Deep Obsidian Base Canvas */
+  --ameza-bg-secondary: #140A10;      /* Rich Secondary Velvet Canvas */
+  --ameza-section: #1A0D15;           /* Elevated Section Canvas */
+  --ameza-section-alt: #160B12;       /* Subtle Alternating Section */
+  --ameza-card: #23121D;              /* Elevated Velvet Showcase Card */
+  --ameza-card-hover: #2E1826;        /* Luminous Velvet Card Hover */
+  --ameza-card-muted: #1B0E17;        /* Recessed Velvet Card Surface */
+  --ameza-deep: #070306;              /* Noir Base Footer & Deep Accents */
+  --ameza-image-bg: #180C14;          /* Product Image Well Backdrop */
+  --ameza-glass-bg: rgba(26, 13, 21, 0.92); /* Frosted Glass Surface */
+  --ameza-glass-card: rgba(35, 18, 29, 0.82); /* Glass Card Surface */
 
   /* ── 2. 24K IMPERIAL LIQUID CHAMPAGNE GOLD SYSTEM ─────── */
-  --ameza-gold: #E5B83B;              /* Brilliant Regal 24K Gold */
-  --ameza-gold-bright: #FFF5D0;       /* Sunlit Gold Luminous Highlight */
+  --ameza-gold: #E5B83B;              /* Radiant 24K Imperial Gold */
+  --ameza-gold-bright: #FFF5D0;       /* Luminous Sunlit Champagne Gold */
   --ameza-gold-light: #F5D68A;        /* Warm Radiant Gold */
-  --ameza-gold-dark: #B38622;         /* Deep Burnished Gold */
+  --ameza-gold-dark: #B38622;         /* Deep Burnished Gold Bronze */
   --ameza-gold-gradient: linear-gradient(135deg, #FFF6D6 0%, #F5CE68 25%, #E5B83B 50%, #B8891D 75%, #F7D780 100%);
   --ameza-gold-gradient-hover: linear-gradient(135deg, #FFFFFF 0%, #FFE292 25%, #F0C44D 50%, #C99726 75%, #FFF0BA 100%);
-  --ameza-gold-shimmer: linear-gradient(90deg, transparent, rgba(255, 245, 208, 0.8), transparent);
+  --ameza-gold-shimmer: linear-gradient(90deg, transparent, rgba(255, 245, 208, 0.85), transparent);
+  --ameza-gold-subtle: rgba(229, 184, 59, 0.12);
+  --ameza-gold-glow-color: rgba(229, 184, 59, 0.35);
 
-  /* ── 3. ENHANCED SECONDARY & JEWEL ACCENT PALETTE ─────── */
-  --ameza-copper: #E67E64;            /* Radiant Venetian Rose Copper (Deals, Fashion, CTAs) */
+  /* ── 3. JEWEL ACCENT PALETTE (DEALS, STATUS, CATEGORIES) ── */
+  --ameza-copper: #E67E64;            /* Venetian Rose Copper (Deals & Offers) */
   --ameza-copper-hover: #F08C73;      /* Sunlit Rose Copper Glow */
-  --ameza-copper-bg: rgba(230, 126, 100, 0.20);
+  --ameza-copper-bg: rgba(230, 126, 100, 0.18);
   --ameza-copper-border: rgba(230, 126, 100, 0.45);
+  --ameza-copper-gradient: linear-gradient(135deg, #F39C82 0%, #E67E64 50%, #C85A3F 100%);
 
-  --ameza-emerald: #10B981;           /* Royal Emerald (Trust, Verified, In Stock, Free Shipping) */
+  --ameza-emerald: #10B981;           /* Imperial Emerald (In Stock, Free Shipping, Trust) */
   --ameza-emerald-hover: #34D399;
-  --ameza-emerald-bg: rgba(16, 185, 129, 0.18);
+  --ameza-emerald-bg: rgba(16, 185, 129, 0.16);
   --ameza-emerald-border: rgba(16, 185, 129, 0.45);
 
-  --ameza-sapphire: #3B82F6;          /* Midnight Sapphire (Technology, Electronics) */
+  --ameza-sapphire: #3B82F6;          /* Midnight Sapphire (Technology & Electronics) */
   --ameza-sapphire-hover: #60A5FA;
-  --ameza-sapphire-bg: rgba(59, 130, 246, 0.18);
+  --ameza-sapphire-bg: rgba(59, 130, 246, 0.16);
   --ameza-sapphire-border: rgba(59, 130, 246, 0.45);
 
-  --ameza-crimson: #BE185D;           /* Velvet Crimson */
+  --ameza-crimson: #E11D48;           /* Velvet Crimson (Danger, Delete) */
 
-  /* Legacy variable mappings for seamless compatibility */
+  /* Compatibility mappings */
   --ameza-primary: var(--ameza-gold);
   --ameza-primary-hover: var(--ameza-gold-bright);
   --ameza-accent: var(--ameza-copper);
   --ameza-accent-hover: var(--ameza-copper-hover);
   --ameza-champagne: var(--ameza-gold-bright);
 
-  /* ── 4. PEARL SILK & CASHMERE SECONDARY TYPOGRAPHY ───── */
-  --ameza-text: #FAF6F0;              /* Crisp Pearl Silk / Ivory */
-  --ameza-text-secondary: #DECBC6;    /* Luminous Warm Cashmere Silk */
-  --ameza-text-muted: #A89290;        /* Editorial Warm Taupe */
+  /* ── 4. PEARL SILK & CASHMERE TYPOGRAPHY ──────────────── */
+  --ameza-text: #FAF7F2;              /* Crisp Pearl Silk / Warm Ivory */
+  --ameza-text-secondary: #DAC8C3;    /* Luminous Cashmere Secondary */
+  --ameza-text-muted: #9E8B89;        /* Editorial Taupe Metadata */
   --ameza-text-gold: #FFF5D0;         /* Glowing Headline Gold */
   --ameza-white: #FFFFFF;
 
-  /* ── 5. BORDERS & METALLIC SHEEN ─────────────────────── */
-  --ameza-border: rgba(229, 184, 59, 0.25);
-  --ameza-border-light: rgba(229, 184, 59, 0.14);
-  --ameza-border-card: rgba(229, 184, 59, 0.32);
+  /* ── 5. BORDERS & METALLIC HAIRLINES ─────────────────── */
+  --ameza-border: rgba(229, 184, 59, 0.22);
+  --ameza-border-light: rgba(229, 184, 59, 0.12);
+  --ameza-border-card: rgba(229, 184, 59, 0.28);
   --ameza-border-gold: rgba(229, 184, 59, 0.65);
   --ameza-border-active: #E5B83B;
-  --ameza-border-subtle: rgba(250, 246, 240, 0.14);
+  --ameza-border-subtle: rgba(250, 247, 242, 0.12);
 
-  /* ── 6. SYSTEM STATUS TONES ──────────────────────────── */
+  /* ── 6. SYSTEM STATUS COLORS ─────────────────────────── */
   --ameza-success: #10B981;
   --ameza-error: #EF4444;
   --ameza-warning: #F59E0B;
 
   /* ── 7. VOLUMETRIC LUXURY SHADOW MATRIX ──────────────── */
-  --shadow-xs: 0 3px 10px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.5);
-  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.85), 0 20px 50px -10px rgba(0, 0, 0, 0.9), 0 0 1px 1px rgba(229, 184, 59, 0.25);
-  --shadow-card-hover: 0 20px 45px -10px rgba(0, 0, 0, 0.9), 0 35px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(229, 184, 59, 0.35), 0 0 2px 1px rgba(229, 184, 59, 0.55);
-  --shadow-gold: 0 6px 25px rgba(229, 184, 59, 0.5), 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
-  --shadow-gold-lg: 0 12px 38px rgba(229, 184, 59, 0.7), 0 4px 14px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  --shadow-gold-glow: 0 0 35px rgba(229, 184, 59, 0.45);
-  --shadow-glass: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(229, 184, 59, 0.2), inset 0 1px 1px rgba(255, 245, 208, 0.25);
-  --shadow-dropdown: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 20px rgba(229, 184, 59, 0.2);
-  --shadow-modal: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 40px rgba(229, 184, 59, 0.3);
+  --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(229, 184, 59, 0.2);
+  --shadow-card-hover: 0 18px 45px -8px rgba(0, 0, 0, 0.9), 0 0 28px rgba(229, 184, 59, 0.25), 0 0 2px 1px rgba(229, 184, 59, 0.45);
+  --shadow-gold: 0 4px 20px rgba(229, 184, 59, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  --shadow-gold-lg: 0 10px 32px rgba(229, 184, 59, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  --shadow-gold-glow: 0 0 30px rgba(229, 184, 59, 0.35);
+  --shadow-glass: 0 16px 40px rgba(0, 0, 0, 0.85), inset 0 1px 1px rgba(255, 245, 208, 0.2);
+  --shadow-dropdown: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(229, 184, 59, 0.2);
+  --shadow-modal: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 40px rgba(229, 184, 59, 0.25);
 
-  /* ── 8. GEOMETRY & RADIUS ────────────────────────────── */
+  /* ── 8. GEOMETRY & CORNER RADII ──────────────────────── */
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
-  --radius-lg: 18px;
+  --radius-lg: 16px;
   --radius-xl: 24px;
+  --radius-2xl: 32px;
   --radius-card: 18px;
   --radius-pill: 999px;
 
@@ -102,10 +109,13 @@
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ── 11. UNIFIED COMPACT SECTION SPACING ─────────────── */
+  /* ── 11. RESPONSIVE CONTAINER & SPACING SYSTEM ───────── */
   --container-max-width: 1440px;
   --header-height-desktop: 76px;
   --header-height-mobile: 64px;
-  --section-gap: clamp(32px, 3.8vw, 48px);
-  --section-gap-sm: clamp(20px, 2.4vw, 32px);
+  --bottom-nav-height: 64px;
+  --page-padding-bottom-mobile: 96px;
+  --section-gap: clamp(36px, 4.5vw, 64px);
+  --section-gap-sm: clamp(20px, 2.5vw, 36px);
+  --section-padding-x: clamp(16px, 4vw, 48px);
 }

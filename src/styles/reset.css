@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA RESET & BASE SCROLLBARS (DEEP VELVET MIDNIGHT)
+   AMEZA RESET & BASE SCROLLBARS (OBSIDIAN VELVET MIDNIGHT)
    ========================================================= */
 
 *,
@@ -12,15 +12,17 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--ameza-bg, #12090D);
+  background-color: var(--ameza-bg, #0D070B);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--ameza-bg, #12090D);
-  color: var(--ameza-text, #FAF6F0);
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
   overflow-x: hidden;
   position: relative;
+  width: 100%;
 }
 
 /* Custom 24K Gold Scrollbar */
@@ -30,24 +32,24 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--ameza-bg, #12090D);
+  background: var(--ameza-bg, #0D070B);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border-radius: var(--radius-pill);
   border: 1px solid var(--ameza-border);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ameza-card-hover, #381A29);
+  background: var(--ameza-card-hover, #2E1826);
   border-color: var(--ameza-gold);
 }
 
 /* Gold text selection highlight */
 ::selection {
   background: rgba(229, 184, 59, 0.32);
-  color: #FAF6F0;
+  color: #FAF7F2;
 }
 
 a {

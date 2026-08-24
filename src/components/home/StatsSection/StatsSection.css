@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA STATS (DEEP VELVET + 24K IMPERIAL GOLD)
+   AMEZA STATS (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .home-stats-section {
@@ -10,7 +10,6 @@
   box-sizing: border-box;
 }
 
-/* ── Centered heading variant ─────────────────────────── */
 .home-stats-section .home-section-heading.centered {
   flex-direction: column;
   align-items: center;
@@ -21,7 +20,6 @@
   margin-bottom: 28px;
 }
 
-/* ── Stats Grid ───────────────────────────────────────── */
 .home-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -29,7 +27,7 @@
 }
 
 .home-stat {
-  background: var(--ameza-card, #2B141F);
+  background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-card, 18px);
   padding: 28px 20px;
@@ -44,7 +42,6 @@
   overflow: hidden;
 }
 
-/* Gold shimmer on hover */
 .home-stat::before {
   content: '';
   position: absolute;
@@ -57,16 +54,16 @@
 }
 
 .home-stat:hover {
-  background: var(--ameza-card-hover, #381A29);
+  background: var(--ameza-card-hover, #2E1826);
   border-color: var(--ameza-border-gold);
   box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
 
 .home-stat:hover::before {
   opacity: 1;
 }
 
-/* Strong for the number value */
 .home-stat strong {
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(2rem, 3.2vw, 3rem);
@@ -77,14 +74,13 @@
   filter: drop-shadow(0 2px 12px rgba(229, 184, 59, 0.35));
 }
 
-/* Span for the label */
 .home-stat span {
   font-family: var(--font-body);
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ameza-text-secondary, #DECBC6);
+  color: var(--ameza-text-secondary, #DAC8C3);
   display: block;
 }
 

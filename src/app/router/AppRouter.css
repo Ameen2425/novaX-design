@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA LAZY ROUTER FALLBACK LOADER (BURGUNDY & GOLD)
+   AMEZA LAZY ROUTER FALLBACK LOADER (OBSIDIAN & 24K GOLD)
    ========================================================= */
 
 .lazy-loader {
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--ameza-bg, #1C1015);
+  background: var(--ameza-bg, #0D070B);
   z-index: 9999;
   animation: fadeIn var(--transition-fast) ease-in-out;
 }
@@ -26,18 +26,18 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 3.5px solid rgba(197, 160, 89, 0.2);
-  border-top-color: var(--ameza-gold, #C5A059);
-  border-right-color: var(--ameza-gold-bright, #F5E6C8);
+  border: 3.5px solid rgba(229, 184, 59, 0.2);
+  border-top-color: var(--ameza-gold, #E5B83B);
+  border-right-color: var(--ameza-gold-bright, #FFF5D0);
   animation: spin 0.75s linear infinite;
-  box-shadow: 0 0 16px rgba(197, 160, 89, 0.25);
+  box-shadow: 0 0 16px rgba(229, 184, 59, 0.25);
 }
 
 .loader-text {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
-  color: var(--ameza-text-secondary, #D2C0BB);
+  color: var(--ameza-text-secondary, #DAC8C3);
   letter-spacing: 0.5px;
   animation: pulseSubtle 1.4s ease-in-out infinite;
 }

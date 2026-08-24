@@ -1,68 +1,77 @@
-import React from "react";
 import { motion } from "framer-motion";
 import "./WhyAmeza.css";
 
-const artisanPillars = [
+const worlds = [
   {
-    id: 1,
-    title: "Noble Materials",
-    desc: "Uncompromising selection of full-grain leathers, long-staple cashmere, solid brass, and pure botanicals.",
-    tag: "MATERIALITY",
+    num: "01",
+    title: "STYLE",
+    desc: "Objects that speak quietly but stay with you.",
   },
   {
-    id: 2,
-    title: "Artisanal Lineage",
-    desc: "Partnering with master workshops that respect generational craftsmanship and slow production tempos.",
-    tag: "PROVENANCE",
+    num: "02",
+    title: "RITUAL",
+    desc: "The considered things that make the everyday remarkable.",
   },
   {
-    id: 3,
-    title: "Quiet Functionalism",
-    desc: "Every object serves a tangible purpose, bringing calm clarity and elevated tactile joy to daily use.",
-    tag: "UTILITY",
+    num: "03",
+    title: "DESIGN",
+    desc: "Form, material and purpose working as one.",
   },
   {
-    id: 4,
-    title: "Enduring Longevity",
-    desc: "Resisting fleeting obsolescence with timeless proportions designed to be cherished for decades.",
-    tag: "PERMANENCE",
+    num: "04",
+    title: "EVERYDAY",
+    desc: "Enduring quality that improves with use and time.",
   },
 ];
 
-const WhyAmeza = () => {
-  return (
-    <section className="why-ameza-section">
-      <div className="why-ameza-container">
-        {/* Header */}
-        <div className="why-ameza-header">
-          <span className="why-ameza-eyebrow">MADE WITH INTENTION</span>
-          <h2 className="why-ameza-heading">
-            Objects with a sense <br />
-            <span className="why-ameza-italic">of place and soul.</span>
+const WhyAmeza = () => (
+  <section
+    className="ameza-world-section"
+    id="ameza-world"
+    aria-labelledby="world-heading"
+  >
+    <div className="ameza-world-inner">
+      <motion.div
+        className="world-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div>
+          <span className="world-label">The AMEZA World</span>
+          <h2 id="world-heading" className="world-heading">
+            Four Ways<br />to Discover
           </h2>
         </div>
+        <span className="world-meta">CURATED / CONSIDERED / COLLECTED</span>
+      </motion.div>
 
-        {/* 4 Artisan Pillars Grid */}
-        <div className="why-ameza-grid">
-          {artisanPillars.map((pillar, idx) => (
-            <motion.div
-              key={pillar.id}
-              className="why-benefit-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: idx * 0.08 }}
-              whileHover={{ y: -4 }}
-            >
-              <span className="artisan-tag">{pillar.tag}</span>
-              <h3 className="benefit-card-title">{pillar.title}</h3>
-              <p className="benefit-card-desc">{pillar.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="world-panels-grid">
+        {worlds.map((world, idx) => (
+          <motion.div
+            key={world.title}
+            className="world-panel"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.9, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="world-panel-inner" data-num={world.num}>
+              <div className="world-panel-bg" aria-hidden="true" />
+              <div className="world-panel-overlay" aria-hidden="true" />
+              <div className="world-panel-content">
+                <span className="world-panel-num">{world.num}</span>
+                <h3 className="world-panel-title">{world.title}</h3>
+                <p className="world-panel-desc">{world.desc}</p>
+                <div className="world-panel-arrow" aria-hidden="true" />
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default WhyAmeza;

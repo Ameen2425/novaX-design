@@ -1,0 +1,53 @@
+/* =========================================================
+   AMEZA — PINE + DUSTY APRICOT DESIGN TOKENS (GLOBAL)
+   Imported in index.css so tokens are available site-wide
+   ========================================================= */
+
+:root {
+  /* ── Pine surfaces ─────────────────────────────────── */
+  --pine-bg:            #1B2724;
+  --pine-section:       #202E29;
+  --pine-card:          #2E3E38;
+  --pine-card-hover:    #3A4F47;
+  --pine-deep:          #131C1A;
+  --pine-glass:         rgba(20, 28, 26, 0.94);
+
+  /* ── Primary tones ─────────────────────────────────── */
+  --pine-primary:       #6F8E80;
+  --pine-primary-hover: #85A397;
+  --pine-light:         rgba(111, 142, 128, 0.15);
+  --pine-border:        #4A5C54;
+  --pine-border-light:  rgba(74, 92, 84, 0.4);
+  --pine-border-warm:   rgba(185, 130, 109, 0.3);
+
+  /* ── Dusty Apricot accent (≤5% of page area) ──────── */
+  --apricot:            #B9826D;
+  --apricot-hover:      #CD967F;
+  --apricot-light:      rgba(185, 130, 109, 0.12);
+  --apricot-border:     rgba(185, 130, 109, 0.38);
+
+  /* ── Typography ────────────────────────────────────── */
+  --pine-text:          #F0EEE7;
+  --pine-text-sec:      #C8CCC5;
+  --pine-text-muted:    #8A9690;
+  --pine-text-ivory:    #E8E3D8;
+
+  /* ── Shadows ───────────────────────────────────────── */
+  --shadow-pine:        0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-pine-lg:     0 24px 64px rgba(0, 0, 0, 0.7);
+  --shadow-apricot:     0 4px 24px rgba(185, 130, 109, 0.22);
+
+  /* ── Easing ────────────────────────────────────────── */
+  --ease-luxury:        cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-editorial:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce:        cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-slow:    0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-med:     0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast:    0.22s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── Radius ────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   10px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+}

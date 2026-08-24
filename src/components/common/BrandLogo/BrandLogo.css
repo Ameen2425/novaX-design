@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA BRAND LOGO (BURGUNDY & 24K IMPERIAL GOLD)
+   AMEZA BRAND LOGO (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .ameza-brand-logo {
@@ -41,7 +41,7 @@
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
   line-height: 1;
 }
 
@@ -49,15 +49,15 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--ameza-gold, #D4AF37);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.9);
+  background: var(--ameza-gold, #E5B83B);
+  box-shadow: 0 0 10px rgba(229, 184, 59, 0.9);
   display: inline-block;
   margin-left: 2px;
 }
 
 /* Light / Drawer Variant */
 .ameza-brand-logo.is-light .ameza-wordmark {
-  color: var(--ameza-text, #FAF6F0);
+  color: var(--ameza-text, #FAF7F2);
 }
 
 /* Compact Variant */
