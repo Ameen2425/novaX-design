@@ -1,84 +1,94 @@
 /* =========================================================
-   AMEZA — LOGIN FORM (EDITORIAL LUXURY ON WHITE & CASHMERE)
+   AMEZA LOGIN FORM — VIEWPORT FIT (DEEP VELVET + 24K GOLD)
    ========================================================= */
 
 .auth-form-wrapper {
-  max-width: 460px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  box-sizing: border-box;
+  height: 100%;
 }
 
 .auth-back-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: var(--font-body);
   font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--ameza-text-secondary, #625850);
+  color: var(--ameza-gold, #E5B83B);
   text-decoration: none;
-  margin-bottom: 16px;
-  transition: color var(--transition-fast), transform var(--transition-fast);
-  min-height: 36px;
+  margin-bottom: 10px;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .auth-back-link:hover {
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-gold-bright, #FFF5D0);
   transform: translateX(-3px);
 }
 
+/* ── Form Card ────────────────────────────────────────── */
 .auth-form-card {
-  background: #FFFFFF;
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-xl, 20px);
-  padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 36px);
-  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.07);
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-xl, 24px);
+  padding: clamp(18px, 2.2vh, 32px) clamp(20px, 2.5vw, 36px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
   box-sizing: border-box;
+  flex: 1;
+  min-height: 0;
+  justify-content: center;
 }
 
 .auth-form-badge {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-gold, #E5B83B);
+  margin-bottom: 4px;
   display: block;
-  margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .auth-form-title {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 2.5vw, 28px);
-  font-weight: 500;
-  color: var(--ameza-text, #241E1A);
-  letter-spacing: -0.025em;
-  margin: 0 0 8px 0;
-  line-height: 1.15;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(1.5rem, 2.2vh, 2.1rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 3px 0;
+  line-height: 1.1;
+  flex-shrink: 0;
 }
 
 .auth-subtitle {
   font-family: var(--font-body);
-  font-size: 13.5px;
-  color: var(--ameza-text-secondary, #625850);
+  font-size: 12.5px;
+  color: var(--ameza-text-secondary, #DECBC6);
+  margin: 0 0 clamp(10px, 1.5vh, 18px) 0;
   line-height: 1.5;
-  margin: 0 0 22px 0;
+  flex-shrink: 0;
 }
 
+/* ── Form Groups ──────────────────────────────────────── */
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: clamp(8px, 1.2vh, 14px);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  flex-shrink: 0;
 }
 
 .form-group label {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
-  color: var(--ameza-text, #241E1A);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
+  color: var(--ameza-text-secondary, #DECBC6);
+  margin-bottom: 5px;
 }
 
 .input-wrap {
@@ -88,182 +98,198 @@
 
 .input-wrap input {
   width: 100%;
-  height: 48px;
+  height: clamp(40px, 5.5vh, 46px);
+  background: var(--ameza-section, #221018);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-pill);
   padding: 0 16px;
-  background: #F6F3ED;
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: 10px;
   font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--ameza-text, #241E1A);
+  font-size: 13.5px;
+  color: var(--ameza-text, #FAF6F0);
   outline: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
   box-sizing: border-box;
-}
-
-.input-wrap input::placeholder {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--ameza-text-muted, #958A80);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .input-wrap input:focus {
-  border-color: var(--ameza-primary, #A96F45);
-  box-shadow: 0 0 0 3px rgba(169, 111, 69, 0.15);
-  background: #FFFFFF;
+  border-color: var(--ameza-gold, #E5B83B);
+  box-shadow: 0 0 0 3px rgba(229, 184, 59, 0.18);
 }
 
-/* Password Toggle */
+.input-wrap input::placeholder {
+  color: var(--ameza-text-muted, #A89290);
+}
+
 .password-wrap input {
-  padding-right: 48px;
+  padding-right: 46px;
 }
 
 .pwd-toggle-btn {
   position: absolute;
-  right: 0;
-  top: 0;
-  height: 48px;
-  width: 48px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: var(--ameza-text-muted, #958A80);
+  color: var(--ameza-text-muted, #A89290);
   cursor: pointer;
-  padding: 0;
-  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: color var(--transition-fast);
 }
 
 .pwd-toggle-btn:hover {
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-gold, #E5B83B);
 }
 
-/* Auth Options: Remember me & Forgot Password */
+/* ── Options Row ──────────────────────────────────────── */
 .auth-options {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 16px 0 22px;
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  gap: 12px;
+  margin-bottom: clamp(10px, 1.4vh, 18px);
   flex-wrap: wrap;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .checkbox-wrap {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   cursor: pointer;
-  user-select: none;
 }
 
-.checkbox-wrap input[type="checkbox"] {
-  width: 17px;
-  height: 17px;
-  accent-color: var(--ameza-primary, #A96F45);
-  cursor: pointer;
-  border-radius: 4px;
+.checkbox-wrap input {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--ameza-border);
+  border-radius: 3px;
+  background: var(--ameza-section, #221018);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.checkbox-wrap input:checked + .checkbox-custom {
+  background: var(--ameza-gold, #E5B83B);
+  border-color: var(--ameza-gold, #E5B83B);
+  box-shadow: 0 0 6px rgba(229, 184, 59, 0.4);
+}
+
+.checkbox-wrap input:checked + .checkbox-custom::after {
+  content: "✓";
+  color: #12090D;
+  font-size: 10px;
+  font-weight: 800;
 }
 
 .checkbox-label {
-  color: var(--ameza-text-secondary, #625850);
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ameza-text-secondary, #DECBC6);
 }
 
 .forgot-link {
-  color: var(--ameza-primary, #A96F45);
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ameza-gold, #E5B83B);
   text-decoration: none;
-  font-weight: 600;
   transition: color var(--transition-fast);
 }
 
 .forgot-link:hover {
-  color: var(--ameza-primary-hover, #BE8459);
+  color: var(--ameza-gold-bright, #FFF5D0);
   text-decoration: underline;
 }
 
-/* Primary Submit Button */
+/* ── Submit Button ────────────────────────────────────── */
 .auth-primary-btn {
   width: 100%;
-  height: 50px;
-  background: var(--ameza-primary, #A96F45);
-  color: var(--ameza-white, #FFFFFF) !important;
+  height: clamp(42px, 5.5vh, 48px);
+  background: var(--ameza-gold-gradient);
+  color: #12090D !important;
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  border-radius: var(--radius-pill, 999px);
+  border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
-  box-shadow: 0 8px 22px rgba(169, 111, 69, 0.25);
-  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-  margin-bottom: 20px;
+  box-shadow: var(--shadow-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin-bottom: clamp(10px, 1.5vh, 16px);
+  transition: all var(--transition);
+  flex-shrink: 0;
 }
 
 .auth-primary-btn:hover {
-  background: var(--ameza-primary-hover, #BE8459);
+  background: var(--ameza-gold-gradient-hover);
+  box-shadow: var(--shadow-gold-lg);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(169, 111, 69, 0.35);
 }
 
 .btn-arrow {
   transition: transform var(--transition-fast);
-  font-size: 15px;
 }
 
 .auth-primary-btn:hover .btn-arrow {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
-/* Bottom Auth Switch */
+/* ── Switch Prompt ────────────────────────────────────── */
 .auth-switch-text {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--ameza-text-secondary, #625850);
   text-align: center;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--ameza-text-secondary, #DECBC6);
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+  flex-shrink: 0;
 }
 
 .auth-switch-link {
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-gold, #E5B83B);
   font-weight: 700;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .auth-switch-link:hover {
-  color: var(--ameza-primary-hover, #BE8459);
+  color: var(--ameza-gold-bright, #FFF5D0);
   text-decoration: underline;
 }
 
-/* ── RESPONSIVE MOBILE STYLES ────────────────────── */
-@media (max-width: 768px) {
-  .auth-form-wrapper {
-    max-width: 100%;
-  }
-  .auth-form-card {
-    padding: 24px 20px;
-    border-radius: 20px;
-  }
-  .auth-form-title {
-    font-size: 24px;
-  }
-  .input-wrap input {
-    height: 48px;
-  }
-  .auth-primary-btn {
-    height: 48px;
-  }
+/* ── Divider ──────────────────────────────────────────── */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: clamp(8px, 1.2vh, 14px) 0;
+  flex-shrink: 0;
+}
+
+.auth-divider span {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--ameza-text-muted, #A89290);
+  white-space: nowrap;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--ameza-border);
 }

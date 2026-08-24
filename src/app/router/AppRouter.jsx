@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import PageLoader from "../../components/common/PageLoader/PageLoader";
 
 export const Home = React.lazy(() => import("../../pages/Home/Home"));
+export const Landing = React.lazy(() => import("../../pages/Landing/Landing"));
 export const About = React.lazy(() => import("../../pages/About/About"));
 export const Products = React.lazy(() => import("../../pages/Products/products"));
 export const Deals = React.lazy(() => import("../../pages/Deals/Deals"));
@@ -20,6 +21,10 @@ export const AppRouter = () => {
     {
       path: "/",
       element: <Home />,
+    },
+    {
+      path: "/landing",
+      element: <Landing />,
     },
     {
       path: "/about",

@@ -6,7 +6,6 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const MainLayout = () => {
-
   const location = useLocation();
 
   // Automatically scroll to the top of the page on route change
@@ -18,26 +17,34 @@ const MainLayout = () => {
     });
   }, [location.pathname]);
 
-  const pathLoc = [
+  const noHeaderPaths = [
+    "/login",
+    "/signup",
+    "/landing"
+  ];
+
+  const noFooterPaths = [
     "/login",
     "/signup"
   ];
 
-  const removePath = pathLoc.includes(
+  const hideHeader = noHeaderPaths.includes(
+    location.pathname.toLowerCase()
+  );
+
+  const hideFooter = noFooterPaths.includes(
     location.pathname.toLowerCase()
   );
 
   return (
     <div className="main-layout">
-
-      {!removePath && <Header />}
+      {!hideHeader && <Header />}
 
       <main className="main-content">
         <AppRouter />
       </main>
 
-      {!removePath && <Footer />}
-
+      {!hideFooter && <Footer />}
     </div>
   );
 };

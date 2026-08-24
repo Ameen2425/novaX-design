@@ -1,82 +1,101 @@
 /* =========================================================
-   AMEZA — STATS SECTION (EDITORIAL LUXURY)
+   AMEZA STATS (DEEP VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .home-stats-section {
-  max-width: var(--container-max-width, 1500px);
-  margin: 0 auto 64px;
+  width: 100%;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
-  scroll-margin-top: 100px;
 }
 
+/* ── Centered heading variant ─────────────────────────── */
+.home-stats-section .home-section-heading.centered {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 28px;
+}
+
+/* ── Stats Grid ───────────────────────────────────────── */
 .home-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 18px;
 }
 
 .home-stat {
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-lg);
-  padding: 30px 18px;
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: 28px 20px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
-  transition: transform var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
-  box-sizing: border-box;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold shimmer on hover */
+.home-stat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(229,184,59,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
 }
 
 .home-stat:hover {
-  transform: translateY(-4px);
-  border-color: var(--ameza-primary, #A96F45);
-  background: var(--ameza-card-hover, #F4EFE7);
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-border-gold);
+  box-shadow: var(--shadow-card-hover);
 }
 
+.home-stat:hover::before {
+  opacity: 1;
+}
+
+/* Strong for the number value */
 .home-stat strong {
-  font-family: var(--font-display);
-  font-size: clamp(34px, 4vw, 48px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ameza-primary, #A96F45);
-  display: block;
-  margin-bottom: 6px;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 700;
+  color: var(--ameza-gold-bright, #FFF5D0);
   line-height: 1;
+  display: block;
+  filter: drop-shadow(0 2px 12px rgba(229, 184, 59, 0.35));
 }
 
+/* Span for the label */
 .home-stat span {
   font-family: var(--font-body);
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ameza-text, #241E1A);
+  color: var(--ameza-text-secondary, #DECBC6);
+  display: block;
 }
 
-/* ── MOBILE 2x2 STATS GRID ───────────────────────── */
-@media (max-width: 768px) {
-  .home-stats-section {
-    padding: 0 12px;
-    margin-bottom: 36px;
-  }
-
+@media (max-width: 900px) {
   .home-stats {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
   }
+}
 
-  .home-stat {
-    padding: 18px 12px;
-    border-radius: var(--radius-md);
-  }
-
-  .home-stat strong {
-    font-size: 28px;
-    margin-bottom: 4px;
-  }
-
-  .home-stat span {
-    font-size: 10px;
+@media (max-width: 480px) {
+  .home-stats {
+    grid-template-columns: 1fr;
   }
 }

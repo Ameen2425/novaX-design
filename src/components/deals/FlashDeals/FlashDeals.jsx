@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { ADD } from "../../../Redux/Features/cart/CartSlice";
 import "./FlashDeals.css";
 
 const flashDealsData = [
@@ -43,28 +45,22 @@ const flashDealsData = [
 ];
 
 const FlashDeals = () => {
+  let dispatch = useDispatch();
   const [toastMessage, setToastMessage] = useState("");
 
   const handleQuickAdd = (e, item) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existing = cart.find((c) => c.id === item.id);
-
-    if (existing) {
-      existing.quantity = (existing.quantity || 1) + 1;
-    } else {
-      cart.push({
+    dispatch(
+      ADD({
         id: item.id,
         title: item.title,
         price: item.rawPrice,
         thumbnail: item.image,
-        quantity: 1,
-      });
-    }
+      })
+    );
 
-    localStorage.setItem("cart", JSON.stringify(cart));
     setToastMessage(`✓ ${item.title} added!`);
     setTimeout(() => setToastMessage(""), 2800);
   };

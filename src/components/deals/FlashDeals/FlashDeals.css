@@ -1,83 +1,84 @@
 /* =========================================================
-   AMEZA — FLASH DEALS (SAGE + TERRACOTTA)
+   AMEZA FLASH DEALS (BURGUNDY & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .flash-deals-section {
   width: 100%;
-  max-width: var(--container-max-width, 1500px);
-  margin: 0 auto 64px;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
 .flash-icon {
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-copper, #E67E64);
+  margin-right: 4px;
 }
 
-/* ── 4 Compact Cards in a Row ────────────────────── */
 .flash-deals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 20px;
 }
 
 .flash-deal-card {
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-md);
-  padding: 12px;
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: 16px;
   display: flex;
-  align-items: center;
-  gap: 14px;
-  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
-  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
-  box-sizing: border-box;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
   cursor: pointer;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .flash-deal-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--ameza-primary, #A96F45);
-  background: var(--ameza-card-hover, #F4EFE7);
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
+  transform: translateY(-6px);
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-border-gold);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .flash-deal-img-box {
-  width: 72px;
-  height: 72px;
-  background: var(--ameza-section, #E7E0D5);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md, 12px);
   overflow: hidden;
+  position: relative;
+  background: var(--ameza-image-bg, #1F0D16);
+  border: 1px solid var(--ameza-border);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7), 0 4px 14px rgba(0, 0, 0, 0.4);
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  padding: 6px;
+  padding: 12px;
   box-sizing: border-box;
 }
 
 .flash-deal-discount {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  background: rgba(169, 111, 69, 0.15);
-  color: var(--ameza-primary, #A96F45);
-  border: 1px solid var(--ameza-primary, #A96F45);
-  font-family: var(--font-body);
-  font-size: 8.5px;
-  font-weight: 800;
-  padding: 2px 7px;
+  top: 10px;
+  left: 10px;
+  background: var(--ameza-copper, #E67E64);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
   border-radius: var(--radius-pill);
-  z-index: 2;
+  box-shadow: 0 4px 12px rgba(230, 126, 100, 0.6);
+  z-index: 3;
 }
 
 .flash-deal-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s var(--ease-luxury);
 }
 
 .flash-deal-card:hover .flash-deal-img {
@@ -88,49 +89,75 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-width: 0;
 }
 
 .flash-deal-name {
-  font-family: var(--font-body);
-  font-size: 13px;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--ameza-text, #241E1A);
-  margin: 0 0 6px 0;
-  white-space: nowrap;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  transition: color var(--transition-fast);
+}
+
+.flash-deal-card:hover .flash-deal-name {
+  color: var(--ameza-gold-bright, #FFF5D0);
 }
 
 .flash-deal-prices {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  margin-top: auto;
 }
 
 .flash-old-price {
   font-family: var(--font-body);
-  font-size: 11px;
-  color: var(--ameza-text-muted, #958A80);
-  text-decoration: line-through;
+  font-size: 13px;
+  color: var(--ameza-text-muted, #A89290);
 }
 
 .flash-new-price {
-  font-family: var(--font-display);
-  font-size: 16px;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  filter: drop-shadow(0 2px 8px rgba(229, 184, 59, 0.35));
 }
 
-/* ── RESPONSIVE ─────────────────────────────────── */
-@media (max-width: 1024px) {
+/* Toast */
+.deal-toast-notification {
+  position: fixed;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(18, 9, 13, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--ameza-border-gold);
+  border-radius: var(--radius-pill);
+  padding: 12px 28px;
+  color: var(--ameza-text, #FAF6F0);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 24px rgba(229, 184, 59, 0.35);
+  z-index: 10000;
+}
+
+@media (max-width: 1100px) {
   .flash-deals-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 580px) {
   .flash-deals-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

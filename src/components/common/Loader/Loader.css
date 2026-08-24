@@ -1,36 +1,38 @@
 /* =========================================================
-   AMEZA — PRODUCT CARDS SKELETON LOADER (SAGE + TERRACOTTA)
+   AMEZA PRODUCT CARDS SKELETON LOADER (24K GOLD & BURGUNDY)
    ========================================================= */
 
 .product-loader-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 22px;
   width: 100%;
 }
 
 .product-card-skeleton {
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-lg, 18px);
-  padding: 14px;
+  background: var(--ameza-card, #2E1622);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm, 0 5px 15px rgba(36, 30, 26, 0.25));
+  box-shadow: var(--shadow-card);
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease;
+  box-sizing: border-box;
 }
 
-/* Shimmer gradient effect */
+/* 24K Liquid Gold Shimmer gradient effect */
 .skeleton-shimmer {
   background: linear-gradient(
     90deg,
-    rgba(216, 207, 195, 0.6) 0%,
-    rgba(243, 239, 231, 0.9) 50%,
-    rgba(216, 207, 195, 0.6) 100%
+    rgba(46, 22, 34, 0.7) 0%,
+    rgba(70, 34, 52, 0.9) 30%,
+    rgba(212, 175, 55, 0.22) 50%,
+    rgba(70, 34, 52, 0.9) 70%,
+    rgba(46, 22, 34, 0.7) 100%
   );
-  background-size: 600px 100%;
+  background-size: 800px 100%;
   animation: cardShimmer 1.8s infinite linear;
 }
 
@@ -45,7 +47,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 1px solid rgba(98, 113, 105, 0.3);
+  border: 1px solid var(--ameza-border);
+  background: var(--ameza-image-bg, #220F18);
 }
 
 .skeleton-logo-watermark {
@@ -61,7 +64,7 @@
   left: 10px;
   width: 60px;
   height: 18px;
-  border-radius: var(--radius-pill, 999px);
+  border-radius: var(--radius-pill);
   z-index: 3;
 }
 
@@ -73,21 +76,21 @@
 }
 
 .skeleton-tag {
-  width: 40%;
+  width: 35%;
   height: 12px;
-  border-radius: var(--radius-pill, 999px);
+  border-radius: var(--radius-pill);
   margin-bottom: 10px;
 }
 
 .skeleton-title {
-  width: 90%;
+  width: 88%;
   height: 16px;
   border-radius: var(--radius-sm, 8px);
   margin-bottom: 6px;
 }
 
 .skeleton-title-sub {
-  width: 65%;
+  width: 60%;
   height: 14px;
   border-radius: var(--radius-sm, 8px);
   margin-bottom: 12px;
@@ -117,8 +120,8 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px dashed rgba(98, 113, 105, 0.35);
+  padding-top: 12px;
+  border-top: 1px solid var(--ameza-border);
 }
 
 .skeleton-price-box {
@@ -130,7 +133,7 @@
 .skeleton-price-lbl {
   width: 50px;
   height: 10px;
-  border-radius: var(--radius-pill, 999px);
+  border-radius: var(--radius-pill);
 }
 
 .skeleton-price {
@@ -140,9 +143,9 @@
 }
 
 .skeleton-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-pill);
 }
 
 /* Inline Loader variant */
@@ -150,35 +153,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 24px;
+  gap: 16px;
+  padding: 40px;
 }
 
 .loader-inline-logo-wrap {
-  animation: logoRotatePulse 1.8s ease-in-out infinite alternate;
+  animation: logoRotatePulse 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5));
 }
 
 .loader-inline-text {
-  font-family: var(--font-body, "Manrope", Arial, sans-serif);
+  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ameza-primary, #A96F45);
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--ameza-gold-bright, #FFF0C2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 /* Animations */
 @keyframes cardShimmer {
-  0% { background-position: -600px 0; }
-  100% { background-position: 600px 0; }
+  0% { background-position: -800px 0; }
+  100% { background-position: 800px 0; }
 }
 
 @keyframes watermarkPulse {
   0% { opacity: 0.25; transform: scale(0.8); }
-  100% { opacity: 0.5; transform: scale(0.95); }
+  100% { opacity: 0.55; transform: scale(0.95); }
 }
 
 @keyframes logoRotatePulse {
-  0% { transform: scale(0.9) rotate(-5deg); filter: drop-shadow(0 0 5px rgba(184, 154, 98, 0.3)); }
-  100% { transform: scale(1.05) rotate(5deg); filter: drop-shadow(0 0 15px rgba(184, 154, 98, 0.6)); }
+  0% { transform: scale(0.92) rotate(-6deg); }
+  100% { transform: scale(1.08) rotate(6deg); }
 }
 
 /* Media Queries */
@@ -191,6 +197,7 @@
 @media (max-width: 850px) {
   .product-loader-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 }
 

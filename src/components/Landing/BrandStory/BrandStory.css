@@ -1,0 +1,74 @@
+/* =========================================================
+   AMEZA TYPOGRAPHY INTERLUDE (BURGUNDY & LIQUID GOLD)
+   ========================================================= */
+
+.brand-story-section {
+  padding: clamp(100px, 12vw, 160px) 0;
+  background: var(--ameza-bg, #1C1015);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.brand-story-container {
+  width: min(calc(100% - 48px), 880px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.typography-interlude-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-story-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #C5A059);
+  margin-bottom: 20px;
+}
+
+.typography-interlude-title {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-weight: 500;
+  color: var(--ameza-text, #FAF6F0);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px 0;
+}
+
+.story-italic {
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.interlude-line {
+  width: 54px;
+  height: 1.5px;
+  background: var(--ameza-gold, #C5A059);
+  margin-bottom: 28px;
+}
+
+.typography-interlude-text {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(16px, 1.4vw, 22px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ameza-text-secondary, #D2C0BB);
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .brand-story-section {
+    padding: 72px 0;
+  }
+}

@@ -1,184 +1,133 @@
 /* =========================================================
-   AMEZA — DEAL CATEGORIES (SAGE + TERRACOTTA)
+   AMEZA DEAL CATEGORIES (BURGUNDY & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .deal-categories-section {
   width: 100%;
-  max-width: var(--container-max-width, 1500px);
-  margin: 0 auto 64px;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
-.deal-section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.deal-section-title {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--ameza-text, #241E1A);
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.deal-section-link {
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ameza-primary, #A96F45);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: all var(--transition-fast);
-}
-
-.deal-section-link:hover {
-  color: var(--ameza-primary-hover, #BE8459);
-  transform: translateX(3px);
-}
-
-/* ── 5 Column Grid ───────────────────────────────── */
 .deal-categories-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .deal-category-card {
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-lg);
-  padding: 12px;
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
+  cursor: pointer;
   box-sizing: border-box;
-  overflow: hidden;
-  height: 100%;
 }
 
 .deal-category-card:hover {
-  transform: translateY(-4px);
-  background: var(--ameza-card-hover, #F4EFE7);
-  border-color: var(--ameza-primary, #A96F45);
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
+  transform: translateY(-6px);
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-border-gold);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .deal-category-img-box {
   width: 100%;
-  aspect-ratio: 1 / 0.85;
-  border-radius: var(--radius-md);
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md, 12px);
   overflow: hidden;
-  background: var(--ameza-section, #E7E0D5);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  margin-bottom: 12px;
+  position: relative;
+  background: var(--ameza-image-bg, #1F0D16);
+  border: 1px solid var(--ameza-border);
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.deal-category-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--ameza-copper, #E67E64);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(230, 126, 100, 0.6);
+  z-index: 3;
 }
 
 .deal-category-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 0.5s ease;
+  object-fit: contain;
+  transition: transform 0.5s var(--ease-luxury);
 }
 
 .deal-category-card:hover .deal-category-img {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
-.deal-category-info {
+.deal-category-details {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 4px 4px;
+  flex-direction: column;
+  flex: 1;
 }
 
 .deal-category-name {
-  font-family: var(--font-body);
-  font-size: 13px;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--ameza-text, #241E1A);
-  margin: 0 0 2px 0;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 4px 0;
   line-height: 1.2;
 }
 
-.deal-category-discount {
+.deal-category-desc {
   font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--ameza-primary, #A96F45);
-  display: block;
+  font-size: 12px;
+  color: var(--ameza-text-secondary, #DECBC6);
+  margin: 0 0 12px 0;
 }
 
 .deal-category-arrow {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(169, 111, 69, 0.15);
-  border: 1px solid rgba(169, 111, 69, 0.35);
-  color: var(--ameza-primary, #A96F45);
+  margin-top: auto;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #E5B83B);
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: bold;
-  flex-shrink: 0;
+  gap: 6px;
   transition: all var(--transition-fast);
 }
 
 .deal-category-card:hover .deal-category-arrow {
-  background: var(--ameza-primary, #A96F45);
-  border-color: var(--ameza-primary-hover, #BE8459);
-  color: #FFFFFF;
-  transform: translateX(2px);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  transform: translateX(4px);
 }
 
-/* ── RESPONSIVE ─────────────────────────────────── */
-@media (max-width: 1024px) {
-  .deal-categories-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .deal-categories-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .deal-categories-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
-    padding-bottom: 8px;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .deal-categories-grid::-webkit-scrollbar {
-    display: none;
-  }
-  .deal-category-card {
-    min-width: 150px;
-    scroll-snap-align: start;
-    flex-shrink: 0;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { ADD } from "../../Redux/Features/cart/CartSlice";
 import "./SingleProduct.css";
 
 import ProductGallery from "../../components/product/ProductGallery/ProductGallery";
@@ -11,27 +13,24 @@ import ProductCareSection from "../../components/product/ProductCareSection/Prod
 const SingleProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  let dispatch = useDispatch();
 
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
-  const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState("");
   const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      try {
-        const { data } = await axios.get(
-          `https://dummyjson.com/products/${id}`
-        );
-        setProduct(data || {});
-        setSelectedImage(data?.thumbnail || data?.images?.[0] || "");
-      } catch (err) {
-        console.error("Error fetching product:", err);
-      } finally {
-        setLoading(false);
+      const res = await axios.get(
+        `https://dummyjson.com/products/${id}`
+      );
+      if (res && res.data) {
+        setProduct(res.data);
+        setSelectedImage(res.data.thumbnail || res.data.images?.[0] || "");
       }
+      setLoading(false);
     };
 
     getProduct();
@@ -45,42 +44,10 @@ const SingleProduct = () => {
   };
 
   /* =====================================================
-     QUANTITY
-  ===================================================== */
-  const increaseQuantity = () => {
-    const maxStock = product.stock || 99;
-    if (quantity < maxStock) {
-      setQuantity((prev) => prev + 1);
-    }
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity((prev) => prev - 1);
-    }
-  };
-
-  /* =====================================================
      ADD TO CART
   ===================================================== */
   const addToCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = cart.find((item) => item.id === product.id);
-
-    if (existingProduct) {
-      existingProduct.quantity += quantity;
-    } else {
-      cart.push({
-        id: product.id,
-        title: product.title,
-        description: product.description,
-        price: product.price,
-        thumbnail: product.thumbnail || selectedImage,
-        quantity: quantity,
-      });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch(ADD(product));
     showToast(`✓ "${product.title}" added to your cart!`);
   };
 
@@ -88,23 +55,7 @@ const SingleProduct = () => {
      BUY NOW
   ===================================================== */
   const buyNow = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = cart.find((item) => item.id === product.id);
-
-    if (existingProduct) {
-      existingProduct.quantity += quantity;
-    } else {
-      cart.push({
-        id: product.id,
-        title: product.title,
-        description: product.description,
-        price: product.price,
-        thumbnail: product.thumbnail || selectedImage,
-        quantity: quantity,
-      });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch(ADD(product));
     navigate("/cart");
   };
 
@@ -199,9 +150,6 @@ const SingleProduct = () => {
             product={product}
             discount={discount}
             originalPrice={originalPrice}
-            quantity={quantity}
-            decreaseQuantity={decreaseQuantity}
-            increaseQuantity={increaseQuantity}
             addToCart={addToCart}
             buyNow={buyNow}
           />

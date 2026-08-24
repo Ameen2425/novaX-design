@@ -1,49 +1,50 @@
 /* =========================================================
-   AMEZA — CURATED COLLECTIONS SECTION (EDITORIAL TILES)
+   AMEZA HOME CATEGORIES (DEEP VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .home-categories {
   width: 100%;
-  max-width: var(--container-max-width, 1500px);
-  margin: 0 auto var(--space-section-desktop, 80px);
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
+/* ── Section Header ───────────────────────────────────── */
 .home-section-heading {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .home-section-label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-gold, #E5B83B);
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .home-section-heading h2 {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3.5vw, 40px);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  color: var(--ameza-text, #241E1A);
-  line-height: 1.1;
-  margin: 0 0 6px 0;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 4px 0;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
 .home-section-heading p {
   font-family: var(--font-body);
-  font-size: 14.5px;
-  color: var(--ameza-text-secondary, #625850);
-  max-width: 500px;
+  font-size: 14px;
+  color: var(--ameza-text-secondary, #DECBC6);
   margin: 0;
   line-height: 1.6;
 }
@@ -51,22 +52,26 @@
 .home-view-all-link {
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 600;
-  color: var(--ameza-primary, #A96F45);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #E5B83B);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: all var(--transition-fast);
   white-space: nowrap;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  margin-bottom: 4px;
 }
 
 .home-view-all-link:hover {
-  color: var(--ameza-primary-hover, #BE8459);
-  transform: translateX(4px);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  transform: translateX(3px);
 }
 
-/* ── 5 Column Grid ───────────────────────────────── */
+/* ── Category Cards Grid ──────────────────────────────── */
 .home-category-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -74,32 +79,49 @@
 }
 
 .home-category-card-wrap {
-  height: 100%;
+  /* Wrapper for motion — passes through */
 }
 
 .home-category-card {
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-card, 14px);
-  padding: 24px 20px;
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: 20px 18px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-decoration: none;
-  box-shadow: var(--shadow-card, 0 8px 25px rgba(36, 30, 26, 0.06));
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
+  color: inherit;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
   box-sizing: border-box;
   height: 100%;
-  min-height: 180px;
+  min-height: 160px;
+}
+
+.home-category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(229,184,59,0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
 }
 
 .home-category-card:hover {
-  transform: translateY(-4px);
-  background: var(--ameza-card-hover, #F4EFE7);
-  border-color: rgba(169, 111, 69, 0.30);
-  box-shadow: var(--shadow-card-hover, 0 15px 35px rgba(36, 30, 26, 0.10));
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-border-gold);
+  box-shadow: var(--shadow-card-hover);
 }
 
+.home-category-card:hover::before {
+  opacity: 1;
+}
+
+/* ── Card Header ──────────────────────────────────────── */
 .home-cat-card-header {
   display: flex;
   align-items: center;
@@ -108,49 +130,76 @@
 }
 
 .home-cat-num {
-  font-family: var(--font-body);
-  font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.10em;
-  color: var(--ameza-primary, #A96F45);
+  color: var(--ameza-gold, #E5B83B);
+  letter-spacing: 0.12em;
 }
 
 .home-cat-icon {
-  font-size: 18px;
+  font-size: 22px;
+  transition: transform var(--transition-fast);
+  line-height: 1;
+}
+
+.home-category-card:hover .home-cat-icon {
+  transform: scale(1.18) rotate(5deg);
+}
+
+/* ── Card Body ────────────────────────────────────────── */
+.home-cat-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-cat-card-body h3 {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--ameza-text, #241E1A);
-  margin: 0 0 4px 0;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+  transition: color var(--transition-fast);
+}
+
+.home-category-card:hover .home-cat-card-body h3 {
+  color: var(--ameza-gold-bright, #FFF5D0);
 }
 
 .home-cat-card-body p {
   font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--ameza-text-muted, #958A80);
+  font-size: 11.5px;
+  color: var(--ameza-text-secondary, #DECBC6);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
+/* ── Card Footer ──────────────────────────────────────── */
 .home-cat-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid rgba(216, 207, 195, 0.5);
+  border-top: 1px solid var(--ameza-border);
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--ameza-primary, #A96F45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ameza-text-muted, #A89290);
+  transition: all var(--transition-fast);
+}
+
+.home-category-card:hover .home-cat-card-footer {
+  color: var(--ameza-gold, #E5B83B);
+  border-color: var(--ameza-border-gold);
 }
 
 .home-cat-arrow {
+  font-size: 14px;
   transition: transform var(--transition-fast);
 }
 
@@ -158,49 +207,29 @@
   transform: translateX(4px);
 }
 
-/* ── RESPONSIVE ─────────────────────────────────── */
-@media (max-width: 1024px) {
+/* ── Colour Accent Borders per Category ───────────────── */
+.cat-electronics { border-top: 2px solid var(--ameza-sapphire, #3B82F6); }
+.cat-fashion     { border-top: 2px solid var(--ameza-copper, #E67E64); }
+.cat-beauty      { border-top: 2px solid var(--ameza-emerald, #10B981); }
+.cat-home        { border-top: 2px solid var(--ameza-gold, #E5B83B); }
+.cat-footwear    { border-top: 2px solid var(--ameza-crimson, #BE185D); }
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 1100px) {
   .home-category-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .home-categories {
-    padding: 0 12px;
-    margin-bottom: 36px;
-  }
-  .home-section-heading {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
   .home-category-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .home-category-card {
-    padding: 16px 14px;
-    min-height: 140px;
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .home-category-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 12px;
-    gap: 12px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .home-category-grid::-webkit-scrollbar {
-    display: none;
-  }
-  .home-category-card-wrap {
-    flex: 0 0 210px;
-    scroll-snap-align: start;
+    grid-template-columns: 1fr;
   }
 }

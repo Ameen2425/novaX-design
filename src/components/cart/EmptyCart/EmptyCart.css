@@ -1,159 +1,180 @@
 /* =========================================================
-   AMEZA — EMPTY CART HERO (SOFT PORCELAIN & COGNAC)
+   AMEZA EMPTY CART (BURGUNDY & LIQUID GOLD)
    ========================================================= */
 
-.empty-cart-content {
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-xl, 20px);
-  padding: clamp(40px, 6vw, 70px) clamp(24px, 4vw, 48px);
+.empty-cart {
+  max-width: 800px;
+  margin: 0 auto 64px;
   text-align: center;
-  box-shadow: var(--shadow-card, 0 8px 25px rgba(36, 30, 26, 0.06));
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 40px;
+  padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
-.cart-label {
+.empty-cart-content {
+  background: var(--ameza-card, #38202B);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-xl, 28px);
+  padding: clamp(40px, 6vw, 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.empty-cart-content .cart-label {
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96F45);
-  margin-bottom: 20px;
-  display: block;
+  color: var(--ameza-gold, #C5A059);
+  margin-bottom: 24px;
 }
 
-/* ── Cart Visual Circle ───────────────────────── */
+/* ── Animated Visual ──────────────────────────────────── */
 .cart-visual {
   position: relative;
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 28px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 28px;
 }
 
 .cart-circle {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  background: var(--ameza-section, #E7E0D5);
-  border: 1px solid var(--ameza-border, #D8CFC3);
+  background: var(--ameza-section, #2E1A23);
+  border: 1px solid var(--ameza-border-gold);
+  box-shadow: var(--shadow-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
+  z-index: 2;
 }
 
 .cart-bag {
-  font-size: 34px;
-  line-height: 1;
+  font-size: 38px;
 }
 
 .cart-dot {
   position: absolute;
   border-radius: 50%;
-  background: var(--ameza-primary, #A96F45);
+  background: var(--ameza-gold, #C5A059);
 }
 
 .cart-dot-one {
   width: 8px;
   height: 8px;
-  top: 6px;
-  right: 8px;
+  top: 15px;
+  right: 15px;
 }
 
 .cart-dot-two {
-  width: 6px;
-  height: 6px;
-  bottom: 12px;
-  left: 4px;
+  width: 10px;
+  height: 10px;
+  bottom: 20px;
+  left: 10px;
 }
 
 .cart-dot-three {
-  width: 5px;
-  height: 5px;
-  top: 18px;
-  left: 8px;
+  width: 6px;
+  height: 6px;
+  top: 35px;
+  left: 20px;
 }
 
-/* ── Empty Cart Typography ────────────────────── */
+/* ── Text ─────────────────────────────────────────────── */
 .empty-cart-content h1 {
-  font-family: var(--font-display);
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  color: var(--ameza-text, #241E1A);
-  margin-bottom: 12px;
-  line-height: 1.1;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 12px 0;
+  line-height: 1.15;
 }
 
 .empty-cart-content h1 span {
-  color: var(--ameza-primary, #A96F45);
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-style: italic;
   font-weight: 400;
 }
 
 .cart-message {
   font-family: var(--font-body);
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-size: 16px;
   font-weight: 600;
-  color: var(--ameza-text, #241E1A);
-  margin-bottom: 8px;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 8px 0;
 }
 
 .cart-subtext {
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.65;
-  color: var(--ameza-text-secondary, #625850);
-  max-width: 520px;
-  margin: 0 auto 32px;
+  color: var(--ameza-text-secondary, #D2C0BB);
+  max-width: 480px;
+  margin: 0 0 32px 0;
 }
 
-/* ── Actions ──────────────────────────────────── */
+/* ── Actions ──────────────────────────────────────────── */
 .cart-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* ── MOBILE RESPONSIVENESS ───────────────────────── */
-@media (max-width: 768px) {
-  .empty-cart-content {
-    padding: 28px 18px;
-    border-radius: var(--radius-lg);
-    margin-bottom: 24px;
-  }
-  .empty-cart-content h1 {
-    font-size: 28px;
-    line-height: 1.15;
-  }
-  .cart-message {
-    font-size: 14px;
-  }
-  .cart-subtext {
-    font-size: 13px;
-    margin-bottom: 24px;
-  }
-  .cart-visual {
-    margin-bottom: 18px;
-  }
-  .cart-actions {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-  .cart-actions .cart-primary-btn,
-  .cart-actions .cart-secondary-btn {
-    width: 100%;
-    max-width: 320px;
-    border-radius: var(--radius-pill);
-  }
+.cart-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ameza-gold-gradient);
+  color: #1C1015 !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition);
+}
+
+.cart-primary-btn:hover {
+  background: var(--ameza-gold-gradient-hover);
+  box-shadow: var(--shadow-gold-lg);
+  transform: translateY(-2px);
+}
+
+.cart-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--ameza-border-gold);
+  color: var(--ameza-text, #FAF6F0) !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.cart-secondary-btn:hover {
+  background: rgba(197, 160, 89, 0.12);
+  color: var(--ameza-gold-bright) !important;
+  transform: translateY(-2px);
 }

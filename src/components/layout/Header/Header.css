@@ -1,46 +1,38 @@
 /* =========================================================
-   AMEZA — MINIMAL FLOATING CAPSULE NAVIGATION
-   With Framer Motion LayoutId Active Pill Transitions
+   AMEZA CAPSULE FLOATING HEADER (BURGUNDY & 24K IMPERIAL GOLD)
    ========================================================= */
 
-/* ── 1. DESKTOP & TABLET FLOATING GLASS HEADER ──────── */
+/* ── Desktop & Tablet Floating Header ─────────────────── */
 .header.desktop-header {
   position: fixed;
-  top: 18px;
+  top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(calc(100% - 36px), 1280px);
-  height: 62px;
-  background: rgba(252, 250, 246, 0.94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(36, 30, 26, 0.10);
+  width: min(calc(100% - 32px), 1280px);
+  height: 64px;
+  background: var(--ameza-glass-bg, rgba(34, 16, 24, 0.92));
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-pill);
-  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 28px;
-  box-sizing: border-box;
+  padding: 0 24px;
   z-index: 1000;
+  box-shadow: var(--shadow-glass);
   transition: all var(--transition);
+  box-sizing: border-box;
 }
 
-.header.desktop-header.scrolled {
-  background: rgba(252, 250, 246, 0.98);
-  border-color: rgba(36, 30, 26, 0.16);
-  box-shadow: 0 14px 40px rgba(36, 30, 26, 0.10);
-}
-
-/* Brand Logo */
-.header.desktop-header .logo {
-  display: flex;
+.logo {
+  display: inline-flex;
   align-items: center;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-/* Desktop Navbar */
+/* Navbar Links */
 .navbar {
   display: flex;
   align-items: center;
@@ -49,126 +41,121 @@
 }
 
 .nav-link {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ameza-text-secondary, #625850);
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: var(--radius-pill);
-  transition: color var(--transition-fast);
+  position: relative;
   display: inline-flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-link-text {
-  position: relative;
-  z-index: 2;
-}
-
-.nav-link:hover {
-  color: var(--ameza-primary, #A96F45);
-}
-
-/* FRAMER MOTION ACTIVE PILL BACKGROUND */
-.nav-active-pill {
-  position: absolute;
-  inset: 0;
-  background: var(--ameza-primary, #A96F45);
+  justify-content: center;
+  padding: 8px 18px;
+  text-decoration: none;
   border-radius: var(--radius-pill);
-  box-shadow: 0 2px 10px rgba(169, 111, 69, 0.25);
+  transition: color var(--transition-fast);
   z-index: 1;
 }
 
-.nav-link.active {
-  color: #FFFFFF !important;
-  font-weight: 700 !important;
+.nav-link-text {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ameza-text-secondary, #D7C4BF);
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover .nav-link-text {
+  color: var(--ameza-gold-bright, #FFF5D0);
 }
 
 .nav-link.active .nav-link-text {
-  color: #FFFFFF !important;
-  font-weight: 700 !important;
+  color: #12090D !important;
+  font-weight: 700;
 }
 
-/* Desktop Header Actions */
+.nav-active-pill {
+  position: absolute;
+  inset: 0;
+  background: var(--ameza-gold-gradient);
+  border-radius: var(--radius-pill);
+  z-index: -1;
+  box-shadow: var(--shadow-gold);
+}
+
+/* Actions */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .header-icon-group {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
 .header-action-btn {
+  position: relative;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid rgba(36, 30, 26, 0.10);
-  color: var(--ameza-text, #241E1A);
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-text, #FAF6F0);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   text-decoration: none;
-  transition: all var(--transition-fast);
   cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .header-action-btn:hover {
-  background: #FFFFFF;
-  border-color: var(--ameza-primary, #A96F45);
-  color: var(--ameza-primary, #A96F45);
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-gold);
+  color: var(--ameza-gold-bright, #FFF5D0);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 184, 59, 0.45);
 }
 
 .header-action-btn.active {
-  background: var(--ameza-primary, #A96F45);
-  border-color: var(--ameza-primary, #A96F45);
-  color: #FFFFFF;
+  background: var(--ameza-gold-gradient);
+  border-color: transparent;
+  color: #12090D;
+  box-shadow: var(--shadow-gold);
 }
 
 .header-badge {
   position: absolute;
-  top: -3px;
-  right: -3px;
+  top: -4px;
+  right: -4px;
   min-width: 18px;
   height: 18px;
   padding: 0 4px;
   border-radius: var(--radius-pill);
-  background: var(--ameza-primary, #A96F45);
-  color: #FFFFFF;
+  background: var(--ameza-gold-gradient);
+  color: #12090D;
   font-family: var(--font-body);
-  font-size: 9.5px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(169, 111, 69, 0.30);
+  box-shadow: 0 2px 10px rgba(229, 184, 59, 0.7);
+  line-height: 1;
 }
 
-/* ── 2. MOBILE TOP BAR & BOTTOM CAPSULE ───────────────── */
-.mobile-top-bar,
-.mobile-top-brand {
-  display: none !important;
+/* ── Mobile Layout (< 900px) ─────────────────────────── */
+.mobile-top-bar {
+  display: none;
 }
 
 .mobile-bottom-nav {
-  display: none !important;
+  display: none;
 }
 
-/* ── 3. MOBILE RESPONSIVE RULES (<= 768px) ────────────── */
-@media (max-width: 768px) {
-  /* Hide Desktop Header */
+@media (max-width: 900px) {
   .header.desktop-header {
-    display: none !important;
+    display: none;
   }
 
   .mobile-top-bar {
@@ -179,11 +166,13 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 58px;
+    height: var(--header-height-mobile, 64px);
     padding: 0 16px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(184, 127, 78, 0.20);
+    background: rgba(18, 9, 13, 0.96);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-bottom: 1px solid var(--ameza-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     z-index: 1000;
     box-sizing: border-box;
   }
@@ -196,53 +185,40 @@
   .mobile-top-right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 
   .mobile-action-btn {
-    width: 40px;
-    height: 40px;
+    position: relative;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: #FFFFFF;
-    border: 1px solid var(--ameza-border, #E0D9CE);
-    color: var(--ameza-text, #1F1A17);
+    background: var(--ameza-card, #2B141F);
+    border: 1px solid var(--ameza-border);
+    color: var(--ameza-text, #FAF6F0);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: all var(--transition-fast);
   }
 
-  .mobile-action-btn:hover {
-    background: #FAF8F5;
-    border-color: var(--ameza-primary, #B87F4E);
-    color: var(--ameza-primary, #B87F4E);
-  }
-
-  .mobile-action-btn.active {
-    background: var(--ameza-primary, #B87F4E);
-    border-color: var(--ameza-primary-hover, #C99260);
-    color: #FFFFFF;
-  }
-
-  /* Fixed Floating Mobile Bottom Capsule Navigation */
   .mobile-bottom-nav {
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: space-around;
     position: fixed;
     bottom: 12px;
     left: 12px;
     right: 12px;
-    height: 64px;
-    background: rgba(33, 28, 26, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(184, 127, 78, 0.30);
+    height: 60px;
+    background: rgba(34, 16, 24, 0.94);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--ameza-border-card);
     border-radius: var(--radius-pill);
-    box-shadow: 0 12px 35px rgba(33, 28, 26, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(229, 184, 59, 0.2);
     z-index: 1000;
-    padding: 4px 6px;
+    padding: 0 8px;
     box-sizing: border-box;
   }
 
@@ -253,58 +229,44 @@
     justify-content: center;
     gap: 3px;
     text-decoration: none;
-    min-width: 48px;
-    padding: 2px 4px;
-    box-sizing: border-box;
-    transition: all var(--transition-fast);
-    background: transparent;
+    padding: 4px 12px;
     position: relative;
+    flex: 1;
   }
 
   .mobile-nav-icon-wrap {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
+    position: relative;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 2;
+    color: var(--ameza-text-secondary, #D7C4BF);
   }
 
-  .mobile-nav-icon-wrap svg {
-    position: relative;
-    z-index: 3;
-    stroke: #D2CFC9;
-    transition: stroke var(--transition-fast);
+  .mobile-nav-item.active .mobile-nav-icon-wrap {
+    color: #12090D;
   }
 
   .mobile-nav-active-bg {
     position: absolute;
     inset: 0;
-    border-radius: 50%;
-    background: var(--ameza-primary, #B87F4E);
-    box-shadow: 0 4px 15px rgba(184, 127, 78, 0.40);
-    z-index: 1;
+    background: var(--ameza-gold-gradient);
+    border-radius: var(--radius-pill);
+    z-index: -1;
+    box-shadow: var(--shadow-gold);
   }
 
   .mobile-nav-label {
     font-family: var(--font-body);
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.02em;
-    color: #D2CFC9;
-    line-height: 1;
-    transition: color var(--transition-fast);
-  }
-
-  .mobile-nav-item.active .mobile-nav-icon-wrap svg {
-    stroke: #FFFFFF !important;
-    stroke-width: 2.4;
+    color: var(--ameza-text-secondary, #D7C4BF);
+    letter-spacing: 0.04em;
   }
 
   .mobile-nav-item.active .mobile-nav-label {
-    color: #FFFFFF !important;
-    font-weight: 800 !important;
+    color: var(--ameza-gold-bright, #FFF5D0);
+    font-weight: 700;
   }
 }

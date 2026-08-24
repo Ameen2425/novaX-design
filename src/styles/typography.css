@@ -1,287 +1,171 @@
 /* =========================================================
-   AMEZA — EDITORIAL LUXURY TYPOGRAPHY & INTERACTIVE SYSTEM
+   AMEZA TYPOGRAPHY MATRIX (PEARL SILK & 24K IMPERIAL GOLD)
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
-
-/* ── Headings & Editorial Typography (Weight 500 Restraint) ─ */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
-  color: var(--ameza-text, #241E1A);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ameza-text, #FAF6F0);
+  background-color: var(--ameza-bg, #140A0E);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  font-size: clamp(2.6rem, 5.5vw, 5.5rem);
-  line-height: 0.98;
-  letter-spacing: -0.025em;
-  font-weight: 500;
-}
-
-h2 {
-  font-size: clamp(1.9rem, 3.8vw, 3.4rem);
-  line-height: 1.06;
+h1, h2, h3, h4, h5, h6,
+.font-display,
+.font-heading {
+  font-family: var(--font-heading, var(--font-display));
+  color: var(--ameza-text, #FAF6F0);
+  font-weight: 600;
   letter-spacing: -0.02em;
-  font-weight: 500;
+  line-height: 1.15;
+  margin: 0;
 }
 
-h3 {
-  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
-  font-weight: 500;
-  letter-spacing: -0.015em;
-}
-
-h4 {
-  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
-  font-weight: 500;
-}
+h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); }
+h2 { font-size: clamp(1.8rem, 3.8vw, 3.2rem); }
+h3 { font-size: clamp(1.4rem, 2.6vw, 2.2rem); }
+h4 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 0.95rem; }
 
 p {
+  color: var(--ameza-text-secondary, #D4C1BC);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* ── Editorial Gold Highlights ────────────────────────── */
+.text-gold-gradient,
+.editorial-gold {
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-gold {
+  color: var(--ameza-gold, #D4AF37) !important;
+}
+
+.text-emerald {
+  color: var(--ameza-emerald, #10B981) !important;
+}
+
+.text-sapphire {
+  color: var(--ameza-sapphire, #3B82F6) !important;
+}
+
+.text-copper {
+  color: var(--ameza-copper, #E07A5F) !important;
+}
+
+/* ── Section Eyebrow Labels ───────────────────────────── */
+.ameza-eyebrow,
+.section-eyebrow {
   font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.65;
-  font-size: clamp(14px, 1.05vw, 17px);
-  color: var(--ameza-text-secondary, #625850);
-}
-
-/* ── Muted Cognac Text Accent Utility ───────────────── */
-.ameza-highlight,
-.terracotta-text,
-.gold-text-gradient {
-  color: var(--ameza-primary, #A96F45);
-  font-style: italic;
-  display: inline;
-}
-
-/* ── Editorial Labels & Eyebrows (Sparingly Used) ─────── */
-.editorial-label,
-.editorial-badge,
-.gold-badge,
-.home-offer-tag,
-.about-section-label,
-.deals-hero-eyebrow,
-.deal-promo-eyebrow,
-.featured-deal-eyebrow,
-.home-final-label,
-.cart-label,
-.auth-form-badge,
-.signup-form-label,
-.offcanvas-badge,
-.home-section-label,
-.products-header span,
-.users-header span {
-  font-family: var(--font-body) !important;
-  font-size: 0.72rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.16em !important;
-  text-transform: uppercase !important;
-  color: var(--ameza-primary, #A96F45) !important;
-}
-
-/* ── Semantic Category & Trust Badges ───────────────── */
-.badge-emerald,
-.tag-emerald {
-  background: var(--ameza-emerald-bg) !important;
-  color: var(--ameza-emerald-dark) !important;
-  border: 1px solid var(--ameza-emerald-border) !important;
-}
-
-.badge-sapphire,
-.tag-sapphire {
-  background: var(--ameza-sapphire-bg) !important;
-  color: var(--ameza-sapphire-dark) !important;
-  border: 1px solid var(--ameza-sapphire-border) !important;
-}
-
-.badge-copper,
-.tag-copper,
-.badge-gold,
-.tag-gold {
-  background: rgba(169, 111, 69, 0.08) !important;
-  color: var(--ameza-primary, #A96F45) !important;
-  border: 1px solid rgba(169, 111, 69, 0.25) !important;
-}
-
-/* ── Price Semantic Typography ──────────────────────── */
-.price-regular {
-  font-family: var(--font-body);
-  color: var(--ameza-text, #241E1A);
-  font-weight: 600;
-  font-size: 1.15rem;
-}
-
-.price-premium {
-  font-family: var(--font-body);
-  color: var(--ameza-primary, #A96F45);
+  font-size: 0.76rem;
   font-weight: 700;
-  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #D4AF37);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
-.price-discount {
-  font-family: var(--font-body);
-  color: var(--ameza-primary, #A96F45);
-  font-weight: 700;
-}
-
-.price-original {
-  font-family: var(--font-body);
-  color: var(--ameza-text-muted, #958A80);
-  text-decoration: line-through;
-  font-size: 0.9em;
-}
-
-/* ── Mono / Tech Codes & Metadata (ONLY for technical) ─ */
-.mono-label,
-.tech-label,
-.tech-badge,
-.sku-code,
-.countdown-tag,
-.deal-timer-label {
-  font-family: var(--font-mono) !important;
+/* ── Technical Monospace Badges ───────────────────────── */
+.ameza-mono,
+.tech-tag {
+  font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ameza-text-secondary, #625850) !important;
 }
 
-/* ── Global Primary Buttons (Muted Cognac #A96F45) ────── */
-.btn-terracotta,
-.home-primary-btn,
-.btn-hero-copper,
-.btn-deals-primary,
-.btn-featured-shop,
-.btn-promo-explore,
-.cart-primary-btn,
-.cart-discover-btn,
-.auth-btn,
-.signup-submit-btn,
-.btn-primary,
-.add-cart-btn,
-.home-shop-btn,
-.deal-card-cart-btn,
-.btn-crimson,
-.btn-primary-cta,
-.btn-copper,
-.btn-promo-copper {
+/* ── Luxury Button Architecture ───────────────────────── */
+.btn-gold,
+.btn-primary-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 48px;
-  min-height: 44px;
-  padding: 0 28px;
-  background: var(--ameza-primary, #A96F45);
-  color: #FFFFFF !important;
+  background: var(--ameza-gold-gradient);
+  color: #140A0E !important;
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  padding: 14px 30px;
   border-radius: var(--radius-pill);
-  text-decoration: none !important;
-  border: 1px solid var(--ameza-primary, #A96F45);
-  box-shadow: 0 4px 14px rgba(169, 111, 69, 0.20);
-  transition: all var(--transition);
+  border: none;
   cursor: pointer;
-  box-sizing: border-box;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition);
+  text-decoration: none;
 }
 
-.btn-terracotta:hover,
-.home-primary-btn:hover,
-.btn-hero-copper:hover,
-.btn-deals-primary:hover,
-.btn-featured-shop:hover,
-.btn-promo-explore:hover,
-.cart-primary-btn:hover,
-.cart-discover-btn:hover,
-.auth-btn:hover,
-.signup-submit-btn:hover,
-.btn-primary:hover,
-.add-cart-btn:hover,
-.home-shop-btn:hover,
-.deal-card-cart-btn:hover,
-.btn-crimson:hover,
-.btn-primary-cta:hover,
-.btn-copper:hover,
-.btn-promo-copper:hover {
-  background: var(--ameza-primary-hover, #BE8459);
-  border-color: var(--ameza-primary-hover, #BE8459);
-  color: #FFFFFF !important;
+.btn-gold:hover,
+.btn-primary-gold:hover {
+  background: var(--ameza-gold-gradient-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(169, 111, 69, 0.30);
+  box-shadow: var(--shadow-gold-lg);
+  color: #0D0509 !important;
 }
 
-/* ── Global Secondary Buttons (Transparent with Hairline Border) ─ */
-.btn-outline-dark,
-.btn-secondary-slate,
-.btn-deals-secondary,
-.btn-hero-outline,
-.cart-secondary-btn,
-.btn-cancel {
+.btn-outline-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 48px;
-  min-height: 44px;
-  padding: 0 24px;
   background: transparent;
-  color: var(--ameza-text, #241E1A) !important;
+  color: var(--ameza-text, #FAF6F0) !important;
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 0.86rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  padding: 13px 28px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  text-decoration: none !important;
-  transition: all var(--transition);
+  border: 1px solid var(--ameza-border-gold);
   cursor: pointer;
-  box-sizing: border-box;
+  transition: all var(--transition);
+  text-decoration: none;
 }
 
-.btn-outline-dark:hover,
-.btn-secondary-slate:hover,
-.btn-deals-secondary:hover,
-.btn-hero-outline:hover,
-.cart-secondary-btn:hover,
-.btn-cancel:hover {
-  border-color: var(--ameza-primary, #A96F45);
-  color: var(--ameza-primary, #A96F45) !important;
-  background: rgba(169, 111, 69, 0.05);
+.btn-outline-gold:hover {
+  border-color: var(--ameza-gold);
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--ameza-gold-bright) !important;
   transform: translateY(-2px);
 }
 
-/* ── Custom Scrollbars ────────────────────────────── */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.btn-copper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--ameza-copper);
+  color: #FFFFFF !important;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(224, 122, 95, 0.4);
+  transition: all var(--transition);
+  text-decoration: none;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--ameza-deep, #1E2824);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(169, 111, 69, 0.35);
-  border-radius: 4px;
-  border: 2px solid var(--ameza-deep, #1E2824);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--ameza-primary, #A96F45);
-}
-
-/* Selection Highlight */
-::selection {
-  background: var(--ameza-primary, #A96F45);
-  color: var(--ameza-white, #FFFFFF);
+.btn-copper:hover {
+  background: var(--ameza-copper-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(224, 122, 95, 0.55);
 }

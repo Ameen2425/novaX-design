@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — GLOBAL CSS RESET & FOUNDATION
+   AMEZA RESET & BASE SCROLLBARS (DEEP VELVET MIDNIGHT)
    ========================================================= */
 
 *,
@@ -8,86 +8,46 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-  width: 100%;
-  min-width: 320px;
   scroll-behavior: smooth;
-  font-size: 15px;
-  background-color: var(--ameza-bg);
+  background-color: var(--ameza-bg, #12090D);
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  width: 100%;
-  background-color: var(--ameza-bg, #F3EFE7);
-  background-image:
-    radial-gradient(
-      ellipse at 15% 10%,
-      rgba(169, 111, 69, 0.05) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      ellipse at 85% 15%,
-      rgba(199, 169, 142, 0.06) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      ellipse at 50% 85%,
-      rgba(169, 111, 69, 0.04) 0%,
-      transparent 55%
-    );
-  color: var(--ameza-text, #241E1A);
-  font-family: var(--font-body);
-  line-height: 1.65;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  min-height: 100vh;
+  background-color: var(--ameza-bg, #12090D);
+  color: var(--ameza-text, #FAF6F0);
   overflow-x: hidden;
   position: relative;
-  min-height: 100vh;
 }
 
-img,
-svg,
-video,
-canvas,
-picture {
-  display: block;
-  max-width: 100%;
-  height: auto;
+/* Custom 24K Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
-  max-width: 100%;
-  color: inherit;
+::-webkit-scrollbar-track {
+  background: var(--ameza-bg, #12090D);
 }
 
-input[type="search"] {
-  -webkit-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
+::-webkit-scrollbar-thumb {
+  background: var(--ameza-card, #2B141F);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ameza-border);
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance: none;
-  display: none;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-gold);
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
+/* Gold text selection highlight */
+::selection {
+  background: rgba(229, 184, 59, 0.32);
+  color: #FAF6F0;
 }
 
 a {
@@ -95,46 +55,13 @@ a {
   text-decoration: none;
 }
 
-/* Centralized Container Utility */
-.container,
-.main-container,
-.responsive-container {
-  width: min(calc(100% - 32px), 1400px);
-  margin-inline: auto;
-  box-sizing: border-box;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-@media (min-width: 1536px) {
-  .container,
-  .main-container,
-  .responsive-container {
-    width: min(calc(100% - 48px), 1500px);
-  }
-}
-
-@media (min-width: 1920px) {
-  .container,
-  .main-container,
-  .responsive-container {
-    width: min(calc(100% - 64px), 1600px);
-  }
-}
-
-/* Globally Hide Scrollbars (Zero Scrollbar Visibility) */
-html,
-body,
-* {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-
-::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-
-::selection {
-  background: var(--ameza-primary);
-  color: #FFFFFF;
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
 }

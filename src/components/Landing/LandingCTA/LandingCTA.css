@@ -1,0 +1,111 @@
+/* =========================================================
+   AMEZA LANDING FINAL BRAND CTA (BURGUNDY & LIQUID GOLD)
+   ========================================================= */
+
+.landing-cta-section {
+  padding: clamp(80px, 10vw, 140px) 0;
+  background: var(--ameza-section, #2E1A23);
+  border-top: 1px solid var(--ameza-border);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.landing-cta-container {
+  width: min(calc(100% - 48px), 940px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.landing-cta-card {
+  background: var(--ameza-card, #38202B);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-xl, 28px);
+  padding: clamp(48px, 6vw, 84px) clamp(24px, 4vw, 56px);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-cta-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #C5A059);
+  margin-bottom: 20px;
+}
+
+.landing-cta-heading {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(2.4rem, 4.8vw, 4.4rem);
+  font-weight: 500;
+  color: var(--ameza-text, #FAF6F0);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px 0;
+}
+
+.cta-italic {
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.landing-cta-desc {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.75;
+  color: var(--ameza-text-secondary, #D2C0BB);
+  max-width: 580px;
+  margin: 0 0 40px 0;
+}
+
+.landing-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.landing-cta-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ameza-gold-gradient);
+  color: #1C1015 !important;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition);
+}
+
+.landing-cta-primary-btn:hover {
+  background: var(--ameza-gold-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-lg);
+}
+
+.landing-cta-primary-btn span {
+  transition: transform var(--transition-fast);
+}
+
+.landing-cta-primary-btn:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+  .landing-cta-card {
+    padding: 36px 20px;
+  }
+}

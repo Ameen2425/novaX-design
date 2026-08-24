@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { ADD } from "../../../Redux/Features/cart/CartSlice";
 import "./DealProducts.css";
 
 const dealProductsData = [
@@ -62,6 +64,7 @@ const dealProductsData = [
 ];
 
 const DealProducts = () => {
+  let dispatch = useDispatch();
   const [wishlist, setWishlist] = useState({});
   const [toastMessage, setToastMessage] = useState("");
 
@@ -75,22 +78,15 @@ const DealProducts = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existing = cart.find((item) => item.id === product.id);
-
-    if (existing) {
-      existing.quantity = (existing.quantity || 1) + 1;
-    } else {
-      cart.push({
+    dispatch(
+      ADD({
         id: product.id,
         title: product.title,
         price: product.rawPrice,
         thumbnail: product.image,
-        quantity: 1,
-      });
-    }
+      })
+    );
 
-    localStorage.setItem("cart", JSON.stringify(cart));
     setToastMessage(`✓ ${product.title} added to cart!`);
     setTimeout(() => setToastMessage(""), 2800);
   };

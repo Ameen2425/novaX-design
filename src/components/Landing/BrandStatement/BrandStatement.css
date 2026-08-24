@@ -1,0 +1,75 @@
+/* =========================================================
+   AMEZA BRAND STATEMENT (BURGUNDY & LIQUID GOLD)
+   ========================================================= */
+
+.brand-statement-section {
+  padding: clamp(84px, 10vw, 140px) 0;
+  background: var(--ameza-section, #2E1A23);
+  border-top: 1px solid var(--ameza-border);
+  border-bottom: 1px solid var(--ameza-border);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.brand-statement-container {
+  width: min(calc(100% - 48px), 920px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.brand-statement-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statement-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ameza-gold, #C5A059);
+  margin-bottom: 20px;
+}
+
+.statement-heading {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(2.4rem, 4.4vw, 4.2rem);
+  font-weight: 500;
+  color: var(--ameza-text, #FAF6F0);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px 0;
+}
+
+.statement-italic {
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.statement-divider {
+  width: 48px;
+  height: 1.5px;
+  background: var(--ameza-gold, #C5A059);
+  margin-bottom: 28px;
+}
+
+.statement-desc {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.85;
+  color: var(--ameza-text-secondary, #D2C0BB);
+  margin: 0;
+  max-width: 720px;
+}
+
+@media (max-width: 600px) {
+  .brand-statement-section {
+    padding: 64px 0;
+  }
+}

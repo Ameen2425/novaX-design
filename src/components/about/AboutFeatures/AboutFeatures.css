@@ -1,148 +1,119 @@
 /* =========================================================
-   AMEZA — ABOUT FEATURES (SAGE + TERRACOTTA)
+   AMEZA ABOUT FEATURES (DEEP VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .about-features-section {
-  max-width: var(--container-max-width, 1500px);
-  margin: 0 auto 64px;
+  width: 100%;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
-  scroll-margin-top: 100px;
 }
 
+/* .about-section-heading & .about-section-label are defined in OurValues.css */
+
+/* ── Features Grid ────────────────────────────────────── */
 .about-features-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 16px !important;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 
 .about-feature-card {
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-lg);
-  padding: 28px 22px;
-  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
+  box-shadow: var(--shadow-card);
   transition: all var(--transition);
-  box-sizing: border-box;
-  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(229,184,59,0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
 }
 
 .about-feature-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--ameza-primary, #A96F45);
-  background: var(--ameza-card-hover, #F4EFE7);
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-border-gold);
+  box-shadow: var(--shadow-card-hover);
 }
 
+.about-feature-card:hover::before {
+  opacity: 1;
+}
+
+/* ── Card Header ──────────────────────────────────────── */
 .about-feat-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .about-feat-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--ameza-primary, #A96F45);
-  color: var(--ameza-white, #FFFFFF);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-body);
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
-  flex-shrink: 0;
+  color: var(--ameza-gold, #E5B83B);
+  letter-spacing: 0.14em;
 }
 
 .about-feat-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background: rgba(169, 111, 69, 0.15);
-  border: 1px solid rgba(169, 111, 69, 0.3);
-  color: var(--ameza-primary, #A96F45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
+  font-size: 22px;
   transition: transform var(--transition-fast);
+  line-height: 1;
 }
 
 .about-feature-card:hover .about-feat-icon {
-  transform: scale(1.08);
-  background: var(--ameza-primary, #A96F45);
-  color: var(--ameza-white, #FFFFFF);
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* ── Card Body ────────────────────────────────────────── */
+.about-feat-body {
+  flex: 1;
 }
 
 .about-feat-body h3 {
-  font-family: var(--font-display);
-  font-size: 16px;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.18rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--ameza-text, #241E1A);
-  margin-bottom: 8px;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 7px 0;
+  line-height: 1.2;
+  transition: color var(--transition-fast);
+}
+
+.about-feature-card:hover .about-feat-body h3 {
+  color: var(--ameza-gold-bright, #FFF5D0);
 }
 
 .about-feat-body p {
   font-family: var(--font-body);
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--ameza-text-secondary, #625850);
+  font-size: 12.5px;
+  color: var(--ameza-text-secondary, #DECBC6);
   margin: 0;
+  line-height: 1.6;
 }
 
-/* ── MOBILE 2x2 FEATURES GRID ────────────────────── */
-@media (max-width: 768px) {
-  .about-features-section {
-    padding: 0 12px;
-    margin-bottom: 36px;
-  }
-
+@media (max-width: 1100px) {
   .about-features-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-  }
-
-  .about-feature-card {
-    padding: 16px 12px;
-    border-radius: var(--radius-md);
-  }
-
-  .about-feat-header {
-    margin-bottom: 10px;
-  }
-
-  .about-feat-num {
-    width: 26px;
-    height: 26px;
-    font-size: 10px;
-  }
-
-  .about-feat-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 15px;
-  }
-
-  .about-feat-body h3 {
-    font-size: 13.5px;
-    margin-bottom: 4px;
-  }
-
-  .about-feat-body p {
-    font-size: 11.5px;
-    line-height: 1.45;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 580px) {
   .about-features-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 }

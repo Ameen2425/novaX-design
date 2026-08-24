@@ -1,65 +1,58 @@
 /* =========================================================
-   AMEZA — CART BENEFITS ROW (SAGE + TERRACOTTA)
+   AMEZA CART BENEFITS (BURGUNDY & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .cart-benefits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.cart-benefit {
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  box-shadow: 0 2px 8px rgba(36, 30, 26, 0.04);
-  transition: all var(--transition);
+  gap: 18px;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
+  padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
+.cart-benefit {
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-card, 18px);
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
+}
+
 .cart-benefit:hover {
+  background: var(--ameza-card-hover, #381A29);
+  border-color: var(--ameza-border-gold);
   transform: translateY(-4px);
-  background: var(--ameza-card-hover, #F4EFE7);
-  border-color: var(--ameza-primary, #A96F45);
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .cart-benefit span {
   font-size: 24px;
-  line-height: 1;
   flex-shrink: 0;
 }
 
 .cart-benefit h3 {
-  font-family: var(--font-display);
-  font-size: 15px;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.15rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--ameza-text, #241E1A);
-  margin-bottom: 4px;
+  color: var(--ameza-text, #FAF6F0);
+  margin: 0 0 4px 0;
 }
 
 .cart-benefit p {
   font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--ameza-text-secondary, #625850);
-  line-height: 1.5;
+  font-size: 12.5px;
+  color: var(--ameza-text-secondary, #DECBC6);
   margin: 0;
 }
 
-/* ── MOBILE RESPONSIVENESS ───────────────────────── */
 @media (max-width: 768px) {
   .cart-benefits {
     grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .cart-benefit {
-    padding: 16px 14px;
-    border-radius: var(--radius-md);
-    gap: 12px;
   }
 }

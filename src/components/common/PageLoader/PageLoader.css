@@ -1,11 +1,11 @@
 /* =========================================================
-   AMEZA — SPLASH LOADER (SAGE + TERRACOTTA)
+   AMEZA ORBITAL 24K GOLD PAGE LOADER
    ========================================================= */
 
 .page-loader-screen {
   position: fixed;
   inset: 0;
-  background: var(--ameza-bg, #F3EFE7);
+  background: radial-gradient(circle at 50% 45%, #25121B 0%, #140A0E 70%, #0D0509 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,138 +15,148 @@
 
 .page-loader-backdrop-glow {
   position: absolute;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(
-    circle,
-    rgba(169, 111, 69, 0.15) 0%,
-    rgba(231, 224, 213, 0.5) 45%,
-    transparent 70%
-  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(224, 122, 95, 0.1) 40%, transparent 70%);
   filter: blur(40px);
-  animation: pagePulseGlow 3s ease-in-out infinite alternate;
   pointer-events: none;
+  animation: glowPulse24K 3s ease-in-out infinite alternate;
 }
 
 .page-loader-box {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  gap: 18px;
   text-align: center;
-  padding: 32px;
+  max-width: 320px;
 }
 
+/* ── Orbital Rotating Rings ───────────────────────────── */
 .page-loader-ring-wrapper {
   position: relative;
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 28px;
 }
 
 .page-loader-ring {
   position: absolute;
   border-radius: 50%;
-  border: 2.5px solid transparent;
+  box-sizing: border-box;
 }
 
-.page-loader-ring.ring-outer {
+.ring-outer {
   inset: 0;
-  border-top-color: var(--ameza-primary, #A96F45);
-  border-bottom-color: rgba(169, 111, 69, 0.2);
-  border-right-color: var(--ameza-accent, #D7B8A8);
-  animation: pageSpinClockwise 2s linear infinite;
+  border: 2px dashed rgba(212, 175, 55, 0.45);
+  border-top-color: #FFF0C2;
+  border-right-color: #D4AF37;
+  animation: spinOuter 3.5s linear infinite;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
 }
 
-.page-loader-ring.ring-inner {
+.ring-inner {
   inset: 12px;
-  border-left-color: var(--ameza-primary-hover, #BE8459);
-  border-right-color: rgba(169, 111, 69, 0.15);
-  animation: pageSpinCounterClockwise 1.5s linear infinite;
+  border: 1.5px solid rgba(224, 122, 95, 0.25);
+  border-bottom-color: #D4AF37;
+  border-left-color: #FFF0C2;
+  animation: spinInner 2s linear infinite reverse;
 }
 
 .page-loader-logo-center {
+  position: relative;
   z-index: 3;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: pageLogoPulse 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.6));
+  animation: logoBreath 2.4s ease-in-out infinite alternate;
 }
 
-.page-loader-symbol .ameza-logo-symbol-wrap {
-  width: 68px;
-  height: 68px;
-}
-
-.page-loader-brand-title {
-  font-family: var(--font-display, "Playfair Display", Georgia, serif);
-  font-size: 26px;
+/* ── Brand Title ──────────────────────────────────────── */
+.page-loader-brand-title span {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 24px;
   font-weight: 700;
-  letter-spacing: 0.25em;
-  color: var(--ameza-primary, #A96F45);
-  margin-top: 4px;
+  letter-spacing: 0.24em;
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.3));
 }
 
-/* Progress shimmer bar */
+/* ── Shimmer Progress Bar ─────────────────────────────── */
 .page-loader-progress-track {
-  width: 210px;
+  width: 180px;
   height: 3px;
-  background: rgba(169, 111, 69, 0.15);
-  border-radius: var(--radius-pill, 999px);
+  background: rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius-pill);
   overflow: hidden;
   position: relative;
-  margin-top: 6px;
+  margin-bottom: 14px;
 }
 
 .page-loader-progress-bar {
-  width: 40%;
-  height: 100%;
-  background: var(--ameza-primary, #A96F45);
-  border-radius: var(--radius-pill, 999px);
   position: absolute;
-  animation: pageProgressIndeterminate 1.8s ease-in-out infinite;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: var(--ameza-gold-gradient);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  animation: progressSweep 1.8s ease-in-out infinite;
 }
 
 .page-loader-text {
-  font-family: var(--font-body, "Manrope", Arial, sans-serif);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: var(--ameza-text-secondary, #625850);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: var(--ameza-text-secondary, #D4C1BC);
   margin: 0;
-  opacity: 0.85;
+  animation: textFade 1.6s ease-in-out infinite alternate;
 }
 
 /* Keyframes */
-@keyframes pageSpinClockwise {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes spinOuter {
+  to { transform: rotate(360deg); }
 }
 
-@keyframes pageSpinCounterClockwise {
-  0% { transform: rotate(360deg); }
-  100% { transform: rotate(0deg); }
+@keyframes spinInner {
+  to { transform: rotate(360deg); }
 }
 
-@keyframes pageLogoPulse {
-  0% { transform: scale(0.94); filter: drop-shadow(0 0 6px rgba(184, 154, 98, 0.3)); }
-  100% { transform: scale(1.06); filter: drop-shadow(0 0 18px rgba(184, 154, 98, 0.7)); }
+@keyframes logoBreath {
+  0% { transform: scale(0.92); }
+  100% { transform: scale(1.06); }
 }
 
-@keyframes pagePulseGlow {
-  0% { transform: scale(0.88); opacity: 0.6; }
-  100% { transform: scale(1.12); opacity: 1; }
-}
-
-@keyframes pageProgressIndeterminate {
-  0% { left: -40%; width: 30%; }
-  50% { left: 30%; width: 50%; }
+@keyframes progressSweep {
+  0% { left: -50%; width: 30%; }
+  50% { width: 60%; }
   100% { left: 100%; width: 30%; }
+}
+
+@keyframes textFade {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+@keyframes glowPulse24K {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.85; }
 }

@@ -25,9 +25,6 @@ const ProductInfo = ({
   product,
   discount,
   originalPrice,
-  quantity,
-  decreaseQuantity,
-  increaseQuantity,
   addToCart,
   buyNow,
 }) => {
@@ -107,26 +104,6 @@ const ProductInfo = ({
           <strong className={isOutOfStock ? "text-out-stock" : isLowStock ? "text-low-stock" : "text-in-stock"}>
             {isOutOfStock ? "Out of Stock" : isLowStock ? "Limited" : "Verified In Stock"}
           </strong>
-        </div>
-      </motion.div>
-
-      {/* QUANTITY */}
-      <motion.div className="single-quantity-row" variants={fadeInUp}>
-        <span>Quantity</span>
-        <div className="single-quantity">
-          <motion.button
-            whileTap={{ scale: 0.85 }}
-            onClick={decreaseQuantity}
-          >
-            −
-          </motion.button>
-          <strong>{quantity}</strong>
-          <motion.button
-            whileTap={{ scale: 0.85 }}
-            onClick={increaseQuantity}
-          >
-            +
-          </motion.button>
         </div>
       </motion.div>
 

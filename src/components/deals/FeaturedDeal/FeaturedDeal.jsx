@@ -1,31 +1,25 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { ADD } from "../../../Redux/Features/cart/CartSlice";
 import "./FeaturedDeal.css";
 import amezaFeaturedDeal from "../../../assets/novax-featured-deal.jpg";
 
 const FeaturedDeal = () => {
+  let dispatch = useDispatch();
   const [toastMessage, setToastMessage] = useState("");
 
   const handleBuyFeatured = (e) => {
     e.preventDefault();
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const item = {
       id: 999,
       title: "Oud Noir Eau de Parfum",
       price: 3599,
       thumbnail: amezaFeaturedDeal,
-      quantity: 1,
     };
 
-    const existing = cart.find((c) => c.id === item.id);
-    if (existing) {
-      existing.quantity = (existing.quantity || 1) + 1;
-    } else {
-      cart.push(item);
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch(ADD(item));
     setToastMessage("✓ Oud Noir Eau de Parfum added to cart!");
     setTimeout(() => setToastMessage(""), 2800);
   };

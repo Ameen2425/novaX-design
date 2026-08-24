@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA — CARD IMAGE LAZY LOADER WITH BRAND WATERMARK
+   AMEZA LAZY IMAGE LOADER (24K GOLD & VELVET BURGUNDY)
    ========================================================= */
 
 .lazy-image-wrapper {
@@ -10,7 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ameza-section, #E7E0D5);
+  background: var(--ameza-image-bg, #220F18);
+  border-radius: inherit;
 }
 
 .lazy-image-skeleton {
@@ -20,8 +21,9 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background: var(--ameza-section, #E7E0D5);
+  background: var(--ameza-section, #25121B);
   overflow: hidden;
+  border-radius: inherit;
 }
 
 .lazy-image-shimmer {
@@ -29,11 +31,13 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(216, 207, 195, 0.5) 0%,
-    rgba(243, 239, 231, 0.8) 50%,
-    rgba(216, 207, 195, 0.5) 100%
+    rgba(37, 18, 27, 0.7) 0%,
+    rgba(61, 28, 44, 0.9) 30%,
+    rgba(212, 175, 55, 0.22) 50%,
+    rgba(61, 28, 44, 0.9) 70%,
+    rgba(37, 18, 27, 0.7) 100%
   );
-  background-size: 600px 100%;
+  background-size: 800px 100%;
   animation: lazyImageShimmer 1.8s infinite linear;
 }
 
@@ -42,24 +46,27 @@
   opacity: 0.35;
   transform: scale(0.75);
   animation: lazyWatermarkPulse 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
 }
 
 .lazy-image-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
   z-index: 2;
 }
 
 .lazy-image-img.loading {
   opacity: 0;
-  transform: scale(1.03);
+  transform: scale(1.05);
+  filter: blur(8px);
 }
 
 .lazy-image-img.loaded {
   opacity: 1;
   transform: scale(1);
+  filter: blur(0);
 }
 
 .lazy-image-fallback {
@@ -70,24 +77,24 @@
   gap: 8px;
   width: 100%;
   height: 100%;
-  background: var(--ameza-card, #FCFAF6);
-  color: var(--ameza-primary, #A96F45);
+  background: var(--ameza-card, #2E1622);
+  color: var(--ameza-gold, #D4AF37);
   padding: 16px;
 }
 
 .lazy-image-fallback-text {
-  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-family: var(--font-heading, var(--font-display));
   font-size: 12px;
   letter-spacing: 0.15em;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 @keyframes lazyImageShimmer {
-  0% { background-position: -600px 0; }
-  100% { background-position: 600px 0; }
+  0% { background-position: -800px 0; }
+  100% { background-position: 800px 0; }
 }
 
 @keyframes lazyWatermarkPulse {
   0% { opacity: 0.25; transform: scale(0.7); }
-  100% { opacity: 0.45; transform: scale(0.85); }
+  100% { opacity: 0.5; transform: scale(0.85); }
 }

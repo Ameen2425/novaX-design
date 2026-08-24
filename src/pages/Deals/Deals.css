@@ -1,21 +1,12 @@
 /* =========================================================
-   AMEZA — DEALS PAGE (THE PRIVATE EDIT)
+   AMEZA DEALS PAGE WRAPPER (DEEP VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .deals-page {
-  min-height: 100vh;
-  background-color: var(--ameza-bg, #F3EFE7);
-  color: var(--ameza-text, #241E1A);
-  padding-top: calc(62px + 24px);
-  padding-bottom: 48px;
-  overflow-x: hidden;
-  box-sizing: border-box;
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .deals-page {
-    padding-top: 80px;
-    padding-bottom: 24px;
-  }
+  min-height: 100vh;
+  background-color: var(--ameza-bg, #12090D);
+  color: var(--ameza-text, #FAF6F0);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }

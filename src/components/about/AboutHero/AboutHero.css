@@ -1,200 +1,241 @@
 /* =========================================================
-   AMEZA — ABOUT HERO (SAGE + TERRACOTTA)
+   AMEZA ABOUT HERO (DEEP VELVET + 24K IMPERIAL GOLD)
    ========================================================= */
 
 .about-hero {
-  max-width: var(--container-max-width, 1500px);
-  margin: 0 auto 64px;
-  padding: 0 clamp(16px, 4vw, 40px);
+  padding-top: calc(var(--header-height-desktop, 76px) + 24px);
+  padding-bottom: var(--section-gap-sm, 24px);
+  width: 100%;
+  background: var(--ameza-bg, #12090D);
   box-sizing: border-box;
 }
 
 .about-hero-container {
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto;
+  padding: clamp(32px, 4.5vw, 56px);
+  width: min(calc(100% - 32px), 1400px);
+  background: var(--ameza-section, #221018);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-xl, 28px);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(24px, 4vw, 56px);
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
-  background: var(--ameza-card, #FCFAF6);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-xl, 20px);
-  padding: clamp(36px, 5vw, 64px);
-  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.06);
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
+}
+
+/* Ambient gold glow in top-left */
+.about-hero-container::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -60px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(229, 184, 59, 0.07) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about-hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  z-index: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .about-hero-label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96F45);
-  margin-bottom: 16px;
-  display: block;
+  color: var(--ameza-gold, #E5B83B);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-hero-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--ameza-gold, #E5B83B);
+  opacity: 0.6;
 }
 
 .about-hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(34px, 4.2vw, 56px);
-  font-weight: 500;
-  color: var(--ameza-text, #241E1A);
-  line-height: 1.04;
-  margin: 0 0 18px 0;
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(2.4rem, 4.2vw, 4.2rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+  line-height: 1.06;
   letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
 }
 
 .about-hero-title span {
-  color: var(--ameza-primary, #A96F45);
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-style: italic;
+  font-weight: 400;
+  filter: drop-shadow(0 2px 12px rgba(229, 184, 59, 0.3));
 }
 
+/* Description paragraph — JSX uses .about-hero-description class */
 .about-hero-description {
   font-family: var(--font-body);
-  font-size: clamp(14.5px, 1.1vw, 16px);
-  line-height: 1.65;
-  color: var(--ameza-text-secondary, #625850);
-  max-width: 480px;
-  margin: 0 0 32px 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ameza-text-secondary, #DECBC6);
+  margin: 0 0 28px 0;
+  max-width: 500px;
 }
 
 .about-hero-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
+/* ── Gold CTA Button ──────────────────────────────────── */
+.btn-terracotta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ameza-gold-gradient);
+  color: #12090D !important;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition);
+}
+
+.btn-terracotta:hover {
+  background: var(--ameza-gold-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-lg);
+}
+
+/* ── Outline Button ───────────────────────────────────── */
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--ameza-text, #FAF6F0) !important;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ameza-border-gold);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.btn-outline-dark:hover {
+  background: rgba(229, 184, 59, 0.14);
+  color: var(--ameza-gold-bright, #FFF5D0) !important;
+  border-color: var(--ameza-gold, #E5B83B);
+  transform: translateY(-2px);
+}
+
+/* ── Right Side Visual ────────────────────────────────── */
 .about-hero-visual {
   position: relative;
   width: 100%;
+  z-index: 2;
 }
 
 .about-hero-image-frame {
   width: 100%;
-  height: clamp(280px, 32vw, 460px);
-  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3.4;
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  background: var(--ameza-section, #E7E0D5);
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
   position: relative;
+  border: 1px solid var(--ameza-border-card);
+  background: var(--ameza-card, #2B141F);
+  box-shadow: var(--shadow-card);
 }
 
 .about-hero-image-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
-  transition: transform 0.8s var(--ease-smooth);
+  transition: transform 0.7s var(--ease-luxury);
 }
 
 .about-hero-image-frame:hover img {
   transform: scale(1.04);
 }
 
+/* ── Floating Badge ───────────────────────────────────── */
 .about-floating-badge {
   position: absolute;
-  bottom: 18px;
-  left: 18px;
-  background: rgba(36, 30, 26, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-lg);
-  padding: 10px 18px;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(27, 12, 20, 0.92);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--ameza-border-gold);
+  border-radius: var(--radius-card, 16px);
+  padding: 14px 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
-  z-index: 2;
+  z-index: 3;
 }
 
 .about-badge-icon {
-  font-size: 18px;
-  color: var(--ameza-primary, #A96F45);
+  font-size: 22px;
+  color: var(--ameza-gold, #E5B83B);
+  filter: drop-shadow(0 0 8px rgba(229, 184, 59, 0.6));
+  flex-shrink: 0;
 }
 
 .about-badge-text strong {
-  font-family: var(--font-body);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--ameza-text, #241E1A);
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
   display: block;
+  margin-bottom: 2px;
 }
 
 .about-badge-text p {
   font-family: var(--font-body);
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  color: var(--ameza-primary, #A96F45);
+  font-size: 11px;
+  color: var(--ameza-text-secondary, #DECBC6);
   margin: 0;
-  text-transform: uppercase;
 }
 
-/* ── MOBILE-FIRST ABOUT HERO ─────────────────────── */
-@media (max-width: 768px) {
-  .about-hero {
-    padding: 0 12px;
-    margin-bottom: 36px;
-  }
-
+@media (max-width: 960px) {
   .about-hero-container {
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 24px 18px;
-    border-radius: var(--radius-lg);
-    gap: 24px;
-    text-align: center;
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 28px;
   }
-
-  .about-hero-content {
-    align-items: center;
-  }
-
-  .about-hero-title {
-    font-size: 30px;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
-
-  .about-hero-description {
-    font-size: 13.5px;
-    line-height: 1.55;
-    margin-bottom: 24px;
-  }
-
-  .about-hero-actions {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .about-hero-actions .btn-terracotta,
-  .about-hero-actions .btn-outline-dark {
-    width: 100%;
-    max-width: 320px;
-    border-radius: var(--radius-pill);
-  }
-
-  .about-hero-image-frame {
-    height: 240px;
-    border-radius: var(--radius-md);
-  }
-
-  .about-floating-badge {
-    bottom: 10px;
-    left: 10px;
-    padding: 8px 14px;
+  .about-hero {
+    padding-top: calc(var(--header-height-mobile, 64px) + 16px);
   }
 }

@@ -1,161 +1,117 @@
 /* =========================================================
-   AMEZA — PROMOTIONAL BANNER (WARM TRAVERTINE & COGNAC)
+   AMEZA DEAL PROMO (BURGUNDY & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .deal-promo-section {
   width: 100%;
-  max-width: var(--container-max-width, 1500px);
-  margin: 0 auto 64px;
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto var(--section-gap, 42px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
 }
 
 .deal-promo-container {
-  background: var(--ameza-section, #E7E0D5);
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  border-radius: var(--radius-xl, 20px);
-  padding: clamp(36px, 4.5vw, 56px) clamp(24px, 4vw, 56px);
+  background: var(--ameza-card, #2B141F);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-xl, 28px);
+  padding: clamp(32px, 4.5vw, 56px);
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 32px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
-  box-shadow: 0 12px 35px rgba(36, 30, 26, 0.06);
+  box-shadow: var(--shadow-card);
   box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
 }
 
-/* ── Left Content ────────────────────────────────── */
 .deal-promo-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  z-index: 2;
 }
 
 .deal-promo-eyebrow {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96F45);
-  background: rgba(169, 111, 69, 0.08);
-  border: 1px solid rgba(169, 111, 69, 0.25);
-  padding: 3px 12px;
-  border-radius: var(--radius-pill);
+  color: var(--ameza-gold, #E5B83B);
   margin-bottom: 14px;
-  display: inline-block;
+  display: block;
 }
 
 .deal-promo-heading {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.4vw, 44px);
-  font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-  color: var(--ameza-text, #241E1A);
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin: 0 0 12px 0;
 }
 
 .deal-promo-sub {
   font-family: var(--font-body);
-  font-size: clamp(14px, 1.1vw, 15.5px);
-  color: var(--ameza-text-secondary, #625850);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ameza-text-secondary, #DECBC6);
   margin: 0 0 28px 0;
-  line-height: 1.65;
 }
 
 .btn-promo-explore {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  height: 48px;
-  min-height: 44px;
-  padding: 0 32px;
-  background: var(--ameza-primary, #A96F45);
-  color: #FFFFFF !important;
+  background: var(--ameza-gold-gradient);
+  color: #12090D !important;
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  padding: 14px 30px;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  border: 1px solid var(--ameza-primary, #A96F45);
-  box-shadow: 0 4px 14px rgba(169, 111, 69, 0.20);
-  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition);
 }
 
 .btn-promo-explore:hover {
-  background: var(--ameza-primary-hover, #BE8459);
-  border-color: var(--ameza-primary-hover, #BE8459);
+  background: var(--ameza-gold-gradient-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(169, 111, 69, 0.30);
-  color: #FFFFFF !important;
+  box-shadow: var(--shadow-gold-lg);
 }
 
-/* ── Right 3D Visual ─────────────────────────────── */
 .deal-promo-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  z-index: 2;
+  width: 100%;
 }
 
 .deal-promo-img-wrap {
   width: 100%;
-  max-width: 440px;
-  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3.4;
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
   border: 1px solid var(--ameza-border);
-  box-shadow: 0 6px 18px rgba(36, 30, 26, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--ameza-card);
+  background: var(--ameza-section, #221018);
+  box-shadow: var(--shadow-card);
 }
 
 .deal-promo-img {
   width: 100%;
-  height: auto;
-  max-height: 280px;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s var(--ease-luxury);
 }
 
-.deal-promo-visual:hover .deal-promo-img {
+.deal-promo-img-wrap:hover .deal-promo-img {
   transform: scale(1.04);
 }
 
-/* ── RESPONSIVE ─────────────────────────────────── */
-@media (max-width: 900px) {
-  .deal-promo-section {
-    margin: 20px auto 20px;
-    padding: 0 12px;
-  }
+@media (max-width: 960px) {
   .deal-promo-container {
     grid-template-columns: 1fr;
-    padding: 28px 18px;
-    gap: 20px;
-  }
-  .deal-promo-content {
-    align-items: center;
-    text-align: center;
-  }
-  .deal-promo-sub {
-    margin-bottom: 20px;
-  }
-  .deal-promo-visual {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-  .btn-promo-explore {
-    width: 100%;
-    max-width: 320px;
+    padding: 32px 24px;
+    gap: 28px;
   }
 }

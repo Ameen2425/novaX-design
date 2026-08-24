@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { ADD } from "../../../Redux/Features/cart/CartSlice";
 import LazyImage from "../../common/LazyImage/LazyImage";
 import "./ProductCard.css";
 
@@ -14,6 +16,7 @@ const getCategoryFamily = (cat) => {
 
 const ProductCard = ({ id, title, description, price, image, category, rating }) => {
   const cardRef = useRef(null);
+  let dispatch = useDispatch();
   const catFamily = getCategoryFamily(category);
   const [transformStyle, setTransformStyle] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   const [sheenPos, setSheenPos] = useState({ x: 50, y: 50, opacity: 0 });
@@ -67,23 +70,17 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
     e.preventDefault();
     e.stopPropagation();
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = cart.find((item) => item.id === id);
-
-    if (existingProduct) {
-      existingProduct.quantity = (existingProduct.quantity || 1) + 1;
-    } else {
-      cart.push({
+    dispatch(
+      ADD({
         id,
         title,
         description,
         price,
         thumbnail: image,
-        quantity: 1,
-      });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+        category,
+        rating,
+      })
+    );
   };
 
   return (

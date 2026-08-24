@@ -1,0 +1,13 @@
+/* =========================================================
+   AMEZA FLAGSHIP EDITORIAL LANDING PAGE (BURGUNDY & GOLD)
+   ========================================================= */
+
+.ameza-landing-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--ameza-bg, #1C1015);
+  color: var(--ameza-text, #FAF6F0);
+  overflow-x: hidden;
+  position: relative;
+  box-sizing: border-box;
+}

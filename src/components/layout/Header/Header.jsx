@@ -1,11 +1,18 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 import "./Header.css";
 import BrandLogo from "../../common/BrandLogo/BrandLogo";
 
 const Header = () => {
   const location = useLocation();
+
+  let cartData = useSelector(
+    (state) => state.cart
+  )
+
+  let cartValue = cartData.length;
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -31,6 +38,7 @@ const Header = () => {
               <circle cx="20" cy="21" r="1"/>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
             </svg>
+            <span className="header-badge">{cartValue}</span>
           </NavLink>
           <NavLink to="/signup" className="mobile-action-btn" title="Sign Up / Register">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -87,6 +95,7 @@ const Header = () => {
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <path d="M16 10a4 4 0 0 1-8 0"/>
               </svg>
+              <span className="header-badge">{cartValue}</span>
             </NavLink>
           </div>
 

@@ -1,30 +1,29 @@
 /* =========================================================
-   AMEZA — AUTH HERO EDITORIAL PANEL (SAGE + TERRACOTTA)
+   AMEZA AUTH HERO PANEL — VIEWPORT FIT (DEEP VELVET + 24K GOLD)
    ========================================================= */
 
 .auth-hero-panel {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .auth-hero-card {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 520px;
-  border-radius: 24px;
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius-xl, 24px);
   overflow: hidden;
-  border: 1px solid var(--ameza-border, #D8CFC3);
-  box-shadow: 0 25px 60px rgba(36, 30, 26, 0.35);
+  border: 1px solid var(--ameza-border-card);
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(24px, 3.5vw, 40px);
+  padding: clamp(20px, 3vh, 36px) clamp(20px, 2.5vw, 36px);
   box-sizing: border-box;
-  background: var(--ameza-section, #E7E0D5);
 }
 
 .auth-hero-img {
@@ -33,117 +32,137 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  z-index: 0;
-  transition: transform 0.8s var(--ease-smooth);
+  z-index: 1;
+  transition: transform 0.8s var(--ease-luxury);
 }
 
 .auth-hero-card:hover .auth-hero-img {
   transform: scale(1.03);
 }
 
-/* Gradient Overlay to ensure crisp contrast and readability */
+/* Deep gradient overlay */
 .auth-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(36, 30, 26, 0.10) 0%,
-    rgba(36, 30, 26, 0.50) 40%,
-    rgba(36, 30, 26, 0.92) 100%
+    rgba(18, 9, 13, 0.1) 0%,
+    rgba(18, 9, 13, 0.45) 45%,
+    rgba(18, 9, 13, 0.88) 72%,
+    rgba(18, 9, 13, 0.97) 100%
   );
-  z-index: 1;
+  z-index: 2;
+}
+
+/* Gold vignette top edge */
+.auth-hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(229, 184, 59, 0.06) 0%, transparent 60%);
+  z-index: 2;
   pointer-events: none;
 }
 
-/* Floating Content on the image */
 .auth-hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
 }
 
 .auth-editorial-label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-primary, #A96F45);
-  margin-bottom: 12px;
+  color: var(--ameza-gold, #E5B83B);
+  margin-bottom: clamp(6px, 1vh, 10px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-editorial-label::before {
+  content: '';
   display: inline-block;
-  background: rgba(36, 30, 26, 0.85);
-  padding: 5px 14px;
-  border-radius: var(--radius-pill, 999px);
-  border: 1px solid rgba(169, 111, 69, 0.35);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 18px;
+  height: 1px;
+  background: var(--ameza-gold, #E5B83B);
+  opacity: 0.7;
 }
 
 .auth-editorial-title {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 3.8vw, 48px);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  color: #FFFFFF;
-  line-height: 1.05;
-  margin: 0 0 14px 0;
-  text-shadow: 0 2px 14px rgba(36, 30, 26, 0.6);
+  font-family: var(--font-heading, var(--font-display));
+  font-size: clamp(1.8rem, 3vh, 2.8rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 clamp(6px, 1vh, 12px) 0;
 }
 
 .auth-editorial-title span {
-  color: var(--ameza-primary, #A96F45);
+  background: var(--ameza-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .auth-editorial-desc {
   font-family: var(--font-body);
-  font-size: 14.5px;
+  font-size: clamp(12px, 1.6vh, 14px);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.80);
-  max-width: 440px;
-  margin: 0 0 22px 0;
-  text-shadow: 0 1px 8px rgba(36, 30, 26, 0.5);
+  color: var(--ameza-text-secondary, #DECBC6);
+  margin: 0 0 clamp(10px, 1.5vh, 20px) 0;
+  max-width: 360px;
 }
 
-/* Luxury Benefits Strip */
 .auth-benefits-strip {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .auth-benefit-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(36, 30, 26, 0.70);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 6px 14px;
-  border-radius: var(--radius-pill, 999px);
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.90);
-  box-shadow: 0 4px 14px rgba(36, 30, 26, 0.25);
+  gap: 5px;
+  background: rgba(34, 16, 24, 0.85);
+  border: 1px solid var(--ameza-border);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+  transition: border-color var(--transition-fast);
+}
+
+.auth-benefit-pill:hover {
+  border-color: var(--ameza-border-gold);
 }
 
 .auth-benefit-dot {
-  color: var(--ameza-primary, #A96F45);
-  font-size: 11px;
+  color: var(--ameza-gold, #E5B83B);
+  font-size: 10px;
+  filter: drop-shadow(0 0 4px rgba(229, 184, 59, 0.6));
 }
 
-/* ── RESPONSIVE MOBILE STYLES ────────────────────── */
-@media (max-width: 900px) {
+.auth-benefit-text {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF6F0);
+}
+
+@media (max-width: 960px) {
+  .auth-hero-panel,
   .auth-hero-card {
-    min-height: 380px;
-    padding: 24px 20px;
+    min-height: 240px;
+    flex: none;
+    height: 240px;
+    padding: 20px;
   }
 }
