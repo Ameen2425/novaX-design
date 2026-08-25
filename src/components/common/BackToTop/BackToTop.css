@@ -6,8 +6,8 @@
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border-gold, rgba(229, 184, 59, 0.65));
@@ -16,9 +16,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 999;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(229, 184, 59, 0.25);
-  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .back-to-top-btn:hover {
@@ -28,10 +28,21 @@
   box-shadow: var(--shadow-gold-lg);
 }
 
-@media (max-width: 768px) {
+/* ── Mobile View: Position Above Floating Bottom Navbar ── */
+@media (max-width: 900px) {
   .back-to-top-btn {
-    bottom: 20px;
-    right: 20px;
+    bottom: 84px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 14px rgba(229, 184, 59, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-top-btn {
+    bottom: 82px;
+    right: 14px;
     width: 40px;
     height: 40px;
   }

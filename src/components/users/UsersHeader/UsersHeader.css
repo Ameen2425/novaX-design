@@ -148,7 +148,7 @@
   font-size: 16px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .users-controls {
     flex-direction: column;
     align-items: stretch;
@@ -158,7 +158,7 @@
     max-width: 100%;
     width: 100%;
     height: 56px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
   }
   .users-search-icon {
     left: 20px;
