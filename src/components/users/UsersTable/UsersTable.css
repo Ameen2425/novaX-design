@@ -3,25 +3,29 @@
    ========================================================= */
 
 .users-page-table-wrap {
+  width: 100%;
+  margin-bottom: var(--section-gap, 42px);
+}
+
+/* ── DESKTOP TABLE (VISIBLE ON DESKTOP & TABLET > 768px) ── */
+.desktop-users-table {
   background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-xl, 24px);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  margin-bottom: var(--section-gap, 42px);
   width: 100%;
 }
 
-.users-page-table-wrap table {
+.desktop-users-table table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
 
-/* ── Table Header ─────────────────────────────────────── */
-.users-page-table-wrap thead th {
+.desktop-users-table thead th {
   background: var(--ameza-section, #1A0D15);
-  padding: 16px 24px;
+  padding: 18px 24px;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
@@ -32,21 +36,20 @@
   white-space: nowrap;
 }
 
-/* ── Table Rows ───────────────────────────────────────── */
-.users-page-table-wrap tbody tr {
+.desktop-users-table tbody tr {
   border-bottom: 1px solid var(--ameza-border);
   transition: background var(--transition-fast);
 }
 
-.users-page-table-wrap tbody tr:last-child {
+.desktop-users-table tbody tr:last-child {
   border-bottom: none;
 }
 
-.users-page-table-wrap tbody tr:hover {
+.desktop-users-table tbody tr:hover {
   background: var(--ameza-card-hover, #2E1826);
 }
 
-.users-page-table-wrap tbody td {
+.desktop-users-table tbody td {
   padding: 16px 24px;
   font-family: var(--font-body);
   font-size: 13.5px;
@@ -54,7 +57,7 @@
   vertical-align: middle;
 }
 
-/* ── Cell Styles ──────────────────────────────────────── */
+/* ── Common Cell Components ───────────────────────────── */
 .user-id-cell {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -77,7 +80,7 @@
   color: #0D070B;
   font-family: var(--font-heading, var(--font-display));
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,10 +111,12 @@
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   font-size: 12px;
-  color: var(--ameza-text-secondary, #DAC8C3);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  font-family: var(--font-mono);
+  font-weight: 600;
 }
 
-/* ── Action Buttons ───────────────────────────────────── */
+/* ── Common Action Buttons ────────────────────────────── */
 .users-page-table-wrap .btn {
   padding: 8px 16px;
   border-radius: var(--radius-pill);
@@ -123,6 +128,7 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   transition: all var(--transition-fast);
   white-space: nowrap;
@@ -139,7 +145,6 @@
   color: #0D070B;
   border-color: transparent;
   box-shadow: var(--shadow-gold);
-  transform: translateY(-1px);
 }
 
 .users-page-table-wrap .btn-danger {
@@ -153,17 +158,104 @@
   color: #FFFFFF;
   border-color: transparent;
   box-shadow: 0 4px 14px rgba(225, 29, 72, 0.45);
-  transform: translateY(-1px);
 }
 
-/* ── Responsive ───────────────────────────────────────── */
-@media (max-width: 900px) {
-  .users-page-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* ── MOBILE CARDS VIEW (HIDDEN ON DESKTOP) ─────────────── */
+.mobile-users-cards {
+  display: none;
+}
+
+/* ── MOBILE ONLY SWITCH (< 768px) ─────────────────────── */
+@media (max-width: 768px) {
+  .desktop-users-table {
+    display: none;
   }
-  .users-page-table-wrap thead th,
-  .users-page-table-wrap tbody td {
-    padding: 12px 16px;
+
+  .mobile-users-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .mobile-user-card {
+    background: var(--ameza-card, #23121D);
+    border: 1px solid var(--ameza-border-card);
+    border-radius: var(--radius-xl, 20px);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-user-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mobile-user-info-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-user-name {
+    font-family: var(--font-heading, var(--font-display));
+    font-size: 16.5px;
+    font-weight: 600;
+    color: var(--ameza-text, #FAF7F2);
+  }
+
+  .mobile-user-id {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--ameza-gold, #E5B83B);
+    font-weight: 700;
+  }
+
+  .mobile-user-email-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ameza-section, #1A0D15);
+    border: 1px solid var(--ameza-border);
+    padding: 9px 14px;
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+  }
+
+  .mobile-user-email-text {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    color: var(--ameza-text-secondary, #DAC8C3);
+    word-break: break-all;
+    line-height: 1.2;
+  }
+
+  .mobile-user-actions-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .mobile-user-btn {
+    height: 42px;
+    width: 100%;
+    font-size: 12.5px !important;
+  }
+
+  .mobile-empty-users {
+    text-align: center;
+    padding: 48px 16px;
+    background: var(--ameza-card, #23121D);
+    border: 1px solid var(--ameza-border-card);
+    border-radius: var(--radius-xl, 20px);
   }
 }

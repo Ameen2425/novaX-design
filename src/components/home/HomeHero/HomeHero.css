@@ -79,6 +79,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 /* ── Editorial Headline Matching Master Reference ───────── */
@@ -93,7 +94,7 @@
 
 .hero-title-main {
   font-family: var(--font-heading, "Playfair Display", serif);
-  font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
   font-weight: 500;
   color: #FFFFFF;
   letter-spacing: -0.03em;
@@ -102,7 +103,7 @@
 
 .hero-title-italic {
   font-family: var(--font-heading, "Playfair Display", serif);
-  font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
   font-weight: 400;
   font-style: italic;
   background: linear-gradient(135deg, #FFF6D6 0%, #F5CE68 25%, #E5B83B 55%, #D49B28 80%, #FFF0BA 100%);
@@ -323,19 +324,56 @@
   50% { transform: translateY(4px); }
 }
 
+/* ── Mobile View (< 768px) ────────────────────────────── */
 @media (max-width: 768px) {
   .home-hero-fixed-banner {
     min-height: auto;
-    padding: calc(var(--header-height-mobile, 64px) + 24px) 16px 40px;
+    padding: calc(var(--header-height-mobile, 64px) + 20px) 16px 44px;
+    margin-bottom: 24px;
   }
+  
+  .hero-editorial-title {
+    margin-bottom: 8px;
+  }
+  
+  .hero-title-main {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+  
+  .hero-title-italic {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
   .flagship-dash {
-    width: 24px;
+    width: 20px;
   }
+
   .flagship-text {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     letter-spacing: 0.14em;
     white-space: normal;
   }
+
+  .hero-editorial-desc {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  .hero-editorial-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .btn-hero-primary-gold,
+  .btn-hero-glass-outline {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 13px 20px;
+  }
+
   .hero-editorial-benefits {
     flex-direction: column;
     border-radius: var(--radius-xl, 20px);
@@ -344,8 +382,17 @@
     align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 12px;
   }
+
   .benefit-divider {
     display: none;
+  }
+
+  /* Prevent overlapping on mobile by positioning in normal document flow */
+  .hero-scroll-badge {
+    position: static;
+    transform: none;
+    margin-top: 14px;
   }
 }
