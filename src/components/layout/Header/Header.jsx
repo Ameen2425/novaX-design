@@ -144,8 +144,8 @@ const Header = () => {
         </div>
       </header>
 
-      {/* MOBILE BOTTOM FLOATING CAPSULE NAVIGATION */}
-      <nav className="mobile-bottom-nav">
+      {/* MOBILE BOTTOM FLOATING CAPSULE NAVIGATION (ICON ONLY LUXURY DOCK) */}
+      <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
         {navLinks.map((item) => {
           const isActive =
             item.path === "/"
@@ -157,28 +157,30 @@ const Header = () => {
               key={item.path}
               to={item.path}
               className={`mobile-nav-item ${isActive ? "active" : ""}`}
+              title={item.name}
+              aria-label={item.name}
             >
-              <div className="mobile-nav-icon-wrap">
-                {isActive && (
-                  <motion.div
-                    layoutId="mobileActiveNavPill"
-                    className="mobile-nav-active-bg"
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 30,
-                    }}
-                  />
-                )}
+              {isActive && (
+                <motion.div
+                  layoutId="mobileNavActivePill"
+                  className="mobile-nav-active-pill"
+                  transition={{
+                    type: "spring",
+                    stiffness: 450,
+                    damping: 32,
+                  }}
+                />
+              )}
 
+              <div className="mobile-nav-icon-wrap">
                 {item.name === "Home" && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                     <polyline points="9 22 9 12 15 12 15 22"/>
                   </svg>
                 )}
                 {item.name === "Products" && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="3" width="7" height="7" rx="1.5"/>
                     <rect x="14" y="3" width="7" height="7" rx="1.5"/>
                     <rect x="14" y="14" width="7" height="7" rx="1.5"/>
@@ -186,19 +188,19 @@ const Header = () => {
                   </svg>
                 )}
                 {item.name === "Deals" && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                   </svg>
                 )}
                 {item.name === "About" && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10"/>
                     <line x1="12" y1="16" x2="12" y2="12"/>
                     <line x1="12" y1="8" x2="12.01" y2="8"/>
                   </svg>
                 )}
                 {item.name === "User" && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                     <circle cx="9" cy="7" r="4"/>
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
@@ -206,7 +208,6 @@ const Header = () => {
                   </svg>
                 )}
               </div>
-              <span className="mobile-nav-label">{item.name}</span>
             </NavLink>
           );
         })}

@@ -31,19 +31,19 @@
 /* ── Mobile View: Position Above Floating Bottom Navbar ── */
 @media (max-width: 900px) {
   .back-to-top-btn {
-    bottom: 84px;
+    bottom: 90px;
     right: 18px;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 14px rgba(229, 184, 59, 0.3);
   }
 }
 
 @media (max-width: 480px) {
   .back-to-top-btn {
-    bottom: 82px;
-    right: 14px;
-    width: 40px;
-    height: 40px;
+    bottom: 88px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
   }
 }

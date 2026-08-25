@@ -165,21 +165,23 @@
 /* ── Mobile Toggle ─────────────────────────────────────── */
 .landing-mobile-toggle {
   display: none;
-  background: none;
-  border: 1px solid var(--ameza-border-light);
-  color: var(--ameza-text);
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm, 10px);
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: all var(--transition-fast);
 }
 
 .landing-mobile-toggle:hover {
-  background: var(--ameza-card);
-  border-color: var(--ameza-border);
+  background: var(--ameza-card-hover);
+  border-color: var(--ameza-gold);
+  color: var(--ameza-gold);
 }
 
 /* ── Mobile Menu Overlay ───────────────────────────────── */
@@ -187,17 +189,17 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(7, 3, 6, 0.98);
-  backdrop-filter: blur(32px) saturate(1.4);
-  -webkit-backdrop-filter: blur(32px) saturate(1.4);
-  z-index: 900;
+  background: rgba(13, 7, 11, 0.98);
+  backdrop-filter: blur(36px) saturate(1.5);
+  -webkit-backdrop-filter: blur(36px) saturate(1.5);
+  z-index: 99999;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 44px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition-slow);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .landing-mobile-menu.menu-open {
@@ -207,33 +209,34 @@
 
 .landing-mobile-menu-close {
   position: absolute;
-  top: 22px;
-  right: 22px;
-  background: none;
-  border: 1px solid var(--ameza-border-light);
-  color: var(--ameza-text-muted);
-  font-size: 18px;
+  top: 20px;
+  right: 20px;
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-gold, rgba(229, 184, 59, 0.6));
+  color: var(--ameza-gold-bright, #FFF5D0);
   cursor: pointer;
   padding: 0;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
-  line-height: 1;
+  z-index: 100000;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 14px rgba(229, 184, 59, 0.3);
 }
 
 .landing-mobile-menu-close:hover {
-  color: var(--ameza-text);
-  border-color: var(--ameza-border);
-  background: var(--ameza-card);
+  background: var(--ameza-gold-gradient);
+  color: #0D070B;
+  border-color: transparent;
+  transform: rotate(90deg) scale(1.05);
 }
 
 .landing-mobile-nav-link {
   font-family: var(--font-heading);
-  font-size: clamp(36px, 8vw, 60px);
+  font-size: clamp(36px, 8vw, 56px);
   font-weight: 400;
   color: var(--ameza-text);
   text-decoration: none;
@@ -263,22 +266,21 @@
 
 .landing-mobile-enter {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #0D070B;
+  color: #0D070B !important;
   text-decoration: none;
-  padding: 14px 40px;
+  padding: 16px 44px;
   background: var(--ameza-gold-gradient);
   border-radius: var(--radius-pill);
   transition: all var(--transition-fast);
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-gold-lg);
 }
 
 .landing-mobile-enter:hover {
   background: var(--ameza-gold-gradient-hover);
-  box-shadow: var(--shadow-gold-lg);
   transform: translateY(-2px);
 }
 
