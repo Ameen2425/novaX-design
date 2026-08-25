@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA LOGIN FORM — VIEWPORT FIT (OBSIDIAN & 24K GOLD)
+   AMEZA LOGIN FORM — VIEWPORT FIT & RESPONSIVE (OBSIDIAN & 24K GOLD)
    ========================================================= */
 
 .auth-form-wrapper {
@@ -12,15 +12,17 @@
 .auth-back-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 12.5px;
+  gap: 8px;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--ameza-gold, #E5B83B);
   text-decoration: none;
-  margin-bottom: 10px;
-  transition: all var(--transition-fast);
+  margin-bottom: 12px;
+  transition: all var(--transition-fast, 0.2s);
   flex-shrink: 0;
+  width: fit-content;
 }
 
 .auth-back-link:hover {
@@ -31,97 +33,127 @@
 /* ── Form Card ────────────────────────────────────────── */
 .auth-form-card {
   background: var(--ameza-card, #23121D);
-  border: 1px solid var(--ameza-border-card);
+  border: 1px solid var(--ameza-border-card, rgba(229, 184, 59, 0.28));
   border-radius: var(--radius-xl, 24px);
-  padding: clamp(18px, 2.2vh, 32px) clamp(20px, 2.5vw, 36px);
+  padding: clamp(24px, 3.5vh, 40px) clamp(20px, 3vw, 40px);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 10px 30px -5px rgba(0, 0, 0, 0.8));
   box-sizing: border-box;
   flex: 1;
   min-height: 0;
   justify-content: center;
 }
 
+.auth-header-block {
+  margin-bottom: clamp(14px, 2vh, 22px);
+  flex-shrink: 0;
+}
+
 .auth-form-badge {
-  font-family: var(--font-body);
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ameza-gold, #E5B83B);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   display: block;
-  flex-shrink: 0;
 }
 
 .auth-form-title {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(1.5rem, 2.2vh, 2.1rem);
-  font-weight: 600;
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(1.6rem, 2.8vh, 2.3rem);
+  font-weight: 700;
   color: var(--ameza-text, #FAF7F2);
-  margin: 0 0 3px 0;
-  line-height: 1.1;
-  flex-shrink: 0;
+  margin: 0 0 4px 0;
+  line-height: 1.15;
 }
 
 .auth-subtitle {
-  font-family: var(--font-body);
-  font-size: 12.5px;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: clamp(12.5px, 1.6vh, 13.5px);
   color: var(--ameza-text-secondary, #DAC8C3);
-  margin: 0 0 clamp(10px, 1.5vh, 18px) 0;
+  margin: 0;
   line-height: 1.5;
-  flex-shrink: 0;
 }
 
 /* ── Form Groups ──────────────────────────────────────── */
 .form-group {
-  margin-bottom: clamp(8px, 1.2vh, 14px);
+  margin-bottom: clamp(12px, 1.8vh, 18px);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
 
+.form-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
 .form-group label {
-  font-family: var(--font-body);
-  font-size: 11.5px;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: var(--ameza-text-secondary, #DAC8C3);
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+}
+
+.form-group-header label {
+  margin-bottom: 0;
 }
 
 .input-wrap {
   position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input-field-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--ameza-text-muted, #9E8B89);
+  pointer-events: none;
+  transition: color var(--transition-fast, 0.2s);
 }
 
 .input-wrap input {
   width: 100%;
-  height: clamp(40px, 5.5vh, 46px);
+  height: clamp(44px, 5.5vh, 50px);
   background: var(--ameza-section, #1A0D15);
-  border: 1px solid var(--ameza-border-card);
-  border-radius: var(--radius-pill);
-  padding: 0 16px;
-  font-family: var(--font-body);
-  font-size: 13.5px;
+  border: 1px solid var(--ameza-border-card, rgba(229, 184, 59, 0.28));
+  border-radius: var(--radius-pill, 999px);
+  padding: 0 16px 0 44px;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 14px;
   color: var(--ameza-text, #FAF7F2);
   outline: none;
   box-sizing: border-box;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast, 0.2s), box-shadow var(--transition-fast, 0.2s), background var(--transition-fast, 0.2s);
 }
 
 .input-wrap input:focus {
   border-color: var(--ameza-gold, #E5B83B);
-  box-shadow: 0 0 0 3px rgba(229, 184, 59, 0.18);
+  background: rgba(35, 18, 29, 0.95);
+  box-shadow: 0 0 0 3px rgba(229, 184, 59, 0.18), 0 0 16px rgba(229, 184, 59, 0.15);
+}
+
+.input-wrap input:focus + .input-field-icon,
+.input-wrap:focus-within .input-field-icon {
+  color: var(--ameza-gold, #E5B83B);
 }
 
 .input-wrap input::placeholder {
   color: var(--ameza-text-muted, #9E8B89);
+  font-size: 13.5px;
 }
 
 .password-wrap input {
-  padding-right: 46px;
+  padding-right: 48px;
 }
 
 .pwd-toggle-btn {
@@ -136,11 +168,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color var(--transition-fast);
+  padding: 6px;
+  border-radius: 50%;
+  transition: color var(--transition-fast, 0.2s), background var(--transition-fast, 0.2s);
 }
 
 .pwd-toggle-btn:hover {
   color: var(--ameza-gold, #E5B83B);
+  background: rgba(229, 184, 59, 0.08);
 }
 
 /* ── Options Row ──────────────────────────────────────── */
@@ -148,17 +183,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: clamp(10px, 1.4vh, 18px);
+  margin-bottom: clamp(14px, 2vh, 22px);
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .checkbox-wrap {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   cursor: pointer;
+  user-select: none;
 }
 
 .checkbox-wrap input {
@@ -166,43 +202,44 @@
 }
 
 .checkbox-custom {
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--ameza-border);
-  border-radius: 3px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid var(--ameza-border, rgba(229, 184, 59, 0.22));
+  border-radius: 4px;
   background: var(--ameza-section, #1A0D15);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-fast, 0.2s);
   flex-shrink: 0;
 }
 
 .checkbox-wrap input:checked + .checkbox-custom {
   background: var(--ameza-gold, #E5B83B);
   border-color: var(--ameza-gold, #E5B83B);
-  box-shadow: 0 0 6px rgba(229, 184, 59, 0.4);
+  box-shadow: 0 0 8px rgba(229, 184, 59, 0.4);
 }
 
 .checkbox-wrap input:checked + .checkbox-custom::after {
   content: "✓";
   color: #0D070B;
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 .checkbox-label {
-  font-family: var(--font-body);
-  font-size: 12px;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 12.5px;
   color: var(--ameza-text-secondary, #DAC8C3);
 }
 
 .forgot-link {
-  font-family: var(--font-body);
+  font-family: var(--font-body, "Manrope", sans-serif);
   font-size: 12px;
+  font-weight: 600;
   color: var(--ameza-gold, #E5B83B);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast, 0.2s);
 }
 
 .forgot-link:hover {
@@ -213,25 +250,27 @@
 /* ── Submit Button ────────────────────────────────────── */
 .auth-primary-btn {
   width: 100%;
-  height: clamp(42px, 5.5vh, 48px);
+  height: clamp(44px, 5.8vh, 50px);
   background: var(--ameza-gold-gradient);
   color: #0D070B !important;
-  font-family: var(--font-body);
-  font-size: 12.5px;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-pill, 999px);
   border: none;
   cursor: pointer;
   box-shadow: var(--shadow-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: clamp(10px, 1.5vh, 16px);
-  transition: all var(--transition);
+  gap: 10px;
+  margin-bottom: clamp(14px, 2vh, 20px);
+  transition: all var(--transition, 0.35s);
   flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .auth-primary-btn:hover {
@@ -241,7 +280,7 @@
 }
 
 .btn-arrow {
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast, 0.2s);
 }
 
 .auth-primary-btn:hover .btn-arrow {
@@ -251,8 +290,8 @@
 /* ── Switch Prompt ────────────────────────────────────── */
 .auth-switch-text {
   text-align: center;
-  font-family: var(--font-body);
-  font-size: 12.5px;
+  font-family: var(--font-body, "Manrope", sans-serif);
+  font-size: 13px;
   color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
   flex-shrink: 0;
@@ -262,7 +301,8 @@
   color: var(--ameza-gold, #E5B83B);
   font-weight: 700;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  margin-left: 4px;
+  transition: color var(--transition-fast, 0.2s);
 }
 
 .auth-switch-link:hover {
@@ -270,26 +310,29 @@
   text-decoration: underline;
 }
 
-/* ── Divider ──────────────────────────────────────────── */
-.auth-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: clamp(8px, 1.2vh, 14px) 0;
-  flex-shrink: 0;
-}
+/* ── Mobile Optimization (≤ 480px) ────────────────────── */
+@media (max-width: 480px) {
+  .auth-form-card {
+    padding: 22px 18px;
+    border-radius: var(--radius-lg, 16px);
+  }
 
-.auth-divider span {
-  font-family: var(--font-body);
-  font-size: 11px;
-  color: var(--ameza-text-muted, #9E8B89);
-  white-space: nowrap;
-}
+  .auth-form-title {
+    font-size: 1.5rem;
+  }
 
-.auth-divider::before,
-.auth-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--ameza-border);
+  .input-wrap input {
+    height: 46px;
+    font-size: 16px; /* Prevents auto-zoom in iOS Safari */
+    padding: 0 14px 0 40px;
+  }
+
+  .input-field-icon {
+    left: 14px;
+  }
+
+  .auth-primary-btn {
+    height: 48px;
+    font-size: 13px;
+  }
 }

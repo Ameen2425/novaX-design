@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import pineEditorialImg from "../../../assets/pine-editorial.jpg";
-import pinePhilosophyImg from "../../../assets/pine-philosophy.jpg";
+import editorialImg from "../../../assets/ameza-landing-editorial.jpg";
+import philosophyImg from "../../../assets/ameza-landing-philosophy.jpg";
 import "./CategoryShowcase.css";
 
 const CategoryShowcase = () => (
@@ -15,8 +15,8 @@ const CategoryShowcase = () => (
         transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
       >
         <img
-          src={pineEditorialImg}
-          alt="Artisan leather and craft tools on a dark stone surface"
+          src={editorialImg}
+          alt="Artisan bespoke leather goods with gold hardware on dark obsidian surface"
           className="es-main-image"
           loading="lazy"
         />
@@ -47,8 +47,8 @@ const CategoryShowcase = () => (
 
         <div className="es-small-image-wrap" aria-hidden="true">
           <img
-            src={pinePhilosophyImg}
-            alt="Ceramic vessel in a pine green architectural space"
+            src={philosophyImg}
+            alt="Sculptural brass and travertine art vessel in architectural space"
             className="es-small-image"
             loading="lazy"
           />

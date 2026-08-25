@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pineHeroImg from "../../../assets/pine-hero.jpg";
+import craftImg from "../../../assets/ameza-landing-craft.jpg";
 import "./ProductHighlights.css";
 
 const qualities = [
@@ -55,8 +55,8 @@ const ProductHighlights = () => (
         transition={{ duration: 1.0, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
       >
         <img
-          src={pineHeroImg}
-          alt="A serene studio interior with ceramic vessel and candlelight"
+          src={craftImg}
+          alt="Bespoke luxury 24K gold horology and jewelry craftsmanship on dark velvet textile"
           className="artisan-image"
           loading="lazy"
         />

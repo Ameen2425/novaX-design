@@ -44,7 +44,7 @@
   display: block;
   transform: scale(1.04);
   transition: transform 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  filter: brightness(0.75) saturate(0.78);
+  filter: brightness(0.9) saturate(0.95);
 }
 
 .es-main-image-wrap:hover .es-main-image {
@@ -138,14 +138,14 @@
   height: 150px;
   object-fit: cover;
   display: block;
-  filter: brightness(0.72) saturate(0.75);
+  filter: brightness(0.88) saturate(0.95);
   transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter var(--transition);
   transform: scale(1.03);
 }
 
 .es-small-image-wrap:hover .es-small-image {
   transform: scale(1.0);
-  filter: brightness(0.8) saturate(0.82);
+  filter: brightness(0.96) saturate(1.0);
 }
 
 /* ── Mobile ────────────────────────────────────────────── */

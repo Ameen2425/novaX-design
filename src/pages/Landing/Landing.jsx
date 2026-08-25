@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/pine-tokens.css";
 import "./Landing.css";
 
 import LandingHeader from "../../components/Landing/LandingHeader/LandingHeader";

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import pineHeroImg from "../../../assets/pine-hero.jpg";
+import landingHeroImg from "../../../assets/ameza-landing-hero.jpg";
 import "./LandingHero.css";
 
 const fadeUp = (delay = 0) => ({
@@ -94,8 +94,8 @@ const LandingHero = () => {
         variants={fadeIn(0)}
       >
         <img
-          src={pineHeroImg}
-          alt="An atmospheric editorial interior — ceramic vessel, linen and candlelight on dark wood"
+          src={landingHeroImg}
+          alt="Curated luxury still life — sculptural 24K gold bronze art vessel, ceramic decanter and high-end editorial essentials on dark obsidian marble"
           className="hero-image-main"
         />
         <div className="hero-image-overlay" aria-hidden="true" />

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Signup.css";
-import amezaSignupHero from "../../assets/novax-signup-hero.jpg";
+import amezaSignupHero from "../../assets/ameza-signup-hero.jpg";
 
 import AuthHero from "../../components/auth/AuthHero/AuthHero";
 import SignupForm from "../../components/auth/SignupForm/SignupForm";
@@ -31,7 +31,7 @@ const Signup = () => {
     setError(message);
     setTimeout(() => {
       setError("");
-    }, 2000);
+    }, 2800);
   };
 
   const validation = (e) => {
@@ -40,15 +40,15 @@ const Signup = () => {
     const { name, email, mobile, password } = form;
 
     if (!name || !email || !mobile || !password) {
-      return showError("All Fields are Required");
+      return showError("All fields are required");
     }
 
     if (!/^\S+@\S+\.\S+$/.test(email)) {
-      return showError("Enter a Valid Email");
+      return showError("Please enter a valid email address");
     }
 
     if (!/^[0-9]{10}$/.test(mobile)) {
-      return showError("Enter a Valid Mobile Number");
+      return showError("Please enter a valid 10-digit mobile number");
     }
 
     if (password.length < 6) {
@@ -75,12 +75,13 @@ const Signup = () => {
         {error && (
           <motion.div
             className="signup-error-box"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            {error}
+            <span className="signup-error-icon">✦</span>
+            <span>{error}</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -93,7 +94,7 @@ const Signup = () => {
         transition={{ duration: 0.4 }}
       >
         {/* Subtle ambient luxury glow */}
-        <div className="auth-ambient-glow"></div>
+        <div className="signup-ambient-glow"></div>
 
         <div className="signup-container">
           {/* Left Editorial Section */}

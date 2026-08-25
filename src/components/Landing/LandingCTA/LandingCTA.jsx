@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import pineEditorialImg from "../../../assets/pine-editorial.jpg";
+import ctaPortalImg from "../../../assets/ameza-landing-cta.jpg";
 import "./LandingCTA.css";
 
 const LandingCTA = () => (
   <section className="final-cta-section" aria-labelledby="final-cta-heading">
     <img
-      src={pineEditorialImg}
-      alt=""
+      src={ctaPortalImg}
+      alt="Atmospheric architectural luxury portal with radiant golden interior"
       className="final-cta-image"
       aria-hidden="true"
       loading="lazy"

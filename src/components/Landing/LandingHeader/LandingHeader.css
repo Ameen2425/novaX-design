@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   height: 72px;
-  z-index: 950;
+  z-index: 1000;
   background: transparent;
   transition:
     background     var(--transition),

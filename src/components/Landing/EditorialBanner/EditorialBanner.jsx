@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import pinePhilosophyImg from "../../../assets/pine-philosophy.jpg";
+import momentImg from "../../../assets/ameza-landing-moment.jpg";
 import "./EditorialBanner.css";
 
 const EditorialBanner = () => (
   <section className="image-moment-section" aria-label="Editorial visual moment">
     <img
-      src={pinePhilosophyImg}
-      alt="A ceramic vessel in a serene pine green architectural space"
+      src={momentImg}
+      alt="Cinematic luxury flagship boutique interior with gilded panels and ambient lighting"
       className="image-moment-bg"
       loading="lazy"
     />

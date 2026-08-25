@@ -1,11 +1,13 @@
 /* =========================================================
    AMEZA WORLD (SECTION 07) — EDITORIAL WORLD PANELS
+   VELVET OBSIDIAN & 24K GOLD LUXURY SYSTEM
    ========================================================= */
 
 .ameza-world-section {
-  background: var(--pine-bg);
+  background: var(--ameza-section, #1A0D15);
   padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 72px);
   overflow: hidden;
+  position: relative;
 }
 
 .ameza-world-inner {
@@ -25,31 +27,31 @@
 }
 
 .world-label {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--apricot);
+  color: var(--ameza-gold, #E5B83B);
   display: block;
   margin-bottom: 12px;
 }
 
 .world-heading {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading, "Playfair Display", serif);
   font-size: clamp(32px, 3.8vw, 58px);
   font-weight: 700;
   line-height: 1.04;
   letter-spacing: -0.02em;
-  color: var(--pine-text);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0;
 }
 
 .world-meta {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 10.5px;
   letter-spacing: 0.2em;
-  color: var(--pine-text-muted);
+  color: var(--ameza-text-muted, #9E8B89);
   white-space: nowrap;
   padding-bottom: 4px;
   text-transform: uppercase;
@@ -59,29 +61,34 @@
 .world-panels-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 3px;
+  background: var(--ameza-border-card);
+  border: 1px solid var(--ameza-border-card);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
 }
 
 .world-panel {
   position: relative;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
+  background: var(--ameza-card, #23121D);
 }
 
 .world-panel-inner {
   position: relative;
-  height: clamp(400px, 62vh, 700px);
+  height: clamp(400px, 62vh, 640px);
   overflow: hidden;
 }
 
-/* ── Panel backgrounds with rich textured gradients ──── */
+/* ── Panel backgrounds with rich textured luxury gradients ──── */
 .world-panel-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  transform: scale(1.07);
-  transition: transform 1.6s var(--ease-editorial);
+  transform: scale(1.06);
+  transition: transform 1.6s var(--ease-luxury);
   will-change: transform;
 }
 
@@ -89,36 +96,36 @@
   transform: scale(1.0);
 }
 
-/* Panel 01 — STYLE: Deep pine with warm highlights */
+/* Panel 01 — STYLE: Deep velvet obsidian with warm gold amber highlights */
 .world-panel:nth-child(1) .world-panel-bg {
   background:
-    radial-gradient(ellipse at 30% 20%, rgba(185,130,109,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 80%, rgba(111,142,128,0.22) 0%, transparent 50%),
-    linear-gradient(155deg, #243830 0%, #1a2a26 40%, #131f1c 100%);
+    radial-gradient(ellipse at 30% 20%, rgba(229, 184, 59, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(230, 126, 100, 0.16) 0%, transparent 50%),
+    linear-gradient(155deg, #2A1423 0%, #1D0E19 40%, #0D070B 100%);
 }
 
-/* Panel 02 — RITUAL: Darker with green wash */
+/* Panel 02 — RITUAL: Rich Rose Copper & Velvet Noir */
 .world-panel:nth-child(2) .world-panel-bg {
   background:
-    radial-gradient(ellipse at 70% 30%, rgba(111,142,128,0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 70%, rgba(185,130,109,0.1) 0%, transparent 45%),
-    linear-gradient(165deg, #1e3028 0%, #182520 50%, #121b18 100%);
+    radial-gradient(ellipse at 70% 30%, rgba(230, 126, 100, 0.24) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 70%, rgba(229, 184, 59, 0.14) 0%, transparent 45%),
+    linear-gradient(165deg, #2E1524 0%, #1A0C16 50%, #090407 100%);
 }
 
-/* Panel 03 — DESIGN: Richer pine with texture illusion */
+/* Panel 03 — DESIGN: 24K Imperial Gold & Velvet Obsidian */
 .world-panel:nth-child(3) .world-panel-bg {
   background:
-    radial-gradient(ellipse at 50% 10%, rgba(185,130,109,0.14) 0%, transparent 45%),
-    radial-gradient(ellipse at 90% 90%, rgba(111,142,128,0.18) 0%, transparent 50%),
-    linear-gradient(145deg, #253c32 0%, #1c2e28 45%, #141e1c 100%);
+    radial-gradient(ellipse at 50% 10%, rgba(255, 245, 208, 0.2) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 90%, rgba(229, 184, 59, 0.25) 0%, transparent 50%),
+    linear-gradient(145deg, #33182A 0%, #1F0D1B 45%, #0B0509 100%);
 }
 
-/* Panel 04 — EVERYDAY: Warm deep tone */
+/* Panel 04 — EVERYDAY: Burnished Bronze & Deep Velvet */
 .world-panel:nth-child(4) .world-panel-bg {
   background:
-    radial-gradient(ellipse at 25% 75%, rgba(185,130,109,0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 75% 20%, rgba(111,142,128,0.12) 0%, transparent 45%),
-    linear-gradient(160deg, #202e26 0%, #192724 50%, #101c19 100%);
+    radial-gradient(ellipse at 25% 75%, rgba(229, 184, 59, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 20%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
+    linear-gradient(160deg, #2B1524 0%, #180B14 50%, #080306 100%);
 }
 
 /* ── Noise texture overlay for depth ──────────────────── */
@@ -140,11 +147,11 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(185,130,109,0.3), transparent);
+  height: 2px;
+  background: var(--ameza-gold-gradient);
   z-index: 5;
   opacity: 0;
-  transition: opacity var(--transition-med);
+  transition: opacity var(--transition);
 }
 
 .world-panel:hover::before {
@@ -157,22 +164,22 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(13, 20, 18, 0.97) 0%,
-    rgba(13, 20, 18, 0.55) 35%,
-    rgba(13, 20, 18, 0.15) 65%,
-    rgba(13, 20, 18, 0.0) 100%
+    rgba(13, 7, 11, 0.96) 0%,
+    rgba(13, 7, 11, 0.55) 35%,
+    rgba(13, 7, 11, 0.15) 65%,
+    rgba(13, 7, 11, 0.0) 100%
   );
   z-index: 2;
-  transition: background var(--transition-med);
+  transition: background var(--transition);
 }
 
 .world-panel:hover .world-panel-overlay {
   background: linear-gradient(
     to top,
-    rgba(13, 20, 18, 0.98) 0%,
-    rgba(13, 20, 18, 0.72) 45%,
-    rgba(13, 20, 18, 0.25) 75%,
-    rgba(13, 20, 18, 0.05) 100%
+    rgba(13, 7, 11, 0.98) 0%,
+    rgba(13, 7, 11, 0.72) 45%,
+    rgba(13, 7, 11, 0.25) 75%,
+    rgba(13, 7, 11, 0.05) 100%
   );
 }
 
@@ -190,32 +197,37 @@
 }
 
 .world-panel-num {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
-  font-weight: 500;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 10.5px;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--apricot);
-  opacity: 0.8;
+  color: var(--ameza-gold, #E5B83B);
+  opacity: 0.9;
 }
 
 .world-panel-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading, "Playfair Display", serif);
   font-size: clamp(26px, 2.8vw, 42px);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--pine-text);
+  color: var(--ameza-text, #FAF7F2);
   margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.world-panel:hover .world-panel-title {
+  color: var(--ameza-gold-bright, #FFF5D0);
 }
 
 .world-panel-desc {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-body, "Manrope", sans-serif);
   font-size: 13.5px;
   line-height: 1.65;
-  color: var(--pine-text-sec);
+  color: var(--ameza-text-secondary, #DAC8C3);
   margin: 0;
-  max-width: 220px;
+  max-width: 240px;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.45s ease 0.08s, transform 0.45s var(--ease-luxury) 0.08s;
@@ -230,10 +242,11 @@
 .world-panel-arrow {
   width: 24px;
   height: 1px;
-  background: var(--pine-primary);
+  background: var(--ameza-gold);
   position: relative;
-  transition: width var(--transition-med), background var(--transition-fast);
+  transition: width var(--transition), background var(--transition-fast);
   margin-top: 6px;
+  opacity: 0.7;
 }
 
 .world-panel-arrow::after {
@@ -243,19 +256,20 @@
   top: -3px;
   width: 7px;
   height: 7px;
-  border-right: 1px solid var(--pine-primary);
-  border-top: 1px solid var(--pine-primary);
+  border-right: 1px solid var(--ameza-gold);
+  border-top: 1px solid var(--ameza-gold);
   transform: rotate(45deg);
   transition: border-color var(--transition-fast);
 }
 
 .world-panel:hover .world-panel-arrow {
-  width: 44px;
-  background: var(--apricot);
+  width: 46px;
+  background: var(--ameza-gold-bright);
+  opacity: 1;
 }
 
 .world-panel:hover .world-panel-arrow::after {
-  border-color: var(--apricot);
+  border-color: var(--ameza-gold-bright);
 }
 
 /* ── Large ghosted number top-right ───────────────────── */
@@ -264,16 +278,16 @@
   position: absolute;
   top: 16px;
   right: 20px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading, "Playfair Display", serif);
   font-size: 80px;
   font-weight: 700;
   line-height: 1;
-  color: rgba(240, 238, 231, 0.045);
+  color: rgba(229, 184, 59, 0.06);
   letter-spacing: -0.04em;
   pointer-events: none;
   user-select: none;
   z-index: 4;
-  transition: opacity var(--transition-med);
+  transition: opacity var(--transition);
 }
 
 .world-panel:hover .world-panel-inner::after {

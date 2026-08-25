@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Login.css";
-import amezaLoginHero from "../../assets/novax-login-hero.jpg";
+import amezaLoginHero from "../../assets/ameza-login-hero.jpg";
 
 import AuthHero from "../../components/auth/AuthHero/AuthHero";
 import LoginForm from "../../components/auth/LoginForm/LoginForm";
@@ -26,7 +26,7 @@ const Login = () => {
     setError(message);
     setTimeout(() => {
       setError("");
-    }, 2000);
+    }, 2800);
   }
 
   function validation(e) {
@@ -40,20 +40,20 @@ const Login = () => {
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (!user) {
-      return showError("Please Signup First");
+      return showError("No account found. Please Sign Up first");
     }
 
     if (email !== user.email) {
-      return showError("Email Does Not Match");
+      return showError("Email address does not match our records");
     }
 
     if (password !== user.password) {
-      return showError("Password Does Not Match");
+      return showError("Incorrect password. Please try again");
     }
 
     setTimeout(() => {
       navigate("/");
-    }, 2000);
+    }, 800);
   }
 
   return (
@@ -62,12 +62,13 @@ const Login = () => {
         {error && (
           <motion.div
             className="error-box"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            {error}
+            <span className="error-icon">✦</span>
+            <span>{error}</span>
           </motion.div>
         )}
       </AnimatePresence>
