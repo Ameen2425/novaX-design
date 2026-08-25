@@ -33,15 +33,15 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    // Calculate rotation angles (max tilt ~10deg for subtle luxury)
-    const rotateY = ((mouseX / width) - 0.5) * 12;
-    const rotateX = ((0.5 - (mouseY / height))) * 12;
+    // Calculate rotation angles (max tilt ~8deg for subtle quiet luxury)
+    const rotateY = ((mouseX / width) - 0.5) * 8;
+    const rotateX = ((0.5 - (mouseY / height))) * 8;
 
     setTransformStyle(`perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`);
     setSheenPos({
       x: (mouseX / width) * 100,
       y: (mouseY / height) * 100,
-      opacity: 0.4,
+      opacity: 0.35,
     });
   };
 
@@ -94,16 +94,16 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
         onMouseLeave={handleMouseLeave}
         style={{ transform: transformStyle }}
       >
-        {/* Dynamic Subtle Terracotta & Ivory Sheen Reflection */}
+        {/* Dynamic Champagne Sheen Reflection */}
         <div
           className="product-card-sheen"
           style={{
-            background: `radial-gradient(circle at ${sheenPos.x}% ${sheenPos.y}%, rgba(242, 238, 231, 0.15) 0%, rgba(169, 104, 85, 0.08) 40%, transparent 70%)`,
+            background: `radial-gradient(circle at ${sheenPos.x}% ${sheenPos.y}%, rgba(255, 245, 208, 0.15) 0%, rgba(229, 184, 59, 0.06) 40%, transparent 70%)`,
             opacity: sheenPos.opacity,
           }}
         />
 
-        {/* IMAGE CONTAINER WITH 3D DEPTH */}
+        {/* IMAGE CONTAINER */}
         <div className="product-image-container">
           <LazyImage
             src={image}
@@ -112,7 +112,7 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
           />
 
           <span className={`product-badge badge-${catFamily}`}>
-            {category ? category.toUpperCase() : "AMEZA"}
+            {category ? category.replace(/-/g, " ").toUpperCase() : "AMEZA"}
           </span>
 
           <button
@@ -126,7 +126,7 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
           </button>
         </div>
 
-        {/* BODY CONTENT WITH 3D DEPTH */}
+        {/* BODY CONTENT */}
         <div className="product-card-body">
           <span className="product-category">
             {catFamily.toUpperCase()}
@@ -144,41 +144,25 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
 
           {/* RATING */}
           <div className="product-rating">
-            <span>
-              ★★★★★
-            </span>
-            <small>
-              {rating ? Number(rating).toFixed(1) : "4.5"}
-            </small>
-            <em>
-              Customer Rating
-            </em>
+            <span className="stars">★★★★★</span>
+            <small>{rating ? Number(rating).toFixed(1) : "4.5"}</small>
+            <em>Customer Rating</em>
           </div>
 
-          {/* PRICE */}
+          {/* PRICE ROW */}
           <div className="product-price-row">
             <div>
-              <span className="price-label">
-                Starting from
-              </span>
-              <h4 className="product-price">
-                ${price}
-              </h4>
+              <span className="price-label">Starting from</span>
+              <h4 className="product-price">${price}</h4>
             </div>
 
-            <span className="price-offer">
-              Best Value
-            </span>
+            <span className="price-offer">Best Value</span>
           </div>
 
           {/* SERVICES */}
           <div className="product-services">
-            <span>
-              🚚 Free Delivery
-            </span>
-            <span>
-              🔒 Secure
-            </span>
+            <span>🚚 Free Delivery</span>
+            <span>🔒 Secure</span>
           </div>
 
           {/* ADD TO CART */}
@@ -187,7 +171,12 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
               className="add-cart-btn"
               onClick={handleAddToCart}
             >
-              🛒 Add to Cart
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              Add to Cart
             </button>
           </div>
         </div>

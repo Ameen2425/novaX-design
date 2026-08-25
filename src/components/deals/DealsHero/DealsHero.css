@@ -1,5 +1,6 @@
 /* =========================================================
-   AMEZA DEALS HERO (OBSIDIAN & 24K IMPERIAL GOLD)
+   AMEZA DEALS HERO (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
+   Quiet Luxury • Editorial • Artisanal Hero Campaign
    ========================================================= */
 
 .deals-hero-section {
@@ -23,33 +24,49 @@
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
   box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
-.deals-hero-content {
+.deals-hero-container::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 15%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(229, 184, 59, 0.09) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.deals-hero-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+  z-index: 2;
 }
 
-.deals-discount-badge {
+.deals-hero-eyebrow {
   font-family: var(--font-body);
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ameza-copper, #E67E64);
-  background: var(--ameza-copper-bg);
-  border: 1px solid var(--ameza-copper-border);
+  background: var(--ameza-copper-bg, rgba(230, 126, 100, 0.18));
+  border: 1px solid var(--ameza-copper-border, rgba(230, 126, 100, 0.45));
   padding: 4px 14px;
   border-radius: var(--radius-pill);
   display: inline-block;
   margin-bottom: 14px;
 }
 
-.deals-hero-title {
+.deals-hero-heading {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
   font-weight: 600;
   color: var(--ameza-text, #FAF7F2);
   line-height: 1.08;
@@ -57,7 +74,7 @@
   margin: 0 0 14px 0;
 }
 
-.deals-hero-title span {
+.deals-hero-heading .copper-accent {
   background: var(--ameza-gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,7 +82,7 @@
   font-weight: 400;
 }
 
-.deals-hero-subtitle {
+.deals-hero-description {
   font-family: var(--font-body);
   font-size: clamp(14px, 1.1vw, 15.5px);
   line-height: 1.7;
@@ -81,7 +98,7 @@
   flex-wrap: wrap;
 }
 
-.btn-deals-explore {
+.btn-deals-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -89,7 +106,7 @@
   color: #0D070B !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 750;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 13px 28px;
@@ -97,29 +114,98 @@
   border: none;
   cursor: pointer;
   box-shadow: var(--shadow-gold);
+  text-decoration: none;
   transition: all var(--transition);
 }
 
-.btn-deals-explore:hover {
+.btn-deals-primary:hover {
   background: var(--ameza-gold-gradient-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-gold-lg);
 }
 
+.btn-deals-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--ameza-text, #FAF7F2) !important;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ameza-border);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-deals-secondary:hover {
+  border-color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-gold-bright, #FFF5D0) !important;
+  background: rgba(229, 184, 59, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ── Hero Right: 3D Composition ────────────────────────── */
+.deals-hero-right {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deals-discount-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(26, 13, 21, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--ameza-copper-border, rgba(230, 126, 100, 0.45));
+  color: var(--ameza-copper-hover, #F08C73);
+  padding: 8px 14px;
+  border-radius: var(--radius-md, 12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.badge-sub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.badge-pct {
+  font-family: var(--font-heading, var(--font-display));
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ameza-gold-bright, #FFF5D0);
+}
+
 .deals-hero-image-wrap {
   width: 100%;
-  aspect-ratio: 4 / 3.4;
+  aspect-ratio: 4 / 3.2;
   border-radius: var(--radius-xl, 20px);
   overflow: hidden;
-  border: 1px solid var(--ameza-border);
+  border: 1px solid var(--ameza-border-card);
   background: var(--ameza-card, #23121D);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
 }
 
 .deals-hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.6s var(--ease-luxury);
 }
 
@@ -132,6 +218,12 @@
     grid-template-columns: 1fr;
     padding: 28px 20px;
     gap: 24px;
+  }
+  .deals-hero-right {
+    order: -1;
+  }
+  .deals-hero-image-wrap {
+    max-height: 280px;
   }
   .deals-hero-section {
     padding-top: calc(var(--header-height-mobile, 64px) + 16px);

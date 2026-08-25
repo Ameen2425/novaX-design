@@ -6,38 +6,38 @@ import "./DealCategories.css";
 const categories = [
   {
     id: "beauty",
-    name: "BEAUTY",
+    name: "BEAUTY & CARE",
     discount: "Up to 40% Off",
     link: "/products?category=beauty",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "fashion",
-    name: "FASHION",
+    name: "LUXURY FASHION",
     discount: "Up to 35% Off",
     link: "/products?category=womens-bags",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "electronics",
-    name: "ELECTRONICS",
+    name: "AUDIO & TECH",
     discount: "Up to 45% Off",
     link: "/products?category=smartphones",
-    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "home",
     name: "HOME & LIVING",
     discount: "Up to 30% Off",
     link: "/products?category=home-decoration",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "perfumes",
-    name: "PERFUMES",
+    name: "HAUTE PERFUMERY",
     discount: "Up to 40% Off",
     link: "/products?category=fragrances",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
   },
 ];
 

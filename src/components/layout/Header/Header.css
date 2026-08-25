@@ -2,6 +2,24 @@
    AMEZA CAPSULE FLOATING HEADER (OBSIDIAN & 24K IMPERIAL GOLD)
    ========================================================= */
 
+/* ── Top Scrim for Seamless Page Content Fading ────────── */
+.header-top-scrim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 96px;
+  background: linear-gradient(180deg, rgba(13, 7, 11, 0.98) 0%, rgba(13, 7, 11, 0.85) 45%, transparent 100%);
+  pointer-events: none;
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header-top-scrim.scrim-visible {
+  opacity: 1;
+}
+
 /* ── Desktop & Tablet Floating Header ─────────────────── */
 .header.desktop-header {
   position: fixed;

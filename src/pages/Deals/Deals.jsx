@@ -9,6 +9,7 @@ import DealCategories from "../../components/deals/DealCategories/DealCategories
 import DealProducts from "../../components/deals/DealProducts/DealProducts";
 import FeaturedDeal from "../../components/deals/FeaturedDeal/FeaturedDeal";
 import FlashDeals from "../../components/deals/FlashDeals/FlashDeals";
+import DealBenefits from "../../components/deals/DealBenefits/DealBenefits";
 import DealPromo from "../../components/deals/DealPromo/DealPromo";
 
 const Deals = () => {
@@ -26,6 +27,7 @@ const Deals = () => {
       <DealProducts />
       <FeaturedDeal />
       <FlashDeals />
+      <DealBenefits />
       <DealPromo />
     </motion.main>
   );

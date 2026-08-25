@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
@@ -17,7 +17,7 @@ const flashDealsData = [
   },
   {
     id: 102,
-    title: "Sony WH-1000XM5",
+    title: "Sony WH-1000XM5 Noise Cancelling",
     discount: "-35%",
     oldPrice: "₹34,990",
     price: "₹22,690",
@@ -35,7 +35,7 @@ const flashDealsData = [
   },
   {
     id: 104,
-    title: "Nike Air Max 270",
+    title: "Nike Air Max 270 Special Edition",
     discount: "-30%",
     oldPrice: "₹11,499",
     price: "₹8,049",
@@ -47,6 +47,21 @@ const flashDealsData = [
 const FlashDeals = () => {
   let dispatch = useDispatch();
   const [toastMessage, setToastMessage] = useState("");
+  const [flashTime, setFlashTime] = useState({ hours: 6, minutes: 14, seconds: 37 });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFlashTime((prev) => {
+        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
+        if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        return prev;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const format2 = (n) => String(n).padStart(2, "0");
 
   const handleQuickAdd = (e, item) => {
     e.preventDefault();
@@ -74,9 +89,18 @@ const FlashDeals = () => {
       )}
 
       <div className="deal-section-header">
-        <h2 className="deal-section-title">
-          <span className="flash-icon">⚡</span> FLASH DEALS
-        </h2>
+        <div className="flash-header-left">
+          <h2 className="deal-section-title">
+            <span className="flash-icon">⚡</span> FLASH DEALS
+          </h2>
+          <div className="flash-countdown-pill">
+            <span className="flash-ends-label">Ends in:</span>
+            <span className="flash-timer-mono">
+              {format2(flashTime.hours)} : {format2(flashTime.minutes)} : {format2(flashTime.seconds)}
+            </span>
+          </div>
+        </div>
+
         <Link to="/products" className="deal-section-link">
           Ending Soon <span>→</span>
         </Link>
@@ -110,6 +134,9 @@ const FlashDeals = () => {
                   <del className="flash-old-price">{item.oldPrice}</del>
                   <strong className="flash-new-price">{item.price}</strong>
                 </div>
+                <button type="button" className="flash-quick-btn">
+                  + QUICK ADD
+                </button>
               </div>
             </div>
           </motion.div>

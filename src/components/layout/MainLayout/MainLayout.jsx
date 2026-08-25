@@ -4,6 +4,8 @@ import { AppRouter } from "../../../app/router/AppRouter";
 import "./MainLayout.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import ScrollProgress from "../../common/ScrollProgress/ScrollProgress";
+import BackToTop from "../../common/BackToTop/BackToTop";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -39,11 +41,17 @@ const MainLayout = () => {
 
   return (
     <div className="main-layout">
+      {/* Sitewide Scroll Progress Indicator */}
+      <ScrollProgress />
+
       {!hideHeader && <Header />}
 
       <main className="main-content">
         <AppRouter />
       </main>
+
+      {/* Floating Back to Top Button */}
+      <BackToTop />
 
       {!hideFooter && <Footer />}
     </div>

@@ -8,7 +8,50 @@
 @import "./styles/typography.css";
 @import "./styles/animations.css";
 
+html {
+  scroll-behavior: smooth;
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
+}
+
 body {
-  background-color: var(--ameza-bg);
-  color: var(--ameza-text);
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom Luxury Gold Scrollbar ─────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ameza-bg, #0D070B);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(229, 184, 59, 0.3);
+  border-radius: var(--radius-pill, 999px);
+  border: 2px solid var(--ameza-bg, #0D070B);
+  transition: background var(--transition-fast, 0.2s);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ameza-gold, #E5B83B);
+}
+
+/* ── Luxury Text Selection ────────────────────────────── */
+::selection {
+  background: rgba(229, 184, 59, 0.35);
+  color: var(--ameza-gold-bright, #FFF5D0);
+}
+
+::-moz-selection {
+  background: rgba(229, 184, 59, 0.35);
+  color: var(--ameza-gold-bright, #FFF5D0);
 }

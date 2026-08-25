@@ -48,9 +48,11 @@
 
   --ameza-crimson: #E11D48;           /* Velvet Crimson (Danger, Delete) */
 
-  /* Compatibility mappings */
+  /* Primary action mappings */
   --ameza-primary: var(--ameza-gold);
   --ameza-primary-hover: var(--ameza-gold-bright);
+  --ameza-primary-gradient: var(--ameza-gold-gradient);
+  --ameza-primary-gradient-hover: var(--ameza-gold-gradient-hover);
   --ameza-accent: var(--ameza-copper);
   --ameza-accent-hover: var(--ameza-copper-hover);
   --ameza-champagne: var(--ameza-gold-bright);

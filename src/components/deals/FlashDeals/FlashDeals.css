@@ -1,13 +1,20 @@
 /* =========================================================
-   AMEZA FLASH DEALS (OBSIDIAN & 24K IMPERIAL GOLD)
+   AMEZA FLASH DEALS (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
    ========================================================= */
 
 .flash-deals-section {
   width: 100%;
   max-width: var(--container-max-width, 1440px);
-  margin: 0 auto var(--section-gap, 42px);
+  margin: 0 auto var(--section-gap, 48px);
   padding: 0 clamp(16px, 4vw, 40px);
   box-sizing: border-box;
+}
+
+.flash-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .flash-icon {
@@ -15,17 +22,44 @@
   margin-right: 4px;
 }
 
+.flash-countdown-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.flash-ends-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ameza-copper, #E67E64);
+}
+
+.flash-timer-mono {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ameza-gold-bright, #FFF5D0);
+  letter-spacing: 0.06em;
+}
+
 .flash-deals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(14px, 1.8vw, 20px);
+  gap: clamp(12px, 1.6vw, 18px);
 }
 
 .flash-deal-card {
   background: var(--ameza-card, #23121D);
   border: 1px solid var(--ameza-border-card);
   border-radius: var(--radius-card, 18px);
-  padding: 16px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-card);
@@ -36,7 +70,7 @@
 }
 
 .flash-deal-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   background: var(--ameza-card-hover, #2E1826);
   border-color: var(--ameza-border-gold);
   box-shadow: var(--shadow-card-hover);
@@ -51,24 +85,24 @@
   background: var(--ameza-image-bg, #180C14);
   border: 1px solid var(--ameza-border);
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
 .flash-deal-discount {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
   background: var(--ameza-copper, #E67E64);
   color: #FFFFFF;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 2px 8px;
   border-radius: var(--radius-pill);
   box-shadow: 0 4px 12px rgba(230, 126, 100, 0.5);
   z-index: 3;
@@ -93,10 +127,10 @@
 
 .flash-deal-name {
   font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(1.02rem, 1.1vw, 1.12rem);
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
   font-weight: 600;
   color: var(--ameza-text, #FAF7F2);
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   line-height: 1.25;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -115,20 +149,42 @@
   align-items: baseline;
   gap: 8px;
   margin-top: auto;
+  margin-bottom: 8px;
 }
 
 .flash-old-price {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--ameza-text-muted, #9E8B89);
 }
 
 .flash-new-price {
   font-family: var(--font-heading, var(--font-display));
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--ameza-gold-bright, #FFF5D0);
-  filter: drop-shadow(0 2px 8px rgba(229, 184, 59, 0.35));
+}
+
+.flash-quick-btn {
+  width: 100%;
+  height: 34px;
+  background: rgba(229, 184, 59, 0.1);
+  border: 1px solid var(--ameza-border);
+  color: var(--ameza-gold-bright, #FFF5D0);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.flash-deal-card:hover .flash-quick-btn {
+  background: var(--ameza-gold-gradient);
+  color: #0D070B !important;
+  border-color: transparent;
+  box-shadow: var(--shadow-gold);
 }
 
 /* Toast */
@@ -159,6 +215,8 @@
 @media (max-width: 580px) {
   .flash-deals-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    max-width: 360px;
+    margin: 0 auto;
+    gap: 12px;
   }
 }

@@ -51,11 +51,11 @@ const CategorySection = () => {
         variants={staggerContainer}
       >
         {[
-          { num: "01", name: "Electronics", desc: "Devices & accessories", icon: "⚡", type: "electronics" },
-          { num: "02", name: "Fashion", desc: "Curated styles & wear", icon: "✨", type: "fashion" },
-          { num: "03", name: "Beauty", desc: "Care, skin & cosmetics", icon: "🌿", type: "beauty" },
-          { num: "04", name: "Home & Living", desc: "Thoughtful spaces", icon: "🛋️", type: "home" },
-          { num: "05", name: "Footwear", desc: "Modern daily essentials", icon: "👟", type: "footwear" },
+          { num: "01", name: "Haute Perfumery", desc: "Signature scents & elixirs", icon: "✨", type: "beauty", link: "/products?category=fragrances", count: "48+ Scents" },
+          { num: "02", name: "Luxury Fashion", desc: "Curated leather & apparel", icon: "💎", type: "fashion", link: "/products?category=womens-bags", count: "120+ Pieces" },
+          { num: "03", name: "Beauty & Care", desc: "Bespoke organic formulations", icon: "🌿", type: "beauty", link: "/products?category=beauty", count: "95+ Products" },
+          { num: "04", name: "Home & Living", desc: "Architectural objects & decor", icon: "🛋️", type: "home", link: "/products?category=home-decoration", count: "60+ Items" },
+          { num: "05", name: "Audio & Tech", desc: "Precision devices & hardware", icon: "⚡", type: "electronics", link: "/products?category=smartphones", count: "40+ Devices" },
         ].map((cat) => (
           <motion.div
             key={cat.num}
@@ -64,9 +64,10 @@ const CategorySection = () => {
             whileTap={{ scale: 0.98 }}
             className="home-category-card-wrap"
           >
-            <Link to="/products" className={`home-category-card cat-${cat.type}`} data-category={cat.type}>
+            <Link to={cat.link} className={`home-category-card cat-${cat.type}`} data-category={cat.type}>
               <div className="home-cat-card-header">
                 <span className="home-cat-num">{cat.num}</span>
+                <span className="home-cat-count-pill">{cat.count}</span>
                 <span className="home-cat-icon">{cat.icon}</span>
               </div>
               <div className="home-cat-card-body">
@@ -74,7 +75,7 @@ const CategorySection = () => {
                 <p>{cat.desc}</p>
               </div>
               <div className="home-cat-card-footer">
-                <span>Explore</span>
+                <span>Explore Category</span>
                 <span className="home-cat-arrow">→</span>
               </div>
             </Link>

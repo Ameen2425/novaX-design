@@ -49,7 +49,15 @@ const Header = () => {
               <circle cx="20" cy="21" r="1"/>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
             </svg>
-            <span className="header-badge">{cartValue}</span>
+            <motion.span
+              key={`mobile-cart-${cartValue}`}
+              initial={{ scale: 0.6 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 500, damping: 20 }}
+              className="header-badge"
+            >
+              {cartValue}
+            </motion.span>
           </NavLink>
           <NavLink to="/signup" className="mobile-action-btn" title="Sign Up / Register">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -61,6 +69,9 @@ const Header = () => {
           </NavLink>
         </div>
       </header>
+
+      {/* TOP SCRIM TO SEAMLESSLY FADE SCROLLED CONTENT BEHIND CAPSULE */}
+      <div className={`header-top-scrim ${isScrolled ? "scrim-visible" : ""}`} aria-hidden="true" />
 
       {/* DESKTOP & TABLET FLOATING GLASS HEADER */}
       <header className={`header desktop-header ${isScrolled ? "header-scrolled" : ""}`}>
@@ -106,7 +117,15 @@ const Header = () => {
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <path d="M16 10a4 4 0 0 1-8 0"/>
               </svg>
-              <span className="header-badge">{cartValue}</span>
+              <motion.span
+                key={`desktop-cart-${cartValue}`}
+                initial={{ scale: 0.6 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 500, damping: 20 }}
+                className="header-badge"
+              >
+                {cartValue}
+              </motion.span>
             </NavLink>
           </div>
 

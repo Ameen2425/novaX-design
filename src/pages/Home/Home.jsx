@@ -9,7 +9,6 @@ import PromoBanner from "../../components/home/PromoBanner/PromoBanner";
 import BenefitsSection from "../../components/home/BenefitsSection/BenefitsSection";
 import StatsSection from "../../components/home/StatsSection/StatsSection";
 import LocationSection from "../../components/home/LocationSection/LocationSection";
-import FinalCTA from "../../components/home/FinalCTA/FinalCTA";
 
 const Home = () => {
   return (
@@ -27,7 +26,6 @@ const Home = () => {
       <BenefitsSection />
       <StatsSection />
       <LocationSection />
-      <FinalCTA />
     </motion.main>
   );
 };
