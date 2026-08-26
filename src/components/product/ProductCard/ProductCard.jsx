@@ -16,7 +16,7 @@ const getCategoryFamily = (cat) => {
 
 const ProductCard = ({ id, title, description, price, image, category, rating }) => {
   const cardRef = useRef(null);
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
   const catFamily = getCategoryFamily(category);
   const [transformStyle, setTransformStyle] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
   const [sheenPos, setSheenPos] = useState({ x: 50, y: 50, opacity: 0 });
@@ -33,9 +33,8 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    // Calculate rotation angles (max tilt ~8deg for subtle quiet luxury)
-    const rotateY = ((mouseX / width) - 0.5) * 8;
-    const rotateX = ((0.5 - (mouseY / height))) * 8;
+    const rotateY = ((mouseX / width) - 0.5) * 6;
+    const rotateX = ((0.5 - (mouseY / height))) * 6;
 
     setTransformStyle(`perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`);
     setSheenPos({
@@ -103,7 +102,7 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
           }}
         />
 
-        {/* IMAGE CONTAINER */}
+        {/* ── 1. IMAGE CONTAINER ── */}
         <div className="product-image-container">
           <LazyImage
             src={image}
@@ -111,10 +110,12 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
             alt={title}
           />
 
+          {/* Top-Left Category Badge (Absolute) */}
           <span className={`product-badge badge-${catFamily}`}>
             {category ? category.replace(/-/g, " ").toUpperCase() : "AMEZA"}
           </span>
 
+          {/* Top-Right Circular Wishlist Button (Absolute) */}
           <button
             type="button"
             className={`product-wishlist-btn ${isWishlisted ? "active" : ""}`}
@@ -126,26 +127,26 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
           </button>
         </div>
 
-        {/* BODY CONTENT */}
+        {/* ── 2. BODY CONTENT ── */}
         <div className="product-card-body">
           <span className="product-category">
-            {catFamily.toUpperCase()}
+            {category ? category.replace(/-/g, " ").toUpperCase() : catFamily.toUpperCase()}
           </span>
 
-          <h3 className="product-title">
+          <h3 className="product-title" title={title}>
             {title}
           </h3>
 
           {description && (
             <p className="product-description">
-              {description.slice(0, 80)}{description.length > 80 ? "..." : ""}
+              {description}
             </p>
           )}
 
           {/* RATING */}
           <div className="product-rating">
             <span className="stars">★★★★★</span>
-            <small>{rating ? Number(rating).toFixed(1) : "4.5"}</small>
+            <small>{rating ? Number(rating).toFixed(1) : "4.8"}</small>
             <em>Customer Rating</em>
           </div>
 
@@ -153,7 +154,7 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
           <div className="product-price-row">
             <div>
               <span className="price-label">Starting from</span>
-              <h4 className="product-price">${price}</h4>
+              <h4 className="product-price">${typeof price === "number" ? price.toFixed(2) : price}</h4>
             </div>
 
             <span className="price-offer">Best Value</span>
@@ -162,21 +163,22 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
           {/* SERVICES */}
           <div className="product-services">
             <span>🚚 Free Delivery</span>
-            <span>🔒 Secure</span>
+            <span>🔒 Protected</span>
           </div>
 
           {/* ADD TO CART */}
           <div className="product-bottom">
             <button
+              type="button"
               className="add-cart-btn"
               onClick={handleAddToCart}
             >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="21" r="1"/>
                 <circle cx="20" cy="21" r="1"/>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
               </svg>
-              Add to Cart
+              <span>Add to Cart</span>
             </button>
           </div>
         </div>
