@@ -23,7 +23,7 @@ const UsersTable = ({ filterUsers, editUser, deleteUser }) => {
               {filterUsers.length === 0 ? (
                 <tr>
                   <td colSpan="6" style={{ textAlign: "center", padding: "54px 20px" }}>
-                    <p style={{ fontFamily: "var(--font-display)", fontSize: "22px", color: "var(--ameza-gold, #E5B83B)", marginBottom: "8px" }}>No Users Found</p>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: "22px", color: "var(--ameza-ruby, #E11D48)", marginBottom: "8px" }}>No Users Found</p>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: "14px", color: "var(--ameza-text-secondary)", margin: 0 }}>Try adjusting your search query</p>
                   </td>
                 </tr>
@@ -88,7 +88,7 @@ const UsersTable = ({ filterUsers, editUser, deleteUser }) => {
         <AnimatePresence>
           {filterUsers.length === 0 ? (
             <div className="mobile-empty-users">
-              <p style={{ fontFamily: "var(--font-display)", fontSize: "20px", color: "var(--ameza-gold, #E5B83B)", marginBottom: "6px" }}>No Users Found</p>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: "20px", color: "var(--ameza-ruby, #E11D48)", marginBottom: "6px" }}>No Users Found</p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "13.5px", color: "var(--ameza-text-secondary)", margin: 0 }}>Try adjusting your search query</p>
             </div>
           ) : (
@@ -115,7 +115,7 @@ const UsersTable = ({ filterUsers, editUser, deleteUser }) => {
                 </div>
 
                 <div className="mobile-user-email-box">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--ameza-gold, #E5B83B)", flexShrink: 0 }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--ameza-ruby, #E11D48)", flexShrink: 0 }}>
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
                   </svg>

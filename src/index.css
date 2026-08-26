@@ -1,6 +1,6 @@
 /* =========================================================
    AMEZA — GLOBAL DESIGN SYSTEM ENTRY
-   Velvet Obsidian Midnight + 24K Imperial Liquid Gold
+   Velvet Obsidian Midnight + Crimson Ruby Red
    ========================================================= */
 
 @import "./styles/variables.css";
@@ -24,7 +24,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Custom Luxury Gold Scrollbar ─────────────────────── */
+/* ── Custom Luxury Ruby Scrollbar ─────────────────────── */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -35,23 +35,23 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(229, 184, 59, 0.3);
+  background: rgba(225, 29, 72, 0.35);
   border-radius: var(--radius-pill, 999px);
   border: 2px solid var(--ameza-bg, #0D070B);
   transition: background var(--transition-fast, 0.2s);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ameza-gold, #E5B83B);
+  background: var(--ameza-gold, #E11D48);
 }
 
 /* ── Luxury Text Selection ────────────────────────────── */
 ::selection {
-  background: rgba(229, 184, 59, 0.35);
-  color: var(--ameza-gold-bright, #FFF5D0);
+  background: rgba(225, 29, 72, 0.35);
+  color: var(--ameza-gold-bright, #FFE4E6);
 }
 
 ::-moz-selection {
-  background: rgba(229, 184, 59, 0.35);
-  color: var(--ameza-gold-bright, #FFF5D0);
+  background: rgba(225, 29, 72, 0.35);
+  color: var(--ameza-gold-bright, #FFE4E6);
 }

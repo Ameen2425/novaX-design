@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA LOCATION SECTION (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
+   AMEZA LOCATION SECTION (OBSIDIAN VELVET + CRIMSON RUBY RED)
    ========================================================= */
 
 .location-section {
@@ -42,7 +42,7 @@
   left: -40px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(229, 184, 59, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.12) 0%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -69,9 +69,9 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
-  background: rgba(229, 184, 59, 0.12);
-  border: 1px solid rgba(229, 184, 59, 0.3);
+  color: var(--ameza-ruby, #E11D48);
+  background: rgba(225, 29, 72, 0.14);
+  border: 1px solid rgba(225, 29, 72, 0.35);
   padding: 4px 12px;
   border-radius: var(--radius-pill);
 }
@@ -159,8 +159,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 0.84rem;
   font-weight: 750;
@@ -169,14 +169,14 @@
   padding: 12px 24px;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
   transition: all var(--transition);
 }
 
 .btn-location-directions:hover {
-  background: var(--ameza-gold-gradient-hover);
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
+  box-shadow: var(--shadow-ruby-lg, var(--shadow-gold-lg));
 }
 
 .btn-location-call {
@@ -192,14 +192,14 @@
   text-transform: uppercase;
   padding: 11px 22px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--ameza-border-gold);
+  border: 1px solid var(--ameza-border-ruby, #E11D48);
   text-decoration: none;
   transition: all var(--transition);
 }
 
 .btn-location-call:hover {
-  background: rgba(229, 184, 59, 0.14);
-  color: var(--ameza-gold-bright, #FFF5D0) !important;
+  background: rgba(225, 29, 72, 0.18);
+  color: var(--ameza-ruby-bright, #FFE4E6) !important;
   transform: translateY(-2px);
 }
 

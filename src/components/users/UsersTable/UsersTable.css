@@ -135,16 +135,16 @@
 }
 
 .users-page-table-wrap .btn-warning {
-  background: rgba(229, 184, 59, 0.14);
-  border: 1px solid rgba(229, 184, 59, 0.35);
-  color: var(--ameza-gold-bright, #FFF5D0);
+  background: rgba(230, 126, 100, 0.16);
+  border: 1px solid rgba(230, 126, 100, 0.4);
+  color: var(--ameza-copper, #E67E64);
 }
 
 .users-page-table-wrap .btn-warning:hover {
-  background: var(--ameza-gold-gradient);
-  color: #0D070B;
+  background: var(--ameza-copper, #E67E64);
+  color: #FFFFFF;
   border-color: transparent;
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 4px 14px rgba(230, 126, 100, 0.4);
 }
 
 .users-page-table-wrap .btn-danger {

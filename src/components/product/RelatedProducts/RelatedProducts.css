@@ -1,0 +1,249 @@
+/* =========================================================
+   AMEZA RELATED PRODUCTS ("YOU MAY ALSO LIKE")
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
+   ========================================================= */
+
+.pine-related-section {
+  width: 100%;
+  margin-top: clamp(40px, 6vw, 72px);
+  margin-bottom: clamp(40px, 6vw, 72px);
+  box-sizing: border-box;
+}
+
+.pine-related-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pine-related-eyebrow {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ameza-ruby, #E11D48);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.pine-related-heading {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.pine-view-catalog-btn {
+  background: transparent;
+  border: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.22));
+  color: var(--ameza-text-secondary, #DAC8C3);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pine-view-catalog-btn:hover {
+  border-color: var(--ameza-ruby, #E11D48);
+  color: var(--ameza-ruby-bright, #FFE4E6);
+  background: rgba(225, 29, 72, 0.16);
+  box-shadow: 0 0 16px rgba(225, 29, 72, 0.25);
+}
+
+/* ── Related Grid ─────────────────────────────────────── */
+.pine-related-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pine-related-card {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card, rgba(225, 29, 72, 0.28));
+  border-radius: var(--radius-card, 16px);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.pine-related-card:hover {
+  background: var(--ameza-card-hover, #2E1826);
+  border-color: var(--ameza-border-ruby, #E11D48);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Image Well */
+.pine-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--ameza-image-bg, #180C14);
+  border: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.22));
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-bottom: 14px;
+}
+
+.pine-card-discount-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  background: var(--ameza-copper, #E67E64);
+  color: #FFFFFF;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(230, 126, 100, 0.35);
+}
+
+.pine-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.pine-related-card:hover .pine-card-img {
+  transform: scale(1.06);
+}
+
+/* Meta */
+.pine-card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pine-card-category {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ameza-ruby, #E11D48);
+  margin-bottom: 4px;
+}
+
+.pine-card-title {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 36px;
+}
+
+.pine-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.pine-card-stars {
+  color: var(--ameza-ruby, #E11D48);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.pine-card-score {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  color: var(--ameza-text-secondary, #DAC8C3);
+}
+
+.pine-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.15));
+}
+
+.pine-card-price strong {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ameza-ruby-bright, #FFE4E6);
+}
+
+.pine-card-add-btn {
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF !important;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  cursor: pointer;
+  box-shadow: var(--shadow-ruby);
+  transition: all var(--transition-fast);
+}
+
+.pine-card-add-btn:hover {
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
+  box-shadow: var(--shadow-ruby-lg);
+  transform: translateY(-1px);
+}
+
+/* ── Responsive Related ───────────────────────────────── */
+@media (max-width: 1200px) {
+  .pine-related-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .pine-related-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .pine-related-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pine-related-card {
+    min-width: 220px;
+    scroll-snap-align: start;
+  }
+}

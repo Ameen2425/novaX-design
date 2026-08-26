@@ -66,10 +66,10 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--ameza-gold);
+  background: var(--ameza-ruby, #E11D48);
   display: inline-block;
   flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(229, 184, 59, 0.7);
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.8);
 }
 
 /* ── Desktop Navigation ────────────────────────────────── */
@@ -212,8 +212,8 @@
   top: 20px;
   right: 20px;
   background: var(--ameza-card, #23121D);
-  border: 1px solid var(--ameza-border-gold, rgba(229, 184, 59, 0.6));
-  color: var(--ameza-gold-bright, #FFF5D0);
+  border: 1px solid var(--ameza-border-ruby, var(--ameza-border-gold));
+  color: var(--ameza-ruby-bright, #FFE4E6);
   cursor: pointer;
   padding: 0;
   width: 44px;
@@ -224,12 +224,12 @@
   justify-content: center;
   transition: all var(--transition-fast);
   z-index: 100000;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 14px rgba(229, 184, 59, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 14px rgba(225, 29, 72, 0.35);
 }
 
 .landing-mobile-menu-close:hover {
-  background: var(--ameza-gold-gradient);
-  color: #0D070B;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF;
   border-color: transparent;
   transform: rotate(90deg) scale(1.05);
 }

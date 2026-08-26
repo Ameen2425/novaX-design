@@ -10,7 +10,7 @@
   position: relative;
 }
 
-/* Subtle gold ambient aura */
+/* Subtle ruby ambient aura */
 .artisan-story-section::before {
   content: '';
   position: absolute;
@@ -18,7 +18,7 @@
   top: 30%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(229, 184, 59, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -46,7 +46,7 @@
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
 }
 
 .artisan-heading {
@@ -63,7 +63,7 @@
   font-style: italic;
   font-weight: 300;
   display: block;
-  background: var(--ameza-gold-gradient);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,7 +72,7 @@
 .artisan-divider {
   width: 36px;
   height: 1px;
-  background: var(--ameza-gold, #E5B83B);
+  background: var(--ameza-ruby, #E11D48);
   opacity: 0.6;
 }
 
@@ -115,9 +115,9 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--ameza-gold, #E5B83B);
+  background: var(--ameza-ruby, #E11D48);
   flex-shrink: 0;
-  box-shadow: 0 0 8px rgba(229, 184, 59, 0.6);
+  box-shadow: 0 0 8px rgba(225, 29, 72, 0.7);
 }
 
 /* ── Image Column ──────────────────────────────────────── */
@@ -134,7 +134,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(229, 184, 59, 0.15);
+  border: 1px solid rgba(225, 29, 72, 0.18);
   border-radius: var(--radius-md, 12px);
   pointer-events: none;
   z-index: 3;

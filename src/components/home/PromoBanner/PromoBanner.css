@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA PROMO BANNER (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
+   AMEZA PROMO BANNER (OBSIDIAN VELVET + CRIMSON RUBY RED)
    ========================================================= */
 
 .home-offer-section {
@@ -25,7 +25,7 @@
   box-sizing: border-box;
 }
 
-/* Ambient gold glow within the section */
+/* Ambient ruby glow within the section */
 .home-offer::before {
   content: '';
   position: absolute;
@@ -33,7 +33,7 @@
   right: 60px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(229, 184, 59, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.16) 0%, transparent 70%);
   filter: blur(50px);
   pointer-events: none;
   z-index: 0;
@@ -73,7 +73,7 @@
 }
 
 .home-offer-content h2 span {
-  background: var(--ameza-gold-gradient);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
@@ -113,8 +113,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 0.84rem;
   font-weight: 750;
@@ -123,14 +123,14 @@
   padding: 13px 30px;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
   transition: all var(--transition);
 }
 
 .home-shop-btn:hover {
-  background: var(--ameza-gold-gradient-hover);
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
+  box-shadow: var(--shadow-ruby-lg, var(--shadow-gold-lg));
 }
 
 /* ── 3D Badge Visual ──────────────────────────────────── */
@@ -147,8 +147,8 @@
   height: 220px;
   border-radius: 50%;
   background: var(--ameza-card, #23121D);
-  border: 2px solid var(--ameza-border-gold);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 35px rgba(229, 184, 59, 0.35);
+  border: 2px solid var(--ameza-border-ruby, #E11D48);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 35px rgba(225, 29, 72, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,7 +166,7 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
   margin-bottom: 2px;
 }
 
@@ -174,9 +174,9 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: 52px;
   font-weight: 700;
-  color: var(--ameza-gold-bright, #FFF5D0);
+  color: var(--ameza-ruby-bright, #FFE4E6);
   line-height: 1;
-  text-shadow: 0 2px 20px rgba(229, 184, 59, 0.6);
+  text-shadow: 0 2px 20px rgba(225, 29, 72, 0.6);
 }
 
 .badge-card-tag {
@@ -193,7 +193,7 @@
   position: absolute;
   inset: -15px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(229, 184, 59, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.25) 0%, transparent 70%);
   pointer-events: none;
   filter: blur(12px);
 }

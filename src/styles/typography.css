@@ -1,6 +1,8 @@
 /* =========================================================
    AMEZA MASTER TYPOGRAPHY MATRIX
-   Editorial Serif (Playfair Display) + Sans-Serif (Manrope) + Monospace (JetBrains Mono)
+   Editorial Serif (Playfair Display / Cormorant Garamond)
+   Sans-Serif (Manrope / Outfit) + Monospace (JetBrains Mono)
+   Crimson Ruby Red Luxury Highlights
    ========================================================= */
 
 body {
@@ -24,6 +26,10 @@ h1, h2, h3, h4, h5, h6,
   margin: 0;
 }
 
+.font-editorial {
+  font-family: var(--font-editorial, "Cormorant Garamond", serif);
+}
+
 h1 { font-size: clamp(2.2rem, 4.5vw, 4.2rem); }
 h2 { font-size: clamp(1.75rem, 3.5vw, 3rem); }
 h3 { font-size: clamp(1.35rem, 2.4vw, 2.1rem); }
@@ -37,21 +43,30 @@ p {
   margin-bottom: 1rem;
 }
 
-/* ── Editorial Gold & Jewel Gradient Highlights ───────── */
+/* ── Crimson Ruby & Jewel Gradient Highlights ─────────── */
+.text-ruby-gradient,
 .text-gold-gradient,
+.editorial-ruby,
 .editorial-gold {
-  background: var(--ameza-gold-gradient);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
+.text-ruby,
 .text-gold {
-  color: var(--ameza-gold, #E5B83B) !important;
+  color: var(--ameza-ruby, #E11D48) !important;
 }
 
+.text-ruby-bright,
 .text-gold-bright {
-  color: var(--ameza-gold-bright, #FFF5D0) !important;
+  color: var(--ameza-ruby-bright, #FFE4E6) !important;
+}
+
+.text-ruby-glow {
+  color: var(--ameza-ruby-bright, #FFE4E6) !important;
+  text-shadow: 0 0 16px rgba(225, 29, 72, 0.6);
 }
 
 .text-emerald {
@@ -74,7 +89,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -91,14 +106,16 @@ p {
 }
 
 /* ── Luxury Button Architecture ───────────────────────── */
+.btn-ruby,
 .btn-gold,
+.btn-primary-ruby,
 .btn-primary-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 700;
@@ -108,20 +125,23 @@ p {
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
   transition: all var(--transition);
   text-decoration: none;
   box-sizing: border-box;
 }
 
+.btn-ruby:hover,
 .btn-gold:hover,
+.btn-primary-ruby:hover,
 .btn-primary-gold:hover {
-  background: var(--ameza-gold-gradient-hover);
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
-  color: #000000 !important;
+  box-shadow: var(--shadow-ruby-lg, var(--shadow-gold-lg));
+  color: #FFFFFF !important;
 }
 
+.btn-outline-ruby,
 .btn-outline-gold {
   display: inline-flex;
   align-items: center;
@@ -136,17 +156,19 @@ p {
   text-transform: uppercase;
   padding: 12px 26px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--ameza-border-gold);
+  border: 1px solid var(--ameza-border-ruby, var(--ameza-border-gold));
   cursor: pointer;
   transition: all var(--transition);
   text-decoration: none;
   box-sizing: border-box;
 }
 
+.btn-outline-ruby:hover,
 .btn-outline-gold:hover {
-  border-color: var(--ameza-gold);
-  background: rgba(229, 184, 59, 0.15);
-  color: var(--ameza-gold-bright) !important;
+  border-color: var(--ameza-ruby, #E11D48);
+  background: rgba(225, 29, 72, 0.16);
+  color: var(--ameza-ruby-bright, #FFE4E6) !important;
+  box-shadow: 0 0 16px rgba(225, 29, 72, 0.25);
   transform: translateY(-2px);
 }
 

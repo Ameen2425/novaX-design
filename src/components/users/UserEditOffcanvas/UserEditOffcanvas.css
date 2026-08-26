@@ -94,8 +94,8 @@
 }
 
 .offcanvas-body .form-control:focus {
-  border-color: var(--ameza-gold, #E5B83B);
-  box-shadow: 0 0 0 3px rgba(229, 184, 59, 0.18);
+  border-color: var(--ameza-ruby, #E11D48);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.22);
 }
 
 .offcanvas-body .form-control::placeholder {
@@ -113,8 +113,8 @@
 .offcanvas-actions .btn-primary {
   width: 100%;
   height: 50px;
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
@@ -123,7 +123,7 @@
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,8 +131,8 @@
 }
 
 .offcanvas-actions .btn-primary:hover {
-  background: var(--ameza-gold-gradient-hover);
-  box-shadow: var(--shadow-gold-lg);
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
+  box-shadow: var(--shadow-ruby-lg, var(--shadow-gold-lg));
   transform: translateY(-2px);
 }
 

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA ORBITAL 24K GOLD PAGE LOADER
+   AMEZA ORBITAL CRIMSON RUBY PAGE LOADER
    ========================================================= */
 
 .page-loader-screen {
@@ -21,10 +21,10 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(229, 184, 59, 0.22) 0%, rgba(230, 126, 100, 0.1) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.25) 0%, rgba(230, 126, 100, 0.1) 40%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
-  animation: glowPulse24K 3s ease-in-out infinite alternate;
+  animation: glowPulseRuby 3s ease-in-out infinite alternate;
 }
 
 .page-loader-box {
@@ -56,18 +56,18 @@
 
 .ring-outer {
   inset: 0;
-  border: 2px dashed rgba(229, 184, 59, 0.45);
-  border-top-color: #FFF5D0;
-  border-right-color: #E5B83B;
+  border: 2px dashed rgba(225, 29, 72, 0.45);
+  border-top-color: #FFE4E6;
+  border-right-color: #E11D48;
   animation: spinOuter 3.5s linear infinite;
-  box-shadow: 0 0 20px rgba(229, 184, 59, 0.25);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.3);
 }
 
 .ring-inner {
   inset: 12px;
   border: 1.5px solid rgba(230, 126, 100, 0.25);
-  border-bottom-color: #E5B83B;
-  border-left-color: #FFF5D0;
+  border-bottom-color: #E11D48;
+  border-left-color: #FFE4E6;
   animation: spinInner 2s linear infinite reverse;
 }
 
@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 0 16px rgba(229, 184, 59, 0.6));
+  filter: drop-shadow(0 0 16px rgba(225, 29, 72, 0.65));
   animation: logoBreath 2.4s ease-in-out infinite alternate;
 }
 
@@ -89,19 +89,19 @@
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.24em;
-  background: var(--ameza-gold-gradient);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   margin-bottom: 16px;
-  filter: drop-shadow(0 2px 10px rgba(229, 184, 59, 0.3));
+  filter: drop-shadow(0 2px 10px rgba(225, 29, 72, 0.35));
 }
 
 /* ── Shimmer Progress Bar ─────────────────────────────── */
 .page-loader-progress-track {
   width: 180px;
   height: 3px;
-  background: rgba(229, 184, 59, 0.15);
+  background: rgba(225, 29, 72, 0.15);
   border-radius: var(--radius-pill);
   overflow: hidden;
   position: relative;
@@ -114,9 +114,9 @@
   left: 0;
   height: 100%;
   width: 50%;
-  background: var(--ameza-gold-gradient);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   border-radius: var(--radius-pill);
-  box-shadow: 0 0 10px rgba(229, 184, 59, 0.8);
+  box-shadow: 0 0 12px rgba(225, 29, 72, 0.85);
   animation: progressSweep 1.8s ease-in-out infinite;
 }
 
@@ -154,6 +154,11 @@
 @keyframes textFade {
   0% { opacity: 0.6; }
   100% { opacity: 1; }
+}
+
+@keyframes glowPulseRuby {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.85; }
 }
 
 @keyframes glowPulse24K {

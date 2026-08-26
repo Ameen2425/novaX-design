@@ -8,7 +8,7 @@ const BrandOverview = () => {
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
-          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(229, 184, 59, 0.2)" />
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(225, 29, 72, 0.25)" />
         </svg>
       ),
       tag: "Curation",
@@ -29,7 +29,7 @@ const BrandOverview = () => {
     {
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="8" r="7" fill="rgba(229, 184, 59, 0.2)" />
+          <circle cx="12" cy="8" r="7" fill="rgba(225, 29, 72, 0.25)" />
           <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
         </svg>
       ),
@@ -40,7 +40,7 @@ const BrandOverview = () => {
     {
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="rgba(229, 184, 59, 0.25)" />
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="rgba(225, 29, 72, 0.25)" />
         </svg>
       ),
       tag: "Innovation",

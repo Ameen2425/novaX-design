@@ -22,15 +22,15 @@
   box-sizing: border-box;
 }
 
-/* 24K Liquid Gold Shimmer gradient effect */
+/* Crimson Ruby Liquid Shimmer gradient effect */
 .skeleton-shimmer {
   background: linear-gradient(
     90deg,
-    rgba(46, 22, 34, 0.7) 0%,
-    rgba(70, 34, 52, 0.9) 30%,
-    rgba(212, 175, 55, 0.22) 50%,
-    rgba(70, 34, 52, 0.9) 70%,
-    rgba(46, 22, 34, 0.7) 100%
+    rgba(35, 18, 29, 0.7) 0%,
+    rgba(55, 24, 42, 0.9) 30%,
+    rgba(225, 29, 72, 0.25) 50%,
+    rgba(55, 24, 42, 0.9) 70%,
+    rgba(35, 18, 29, 0.7) 100%
   );
   background-size: 800px 100%;
   animation: cardShimmer 1.8s infinite linear;

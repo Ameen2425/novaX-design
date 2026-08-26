@@ -1,73 +1,88 @@
 /* =========================================================
-   AMEZA SINGLE PRODUCT PAGE (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
+   AMEZA SINGLE PRODUCT PAGE
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
    ========================================================= */
 
-.single-page {
-  min-height: 100vh;
+.pine-single-page-root {
   background-color: var(--ameza-bg, #0D070B);
-  padding-top: calc(var(--header-height-desktop, 76px) + 24px);
-  padding-bottom: var(--section-gap, 48px);
-  padding-left: clamp(16px, 4vw, 40px);
-  padding-right: clamp(16px, 4vw, 40px);
+  min-height: 100vh;
+  width: 100%;
+  color: var(--ameza-text, #FAF7F2);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.pine-single-page {
+  padding-top: calc(var(--header-height-desktop, 76px) + 28px);
+  padding-bottom: clamp(48px, 8vw, 84px);
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
   max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
-  color: var(--ameza-text, #FAF7F2);
   box-sizing: border-box;
   width: 100%;
 }
 
-/* ── Breadcrumb ───────────────────────────────────────── */
-.single-breadcrumb {
+/* ── 1. Editorial Breadcrumb ──────────────────────────── */
+.pine-breadcrumb {
   display: flex;
   align-items: center;
   gap: 10px;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--ameza-text-muted, #9E8B89);
-  margin-bottom: 24px;
+  margin-bottom: clamp(24px, 3.5vw, 36px);
   flex-wrap: wrap;
 }
 
-.single-breadcrumb span {
+.pine-breadcrumb span {
   cursor: pointer;
   transition: color var(--transition-fast);
 }
 
-.single-breadcrumb span:hover {
-  color: var(--ameza-gold, #E5B83B);
+.pine-breadcrumb span:hover {
+  color: var(--ameza-ruby, #E11D48);
 }
 
-.single-breadcrumb span:last-child {
-  color: var(--ameza-gold-bright, #FFF5D0);
+.pine-breadcrumb-current {
+  color: var(--ameza-ruby-bright, #FFE4E6) !important;
   font-weight: 600;
-  cursor: default;
+  cursor: default !important;
+  display: inline-block;
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.single-breadcrumb b {
+.pine-breadcrumb-sep {
   color: var(--ameza-border);
   font-weight: normal;
 }
 
-/* ── Main Layout ──────────────────────────────────────── */
-.single-product {
+/* ── 2. Product Showcase Grid (2-Column Editorial) ─────── */
+.pine-product-showcase {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(28px, 4.8vw, 76px);
   align-items: flex-start;
-  margin-bottom: var(--section-gap, 42px);
+  margin-bottom: clamp(40px, 6vw, 64px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ── Toast Notification ───────────────────────────────── */
-.single-toast-notification {
+/* ── 3. Toast Notification ────────────────────────────── */
+.pine-toast-notification {
   position: fixed;
   top: 96px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(26, 13, 21, 0.95);
+  background: var(--ameza-glass-bg, rgba(26, 13, 21, 0.95));
   backdrop-filter: blur(20px);
-  border: 1px solid var(--ameza-border-gold);
-  border-radius: var(--radius-pill);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--ameza-border-ruby, rgba(225, 29, 72, 0.65));
+  border-radius: var(--radius-pill, 999px);
   padding: 12px 28px;
   display: flex;
   align-items: center;
@@ -76,59 +91,74 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 24px rgba(229, 184, 59, 0.35);
-  z-index: 10000;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 24px rgba(225, 29, 72, 0.35);
+  z-index: 99999;
   max-width: 90vw;
   box-sizing: border-box;
 }
 
-.single-toast-notification .toast-icon {
-  color: var(--ameza-gold, #E5B83B);
+.pine-toast-icon {
+  color: var(--ameza-ruby, #E11D48);
+  font-size: 14px;
 }
 
-/* ── Loading State ────────────────────────────────────── */
-.single-loading {
-  min-height: 70vh;
+/* ── 4. Loading State ─────────────────────────────────── */
+.pine-single-loading {
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: var(--ameza-bg, #0D070B);
+  background-color: var(--ameza-bg, #0D070B);
   color: var(--ameza-text-secondary, #DAC8C3);
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.04em;
 }
 
-.single-loading-spinner {
-  width: 48px;
-  height: 48px;
+.pine-loading-spinner {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  border: 3px solid rgba(229, 184, 59, 0.2);
-  border-top-color: var(--ameza-gold, #E5B83B);
+  border: 3px solid rgba(225, 29, 72, 0.2);
+  border-top-color: var(--ameza-ruby, #E11D48);
+  border-right-color: var(--ameza-copper, #E67E64);
   animation: spin 0.8s linear infinite;
-  box-shadow: 0 0 20px rgba(229, 184, 59, 0.3);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.3);
 }
 
-/* ── Not Found ────────────────────────────────────────── */
-.single-not-found {
-  min-height: 60vh;
+/* ── 5. Product Not Found ─────────────────────────────── */
+.pine-single-not-found {
+  min-height: 65vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 18px;
   text-align: center;
   padding: 40px 20px;
+  background-color: var(--ameza-bg, #0D070B);
 }
 
-.single-not-found h1 {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: 2.4rem;
+.pine-single-not-found h1 {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: 2.6rem;
   color: var(--ameza-text, #FAF7F2);
+  margin: 0;
 }
 
-.single-not-found button {
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
+.pine-single-not-found p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  max-width: 480px;
+  margin: 0;
+}
+
+.pine-single-not-found button {
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
@@ -138,15 +168,36 @@
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby);
+  margin-top: 8px;
 }
 
-@media (max-width: 960px) {
-  .single-product {
+/* ── 6. Responsive Breakdown ──────────────────────────── */
+@media (max-width: 1024px) {
+  .pine-product-showcase {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 36px;
   }
-  .single-page {
+}
+
+@media (max-width: 768px) {
+  .pine-single-page {
     padding-top: calc(var(--header-height-mobile, 64px) + 16px);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .pine-breadcrumb-current {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 360px) {
+  .pine-breadcrumb {
+    font-size: 11px;
+    gap: 6px;
+  }
+  .pine-breadcrumb-current {
+    max-width: 160px;
   }
 }

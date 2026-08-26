@@ -64,8 +64,8 @@
 }
 
 .users-search-wrapper:focus-within {
-  border-color: var(--ameza-gold, #E5B83B);
-  box-shadow: 0 0 0 3.5px rgba(229, 184, 59, 0.22), 0 8px 26px rgba(0, 0, 0, 0.6);
+  border-color: var(--ameza-ruby, #E11D48);
+  box-shadow: 0 0 0 3.5px rgba(225, 29, 72, 0.22), 0 8px 26px rgba(0, 0, 0, 0.6);
 }
 
 .users-search-icon {
@@ -73,7 +73,7 @@
   left: 22px;
   width: 22px;
   height: 22px;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
   pointer-events: none;
   opacity: 0.95;
 }
@@ -103,9 +103,9 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgba(229, 184, 59, 0.18);
+  background: rgba(225, 29, 72, 0.18);
   border: 1px solid var(--ameza-border);
-  color: var(--ameza-gold-bright, #FFF5D0);
+  color: var(--ameza-ruby-bright, #FFE4E6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,8 +115,8 @@
 }
 
 .users-search-clear:hover {
-  background: var(--ameza-gold-gradient);
-  color: #0D070B;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF;
   border-color: transparent;
   transform: scale(1.05);
 }

@@ -1,5 +1,6 @@
 /* =========================================================
    AMEZA BRAND OVERVIEW (WHAT IS AMEZA / WEBSITE SHOWCASE)
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
    ========================================================= */
 
 .brand-overview-section {
@@ -32,7 +33,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
   margin-bottom: 10px;
   display: block;
 }
@@ -48,7 +49,7 @@
 }
 
 .brand-overview-title span {
-  background: var(--ameza-gold-gradient);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
@@ -90,7 +91,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(229, 184, 59, 0.05) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.08) 0%, transparent 60%);
   opacity: 0;
   transition: opacity var(--transition);
   pointer-events: none;
@@ -98,7 +99,7 @@
 
 .brand-pillar-card:hover {
   background: var(--ameza-card-hover, #2E1826);
-  border-color: var(--ameza-border-gold);
+  border-color: var(--ameza-border-ruby, #E11D48);
   box-shadow: var(--shadow-card-hover);
   transform: translateY(-4px);
 }
@@ -120,7 +121,7 @@
   border-radius: 12px;
   background: var(--ameza-section, #1A0D15);
   border: 1px solid var(--ameza-border);
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,8 +132,8 @@
 
 .brand-pillar-card:hover .pillar-icon-box {
   transform: scale(1.1) rotate(4deg);
-  color: var(--ameza-gold-bright, #FFF5D0);
-  border-color: var(--ameza-border-gold);
+  color: var(--ameza-ruby-bright, #FFE4E6);
+  border-color: var(--ameza-border-ruby);
 }
 
 .pillar-tag {
@@ -141,9 +142,9 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
-  background: rgba(229, 184, 59, 0.12);
-  border: 1px solid rgba(229, 184, 59, 0.25);
+  color: var(--ameza-ruby, #E11D48);
+  background: rgba(225, 29, 72, 0.14);
+  border: 1px solid rgba(225, 29, 72, 0.35);
   padding: 3px 9px;
   border-radius: var(--radius-pill);
 }
@@ -188,7 +189,7 @@
   right: -40px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(229, 184, 59, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.12) 0%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -269,8 +270,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 700;
@@ -279,14 +280,14 @@
   padding: 13px 26px;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
   transition: all var(--transition);
 }
 
 .btn-explore-catalog:hover {
-  background: var(--ameza-gold-gradient-hover);
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
+  box-shadow: var(--shadow-ruby-lg, var(--shadow-gold-lg));
 }
 
 .btn-learn-heritage {
@@ -301,14 +302,14 @@
   text-transform: uppercase;
   padding: 12px 24px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--ameza-border-gold);
+  border: 1px solid var(--ameza-border-ruby, #E11D48);
   text-decoration: none;
   transition: all var(--transition);
 }
 
 .btn-learn-heritage:hover {
-  background: rgba(229, 184, 59, 0.14);
-  color: var(--ameza-gold-bright) !important;
+  background: rgba(225, 29, 72, 0.18);
+  color: var(--ameza-ruby-bright) !important;
   transform: translateY(-2px);
 }
 
@@ -337,7 +338,7 @@
 
 .metric-box:hover {
   background: var(--ameza-card-hover, #2E1826);
-  border-color: var(--ameza-border-gold);
+  border-color: var(--ameza-border-ruby, #E11D48);
   transform: translateY(-3px);
 }
 
@@ -345,7 +346,7 @@
   font-family: var(--font-heading, var(--font-display));
   font-size: clamp(1.8rem, 2.4vw, 2.2rem);
   font-weight: 700;
-  color: var(--ameza-gold-bright, #FFF5D0);
+  color: var(--ameza-ruby-bright, #FFE4E6);
   line-height: 1;
 }
 

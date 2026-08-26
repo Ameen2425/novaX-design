@@ -96,10 +96,10 @@
   transform: scale(1.0);
 }
 
-/* Panel 01 — STYLE: Deep velvet obsidian with warm gold amber highlights */
+/* Panel 01 — STYLE: Deep velvet obsidian with warm ruby highlights */
 .world-panel:nth-child(1) .world-panel-bg {
   background:
-    radial-gradient(ellipse at 30% 20%, rgba(229, 184, 59, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 30% 20%, rgba(225, 29, 72, 0.24) 0%, transparent 55%),
     radial-gradient(ellipse at 80% 80%, rgba(230, 126, 100, 0.16) 0%, transparent 50%),
     linear-gradient(155deg, #2A1423 0%, #1D0E19 40%, #0D070B 100%);
 }
@@ -108,22 +108,22 @@
 .world-panel:nth-child(2) .world-panel-bg {
   background:
     radial-gradient(ellipse at 70% 30%, rgba(230, 126, 100, 0.24) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 70%, rgba(229, 184, 59, 0.14) 0%, transparent 45%),
+    radial-gradient(ellipse at 20% 70%, rgba(225, 29, 72, 0.16) 0%, transparent 45%),
     linear-gradient(165deg, #2E1524 0%, #1A0C16 50%, #090407 100%);
 }
 
-/* Panel 03 — DESIGN: 24K Imperial Gold & Velvet Obsidian */
+/* Panel 03 — DESIGN: Crimson Ruby Red & Velvet Obsidian */
 .world-panel:nth-child(3) .world-panel-bg {
   background:
-    radial-gradient(ellipse at 50% 10%, rgba(255, 245, 208, 0.2) 0%, transparent 45%),
-    radial-gradient(ellipse at 90% 90%, rgba(229, 184, 59, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 10%, rgba(255, 228, 230, 0.25) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 90%, rgba(225, 29, 72, 0.28) 0%, transparent 50%),
     linear-gradient(145deg, #33182A 0%, #1F0D1B 45%, #0B0509 100%);
 }
 
-/* Panel 04 — EVERYDAY: Burnished Bronze & Deep Velvet */
+/* Panel 04 — EVERYDAY: Burnished Ruby & Deep Velvet */
 .world-panel:nth-child(4) .world-panel-bg {
   background:
-    radial-gradient(ellipse at 25% 75%, rgba(229, 184, 59, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 25% 75%, rgba(225, 29, 72, 0.22) 0%, transparent 50%),
     radial-gradient(ellipse at 75% 20%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
     linear-gradient(160deg, #2B1524 0%, #180B14 50%, #080306 100%);
 }

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA NOIR FOOTER (OBSIDIAN VELVET & 24K LIQUID GOLD)
+   AMEZA NOIR FOOTER (OBSIDIAN VELVET & CRIMSON RUBY RED)
    ========================================================= */
 
 .footer {
@@ -68,11 +68,11 @@
 }
 
 .footer-socials a:hover {
-  background: var(--ameza-gold-gradient);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   border-color: transparent;
-  color: #0D070B;
+  color: #FFFFFF;
   transform: translateY(-3px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
 }
 
 /* ── Footer Navigation Cols ───────────────────────────── */
@@ -103,7 +103,7 @@
 }
 
 .footer-col ul li a:hover {
-  color: var(--ameza-gold-bright, #FFF5D0);
+  color: var(--ameza-ruby-bright, #FFE4E6);
   transform: translateX(4px);
 }
 
@@ -139,8 +139,8 @@
 }
 
 .footer-newsletter-form input:focus {
-  border-color: var(--ameza-gold, #E5B83B);
-  box-shadow: 0 0 0 3px rgba(229, 184, 59, 0.18);
+  border-color: var(--ameza-ruby, #E11D48);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.22);
 }
 
 .footer-newsletter-form input::placeholder {
@@ -153,21 +153,21 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--ameza-gold-gradient);
-  color: #0D070B;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
   transition: all var(--transition-fast);
 }
 
 .footer-newsletter-form button:hover {
-  background: var(--ameza-gold-gradient-hover);
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
   transform: scale(1.05);
-  box-shadow: var(--shadow-gold-lg);
+  box-shadow: var(--shadow-ruby-lg, var(--shadow-gold-lg));
 }
 
 .newsletter-success {
@@ -206,11 +206,11 @@
 }
 
 .footer-legal a:hover {
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
 }
 
 .footer-made-with .heart-icon {
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
 }
 
 @media (max-width: 1100px) {

@@ -1,17 +1,28 @@
 /* =========================================================
    AMEZA MASTER LUXURY MOTION & MICRO-INTERACTIONS
-   Obsidian Velvet & 24K Imperial Liquid Gold
+   Obsidian Velvet & Crimson Ruby Red
    ========================================================= */
+
+@keyframes rubyShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
 
 @keyframes goldShimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
+@keyframes rubyPulse {
+  0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.48); }
+  70% { box-shadow: 0 0 0 12px rgba(225, 29, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+}
+
 @keyframes goldPulse {
-  0% { box-shadow: 0 0 0 0 rgba(229, 184, 59, 0.45); }
-  70% { box-shadow: 0 0 0 12px rgba(229, 184, 59, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(229, 184, 59, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.48); }
+  70% { box-shadow: 0 0 0 12px rgba(225, 29, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
 }
 
 @keyframes floatSlow {
@@ -59,12 +70,12 @@
 
 @keyframes borderGlowPulse {
   0%, 100% {
-    border-color: rgba(229, 184, 59, 0.25);
-    box-shadow: 0 0 10px rgba(229, 184, 59, 0.1);
+    border-color: rgba(225, 29, 72, 0.25);
+    box-shadow: 0 0 10px rgba(225, 29, 72, 0.15);
   }
   50% {
-    border-color: rgba(229, 184, 59, 0.6);
-    box-shadow: 0 0 20px rgba(229, 184, 59, 0.25);
+    border-color: rgba(225, 29, 72, 0.65);
+    box-shadow: 0 0 22px rgba(225, 29, 72, 0.38);
   }
 }
 
@@ -82,8 +93,9 @@
   animation: floatSlow 6s ease-in-out infinite;
 }
 
+.animate-pulse-ruby,
 .animate-pulse-gold {
-  animation: goldPulse 2.5s infinite;
+  animation: rubyPulse 2.5s infinite;
 }
 
 .animate-border-glow {

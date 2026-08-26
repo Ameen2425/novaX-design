@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA PRODUCT FILTERS (OBSIDIAN VELVET + 24K IMPERIAL GOLD)
+   AMEZA PRODUCT FILTERS (OBSIDIAN VELVET + CRIMSON RUBY RED)
    Quiet Luxury • Editorial • Artisanal Toolbar & Chips
    ========================================================= */
 
@@ -38,8 +38,8 @@
 }
 
 .products-search-wrapper:focus-within {
-  border-color: var(--ameza-gold, #E5B83B);
-  box-shadow: 0 0 0 3.5px rgba(229, 184, 59, 0.25), 0 8px 26px rgba(0, 0, 0, 0.6);
+  border-color: var(--ameza-ruby, #E11D48);
+  box-shadow: 0 0 0 3.5px rgba(225, 29, 72, 0.25), 0 8px 26px rgba(0, 0, 0, 0.6);
 }
 
 .products-search-icon {
@@ -47,7 +47,7 @@
   left: 22px;
   width: 22px;
   height: 22px;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
   pointer-events: none;
   opacity: 0.95;
 }
@@ -77,9 +77,9 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgba(229, 184, 59, 0.18);
+  background: rgba(225, 29, 72, 0.18);
   border: 1px solid var(--ameza-border);
-  color: var(--ameza-gold-bright, #FFF5D0);
+  color: var(--ameza-ruby-bright, #FFE4E6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,8 +89,8 @@
 }
 
 .products-search-clear:hover {
-  background: var(--ameza-gold-gradient);
-  color: #0D070B;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF;
   border-color: transparent;
   transform: scale(1.05);
 }
@@ -110,7 +110,7 @@
 }
 
 .products-count-label strong {
-  color: var(--ameza-gold-bright, #FFF5D0);
+  color: var(--ameza-ruby-bright, #FFE4E6);
   font-family: var(--font-mono);
   font-size: 15px;
 }
@@ -150,7 +150,7 @@
   cursor: pointer;
   padding-right: 22px;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23E5B83B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23E11D48' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right center;
 }
@@ -197,17 +197,17 @@
 
 .category-chip:hover {
   background: var(--ameza-card, #23121D);
-  border-color: var(--ameza-border-gold);
-  color: var(--ameza-gold-bright, #FFF5D0);
+  border-color: var(--ameza-border-ruby, #E11D48);
+  color: var(--ameza-ruby-bright, #FFE4E6);
   transform: translateY(-1px);
 }
 
 .category-chip.active {
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  color: #FFFFFF !important;
   font-weight: 750;
   border-color: transparent;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
 }
 
 .category-select-pill-wrap {
@@ -226,7 +226,7 @@
   cursor: pointer;
   outline: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23E5B83B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23E11D48' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   transition: all var(--transition-fast);
@@ -234,8 +234,8 @@
 
 .category-dropdown-pill:hover,
 .category-dropdown-pill:focus {
-  border-color: var(--ameza-gold, #E5B83B);
-  color: var(--ameza-gold-bright, #FFF5D0);
+  border-color: var(--ameza-ruby, #E11D48);
+  color: var(--ameza-ruby-bright, #FFE4E6);
 }
 
 .category-dropdown-pill option {

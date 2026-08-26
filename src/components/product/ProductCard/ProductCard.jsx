@@ -94,11 +94,11 @@ const ProductCard = ({ id, title, description, price, image, category, rating })
         onMouseLeave={handleMouseLeave}
         style={{ transform: transformStyle }}
       >
-        {/* Dynamic Champagne Sheen Reflection */}
+        {/* Dynamic Ruby Sheen Reflection */}
         <div
           className="product-card-sheen"
           style={{
-            background: `radial-gradient(circle at ${sheenPos.x}% ${sheenPos.y}%, rgba(255, 245, 208, 0.15) 0%, rgba(229, 184, 59, 0.06) 40%, transparent 70%)`,
+            background: `radial-gradient(circle at ${sheenPos.x}% ${sheenPos.y}%, rgba(255, 228, 230, 0.16) 0%, rgba(225, 29, 72, 0.08) 40%, transparent 70%)`,
             opacity: sheenPos.opacity,
           }}
         />

@@ -1,5 +1,5 @@
 /* =========================================================
-   AMEZA AMBIENT SCROLL PROGRESS BAR (24K GOLD GRADIENT)
+   AMEZA AMBIENT SCROLL PROGRESS BAR (CRIMSON RUBY GRADIENT)
    ========================================================= */
 
 .scroll-progress-bar-wrap {
@@ -15,7 +15,7 @@
 
 .scroll-progress-bar {
   height: 100%;
-  background: var(--ameza-gold-gradient, linear-gradient(135deg, #FFF6D6 0%, #E5B83B 50%, #B8891D 100%));
-  box-shadow: 0 0 10px rgba(229, 184, 59, 0.7);
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
+  box-shadow: 0 0 12px rgba(225, 29, 72, 0.85);
   transition: width 0.1s ease-out;
 }

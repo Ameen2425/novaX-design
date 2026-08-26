@@ -8,12 +8,14 @@ import "./SingleProduct.css";
 
 import ProductGallery from "../../components/product/ProductGallery/ProductGallery";
 import ProductInfo from "../../components/product/ProductInfo/ProductInfo";
-import ProductCareSection from "../../components/product/ProductCareSection/ProductCareSection";
+import ProductDetails from "../../components/product/ProductDetails/ProductDetails";
+import RelatedProducts from "../../components/product/RelatedProducts/RelatedProducts";
+import TrustBar from "../../components/product/TrustBar/TrustBar";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
@@ -23,14 +25,17 @@ const SingleProduct = () => {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const res = await axios.get(
-        `https://dummyjson.com/products/${id}`
-      );
-      if (res && res.data) {
-        setProduct(res.data);
-        setSelectedImage(res.data.thumbnail || res.data.images?.[0] || "");
+      try {
+        const res = await axios.get(`https://dummyjson.com/products/${id}`);
+        if (res && res.data) {
+          setProduct(res.data);
+          setSelectedImage(res.data.thumbnail || res.data.images?.[0] || "");
+        }
+      } catch (error) {
+        console.error("Failed to load product:", error);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
 
     getProduct();
@@ -60,13 +65,13 @@ const SingleProduct = () => {
   };
 
   /* =====================================================
-     LOADING
+     LOADING STATE
   ===================================================== */
   if (loading) {
     return (
-      <main className="single-loading">
-        <div className="single-loading-spinner"></div>
-        <p>Loading luxury product details...</p>
+      <main className="pine-single-loading">
+        <div className="pine-loading-spinner" />
+        <p>Curating luxury product editorial...</p>
       </main>
     );
   }
@@ -76,12 +81,13 @@ const SingleProduct = () => {
   ===================================================== */
   if (!product.id) {
     return (
-      <main className="single-not-found">
+      <main className="pine-single-not-found">
         <h1>Product Not Found</h1>
-        <p>We couldn't find the product you're looking for.</p>
+        <p>The requested bespoke piece is currently unavailable in the atelier catalog.</p>
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          type="button"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
           onClick={() => navigate("/products")}
         >
           Browse AMEZA Collection →
@@ -96,49 +102,51 @@ const SingleProduct = () => {
   );
 
   return (
-    <>
+    <div className="pine-single-page-root">
+      {/* ── TOAST NOTIFICATION ── */}
       <AnimatePresence>
         {toastMessage && (
           <motion.div
-            className="single-toast-notification"
-            initial={{ opacity: 0, y: -20, x: "-50%" }}
+            className="pine-toast-notification"
+            initial={{ opacity: 0, y: -24, x: "-50%" }}
             animate={{ opacity: 1, y: 0, x: "-50%" }}
-            exit={{ opacity: 0, y: -20, x: "-50%" }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -24, x: "-50%" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <span className="toast-icon">✦</span>
+            <span className="pine-toast-icon">✦</span>
             <span>{toastMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
       <motion.main
-        className="single-page"
+        className="pine-single-page"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.45 }}
       >
         {/* =================================================
-            BREADCRUMB
+            1. BREADCRUMB
         ================================================= */}
-        <motion.div
-          className="single-breadcrumb"
-          initial={{ opacity: 0, y: -10 }}
+        <motion.nav
+          className="pine-breadcrumb"
+          initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.35 }}
+          aria-label="Breadcrumb"
         >
           <span onClick={() => navigate("/")}>Home</span>
-          <b>/</b>
+          <b className="pine-breadcrumb-sep">/</b>
           <span onClick={() => navigate("/products")}>Products</span>
-          <b>/</b>
-          <span>{product.title}</span>
-        </motion.div>
+          <b className="pine-breadcrumb-sep">/</b>
+          <span className="pine-breadcrumb-current">{product.title}</span>
+        </motion.nav>
 
         {/* =================================================
-            MAIN PRODUCT
+            2. PRODUCT SHOWCASE (2-COLUMN EDITORIAL)
         ================================================= */}
-        <section className="single-product">
+        <section className="pine-product-showcase">
           <ProductGallery
             product={product}
             selectedImage={selectedImage || product.thumbnail || product.images?.[0]}
@@ -156,11 +164,25 @@ const SingleProduct = () => {
         </section>
 
         {/* =================================================
-            PRODUCT DETAILS & CARE
+            3. PRODUCT DETAILS & CARE
         ================================================= */}
-        <ProductCareSection />
+        <ProductDetails product={product} />
+
+        {/* =================================================
+            4. YOU MAY ALSO LIKE (RELATED PRODUCTS)
+        ================================================= */}
+        <RelatedProducts
+          currentCategory={product.category}
+          currentId={product.id}
+          onToast={showToast}
+        />
+
+        {/* =================================================
+            5. TRUST & CONCIERGE BAR
+        ================================================= */}
+        <TrustBar />
       </motion.main>
-    </>
+    </div>
   );
 };
 

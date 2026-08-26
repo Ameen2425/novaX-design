@@ -1,312 +1,455 @@
 /* =========================================================
-   AMEZA SINGLE PRODUCT INFO (OBSIDIAN VELVET & 24K IMPERIAL GOLD)
+   AMEZA PRODUCT INFORMATION
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
    ========================================================= */
 
-.single-info {
+.pine-info-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-}
-
-.single-category {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
-  margin-bottom: 10px;
-  display: block;
-}
-
-.single-info h1 {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 600;
-  color: var(--ameza-text, #FAF7F2);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin: 0 0 14px 0;
-}
-
-/* Rating */
-.single-rating {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  margin-bottom: 18px;
-}
-
-.single-rating span {
-  color: var(--ameza-gold, #E5B83B);
-}
-
-.single-rating strong {
-  font-family: var(--font-body);
-  font-weight: 700;
-  color: var(--ameza-text, #FAF7F2);
-}
-
-.single-rating p {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--ameza-text-muted, #9E8B89);
-  margin: 0;
-}
-
-.single-divider {
-  width: 100%;
-  height: 1px;
-  background: var(--ameza-border);
-  margin-bottom: 18px;
-}
-
-.single-description {
-  font-family: var(--font-body);
-  font-size: clamp(13.5px, 1.05vw, 15px);
-  line-height: 1.7;
-  color: var(--ameza-text-secondary, #DAC8C3);
-  margin: 0 0 22px 0;
-}
-
-/* Price */
-.single-price {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  margin-bottom: 22px;
-  flex-wrap: wrap;
-}
-
-.single-price strong {
-  font-family: var(--font-heading, var(--font-display));
-  font-size: clamp(2rem, 3.2vw, 2.6rem);
-  font-weight: 700;
-  color: var(--ameza-gold-bright, #FFF5D0);
-  line-height: 1;
-}
-
-.single-price del {
-  font-family: var(--font-body);
-  font-size: 16px;
-  color: var(--ameza-text-muted, #9E8B89);
-}
-
-.price-discount-badge {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  background: var(--ameza-copper, #E67E64);
-  color: #FFFFFF;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-}
-
-/* Semantic Stock */
-.single-stock {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 24px;
-  font-family: var(--font-body);
-  font-size: 12px;
-}
-
-.single-stock.in-stock {
-  background: var(--ameza-emerald-bg);
-  border: 1px solid var(--ameza-emerald-border);
-  color: var(--ameza-emerald, #10B981);
-}
-
-.single-stock.low-stock {
-  background: rgba(229, 184, 59, 0.16);
-  border: 1px solid rgba(229, 184, 59, 0.4);
-  color: var(--ameza-gold, #E5B83B);
-}
-
-.single-stock.out-of-stock {
-  background: rgba(239, 68, 68, 0.16);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: var(--ameza-error, #EF4444);
-}
-
-.stock-indicator-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.single-stock p {
-  margin: 0;
-  opacity: 0.9;
-}
-
-/* Specifications */
-.single-specifications {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  width: 100%;
-  padding: 16px;
-  background: var(--ameza-card, #23121D);
-  border: 1px solid var(--ameza-border-card);
-  border-radius: var(--radius-card, 16px);
-  margin-bottom: 24px;
   box-sizing: border-box;
 }
 
-.single-specifications div {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+/* ── 1. Category Eyebrow ──────────────────────────────── */
+.pine-category-eyebrow {
+  margin-bottom: 12px;
 }
 
-.single-specifications span {
+.pine-category-eyebrow span {
   font-family: var(--font-body);
-  font-size: 10.5px;
-  color: var(--ameza-text-muted, #9E8B89);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--ameza-ruby, #E11D48);
+  display: inline-block;
 }
 
-.single-specifications strong {
-  font-family: var(--font-body);
-  font-size: 13px;
+/* ── 2. Product Title ─────────────────────────────────── */
+.pine-product-title {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(30px, 3.8vw, 52px);
   font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+  max-width: 720px;
+}
+
+/* ── 3. Rating Strip ──────────────────────────────────── */
+.pine-rating-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pine-stars {
+  color: var(--ameza-ruby, #E11D48);
+  font-size: 15px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.pine-rating-score {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 13.5px;
+  font-weight: 700;
   color: var(--ameza-text, #FAF7F2);
 }
 
-.text-in-stock { color: var(--ameza-emerald, #10B981) !important; }
-.text-low-stock { color: var(--ameza-gold, #E5B83B) !important; }
-.text-out-stock { color: var(--ameza-error, #EF4444) !important; }
+.pine-rating-divider {
+  color: var(--ameza-border);
+}
 
-/* Actions */
-.single-actions {
+.pine-rating-label {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--ameza-text-secondary, #DAC8C3);
+}
+
+.pine-rating-count {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--ameza-text-muted, #9E8B89);
+}
+
+/* ── 4. Description ───────────────────────────────────── */
+.pine-description {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.05vw, 15.5px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ameza-text-secondary, #DAC8C3);
+  max-width: 650px;
+  margin: 0 0 24px 0;
+}
+
+/* ── 5. Price Row ─────────────────────────────────────── */
+.pine-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pine-main-price {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.pine-currency {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  color: var(--ameza-ruby, #E11D48);
+}
+
+.pine-amount {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 700;
+  color: var(--ameza-ruby-bright, #FFE4E6);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.pine-price-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pine-old-price {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ameza-text-muted, #9E8B89);
+  text-decoration: line-through;
+}
+
+.pine-savings-pill {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11.5px;
+  font-weight: 700;
+  background: var(--ameza-copper-bg, rgba(230, 126, 100, 0.18));
+  color: var(--ameza-copper, #E67E64);
+  border: 1px solid var(--ameza-copper-border, rgba(230, 126, 100, 0.45));
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.04em;
+}
+
+/* ── 6. Stock Status ──────────────────────────────────── */
+.pine-stock-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  box-sizing: border-box;
+}
+
+.pine-stock-pill.in-stock {
+  background: var(--ameza-emerald-bg, rgba(16, 185, 129, 0.16));
+  border: 1px solid var(--ameza-emerald-border, rgba(16, 185, 129, 0.45));
+  color: var(--ameza-emerald, #10B981);
+}
+
+.pine-stock-pill.low-stock {
+  background: var(--ameza-copper-bg, rgba(230, 126, 100, 0.18));
+  border: 1px solid var(--ameza-copper-border, rgba(230, 126, 100, 0.45));
+  color: var(--ameza-copper, #E67E64);
+}
+
+.pine-stock-pill.out-stock {
+  background: rgba(225, 29, 72, 0.14);
+  border: 1px solid rgba(225, 29, 72, 0.45);
+  color: var(--ameza-ruby, #E11D48);
+}
+
+.pine-stock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.pine-stock-title {
+  font-weight: 700;
+}
+
+.pine-stock-sep {
+  opacity: 0.5;
+}
+
+.pine-stock-count {
+  color: var(--ameza-text-secondary, #DAC8C3);
+}
+
+/* ── 7. Product Specifications Panel ──────────────────── */
+.pine-specs-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card, rgba(225, 29, 72, 0.28));
+  border-radius: var(--radius-card, 16px);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card);
+}
+
+.pine-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pine-spec-label {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ameza-text-muted, #9E8B89);
+}
+
+.pine-spec-val {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  text-transform: capitalize;
+}
+
+.pine-spec-val.text-verified {
+  color: var(--ameza-emerald, #10B981);
+}
+
+.pine-spec-val.text-out {
+  color: var(--ameza-ruby, #E11D48);
+}
+
+/* ── 8. Quantity & CTA Action Buttons ─────────────────── */
+.pine-actions-wrap {
   display: flex;
   align-items: center;
   gap: 14px;
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
 }
 
-.single-cart-button {
-  flex: 1;
-  height: 50px;
-  background: var(--ameza-gold-gradient);
-  color: #0D070B !important;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
+/* Quantity Box */
+.pine-qty-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ameza-card-muted, #1B0E17);
+  border: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.22));
+  border-radius: var(--radius-pill, 999px);
+  height: 52px;
+  width: 120px;
+  padding: 4px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.pine-qty-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
   border: none;
-  cursor: pointer;
-  box-shadow: var(--shadow-gold);
-  transition: all var(--transition);
-  display: inline-flex;
+  color: var(--ameza-text, #FAF7F2);
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
-.single-cart-button:hover:not(:disabled) {
-  background: var(--ameza-gold-gradient-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-lg);
+.pine-qty-btn:hover:not(:disabled) {
+  background: var(--ameza-card-hover, #2E1826);
+  color: var(--ameza-ruby, #E11D48);
 }
 
-.single-buy-button {
+.pine-qty-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pine-qty-num {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ameza-text, #FAF7F2);
+}
+
+/* Primary CTA: ADD TO CART */
+.pine-btn-primary-sage {
   flex: 1;
-  height: 50px;
-  background: var(--ameza-copper);
+  min-width: 160px;
+  height: 52px;
+  background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   color: #FFFFFF !important;
+  border: none;
+  border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(230, 126, 100, 0.4);
-  transition: all var(--transition);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: var(--shadow-ruby, var(--shadow-gold));
+  transition: all var(--transition);
+  box-sizing: border-box;
 }
 
-.single-buy-button:hover:not(:disabled) {
-  background: var(--ameza-copper-hover);
+.pine-btn-primary-sage:hover:not(:disabled) {
+  background: var(--ameza-ruby-gradient-hover, var(--ameza-gold-gradient-hover));
+  box-shadow: var(--shadow-ruby-lg, var(--shadow-gold-lg));
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(230, 126, 100, 0.55);
 }
 
-.single-cart-button:disabled,
-.single-buy-button:disabled {
+.pine-btn-primary-sage:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-/* Services */
-.single-services {
+/* Secondary CTA: BUY NOW */
+.pine-btn-accent-apricot {
+  flex: 1;
+  min-width: 140px;
+  height: 52px;
+  background: var(--ameza-copper-gradient, var(--ameza-copper));
+  color: #FFFFFF !important;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(230, 126, 100, 0.35);
+  transition: all var(--transition);
+  box-sizing: border-box;
+}
+
+.pine-btn-accent-apricot:hover:not(:disabled) {
+  background: var(--ameza-copper-hover);
+  box-shadow: 0 14px 30px rgba(230, 126, 100, 0.5);
+  transform: translateY(-2px);
+}
+
+.pine-btn-accent-apricot:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── 9. Benefits Grid ─────────────────────────────────── */
+.pine-benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   width: 100%;
-}
-
-.single-service {
-  background: var(--ameza-card, #23121D);
-  border: 1px solid var(--ameza-border);
-  border-radius: var(--radius-card, 14px);
-  padding: 14px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
   box-sizing: border-box;
 }
 
-.service-icon {
-  font-size: 18px;
+.pine-benefit-card {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card, rgba(225, 29, 72, 0.28));
+  border-radius: var(--radius-card, 14px);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  transition: all var(--transition-fast);
 }
 
-.single-service strong {
+.pine-benefit-card:hover {
+  background: var(--ameza-card-hover, #2E1826);
+  border-color: var(--ameza-border-ruby, #E11D48);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.pine-benefit-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(225, 29, 72, 0.14);
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pine-benefit-card h4 {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--ameza-text, #FAF7F2);
-  display: block;
-  margin-bottom: 2px;
+  margin: 0 0 2px 0;
 }
 
-.single-service p {
+.pine-benefit-card p {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--ameza-text-secondary, #DAC8C3);
+  color: var(--ameza-text-muted, #9E8B89);
   margin: 0;
+  line-height: 1.35;
 }
 
-@media (max-width: 600px) {
-  .single-specifications {
+/* ── Responsive Info Layout ───────────────────────────── */
+@media (max-width: 768px) {
+  .pine-specs-panel {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
   }
-  .single-actions {
+
+  .pine-actions-wrap {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
-  .single-cart-button,
-  .single-buy-button {
+
+  .pine-qty-box {
     width: 100%;
+    height: 48px;
   }
-  .single-services {
+
+  .pine-btn-primary-sage,
+  .pine-btn-accent-apricot {
+    width: 100%;
+    height: 50px;
+  }
+
+  .pine-benefits-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
