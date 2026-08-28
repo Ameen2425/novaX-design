@@ -388,6 +388,20 @@
   box-shadow: var(--shadow-gold);
 }
 
+.pagination-ellipsis {
+  min-width: 32px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ameza-text-muted, #9E8B89);
+  letter-spacing: 2px;
+  user-select: none;
+}
+
 /* ── 6. Brand Pledge Banner ───────────────────────────── */
 .products-brand-pledge {
   background: var(--ameza-section, #1A0D15);

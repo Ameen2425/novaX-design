@@ -6,6 +6,14 @@ import ProductCard from "../ProductCard/ProductCard";
 import productsHeroImg from "../../../assets/novax-products-hero.jpg";
 import "./ProductList.css";
 
+const excludedCategories = [
+  "groceries",
+  "kitchen-accessories",
+  "motorcycle",
+  "vehicle",
+  "furniture",
+];
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
@@ -18,57 +26,46 @@ const ProductList = () => {
   const productsPerPage = 12;
 
   // =========================
-  // Get Categories
+  // Get Categories (Async/Await Axios)
   // =========================
+  const getCategories = async () => {
+    const response = await axios.get("https://dummyjson.com/products/category-list");
+    const filteredCategories = (response.data || []).filter(
+      (cat) => !excludedCategories.includes(typeof cat === "string" ? cat : cat.slug || cat.name)
+    );
+    setCategoryList(filteredCategories);
+  };
+
   useEffect(() => {
-    setCategoryList([
-      "lipstick",
-      "lip_liner",
-      "foundation",
-      "eyeliner",
-      "eyeshadow",
-      "blush",
-      "bronzer",
-      "mascara",
-      "eyebrow",
-      "nail_polish",
-    ]);
+    getCategories();
   }, []);
 
   // =========================
-  // Get Products
+  // Get Products (Async/Await Axios with Groceries Excluded)
   // =========================
-  useEffect(() => {
-    let isMounted = true;
-    async function productsApi() {
-      setLoading(true);
+  const getProducts = async () => {
+    setLoading(true);
 
-      let api = "https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
-      if (category) {
-        api = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`;
-      }
-
-      const { data } = await axios.get(api);
-      if (isMounted) {
-        let list = Array.isArray(data) ? data : [];
-        if (search) {
-          list = list.filter((p) => {
-            const nameMatch = (p.name || p.title || "").toLowerCase().includes(search.toLowerCase());
-            const brandMatch = (p.brand || "").toLowerCase().includes(search.toLowerCase());
-            const descMatch = (p.description || "").toLowerCase().includes(search.toLowerCase());
-            return nameMatch || brandMatch || descMatch;
-          });
-        }
-        setProducts(list);
-        setPage(1);
-        setLoading(false);
-      }
+    let api = "https://dummyjson.com/products?limit=194";
+    if (category) {
+      api = `https://dummyjson.com/products/category/${category}`;
+    } else if (search) {
+      api = `https://dummyjson.com/products/search?q=${encodeURIComponent(search)}`;
     }
 
-    productsApi();
-    return () => {
-      isMounted = false;
-    };
+    const response = await axios.get(api);
+    let list = response.data.products || [];
+
+    // Strictly exclude groceries and unwanted household/vehicle items
+    list = list.filter((p) => !excludedCategories.includes(p.category));
+
+    setProducts(list);
+    setPage(1);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getProducts();
   }, [category, search]);
 
   // =========================
@@ -105,6 +102,25 @@ const ProductList = () => {
     return Math.ceil(sortedProducts.length / productsPerPage) || 1;
   }, [sortedProducts]);
 
+  // =========================
+  // Pagination Items Generator (1, 2, 3 ..... 9)
+  // =========================
+  const paginationItems = useMemo(() => {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    if (page <= 3) {
+      return [1, 2, 3, 4, ".....", totalPages];
+    }
+
+    if (page >= totalPages - 2) {
+      return [1, ".....", totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+    }
+
+    return [1, ".....", page - 1, page, page + 1, ".....", totalPages];
+  }, [page, totalPages]);
+
   const handlePageChange = (newPage) => {
     setPage(newPage);
     const catalogAnchor = document.getElementById("products-catalog-anchor");
@@ -128,16 +144,16 @@ const ProductList = () => {
           >
             <span className="products-hero-badge">THE AMEZA COLLECTION</span>
             <h1 className="products-hero-title">
-              Explore <span>Beauty & Formulations.</span>
+              Explore <span>Luxury Creations.</span>
             </h1>
             <p className="products-hero-desc">
-              Discover our curated collection of fine beauty creations, haute cosmetics,
-              botanical formulations, and daily luxury essentials.
+              Discover our curated catalog of 100+ fine creations, haute perfumery, luxury timepieces,
+              bespoke cosmetics, and designer accessories.
             </p>
 
             <div className="products-hero-metrics">
               <div className="hero-metric-item">
-                <strong>900+</strong>
+                <strong>100+</strong>
                 <span>Curated Pieces</span>
               </div>
               <div className="metric-sep" />
@@ -242,14 +258,14 @@ const ProductList = () => {
                 transition={{ duration: 0.35 }}
               >
                 {currentProducts.map((product) => {
-                  const productImg = product.api_featured_image
-                    ? (product.api_featured_image.startsWith("//") ? "https:" + product.api_featured_image : product.api_featured_image)
-                    : (product.image_link || product.thumbnail || product.image || "");
-                  const productTitle = product.name || product.title || "Beauty Product";
-                  const productPrice = parseFloat(product.price) > 0 ? parseFloat(product.price) : 24.0;
-                  const productCategory = product.product_type || product.category || "Beauty";
+                  const productImg = product.thumbnail || (product.images && product.images[0]) || "";
+                  const productTitle = product.title || "Luxury Piece";
+                  const productPrice = parseFloat(product.price) || 49.0;
+                  const productCategory = product.category ? product.category.replace(/-/g, " ") : "Luxury";
                   const productRating = product.rating ? parseFloat(product.rating) : 4.8;
-                  const productDesc = product.description ? product.description.replace(/<[^>]*>?/gm, "").slice(0, 120) + "..." : "Premium beauty formulation.";
+                  const productDesc = product.description
+                    ? product.description.slice(0, 120) + "..."
+                    : "Curated luxury craftsmanship and provenance.";
 
                   return (
                     <ProductCard
@@ -267,7 +283,7 @@ const ProductList = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* ── 4. PAGINATION ───────────────────────────────── */}
+            {/* ── 4. PAGINATION WITH 1, 2, 3 ..... 9 ───────────── */}
             {totalPages > 1 && (
               <div className="products-pagination-wrap">
                 <button
@@ -281,18 +297,25 @@ const ProductList = () => {
                 </button>
 
                 <div className="pagination-numbers">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1)
-                    .filter((btn) => btn === 1 || btn === totalPages || Math.abs(btn - page) <= 2)
-                    .map((btn) => (
+                  {paginationItems.map((item, idx) => {
+                    if (typeof item === "string") {
+                      return (
+                        <span key={`ellipsis-${idx}`} className="pagination-ellipsis">
+                          {item}
+                        </span>
+                      );
+                    }
+                    return (
                       <button
-                        key={btn}
+                        key={item}
                         type="button"
-                        className={`pagination-num-btn ${page === btn ? "active" : ""}`}
-                        onClick={() => handlePageChange(btn)}
+                        className={`pagination-num-btn ${page === item ? "active" : ""}`}
+                        onClick={() => handlePageChange(item)}
                       >
-                        {btn}
+                        {item}
                       </button>
-                    ))}
+                    );
+                  })}
                 </div>
 
                 <button

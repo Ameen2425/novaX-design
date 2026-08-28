@@ -12,54 +12,51 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const getRelated = async () => {
+    setLoading(true);
+    const cat = currentCategory || "beauty";
+    const response = await axios.get(`https://dummyjson.com/products/category/${cat}`);
+    let items = response.data?.products || [];
+
+    // Filter out current product
+    items = items.filter((p) => p.id !== Number(currentId));
+
+    if (items.length < 4) {
+      const fallbackResponse = await axios.get("https://dummyjson.com/products?limit=10");
+      const fallbackItems = (fallbackResponse.data?.products || []).filter(
+        (p) => p.id !== Number(currentId)
+      );
+      items = [...items, ...fallbackItems].slice(0, 4);
+    } else {
+      items = items.slice(0, 4);
+    }
+
+    setRelated(items);
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const fetchRelated = async () => {
-      setLoading(true);
-      const cat = currentCategory || "lipstick";
-      let url = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${cat}`;
-      let res = await axios.get(url);
-      let items = res.data || [];
-
-      // Filter out current product
-      items = items.filter((p) => p.id !== Number(currentId));
-
-      if (items.length < 4) {
-        const fallbackRes = await axios.get("https://makeup-api.herokuapp.com/api/v1/products.json");
-        const fallbackItems = (fallbackRes.data || []).filter(
-          (p) => p.id !== Number(currentId)
-        );
-        items = [...items, ...fallbackItems].slice(0, 4);
-      } else {
-        items = items.slice(0, 4);
-      }
-
-      setRelated(items);
-      setLoading(false);
-    };
-
     if (currentCategory) {
-      fetchRelated();
+      getRelated();
     }
   }, [currentCategory, currentId]);
 
   const handleQuickAdd = (e, item) => {
     e.stopPropagation();
-    const productPrice = parseFloat(item.price) > 0 ? parseFloat(item.price) : 24.0;
-    const img = item.api_featured_image
-      ? (item.api_featured_image.startsWith("//") ? "https:" + item.api_featured_image : item.api_featured_image)
-      : (item.image_link || item.thumbnail || "");
+    const productPrice = parseFloat(item.price) || 49.0;
+    const img = item.thumbnail || (item.images && item.images[0]) || "";
 
     dispatch(
       ADD({
         id: item.id,
-        title: item.name || item.title || "Beauty Formulation",
+        title: item.title,
         price: productPrice,
         thumbnail: img,
       })
     );
 
     if (onToast) {
-      onToast(`✓ "${item.name || item.title}" added to cart!`);
+      onToast(`✓ "${item.title}" added to cart!`);
     }
   };
 
@@ -83,12 +80,10 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
 
       <div className="pine-related-grid">
         {related.map((item, idx) => {
-          const productImg = item.api_featured_image
-            ? (item.api_featured_image.startsWith("//") ? "https:" + item.api_featured_image : item.api_featured_image)
-            : (item.image_link || item.thumbnail || "");
-          const productTitle = item.name || item.title;
-          const productPrice = parseFloat(item.price) > 0 ? parseFloat(item.price) : 24.0;
-          const productCategory = item.product_type || item.category || "Beauty";
+          const productImg = item.thumbnail || (item.images && item.images[0]) || "";
+          const productTitle = item.title;
+          const productPrice = parseFloat(item.price) || 49.0;
+          const productCategory = item.category ? item.category.replace(/-/g, " ") : "Luxury";
           const productRating = item.rating ? parseFloat(item.rating) : 4.8;
 
           return (
@@ -117,7 +112,7 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
 
               {/* Card Meta */}
               <div className="pine-card-info">
-                <span className="pine-card-category">{productCategory.replace(/_/g, " ")}</span>
+                <span className="pine-card-category">{productCategory}</span>
                 <h3 className="pine-card-title">{productTitle}</h3>
 
                 <div className="pine-card-rating">

@@ -12,22 +12,19 @@ const ProductFilters = ({
   categoryList = [],
   totalCount,
 }) => {
-  // Curated beauty category chips for instant luxury discovery
+  // Curated category chips for instant luxury discovery
   const popularChips = [
     { label: "All Creations", value: "" },
-    { label: "Makeup", value: "makeup" },
-    { label: "Lipstick", value: "lipstick" },
-    { label: "Foundation", value: "foundation" },
-    { label: "Eyeshadow", value: "eyeshadow" },
-    { label: "Mascara", value: "mascara" },
-    { label: "Eyeliner", value: "eyeliner" },
-    { label: "Blush", value: "blush" },
-    { label: "Bronzer", value: "bronzer" },
-    { label: "Nail Polish", value: "nail_polish" },
-    { label: "Skincare", value: "skincare" },
-    { label: "Fragrance", value: "fragrance" },
-    { label: "Haircare", value: "haircare" },
-    { label: "Accessories", value: "beauty_accessories" },
+    { label: "Haute Perfumery", value: "fragrances" },
+    { label: "Beauty & Cosmetics", value: "beauty" },
+    { label: "Botanical Skincare", value: "skin-care" },
+    { label: "Women's Watches", value: "womens-watches" },
+    { label: "Men's Watches", value: "mens-watches" },
+    { label: "Fine Jewellery", value: "womens-jewellery" },
+    { label: "Atelier Bags", value: "womens-bags" },
+    { label: "Designer Eyewear", value: "sunglasses" },
+    { label: "Haute Couture", value: "womens-dresses" },
+    { label: "Luxury Footwear", value: "womens-shoes" },
   ];
 
   return (
@@ -54,7 +51,7 @@ const ProductFilters = ({
           <input
             type="search"
             className="products-search-input"
-            placeholder="Search luxury lipstick, mascara, serum, perfume, eyeliner, blush..."
+            placeholder="Search luxury fragrances, watches, jewellery, bags, skincare, eyewear..."
             value={search}
             onChange={(e) => {
               setCategory("");
@@ -82,7 +79,7 @@ const ProductFilters = ({
         <div className="products-toolbar-right">
           {totalCount !== undefined && (
             <span className="products-count-label">
-              Showing <strong>{totalCount}</strong> beauty formulations
+              Showing <strong>{totalCount}</strong> luxury creations
             </span>
           )}
 
@@ -128,7 +125,7 @@ const ProductFilters = ({
             );
           })}
 
-          {/* Extended dropdown selector for beauty categories if any additional exist */}
+          {/* Extended dropdown selector for all 100+ categories */}
           {categoryList.length > 0 && (
             <div className="category-select-pill-wrap">
               <select
@@ -142,11 +139,11 @@ const ProductFilters = ({
               >
                 <option value="">More Categories...</option>
                 {categoryList.map((cat) => {
-                  const val = typeof cat === "object" ? cat.value : cat;
-                  const label = typeof cat === "object" ? cat.label : cat;
+                  const val = typeof cat === "object" ? cat.slug || cat.name : cat;
+                  const label = typeof cat === "object" ? cat.name || cat.slug : cat;
                   return (
                     <option key={val} value={val}>
-                      {String(label).replace(/_/g, " ").toUpperCase()}
+                      {String(label).replace(/-/g, " ").toUpperCase()}
                     </option>
                   );
                 })}

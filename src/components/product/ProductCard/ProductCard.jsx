@@ -7,13 +7,15 @@ import "./ProductCard.css";
 
 const getCategoryFamily = (cat) => {
   const c = (cat || "").toLowerCase();
-  if (c.includes("lip")) return "lips";
-  if (c.includes("eye") || c.includes("mascara") || c.includes("brow")) return "eyes";
-  if (c.includes("foundation") || c.includes("blush") || c.includes("bronzer") || c.includes("powder")) return "complexion";
-  if (c.includes("nail")) return "nails";
-  if (c.includes("fragrance") || c.includes("scent") || c.includes("perfume")) return "fragrance";
+  if (c.includes("fragrance") || c.includes("perfume")) return "fragrance";
+  if (c.includes("watch")) return "watches";
+  if (c.includes("jewel")) return "jewellery";
+  if (c.includes("bag")) return "bags";
+  if (c.includes("sunglass") || c.includes("eyewear")) return "eyewear";
   if (c.includes("skin") || c.includes("serum") || c.includes("cream")) return "skincare";
-  return "beauty";
+  if (c.includes("beauty") || c.includes("lip") || c.includes("eye") || c.includes("nail")) return "beauty";
+  if (c.includes("dress") || c.includes("shoe") || c.includes("top") || c.includes("shirt")) return "fashion";
+  return "luxury";
 };
 
 const ProductCard = ({ id, title, description, price, image, category, rating }) => {

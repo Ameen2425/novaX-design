@@ -22,39 +22,17 @@ const SingleProduct = () => {
   const [selectedImage, setSelectedImage] = useState("");
   const [toastMessage, setToastMessage] = useState("");
 
+  const getProduct = async () => {
+    setLoading(true);
+    const response = await axios.get(`https://dummyjson.com/products/${id}`);
+    if (response && response.data) {
+      setProduct(response.data);
+      setSelectedImage(response.data.thumbnail || (response.data.images && response.data.images[0]) || "");
+    }
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const getProduct = async () => {
-      setLoading(true);
-      const res = await axios.get(`https://makeup-api.herokuapp.com/api/v1/products/${id}.json`);
-      if (res && res.data) {
-        const data = res.data;
-        const img = data.api_featured_image
-          ? (data.api_featured_image.startsWith("//") ? "https:" + data.api_featured_image : data.api_featured_image)
-          : (data.image_link || data.thumbnail || "");
-        
-        const cleanDesc = data.description
-          ? data.description.replace(/<[^>]*>?/gm, "").trim()
-          : "Premium beauty product curated by AMEZA.";
-
-        const normalizedProduct = {
-          ...data,
-          title: data.name || data.title || "Beauty Product",
-          thumbnail: img,
-          images: [img],
-          category: data.product_type || data.category || "Beauty",
-          rating: data.rating ? parseFloat(data.rating) : 4.8,
-          price: parseFloat(data.price) > 0 ? parseFloat(data.price) : 24.0,
-          description: cleanDesc,
-          stock: "Available",
-          brand: data.brand ? data.brand.charAt(0).toUpperCase() + data.brand.slice(1) : "AMEZA Atelier",
-        };
-
-        setProduct(normalizedProduct);
-        setSelectedImage(img);
-      }
-      setLoading(false);
-    };
-
     getProduct();
   }, [id]);
 
@@ -74,7 +52,7 @@ const SingleProduct = () => {
         id: product.id,
         title: product.title,
         price: product.price,
-        thumbnail: product.thumbnail,
+        thumbnail: product.thumbnail || (product.images && product.images[0]),
         category: product.category,
       })
     );
@@ -90,7 +68,7 @@ const SingleProduct = () => {
         id: product.id,
         title: product.title,
         price: product.price,
-        thumbnail: product.thumbnail,
+        thumbnail: product.thumbnail || (product.images && product.images[0]),
         category: product.category,
       })
     );
@@ -182,7 +160,7 @@ const SingleProduct = () => {
         <section className="pine-product-showcase">
           <ProductGallery
             product={product}
-            selectedImage={selectedImage || product.thumbnail || product.images?.[0]}
+            selectedImage={selectedImage || product.thumbnail || (product.images && product.images[0])}
             setSelectedImage={setSelectedImage}
             discount={discount}
           />
@@ -205,7 +183,7 @@ const SingleProduct = () => {
             4. YOU MAY ALSO LIKE (RELATED PRODUCTS)
         ================================================= */}
         <RelatedProducts
-          currentCategory={product.product_type || product.category}
+          currentCategory={product.category}
           currentId={product.id}
           onToast={showToast}
         />
