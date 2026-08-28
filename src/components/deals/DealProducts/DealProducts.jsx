@@ -7,59 +7,59 @@ import "./DealProducts.css";
 
 const dealProductsData = [
   {
-    id: 1,
-    title: "Luxury Mascara Lash Princess",
-    discount: "-35%",
-    rating: 4.8,
-    reviews: 124,
-    oldPrice: "₹2,199",
-    price: "₹1,429",
-    rawPrice: 1429,
-    image: "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
-  },
-  {
-    id: 2,
-    title: "Eyeshadow Palette with Mirror",
-    discount: "-40%",
-    rating: 4.7,
-    reviews: 98,
-    oldPrice: "₹3,499",
-    price: "₹2,099",
-    rawPrice: 2099,
-    image: "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png",
-  },
-  {
-    id: 3,
-    title: "Apple Watch Series 9",
+    id: 1048,
+    title: "Lippie Sculpt Contour Pencil",
     discount: "-30%",
     rating: 4.9,
-    reviews: 76,
-    oldPrice: "₹49,900",
-    price: "₹34,930",
-    rawPrice: 34930,
-    image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=600&q=80",
+    reviews: 124,
+    oldPrice: "$28.00",
+    price: "$19.60",
+    rawPrice: 19.60,
+    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=600&q=80",
   },
   {
-    id: 4,
-    title: "Powder Cushion Foundation",
+    id: 1046,
+    title: "Lippie Stix Satin Radiance",
     discount: "-25%",
-    rating: 4.6,
-    reviews: 110,
-    oldPrice: "₹1,799",
-    price: "₹1,349",
-    rawPrice: 1349,
-    image: "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png",
+    rating: 4.8,
+    reviews: 98,
+    oldPrice: "$32.00",
+    price: "$24.00",
+    rawPrice: 24.00,
+    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80",
   },
   {
-    id: 5,
-    title: "Matte Lipstick Premium",
+    id: 1045,
+    title: "Pure Velvet Filter Foundation",
     discount: "-35%",
+    rating: 4.9,
+    reviews: 142,
+    oldPrice: "$48.00",
+    price: "$31.20",
+    rawPrice: 31.20,
+    image: "https://images.unsplash.com/photo-1631730486784-5456119f69ae?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 1044,
+    title: "Artisan Mineral Powder Foundation",
+    discount: "-20%",
     rating: 4.7,
+    reviews: 110,
+    oldPrice: "$36.00",
+    price: "$28.80",
+    rawPrice: 28.80,
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 1043,
+    title: "Botanical Matte Rouge Formulation",
+    discount: "-30%",
+    rating: 4.8,
     reviews: 85,
-    oldPrice: "₹899",
-    price: "₹584",
-    rawPrice: 584,
-    image: "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/1.png",
+    oldPrice: "$34.00",
+    price: "$23.80",
+    rawPrice: 23.80,
+    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80",
   },
 ];
 
@@ -87,7 +87,7 @@ const DealProducts = () => {
       })
     );
 
-    setToastMessage(`✓ ${product.title} added to cart!`);
+    setToastMessage(`✓ "${product.title}" added to cart!`);
     setTimeout(() => setToastMessage(""), 2800);
   };
 
@@ -100,9 +100,9 @@ const DealProducts = () => {
       )}
 
       <div className="deal-section-header">
-        <h2 className="deal-section-title">TODAY'S BEST DEALS</h2>
+        <h2 className="deal-section-title">TODAY'S ATELIER BEAUTY OFFERS</h2>
         <Link to="/products" className="deal-section-link">
-          View All Deals <span>→</span>
+          View All Formulations <span>→</span>
         </Link>
       </div>
 
@@ -125,7 +125,7 @@ const DealProducts = () => {
                   title="Save to Wishlist"
                   type="button"
                 >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill={wishlist[item.id] ? "#A34755" : "none"} stroke={wishlist[item.id] ? "#A34755" : "currentColor"} strokeWidth="1.8">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill={wishlist[item.id] ? "#B9826D" : "none"} stroke={wishlist[item.id] ? "#B9826D" : "currentColor"} strokeWidth="1.8">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
                 </button>

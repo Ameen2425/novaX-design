@@ -9,8 +9,11 @@ const Header = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const cartData = useSelector((state) => state.cart);
-  const cartValue = cartData.length;
+  const cartData = useSelector((state) => state.cart || []);
+  const cartValue = cartData.reduce(
+    (total, item) => total + (Number(item.quantity) || 1),
+    0
+  );
 
   useEffect(() => {
     const handleScroll = () => {

@@ -9,9 +9,7 @@ const cartSlice = createSlice({
     ADD: (state, action) => {
       let item = action.payload;
 
-      let existingItem = state.find(
-        (pro) => pro.id === item.id
-      );
+      let existingItem = state.find((pro) => pro.id === item.id)
 
       if (existingItem) {
         existingItem.quantity += 1;
@@ -22,23 +20,15 @@ const cartSlice = createSlice({
         });
       }
 
-      localStorage.setItem(
-        "cartData",
-        JSON.stringify(state)
-      );
+      localStorage.setItem("cartData",JSON.stringify(state));
     },
 
     REMOVE: (state, action) => {
       let item = action.payload;
 
-      let updatedCart = state.filter(
-        (pro) => pro.id !== item
-      );
+      let updatedCart = state.filter((pro) => pro.id !== item);
 
-      localStorage.setItem(
-        "cartData",
-        JSON.stringify(updatedCart)
-      );
+      localStorage.setItem("cartData",JSON.stringify(updatedCart));
 
       return updatedCart;
     },
@@ -46,44 +36,29 @@ const cartSlice = createSlice({
     INC: (state, action) => {
       let item = action.payload;
 
-      let existingItem = state.find(
-        (pro) => pro.id === item
-      );
+      let existingItem = state.find((pro) => pro.id === item);
 
       if (existingItem) {
         existingItem.quantity += 1;
       }
 
-      localStorage.setItem(
-        "cartData",
-        JSON.stringify(state)
-      );
+      localStorage.setItem("cartData",JSON.stringify(state));
     },
 
     DEC: (state, action) => {
       let item = action.payload;
 
-      let existingItem = state.find(
-        (pro) => pro.id === item
-      );
+      let existingItem = state.find((pro) => pro.id === item);
 
       if (existingItem) {
         if (existingItem.quantity > 1) {
           existingItem.quantity -= 1;
 
-          localStorage.setItem(
-            "cartData",
-            JSON.stringify(state)
-          );
+          localStorage.setItem("cartData",JSON.stringify(state));
         } else {
-          let updatedCart = state.filter(
-            (pro) => pro.id !== item
-          );
+          let updatedCart = state.filter((pro) => pro.id !== item);
 
-          localStorage.setItem(
-            "cartData",
-            JSON.stringify(updatedCart)
-          );
+          localStorage.setItem("cartData",JSON.stringify(updatedCart));
 
           return updatedCart;
         }
@@ -92,11 +67,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const {
-  ADD,
-  REMOVE,
-  INC,
-  DEC,
-} = cartSlice.actions;
+export const {ADD,REMOVE,INC,DEC} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -7,11 +7,13 @@ import "./ProductCard.css";
 
 const getCategoryFamily = (cat) => {
   const c = (cat || "").toLowerCase();
-  if (c.includes("smart") || c.includes("laptop") || c.includes("mobile") || c.includes("tech") || c.includes("watch") || c.includes("tablet") || c.includes("electronic")) return "electronics";
-  if (c.includes("beauty") || c.includes("skin") || c.includes("fragrance") || c.includes("cosmetic")) return "beauty";
-  if (c.includes("dress") || c.includes("shirt") || c.includes("women") || c.includes("men") || c.includes("cloth") || c.includes("fashion") || c.includes("bag") || c.includes("sunglass") || c.includes("jewel")) return "fashion";
-  if (c.includes("shoe") || c.includes("footwear") || c.includes("sport") || c.includes("sneaker")) return "footwear";
-  return "home";
+  if (c.includes("lip")) return "lips";
+  if (c.includes("eye") || c.includes("mascara") || c.includes("brow")) return "eyes";
+  if (c.includes("foundation") || c.includes("blush") || c.includes("bronzer") || c.includes("powder")) return "complexion";
+  if (c.includes("nail")) return "nails";
+  if (c.includes("fragrance") || c.includes("scent") || c.includes("perfume")) return "fragrance";
+  if (c.includes("skin") || c.includes("serum") || c.includes("cream")) return "skincare";
+  return "beauty";
 };
 
 const ProductCard = ({ id, title, description, price, image, category, rating }) => {

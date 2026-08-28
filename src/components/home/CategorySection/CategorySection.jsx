@@ -35,7 +35,7 @@ const CategorySection = () => {
         <div>
           <span className="home-section-label">THE AMEZA EDIT</span>
           <h2>Shop by Category</h2>
-          <p>Curated collections designed for effortless everyday discovery.</p>
+          <p>Curated clean beauty formulations designed for effortless everyday radiance.</p>
         </div>
 
         <Link to="/products" className="home-view-all-link">
@@ -51,11 +51,11 @@ const CategorySection = () => {
         variants={staggerContainer}
       >
         {[
-          { num: "01", name: "Haute Perfumery", desc: "Signature scents & elixirs", icon: "✨", type: "beauty", link: "/products?category=fragrances", count: "48+ Scents" },
-          { num: "02", name: "Luxury Fashion", desc: "Curated leather & apparel", icon: "💎", type: "fashion", link: "/products?category=womens-bags", count: "120+ Pieces" },
-          { num: "03", name: "Beauty & Care", desc: "Bespoke organic formulations", icon: "🌿", type: "beauty", link: "/products?category=beauty", count: "95+ Products" },
-          { num: "04", name: "Home & Living", desc: "Architectural objects & decor", icon: "🛋️", type: "home", link: "/products?category=home-decoration", count: "60+ Items" },
-          { num: "05", name: "Audio & Tech", desc: "Precision devices & hardware", icon: "⚡", type: "electronics", link: "/products?category=smartphones", count: "40+ Devices" },
+          { num: "01", name: "Lipstick & Atelier", desc: "Signature pigments & velours", icon: "💄", type: "beauty", link: "/products?category=lipstick", count: "150+ Shades" },
+          { num: "02", name: "Botanical Skincare", desc: "Squalane & active elixirs", icon: "🌿", type: "beauty", link: "/products?category=skincare", count: "120+ Formulations" },
+          { num: "03", name: "Complexion & Base", desc: "Featherweight foundations", icon: "✨", type: "beauty", link: "/products?category=foundation", count: "160+ Tones" },
+          { num: "04", name: "Haute Eyes & Brows", desc: "High-pigment palettes & liners", icon: "👁️", type: "beauty", link: "/products?category=eyeshadow", count: "200+ Products" },
+          { num: "05", name: "Haute Perfumery", desc: "Rare botanicals & scents", icon: "💎", type: "beauty", link: "/products?category=fragrance", count: "48+ Scents" },
         ].map((cat) => (
           <motion.div
             key={cat.num}
@@ -75,7 +75,7 @@ const CategorySection = () => {
                 <p>{cat.desc}</p>
               </div>
               <div className="home-cat-card-footer">
-                <span>Explore Category</span>
+                <span>Explore Formulations</span>
                 <span className="home-cat-arrow">→</span>
               </div>
             </Link>

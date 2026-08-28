@@ -15,31 +15,26 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
   useEffect(() => {
     const fetchRelated = async () => {
       setLoading(true);
-      try {
-        let url = `https://dummyjson.com/products/category/${currentCategory}?limit=8`;
-        let res = await axios.get(url);
-        let items = res.data?.products || [];
+      const cat = currentCategory || "lipstick";
+      let url = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${cat}`;
+      let res = await axios.get(url);
+      let items = res.data || [];
 
-        // Filter out current product
-        items = items.filter((p) => p.id !== Number(currentId));
+      // Filter out current product
+      items = items.filter((p) => p.id !== Number(currentId));
 
-        // If not enough items in same category, fetch general products
-        if (items.length < 4) {
-          const fallbackRes = await axios.get("https://dummyjson.com/products?limit=8");
-          const fallbackItems = (fallbackRes.data?.products || []).filter(
-            (p) => p.id !== Number(currentId)
-          );
-          items = [...items, ...fallbackItems].slice(0, 5);
-        } else {
-          items = items.slice(0, 5);
-        }
-
-        setRelated(items);
-      } catch (err) {
-        console.error("Failed to fetch related products:", err);
-      } finally {
-        setLoading(false);
+      if (items.length < 4) {
+        const fallbackRes = await axios.get("https://makeup-api.herokuapp.com/api/v1/products.json");
+        const fallbackItems = (fallbackRes.data || []).filter(
+          (p) => p.id !== Number(currentId)
+        );
+        items = [...items, ...fallbackItems].slice(0, 4);
+      } else {
+        items = items.slice(0, 4);
       }
+
+      setRelated(items);
+      setLoading(false);
     };
 
     if (currentCategory) {
@@ -49,9 +44,22 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
 
   const handleQuickAdd = (e, item) => {
     e.stopPropagation();
-    dispatch(ADD(item));
+    const productPrice = parseFloat(item.price) > 0 ? parseFloat(item.price) : 24.0;
+    const img = item.api_featured_image
+      ? (item.api_featured_image.startsWith("//") ? "https:" + item.api_featured_image : item.api_featured_image)
+      : (item.image_link || item.thumbnail || "");
+
+    dispatch(
+      ADD({
+        id: item.id,
+        title: item.name || item.title || "Beauty Formulation",
+        price: productPrice,
+        thumbnail: img,
+      })
+    );
+
     if (onToast) {
-      onToast(`✓ "${item.title}" added to cart!`);
+      onToast(`✓ "${item.name || item.title}" added to cart!`);
     }
   };
 
@@ -75,13 +83,20 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
 
       <div className="pine-related-grid">
         {related.map((item, idx) => {
-          const discount = Math.round(item.discountPercentage || 0);
+          const productImg = item.api_featured_image
+            ? (item.api_featured_image.startsWith("//") ? "https:" + item.api_featured_image : item.api_featured_image)
+            : (item.image_link || item.thumbnail || "");
+          const productTitle = item.name || item.title;
+          const productPrice = parseFloat(item.price) > 0 ? parseFloat(item.price) : 24.0;
+          const productCategory = item.product_type || item.category || "Beauty";
+          const productRating = item.rating ? parseFloat(item.rating) : 4.8;
+
           return (
             <motion.div
               key={item.id}
               className="pine-related-card"
               onClick={() => {
-                navigate(`/product/${item.id}`);
+                navigate(`/products/${item.id}`);
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               initial={{ opacity: 0, y: 20 }}
@@ -92,12 +107,9 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
             >
               {/* Product Image Frame */}
               <div className="pine-card-img-wrap">
-                {discount > 0 && (
-                  <span className="pine-card-discount-badge">{discount}% OFF</span>
-                )}
                 <img
-                  src={item.thumbnail || item.images?.[0]}
-                  alt={item.title}
+                  src={productImg}
+                  alt={productTitle}
                   loading="lazy"
                   className="pine-card-img"
                 />
@@ -105,17 +117,17 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
 
               {/* Card Meta */}
               <div className="pine-card-info">
-                <span className="pine-card-category">{item.category?.replace(/-/g, " ")}</span>
-                <h3 className="pine-card-title">{item.title}</h3>
+                <span className="pine-card-category">{productCategory.replace(/_/g, " ")}</span>
+                <h3 className="pine-card-title">{productTitle}</h3>
 
                 <div className="pine-card-rating">
                   <span className="pine-card-stars">★★★★★</span>
-                  <span className="pine-card-score">{item.rating?.toFixed(1) || "4.8"}</span>
+                  <span className="pine-card-score">{productRating.toFixed(1)}</span>
                 </div>
 
                 <div className="pine-card-bottom">
                   <div className="pine-card-price">
-                    <strong>${typeof item.price === "number" ? item.price.toFixed(2) : item.price}</strong>
+                    <strong>${productPrice.toFixed(2)}</strong>
                   </div>
 
                   <motion.button
@@ -124,7 +136,7 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
                     onClick={(e) => handleQuickAdd(e, item)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    aria-label={`Add ${item.title} to cart`}
+                    aria-label={`Add ${productTitle} to cart`}
                   >
                     + Add
                   </motion.button>

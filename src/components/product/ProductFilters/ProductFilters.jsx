@@ -9,19 +9,25 @@ const ProductFilters = ({
   sortBy,
   setSortBy,
   setPage,
-  categoryList,
+  categoryList = [],
   totalCount,
 }) => {
-  // Top curated category pills for instant discovery
+  // Curated beauty category chips for instant luxury discovery
   const popularChips = [
-    { label: "All Products", value: "" },
-    { label: "Fragrances", value: "fragrances" },
-    { label: "Beauty", value: "beauty" },
-    { label: "Skin Care", value: "skin-care" },
-    { label: "Women's Bags", value: "womens-bags" },
-    { label: "Smartphones", value: "smartphones" },
-    { label: "Home Decor", value: "home-decoration" },
-    { label: "Laptops", value: "laptops" },
+    { label: "All Creations", value: "" },
+    { label: "Makeup", value: "makeup" },
+    { label: "Lipstick", value: "lipstick" },
+    { label: "Foundation", value: "foundation" },
+    { label: "Eyeshadow", value: "eyeshadow" },
+    { label: "Mascara", value: "mascara" },
+    { label: "Eyeliner", value: "eyeliner" },
+    { label: "Blush", value: "blush" },
+    { label: "Bronzer", value: "bronzer" },
+    { label: "Nail Polish", value: "nail_polish" },
+    { label: "Skincare", value: "skincare" },
+    { label: "Fragrance", value: "fragrance" },
+    { label: "Haircare", value: "haircare" },
+    { label: "Accessories", value: "beauty_accessories" },
   ];
 
   return (
@@ -48,7 +54,7 @@ const ProductFilters = ({
           <input
             type="search"
             className="products-search-input"
-            placeholder="Search creations, perfumes, apparel, technology..."
+            placeholder="Search luxury lipstick, mascara, serum, perfume, eyeliner, blush..."
             value={search}
             onChange={(e) => {
               setCategory("");
@@ -76,7 +82,7 @@ const ProductFilters = ({
         <div className="products-toolbar-right">
           {totalCount !== undefined && (
             <span className="products-count-label">
-              Showing <strong>{totalCount}</strong> pieces
+              Showing <strong>{totalCount}</strong> beauty formulations
             </span>
           )}
 
@@ -95,7 +101,7 @@ const ProductFilters = ({
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
               <option value="rating">Highest Rated</option>
-              <option value="newest">Newest Additions</option>
+              <option value="newest">Newest Formulations</option>
             </select>
           </div>
         </div>
@@ -122,25 +128,31 @@ const ProductFilters = ({
             );
           })}
 
-          {/* Extended dropdown selector for all 25+ categories */}
-          <div className="category-select-pill-wrap">
-            <select
-              className="category-dropdown-pill"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-                setSearch("");
-                setPage(1);
-              }}
-            >
-              <option value="">More Categories...</option>
-              {categoryList.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat.replace(/-/g, " ").toUpperCase()}
-                </option>
-              ))}
-            </select>
-          </div>
+          {/* Extended dropdown selector for beauty categories if any additional exist */}
+          {categoryList.length > 0 && (
+            <div className="category-select-pill-wrap">
+              <select
+                className="category-dropdown-pill"
+                value={category}
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                  setSearch("");
+                  setPage(1);
+                }}
+              >
+                <option value="">More Categories...</option>
+                {categoryList.map((cat) => {
+                  const val = typeof cat === "object" ? cat.value : cat;
+                  const label = typeof cat === "object" ? cat.label : cat;
+                  return (
+                    <option key={val} value={val}>
+                      {String(label).replace(/_/g, " ").toUpperCase()}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+          )}
         </div>
       </div>
     </div>

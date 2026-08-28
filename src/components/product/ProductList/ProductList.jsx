@@ -21,22 +21,18 @@ const ProductList = () => {
   // Get Categories
   // =========================
   useEffect(() => {
-    let isMounted = true;
-    async function apiData() {
-      try {
-        const { data } = await axios.get(
-          "https://dummyjson.com/products/category-list"
-        );
-        if (isMounted) setCategoryList(data || []);
-      } catch (err) {
-        console.error("Failed to load category list:", err);
-      }
-    }
-
-    apiData();
-    return () => {
-      isMounted = false;
-    };
+    setCategoryList([
+      "lipstick",
+      "lip_liner",
+      "foundation",
+      "eyeliner",
+      "eyeshadow",
+      "blush",
+      "bronzer",
+      "mascara",
+      "eyebrow",
+      "nail_polish",
+    ]);
   }, []);
 
   // =========================
@@ -47,25 +43,25 @@ const ProductList = () => {
     async function productsApi() {
       setLoading(true);
 
-      let api;
+      let api = "https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
       if (category) {
-        api = `https://dummyjson.com/products/category/${category}`;
-      } else if (search) {
-        api = `https://dummyjson.com/products/search?q=${encodeURIComponent(search)}`;
-      } else {
-        api = "https://dummyjson.com/products?limit=100";
+        api = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`;
       }
 
-      try {
-        const { data } = await axios.get(api);
-        if (isMounted) {
-          setProducts(data.products || []);
-          setPage(1);
-          setLoading(false);
+      const { data } = await axios.get(api);
+      if (isMounted) {
+        let list = Array.isArray(data) ? data : [];
+        if (search) {
+          list = list.filter((p) => {
+            const nameMatch = (p.name || p.title || "").toLowerCase().includes(search.toLowerCase());
+            const brandMatch = (p.brand || "").toLowerCase().includes(search.toLowerCase());
+            const descMatch = (p.description || "").toLowerCase().includes(search.toLowerCase());
+            return nameMatch || brandMatch || descMatch;
+          });
         }
-      } catch (err) {
-        console.error("Failed to fetch products:", err);
-        if (isMounted) setLoading(false);
+        setProducts(list);
+        setPage(1);
+        setLoading(false);
       }
     }
 
@@ -83,9 +79,9 @@ const ProductList = () => {
 
     switch (sortBy) {
       case "price-low":
-        return list.sort((a, b) => a.price - b.price);
+        return list.sort((a, b) => (parseFloat(a.price) || 0) - (parseFloat(b.price) || 0));
       case "price-high":
-        return list.sort((a, b) => b.price - a.price);
+        return list.sort((a, b) => (parseFloat(b.price) || 0) - (parseFloat(a.price) || 0));
       case "rating":
         return list.sort((a, b) => (b.rating || 0) - (a.rating || 0));
       case "newest":
@@ -132,16 +128,16 @@ const ProductList = () => {
           >
             <span className="products-hero-badge">THE AMEZA COLLECTION</span>
             <h1 className="products-hero-title">
-              Explore <span>All Products.</span>
+              Explore <span>Beauty & Formulations.</span>
             </h1>
             <p className="products-hero-desc">
-              Discover our curated collection of fine creations, haute perfumery,
-              leather goods, architectural decor, and daily luxury essentials.
+              Discover our curated collection of fine beauty creations, haute cosmetics,
+              botanical formulations, and daily luxury essentials.
             </p>
 
             <div className="products-hero-metrics">
               <div className="hero-metric-item">
-                <strong>100+</strong>
+                <strong>900+</strong>
                 <span>Curated Pieces</span>
               </div>
               <div className="metric-sep" />
@@ -151,8 +147,8 @@ const ProductList = () => {
               </div>
               <div className="metric-sep" />
               <div className="hero-metric-item">
-                <strong>80+</strong>
-                <span>Global Transit</span>
+                <strong>50+</strong>
+                <span>Atelier Brands</span>
               </div>
             </div>
           </motion.div>
@@ -245,18 +241,29 @@ const ProductList = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.35 }}
               >
-                {currentProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    title={product.title}
-                    description={product.description}
-                    price={product.price}
-                    image={product.thumbnail}
-                    category={product.category}
-                    rating={product.rating}
-                  />
-                ))}
+                {currentProducts.map((product) => {
+                  const productImg = product.api_featured_image
+                    ? (product.api_featured_image.startsWith("//") ? "https:" + product.api_featured_image : product.api_featured_image)
+                    : (product.image_link || product.thumbnail || product.image || "");
+                  const productTitle = product.name || product.title || "Beauty Product";
+                  const productPrice = parseFloat(product.price) > 0 ? parseFloat(product.price) : 24.0;
+                  const productCategory = product.product_type || product.category || "Beauty";
+                  const productRating = product.rating ? parseFloat(product.rating) : 4.8;
+                  const productDesc = product.description ? product.description.replace(/<[^>]*>?/gm, "").slice(0, 120) + "..." : "Premium beauty formulation.";
+
+                  return (
+                    <ProductCard
+                      key={product.id}
+                      id={product.id}
+                      title={productTitle}
+                      description={productDesc}
+                      price={productPrice}
+                      image={productImg}
+                      category={productCategory}
+                      rating={productRating}
+                    />
+                  );
+                })}
               </motion.div>
             </AnimatePresence>
 
@@ -274,16 +281,18 @@ const ProductList = () => {
                 </button>
 
                 <div className="pagination-numbers">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((btn) => (
-                    <button
-                      key={btn}
-                      type="button"
-                      className={`pagination-num-btn ${page === btn ? "active" : ""}`}
-                      onClick={() => handlePageChange(btn)}
-                    >
-                      {btn}
-                    </button>
-                  ))}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1)
+                    .filter((btn) => btn === 1 || btn === totalPages || Math.abs(btn - page) <= 2)
+                    .map((btn) => (
+                      <button
+                        key={btn}
+                        type="button"
+                        className={`pagination-num-btn ${page === btn ? "active" : ""}`}
+                        onClick={() => handlePageChange(btn)}
+                      >
+                        {btn}
+                      </button>
+                    ))}
                 </div>
 
                 <button

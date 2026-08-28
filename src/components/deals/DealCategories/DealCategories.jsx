@@ -5,39 +5,39 @@ import "./DealCategories.css";
 
 const categories = [
   {
-    id: "beauty",
-    name: "BEAUTY & CARE",
-    discount: "Up to 40% Off",
-    link: "/products?category=beauty",
+    id: "makeup",
+    name: "LIP ATELIER & MAKEUP",
+    discount: "Up to 30% Off",
+    link: "/products?category=makeup",
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "fashion",
-    name: "LUXURY FASHION",
-    discount: "Up to 35% Off",
-    link: "/products?category=womens-bags",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "electronics",
-    name: "AUDIO & TECH",
-    discount: "Up to 45% Off",
-    link: "/products?category=smartphones",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "home",
-    name: "HOME & LIVING",
-    discount: "Up to 30% Off",
-    link: "/products?category=home-decoration",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
+    id: "skincare",
+    name: "BOTANICAL SKINCARE",
+    discount: "Up to 25% Off",
+    link: "/products?category=skincare",
+    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "perfumes",
     name: "HAUTE PERFUMERY",
-    discount: "Up to 40% Off",
-    link: "/products?category=fragrances",
+    discount: "Up to 35% Off",
+    link: "/products?category=fragrance",
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "haircare",
+    name: "HAIRCARE & ELIXIRS",
+    discount: "Up to 20% Off",
+    link: "/products?category=haircare",
+    image: "https://images.unsplash.com/photo-1608248597359-009d1cf37d7a?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "accessories",
+    name: "BEAUTY ACCESSORIES",
+    discount: "Up to 30% Off",
+    link: "/products?category=beauty_accessories",
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -45,7 +45,7 @@ const DealCategories = () => {
   return (
     <section className="deal-categories-section">
       <div className="deal-section-header">
-        <h2 className="deal-section-title">SHOP BY CATEGORY</h2>
+        <h2 className="deal-section-title">SHOP BEAUTY BY CATEGORY</h2>
         <Link to="/products" className="deal-section-link">
           View All Categories <span>→</span>
         </Link>

@@ -25,17 +25,34 @@ const SingleProduct = () => {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      try {
-        const res = await axios.get(`https://dummyjson.com/products/${id}`);
-        if (res && res.data) {
-          setProduct(res.data);
-          setSelectedImage(res.data.thumbnail || res.data.images?.[0] || "");
-        }
-      } catch (error) {
-        console.error("Failed to load product:", error);
-      } finally {
-        setLoading(false);
+      const res = await axios.get(`https://makeup-api.herokuapp.com/api/v1/products/${id}.json`);
+      if (res && res.data) {
+        const data = res.data;
+        const img = data.api_featured_image
+          ? (data.api_featured_image.startsWith("//") ? "https:" + data.api_featured_image : data.api_featured_image)
+          : (data.image_link || data.thumbnail || "");
+        
+        const cleanDesc = data.description
+          ? data.description.replace(/<[^>]*>?/gm, "").trim()
+          : "Premium beauty product curated by AMEZA.";
+
+        const normalizedProduct = {
+          ...data,
+          title: data.name || data.title || "Beauty Product",
+          thumbnail: img,
+          images: [img],
+          category: data.product_type || data.category || "Beauty",
+          rating: data.rating ? parseFloat(data.rating) : 4.8,
+          price: parseFloat(data.price) > 0 ? parseFloat(data.price) : 24.0,
+          description: cleanDesc,
+          stock: "Available",
+          brand: data.brand ? data.brand.charAt(0).toUpperCase() + data.brand.slice(1) : "AMEZA Atelier",
+        };
+
+        setProduct(normalizedProduct);
+        setSelectedImage(img);
       }
+      setLoading(false);
     };
 
     getProduct();
@@ -52,7 +69,15 @@ const SingleProduct = () => {
      ADD TO CART
   ===================================================== */
   const addToCart = () => {
-    dispatch(ADD(product));
+    dispatch(
+      ADD({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        thumbnail: product.thumbnail,
+        category: product.category,
+      })
+    );
     showToast(`✓ "${product.title}" added to your cart!`);
   };
 
@@ -60,7 +85,15 @@ const SingleProduct = () => {
      BUY NOW
   ===================================================== */
   const buyNow = () => {
-    dispatch(ADD(product));
+    dispatch(
+      ADD({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        thumbnail: product.thumbnail,
+        category: product.category,
+      })
+    );
     navigate("/cart");
   };
 
@@ -172,7 +205,7 @@ const SingleProduct = () => {
             4. YOU MAY ALSO LIKE (RELATED PRODUCTS)
         ================================================= */}
         <RelatedProducts
-          currentCategory={product.category}
+          currentCategory={product.product_type || product.category}
           currentId={product.id}
           onToast={showToast}
         />

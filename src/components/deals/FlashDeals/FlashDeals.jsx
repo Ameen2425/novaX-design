@@ -7,40 +7,40 @@ import "./FlashDeals.css";
 
 const flashDealsData = [
   {
-    id: 101,
-    title: "Chanel Coco Mademoiselle",
+    id: 1042,
+    title: "Chanel Velvet Scent & Matte Lip Duo",
     discount: "-30%",
-    oldPrice: "₹7,499",
-    price: "₹5,249",
-    rawPrice: 5249,
-    image: "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/1.png",
+    oldPrice: "$95.00",
+    price: "$66.50",
+    rawPrice: 66.50,
+    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80",
   },
   {
-    id: 102,
-    title: "Sony WH-1000XM5 Noise Cancelling",
-    discount: "-35%",
-    oldPrice: "₹34,990",
-    price: "₹22,690",
-    rawPrice: 22690,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: 103,
-    title: "The Ordinary Niacinamide 10%",
+    id: 1041,
+    title: "Botanical Illuminating Face Serum",
     discount: "-25%",
-    oldPrice: "₹599",
-    price: "₹449",
-    rawPrice: 449,
+    oldPrice: "$68.00",
+    price: "$51.00",
+    rawPrice: 51.00,
     image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80",
   },
   {
-    id: 104,
-    title: "Nike Air Max 270 Special Edition",
+    id: 1040,
+    title: "Rosemary & Biotin Hair Elixir Oil",
+    discount: "-35%",
+    oldPrice: "$54.00",
+    price: "$35.10",
+    rawPrice: 35.10,
+    image: "https://images.unsplash.com/photo-1608248597359-009d1cf37d7a?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 1039,
+    title: "Artisan Multi-Chrome Eyeshadow Vault",
     discount: "-30%",
-    oldPrice: "₹11,499",
-    price: "₹8,049",
-    rawPrice: 8049,
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+    oldPrice: "$72.00",
+    price: "$50.40",
+    rawPrice: 50.40,
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80",
   },
 ];
 
@@ -76,7 +76,7 @@ const FlashDeals = () => {
       })
     );
 
-    setToastMessage(`✓ ${item.title} added!`);
+    setToastMessage(`✓ "${item.title}" added to cart!`);
     setTimeout(() => setToastMessage(""), 2800);
   };
 
@@ -91,7 +91,7 @@ const FlashDeals = () => {
       <div className="deal-section-header">
         <div className="flash-header-left">
           <h2 className="deal-section-title">
-            <span className="flash-icon">⚡</span> FLASH DEALS
+            <span className="flash-icon">⚡</span> FLASH BEAUTY DEALS
           </h2>
           <div className="flash-countdown-pill">
             <span className="flash-ends-label">Ends in:</span>
