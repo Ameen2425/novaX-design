@@ -303,15 +303,15 @@
 .pine-btn-primary-sage {
   flex: 1;
   min-width: 160px;
-  height: 52px;
+  height: 58px;
   background: var(--ameza-ruby-gradient, var(--ameza-gold-gradient));
   color: #FFFFFF !important;
   border: none;
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
@@ -338,15 +338,15 @@
 .pine-btn-accent-apricot {
   flex: 1;
   min-width: 140px;
-  height: 52px;
+  height: 58px;
   background: var(--ameza-copper-gradient, var(--ameza-copper));
   color: #FFFFFF !important;
   border: none;
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
@@ -439,13 +439,14 @@
 
   .pine-qty-box {
     width: 100%;
-    height: 48px;
+    height: 52px;
   }
 
   .pine-btn-primary-sage,
   .pine-btn-accent-apricot {
     width: 100%;
-    height: 50px;
+    height: 56px;
+    font-size: 13.5px;
   }
 
   .pine-benefits-grid {

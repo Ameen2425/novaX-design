@@ -69,3 +69,29 @@
 .ameza-brand-logo.is-compact .ameza-wordmark {
   font-size: 19px;
 }
+
+/* ── 320px – 360px Mobile Adaptations ─────────────────── */
+@media (max-width: 360px) {
+  .ameza-brand-logo {
+    gap: 7px;
+  }
+
+  .ameza-logo-symbol-wrap {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ameza-wordmark {
+    font-size: 16px;
+    letter-spacing: 0.08em;
+  }
+
+  .ameza-brand-logo.is-compact .ameza-logo-symbol-wrap {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ameza-brand-logo.is-compact .ameza-wordmark {
+    font-size: 15px;
+  }
+}
