@@ -1,6 +1,6 @@
 /* =========================================================
    AMEZA — GLOBAL DESIGN SYSTEM ENTRY
-   Velvet Obsidian Midnight + Crimson Ruby Red
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
    ========================================================= */
 
 @import "./styles/variables.css";
@@ -24,7 +24,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Custom Luxury Ruby Scrollbar ─────────────────────── */
+/* ── Custom Luxury Velvet Scrollbar ───────────────────── */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -42,16 +42,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ameza-gold, #E11D48);
+  background: var(--ameza-primary, #E11D48);
 }
 
 /* ── Luxury Text Selection ────────────────────────────── */
 ::selection {
   background: rgba(225, 29, 72, 0.35);
-  color: var(--ameza-gold-bright, #FFE4E6);
+  color: #FFFFFF;
 }
 
 ::-moz-selection {
   background: rgba(225, 29, 72, 0.35);
-  color: var(--ameza-gold-bright, #FFE4E6);
+  color: #FFFFFF;
 }

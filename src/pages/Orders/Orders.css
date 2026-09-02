@@ -1,0 +1,300 @@
+/* =========================================================
+   AMEZA ORDERS (ORDER HISTORY) PAGE STYLES
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
+   ========================================================= */
+
+.orders-page-root {
+  min-height: 85vh;
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
+  padding-top: calc(var(--header-height-desktop, 76px) + 28px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.orders-container {
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto;
+}
+
+.orders-header {
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.orders-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--ameza-ruby, #E11D48);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.orders-title {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 10px 0;
+}
+
+.orders-subtitle {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ameza-text-muted, #9E8B89);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── Empty State ──────────────────────────────────────── */
+.orders-empty-card {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card, rgba(225, 29, 72, 0.25));
+  border-radius: var(--radius-xl, 24px);
+  padding: clamp(40px, 6vw, 64px) 24px;
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: var(--shadow-card);
+}
+
+.orders-empty-icon {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--ameza-ruby, #E11D48);
+  margin-bottom: 16px;
+}
+
+.orders-empty-card h2 {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 12px 0;
+}
+
+.orders-empty-card p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ameza-text-muted, #9E8B89);
+  margin: 0 0 28px 0;
+  line-height: 1.6;
+}
+
+.btn-start-shopping {
+  display: inline-block;
+  background: var(--ameza-ruby-gradient, linear-gradient(135deg, #FB7185 0%, #E11D48 50%, #9F1239 100%));
+  color: #FFFFFF !important;
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--shadow-ruby);
+  transition: all var(--transition-fast);
+}
+
+.btn-start-shopping:hover {
+  background: var(--ameza-ruby-gradient-hover, linear-gradient(135deg, #FDA4AF 0%, #F43F5E 50%, #BE123C 100%));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-ruby-lg);
+}
+
+/* ── Orders List ──────────────────────────────────────── */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card, rgba(225, 29, 72, 0.25));
+  border-radius: var(--radius-card, 18px);
+  padding: clamp(20px, 3vw, 28px);
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-fast);
+}
+
+.order-card:hover {
+  border-color: var(--ameza-ruby, #E11D48);
+}
+
+.order-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(225, 29, 72, 0.2);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.order-id-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.order-id-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ameza-text, #FAF7F2);
+}
+
+.order-date {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--ameza-text-muted, #9E8B89);
+}
+
+.order-status-badge {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.order-status-badge.confirmed,
+.order-status-badge.delivered {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: var(--ameza-emerald, #10B981);
+}
+
+.order-status-badge.preparing,
+.order-status-badge.dispatched {
+  background: rgba(225, 29, 72, 0.16);
+  border: 1px solid rgba(225, 29, 72, 0.45);
+  color: var(--ameza-ruby-bright, #FB7185);
+}
+
+/* ── Items Preview ────────────────────────────────────── */
+.order-card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.order-item-mini {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--ameza-section, #1A0D15);
+  border: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.15));
+  border-radius: var(--radius-sm, 10px);
+}
+
+.item-mini-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-mini-left img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #180C14;
+}
+
+.item-mini-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ameza-text, #FAF7F2);
+}
+
+.item-mini-qty {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: var(--ameza-text-muted, #9E8B89);
+}
+
+.item-mini-price {
+  font-family: var(--font-mono, monospace);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+}
+
+/* ── Order Bottom ─────────────────────────────────────── */
+.order-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(225, 29, 72, 0.2);
+  padding-top: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.order-total-group {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.order-total-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ameza-text-muted, #9E8B89);
+  text-transform: uppercase;
+}
+
+.order-total-val {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ameza-ruby-bright, #FB7185);
+}
+
+.btn-order-details {
+  background: transparent;
+  border: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.35));
+  color: var(--ameza-text, #FAF7F2);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-order-details:hover {
+  background: rgba(225, 29, 72, 0.16);
+  border-color: var(--ameza-ruby, #E11D48);
+  color: #FFFFFF;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 640px) {
+  .order-card-top,
+  .order-card-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .btn-order-details {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

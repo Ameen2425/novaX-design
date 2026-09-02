@@ -22,7 +22,7 @@ export const Footer = () => {
         <div className="footer-content">
           {/* 1. BRAND */}
           <div className="footer-col footer-brand">
-            <Link className="footer-logo" to="/" aria-label="AMEZA Home">
+            <Link className="footer-logo" to="/home" aria-label="AMEZA Home">
               <BrandLogo variant="full" />
             </Link>
             <p className="footer-desc">
@@ -58,35 +58,35 @@ export const Footer = () => {
           <div className="footer-col">
             <h3>Shop</h3>
             <ul>
-              <li><Link to="/">Home</Link></li>
+              <li><Link to="/home">Home</Link></li>
               <li><Link to="/products">All Products</Link></li>
-              <li><Link to="/deals">Deals</Link></li>
-              <li><Link to="/products">Categories</Link></li>
-              <li><Link to="/deals">Best Sellers</Link></li>
+              <li><Link to="/deals">Atelier Deals</Link></li>
+              <li><Link to="/wishlist">My Wishlist</Link></li>
+              <li><Link to="/cart">Shopping Bag</Link></li>
             </ul>
           </div>
 
-          {/* 3. SUPPORT */}
+          {/* 3. CUSTOMER */}
           <div className="footer-col">
-            <h3>Support</h3>
+            <h3>Account & Orders</h3>
             <ul>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Shipping Policy</a></li>
-              <li><a href="#">Returns & Refund</a></li>
-              <li><a href="#">Track Order</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li><Link to="/account">My Account</Link></li>
+              <li><Link to="/orders">Order History</Link></li>
+              <li><Link to="/wishlist">Saved Pieces</Link></li>
+              <li><Link to="/settings">Preferences</Link></li>
+              <li><Link to="/about">About AMEZA</Link></li>
             </ul>
           </div>
 
           {/* 4. COMPANY */}
           <div className="footer-col">
-            <h3>Company</h3>
+            <h3>Atelier</h3>
             <ul>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/about">Our Story</Link></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press & Media</a></li>
-              <li><Link to="/about">Contact Us</Link></li>
+              <li><Link to="/products">New Arrivals</Link></li>
+              <li><Link to="/deals">Special Offers</Link></li>
+              <li><Link to="/about">Contact Concierge</Link></li>
             </ul>
           </div>
 

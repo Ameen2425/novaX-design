@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { ADD } from "../../../Redux/Features/cart/CartSlice";
+import hairOilImg from "../../../assets/ameza-deal-hair-oil.jpg";
 import "./FlashDeals.css";
 
 const flashDealsData = [
@@ -31,7 +32,7 @@ const flashDealsData = [
     oldPrice: "$54.00",
     price: "$35.10",
     rawPrice: 35.10,
-    image: "https://images.unsplash.com/photo-1608248597359-009d1cf37d7a?auto=format&fit=crop&w=600&q=80",
+    image: hairOilImg,
   },
   {
     id: 1039,

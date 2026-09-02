@@ -65,13 +65,27 @@ const dealProductsData = [
 
 const DealProducts = () => {
   let dispatch = useDispatch();
-  const [wishlist, setWishlist] = useState({});
+  const [wishlist, setWishlist] = useState(() => {
+    const list = JSON.parse(localStorage.getItem("ameza_wishlist")) || [];
+    const map = {};
+    list.forEach((id) => (map[id] = true));
+    return map;
+  });
   const [toastMessage, setToastMessage] = useState("");
 
   const toggleWishlist = (e, id) => {
     e.preventDefault();
     e.stopPropagation();
-    setWishlist((prev) => ({ ...prev, [id]: !prev[id] }));
+    const currentList = JSON.parse(localStorage.getItem("ameza_wishlist")) || [];
+    let updated;
+    if (currentList.includes(id)) {
+      updated = currentList.filter((item) => item !== id);
+      setWishlist((prev) => ({ ...prev, [id]: false }));
+    } else {
+      updated = [...currentList, id];
+      setWishlist((prev) => ({ ...prev, [id]: true }));
+    }
+    localStorage.setItem("ameza_wishlist", JSON.stringify(updated));
   };
 
   const handleAddToCart = (e, product) => {

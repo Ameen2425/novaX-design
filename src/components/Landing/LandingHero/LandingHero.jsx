@@ -63,7 +63,7 @@ const LandingHero = () => {
           animate="visible"
           variants={fadeUp(0.9)}
         >
-          <Link to="/" className="hero-primary-cta">
+          <Link to="/home" className="hero-primary-cta">
             <span>Enter AMEZA</span>
             <svg
               className="hero-cta-arrow"

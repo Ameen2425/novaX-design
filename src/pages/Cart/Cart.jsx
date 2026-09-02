@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { INC, DEC, REMOVE } from "../../Redux/Features/cart/CartSlice";
 import "./Cart.css";
 
@@ -9,6 +9,7 @@ import CartBenefits from "../../components/cart/CartBenefits/CartBenefits";
 import CartDiscover from "../../components/cart/CartDiscover/CartDiscover";
 
 const Cart = () => {
+  const navigate = useNavigate();
   let cartData = useSelector(
     (state) => state.cart
   );
@@ -225,7 +226,7 @@ const Cart = () => {
               <button
                 type="button"
                 className="cart-checkout-btn"
-                onClick={() => alert("Checkout functionality is ready!")}
+                onClick={() => navigate("/checkout")}
               >
                 Proceed to Checkout →
               </button>

@@ -15,16 +15,20 @@ const RelatedProducts = ({ currentCategory, currentId, onToast }) => {
   const getRelated = async () => {
     setLoading(true);
     const cat = currentCategory || "beauty";
-    const response = await axios.get(`https://dummyjson.com/products/category/${cat}`);
+    const response = await axios.get(
+      `https://dummyjson.com/products/category/${encodeURIComponent(cat)}`
+    );
     let items = response.data?.products || [];
 
     // Filter out current product
-    items = items.filter((p) => p.id !== Number(currentId));
+    items = items.filter((p) => String(p.id) !== String(currentId));
 
     if (items.length < 4) {
-      const fallbackResponse = await axios.get("https://dummyjson.com/products?limit=10");
+      const fallbackResponse = await axios.get(
+        "https://dummyjson.com/products?limit=10"
+      );
       const fallbackItems = (fallbackResponse.data?.products || []).filter(
-        (p) => p.id !== Number(currentId)
+        (p) => String(p.id) !== String(currentId)
       );
       items = [...items, ...fallbackItems].slice(0, 4);
     } else {

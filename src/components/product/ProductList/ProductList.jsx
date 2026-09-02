@@ -26,12 +26,15 @@ const ProductList = () => {
   const productsPerPage = 12;
 
   // =========================
-  // Get Categories (Async/Await Axios)
+  // Get Categories
   // =========================
   const getCategories = async () => {
     const response = await axios.get("https://dummyjson.com/products/category-list");
     const filteredCategories = (response.data || []).filter(
-      (cat) => !excludedCategories.includes(typeof cat === "string" ? cat : cat.slug || cat.name)
+      (cat) =>
+        !excludedCategories.includes(
+          typeof cat === "string" ? cat : cat.slug || cat.name
+        )
     );
     setCategoryList(filteredCategories);
   };
@@ -41,22 +44,22 @@ const ProductList = () => {
   }, []);
 
   // =========================
-  // Get Products (Async/Await Axios with Groceries Excluded)
+  // Get Products (Async/Await Axios)
   // =========================
   const getProducts = async () => {
     setLoading(true);
 
     let api = "https://dummyjson.com/products?limit=194";
     if (category) {
-      api = `https://dummyjson.com/products/category/${category}`;
+      api = `https://dummyjson.com/products/category/${encodeURIComponent(category)}`;
     } else if (search) {
       api = `https://dummyjson.com/products/search?q=${encodeURIComponent(search)}`;
     }
 
     const response = await axios.get(api);
-    let list = response.data.products || [];
+    let list = response.data?.products || [];
 
-    // Strictly exclude groceries and unwanted household/vehicle items
+    // Filter out excluded categories
     list = list.filter((p) => !excludedCategories.includes(p.category));
 
     setProducts(list);

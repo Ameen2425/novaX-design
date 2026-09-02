@@ -55,7 +55,7 @@ const LandingCTA = () => (
         viewport={{ once: true }}
         transition={{ duration: 1.0, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
       >
-        <Link to="/" className="final-cta-btn">
+        <Link to="/home" className="final-cta-btn">
           <span>Enter AMEZA</span>
           <svg
             width="16"

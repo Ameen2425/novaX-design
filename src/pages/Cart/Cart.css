@@ -31,7 +31,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby, #E11D48);
   margin-bottom: 6px;
 }
 
@@ -83,7 +83,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ameza-gold, #E5B83B);
+  color: var(--ameza-ruby-bright, #FB7185);
 }
 
 .cart-items-list {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import hairOilImg from "../../../assets/ameza-deal-hair-oil.jpg";
 import "./DealCategories.css";
 
 const categories = [
@@ -8,35 +9,35 @@ const categories = [
     id: "makeup",
     name: "LIP ATELIER & MAKEUP",
     discount: "Up to 30% Off",
-    link: "/products?category=makeup",
+    link: "/products?category=beauty",
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "skincare",
     name: "BOTANICAL SKINCARE",
     discount: "Up to 25% Off",
-    link: "/products?category=skincare",
+    link: "/products?category=skin-care",
     image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "perfumes",
     name: "HAUTE PERFUMERY",
     discount: "Up to 35% Off",
-    link: "/products?category=fragrance",
+    link: "/products?category=fragrances",
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "haircare",
     name: "HAIRCARE & ELIXIRS",
     discount: "Up to 20% Off",
-    link: "/products?category=haircare",
-    image: "https://images.unsplash.com/photo-1608248597359-009d1cf37d7a?auto=format&fit=crop&w=800&q=80",
+    link: "/products?category=beauty",
+    image: hairOilImg,
   },
   {
     id: "accessories",
     name: "BEAUTY ACCESSORIES",
     discount: "Up to 30% Off",
-    link: "/products?category=beauty_accessories",
+    link: "/products?category=beauty",
     image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80",
   },
 ];

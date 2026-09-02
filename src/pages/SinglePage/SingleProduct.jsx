@@ -24,11 +24,67 @@ const SingleProduct = () => {
 
   const getProduct = async () => {
     setLoading(true);
-    const response = await axios.get(`https://dummyjson.com/products/${id}`);
-    if (response && response.data) {
-      setProduct(response.data);
-      setSelectedImage(response.data.thumbnail || (response.data.images && response.data.images[0]) || "");
+
+    if (!isNaN(Number(id))) {
+      const response = await axios.get(`https://dummyjson.com/products/${id}`);
+      if (response && response.data) {
+        setProduct(response.data);
+        setSelectedImage(
+          response.data.thumbnail ||
+            (response.data.images && response.data.images[0]) ||
+            ""
+        );
+        setLoading(false);
+        return;
+      }
     }
+
+    const publicPacks = ["womens-fashion", "shoes", "home-decor"];
+    const responses = await Promise.all(
+      publicPacks.map((pack) =>
+        axios.get(`https://scenesku.com/api/v1/public-packs/${pack}`)
+      )
+    );
+
+    const allItems = responses.flatMap((r) => r.data?.data || []);
+    const found = allItems.find(
+      (p) => String(p.id) === String(id) || p.id === id
+    );
+
+    if (found) {
+      const pData = found.product_data || {};
+      const catSlug =
+        (found.categories && found.categories[0]?.slug) ||
+        (pData.categories && pData.categories[0]?.toLowerCase()) ||
+        "womens-fashion";
+      const rawImages = (found.images || []).map((img) => img.image_url || img);
+      const thumb =
+        (found.images &&
+          (found.images[0]?.thumbnail_url || found.images[0]?.image_url)) ||
+        "";
+
+      const normalized = {
+        id: found.id,
+        title: pData.product_title || found.title || "Luxury Piece",
+        description:
+          pData.short_description ||
+          pData.long_description ||
+          "Curated atelier creation.",
+        longDescription: pData.long_description || "",
+        bulletPoints: pData.bullet_points || [],
+        price: parseFloat(pData.price) || 95.0,
+        discountPercentage: 15,
+        rating: 4.8,
+        stock: 12,
+        category: catSlug,
+        thumbnail: thumb,
+        images: rawImages.length > 0 ? rawImages : [thumb],
+      };
+
+      setProduct(normalized);
+      setSelectedImage(thumb || (rawImages[0] || ""));
+    }
+
     setLoading(false);
   };
 
@@ -72,7 +128,7 @@ const SingleProduct = () => {
         category: product.category,
       })
     );
-    navigate("/cart");
+    navigate("/checkout");
   };
 
   /* =====================================================
@@ -147,7 +203,7 @@ const SingleProduct = () => {
           transition={{ duration: 0.35 }}
           aria-label="Breadcrumb"
         >
-          <span onClick={() => navigate("/")}>Home</span>
+          <span onClick={() => navigate("/home")}>Home</span>
           <b className="pine-breadcrumb-sep">/</b>
           <span onClick={() => navigate("/products")}>Products</span>
           <b className="pine-breadcrumb-sep">/</b>

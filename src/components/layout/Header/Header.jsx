@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import "./Header.css";
@@ -8,6 +8,9 @@ import BrandLogo from "../../common/BrandLogo/BrandLogo";
 const Header = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [user, setUser] = useState(() => {
+    return JSON.parse(localStorage.getItem("user")) || null;
+  });
 
   const cartData = useSelector((state) => state.cart || []);
   const cartValue = cartData.reduce(
@@ -28,12 +31,24 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const savedUser = JSON.parse(localStorage.getItem("user")) || null;
+    setUser(savedUser);
+  }, [location.pathname]);
+
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "Products", path: "/products" },
     { name: "Deals", path: "/deals" },
     { name: "About", path: "/about" },
-    { name: "User", path: "/user" },
+  ];
+
+  const mobileNavLinks = [
+    { name: "Home", path: "/home" },
+    { name: "Products", path: "/products" },
+    { name: "Deals", path: "/deals" },
+    { name: "Wishlist", path: "/wishlist" },
+    { name: "Account", path: user ? "/account" : "/login" },
   ];
 
   return (
@@ -41,11 +56,16 @@ const Header = () => {
       {/* MOBILE COMPACT FLOATING TOP HEADER */}
       <header className={`mobile-top-bar ${isScrolled ? "mobile-top-scrolled" : ""}`}>
         <div className="mobile-top-left">
-          <NavLink to="/" className="logo" aria-label="AMEZA Home">
+          <NavLink to="/home" className="logo" aria-label="AMEZA Home">
             <BrandLogo variant="compact" />
           </NavLink>
         </div>
         <div className="mobile-top-right">
+          <NavLink to="/wishlist" className="mobile-action-btn" title="Wishlist">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </NavLink>
           <NavLink to="/cart" className="mobile-action-btn" title="Shopping Cart">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="9" cy="21" r="1"/>
@@ -62,12 +82,10 @@ const Header = () => {
               {cartValue}
             </motion.span>
           </NavLink>
-          <NavLink to="/signup" className="mobile-action-btn" title="Sign Up / Register">
+          <NavLink to={user ? "/account" : "/login"} className="mobile-action-btn" title={user ? "My Account" : "Sign In"}>
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="8.5" cy="7" r="4" />
-              <line x1="20" y1="8" x2="20" y2="14" />
-              <line x1="23" y1="11" x2="17" y2="11" />
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
             </svg>
           </NavLink>
         </div>
@@ -78,16 +96,13 @@ const Header = () => {
 
       {/* DESKTOP & TABLET FLOATING GLASS HEADER */}
       <header className={`header desktop-header ${isScrolled ? "header-scrolled" : ""}`}>
-        <NavLink to="/" className="logo" aria-label="AMEZA Home">
+        <NavLink to="/home" className="logo" aria-label="AMEZA Home">
           <BrandLogo variant="full" />
         </NavLink>
 
         <nav className="navbar">
           {navLinks.map((item) => {
-            const isActive =
-              item.path === "/"
-                ? location.pathname === "/"
-                : location.pathname.startsWith(item.path);
+            const isActive = location.pathname.startsWith(item.path);
 
             return (
               <NavLink
@@ -114,8 +129,22 @@ const Header = () => {
 
         <div className="header-actions">
           <div className="header-icon-group">
-            <NavLink to="/cart" className={({ isActive }) => isActive ? "header-action-btn active" : "header-action-btn"} title="Cart">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+            <NavLink
+              to="/wishlist"
+              className={({ isActive }) => isActive ? "header-action-btn active" : "header-action-btn"}
+              title="Wishlist"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </NavLink>
+
+            <NavLink
+              to="/cart"
+              className={({ isActive }) => isActive ? "header-action-btn active" : "header-action-btn"}
+              title="Shopping Cart"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <path d="M16 10a4 4 0 0 1-8 0"/>
@@ -133,27 +162,23 @@ const Header = () => {
           </div>
 
           <NavLink
-            to="/signup"
+            to={user ? "/account" : "/login"}
             className={({ isActive }) => isActive ? "header-action-btn signup-btn active" : "header-action-btn signup-btn"}
-            title="Sign Up / Register"
+            title={user ? `Account (${user.name || "My Account"})` : "Sign In / Register"}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="8.5" cy="7" r="4" />
-              <line x1="20" y1="8" x2="20" y2="14" />
-              <line x1="23" y1="11" x2="17" y2="11" />
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
             </svg>
+            <span className="header-auth-label">{user ? (user.name ? user.name.split(" ")[0] : "Account") : "Sign In"}</span>
           </NavLink>
         </div>
       </header>
 
       {/* MOBILE BOTTOM FLOATING CAPSULE NAVIGATION (ICON ONLY LUXURY DOCK) */}
       <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
-        {navLinks.map((item) => {
-          const isActive =
-            item.path === "/"
-              ? location.pathname === "/"
-              : location.pathname.startsWith(item.path);
+        {mobileNavLinks.map((item) => {
+          const isActive = location.pathname.startsWith(item.path);
 
           return (
             <NavLink
@@ -195,19 +220,15 @@ const Header = () => {
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                   </svg>
                 )}
-                {item.name === "About" && (
+                {item.name === "Wishlist" && (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="12" y1="16" x2="12" y2="12"/>
-                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
                 )}
-                {item.name === "User" && (
+                {item.name === "Account" && (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
                   </svg>
                 )}
               </div>

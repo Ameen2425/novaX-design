@@ -106,7 +106,7 @@
   font-size: clamp(2.4rem, 5.2vw, 4.6rem);
   font-weight: 400;
   font-style: italic;
-  background: var(--ameza-ruby-gradient, linear-gradient(135deg, #FFF1F2 0%, #FDA4AF 22%, #E11D48 50%, #9F1239 78%, #FDA4AF 100%));
+  background: var(--ameza-ruby-gradient, linear-gradient(135deg, #FB7185 0%, #E11D48 50%, #9F1239 100%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 4px 18px rgba(225, 29, 72, 0.45));
@@ -186,7 +186,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--ameza-ruby-gradient, linear-gradient(135deg, #FFF1F2 0%, #FDA4AF 22%, #E11D48 50%, #9F1239 78%, #FDA4AF 100%));
+  background: var(--ameza-ruby-gradient, linear-gradient(135deg, #FB7185 0%, #E11D48 50%, #9F1239 100%));
   color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -201,7 +201,7 @@
 }
 
 .btn-hero-primary-gold:hover {
-  background: var(--ameza-ruby-gradient-hover, linear-gradient(135deg, #FFFFFF 0%, #FECDD3 22%, #F43F5E 50%, #BE123C 78%, #FFF1F2 100%));
+  background: var(--ameza-ruby-gradient-hover, linear-gradient(135deg, #FDA4AF 0%, #F43F5E 50%, #BE123C 100%));
   transform: translateY(-2px);
   box-shadow: var(--shadow-ruby-lg, 0 12px 32px rgba(225, 29, 72, 0.65));
 }

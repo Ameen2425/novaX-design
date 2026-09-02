@@ -41,7 +41,7 @@ const LandingHeader = () => {
           </nav>
 
           <div className="landing-header-actions">
-            <Link to="/" className="landing-enter-btn">
+            <Link to="/home" className="landing-enter-btn">
               <span>Enter AMEZA</span>
             </Link>
             <button
@@ -91,7 +91,7 @@ const LandingHeader = () => {
         ))}
 
         <Link
-          to="/"
+          to="/home"
           className="landing-mobile-enter"
           onClick={() => setMobileOpen(false)}
         >

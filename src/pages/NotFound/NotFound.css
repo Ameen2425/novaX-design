@@ -1,0 +1,124 @@
+/* =========================================================
+   AMEZA 404 NOT FOUND PAGE STYLES
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
+   ========================================================= */
+
+.not-found-page-root {
+  min-height: 80vh;
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
+  padding-top: calc(var(--header-height-desktop, 76px) + 40px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.not-found-page-container {
+  max-width: 680px;
+  width: 100%;
+}
+
+.not-found-card {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card, rgba(225, 29, 72, 0.25));
+  border-radius: var(--radius-xl, 24px);
+  padding: clamp(32px, 6vw, 64px);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.not-found-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--ameza-ruby-bright, #FB7185);
+  background: rgba(225, 29, 72, 0.16);
+  border: 1px solid rgba(225, 29, 72, 0.42);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.not-found-title {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 14px 0;
+}
+
+.not-found-desc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ameza-text-muted, #9E8B89);
+  margin: 0 auto 32px auto;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.not-found-actions-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-not-found-primary {
+  background: var(--ameza-ruby-gradient, linear-gradient(135deg, #FB7185 0%, #E11D48 50%, #9F1239 100%));
+  color: #FFFFFF !important;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--shadow-ruby);
+  transition: all var(--transition-fast);
+}
+
+.btn-not-found-primary:hover {
+  background: var(--ameza-ruby-gradient-hover, linear-gradient(135deg, #FDA4AF 0%, #F43F5E 50%, #BE123C 100%));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-ruby-lg);
+}
+
+.btn-not-found-secondary {
+  border: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.3));
+  color: var(--ameza-text, #FAF7F2);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-not-found-secondary:hover {
+  border-color: var(--ameza-ruby, #E11D48);
+  background: rgba(225, 29, 72, 0.12);
+  color: #FFFFFF;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .not-found-actions-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-not-found-primary,
+  .btn-not-found-secondary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

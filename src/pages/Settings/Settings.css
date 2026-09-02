@@ -1,0 +1,329 @@
+/* =========================================================
+   AMEZA SETTINGS PAGE STYLES
+   Velvet Obsidian Midnight + Crimson Ruby Red Theme
+   ========================================================= */
+
+.settings-page-root {
+  min-height: 85vh;
+  background-color: var(--ameza-bg, #0D070B);
+  color: var(--ameza-text, #FAF7F2);
+  padding-top: calc(var(--header-height-desktop, 76px) + 24px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.settings-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.settings-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.btn-back-account {
+  background: transparent;
+  border: 1px solid var(--ameza-border, rgba(225, 29, 72, 0.25));
+  color: var(--ameza-text-secondary, #DAC8C3);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-back-account:hover {
+  border-color: var(--ameza-ruby, #E11D48);
+  color: #FFFFFF;
+  background: rgba(225, 29, 72, 0.12);
+}
+
+.nav-meta {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: var(--ameza-text-muted, #9E8B89);
+  letter-spacing: 0.1em;
+}
+
+.settings-header {
+  margin-bottom: 32px;
+}
+
+.settings-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--ameza-ruby, #E11D48);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.settings-title {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 8px 0;
+}
+
+.settings-subtitle {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ameza-text-muted, #9E8B89);
+  margin: 0;
+}
+
+/* ── Settings Cards ───────────────────────────────────── */
+.settings-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-card {
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-border-card, rgba(225, 29, 72, 0.25));
+  border-radius: var(--radius-card, 18px);
+  padding: clamp(24px, 4vw, 32px);
+  box-shadow: var(--shadow-card);
+}
+
+.card-title {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+  margin: 0 0 8px 0;
+}
+
+.card-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ameza-text-muted, #9E8B89);
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+/* ── Notification Toggles ─────────────────────────────── */
+.settings-toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #150911;
+  border: 1px solid rgba(225, 29, 72, 0.2);
+  border-radius: var(--radius-md, 14px);
+  gap: 16px;
+}
+
+.toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.toggle-info strong {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+}
+
+.toggle-info span {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--ameza-text-muted, #9E8B89);
+}
+
+.toggle-switch {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(225, 29, 72, 0.3);
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.toggle-switch.active {
+  background: var(--ameza-ruby, #E11D48);
+  border-color: var(--ameza-ruby-bright, #FB7185);
+  box-shadow: 0 0 14px rgba(225, 29, 72, 0.55);
+}
+
+.toggle-slider {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform var(--transition-fast);
+}
+
+.toggle-switch.active .toggle-slider {
+  transform: translateX(22px);
+}
+
+/* ── Section 2: Display & Regional Preferences ────────── */
+.settings-options-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.setting-choice-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #150911;
+  border: 1px solid rgba(225, 29, 72, 0.2);
+  border-radius: var(--radius-md, 14px);
+  padding: 16px 20px;
+}
+
+.choice-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ameza-text-muted, #9E8B89);
+}
+
+.theme-indicator-pill,
+.currency-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.theme-color.ruby { background: #E11D48; }
+.theme-color.copper { background: #E67E64; }
+
+.theme-indicator-pill strong,
+.currency-pill strong {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ameza-text, #FAF7F2);
+}
+
+/* ── Section 3: Data Management / Danger Zone ─────────── */
+.danger-buttons-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-action-neutral {
+  background: rgba(225, 29, 72, 0.12);
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  color: var(--ameza-ruby-bright, #FB7185);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-action-neutral:hover {
+  background: var(--ameza-ruby, #E11D48);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.4);
+}
+
+.btn-action-danger {
+  background: rgba(225, 29, 72, 0.2);
+  border: 1px solid var(--ameza-ruby, #E11D48);
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-action-danger:hover {
+  background: var(--ameza-ruby, #E11D48);
+  box-shadow: 0 4px 18px rgba(225, 29, 72, 0.6);
+}
+
+/* ── Toast Notification ───────────────────────────────── */
+.settings-toast {
+  position: fixed;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ameza-card, #23121D);
+  border: 1px solid var(--ameza-ruby, #E11D48);
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ameza-text, #FAF7F2);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(225, 29, 72, 0.35);
+  z-index: 99999;
+  max-width: 90vw;
+}
+
+.toast-icon {
+  color: var(--ameza-ruby-bright, #FB7185);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 640px) {
+  .settings-options-row {
+    grid-template-columns: 1fr;
+  }
+  .danger-buttons-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-action-neutral,
+  .btn-action-danger {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

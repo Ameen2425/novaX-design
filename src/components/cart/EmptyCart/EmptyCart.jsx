@@ -64,28 +64,27 @@ const EmptyCart = () => {
 
       <motion.h1 variants={fadeInUp}>
         Your cart is
-        <span> waiting for you.</span>
+        <span> waiting for something beautiful.</span>
       </motion.h1>
 
       <motion.p className="cart-message" variants={fadeInUp}>
-        Looks like you haven't added anything to your cart yet.
+        Looks like you haven't added any luxury pieces to your cart yet.
       </motion.p>
 
       <motion.p className="cart-subtext" variants={fadeInUp}>
-        Explore our collection and discover products you'll love. Your next
-        favorite item could be just one click away.
+        Explore our curated collection of verified creations and discover pieces designed around modern everyday living.
       </motion.p>
 
       <motion.div className="cart-actions" variants={fadeInUp}>
         <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
           <Link to="/products" className="cart-primary-btn">
-            Start Shopping
+            Continue Shopping
             <span>→</span>
           </Link>
         </motion.div>
 
         <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
-          <Link to="/" className="cart-secondary-btn">
+          <Link to="/home" className="cart-secondary-btn">
             Back to Home
           </Link>
         </motion.div>

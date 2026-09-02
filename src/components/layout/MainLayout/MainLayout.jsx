@@ -20,15 +20,17 @@ const MainLayout = () => {
   }, [location.pathname]);
 
   const noHeaderPaths = [
+    "/",
+    "/landing",
     "/login",
-    "/signup",
-    "/landing"
+    "/signup"
   ];
 
   const noFooterPaths = [
+    "/",
+    "/landing",
     "/login",
-    "/signup",
-    "/landing"
+    "/signup"
   ];
 
   const hideHeader = noHeaderPaths.includes(

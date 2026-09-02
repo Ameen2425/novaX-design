@@ -3,16 +3,23 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageLoader from "../../components/common/PageLoader/PageLoader";
 
-export const Home = React.lazy(() => import("../../pages/Home/Home"));
 export const Landing = React.lazy(() => import("../../pages/Landing/Landing"));
+export const Home = React.lazy(() => import("../../pages/Home/Home"));
 export const About = React.lazy(() => import("../../pages/About/About"));
 export const Products = React.lazy(() => import("../../pages/Products/products"));
 export const Deals = React.lazy(() => import("../../pages/Deals/Deals"));
 export const Cart = React.lazy(() => import("../../pages/Cart/Cart"));
+export const Checkout = React.lazy(() => import("../../pages/Checkout/Checkout"));
+export const OrderSuccess = React.lazy(() => import("../../pages/OrderSuccess/OrderSuccess"));
+export const Orders = React.lazy(() => import("../../pages/Orders/Orders"));
+export const OrderDetails = React.lazy(() => import("../../pages/Orders/OrderDetails"));
+export const Wishlist = React.lazy(() => import("../../pages/Wishlist/Wishlist"));
+export const Account = React.lazy(() => import("../../pages/Account/Account"));
+export const Settings = React.lazy(() => import("../../pages/Settings/Settings"));
 export const Login = React.lazy(() => import("../../pages/Login/Login"));
 export const Signup = React.lazy(() => import("../../pages/Signup/Signup"));
-export const Users = React.lazy(() => import("../../pages/Users/Users"));
 export const SingleProduct = React.lazy(() => import("../../pages/SinglePage/SingleProduct"));
+export const NotFound = React.lazy(() => import("../../pages/NotFound/NotFound"));
 
 export const AppRouter = () => {
   const location = useLocation();
@@ -20,11 +27,15 @@ export const AppRouter = () => {
   const routes = [
     {
       path: "/",
-      element: <Home />,
+      element: <Landing />,
     },
     {
       path: "/landing",
       element: <Landing />,
+    },
+    {
+      path: "/home",
+      element: <Home />,
     },
     {
       path: "/about",
@@ -35,20 +46,44 @@ export const AppRouter = () => {
       element: <Products />,
     },
     {
-      path: "/deals",
-      element: <Deals />,
-    },
-    {
       path: "/products/:id",
       element: <SingleProduct />,
+    },
+    {
+      path: "/deals",
+      element: <Deals />,
     },
     {
       path: "/cart",
       element: <Cart />,
     },
     {
-      path: "/user",
-      element: <Users />,
+      path: "/checkout",
+      element: <Checkout />,
+    },
+    {
+      path: "/order-success",
+      element: <OrderSuccess />,
+    },
+    {
+      path: "/orders",
+      element: <Orders />,
+    },
+    {
+      path: "/orders/:id",
+      element: <OrderDetails />,
+    },
+    {
+      path: "/wishlist",
+      element: <Wishlist />,
+    },
+    {
+      path: "/account",
+      element: <Account />,
+    },
+    {
+      path: "/settings",
+      element: <Settings />,
     },
     {
       path: "/login",
@@ -57,6 +92,10 @@ export const AppRouter = () => {
     {
       path: "/signup",
       element: <Signup />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
   ];
 
